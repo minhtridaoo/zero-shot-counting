@@ -7,9 +7,9 @@
 | Bằng chứng | Kết luận được phép ghi |
 |---|---|
 | [Báo cáo kiểm 24/10](TRIEU_KET_QUA_KIEM_CHEO_20261024.md), trace 15 query và audit JSON | Assistant đã đối chiếu kỹ thuật theo ủy quyền của Triệu |
-| [TRIEU_ACCEPTANCE](audits/TRIEU_ACCEPTANCE_20261024.json) | Triệu đã đọc/hiểu/chấp nhận bản kiểm; không phải Triệu tự audit code |
+| [TRIEU_ACCEPTANCE](../../../reports/audits/TRIEU_ACCEPTANCE_20261024.json) | Triệu đã đọc/hiểu/chấp nhận bản kiểm; không phải Triệu tự audit code |
 | PILOT_SUMMARY ở remote | Nhóm chưa duyệt toàn báo cáo, pilot chưa có quyết định đóng |
-| [q02_1 chi tiết](<../workspace Trí and Triệu/Triệu/Q02_1_DETAILED_REVIEW.md>), ba JSON, 9 ảnh | Đã có artifact còn thiếu; vẫn giữ mức chắc chắn và cờ chưa phân xử hết bởi người kiểm |
+| [q02_1 chi tiết](<../../../workspace Trí and Triệu/Triệu/Q02_1_DETAILED_REVIEW.md>), ba JSON, 9 ảnh | Đã có artifact còn thiếu; vẫn giữ mức chắc chắn và cờ chưa phân xử hết bởi người kiểm |
 | Danh sách thay đổi commit | Không có ba CSV q03 do người kiểm độc lập điền; 47 nhãn P4 vẫn chờ |
 
 Không gộp “chấp nhận kiểm evaluator”, “duyệt pilot” và “kiểm nhãn P4” thành một việc đã xong.
@@ -26,7 +26,7 @@ Lượt này không chạy evaluator/self-test/model/train hoặc thí nghiệm 
 
 ## Bảo toàn khi pull
 
-Workspace trước pull có 13 file tracked đang sửa và 20 file untracked. Đã lưu [snapshot](<../quá khứ/2026-10-27_truoc_pull.zip>) kèm manifest/patch; stash phần tracked tại `a34cf35f5b5ce959b7f8469fe7c14afec242d263`. Pull fast-forward thành công; áp lại thay đổi local phát sinh 8 xung đột tài liệu và đã hợp nhất theo nội dung:
+Workspace trước pull có 13 file tracked đang sửa và 20 file untracked. Đã lưu [snapshot](<../../2026-10-27_truoc_pull.zip>) kèm manifest/patch; stash phần tracked tại `a34cf35f5b5ce959b7f8469fe7c14afec242d263`. Pull fast-forward thành công; áp lại thay đổi local phát sinh 8 xung đột tài liệu và đã hợp nhất theo nội dung:
 
 - Giữ tiến độ P4 đến freeze/audit ngày 22/10, không quay về “chưa chạy CLIP”.
 - Nhập xác nhận Triệu 24/10 và bằng chứng q02_1; không giao lại evaluator.

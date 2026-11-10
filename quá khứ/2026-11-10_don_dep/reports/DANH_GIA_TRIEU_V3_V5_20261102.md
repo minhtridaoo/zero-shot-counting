@@ -7,10 +7,10 @@
 
 | Việc | Hạn | Trạng thái | Kiểm |
 |---|---|---|---|
-| V1–V2 N4 tầng A | 30/10 | ✅ nộp 29/10 | Đạt cấu trúc (117 dòng). Chất lượng phân rã lỗi còn vài ca cần thống nhất, xem [RA_SOAT](RA_SOAT_TRIEU_N4_20261029.md) §4, §7 |
+| V1–V2 N4 tầng A | 30/10 | ✅ nộp 29/10 | Đạt cấu trúc (117 dòng). Chất lượng phân rã lỗi còn vài ca cần thống nhất, xem [RA_SOAT](../../../reports/RA_SOAT_TRIEU_N4_20261029.md) §4, §7 |
 | **V3** q05_3, 103 khung | 01/11 | ✅ nộp 29/10 | 103/103 có nhãn và reviewer; rank/tọa độ trùng gói gốc. B0 21 = 3 target + 18 sai loại; B2 79 = 2 target + **58 part** + 19 sai loại; part theo quả b1/b2/b3 = 23/21/14. Quy ước object_id ghi rõ |
 | V4 2 ca thử (uncertain, absent > 0) | 01/11 | ❌ **chưa có** | Báo cáo vẫn chỉ có 5 ca cũ |
-| **V5** phân tích B2/B0 + đề xuất | 01/11 | ✅ nộp 30/10 | Số khớp khi tính lại: tập mới 2 tốt hơn / 15 kém hơn / 13 bằng; bỏ u10_2 thì MAE B0 = 187/29 = 6.45, B2 = 327/29 = 11.28. Có bảng mẫu tự chọn gắn với chênh lệch từng query; đề xuất ở [TRIEU_DE_XUAT_NHANH_P](TRIEU_DE_XUAT_NHANH_P_20261029.md) |
+| **V5** phân tích B2/B0 + đề xuất | 01/11 | ✅ nộp 30/10 | Số khớp khi tính lại: tập mới 2 tốt hơn / 15 kém hơn / 13 bằng; bỏ u10_2 thì MAE B0 = 187/29 = 6.45, B2 = 327/29 = 11.28. Có bảng mẫu tự chọn gắn với chênh lệch từng query; đề xuất ở [TRIEU_DE_XUAT_NHANH_P](../../../reports/TRIEU_DE_XUAT_NHANH_P_20261029.md) |
 | V6 N4 tầng B | **02/11 (hôm nay)** | ❌ **chưa có** (0/58 dòng) | — |
 | V7 duyệt chung | 03/11 | Chờ buổi 03/11 | — |
 

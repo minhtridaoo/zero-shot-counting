@@ -2,12 +2,12 @@
 
 **Ưu tiên trạng thái mới nhất 27/10:** Trí đã đọc C1 và chưa duyệt; Triệu tự làm T1–T4 theo [kế hoạch V2](../reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md), hạn đề xuất 30/10–03/11. Việc chấp nhận bản assistant 24/10 không thay yêu cầu tự chạy mới. Trí chọn B, p4_unseen_v1 DRAFT; adapter đã viết, kiểm (1) từ điểm dev đạt, (2)–(4) chưa kiểm đầy đủ. T1 không sửa evaluator; fixtures đủ 15 query, giữ q05_2. Các mô tả giai đoạn trước bên dưới là nguồn tham khảo nếu khác điểm tiếp tục này.
 
-**Điểm tiếp tục 27/10:** pilot đã đủ phần chạy/chấm/viết, Triệu đã chấp nhận bản kiểm evaluator 24/10; còn nhóm duyệt. P4 đã có CLIP/CV/Fusion/freeze đến P4.5c; Trí chuẩn bị dữ liệu mới và runner trong lúc chờ Triệu kiểm 47 nhãn. [Việc tiếp cụ thể](P4_TIEP_THEO.md) · [Roadmap](ROADMAP.md) · [Work log](../WORKLOG.md).
+**Điểm tiếp tục 27/10:** pilot đã đủ phần chạy/chấm/viết, Triệu đã chấp nhận bản kiểm evaluator 24/10; còn nhóm duyệt. P4 đã có CLIP/CV/Fusion/freeze đến P4.5c; Trí chuẩn bị dữ liệu mới và runner trong lúc chờ Triệu kiểm 47 nhãn. [Việc tiếp cụ thể](P4_TIEP_THEO.md) · [Roadmap](ROADMAP.md) · [Work log](../../../WORKLOG.md).
 
 **Cập nhật 27/10/2026. Áp dụng cho CountGD++, roadmap V4.8.**
-[Handoff chung](../HANDOFF/HANDOFF.md) · [Handoff của bạn](../HANDOFF/HANDOFF_MODEL.md) · [Handoff Triệu](../HANDOFF/HANDOFF_TRIEU.md) · [Protocol nghiên cứu](PIPELINE_COUNTGDPP.md)
+[Handoff chung](../HANDOFF/HANDOFF.md) · [Handoff của bạn](../HANDOFF/HANDOFF_MODEL.md) · [Handoff Triệu](../../../HANDOFF/HANDOFF_TRIEU.md) · [Protocol nghiên cứu](PIPELINE_COUNTGDPP.md)
 
-Benchmark của Trí đã chạy đủ FSCD-147 1.190 ảnh; count metrics được kiểm ngày 20/10, MAE=8.336975, RMSE=24.637626. [Báo cáo](../reports/BENCHMARK_FSCD147.md). Nhánh này không thay phần 2–3 của pilot.
+Benchmark của Trí đã chạy đủ FSCD-147 1.190 ảnh; count metrics được kiểm ngày 20/10, MAE=8.336975, RMSE=24.637626. [Báo cáo](../../../reports/BENCHMARK_FSCD147.md). Nhánh này không thay phần 2–3 của pilot.
 
 ## 1. Mục tiêu chung và phần chịu trách nhiệm
 
@@ -156,7 +156,7 @@ Thêm ca kiểm tra có ý nghĩa: thiếu một ID; ID trùng; error/null; coun
 4. **G3 — có đối chứng:** cùng ảnh/query B0/B2 và E1/E2; đọc cả lỗi vắng mặt và chất lượng có mặt.
 5. **G4 — quyết định nghiên cứu:** chọn một lỗi có bằng chứng và một can thiệp; thống nhất trước khi mở holdout.
 
-Sau mỗi mốc có bằng chứng, nối thêm [work log](../WORKLOG.md), đồng bộ handoff và pipeline theo yêu cầu người dùng. Cuối mỗi buổi, cập nhật handoff cá nhân: việc xong, đường dẫn/lệnh tái chạy, kết quả kiểm tra, lỗi còn lại, bước kế tiếp. Chỉ ghi “xong” khi có sản phẩm kiểm được. Không cần đợi người kia hoàn thành toàn nhánh mới ghép G1.
+Sau mỗi mốc có bằng chứng, nối thêm [work log](../../../WORKLOG.md), đồng bộ handoff và pipeline theo yêu cầu người dùng. Cuối mỗi buổi, cập nhật handoff cá nhân: việc xong, đường dẫn/lệnh tái chạy, kết quả kiểm tra, lỗi còn lại, bước kế tiếp. Chỉ ghi “xong” khi có sản phẩm kiểm được. Không cần đợi người kia hoàn thành toàn nhánh mới ghép G1.
 
 
 ## 9. Phần 2–3 và P4 hiện hành, cập nhật 22/10

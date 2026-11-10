@@ -89,4 +89,4 @@ Evaluation: leave-one-original-image-out cross-validation on five development im
 
 [Artifact consistency audit](P4_AUDIT_20261022.md) verified saved IDs/scores, source hashes, image-disjoint CV folds, saved threshold applications, normalization bounds and arithmetic. It did not run inference or certify the visual labels. The 47-box blank review ZIP exists and is readable; independent annotation remains pending.
 
-The two candidates are already frozen in [this JSON](../results/countgdpp/p4_candidate_freeze_20261021.json). Full-dev fitted MAE values (4.333333 / 4.4) are not the CV values above and are not independent test results. Continue with the [new-data and runner plan](../roadmap/P4_TIEP_THEO.md); no unseen-data result is available yet.
+The two candidates are already frozen in [this JSON](../results/countgdpp/p4_candidate_freeze_20261021.json). Full-dev fitted MAE values (4.333333 / 4.4) are not the CV values above and are not independent test results. Continue with the [new-data and runner plan](<../quá khứ/2026-11-10_don_dep/roadmap/P4_TIEP_THEO.md>); no unseen-data result is available yet.

@@ -1,15 +1,15 @@
 # Roadmap CS331 — CountGD++ và lỗi đếm sai đối tượng
 
-> **Trạng thái hiện hành — nhận bài nộp 05/11/2026:** đã pull `3b7df25 → 71264bd` (9 commit, 19 file), không xung đột. Triệu đã nộp báo cáo V4, 6 CSV N4 tầng B/V6 (báo cáo 58/58), code/notebook nhánh P1 và công cụ đối chứng. [Báo cáo T4](../reports/TRIEU_P1_COLAB_T4_20261103.md) ghi đã chạy pilot và bảng đối chứng; dự đoán/log gốc P1 ở Drive của Triệu, chưa có trong repo để đối chiếu độc lập ở lượt này. Đã nhận bài nộp không thay nghiệm thu của Trí hoặc V7 duyệt chung.
-> **Việc tiếp:** Trí đọc mục 4 và 6 báo cáo T4 (máy chuẩn, tiêu chí tái hiện, đối chứng C6), rồi mục 4 [đề xuất dữ liệu v2](../reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md); nhận output P1/V4 gốc, rà nhãn N4 còn vướng và duyệt chung. Chưa rút tập dev/test thật theo báo cáo. Không kết luận P1 đã tốt hơn từ 5 ảnh pilot; nguyên nhân lệch T4/A2000 chưa được xác minh. Lượt này chỉ pull/đọc/đồng bộ tài liệu, không chạy thực nghiệm. Các ghi chú cũ bên dưới giữ làm lịch sử; ưu tiên mục này và bảng resume.
+> **Trạng thái hiện hành — nhận bài nộp 05/11/2026:** đã pull `3b7df25 → 71264bd` (9 commit, 19 file), không xung đột. Triệu đã nộp báo cáo V4, 6 CSV N4 tầng B/V6 (báo cáo 58/58), code/notebook nhánh P1 và công cụ đối chứng. [Báo cáo T4](../../../reports/TRIEU_P1_COLAB_T4_20261103.md) ghi đã chạy pilot và bảng đối chứng; dự đoán/log gốc P1 ở Drive của Triệu, chưa có trong repo để đối chiếu độc lập ở lượt này. Đã nhận bài nộp không thay nghiệm thu của Trí hoặc V7 duyệt chung.
+> **Việc tiếp:** Trí đọc mục 4 và 6 báo cáo T4 (máy chuẩn, tiêu chí tái hiện, đối chứng C6), rồi mục 4 [đề xuất dữ liệu v2](../../../reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md); nhận output P1/V4 gốc, rà nhãn N4 còn vướng và duyệt chung. Chưa rút tập dev/test thật theo báo cáo. Không kết luận P1 đã tốt hơn từ 5 ảnh pilot; nguyên nhân lệch T4/A2000 chưa được xác minh. Lượt này chỉ pull/đọc/đồng bộ tài liệu, không chạy thực nghiệm. Các ghi chú cũ bên dưới giữ làm lịch sử; ưu tiên mục này và bảng resume.
 
-> **Trạng thái ưu tiên sau rà lại 29/10:** V1–V2 N4 A đã nộp đủ (117 dòng khớp artifact gốc), còn các ca nhãn/ID cần thống nhất và V3–V7 chưa hoàn tất. [Báo cáo rà](../reports/RA_SOAT_TRIEU_N4_20261029.md) có bằng chứng điểm mẫu ảnh lấn át điểm chữ ở một số khung lượt hai và chỉ ra hạn chế crop có lề nhưng thiếu biên bbox. P/R vẫn chưa chốt: N4 A không chứng minh nguyên nhân duy nhất hoặc đủ để bỏ R. Không chạy thí nghiệm mới, không xác nhận nhóm đã duyệt.
+> **Trạng thái ưu tiên sau rà lại 29/10:** V1–V2 N4 A đã nộp đủ (117 dòng khớp artifact gốc), còn các ca nhãn/ID cần thống nhất và V3–V7 chưa hoàn tất. [Báo cáo rà](../../../reports/RA_SOAT_TRIEU_N4_20261029.md) có bằng chứng điểm mẫu ảnh lấn át điểm chữ ở một số khung lượt hai và chỉ ra hạn chế crop có lề nhưng thiếu biên bbox. P/R vẫn chưa chốt: N4 A không chứng minh nguyên nhân duy nhất hoặc đủ để bỏ R. Không chạy thí nghiệm mới, không xác nhận nhóm đã duyệt.
 
 > **Đồng bộ Git đã xác nhận — 27/10/2026:** đã push commit [`e877541`](https://github.com/minhtridaoo/CS331/commit/e8775412f84f0927a6fe692f1f106bf53aacd369) lên `origin/main`; HEAD local khớp remote. Code, kết quả P4.6, gói N4 và phân công đã có trên GitHub. Bản ZIP sao lưu trong `quá khứ/`, dữ liệu MUCCA gốc và checkpoint vẫn ở máy.
 > **Việc tiếp theo:** Trí gửi đường dẫn [giao việc cho Triệu](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md), nghiệm thu phần kiểm chéo đã đạt và chốt quy tắc dữ liệu mới. Triệu làm N4 tầng A (V1–V2); chưa xác nhận đã nhận/hoàn thành.
 > **Trạng thái ưu tiên:** P4.6a–b đã xong; tập 10 ảnh/30 query đã khóa và P4.6c–d phần count đã chạy. Hiện ở N4 review khung, chưa chọn nhánh cải tiến P/R. Các hướng dẫn chuẩn bị C2/C3 và câu “chưa push/chưa chạy ảnh mới” còn lại bên dưới mô tả thời điểm trước; không phải việc phải làm lại. Lượt đồng bộ Git này không chạy thí nghiệm.
 
-**V4.9 — cập nhật 27/10/2026 sau pull phần Triệu (d6db189).** [Trang bắt đầu](../README.md) · [Nhật ký](../WORKLOG.md) · [Handoff](../HANDOFF/HANDOFF.md).
+**V4.9 — cập nhật 27/10/2026 sau pull phần Triệu (d6db189).** [Trang bắt đầu](../../../README.md) · [Nhật ký](../../../WORKLOG.md) · [Handoff](../HANDOFF/HANDOFF.md).
 
 **P4.6b đã đạt kiểm dev; P4.6a đã xác nhận nhãn, còn chốt quy tắc/lịch sử sử dụng và khóa.** Phần chạy/chấm/viết pilot của Trí đã đủ để chờ duyệt; Triệu đã chấp nhận bản kiểm kỹ thuật được ủy quyền ngày 24/10; Trí đọc và chưa duyệt ngày 27/10, yêu cầu T1–T4 V2. Chưa đánh giá hai ứng viên trên tập ảnh mới độc lập. CountGD++ vẫn là model đếm; CLIP chỉ chấm crop, không phải CLIP-Count.
 
@@ -30,23 +30,23 @@ Không cần chờ Triệu để chuẩn bị dữ liệu và code cho bước t
 
 | Mốc | Trạng thái | Nguồn / giới hạn |
 |---|---|---|
-| M0–M3: môi trường, checkpoint, smoke | Đã chạy | Lịch sử [WORKLOG](../WORKLOG.md) |
-| M4–M5: B0/B2 | Đủ 5 ảnh / 15 query | [Pilot](../reports/PILOT_SUMMARY.md); B0 một lượt, B2 tối đa 3 pseudo rồi lượt hai |
+| M0–M3: môi trường, checkpoint, smoke | Đã chạy | Lịch sử [WORKLOG](../../../WORKLOG.md) |
+| M4–M5: B0/B2 | Đủ 5 ảnh / 15 query | [Pilot](../../../reports/PILOT_SUMMARY.md); B0 một lượt, B2 tối đa 3 pseudo rồi lượt hai |
 | M6: E1/E2 | Đóng phạm vi 2 ảnh / 6 query | E2 .10/.23/.50; .35 không chạy; E3 chưa chạy |
-| Review định tính | Trí và Triệu đều 15/15 | [Triệu chốt v1 19/10](<../workspace Trí and Triệu/Triệu/TRIEU_VISUAL_REVIEW.md>); không phải nhãn bbox P4 đã kiểm độc lập |
-| Phần 2: evaluator | Đã chạy/audit; Triệu chấp nhận bản kiểm 24/10; **Triệu tự kiểm chéo 27/10, khớp** (self-test, Excel, 5 ca hỏng, chạy lại trùng run 20/10) | [Run chính](../results/countgdpp/pilot_eval_20261020/SUMMARY.md), [tự kiểm](../reports/TRIEU_TU_KIEM_PHAN2_20261027.md), [đánh giá](../reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md) |
-| Phần 3: tổng kết pilot | 27/10: Trí chưa duyệt kiểm chéo → Triệu tự kiểm Phần 2 (tối 27/10); còn q05_3 nhãn từng khung + phân tích B2/B0 (T2/T3); chờ nghiệm thu và duyệt chung | [PILOT_SUMMARY](../reports/PILOT_SUMMARY.md), phiếu nhóm ở §7 |
-| Benchmark paper | 1.190 ảnh đã chạy, count metrics kiểm 20/10 | [FSCD-147](../reports/BENCHMARK_FSCD147.md): MAE 8.336975, RMSE 24.637626; chưa xác nhận AP/AP50 |
-| P4.1–P4.2 | Có CLIP score và đối chứng CV | 15 query/481 khung; [CV](../results/countgdpp/p4_count_cv_20261020/report.json) |
-| P4.3–P4.5 | Có review, ranking/prompt diagnostic và Fusion | [Báo cáo P4](../reports/P4_CLIP_EXPLORATORY_FINDINGS_20261021.md); nhãn q03 sơ bộ |
-| P4.5a | Đã có gói kiểm nhãn; chưa nhận nhãn độc lập | [ZIP](../results/countgdpp/p4_label_review_handoff_20261021.zip): 47 khung, 3 CSV trắng |
-| P4.5b–c | Đã khóa cấu hình, kiểm từ điểm lưu sẵn | [Freeze](../results/countgdpp/p4_candidate_freeze_20261021.json), [audit 22/10](../reports/P4_AUDIT_20261022.md); chưa kiểm inference ảnh mới |
-| P4.6a–b | **XONG 27/10:** tập [p4_unseen_v1](../experiments/countgdpp/p4_unseen_v1/README.md) khóa 17:07; runner đạt kiểm dev (1)–(4) | [Hướng dẫn](P4_TIEP_THEO.md) |
-| P4.6c–d | **Count xong 27/10**; review khung bằng người còn chờ | [Kết quả](../reports/P4_6_UNSEEN_RESULTS_20261027.md): P4.6c–d (count) **XONG 27/10**: trên 30 query mới, MAE cả 30 = B2 gốc 13.00 / lọc điểm 7.27 / **Fusion 5.53** (Fusion tốt hơn lọc điểm, CI [−3.2, −0.3]). B0 tham chiếu 6.77, và B0 tốt nhất trên query có mặt (5.70). Bộ lọc bỏ ~50% vật đúng; X/Y vẫn còn lỗi (hỏi people ra chó/xe; sheep/bicycles gần nghĩa bị đếm). |
+| Review định tính | Trí và Triệu đều 15/15 | [Triệu chốt v1 19/10](<../../../workspace Trí and Triệu/Triệu/TRIEU_VISUAL_REVIEW.md>); không phải nhãn bbox P4 đã kiểm độc lập |
+| Phần 2: evaluator | Đã chạy/audit; Triệu chấp nhận bản kiểm 24/10; **Triệu tự kiểm chéo 27/10, khớp** (self-test, Excel, 5 ca hỏng, chạy lại trùng run 20/10) | [Run chính](../../../results/countgdpp/pilot_eval_20261020/SUMMARY.md), [tự kiểm](../../../reports/TRIEU_TU_KIEM_PHAN2_20261027.md), [đánh giá](../reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md) |
+| Phần 3: tổng kết pilot | 27/10: Trí chưa duyệt kiểm chéo → Triệu tự kiểm Phần 2 (tối 27/10); còn q05_3 nhãn từng khung + phân tích B2/B0 (T2/T3); chờ nghiệm thu và duyệt chung | [PILOT_SUMMARY](../../../reports/PILOT_SUMMARY.md), phiếu nhóm ở §7 |
+| Benchmark paper | 1.190 ảnh đã chạy, count metrics kiểm 20/10 | [FSCD-147](../../../reports/BENCHMARK_FSCD147.md): MAE 8.336975, RMSE 24.637626; chưa xác nhận AP/AP50 |
+| P4.1–P4.2 | Có CLIP score và đối chứng CV | 15 query/481 khung; [CV](../../../results/countgdpp/p4_count_cv_20261020/report.json) |
+| P4.3–P4.5 | Có review, ranking/prompt diagnostic và Fusion | [Báo cáo P4](../../../reports/P4_CLIP_EXPLORATORY_FINDINGS_20261021.md); nhãn q03 sơ bộ |
+| P4.5a | Đã có gói kiểm nhãn; chưa nhận nhãn độc lập | [ZIP](../../../results/countgdpp/p4_label_review_handoff_20261021.zip): 47 khung, 3 CSV trắng |
+| P4.5b–c | Đã khóa cấu hình, kiểm từ điểm lưu sẵn | [Freeze](../../../results/countgdpp/p4_candidate_freeze_20261021.json), [audit 22/10](../../../reports/P4_AUDIT_20261022.md); chưa kiểm inference ảnh mới |
+| P4.6a–b | **XONG 27/10:** tập [p4_unseen_v1](../../../experiments/countgdpp/p4_unseen_v1/README.md) khóa 17:07; runner đạt kiểm dev (1)–(4) | [Hướng dẫn](P4_TIEP_THEO.md) |
+| P4.6c–d | **Count xong 27/10**; review khung bằng người còn chờ | [Kết quả](../../../reports/P4_6_UNSEEN_RESULTS_20261027.md): P4.6c–d (count) **XONG 27/10**: trên 30 query mới, MAE cả 30 = B2 gốc 13.00 / lọc điểm 7.27 / **Fusion 5.53** (Fusion tốt hơn lọc điểm, CI [−3.2, −0.3]). B0 tham chiếu 6.77, và B0 tốt nhất trên query có mặt (5.70). Bộ lọc bỏ ~50% vật đúng; X/Y vẫn còn lỗi (hỏi people ra chó/xe; sheep/bicycles gần nghĩa bị đếm). |
 | Cải tiến v2 (P/R) | **Lên kế hoạch 27/10**, chưa chạy. N4 → chọn nhánh → dev/test mới → một lần test | [roadmap/KE_HOACH_CAI_TIEN_20261027.md](KE_HOACH_CAI_TIEN_20261027.md) |
 | P5: hoàn thiện kết luận/báo cáo cuối | Chưa hoàn thành | Phụ thuộc bằng chứng P4 và yêu cầu giảng viên, không mở thêm thí nghiệm chỉ để đủ mã mốc |
 
-**C2 cập nhật xác nhận 27/10:** Trí đã xác nhận nhãn của 10 ảnh (20 present + 10 absent), assistant ghi theo tin nhắn 27/10. Chưa khóa: còn chốt quy tắc chấm và xác nhận lịch sử sử dụng ảnh. C3/dev (1)–(4) đã đạt ở phiên song song; chưa chạy ảnh mới. Nguồn: [xác nhận của Trí](../experiments/countgdpp/p4_unseen_v1/human_review_20261027.json).
+**C2 cập nhật xác nhận 27/10:** Trí đã xác nhận nhãn của 10 ảnh (20 present + 10 absent), assistant ghi theo tin nhắn 27/10. Chưa khóa: còn chốt quy tắc chấm và xác nhận lịch sử sử dụng ảnh. C3/dev (1)–(4) đã đạt ở phiên song song; chưa chạy ảnh mới. Nguồn: [xác nhận của Trí](../../../experiments/countgdpp/p4_unseen_v1/human_review_20261027.json).
 
 ## Những số liệu cần phân biệt
 
@@ -63,7 +63,7 @@ Benchmark FSCD-147 dùng text + synthetic + pseudo + adaptive cropping, khác ad
 - [x] Review định tính đã đủ 15/15; giữ giới hạn và bất đồng đã xử lý trong nguồn.
 - [x] Phần 3 có thông tin run, số liệu, lỗi, nguồn/giới hạn và hướng tiếp.
 - [x] Triệu đọc/hiểu và chấp nhận bản kiểm kỹ thuật do assistant thực hiện 24/10; bằng chứng ở PILOT_SUMMARY §7. Không ghi Triệu tự audit code.
-- [x] Triệu tự kiểm chéo Phần 2 ngày 27/10: self-test, tính lại metric, truy ngược q05_3, tự gán nhãn q05_2, thử dữ liệu hỏng, chạy lại evaluator; tất cả khớp. Đồng ý dùng số liệu kèm lưu ý kết luận B0/B2 phụ thuộc q05_3. [Báo cáo](../reports/TRIEU_TU_KIEM_PHAN2_20261027.md).
+- [x] Triệu tự kiểm chéo Phần 2 ngày 27/10: self-test, tính lại metric, truy ngược q05_3, tự gán nhãn q05_2, thử dữ liệu hỏng, chạy lại evaluator; tất cả khớp. Đồng ý dùng số liệu kèm lưu ý kết luận B0/B2 phụ thuộc q05_3. [Báo cáo](../../../reports/TRIEU_TU_KIEM_PHAN2_20261027.md).
 - [~] Triệu T1 xong phần lớn (thiếu 2 ca uncertain/absent); T2 q05_2 xong, q05_3 chưa gán nhãn từng khung; T3 mới có phân tích độ nhạy.
 - [ ] T4 nhóm duyệt báo cáo, ghi tên/ngày/quyết định đóng vòng pilot.
 
@@ -79,6 +79,6 @@ Các file bổ sung vẫn local, không có trên origin/main d6db189; đã chu�
 
 **Deadline cuối: 02/12/2026.** Mốc nội bộ: sửa kiểm chéo trước 03/11, runner/dữ liệu trước 08/11, kết quả mới trước 15/11, bản thảo 22/11, hoàn thiện 29/11, dự phòng 30/11–01/12. Thời lượng T1–T4 đề xuất 6–10 giờ, có thể song song việc Trí; ước lượng tổng cũ 15–24 giờ không tự bao gồm phạm vi tự kiểm mới.
 
-Mỗi buổi thêm một mục [WORKLOG](../WORKLOG.md); khi có mốc mới, sửa trạng thái ở đây và [HANDOFF](../HANDOFF/HANDOFF.md). [Protocol kỹ thuật](PIPELINE_COUNTGDPP.md) · [Phân công/schema](PIPELINE_PHAN_CONG.md). Tài liệu cũ lưu ở [quá khứ](<../quá khứ/README.md>).
+Mỗi buổi thêm một mục [WORKLOG](../../../WORKLOG.md); khi có mốc mới, sửa trạng thái ở đây và [HANDOFF](../HANDOFF/HANDOFF.md). [Protocol kỹ thuật](PIPELINE_COUNTGDPP.md) · [Phân công/schema](PIPELINE_PHAN_CONG.md). Tài liệu cũ lưu ở [quá khứ](<../../README.md>).
 
-[Bản bàn giao tổng hợp cho session mới](../BAT_DAU_SESSION_MOI.md) được tạo ngày 27/10; không đánh dấu thêm mốc thực nghiệm nào hoàn thành.
+[Bản bàn giao tổng hợp cho session mới](../../../BAT_DAU_SESSION_MOI.md) được tạo ngày 27/10; không đánh dấu thêm mốc thực nghiệm nào hoàn thành.

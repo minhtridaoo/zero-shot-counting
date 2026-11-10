@@ -84,7 +84,7 @@ Run_config lưu 7 hash nguồn. Trong checkout Windows của lượt này:
 - 4/7 lệch byte nhưng khớp chính xác sau khi đổi CRLF về LF: ba file prediction và evaluate_pilot.py.
 - Không còn chênh lệch nội dung chưa giải thích trong 7 nguồn.
 
-Không gọi đây là 7/7 khớp byte thô. Không sửa raw prediction hoặc metadata cũ để ép hash. Đã lưu cả hash checkout và hash LF trong [audit JSON](audits/TRIEU_EVALUATOR_20261021.json).
+Không gọi đây là 7/7 khớp byte thô. Không sửa raw prediction hoặc metadata cũ để ép hash. Đã lưu cả hash checkout và hash LF trong [audit JSON](../../../reports/audits/TRIEU_EVALUATOR_20261021.json).
 
 Self-test PASS là thông tin Minhtri đã báo trong handoff trước; lượt này không chạy/import evaluator, self-test hoặc model. Phép đối chiếu số học và kiểm các file đã lưu không phải run đánh giá nghiên cứu mới.
 
@@ -92,7 +92,7 @@ Self-test PASS là thông tin Minhtri đã báo trong handoff trước; lượt 
 
 Repo thiếu file chi tiết được bản review Triệu liên kết. Đã bổ sung từ kết quả của chính cuộc trò chuyện ngày 19/10, giữ hash nguồn của bản sao:
 
-- [Q02_1_DETAILED_REVIEW.md](<../workspace Trí and Triệu/Triệu/Q02_1_DETAILED_REVIEW.md>).
+- [Q02_1_DETAILED_REVIEW.md](<../../../workspace Trí and Triệu/Triệu/Q02_1_DETAILED_REVIEW.md>).
 - Ba JSON đối chiếu stage1/final/15 nhóm đĩa và thư mục chín ảnh bằng chứng.
 
 Các nhóm có độ chắc chắn vừa vẫn được ghi rõ là review của assistant; không dùng chúng để giả xác nhận Triệu đã phân xử mọi box. Không thay đổi GT, ảnh, prediction, ngưỡng hoặc code evaluator.

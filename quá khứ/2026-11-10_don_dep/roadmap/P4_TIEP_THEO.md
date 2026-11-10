@@ -1,6 +1,6 @@
 # P4 — việc Trí có thể làm tiếp khi chờ Triệu
 
-**Cập nhật 27/10/2026.** Bắt đầu buổi 3 giờ và ghi điểm dừng ở [CHECKLIST_3_GIO](CHECKLIST_3_GIO.md). Đây là hướng dẫn tiếp theo; trạng thái chung ở [ROADMAP](ROADMAP.md), kết quả đã kiểm ở [audit P4](../reports/P4_AUDIT_20261022.md). Các ô chưa đánh dấu là việc dự kiến, chưa thực thi.
+**Cập nhật 27/10/2026.** Bắt đầu buổi 3 giờ và ghi điểm dừng ở [CHECKLIST_3_GIO](CHECKLIST_3_GIO.md). Đây là hướng dẫn tiếp theo; trạng thái chung ở [ROADMAP](ROADMAP.md), kết quả đã kiểm ở [audit P4](../../../reports/P4_AUDIT_20261022.md). Các ô chưa đánh dấu là việc dự kiến, chưa thực thi.
 
 ## 1. Chốt phạm vi trước khi làm
 
@@ -63,7 +63,7 @@ Giữ hai ứng viên đã khóa: lọc bằng điểm CountGD++ và Fusion 50/5
 
 **Người làm: Trí.** Có thể đọc code và viết adapter trong lúc chờ kiểm nhãn; thử chạy model/evaluator do Trí tự thực hiện hoặc assistant hỏi trước nếu chạy thay.
 
-Nguồn chuẩn: [freeze JSON](../results/countgdpp/p4_candidate_freeze_20261021.json), [CLIP run_config](../results/countgdpp/p4_clip_all15_20261020/run_config.json), [code chấm CLIP cũ](../evaluation/p4_clip_score_all15_20261020.py). Script chấm cũ gắn đường dẫn 15 query dev; chưa dùng nó nguyên trạng làm runner cho ảnh mới.
+Nguồn chuẩn: [freeze JSON](../../../results/countgdpp/p4_candidate_freeze_20261021.json), [CLIP run_config](../../../results/countgdpp/p4_clip_all15_20261020/run_config.json), [code chấm CLIP cũ](../../../evaluation/p4_clip_score_all15_20261020.py). Script chấm cũ gắn đường dẫn 15 query dev; chưa dùng nó nguyên trạng làm runner cho ảnh mới.
 
 | Thành phần cần giữ | Quy tắc đã dùng |
 |---|---|
@@ -77,7 +77,7 @@ Nguồn chuẩn: [freeze JSON](../results/countgdpp/p4_candidate_freeze_20261021
 
 Freeze hiện chứng minh tái lập **từ điểm đã lưu**, chưa chứng minh pipeline mới chạy ảnh → B2 → CLIP giống hệt. Revision CLIP có trong run_config, nhưng chưa có hash trọng số model được xác nhận trong lượt audit 22/10. Bổ sung manifest code/checkpoint/processor khi chuẩn bị runner; giữ nguyên freeze và kết quả gốc.
 
-**Code adapter viết 27/10, kiểm dev ĐẠT cùng ngày** ([SUMMARY](../reports/audits/devcheck_20261027/SUMMARY.md)) (thư mục `experiments/countgdpp/`):
+**Code adapter viết 27/10, kiểm dev ĐẠT cùng ngày** ([SUMMARY](../../../reports/audits/devcheck_20261027/SUMMARY.md)) (thư mục `experiments/countgdpp/`):
 
 - `run_b2_frozen.py`: B2 như pilot (τ = .23 cố định, không có tham số dòng lệnh để chỉnh). Không cần B0 của run khác; `--b0-reference` dùng để kiểm replay trên dev.
 - `p4_clip_score.py`: crop/template/cosine giống bản 20/10; pin revision, dừng nếu revision lệch.
@@ -85,7 +85,7 @@ Freeze hiện chứng minh tái lập **từ điểm đã lưu**, chưa chứng 
 
 Lệnh kiểm dev theo thứ tự nằm ở bảng §3 của [CHECKLIST_3_GIO](CHECKLIST_3_GIO.md).
 
-**Điều kiện qua bước này:** runner nhận input không GT, lưu ID/rank/box/điểm B2/điểm CLIP/khung giữ và count cho từng cách. Kiểm áp dụng freeze trên dev phải khớp [audit cũ](../results/countgdpp/p4_freeze_audit_20261021.json); kiểm lại scorer trên dev với môi trường ghi rõ trước khi dùng ảnh mới. Nếu có sai số điểm, báo độ lệch và tác động qua ngưỡng, không lặng lẽ thay ngưỡng để khớp. Việc kiểm dev này là kiểm triển khai, không được ghi như đánh giá độc lập mới.
+**Điều kiện qua bước này:** runner nhận input không GT, lưu ID/rank/box/điểm B2/điểm CLIP/khung giữ và count cho từng cách. Kiểm áp dụng freeze trên dev phải khớp [audit cũ](../../../results/countgdpp/p4_freeze_audit_20261021.json); kiểm lại scorer trên dev với môi trường ghi rõ trước khi dùng ảnh mới. Nếu có sai số điểm, báo độ lệch và tác động qua ngưỡng, không lặng lẽ thay ngưỡng để khớp. Việc kiểm dev này là kiểm triển khai, không được ghi như đánh giá độc lập mới.
 
 ## 4. P4.6c–d: chạy và đánh giá một lần theo quy trình đã chốt
 
@@ -101,8 +101,8 @@ Lệnh kiểm dev theo thứ tự nằm ở bảng §3 của [CHECKLIST_3_GIO](C
 
 ## 5. Phần đã nhận của Triệu và việc còn lại
 
-1. **Đóng pilot:** Triệu đã chấp nhận bản kiểm evaluator được ủy quyền ngày 24/10; không cần kiểm lại. Trí đọc và cùng nhóm duyệt [PILOT_SUMMARY §7](../reports/PILOT_SUMMARY.md). Không cần hoàn thành P4.6 để đóng pilot.
-2. **Kiểm nhãn P4:** [ZIP 47 khung](../results/countgdpp/p4_label_review_handoff_20261021.zip) có 13 + 18 + 16 dòng trắng cho q03_1/2/3. Triệu điền độc lập, chưa xem nhãn assistant trước; trả 3 CSV rồi ghi điểm bất đồng và cách phân xử. q05_2 dùng review cũ, không nằm trong 47 khung này. Review định tính ngày 19/10 không thay bước này.
+1. **Đóng pilot:** Triệu đã chấp nhận bản kiểm evaluator được ủy quyền ngày 24/10; không cần kiểm lại. Trí đọc và cùng nhóm duyệt [PILOT_SUMMARY §7](../../../reports/PILOT_SUMMARY.md). Không cần hoàn thành P4.6 để đóng pilot.
+2. **Kiểm nhãn P4:** [ZIP 47 khung](../../../results/countgdpp/p4_label_review_handoff_20261021.zip) có 13 + 18 + 16 dòng trắng cho q03_1/2/3. Triệu điền độc lập, chưa xem nhãn assistant trước; trả 3 CSV rồi ghi điểm bất đồng và cách phân xử. q05_2 dùng review cũ, không nằm trong 47 khung này. Review định tính ngày 19/10 không thay bước này.
 
 Trí vẫn làm P4.6a và chuẩn bị P4.6b trong lúc chờ; không tự ký thay Triệu hoặc biến nhãn sơ bộ thành nhãn đã kiểm.
 
@@ -113,11 +113,11 @@ Trí vẫn làm P4.6a và chuẩn bị P4.6b trong lúc chờ; không tự ký t
 - [ ] Trí đọc; nhóm duyệt pilot (độc lập với P4.6).
 - [ ] Triệu kiểm 47 nhãn P4; xử lý bất đồng.
 - [x] P4.6a: khóa dữ liệu/nhãn/split và lịch sử sử dụng. *(27/10 17:07, Trí xác nhận)*
-- [x] P4.6b: runner áp dụng freeze và kiểm trên dev đạt, đủ provenance. *(27/10, trùng tuyệt đối; [SUMMARY](../reports/audits/devcheck_20261027/SUMMARY.md))*
-- [x] P4.6c: dự đoán trên tập mới, không dùng GT vào model/bộ lọc. *(27/10, [kết quả](../reports/P4_6_UNSEEN_RESULTS_20261027.md))*
+- [x] P4.6b: runner áp dụng freeze và kiểm trên dev đạt, đủ provenance. *(27/10, trùng tuyệt đối; [SUMMARY](../../../reports/audits/devcheck_20261027/SUMMARY.md))*
+- [x] P4.6c: dự đoán trên tập mới, không dùng GT vào model/bộ lọc. *(27/10, [kết quả](../../../reports/P4_6_UNSEEN_RESULTS_20261027.md))*
 - [~] P4.6d: chấm count + đúng vật, báo cả kết quả xấu và giới hạn. *(27/10: count + chỉ số tự động điểm-trong-khung xong; review khung bằng người theo §4 chưa làm)*
   - **N4 (27/10):** gói review khung chọn lọc, mù với cách lọc, đã sẵn ở `results/countgdpp/p4_n4_review_package_20261027/`. Tầng A gồm 7 query / 78 khung (4 query people + 3 query vắng mặt bị báo sai), tầng B gồm 2 query / 41 khung. Trí điền CSV rồi assistant ghép với bảng tra. Tóm tắt toàn dự án cho demo: `reports/TOM_TAT_DU_AN_20261027.md`.
 
-Sau đó mới quyết định phương pháp cuối và báo cáo đồ án; không hứa P4.6 tự động đáp ứng mọi tiêu chí của giảng viên. Ghi mỗi mốc tại [WORKLOG](../WORKLOG.md), không tạo thêm chuỗi handoff ngày trong thư mục hiện hành.
+Sau đó mới quyết định phương pháp cuối và báo cáo đồ án; không hứa P4.6 tự động đáp ứng mọi tiêu chí của giảng viên. Ghi mỗi mốc tại [WORKLOG](../../../WORKLOG.md), không tạo thêm chuỗi handoff ngày trong thư mục hiện hành.
 
 **Lưu ý kỹ thuật 27/10:** B2 pilot hiện chỉ đọc B0 tham chiếu từ run m4_first5_b0, không nhận ID mới nếu chưa sửa adapter; không đưa lệnh inference ảnh mới như thể runner đã sẵn. C3 của checklist chỉ rõ chỗ cần chuẩn bị.

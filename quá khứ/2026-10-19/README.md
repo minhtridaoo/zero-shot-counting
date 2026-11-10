@@ -1,6 +1,6 @@
 # Kho quá khứ — sắp xếp ngày 19/10/2026
 
-Đây là tài liệu lịch sử, không phải chỉ dẫn hiện hành. Mở [README chính](../../README.md) hoặc [ROADMAP](../../roadmap/ROADMAP.md) để làm tiếp.
+Đây là tài liệu lịch sử, không phải chỉ dẫn hiện hành. Mở [README chính](../../README.md) hoặc [ROADMAP](../2026-11-10_don_dep/roadmap/ROADMAP.md) để làm tiếp.
 
 Các tài liệu cũ đã được di chuyển; bản tài liệu đang sửa được sao lưu trước khi cập nhật. Không xóa nội dung lịch sử. Liên kết Markdown local đã được tính lại theo vị trí mới; đoạn lệnh/đường dẫn trong lời văn cũ vẫn mô tả thời điểm cũ. Hash trước lưu và sau sửa liên kết nằm trong [manifest](archive_manifest.json).
 

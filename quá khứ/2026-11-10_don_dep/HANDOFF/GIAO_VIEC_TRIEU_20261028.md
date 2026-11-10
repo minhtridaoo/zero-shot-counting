@@ -9,7 +9,7 @@ Bản này **thay** ZIP V2 cũ (`TRIEU_T1_T4_20261027_v2.zip`, chưa từng gử
 ## 0. Bối cảnh trong 5 dòng
 
 1. Bản tự kiểm Phần 2 ngày 27/10 của Triệu **đạt** phần tự chạy evaluator và q05_2 ([đánh giá](../reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md)).
-2. Nhóm đã chạy CountGD++ + 2 bộ lọc trên **10 ảnh MUCCA mới**, xem [tóm tắt dự án](../reports/TOM_TAT_DU_AN_20261027.md). Fusion có MAE tốt nhất, nhưng bỏ khoảng 50% vật đúng, và lỗi X/Y vẫn còn (hỏi "people" thì model khoanh chó).
+2. Nhóm đã chạy CountGD++ + 2 bộ lọc trên **10 ảnh MUCCA mới**, xem [tóm tắt dự án](../../../reports/TOM_TAT_DU_AN_20261027.md). Fusion có MAE tốt nhất, nhưng bỏ khoảng 50% vật đúng, và lỗi X/Y vẫn còn (hỏi "people" thì model khoanh chó).
 3. Trí muốn cải tiến tiếp theo một trong hai nhánh ([kế hoạch](../roadmap/KE_HOACH_CAI_TIEN_20261027.md)):
    - **P**: kiểm mẫu tự chọn bằng CLIP trước lượt 2;
    - **R**: bộ lọc giữ được vật đúng.
@@ -41,7 +41,7 @@ Bản này **thay** ZIP V2 cũ (`TRIEU_T1_T4_20261027_v2.zip`, chưa từng gử
 
 ## 2. Cách làm N4 (V1, V2, V6)
 
-Quy ước đầy đủ ở [§4 HUONG_DAN](../experiments/countgdpp/p4_unseen_v1/HUONG_DAN_KIEM_DU_LIEU.md). Tóm tắt:
+Quy ước đầy đủ ở [§4 HUONG_DAN](../../../experiments/countgdpp/p4_unseen_v1/HUONG_DAN_KIEM_DU_LIEU.md). Tóm tắt:
 
 1. Mở `results/countgdpp/p4_n4_review_package_20261027/README.md`.
 2. Với từng query, xem `*_crops.jpg` (ảnh cắt từng khung, đánh số `#rank`) và `*_overview.jpg` (vị trí của khung trong ảnh), rồi điền file `*_labels_BLANK.csv`.

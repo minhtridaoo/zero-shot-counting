@@ -15,7 +15,7 @@
           ▼
 [5] N4 review khung ✅ tầng A xong 29/10 (Triệu; tầng B còn lại, hạn 02/11)
           ▼
-[6] Chọn biến thể ✅ chốt D1–D10 ngày 05/11 → [7] dữ liệu v2 ◀── BẠN ĐANG Ở ĐÂY (Triệu rút 06/11): P1 đã code + pilot T4; Trí chốt D1–D10 ngày 06/11 (reports/KE_HOACH_TIEP_THEO_20261105.md): đề xuất P (bằng chứng ở reports/N4_KET_QUA_TANG_A_20261029.md); Trí quyết
+[6] Chọn biến thể ✅ chốt D1–D10 ngày 05/11 → [7] dữ liệu v2 ◀── BẠN ĐANG Ở ĐÂY (10/11: đã rút 05/11, kiểm 0/60, khóa mục tiêu 12/11; lịch mới ở KE_HOACH_HOAN_THANH_20261110): P1 đã code + pilot T4; Trí chốt D1–D10 ngày 06/11 (reports/KE_HOACH_TIEP_THEO_20261105.md): đề xuất P (bằng chứng ở reports/N4_KET_QUA_TANG_A_20261029.md); Trí quyết
           ▼
 [7] Tập dữ liệu mới: dev 20 + test 40 ảnh, kiểm absent/GT, khóa                   03–08/11
           ▼
@@ -40,7 +40,7 @@ Song song: Triệu làm nốt kiểm chéo pilot (q05_3, phân tích B2/B0) → 
 | 31/10–02/11 | Khi Triệu xong N4: cùng assistant xem bảng E1–E4 và **chọn P hay R** | 45 phút | Quá 31/10 thì chọn bằng chỉ báo tự động |
 | 03–08/11 | Assistant rút và chia tập. Trí kiểm absent/GT **dev 20 ảnh** (Triệu kiểm test 40), rồi khóa. Duyệt pilot chung | **2 giờ** | Làm theo HUONG_DAN như lần trước |
 | 09–15/11 | Cho phép assistant viết code + chạy dev (GPU local khoảng 1 giờ / cấu hình / 60 query). Trí đọc bảng dev, quyết tham số | **1,5 giờ** | Không cần Kaggle |
-| 16–22/11 | Chốt + freeze v2. Bắt đầu viết báo cáo: giới thiệu, phương pháp, thiết lập thí nghiệm | **3 giờ** | Dùng [TOM_TAT](../reports/TOM_TAT_DU_AN_20261027.md) làm khung |
+| 16–22/11 | Chốt + freeze v2. Bắt đầu viết báo cáo: giới thiệu, phương pháp, thiết lập thí nghiệm | **3 giờ** | Dùng [TOM_TAT](../../../reports/TOM_TAT_DU_AN_20261027.md) làm khung |
 | 23–26/11 | Cho phép chạy test **một lần**; đọc kết quả, viết phần kết quả và hạn chế | **2,5 giờ** | Kết quả âm vẫn báo trung thực |
 | 27/11–01/12 | Hoàn thiện báo cáo, slide, demo, diễn tập | **4 giờ** | 30/11–01/12 để dự phòng |
 | **02/12** | **Nộp / báo cáo** | | |

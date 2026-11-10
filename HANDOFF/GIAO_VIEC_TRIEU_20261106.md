@@ -1,6 +1,6 @@
 # Giao việc cho Triệu — đợt 2, từ 06/11/2026
 
-**Người giao:** Trí (assistant soạn theo yêu cầu của Trí, 05/11). Thay cho phần còn lại của [đợt 1](GIAO_VIEC_TRIEU_20261028.md); V1–V6 đợt 1 đã xong và đạt kiểm.
+**Người giao:** Trí (assistant soạn theo yêu cầu của Trí, 05/11). Thay cho phần còn lại của [đợt 1](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>); V1–V6 đợt 1 đã xong và đạt kiểm.
 **Quyết định đã chốt:** Trí đồng ý **toàn bộ khuyến nghị D1–D10** trong [KE_HOACH_TIEP_THEO_20261105.md](../reports/KE_HOACH_TIEP_THEO_20261105.md) §3, đồng thời nghiệm thu V3–V6. Triệu **không cần chờ Trí** để làm các việc dưới đây.
 
 ## 0. Tóm tắt quyết định (chi tiết ở §3 kế hoạch)
@@ -19,7 +19,7 @@
 | W3 | Ghi xác nhận duyệt pilot (V7) của Triệu vào PILOT_SUMMARY §7 (Trí đã đồng ý ngày 05/11) | 10 phút | 06/11 | Không |
 | **W4** | **Kiểm absent/GT tập test 40 ảnh** theo `HUONG_DAN_KIEM_DU_LIEU.md` (Trí kiểm tập dev 20 ảnh) | khoảng 2 giờ | **08/11** | **Có**: chưa khóa thì chưa chạy được |
 
-> **Lưu ý W4 (thêm 05/11 khuya, xem [kiểm lại](../reports/KIEM_LAI_TRUOC_DUYET_20261105.md)):** `evaluate_research.py` chưa nhận GT `uncertain`. Nếu lớp absent nhìn thấy trong ảnh thì **đổi sang lớp dự phòng kế tiếp**, ghi lý do, **không** ghi `uncertain`. GT có mặt mà nghi ngờ thì ghi vào `uncertainty_note`, giữ số điểm MUCCA.
+> **Lưu ý W4 (thêm 05/11 khuya, xem [kiểm lại](<../quá khứ/2026-11-10_don_dep/reports/KIEM_LAI_TRUOC_DUYET_20261105.md>)):** `evaluate_research.py` chưa nhận GT `uncertain`. Nếu lớp absent nhìn thấy trong ảnh thì **đổi sang lớp dự phòng kế tiếp**, ghi lý do, **không** ghi `uncertain`. GT có mặt mà nghi ngờ thì ghi vào `uncertainty_note`, giữ số điểm MUCCA.
 
 | W5 | Khi cả dev lẫn test đã kiểm xong: khóa (`status=LOCKED`, người/ngày, hash) | 10 phút | 08/11 | Có |
 | **W6** | **Chạy trên T4 với tập dev** (lệnh ở §3). **Không chạy test** | khoảng 2–3 giờ GPU | **10/11** | Có |

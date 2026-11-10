@@ -32,13 +32,13 @@
 
 ## 3. T0 — giao đủ đầu vào trước khi tính thời gian làm
 
-Đường giao thay thế cho Git: [TRIEU_T1_T4_20261027_v2.zip](../HANDOFF/TRIEU_T1_T4_20261027_v2.zip), do assistant chuẩn bị, **chưa gửi thay người dùng**. Gói giữ cấu trúc thư mục, có manifest SHA-256 và hướng dẫn trong `DELIVERY_README.md`. Giải nén vào thư mục riêng; không ghi đè checkout đang có thay đổi. Dùng repo Git đã đồng bộ cũng được, nhưng phải có đủ các file tương đương.
+Đường giao thay thế cho Git: [TRIEU_T1_T4_20261027_v2.zip](../../../HANDOFF/TRIEU_T1_T4_20261027_v2.zip), do assistant chuẩn bị, **chưa gửi thay người dùng**. Gói giữ cấu trúc thư mục, có manifest SHA-256 và hướng dẫn trong `DELIVERY_README.md`. Giải nén vào thư mục riêng; không ghi đè checkout đang có thay đổi. Dùng repo Git đã đồng bộ cũng được, nhưng phải có đủ các file tương đương.
 
 **Bắt buộc cho T1–T4:**
 
 - `evaluation/evaluate_pilot.py`; manifest/input pilot; B0 15 dòng và B2 hai file 6+9 dòng; manual q05_2 giữ nguyên.
 - Kết quả `pilot_eval_20261020/` để đối chiếu; trace đủ 15 query.
-- Gói [q05](../results/countgdpp/q05_error_analysis_package_20261027/README.json): 21 khung B0, 79 khung B2, 3 pseudo, ảnh và 3 CSV trắng. Thêm ảnh gốc mcac_27 và overlay q05_2 để kiểm lại 14 khung.
+- Gói [q05](../../../results/countgdpp/q05_error_analysis_package_20261027/README.json): 21 khung B0, 79 khung B2, 3 pseudo, ảnh và 3 CSV trắng. Thêm ảnh gốc mcac_27 và overlay q05_2 để kiểm lại 14 khung.
 - Review nguồn và báo cáo/JSON của **cả B2/CLIP CV lẫn Fusion CV**, cùng kế hoạch này.
 
 `p4_unseen_v1` là đầu vào **nhánh Trí/P4**, đang DRAFT; **không phải điều kiện để Triệu chạy T1–T3**. Không phát sinh yêu cầu cài GPU, tải CountGD++ hoặc tải toàn bộ dataset để làm kiểm evaluator/nhãn này. Gói ZIP chỉ bảo đảm tài liệu và đầu vào của T1–T4; các link ngoài phạm vi đó có thể cần checkout đầy đủ.
@@ -167,7 +167,7 @@ Sau khi phân loại cả quả, chọn **rank nhỏ nhất trong các box đủ
 
 Làm sau bản T2 hoàn chỉnh hoặc bản T2 đã ghi rõ mọi ca chưa chắc. Bắt đầu phần số học trước được, nhưng phần diễn giải hoàn tất **02/11**, sau T2 một ngày.
 
-Nguồn: [trace 15 query](audits/PER_QUERY_TRACE_20261024.csv), [review pseudo](<../workspace Trí and Triệu/Triệu/TRIEU_VISUAL_REVIEW.md>), đầu ra T2. Mốc **đã đối chiếu từ trace**, để kiểm cách tính:
+Nguồn: [trace 15 query](../../../reports/audits/PER_QUERY_TRACE_20261024.csv), [review pseudo](<../../../workspace Trí and Triệu/Triệu/TRIEU_VISUAL_REVIEW.md>), đầu ra T2. Mốc **đã đối chiếu từ trace**, để kiểm cách tính:
 
 - Tổng sai số tuyệt đối: B0=291, B2=330, chênh **+39**.
 - Riêng q05_3: 18→76, chênh **+58**.
@@ -181,10 +181,10 @@ Dùng nhãn T2 để liên hệ: đếm phần quả, sai loại, trùng, box ba
 
 | Cấu hình trên cùng 5 ảnh dev, CV theo ảnh | MAE | Nguồn |
 |---|---:|---|
-| B2 gốc | 22.0 | [B2/CLIP CV](../results/countgdpp/p4_count_cv_20261020/report.json) |
+| B2 gốc | 22.0 | [B2/CLIP CV](../../../results/countgdpp/p4_count_cv_20261020/report.json) |
 | B2 chỉ lọc confidence | **4.6** | Cùng nguồn trên |
 | CLIP-only filter | **6.8** | Cùng nguồn trên |
-| Fusion 50/50 (B2 + CLIP chuẩn hóa) | **5.8** | [Fusion CV](../results/countgdpp/p4_fixed_fusion_cv_20261021/report.json) |
+| Fusion 50/50 (B2 + CLIP chuẩn hóa) | **5.8** | [Fusion CV](../../../results/countgdpp/p4_fixed_fusion_cv_20261021/report.json) |
 
 Không gọi 5.8 là CLIP-only. Dev-fit 4.333333/4.4 trong freeze là loại điểm khác, không thay CV. **P4.6 chưa chạy/chấm trên ảnh mới**: mới có DRAFT dữ liệu và kiểm áp dụng freeze trên điểm dev lưu sẵn; không viết “đang kiểm trên tập mới” như một kết quả đã có.
 
@@ -214,8 +214,8 @@ Trí kiểm: đường dẫn mở được, log có nội dung/exit code thật,
 ## 8. Trí làm song song và trạng thái tiếp tục
 
 - **C1 đã xong:** Trí đã đọc, **chưa duyệt**, yêu cầu T1–T4. Không quay lại ghi C1 chưa làm hoặc bỏ yêu cầu mới vì Triệu từng chấp nhận audit 24/10.
-- **C2:** phương án B; [p4_unseen_v1](../experiments/countgdpp/p4_unseen_v1/README.md) đã có DRAFT 10 ảnh/30 query. Trí kiểm absent/GT/quy tắc chấm rồi khóa; không coi tên `unseen` hay manifest `test` là bằng chứng tập đã sẵn sàng.
-- **C3:** adapter đã viết; [kiểm dev bước (1)](../results/countgdpp/p4_freeze_devcheck_20261027/run_config.json) áp dụng freeze trên điểm cũ khớp 15/15. Bước (2) B2, (3) CLIP, (4) áp dụng freeze trên điểm mới vẫn cần kiểm; không gọi toàn runner đạt.
+- **C2:** phương án B; [p4_unseen_v1](../../../experiments/countgdpp/p4_unseen_v1/README.md) đã có DRAFT 10 ảnh/30 query. Trí kiểm absent/GT/quy tắc chấm rồi khóa; không coi tên `unseen` hay manifest `test` là bằng chứng tập đã sẵn sàng.
+- **C3:** adapter đã viết; [kiểm dev bước (1)](../../../results/countgdpp/p4_freeze_devcheck_20261027/run_config.json) áp dụng freeze trên điểm cũ khớp 15/15. Bước (2) B2, (3) CLIP, (4) áp dụng freeze trên điểm mới vẫn cần kiểm; không gọi toàn runner đạt.
 - Chuẩn bị dữ liệu/kiểm triển khai có thể làm song song T1–T3. Chỉ mở đánh giá ảnh mới khi dữ liệu đã khóa và kiểm dev đạt. Không thay freeze hoặc dùng GT test vào model/bộ lọc.
 - Không coi point-in-box đơn thuần là chứng minh box đếm đúng loại; quy tắc matching/nhãn dùng cho kết luận chọn đúng vật cần chốt trước N4.
 

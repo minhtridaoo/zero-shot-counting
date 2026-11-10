@@ -1,7 +1,7 @@
 # Checklist làm tiếp — buổi 3 giờ, lập ngày 27/10/2026
 
-> **Trạng thái hiện hành — nhận bài nộp 05/11/2026:** đã pull `3b7df25 → 71264bd` (9 commit, 19 file), không xung đột. Triệu đã nộp báo cáo V4, 6 CSV N4 tầng B/V6 (báo cáo 58/58), code/notebook nhánh P1 và công cụ đối chứng. [Báo cáo T4](../reports/TRIEU_P1_COLAB_T4_20261103.md) ghi đã chạy pilot và bảng đối chứng; dự đoán/log gốc P1 ở Drive của Triệu, chưa có trong repo để đối chiếu độc lập ở lượt này. Đã nhận bài nộp không thay nghiệm thu của Trí hoặc V7 duyệt chung.
-> **Việc tiếp:** Trí đọc mục 4 và 6 báo cáo T4 (máy chuẩn, tiêu chí tái hiện, đối chứng C6), rồi mục 4 [đề xuất dữ liệu v2](../reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md); nhận output P1/V4 gốc, rà nhãn N4 còn vướng và duyệt chung. Chưa rút tập dev/test thật theo báo cáo. Không kết luận P1 đã tốt hơn từ 5 ảnh pilot; nguyên nhân lệch T4/A2000 chưa được xác minh. Lượt này chỉ pull/đọc/đồng bộ tài liệu, không chạy thực nghiệm. Các ghi chú cũ bên dưới giữ làm lịch sử; ưu tiên mục này và bảng resume.
+> **Trạng thái hiện hành — nhận bài nộp 05/11/2026:** đã pull `3b7df25 → 71264bd` (9 commit, 19 file), không xung đột. Triệu đã nộp báo cáo V4, 6 CSV N4 tầng B/V6 (báo cáo 58/58), code/notebook nhánh P1 và công cụ đối chứng. [Báo cáo T4](../../../reports/TRIEU_P1_COLAB_T4_20261103.md) ghi đã chạy pilot và bảng đối chứng; dự đoán/log gốc P1 ở Drive của Triệu, chưa có trong repo để đối chiếu độc lập ở lượt này. Đã nhận bài nộp không thay nghiệm thu của Trí hoặc V7 duyệt chung.
+> **Việc tiếp:** Trí đọc mục 4 và 6 báo cáo T4 (máy chuẩn, tiêu chí tái hiện, đối chứng C6), rồi mục 4 [đề xuất dữ liệu v2](../../../reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md); nhận output P1/V4 gốc, rà nhãn N4 còn vướng và duyệt chung. Chưa rút tập dev/test thật theo báo cáo. Không kết luận P1 đã tốt hơn từ 5 ảnh pilot; nguyên nhân lệch T4/A2000 chưa được xác minh. Lượt này chỉ pull/đọc/đồng bộ tài liệu, không chạy thực nghiệm. Các ghi chú cũ bên dưới giữ làm lịch sử; ưu tiên mục này và bảng resume.
 
 > **Đồng bộ Git đã xác nhận — 27/10/2026:** đã push commit [`e877541`](https://github.com/minhtridaoo/CS331/commit/e8775412f84f0927a6fe692f1f106bf53aacd369) lên `origin/main`; HEAD local khớp remote. Code, kết quả P4.6, gói N4 và phân công đã có trên GitHub. Bản ZIP sao lưu trong `quá khứ/`, dữ liệu MUCCA gốc và checkpoint vẫn ở máy.
 > **Việc tiếp theo:** Trí gửi đường dẫn [giao việc cho Triệu](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md), nghiệm thu phần kiểm chéo đã đạt và chốt quy tắc dữ liệu mới. Triệu làm N4 tầng A (V1–V2); chưa xác nhận đã nhận/hoàn thành.
@@ -22,7 +22,7 @@
   - Dữ liệu: phương án B, tập `p4_unseen_v1` **ĐÃ KHÓA 27/10 17:07** (absent của mcac_88/84 đổi trucks→bicycles trước khi khóa).
   - Kiểm dev bước (1) đạt.
   - **Việc đầu tiên của Trí:** chốt quy tắc chấm và lịch sử sử dụng, rồi khóa p4_unseen_v1. Nhãn đã xác nhận; C3 đã đạt; chưa chạy ảnh mới.
-- Các thay đổi tài liệu/P4 local đã được bảo toàn khi pull, **chưa commit/push**. Snapshot: [trước pull](<../quá khứ/2026-10-27_truoc_pull.zip>). Stash an toàn được giữ nguyên để phục hồi, không apply lại vào workspace hiện tại.
+- Các thay đổi tài liệu/P4 local đã được bảo toàn khi pull, **chưa commit/push**. Snapshot: [trước pull](<../../2026-10-27_truoc_pull.zip>). Stash an toàn được giữ nguyên để phục hồi, không apply lại vào workspace hiện tại.
 
 ## 1. Buổi 3 giờ tiếp theo của Trí — không lặp C1
 
@@ -48,14 +48,14 @@ Không cần chờ Triệu xong T1–T3 để chuẩn bị P4. Không mở bộ 
 ### C1 — Trí đã đọc, yêu cầu sửa T1–T4
 
 - [x] Đọc [kết quả Triệu chấp nhận](../reports/TRIEU_KET_QUA_KIEM_CHEO_20261024.md), nhất là kết luận và giới hạn. *(Trí, 27/10)*
-- [x] Đọc [PILOT_SUMMARY §7](../reports/PILOT_SUMMARY.md); ghi Trí đã đọc, đồng ý hoặc cần sửa mục nào, ngày thực tế. *(27/10: Trí **chưa duyệt**, 4 nhận xét → [kế hoạch sửa T1–T4](../reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md))*
+- [x] Đọc [PILOT_SUMMARY §7](../../../reports/PILOT_SUMMARY.md); ghi Trí đã đọc, đồng ý hoặc cần sửa mục nào, ngày thực tế. *(27/10: Trí **chưa duyệt**, 4 nhận xét → [kế hoạch sửa T1–T4](../reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md))*
 - [ ] *(chờ Triệu làm T1–T4, rồi duyệt chung)* Nếu nhóm đã cùng duyệt, ghi quyết định đóng pilot. Nếu chưa, để **chờ duyệt chung** và tiếp C2; việc này không chặn chuẩn bị P4.
 
 **Không lặp vô cớ** review guitar/q04_2 hoặc benchmark. Riêng evaluator/self-test/7 ca lỗi là yêu cầu T1 mới để Triệu tự kiểm, làm theo kế hoạch V2; assistant không chạy thay trong lượt chuẩn bị.
 
 ### C2 — quyết định dữ liệu trước khi chạy
 
-**Hướng dẫn thao tác đã chuẩn bị:** [C2: mở ảnh và điền từng cột](../experiments/countgdpp/p4_unseen_v1/HUONG_DAN_KIEM_DU_LIEU.md), có 10 ảnh chấm GT từ annotation nguồn. Trí đã xác nhận nhãn cả 10 ảnh qua tin nhắn; đã ghi vào CSV, dữ liệu vẫn DRAFT chờ quy tắc/lịch sử sử dụng.
+**Hướng dẫn thao tác đã chuẩn bị:** [C2: mở ảnh và điền từng cột](../../../experiments/countgdpp/p4_unseen_v1/HUONG_DAN_KIEM_DU_LIEU.md), có 10 ảnh chấm GT từ annotation nguồn. Trí đã xác nhận nhãn cả 10 ảnh qua tin nhắn; đã ghi vào CSV, dữ liệu vẫn DRAFT chờ quy tắc/lịch sử sử dụng.
 
 - [ ] Ghi lịch sử sử dụng của ảnh: đã dùng để chọn phương pháp/prompt/ngưỡng chưa, có trùng/crop từ ảnh dev không.
 - [x] *(27/10: MUCCA 1.0, Zenodo 19231375, CC-BY-4.0; gói Triệu trùng từng byte bản chính thức)* Ghi URL/nguồn gốc, quyền sử dụng và nguồn GT; không coi thiếu annotation là absent.
@@ -69,15 +69,15 @@ Không cần chờ Triệu xong T1–T3 để chuẩn bị P4. Không mở bộ 
 
 ### C3 — chuẩn bị runner ảnh mới; đây là phần kỹ thuật cấp thiết
 
-**Code hiện tại cần đọc:** [run_b2_pilot.py](../experiments/countgdpp/run_b2_pilot.py), [run_b0_batch.py](../experiments/countgdpp/run_b0_batch.py), [CLIP scorer](../evaluation/p4_clip_score_all15_20261020.py), [freeze](../results/countgdpp/p4_candidate_freeze_20261021.json).
+**Code hiện tại cần đọc:** [run_b2_pilot.py](../../../experiments/countgdpp/run_b2_pilot.py), [run_b0_batch.py](../../../experiments/countgdpp/run_b0_batch.py), [CLIP scorer](../../../evaluation/p4_clip_score_all15_20261020.py), [freeze](../../../results/countgdpp/p4_candidate_freeze_20261021.json).
 
-- [x] Chuẩn bị adapter mới, giữ script pilot cũ để tái lập. **Assistant viết code 27/10:** [run_b2_frozen.py](../experiments/countgdpp/run_b2_frozen.py), [p4_clip_score.py](../experiments/countgdpp/p4_clip_score.py), [p4_apply_freeze.py](../experiments/countgdpp/p4_apply_freeze.py). Đã có kiểm (1) apply_freeze trên điểm lưu sẵn đạt; **B2/CLIP và freeze (2)–(4) đã đạt 27/10**. `run_b2_pilot.py`/`run_b0_batch.py` không đổi.
+- [x] Chuẩn bị adapter mới, giữ script pilot cũ để tái lập. **Assistant viết code 27/10:** [run_b2_frozen.py](../../../experiments/countgdpp/run_b2_frozen.py), [p4_clip_score.py](../../../experiments/countgdpp/p4_clip_score.py), [p4_apply_freeze.py](../../../experiments/countgdpp/p4_apply_freeze.py). Đã có kiểm (1) apply_freeze trên điểm lưu sẵn đạt; **B2/CLIP và freeze (2)–(4) đã đạt 27/10**. `run_b2_pilot.py`/`run_b0_batch.py` không đổi.
 - [x] (đã kiểm dev 27/10) `run_b2_frozen.py`: không còn B0 cố định; stage 1 của chính run là B0, `--b0-reference <predictions.jsonl>` bật lại kiểm replay cho dev. B2 cũ dòng khoảng 61–67 chỉ đọc B0 trong `m4_first5_b0` và sẽ dừng `Missing B0 reference` với ID mới. Adapter cần nhận đường dẫn B0 tham chiếu của **cùng input mới**, hoặc tính/lưu stage1 của chính input mới; kiểm replay là chế độ riêng trên dev. Không bỏ kiểm rồi âm thầm dùng B0 khác ảnh/query.
 - [x] (đã kiểm dev 27/10) `p4_clip_score.py --inputs --predictions --run-id`; pin `revision=3d74acf…` cho cả model/processor, dừng nếu revision lệch; ghi hash file trọng số trong cache. CLIP scorer nhận đường dẫn input/prediction/output qua tham số; bỏ assert/đường dẫn gắn 15 query cũ ở bản adapter. Giữ nguyên cách crop RGB, làm tròn/giới hạn biên, template, L2 cosine và processor `use_fast=False`; pin revision như run_config.
 - [x] (đã kiểm dev 27/10) `p4_apply_freeze.py`: từ chối freeze nếu SHA256 khác audit `3c4634e7…`. Bộ áp dụng freeze đọc đủ precision ngưỡng/min–max từ JSON; `>=`, clamp [0,1], trọng số .5/.5. Không refit theo ảnh mới, không dùng GT để chọn K hoặc class loại trừ.
 - [x] (đã kiểm dev 27/10) cả ba script ghi run_config + hash adapter/input/prediction; `kept_boxes.json` lưu rank/điểm/quyết định giữ. Ghi ID/rank/box/score/khung giữ/count, checkpoint/code/config hash và môi trường; kết quả mới vào thư mục run mới, không ghi đè pilot.
-- [x] **ĐẠT 27/10** (Trí cho phép, assistant chạy): 15/15 query khớp audit, output `results/countgdpp/p4_freeze_devcheck_20261027/`. Kiểm riêng việc áp dụng freeze trên **điểm dev đã lưu**: số count từng query khớp [freeze audit](../results/countgdpp/p4_freeze_audit_20261021.json). Đây là kiểm triển khai, không phải thí nghiệm độc lập.
-- [x] **ĐẠT 27/10** (assistant chạy theo yêu cầu Trí): ảnh → B2 → CLIP → freeze trùng tuyệt đối, Δbox = Δscore = Δclip = 0, 0 khung đổi quyết định, audit 15/15 ([SUMMARY](../reports/audits/devcheck_20261027/SUMMARY.md)). Sau đó mới kiểm lại ảnh → B2 → CLIP trên dev. Nếu score lệch, lưu phiên bản/mức lệch và ảnh hưởng qua ngưỡng; không sửa ngưỡng để che lỗi.
+- [x] **ĐẠT 27/10** (Trí cho phép, assistant chạy): 15/15 query khớp audit, output `results/countgdpp/p4_freeze_devcheck_20261027/`. Kiểm riêng việc áp dụng freeze trên **điểm dev đã lưu**: số count từng query khớp [freeze audit](../../../results/countgdpp/p4_freeze_audit_20261021.json). Đây là kiểm triển khai, không phải thí nghiệm độc lập.
+- [x] **ĐẠT 27/10** (assistant chạy theo yêu cầu Trí): ảnh → B2 → CLIP → freeze trùng tuyệt đối, Δbox = Δscore = Δclip = 0, 0 khung đổi quyết định, audit 15/15 ([SUMMARY](../../../reports/audits/devcheck_20261027/SUMMARY.md)). Sau đó mới kiểm lại ảnh → B2 → CLIP trên dev. Nếu score lệch, lưu phiên bản/mức lệch và ảnh hưởng qua ngưỡng; không sửa ngưỡng để che lỗi.
 
 **Không có lệnh chạy ảnh mới hoàn chỉnh để copy lúc này**: adapter đã kiểm đạt trên dev; tập mới vẫn chưa khóa. Session sau phải kiểm file/CLI thật trước khi hướng dẫn chạy. Người dùng có thể tự chạy các bước đã hiểu; assistant phải hỏi trước nếu chạy evaluator/model/thực nghiệm thay, theo yêu cầu trước đó.
 
@@ -85,7 +85,7 @@ Môi trường được ghi trong lịch sử: CountGD++ từng chạy WSL tại
 
 ### C4 — bàn giao 15 phút cuối, bắt buộc dù chưa xong C2/C3
 
-- [x] Ghi việc **đã làm thật**, file/code/output mới, lệnh cuối, kết quả/lỗi vào [WORKLOG](../WORKLOG.md).
+- [x] Ghi việc **đã làm thật**, file/code/output mới, lệnh cuối, kết quả/lỗi vào [WORKLOG](../../../WORKLOG.md).
 - [x] Điền bảng “Dừng ở đâu” ngay dưới; checkbox nào chưa đủ bằng chứng thì giữ trống.
 - [x] Đổi “Việc đầu tiên chưa làm” ở đầu checklist và HANDOFF sang đúng checkpoint tiếp theo.
 - [x] Kiểm `git status --short --branch`; chỉ ghi commit/push nếu thực sự thực hiện. File local vẫn còn sau đổi session, nhưng không tự xuất hiện ở máy Triệu/GitHub nếu chưa push.
@@ -95,10 +95,10 @@ Môi trường được ghi trong lịch sử: CountGD++ từng chạy WSL tại
 | Trường | Hiện tại sau rà giao việc V2 ngày 27/10 |
 |---|---|
 | Mốc đã xác nhận | Pull 71264bd ngày 05/11: V4 đã có báo cáo; V6 có 6 CSV và báo cáo 58/58; P1/code/notebook/đối chứng đã nộp. Kết quả chạy P1 mới được đọc từ báo cáo, raw/log trên Drive chưa vào repo. Chưa nghiệm thu V7. |
-| Việc đầu tiên cần tiếp | **D1–D10 đã chốt 05/11.** Triệu: W1 rút dữ liệu (06/11) → W4 kiểm test 40 → W5 khóa (08/11) → W6 chạy dev T4 (10/11), theo [HANDOFF/GIAO_VIEC_TRIEU_20261106.md](../HANDOFF/GIAO_VIEC_TRIEU_20261106.md). **Trí 07–08/11:** kiểm dev 20 ảnh. Assistant: công cụ T + chọn lại ngưỡng riêng từng nguồn + D9 trước 09/11 |
+| Việc đầu tiên cần tiếp | **10/11:** Trí kiểm dev 20 (`dev_test_v2/absent_candidates.csv`, split=dev); Triệu kiểm test 40 + W3; khóa 12/11; Triệu chạy dev 13–15/11. Assistant: công cụ T + chọn lại ngưỡng + D9 (chờ Trí cho phép chạy thử CPU). Xem [roadmap/KE_HOACH_HOAN_THANH_20261110.md](../../../roadmap/KE_HOACH_HOAN_THANH_20261110.md) |
 | Pilot còn chờ gì | Bài nộp V4/V6 đã nhận, không giao làm lại từ đầu. Cần đối chiếu bằng chứng, xử lý nhãn N4 còn vướng và Trí/Triệu duyệt V7; chưa ký thay người. |
-| Danh sách dữ liệu / trạng thái khóa | B, 10 ảnh/30 query (20 present + 10 absent). **LOCKED 27/10 17:07:55**, Trí xác nhận; u07_3/u10_3 đổi trucks→bicycles trước khi khóa; quy ước chấm §4. **P4.6c đã chạy 27/10** ([kết quả](../reports/P4_6_UNSEEN_RESULTS_20261027.md)) |
-| Runner / log kiểm dev | **P4.6b ĐẠT 27/10: (1)–(4) đều PASS, trùng tuyệt đối** ([SUMMARY](../reports/audits/devcheck_20261027/SUMMARY.md)). Lệnh đã dùng: `run_b2_frozen.py`, `p4_clip_score.py`, `p4_apply_freeze.py` (thư mục experiments/countgdpp). Thứ tự kiểm dev: (1) apply_freeze trên điểm đã lưu, CPU: `python experiments/countgdpp/p4_apply_freeze.py --scores results/countgdpp/p4_clip_all15_20261020 --run-id p4_freeze_devcheck_<ngày> --check-audit results/countgdpp/p4_freeze_audit_20261021.json`; (2) WSL GPU: `run_b2_frozen.py --inputs experiments/countgdpp/m4_inputs/first5_inputs.jsonl --run-id p4_b2_devcheck_<ngày> --b0-reference results/countgdpp/m4_first5_b0/predictions.jsonl`; (3) `p4_clip_score.py` trên predictions của (2); (4) apply_freeze trên điểm mới với `--reference-scores results/countgdpp/p4_clip_all15_20261020 --check-audit …` |
+| Danh sách dữ liệu / trạng thái khóa | B, 10 ảnh/30 query (20 present + 10 absent). **LOCKED 27/10 17:07:55**, Trí xác nhận; u07_3/u10_3 đổi trucks→bicycles trước khi khóa; quy ước chấm §4. **P4.6c đã chạy 27/10** ([kết quả](../../../reports/P4_6_UNSEEN_RESULTS_20261027.md)) |
+| Runner / log kiểm dev | **P4.6b ĐẠT 27/10: (1)–(4) đều PASS, trùng tuyệt đối** ([SUMMARY](../../../reports/audits/devcheck_20261027/SUMMARY.md)). Lệnh đã dùng: `run_b2_frozen.py`, `p4_clip_score.py`, `p4_apply_freeze.py` (thư mục experiments/countgdpp). Thứ tự kiểm dev: (1) apply_freeze trên điểm đã lưu, CPU: `python experiments/countgdpp/p4_apply_freeze.py --scores results/countgdpp/p4_clip_all15_20261020 --run-id p4_freeze_devcheck_<ngày> --check-audit results/countgdpp/p4_freeze_audit_20261021.json`; (2) WSL GPU: `run_b2_frozen.py --inputs experiments/countgdpp/m4_inputs/first5_inputs.jsonl --run-id p4_b2_devcheck_<ngày> --b0-reference results/countgdpp/m4_first5_b0/predictions.jsonl`; (3) `p4_clip_score.py` trên predictions của (2); (4) apply_freeze trên điểm mới với `--reference-scores results/countgdpp/p4_clip_all15_20261020 --check-audit …` |
 | Lệnh thực nghiệm cuối đã kiểm / output | Theo báo cáo Triệu: Ô 12 notebook chạy trên T4 từ p1_pilot_colab_20261103_1519, output _controls_clip/_controls/_controls_eval trên Drive. Lượt này chưa kiểm output gốc, không chạy thực nghiệm. |
 | Lỗi đang chặn / cách tái hiện | Không lỗi Git. Cần output/log P1 và V4 gốc để đối chiếu; cần quyết định T4/tiêu chí tái hiện/C6 và dữ liệu v2. GPU/TF32 mới là giả thuyết nguyên nhân chênh lệch, chưa xác minh. |
 | Cập nhật gần nhất, không chạy thực nghiệm | 05/11: git pull --ff-only origin main thành công, 3b7df25 → 71264bd, 9 commit/19 file. Đọc báo cáo; ba hash dữ liệu khóa khớp và freeze giữ nguyên. Cập nhật tài liệu tiến độ local, chưa commit/push. |
@@ -162,7 +162,7 @@ Nếu hôm nay đạt mốc dự kiến thì còn khoảng **12–21 giờ**. Đ
 
 ## 6. Câu mở đầu cho session mới
 
-Bản tổng hợp ngay thư mục gốc: [BAT_DAU_SESSION_MOI.md](../BAT_DAU_SESSION_MOI.md). Khi tiến độ thay đổi, bảng “Dừng ở đâu” trong checklist này và WORKLOG là nguồn cập nhật.
+Bản tổng hợp ngay thư mục gốc: [BAT_DAU_SESSION_MOI.md](../../../BAT_DAU_SESSION_MOI.md). Khi tiến độ thay đổi, bảng “Dừng ở đâu” trong checklist này và WORKLOG là nguồn cập nhật.
 
 Copy nội dung sau, không cần dán lại toàn bộ chat cũ:
 

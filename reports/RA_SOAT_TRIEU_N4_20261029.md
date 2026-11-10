@@ -6,7 +6,7 @@
 
 ## 1. Đối chiếu việc đã giao với bằng chứng
 
-Nguồn phân công hiện hành: [GIAO_VIEC_TRIEU_20261028](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md), thay gói T1–T4 cũ. `git ls-remote --heads origin main` và HEAD đều là `be4da2655edecdaf502bdca28786e966cca65d01` khi kiểm. Không có commit mới hơn trên main lúc kiểm; chưa biết các phần chưa push trên máy Triệu.
+Nguồn phân công hiện hành: [GIAO_VIEC_TRIEU_20261028](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>), thay gói T1–T4 cũ. `git ls-remote --heads origin main` và HEAD đều là `be4da2655edecdaf502bdca28786e966cca65d01` khi kiểm. Không có commit mới hơn trên main lúc kiểm; chưa biết các phần chưa push trên máy Triệu.
 
 | Việc | Bằng chứng tại repo ngày 29/10 | Trạng thái / hạn |
 |---|---|---|

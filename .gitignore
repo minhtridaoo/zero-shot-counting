@@ -34,3 +34,7 @@ data_external/
 
 # Local recovery snapshots; shared handoff ZIPs remain versioned.
 /quá khứ/*.zip
+
+# Local safety snapshots (kept on disk only)
+quá khứ/snapshots/2026-1[01]-*.zip
+!quá khứ/snapshots/2026-10-20_*.zip

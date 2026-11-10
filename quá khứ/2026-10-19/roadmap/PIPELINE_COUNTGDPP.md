@@ -1,6 +1,6 @@
 # Pipeline thực nghiệm CS331 — CountGD++
 
-**Ưu tiên bổ sung 15/10 — chuẩn bị đánh giá theo paper trên Kaggle:** người dùng yêu cầu chạy FSCD-147 test; đã tạo [notebook và hướng dẫn](../../../roadmap/KAGGLE_PAPER_EVAL.md), chưa chạy Kaggle/chưa có metric mới. Tiếp theo import notebook, bật GPU/Internet và kiểm cell 1–2. Kết quả nhóm khác không phải kết quả của Triệu. Giữ kết quả pilot bên dưới; không so trực tiếp MAE khác tập dữ liệu.
+**Ưu tiên bổ sung 15/10 — chuẩn bị đánh giá theo paper trên Kaggle:** người dùng yêu cầu chạy FSCD-147 test; đã tạo [notebook và hướng dẫn](../../../experiments/benchmark_fscd147/KAGGLE_PAPER_EVAL.md), chưa chạy Kaggle/chưa có metric mới. Tiếp theo import notebook, bật GPU/Internet và kiểm cell 1–2. Kết quả nhóm khác không phải kết quả của Triệu. Giữ kết quả pilot bên dưới; không so trực tiếp MAE khác tập dữ liệu.
 
 **Mốc mới nhất 16/10 — đã nhận kiểm chéo của Triệu cho 14/15 query:** số đếm/GT khớp file kết quả; còn q01_1 guitars chưa có review trực tiếp. Plates hiệu chỉnh từ 0/3 theo Trí thành 3/3 đúng loại theo Triệu và ảnh đã kiểm; bản gốc giữ nguyên. Raspberries final đã giải thích đủ 14 = 4 quả mục tiêu + 1 khung trùng + 9 khung sai loại. Stage1 có 2 strawberry ở số 6/7, giải thích đủ 11 khung. **Tiếp theo:** bổ sung guitar và đối sánh q04_2 blueberries; dùng nhãn q05_2 để kiểm evaluator, không làm lại từ đầu. Giữ kế hoạch benchmark Kaggle hiện có; chưa có metric Kaggle mới. [Đối chiếu chi tiết](../../../results/countgdpp/b2_remaining3_20261015/TRIEU_CROSSCHECK_2026-10-16.md).
 

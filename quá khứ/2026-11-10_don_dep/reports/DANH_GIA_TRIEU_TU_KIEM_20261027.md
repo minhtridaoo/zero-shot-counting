@@ -1,6 +1,6 @@
 # Đánh giá bản tự kiểm của Triệu (commit 36eaf96) — 27/10/2026
 
-**Người đánh giá:** assistant, theo yêu cầu của Trí. Đây là **đề xuất để Trí nghiệm thu**, không phải chữ duyệt thay Trí. Nguồn: [báo cáo tự kiểm của Triệu](TRIEU_TU_KIEM_PHAN2_20261027.md) và các file bằng chứng trong commit `36eaf96`. Commit này được làm từ checkout `d6db189` nên **chưa có** kế hoạch V2, gói ZIP T0 và gói q05 (các file đó còn local, chưa push). Vì vậy Triệu làm theo checklist PHAN_2 trên `main`.
+**Người đánh giá:** assistant, theo yêu cầu của Trí. Đây là **đề xuất để Trí nghiệm thu**, không phải chữ duyệt thay Trí. Nguồn: [báo cáo tự kiểm của Triệu](../../../reports/TRIEU_TU_KIEM_PHAN2_20261027.md) và các file bằng chứng trong commit `36eaf96`. Commit này được làm từ checkout `d6db189` nên **chưa có** kế hoạch V2, gói ZIP T0 và gói q05 (các file đó còn local, chưa push). Vì vậy Triệu làm theo checklist PHAN_2 trên `main`.
 
 ## Assistant đã kiểm lại (chỉ đọc file)
 
@@ -25,7 +25,7 @@
 
 ## Lưu ý cập nhật kết luận B0/B2
 
-Triệu kết luận "B2 kém B0 tùy trường hợp, không ghi tổng quát". Kết luận này **đúng với pilot 15 câu**. Tuy nhiên trên tập mới `p4_unseen_v1` (10 ảnh khóa, 27/10), B2 kém B0 rõ ràng: Δ MAE +6.23, CI theo ảnh [+2.0, +12.3]. Đọc thêm [kết quả P4.6](P4_6_UNSEEN_RESULTS_20261027.md). Báo cáo nên ghi: "pilot thì mong manh (phụ thuộc q05_3); tập mới xác nhận B2 kém B0".
+Triệu kết luận "B2 kém B0 tùy trường hợp, không ghi tổng quát". Kết luận này **đúng với pilot 15 câu**. Tuy nhiên trên tập mới `p4_unseen_v1` (10 ảnh khóa, 27/10), B2 kém B0 rõ ràng: Δ MAE +6.23, CI theo ảnh [+2.0, +12.3]. Đọc thêm [kết quả P4.6](../../../reports/P4_6_UNSEEN_RESULTS_20261027.md). Báo cáo nên ghi: "pilot thì mong manh (phụ thuộc q05_3); tập mới xác nhận B2 kém B0".
 
 ## Đề xuất cho Trí
 

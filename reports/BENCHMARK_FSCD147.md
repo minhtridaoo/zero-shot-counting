@@ -2,7 +2,7 @@
 
 **Kiểm tại workspace: 20/10/2026.** Người thực hiện run: Trí. Run: `full_20261015T080230Z`; log ghi ngày chạy 15/10. Lượt kiểm ngày 20/10 chỉ đọc artifact, đối chiếu ID/GT/cấu hình và tính kiểm tra số học từ log; không chạy lại inference.
 
-[Trang bắt đầu](../README.md) · [Roadmap](../roadmap/ROADMAP.md) · [Hướng dẫn tái chạy nếu cần](../roadmap/KAGGLE_PAPER_EVAL.md).
+[Trang bắt đầu](../README.md) · [Roadmap](<../quá khứ/2026-11-10_don_dep/roadmap/ROADMAP.md>) · [Hướng dẫn tái chạy nếu cần](../experiments/benchmark_fscd147/KAGGLE_PAPER_EVAL.md).
 
 ## Kết quả có thể báo cáo
 
@@ -69,4 +69,4 @@ Dấu vết artifact kiểm ngày 20/10:
 
 Benchmark cho nhóm một mốc kết quả trên tập chuẩn và bằng chứng triển khai chạy được. Câu hỏi thầy yêu cầu — **cùng ảnh đổi X/Y thì phải đếm đúng loại** — vẫn cần bộ thử nhiều loại và phép đo phù hợp. Nhánh [pilot](PILOT_SUMMARY.md) cung cấp những ví dụ đó; MAE 19.4/22.0 của pilot không được so trực tiếp với 8.336975 trên FSCD-147.
 
-Bước ngay tiếp là [phần 2](../roadmap/PHAN_2_DANH_GIA.md) và [phần 3](../roadmap/PHAN_3_TONG_KET.md), rồi chốt giả thuyết cải tiến. Kết quả benchmark này là của nhóm đã nộp trong thư mục Trí, không phải ảnh chụp điểm nhóm khác từng trao đổi trước đây.
+Bước ngay tiếp là [phần 2](<../quá khứ/2026-11-10_don_dep/roadmap/PHAN_2_DANH_GIA.md>) và [phần 3](<../quá khứ/2026-11-10_don_dep/roadmap/PHAN_3_TONG_KET.md>), rồi chốt giả thuyết cải tiến. Kết quả benchmark này là của nhóm đã nộp trong thư mục Trí, không phải ảnh chụp điểm nhóm khác từng trao đổi trước đây.

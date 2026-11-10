@@ -1,6 +1,6 @@
 # Đề xuất quy tắc rút tập dev/test mới (v2) cho nhánh P (04/11/2026)
 
-**Người đề xuất:** Triệu. **Bản nháp:** Claude soạn script và văn bản theo yêu cầu của Triệu, dựa trên §4 của [KE_HOACH_CAI_TIEN_20261027.md](../roadmap/KE_HOACH_CAI_TIEN_20261027.md) và §5.1 kế hoạch của Trí. **Cần Trí:** duyệt quy tắc và trả lời 5 câu ở mục 4 **trước khi rút ảnh**. Chưa rút ảnh thật nào.
+**Người đề xuất:** Triệu. **Bản nháp:** Claude soạn script và văn bản theo yêu cầu của Triệu, dựa trên §4 của [KE_HOACH_CAI_TIEN_20261027.md](<../quá khứ/2026-11-10_don_dep/roadmap/KE_HOACH_CAI_TIEN_20261027.md>) và §5.1 kế hoạch của Trí. **Cần Trí:** duyệt quy tắc và trả lời 5 câu ở mục 4 **trước khi rút ảnh**. Chưa rút ảnh thật nào.
 
 ## 1. Tóm tắt
 

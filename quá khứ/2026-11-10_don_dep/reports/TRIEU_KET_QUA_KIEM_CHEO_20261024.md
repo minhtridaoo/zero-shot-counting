@@ -21,7 +21,7 @@ Nguồn kiểm: checkout local `minhtridaoo/CS331`, commit `31278dd70377578accda
 | q05_2 / raspberries | 4 | 11 | 14 | 7 | 10 | B2 kém hơn về count dù tìm đủ 4 vật mục tiêu |
 | q05_3 / blackberries | 3 | 21 | 79 | 18 | 76 | Giữ nguyên ca sai lớn trong metric |
 
-MAE B0=291/15=19.4; B2=330/15=22. RMSE B0=sqrt(8869/15), B2=sqrt(13582/15). Bảng [đối chiếu đủ 15 dòng](audits/PER_QUERY_TRACE_20261024.csv) và [audit có hash, coverage, manual](audits/TRIEU_EVALUATOR_20261024.json) là bằng chứng kèm theo.
+MAE B0=291/15=19.4; B2=330/15=22. RMSE B0=sqrt(8869/15), B2=sqrt(13582/15). Bảng [đối chiếu đủ 15 dòng](../../../reports/audits/PER_QUERY_TRACE_20261024.csv) và [audit có hash, coverage, manual](../../../reports/audits/TRIEU_EVALUATOR_20261024.json) là bằng chứng kèm theo.
 
 ## 3. Các nhánh error/null/uncertain/absent đã đọc hộ
 
@@ -54,7 +54,7 @@ Triệu xác nhận trực tiếp trong chat:
 
 > Tôi đã đọc và hiểu bản kiểm ngày 24/10, đồng ý dùng kết quả kiểm kỹ thuật do assistant thực hiện.
 
-[Bản ghi xác nhận](audits/TRIEU_ACCEPTANCE_20261024.json) đã lưu. Người kiểm kỹ thuật là assistant; Triệu đã đọc/hiểu và chấp nhận kết quả được ủy quyền, không ghi Triệu đã tự audit code. Phần xác nhận này đã cập nhật vào PILOT_SUMMARY mục 7. Bản audit kỹ thuật trước đó được giữ nguyên như lịch sử.
+[Bản ghi xác nhận](../../../reports/audits/TRIEU_ACCEPTANCE_20261024.json) đã lưu. Người kiểm kỹ thuật là assistant; Triệu đã đọc/hiểu và chấp nhận kết quả được ủy quyền, không ghi Triệu đã tự audit code. Phần xác nhận này đã cập nhật vào PILOT_SUMMARY mục 7. Bản audit kỹ thuật trước đó được giữ nguyên như lịch sử.
 
 **Việc tiếp theo:** Triệu cùng Trí duyệt toàn bộ PILOT_SUMMARY và ghi quyết định chung; Trí đồng bộ log/cấu hình P4 với artifact đã có. Chưa ghi nhóm đã duyệt, pilot đã đóng hoặc P4 đã được chọn.
 

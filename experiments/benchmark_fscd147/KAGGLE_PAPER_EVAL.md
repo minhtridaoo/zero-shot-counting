@@ -4,7 +4,7 @@ Cập nhật 20/10/2026. Notebook: [COUNTGDPP_FSCD147_KAGGLE.ipynb](COUNTGDPP_FS
 
 ## Trạng thái
 
-**Đã có run của Trí chạy đủ 1.190 ảnh; kiểm tại workspace ngày 20/10.** Run `full_20261015T080230Z`: MAE **8.336975**, RMSE **24.637626**, khớp số từng ảnh/log/metrics. Xem [báo cáo xác nhận và giới hạn](../reports/BENCHMARK_FSCD147.md). Run mang ngày 15/10 theo log, khác ngày audit.
+**Đã có run của Trí chạy đủ 1.190 ảnh; kiểm tại workspace ngày 20/10.** Run `full_20261015T080230Z`: MAE **8.336975**, RMSE **24.637626**, khớp số từng ảnh/log/metrics. Xem [báo cáo xác nhận và giới hạn](../../reports/BENCHMARK_FSCD147.md). Run mang ngày 15/10 theo log, khác ngày audit.
 
 Các bước dưới đây giữ để tái chạy khi cần; công việc ngay tiếp hiện tại là phần 2–3 pilot. Không phải bắt đầu lại Kaggle. File run_config ở gốc gói là bản chuẩn bị, dùng bản trong `full_*` cho trạng thái run hoàn tất.
 
@@ -35,4 +35,4 @@ Các bước dưới đây giữ để tái chạy khi cần; công việc ngay 
 
 ## Bước tiếp theo
 
-Giữ nguyên gói kết quả đã tải và mở [báo cáo benchmark](../reports/BENCHMARK_FSCD147.md) khi cần báo cáo thầy. Tiếp tục [phần 2](PHAN_2_DANH_GIA.md) → [phần 3](PHAN_3_TONG_KET.md) của pilot; không cần rerun benchmark để làm hai phần này.
+Giữ nguyên gói kết quả đã tải và mở [báo cáo benchmark](../../reports/BENCHMARK_FSCD147.md) khi cần báo cáo thầy. Tiếp tục [phần 2](<../../quá khứ/2026-11-10_don_dep/roadmap/PHAN_2_DANH_GIA.md>) → [phần 3](<../../quá khứ/2026-11-10_don_dep/roadmap/PHAN_3_TONG_KET.md>) của pilot; không cần rerun benchmark để làm hai phần này.

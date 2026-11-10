@@ -79,13 +79,19 @@ def main():
     if missing:
         raise ValueError(f"Queries missing from the manifest: {missing}")
     for qid, r in counts.items():
-        if man[qid]["image_id"] != r["image_id"] or man[qid]["presence_status"] not in ("present", "absent"):
+        if man[qid]["image_id"] != r["image_id"] or man[qid]["presence_status"] not in ("present", "absent", "uncertain"):
             raise ValueError(f"Manifest row does not fit {qid}")
         if man[qid]["presence_status"] == "absent" and int(man[qid]["gt_count"]) != 0:
             raise ValueError(f"Absent query with gt_count != 0: {qid}")
+    # Same convention as evaluate_pilot.py: uncertain GT is excluded from every metric and listed by name.
+    uncertain = sorted(q for q in counts if man[q]["presence_status"] == "uncertain")
+    if len(uncertain) == len(counts):
+        raise ValueError("Every query is uncertain; nothing to score")
 
     rows = []
     for qid in sorted(counts):
+        if qid in uncertain:
+            continue
         m, c = man[qid], counts[qid]
         row = dict(query_id=qid, image_id=m["image_id"], prompt=m["prompt"], presence=m["presence_status"], gt=int(m["gt_count"]))
         row.update({f"pred_{k}": int(c[k]) for k in methods})
@@ -163,7 +169,7 @@ def main():
     with (out / "per_query.csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader(); w.writerows(rows)
-    result = dict(summary=summary, comparisons=comparisons, proxy_present=proxy)
+    result = dict(summary=summary, comparisons=comparisons, proxy_present=proxy, uncertain_excluded=uncertain)
     (out / "metrics.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     run_cfg = dict(scorer="evaluate_research.py", scorer_sha256=sha(Path(__file__)), controls=args.controls,
                    controls_counts_sha256=sha(ctrl / "per_query_counts.csv"), controls_kept_sha256=sha(ctrl / "kept_boxes.json"),
@@ -172,7 +178,8 @@ def main():
                    note="GT read only here. Proxy columns are an automatic point-in-box approximation, not the human review.")
     (out / "run_config.json").write_text(json.dumps(run_cfg, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print(f"{len(rows)} queries ({len(pres)} present, {len(absn)} absent), {len({r['image_id'] for r in rows})} images")
+    print(f"{len(rows)} queries ({len(pres)} present, {len(absn)} absent), {len({r['image_id'] for r in rows})} images"
+          + (f"; uncertain excluded: {uncertain}" if uncertain else ""))
     print(f"{'method':<14}{'MAE_all':>8}{'MAE_pres':>9}{'exact':>6}{'MeanAbs':>8}{'FPR_abs':>8}{'no_pseudo':>10}")
     for meth in methods:
         s = summary[meth]

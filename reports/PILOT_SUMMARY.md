@@ -87,7 +87,7 @@ Gói [47 nhãn trắng cho Triệu](../results/countgdpp/p4_label_review_handoff
 ### 6C. Quyết định kế hoạch tiếp theo
 
 - Giữ lọc điểm B2 làm đối chứng, Fusion là ứng viên chọn đúng vật; dừng chỉnh tham số/prompt trên 5 ảnh này.
-- Trí chuẩn bị **P4.6a dữ liệu mới** và **P4.6b runner dùng freeze** theo [hướng dẫn](../roadmap/P4_TIEP_THEO.md) trong lúc chờ Triệu. Chưa có tập mới/runner đạt kiểm hoặc kết quả P4.6c–d.
+- Trí chuẩn bị **P4.6a dữ liệu mới** và **P4.6b runner dùng freeze** theo [hướng dẫn](<../quá khứ/2026-11-10_don_dep/roadmap/P4_TIEP_THEO.md>) trong lúc chờ Triệu. Chưa có tập mới/runner đạt kiểm hoặc kết quả P4.6c–d.
 - Khóa nguồn/split/GT/cách đo trước dự đoán; so cùng khung, đo count và đúng vật. Không dùng GT test chọn ngưỡng, tên lớp loại trừ hoặc K.
 - Cần pin cấu hình model/processor/code khi làm runner. Freeze audit hiện chỉ kiểm từ score lưu, chưa xác minh hash model hoặc tái lập ảnh → score.
 - Bộ lọc chỉ loại khung hiện có, không tìm lại chiếc ghế bị bỏ sót hoàn toàn. Không tuyên bố đã sửa mọi lỗi CountGD++ hoặc thay thế kiểm cấu hình paper.
@@ -98,16 +98,16 @@ Gói [47 nhãn trắng cho Triệu](../results/countgdpp/p4_label_review_handoff
 
 Audit assistant: output pilot kiểm ngày **20/10**, artifact P4 kiểm ngày **22/10/2026**. Không thay chữ xác nhận của Triệu/nhóm.
 
-- [x] Triệu đã đọc/hiểu và đồng ý dùng bản kiểm kỹ thuật ngày **24/10/2026** do assistant thực hiện theo ủy quyền; không ghi Triệu đã tự audit code. [Báo cáo được chấp nhận](TRIEU_KET_QUA_KIEM_CHEO_20261024.md).
+- [x] Triệu đã đọc/hiểu và đồng ý dùng bản kiểm kỹ thuật ngày **24/10/2026** do assistant thực hiện theo ủy quyền; không ghi Triệu đã tự audit code. [Báo cáo được chấp nhận](<../quá khứ/2026-11-10_don_dep/reports/TRIEU_KET_QUA_KIEM_CHEO_20261024.md>).
 - Người kiểm kỹ thuật: **assistant**. Người xác nhận chấp nhận: **Triệu — 24/10/2026**; [bản ghi xác nhận](audits/TRIEU_ACCEPTANCE_20261024.json). Trí đã đọc ngày 27/10, chưa duyệt và yêu cầu sửa T1–T4; chờ nghiệm thu lại.
-- **Trí đã đọc bản kiểm chéo — 27/10/2026: CHƯA DUYỆT.** Nhận xét của Trí (nguyên văn trong [kế hoạch sửa](KE_HOACH_SUA_KIEM_CHEO_20261027.md) §1):
+- **Trí đã đọc bản kiểm chéo — 27/10/2026: CHƯA DUYỆT.** Nhận xét của Trí (nguyên văn trong [kế hoạch sửa](<../quá khứ/2026-11-10_don_dep/reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md>) §1):
   1. kiểm kỹ thuật chủ yếu do AI làm, Triệu cần tự chạy lại evaluator và lưu bằng chứng, nhất là ca lỗi/thiếu/không chắc;
   2. phân tích kỹ q05_2 và q05_3 (GT 3, B2 đếm 79): sai loại, trùng, bỏ sót;
   3. giải thích vì sao B2 (MAE 22) kém B0 (19,4) và đề xuất cải thiện cụ thể;
   4. hoàn thiện báo cáo, ghi rõ phần tự kiểm, kết quả trước/sau và hạn chế, rồi duyệt chung và thống nhất hướng P4.
 - [x] **Triệu tự kiểm chéo Phần 2 — 27/10/2026.** Lần này Triệu tự chạy self-test và evaluator, tự tính lại MAE/RMSE, truy ngược q05_3 về predictions, tự gán nhãn 14 box q05_2 trước khi mở nhãn cũ, và thử 5 ca dữ liệu hỏng; assistant chỉ hướng dẫn. Kết quả khớp run 20/10. [Báo cáo tự kiểm và bằng chứng](TRIEU_TU_KIEM_PHAN2_20261027.md). Kết luận của Triệu, nguyên văn: “Đã check lại metric, q05_3 và tự gán nhãn lại q05_2, check thử đưa dữ liệu hỏng vào thì xảy ra chuyện gì đối với evaluator. Ở q05_2 thì box 12 với [13] chấm khác với nhãn cũ, cũng tùy vào người chấm cũng như máy chấm thì khác nữa, quan điểm mỗi người thôi, theo tôi thì 2 box đó đã làm tốt việc của mình. Nên ghi rõ ở q05_3, thực chất B2 kém hơn B0 thì cũng tùy trường hợp nữa chứ không thể ghi tổng quát như vậy được, các số liệu đó ghi vào báo cáo được đó.” Phạm vi đồng ý: dùng số liệu Phần 2 (MAE/RMSE, 6/4/5, coverage, q05_2) kèm lưu ý độ nhạy ở mục 3. Bản 24/10 phía trên giữ làm lịch sử.
-- **Đánh giá của assistant về bản tự kiểm (27/10 tối):** [DANH_GIA_TRIEU_TU_KIEM_20261027.md](DANH_GIA_TRIEU_TU_KIEM_20261027.md). Nhận xét 1 + q05_2 đạt; q05_3 (nhãn từng khung) và phân tích B2/B0 + đề xuất cải thiện chưa đủ. **Trí chưa nghiệm thu lại.**
-- **Trí nghiệm thu bản tự kiểm của Triệu (V1–V6) và đồng ý duyệt pilot — 05/11/2026**, xác nhận trong chat: "Triệu cần tôi submit việc thì oki luôn nha". Các phần còn thiếu ngày 27/10 (q05_3, 2 ca thử, phân tích B2/B0) đã được bổ sung ở V3–V5 ([đánh giá](DANH_GIA_TRIEU_V3_V5_20261102.md), [kế hoạch 05/11](KE_HOACH_TIEP_THEO_20261105.md)).
+- **Đánh giá của assistant về bản tự kiểm (27/10 tối):** [DANH_GIA_TRIEU_TU_KIEM_20261027.md](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md>). Nhận xét 1 + q05_2 đạt; q05_3 (nhãn từng khung) và phân tích B2/B0 + đề xuất cải thiện chưa đủ. **Trí chưa nghiệm thu lại.**
+- **Trí nghiệm thu bản tự kiểm của Triệu (V1–V6) và đồng ý duyệt pilot — 05/11/2026**, xác nhận trong chat: "Triệu cần tôi submit việc thì oki luôn nha". Các phần còn thiếu ngày 27/10 (q05_3, 2 ca thử, phân tích B2/B0) đã được bổ sung ở V3–V5 ([đánh giá](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_V3_V5_20261102.md>), [kế hoạch 05/11](KE_HOACH_TIEP_THEO_20261105.md)).
 - Nhóm duyệt nội dung pilot: **Trí ĐỒNG Ý (05/11). Chờ Triệu ghi xác nhận** (việc W3 trong [GIAO_VIEC_TRIEU_20261106](../HANDOFF/GIAO_VIEC_TRIEU_20261106.md)). Khi đủ hai người thì pilot đóng.
 - Quyết định pilot: **còn sửa: phần kiểm chéo (mục 1, 3, 4) và phân tích lỗi q05_2/q05_3, B2>B0**.
 
@@ -117,8 +117,8 @@ Theo dõi riêng cho P4, không phải điều kiện cộng thêm vào pilot:
 - Nhóm thống nhất phạm vi dữ liệu/cách đo cho tập mới: **[CHƯA XÁC NHẬN]**.
 - P4.6 chạy/chấm ảnh mới: **ĐÃ CHẠY 27/10, phần count** ([kết quả](P4_6_UNSEEN_RESULTS_20261027.md)); review khung N4 đang làm.
 
-Trí có thể chuẩn bị dữ liệu/runner ngay theo kế hoạch trong lúc chờ; chưa train lại, chưa đánh giá holdout và chưa chứng minh cải tiến tổng quát. Cập nhật [WORKLOG](../WORKLOG.md), [ROADMAP](../roadmap/ROADMAP.md), [HANDOFF](../HANDOFF/HANDOFF.md) khi có bằng chứng mới.
+Trí có thể chuẩn bị dữ liệu/runner ngay theo kế hoạch trong lúc chờ; chưa train lại, chưa đánh giá holdout và chưa chứng minh cải tiến tổng quát. Cập nhật [WORKLOG](../WORKLOG.md), [ROADMAP](<../quá khứ/2026-11-10_don_dep/roadmap/ROADMAP.md>), [HANDOFF](<../quá khứ/2026-11-10_don_dep/HANDOFF/HANDOFF.md>) khi có bằng chứng mới.
 
-**Điểm tiếp tục 27/10 (cập nhật cuối ngày):** C1 xong, Trí chưa duyệt; việc sửa theo [kế hoạch](KE_HOACH_SUA_KIEM_CHEO_20261027.md). P4.6: tập `p4_unseen_v1` đã chọn (DRAFT), freeze áp dụng đúng trên dev. [Checklist](../roadmap/CHECKLIST_3_GIO.md). Mục 6 giữ kết quả P4 đã audit ngày 22/10; commit mới không làm mất hay bắt chạy lại phần này.
+**Điểm tiếp tục 27/10 (cập nhật cuối ngày):** C1 xong, Trí chưa duyệt; việc sửa theo [kế hoạch](<../quá khứ/2026-11-10_don_dep/reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md>). P4.6: tập `p4_unseen_v1` đã chọn (DRAFT), freeze áp dụng đúng trên dev. [Checklist](<../quá khứ/2026-11-10_don_dep/roadmap/CHECKLIST_3_GIO.md>). Mục 6 giữ kết quả P4 đã audit ngày 22/10; commit mới không làm mất hay bắt chạy lại phần này.
 
 **Rà phân công V2 ngày 27/10:** giữ nguyên nhận xét Trí; kế hoạch sửa đã có T0 giao đủ đầu vào, T1 fixtures 15 query không phá q05_2, T2 tiêu chí nhãn, T3 phân tích +39/+58/−19 và đúng tên điểm P4, T4 ngày 03/11. Lượt này chưa có run/nhãn/kết luận mới của Triệu.

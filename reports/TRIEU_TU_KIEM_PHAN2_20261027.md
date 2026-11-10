@@ -1,8 +1,8 @@
 # Triệu tự kiểm chéo Phần 2 — tiến độ 27/10/2026
 
-**Trạng thái: XONG 8/8 — 27/10/2026.** Còn nhóm (Trí và Triệu) duyệt toàn bộ PILOT_SUMMARY. [Hướng dẫn Phần 2](../roadmap/PHAN_2_DANH_GIA.md) · [Báo cáo pilot](PILOT_SUMMARY.md) · [WORKLOG](../WORKLOG.md).
+**Trạng thái: XONG 8/8 — 27/10/2026.** Còn nhóm (Trí và Triệu) duyệt toàn bộ PILOT_SUMMARY. [Hướng dẫn Phần 2](<../quá khứ/2026-11-10_don_dep/roadmap/PHAN_2_DANH_GIA.md>) · [Báo cáo pilot](PILOT_SUMMARY.md) · [WORKLOG](../WORKLOG.md).
 
-**Khác bản 24/10:** ngày 24/10 assistant làm hộ phần đối chiếu kỹ thuật, Triệu chỉ đọc và chấp nhận ([bản đó](TRIEU_KET_QUA_KIEM_CHEO_20261024.md)). Lần này **Triệu tự chạy lệnh, tự tính và tự nhìn ảnh**; assistant (Claude) chỉ hướng dẫn từng bước, giải thích code và chấm câu trả lời. Bản 24/10 giữ nguyên làm lịch sử. Chưa sửa PILOT_SUMMARY mục 7; chỉ sửa khi xong cả 8 bước.
+**Khác bản 24/10:** ngày 24/10 assistant làm hộ phần đối chiếu kỹ thuật, Triệu chỉ đọc và chấp nhận ([bản đó](<../quá khứ/2026-11-10_don_dep/reports/TRIEU_KET_QUA_KIEM_CHEO_20261024.md>)). Lần này **Triệu tự chạy lệnh, tự tính và tự nhìn ảnh**; assistant (Claude) chỉ hướng dẫn từng bước, giải thích code và chấm câu trả lời. Bản 24/10 giữ nguyên làm lịch sử. Chưa sửa PILOT_SUMMARY mục 7; chỉ sửa khi xong cả 8 bước.
 
 Checkout: commit `d6db189`, máy Windows của Triệu, Python conda `ai_new` (3.10). Không chạy model, không sửa code, GT hoặc predictions.
 
@@ -99,11 +99,11 @@ Nguyên văn trong chat ngày 27/10 (chỉ thêm dấu câu; "[13]" là bản s�
 >
 > Nên ghi rõ ở q05_3, thực chất B2 kém hơn B0 thì cũng tùy trường hợp nữa chứ không thể ghi tổng quát như vậy được, các số liệu đó ghi vào báo cáo được đó.
 
-Đã ghi vào [PILOT_SUMMARY](PILOT_SUMMARY.md) mục 7, thêm lưu ý độ nhạy q05_3 vào mục 3, đánh dấu checklist [PHAN_2](../roadmap/PHAN_2_DANH_GIA.md) và đồng bộ ROADMAP/HANDOFF_TRIEU.
+Đã ghi vào [PILOT_SUMMARY](PILOT_SUMMARY.md) mục 7, thêm lưu ý độ nhạy q05_3 vào mục 3, đánh dấu checklist [PHAN_2](<../quá khứ/2026-11-10_don_dep/roadmap/PHAN_2_DANH_GIA.md>) và đồng bộ ROADMAP/HANDOFF_TRIEU.
 
 ## V3 (29/10) — gán nhãn từng khung q05_3 blackberries (GT 3): XONG 103/103
 
-**Giao việc:** [GIAO_VIEC_TRIEU_20261028](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md) §3. **Gói:** [q05_error_analysis_package_20261027](../results/countgdpp/q05_error_analysis_package_20261027), khung vẽ lại từ dự đoán đã lưu (B0 `m4_first5_b0`, B2 `b2_remaining3_20261015`), không chạy model.
+**Giao việc:** [GIAO_VIEC_TRIEU_20261028](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>) §3. **Gói:** [q05_error_analysis_package_20261027](../results/countgdpp/q05_error_analysis_package_20261027), khung vẽ lại từ dự đoán đã lưu (B0 `m4_first5_b0`, B2 `b2_remaining3_20261015`), không chạy model.
 
 **Cách làm:** Triệu tự gán nhãn cả 103 khung (3 mẫu pseudo + 21 B0 + 79 B2 final), từng khung một, bằng app [box_label_app.py](../evaluation/box_label_app.py). App chỉ hiện crop, ảnh toàn cảnh, tọa độ và các khung chồng lên, rồi ghi đúng các cột nhãn vào CSV; app không gợi ý nhãn. Assistant hướng dẫn quy ước, kiểm tính nhất quán và tính bảng; Triệu sửa 1 nhãn (B2 rank 2: `wrong_class` → `part`, khớp note) và 2 lỗi gõ trong note sau khi kiểm.
 
@@ -125,7 +125,7 @@ B2 79 = 2 target + 0 duplicate + 58 part + 19 wrong_class + 0 background
 
 ## V5 (29–30/10) — phân tích B2 so với B0: XONG
 
-**Giao việc:** [GIAO_VIEC_TRIEU_20261028](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md) §1. **Cách làm:** Triệu tự tính bằng Excel trên file kết quả đã lưu ([TRIEU_TINH_TAY.xlsx](audits/TRIEU_TINH_TAY.xlsx), sheet `TRIEU_TINH_TAY` cho pilot, sheet `tap_moi` cho tập mới), rồi đối chiếu với nhãn V2 + V3 của chính mình. Không chạy model hay evaluator. Assistant đưa công thức, kiểm số và góp ý câu chữ; các đoạn trích dưới đây là lời của Triệu, giữ nguyên văn. `delta = |B2−GT| − |B0−GT|`, dương là B2 kém hơn.
+**Giao việc:** [GIAO_VIEC_TRIEU_20261028](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>) §1. **Cách làm:** Triệu tự tính bằng Excel trên file kết quả đã lưu ([TRIEU_TINH_TAY.xlsx](audits/TRIEU_TINH_TAY.xlsx), sheet `TRIEU_TINH_TAY` cho pilot, sheet `tap_moi` cho tập mới), rồi đối chiếu với nhãn V2 + V3 của chính mình. Không chạy model hay evaluator. Assistant đưa công thức, kiểm số và góp ý câu chữ; các đoạn trích dưới đây là lời của Triệu, giữ nguyên văn. `delta = |B2−GT| − |B0−GT|`, dương là B2 kém hơn.
 
 ### Bước 1 — tập pilot (15 query)
 
@@ -183,7 +183,7 @@ q05_3 (pilot, [mục V3](#v3-2910--gán-nhãn-từng-khung-q05_3-blackberries-gt
 
 ## V4 (02/11) — 2 ca thử evaluator: GT `uncertain`; query vắng mặt mà model đếm > 0: ĐẠT
 
-**Giao việc:** [GIAO_VIEC_TRIEU_20261028](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md) §1. **Cách làm:** như Bước 6, nhưng làm hỏng **GT** thay vì predictions. Triệu tạo 2 bản sao `experiments/countgdpp/m4_inputs/manifest.csv` trong thư mục nháp ngoài repo (`C:\Users\diosodumb\Documents\CS331_nhap`), mỗi bản sửa đúng một dòng (assistant `diff` với file gốc để xác nhận); file gốc và predictions không đổi. Triệu tự chạy `evaluate_pilot.py --manifest <bản sao> --out <thư mục nháp>`; output nằm ngoài repo. Assistant đối chiếu với code và Excel V5.
+**Giao việc:** [GIAO_VIEC_TRIEU_20261028](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>) §1. **Cách làm:** như Bước 6, nhưng làm hỏng **GT** thay vì predictions. Triệu tạo 2 bản sao `experiments/countgdpp/m4_inputs/manifest.csv` trong thư mục nháp ngoài repo (`C:\Users\diosodumb\Documents\CS331_nhap`), mỗi bản sửa đúng một dòng (assistant `diff` với file gốc để xác nhận); file gốc và predictions không đổi. Triệu tự chạy `evaluate_pilot.py --manifest <bản sao> --out <thư mục nháp>`; output nằm ngoài repo. Assistant đối chiếu với code và Excel V5.
 
 | Ca | Sửa trong bản sao manifest | Evaluator | Kết quả chính |
 |---|---|---|---|
@@ -200,7 +200,7 @@ Ghi chú: "cách c" = bỏ query khỏi metric nhưng ghi tên vào `uncertain_e
 
 ## V6 (02/11) — N4 tầng B (u06_2 beach umbrellas, u07_2 cars): XONG 58/58
 
-**Giao việc:** [GIAO_VIEC_TRIEU_20261028](../HANDOFF/GIAO_VIEC_TRIEU_20261028.md) §1. **Gói:** [p4_n4_review_package_20261027](../results/countgdpp/p4_n4_review_package_20261027) — tầng B: 2 sheet khung chính (27 + 14, review mù), `bo_sung_F0/` 2 × 3 mẫu pseudo và 4 + 7 ứng viên E3. Không mở `_KEY_mo_sau_khi_review/`.
+**Giao việc:** [GIAO_VIEC_TRIEU_20261028](<../quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>) §1. **Gói:** [p4_n4_review_package_20261027](../results/countgdpp/p4_n4_review_package_20261027) — tầng B: 2 sheet khung chính (27 + 14, review mù), `bo_sung_F0/` 2 × 3 mẫu pseudo và 4 + 7 ứng viên E3. Không mở `_KEY_mo_sau_khi_review/`.
 
 **Cách làm:** Triệu gán nhãn từng khung bằng [box_label_app.py](../evaluation/box_label_app.py) `--set n4b` (app được mở rộng cho gói này: 6 sheet, 7 nhãn, `object_id` dùng chung trong một query). Ảnh gốc MUCCA không có trên máy Triệu, nên ảnh nền là `*_overview.jpg` của gói (cùng kích thước gốc, có khung vàng vẽ sẵn); khung đỏ là khung đang xét. Làm sheet chính trước, phần bổ sung sau. Assistant kiểm tính nhất quán (đủ cột, id trùng, mẫu pseudo so với khung chính bằng IoU); Triệu sửa id theo kiểm: 3 mẫu pseudo u06_2 (u1/u2/u3 → u8/u1/u5), P1 u07_2 (c11 → c13), rank 14 u06_2 (u12 → u30, cây dù khác), E3 #11 u07_2 (c14 → c15). Quy ước thêm: vật bị **mép ảnh** cắt mà khung ôm hết phần nhìn thấy → `target`; khung hụt phần vật còn thấy trong ảnh → `target` nếu hụt ít, `part` nếu chỉ khoảng một nửa trở xuống (ghi lý do trong note).
 
