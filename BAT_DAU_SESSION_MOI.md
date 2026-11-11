@@ -41,7 +41,7 @@
 |---|---|---|
 | **Trí** | ✅ Đã xong kiểm 20 ảnh dev (11/11). Tiếp: chờ bảng dev từ W6 để chọn cấu hình theo D9 (khoảng 1 giờ); bắt đầu dàn ý báo cáo | 16/11 |
 | **Triệu** | W3, W4 đã xong 11/11 (test 40 ảnh: 13 `needs_review`, t37_3 đổi sang cups; [báo cáo](reports/TRIEU_W4_KIEM_TEST_20261111.md)). **W5 đã khóa 11/11** (`selection_meta.json` LOCKED, có hash 6 file) | 12–13/11 |
-| **Triệu** | **W6 chạy trên Kaggle T4** bằng `experiments/countgdpp/kaggle_p1_dev.ipynb` (11/11, thay Colab; test sau này cũng phải chạy Kaggle T4). Nội dung cũ: **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
+| **Triệu** | ✅ **W6 xong 11/11** (Kaggle T4, stamp 20261111_1203: Kiểm A, Kiểm C 60/60 đạt; output nhỏ ở `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, raw trên Kaggle). Trước đó: **W6 chạy trên Kaggle T4** bằng `experiments/countgdpp/kaggle_p1_dev.ipynb` (11/11, thay Colab; test sau này cũng phải chạy Kaggle T4). Nội dung cũ: **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
 | **Assistant** | Đã xong: công cụ T/S/F/D9 (10/10 kiểm đạt, 10/11); chẩn đoán T + C6 trên p4_unseen_v1 (11/11, [kết quả](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)). Tiếp: chấm W6 bằng `select_offline_v2.py` khi dev đã khóa và có output (cần raw P1 trên Drive để tính P+T) | sau W6 |
 
 

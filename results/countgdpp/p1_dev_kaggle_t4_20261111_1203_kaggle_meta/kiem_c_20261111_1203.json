@@ -1,0 +1,48 @@
+{
+  "run": "p1_dev_kaggle_t4_20261111_1203_m10",
+  "repeat": "p1_dev_kaggle_t4_20261111_1203_m10_rep",
+  "keys": [
+    "stage1_boxes",
+    "stage1_scores",
+    "pseudo_proposal_ids",
+    "final_boxes",
+    "final_scores"
+  ],
+  "report": {
+    "B2": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.180": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.200": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.220": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.240": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.260": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    },
+    "tau0.280": {
+      "match": 60,
+      "total": 60,
+      "mismatched": []
+    }
+  }
+}

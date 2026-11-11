@@ -1,0 +1,117 @@
+{
+  "query_id": "tau0p280__d19_2",
+  "image_id": "mcac_212",
+  "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_212.jpg",
+  "prompt": "knives",
+  "text_prompt": "a photo of knives",
+  "clip_model": "openai/clip-vit-base-patch32",
+  "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "device": "cuda",
+  "n_boxes": 3,
+  "rows_original_order": [
+    {
+      "rank": 1,
+      "original_box_xyxy": [
+        121.76822662353516,
+        256.325927734375,
+        188.78439331054688,
+        611.5673828125
+      ],
+      "box_xyxy": [
+        122,
+        256,
+        189,
+        612
+      ],
+      "b2_score": 0.2367497980594635,
+      "clip_cosine_target": 0.2412925362586975
+    },
+    {
+      "rank": 2,
+      "original_box_xyxy": [
+        142.9082489013672,
+        259.28125,
+        219.335205078125,
+        694.1533203125
+      ],
+      "box_xyxy": [
+        143,
+        259,
+        219,
+        694
+      ],
+      "b2_score": 0.24344341456890106,
+      "clip_cosine_target": 0.2643152177333832
+    },
+    {
+      "rank": 3,
+      "original_box_xyxy": [
+        64.19189453125,
+        263.1419982910156,
+        129.23406982421875,
+        647.002685546875
+      ],
+      "box_xyxy": [
+        64,
+        263,
+        129,
+        647
+      ],
+      "b2_score": 0.2557709217071533,
+      "clip_cosine_target": 0.2689538598060608
+    }
+  ],
+  "rows_sorted_by_clip": [
+    {
+      "rank": 3,
+      "original_box_xyxy": [
+        64.19189453125,
+        263.1419982910156,
+        129.23406982421875,
+        647.002685546875
+      ],
+      "box_xyxy": [
+        64,
+        263,
+        129,
+        647
+      ],
+      "b2_score": 0.2557709217071533,
+      "clip_cosine_target": 0.2689538598060608
+    },
+    {
+      "rank": 2,
+      "original_box_xyxy": [
+        142.9082489013672,
+        259.28125,
+        219.335205078125,
+        694.1533203125
+      ],
+      "box_xyxy": [
+        143,
+        259,
+        219,
+        694
+      ],
+      "b2_score": 0.24344341456890106,
+      "clip_cosine_target": 0.2643152177333832
+    },
+    {
+      "rank": 1,
+      "original_box_xyxy": [
+        121.76822662353516,
+        256.325927734375,
+        188.78439331054688,
+        611.5673828125
+      ],
+      "box_xyxy": [
+        122,
+        256,
+        189,
+        612
+      ],
+      "b2_score": 0.2367497980594635,
+      "clip_cosine_target": 0.2412925362586975
+    }
+  ]
+}

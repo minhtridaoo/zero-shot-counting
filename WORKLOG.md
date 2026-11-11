@@ -1,5 +1,38 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (chiều) — Triệu: W6 chạy dev trên Kaggle T4 xong, đưa output vào repo
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã chạy:** Triệu chạy `experiments/countgdpp/kaggle_p1_dev.ipynb` bằng Save Version (checkpoint lấy từ Kaggle Dataset riêng tư của Triệu, sha256 khớp audit 14/10). Stamp `20261111_1203`, commit `6928d12`, Tesla T4, chạy hết 16 phút, không lỗi.
+
+**Kiểm trong notebook (theo log):**
+- Dev `LOCKED`; hash `dev/inputs.jsonl`, `dev/manifest.csv` và 20 ảnh khớp bản khóa.
+- Kiểm A đạt: 663 khung, lệch lớn nhất 3.28e-07.
+- Kiểm C đạt: 60/60 ở cả 7 cách (B2, tau 0.18–0.28), chạy lại M = 10 khớp tuyệt đối.
+
+**Đưa vào repo** (`results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, theo D10, không `.npz`/ảnh):
+- run `_m10`, `_m10_rep`, `_m5` (`run_config.json`, predictions 7 cách, `candidates.jsonl`);
+- `_m10_controls*` và `_m5_controls*` (nguồn, điểm CLIP, chấm nhanh);
+- `_kaggle_meta` (`kiem_c_*.json`, `packages.txt`, `FILES_*.json` có sha256 của toàn bộ 2.922 file output, kể cả 473 raw `.npz`).
+
+Raw nằm trong Output của notebook trên Kaggle; Triệu chia sẻ cho Trí.
+
+**Assistant đã kiểm độc lập** (giải nén ra thư mục tạm ngoài repo):
+- 1.010 file trong zip khớp sha256 trong `FILES_*.json`; file chép vào repo giống từng byte.
+- Ba run đều `complete`, T4, `uses_ground_truth=false`, `input_sha256` = hash `dev/inputs.jsonl` đã khóa, mỗi cách đủ 60 query.
+- Tính lại Kiểm C trên máy: khớp. Lượt 1 và B2 của M = 10 và M = 5 giống hệt, đúng thiết kế.
+- `manifest_sha256` của phần chấm = hash `dev/manifest.csv` đã khóa. Không file nào nhắc tới `dev_test_v2/test`.
+
+**Chấm nhanh M = 10** (ngưỡng S/F cũ 21/10, **chỉ xem nhanh, chưa phải D9**):
+- B0: MAE cả tập 6.28, có mặt 8.25, FPR_absent 0.20.
+- B2: 9.15 / 12.00 / 0.20.
+- tau0.22: 8.18 / 11.07 / 0.20.
+- tau0.22+F: 4.65 / 6.85 / 0.05.
+- B0+F (C6): 6.63 / 9.95 / 0.00.
+
+**Trạng thái:** W6 xong, chờ commit. **Bước tiếp:** chọn lại ngưỡng S/F riêng từng nguồn + luật D9 (`select_offline_v2.py`); biến thể T và P+T cần raw `.npz` trên Kaggle (`offline_text_v2.py`); Trí đọc bảng dev và khóa cấu hình (16/11).
+
 ## 11/11/2026 (tối) — Triệu: W5 khóa dev_test_v2; W6 chuyển sang Kaggle T4
 
 *Mục này do assistant soạn theo yêu cầu của Triệu ("tiến hành W5 và W6 thôi"; "chạy kaggle đi, kaggle có tính năng save version còn colab phải treo máy nữa").*

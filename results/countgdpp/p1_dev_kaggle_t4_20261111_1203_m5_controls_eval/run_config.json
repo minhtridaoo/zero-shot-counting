@@ -1,0 +1,17 @@
+{
+  "scorer": "evaluate_research.py",
+  "scorer_sha256": "b68186dcbad0027de85a984dfc114100235a1c4dfddc0fab9104aac3c69695dd",
+  "controls": "results/countgdpp/p1_dev_kaggle_t4_20261111_1203_m5_controls",
+  "controls_counts_sha256": "82f65c03b449ab8e4840aba587b53d0d744c619f2de61d35c0956bfeff37d3d9",
+  "controls_kept_sha256": "25cca07ab7a73d6f955abd42b9743ce62f3025a3d8f98f66f65e4d638f96830a",
+  "manifest": "experiments/countgdpp/dev_test_v2/dev/manifest.csv",
+  "manifest_sha256": "52d3f667bcd1b8bd8a7537504e9d8b45d5df50faac98a62b3b051cb5abaf6854",
+  "annotations": "/tmp/CS331/data_external/mucca_zenodo_19231375/MUCCA_1.0/annotations.json",
+  "bootstrap": {
+    "unit": "image",
+    "draws": 5000,
+    "seed": 331,
+    "ci": "2.5/97.5 percentile of paired mean |error| difference"
+  },
+  "note": "GT read only here. Proxy columns are an automatic point-in-box approximation, not the human review."
+}

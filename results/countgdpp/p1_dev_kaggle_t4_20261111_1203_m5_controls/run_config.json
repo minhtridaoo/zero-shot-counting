@@ -1,0 +1,55 @@
+{
+  "runner": "p1_controls.py",
+  "adapter_sha256": "8b03cbb562c78cb420b3619c1671dab364145a3cd88eab786b1f2c2c1e3763e2",
+  "clip_scorer_sha256": "c51666fab1ae354bac8b4a31b6b26ceae93fe1e8404a4672f5b9d54f841cd771",
+  "freeze_applier_sha256": "cf2784bb188527f4b8a06889167a2cc862be942fb26300c7b2293bf4033e8ef8",
+  "freeze": "results/countgdpp/p4_candidate_freeze_20261021.json",
+  "freeze_sha256": "3c4634e79d21d0c58bd7c0e3db0972c3a3eeff6d25996c716b4def1267def4da",
+  "frozen_values": {
+    "b2_threshold": 0.9067394733428955,
+    "fusion_threshold": 0.6551826746408328,
+    "bounds": {
+      "B2": [
+        0.2326723337173462,
+        0.9772246479988098
+      ],
+      "CLIP": [
+        0.1666240692138672,
+        0.3146958649158478
+      ]
+    }
+  },
+  "p1_run": "results/countgdpp/p1_dev_kaggle_t4_20261111_1203_m5",
+  "p1_run_config_sha256": "288f785c0df1e03252cb8de48f63af7e6da1c20d189246886a62e16cadaeff03",
+  "prediction_sha256": {
+    "predictions_B2.jsonl": "c58dd099c719a621e6d97ef2e876c6d370e3286803c13d8be0d4e4bde343de89",
+    "predictions_tau0.180.jsonl": "506b0f53eef66f4184c5e0cd01a47119e37185a3270679472c5a21b193a8f6ca",
+    "predictions_tau0.200.jsonl": "4ff72a7d009fd1bcf2769b0fd15910638b7339ab70ea82729be0b44b5ca81f41",
+    "predictions_tau0.220.jsonl": "fbee155f46a95932616f663442bbf4570c7097262332f998b56e851eb2714dbc",
+    "predictions_tau0.240.jsonl": "c7e865601238a0c809dfbeb82e9b6c3aaf2895e443b3e8ebeeb84e8b3ea5a3eb",
+    "predictions_tau0.260.jsonl": "6942dbebe85b31b6b89bf489e672f54c026523604f0aadc898238edac8d12b6c",
+    "predictions_tau0.280.jsonl": "abeb42db733c2664a38298f8dbed4da763d9135bd78ec88692372ee1743bde2c"
+  },
+  "clip_scores": "results/countgdpp/p1_dev_kaggle_t4_20261111_1203_m5_controls_clip",
+  "clip_run_config_sha256": "193afaa875c235dd5c9af5a7b79b537ba53e54388e891e0e731044abef82316a",
+  "sources": [
+    "B0",
+    "B2",
+    "tau0.180",
+    "tau0.200",
+    "tau0.220",
+    "tau0.240",
+    "tau0.260",
+    "tau0.280"
+  ],
+  "methods": "per source X: X (all boxes), X+S (score >= b2_threshold), X+F (Fusion 50/50 >= threshold)",
+  "plan_names": {
+    "F": "B2+F",
+    "S-only": "B2+S",
+    "C6": "B0+F",
+    "P": "tauX",
+    "P+F": "tauX+F"
+  },
+  "note": "Freeze fitted on pilot B2 boxes; on B0/P boxes the box's own CountGD++ score replaces b2_score. No refit, no GT.",
+  "uses_ground_truth": false
+}
