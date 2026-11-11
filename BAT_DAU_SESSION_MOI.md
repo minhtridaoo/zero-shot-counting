@@ -1,16 +1,18 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
-**Cập nhật 10/11/2026.**
+**Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng.**
 - Kế hoạch đầy đủ: [roadmap/KE_HOACH_HOAN_THANH_20261110.md](roadmap/KE_HOACH_HOAN_THANH_20261110.md).
 - Nhật ký: [WORKLOG.md](WORKLOG.md). Bản đồ thư mục: [README.md](README.md).
 - Bản cũ của file này (nhiều lớp cập nhật chồng nhau): `quá khứ/2026-11-10_don_dep/BAT_DAU_SESSION_MOI_cu.md`.
+
+**Đồng bộ Git 11/11:** đã gộp cc5510b với c572c04, giữ cả hai đóng góp. Pilot đã đóng; dev đã kiểm xong. Triệu tiếp W4/W5 và W6; hướng dẫn kiểm test: [HUONG_DAN_KIEM_V2](experiments/countgdpp/dev_test_v2/HUONG_DAN_KIEM_V2.md).
 
 ## Đang ở đâu
 
 ```
 ✅ [1] Chạy CountGD++    ✅ [2] Pilot tìm lỗi    ✅ [3] Cải tiến v1 (lọc + freeze)
 ✅ [4] Kiểm 10 ảnh mới    ✅ [5] N4 review khung   ✅ [6] Chốt nhánh P + T, D1–D10 (05/11)
-⏳ [7] Dữ liệu v2: đã rút dev 20 + test 40 (05/11), KIỂM 0/60 ảnh, CHƯA KHÓA   ◀── ĐANG Ở ĐÂY
+⏳ [7] Dữ liệu v2: đã rút dev 20 + test 40 (05/11), dev đã kiểm 20/20; test chờ kiểm, CHƯA KHÓA   ◀── ĐANG Ở ĐÂY
    [8] Chạy dev trên T4: P (lưới tau), T, P+T, C6 → [9] chọn 1 cách theo luật D9, khóa cấu hình
    [10] Test 1 lần trên 40 ảnh → [11] Báo cáo + slide + nộp 02/12
 ```
@@ -36,7 +38,7 @@
 | Ai | Việc | Hạn |
 |---|---|---|
 | **Trí** | ✅ Đã xong kiểm 20 ảnh dev (11/11). Tiếp: chờ bảng dev từ W6 để chọn cấu hình theo D9 (khoảng 1 giờ); bắt đầu dàn ý báo cáo | 16/11 |
-| **Triệu** | W3 ghi duyệt pilot; **W4 kiểm 40 ảnh test** theo quy tắc D11 (GT giữ MUCCA, lưu CSV UTF-8); W5 khóa | 12–13/11 |
+| **Triệu** | W3 đã xong 11/11; **W4 kiểm 40 ảnh test** theo quy tắc D11 (GT giữ MUCCA, lưu CSV UTF-8); W5 khóa | 12–13/11 |
 | **Triệu** | **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
 | **Assistant** | Đã xong: công cụ T/S/F/D9 (10/10 kiểm đạt, 10/11); chẩn đoán T + C6 trên p4_unseen_v1 (11/11, [kết quả](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)). Tiếp: chấm W6 bằng `select_offline_v2.py` khi dev đã khóa và có output (cần raw P1 trên Drive để tính P+T) | sau W6 |
 

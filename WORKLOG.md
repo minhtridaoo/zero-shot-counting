@@ -1,5 +1,10 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 — gộp Git sau lỗi push fetch first
+
+Local có commit cc5510b; remote có 89bd2bc và c572c04. Đã tạo nhánh dự phòng codex/backup-before-sync-20261111-cc5510b và ZIP quá khứ/2026-11-11_truoc_merge_cc5510b.zip trước khi merge. Gộp hai xung đột tài liệu ở WORKLOG và BAT_DAU: giữ toàn bộ mục lịch sử hai bên, giữ dev đã kiểm xong của Trí và W3/pilot đã đóng của Triệu. Không chạy thực nghiệm, không sửa dữ liệu/GT/freeze/code đã hash. Tiếp: push merge bình thường, không force; Triệu tiếp W4/W5 và W6 theo lịch đã ghi.
+
+
 ## 11/11/2026 (chiều) — kiểm bảng dev của Trí, chuyển mã, chốt nội dung dev, quyết định D11
 
 **Yêu cầu của Trí:** đã xong manifest + absent dev; kiểm giúp và xem còn giúp được gì.
@@ -105,6 +110,37 @@ Lỗi/điểm chưa rõ:
 Trạng thái: Chưa làm / Đang làm / Chờ kiểm / Đã xác nhận
 Bước tiếp theo + người làm:
 ```
+
+## 11/11/2026 — Triệu: W4 chuẩn bị công cụ kiểm (ảnh chấm GT + hướng dẫn v2)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã thêm:**
+- `experiments/countgdpp/render_gt_review_v2.py`: vẽ điểm GT MUCCA của hai lớp có mặt cho một tập (dev hoặc test), kèm `index.html` (lớp vắng mặt đề xuất, lớp dự phòng, ảnh chấm GT, ảnh gốc) và `SOURCE_MANIFEST.json`. Chỉ chạy CPU, chỉ đọc nhãn/ảnh, kiểm hash so với `selection_meta.json`, **chỉ ghi ra ngoài repo** (ảnh không commit, theo D10). Thay cho bước vẽ `gt_review_images` của v1, vốn không có script trong repo.
+- `experiments/countgdpp/dev_test_v2/HUONG_DAN_KIEM_V2.md`: cách kiểm absent/GT cho v2 (absent nhìn thấy thì đổi lớp dự phòng, không ghi `uncertain`; GT nghi ngờ ghi `uncertainty_note` và giữ số MUCCA), cách ghi kết quả, điều kiện khóa.
+
+**Đã kiểm script:** assistant chạy `--split dev` ra thư mục tạm ngoài repo: 20 ảnh + `index.html`; số điểm vẽ khớp `gt_count` (script tự kiểm); vị trí điểm và số thứ tự đúng ở 2 ảnh đã xem (d01 mcac_9, d15 mcac_190), số không bị cắt ở mép ảnh; `--out` nằm trong repo bị từ chối. Assistant chỉ xem 2 ảnh để kiểm cách vẽ, không nhận xét nhãn dev (đó là việc của Trí).
+
+**Trạng thái:** công cụ sẵn sàng; tập vẫn DRAFT, 0/60 ảnh đã kiểm. **Bước tiếp:** Triệu chạy script `--split test` và kiểm 40 ảnh (hạn 12/11); Trí chạy `--split dev` và kiểm 20 ảnh.
+
+## 11/11/2026 — Triệu: W3 ghi duyệt pilot, pilot đóng
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Người thực hiện:** Triệu xác nhận trong chat; assistant chép nguyên văn vào file và cập nhật các dòng trạng thái.
+
+**Git:** Triệu đổi remote sang `https://github.com/minhtridaoo/zero-shot-counting.git` và `pull --ff-only` e7fb20c → 8d12689 (bản dọn workspace của Trí). Không xung đột.
+
+**Xác nhận của Triệu** (11/11/2026, trong chat, sau khi assistant đề nghị đọc `reports/PILOT_SUMMARY.md` mục 3, 4, 6 và kết luận 27/10 của Triệu ở mục 7), nguyên văn: “đã đọc đủ, đồng ý”.
+
+**Đã sửa:**
+- `reports/PILOT_SUMMARY.md` mục 7: dòng "Nhóm duyệt nội dung pilot" ghi xác nhận trên; dòng "Quyết định pilot" đổi thành **ĐÃ ĐÓNG 11/11**, giữ ghi chú 27/10. Thêm dòng cập nhật 11/11 ở đầu file và sửa "Trạng thái báo cáo" ở mục 1; dòng cập nhật 27/10 giữ làm lịch sử.
+- `BAT_DAU_SESSION_MOI.md`: bỏ W3 khỏi việc của Triệu.
+- `roadmap/KE_HOACH_HOAN_THANH_20261110.md`: H5 ghi đã đóng.
+
+**Phạm vi:** đóng pilot 5 ảnh/15 query (B0/B2, review định tính, kết quả P4 mục 6 trong phạm vi đã ghi). Không gồm 47 nhãn q03 của P4 (theo dõi riêng, vẫn chưa) và dữ liệu dev/test v2.
+
+**Trạng thái:** Đã xác nhận (Trí 05/11 + Triệu 11/11). **Bước tiếp:** Triệu commit + push; Triệu làm W4 kiểm 40 ảnh test và W5 khóa (hạn 12/11); Trí kiểm 20 ảnh dev.
 
 ## 10/11/2026 — giải thích việc Trí kiểm absent/GT 20 ảnh dev
 
