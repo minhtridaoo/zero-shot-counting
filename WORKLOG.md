@@ -1,5 +1,23 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (tối) — tính T và P+T trên dev từ raw Kaggle, chạy lại D9
+
+*Mục này do assistant soạn theo yêu cầu của Triệu. Chỉ chạy CPU, không gọi model/CLIP.*
+
+**Raw:** Triệu tải `w6_out` về `Downloads/W6-Countgdpp/`. Đủ 2.922/2.922 file, sha256 khớp `FILES_20261111_1203.json`. Raw không vào repo (D10).
+
+**Đã chạy:**
+- `offline_text_v2.py` cho B2 và 6 tau, ở M = 10 và M = 5 → `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_{m10,m5}_T/`.
+- `bundle_offline_v2.py` với 7 `--text-source` → `*_offline_T/`.
+- `select_offline_v2.py` → `*_dev_selection_T/`.
+
+**Kết quả** ([báo cáo mục 3b](reports/TRIEU_W6_DEV_D9_20261111.md)):
+- T: MAE 8.55; P+T tau0.200_T: 8.25 (M = 5). Cả hai tốt hơn B2 (9.15) và P, nhưng chưa bằng B0 (6.28).
+- Với bộ lọc F: P+T+F 3.78, kém P+F 3.53.
+- **D9 không đổi:** M = 5 `CANDIDATE` tau0.200+F; M = 10 hòa tau0.180+F và tau0.200+F.
+
+**Bước tiếp:** Trí chọn và khóa cấu hình (16/11); test chạy trên Kaggle T4.
+
 ## 11/11/2026 (chiều, sau) — chọn lại ngưỡng S/F + D9 trên dev (chưa có T)
 
 *Mục này do assistant soạn; Triệu cho phép chạy ("Ừ, chạy đi"). Chỉ chạy CPU trên file trong repo, không gọi model/CLIP.*

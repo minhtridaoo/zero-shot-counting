@@ -2,7 +2,7 @@
 
 **Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng; Triệu kiểm xong 40 ảnh test (W4), khóa dữ liệu (W5), chạy dev trên Kaggle (W6).**
 
-> **Trí đọc trước 16/11:** [reports/TRIEU_W6_DEV_D9_20261111.md](reports/TRIEU_W6_DEV_D9_20261111.md). D9 trên dev (chưa có T): M = 5 ứng viên tau0.200+F (MAE 3.533 so với B0 6.283); M = 10 hòa tau0.180+F và tau0.200+F. Cần quyết: tính T/P+T từ raw Kaggle trước khi khóa cấu hình hay không.
+> **Trí đọc trước 16/11:** [reports/TRIEU_W6_DEV_D9_20261111.md](reports/TRIEU_W6_DEV_D9_20261111.md). D9 trên dev, **đã có cả T và P+T** (11/11): M = 5 ứng viên tau0.200+F (MAE 3.533 so với B0 6.283); M = 10 hòa tau0.180+F và tau0.200+F. T/P+T không đổi lựa chọn (P+T+F 3.78). Trí chọn và khóa cấu hình.
 
 > **t37_1 đã chốt 11/11:** Trí chọn đánh `uncertain`, loại khỏi chấm (3 bút chì bị MUCCA gán `pens`); đã áp trước khi Triệu khóa. Trí cũng đã khóa ở máy mình nhưng chưa push: **khi pull sẽ xung đột `selection_meta.json`/`test/manifest.csv`; bản trên GitHub đã có quyết định này**. Xem [TRIEU_W4_KIEM_TEST_20261111.md](reports/TRIEU_W4_KIEM_TEST_20261111.md) mục 3.
 - Kế hoạch đầy đủ: [roadmap/KE_HOACH_HOAN_THANH_20261110.md](roadmap/KE_HOACH_HOAN_THANH_20261110.md).
