@@ -1,6 +1,8 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
-**Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng.**
+**Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng; Triệu kiểm xong 40 ảnh test (W4).**
+
+> **Trí cần quyết trước khi chạy test:** t37_1 (mcac_204, `pens`, GT 3) thực ra là 3 bút chì: giữ GT 3, loại khỏi chấm, hay thay ảnh? Xem [TRIEU_W4_KIEM_TEST_20261111.md](reports/TRIEU_W4_KIEM_TEST_20261111.md) mục 3.
 - Kế hoạch đầy đủ: [roadmap/KE_HOACH_HOAN_THANH_20261110.md](roadmap/KE_HOACH_HOAN_THANH_20261110.md).
 - Nhật ký: [WORKLOG.md](WORKLOG.md). Bản đồ thư mục: [README.md](README.md).
 - Bản cũ của file này (nhiều lớp cập nhật chồng nhau): `quá khứ/2026-11-10_don_dep/BAT_DAU_SESSION_MOI_cu.md`.
@@ -38,7 +40,7 @@
 | Ai | Việc | Hạn |
 |---|---|---|
 | **Trí** | ✅ Đã xong kiểm 20 ảnh dev (11/11). Tiếp: chờ bảng dev từ W6 để chọn cấu hình theo D9 (khoảng 1 giờ); bắt đầu dàn ý báo cáo | 16/11 |
-| **Triệu** | W3 đã xong 11/11; **W4 kiểm 40 ảnh test** theo quy tắc D11 (GT giữ MUCCA, lưu CSV UTF-8); W5 khóa | 12–13/11 |
+| **Triệu** | W3, W4 đã xong 11/11 (test 40 ảnh: 13 `needs_review`, t37_3 đổi sang cups; [báo cáo](reports/TRIEU_W4_KIEM_TEST_20261111.md)). Tiếp: W5 khóa dev + test | 12–13/11 |
 | **Triệu** | **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
 | **Assistant** | Đã xong: công cụ T/S/F/D9 (10/10 kiểm đạt, 10/11); chẩn đoán T + C6 trên p4_unseen_v1 (11/11, [kết quả](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)). Tiếp: chấm W6 bằng `select_offline_v2.py` khi dev đã khóa và có output (cần raw P1 trên Drive để tính P+T) | sau W6 |
 

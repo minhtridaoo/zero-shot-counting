@@ -1,5 +1,21 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (tối) — Triệu: W4 kiểm xong 40 ảnh test (D11)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Người thực hiện:** Triệu kiểm bằng `render_gt_review_v2.py --split test` (ảnh ngoài repo) và báo lỗi trong chat. Quy ước của Triệu: ảnh không nhắc tới là đúng; xác nhận cuối "xác nhận tất cả đều đã chuẩn". Assistant đối chiếu từng câu báo với tọa độ điểm MUCCA và ảnh phóng to, rồi điền theo D11, cùng định dạng dev của Trí. Đã pull d86d159 trước khi điền.
+
+**Kết quả:** t01–t40 đã kiểm. 67 query `visual_checked`, 13 `needs_review` (GT giữ MUCCA, số Triệu đếm trong `uncertainty_note`), 40 `absent_checked`. Đổi t37_3 (mcac_204) từ `pencils` sang `cups`: ảnh có 3 bút chì, cups là ứng viên kế tiếp đầu tiên, Triệu xác nhận không có cốc. Key holders: vòng kim loại trơn/dây xâu chìa không tính, theo cách MUCCA gán nhãn ở mcac_162–164.
+
+**Báo cáo + bảng độ nhạy:** [reports/TRIEU_W4_KIEM_TEST_20261111.md](reports/TRIEU_W4_KIEM_TEST_20261111.md). Nguyên văn các câu báo: `experiments/countgdpp/dev_test_v2/human_review_test_20261111.json` (kèm hash trước/sau).
+
+**Kiểm (chỉ đọc):** chỉ dòng test và cột người kiểm thay đổi (cộng 5 ô của lần đổi t37_3); dòng dev không đổi; cups không có nhãn trong ảnh; inputs khớp manifest; UTF-8, LF, không BOM.
+
+**Cần Trí quyết** (báo cáo mục 3): t37_1 (`pens`, GT 3) thực ra là 3 bút chì: giữ GT 3, loại khỏi chấm, hay thay ảnh. Phải chốt trước khi chạy test.
+
+**Trạng thái:** test đã kiểm, chưa khóa. **Bước tiếp:** Triệu commit + push; W5 khóa dev + test; W6 chạy dev trên T4 (được làm ngay).
+
 ## 11/11/2026 — gộp Git sau lỗi push fetch first
 
 Local có commit cc5510b; remote có 89bd2bc và c572c04. Đã tạo nhánh dự phòng codex/backup-before-sync-20261111-cc5510b và ZIP quá khứ/2026-11-11_truoc_merge_cc5510b.zip trước khi merge. Gộp hai xung đột tài liệu ở WORKLOG và BAT_DAU: giữ toàn bộ mục lịch sử hai bên, giữ dev đã kiểm xong của Trí và W3/pilot đã đóng của Triệu. Không chạy thực nghiệm, không sửa dữ liệu/GT/freeze/code đã hash. Tiếp: push merge bình thường, không force; Triệu tiếp W4/W5 và W6 theo lịch đã ghi.

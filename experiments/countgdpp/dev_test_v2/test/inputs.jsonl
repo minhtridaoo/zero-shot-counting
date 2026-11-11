@@ -108,7 +108,7 @@
 {"schema_version": 1, "image_id": "mcac_201", "query_id": "t36_3", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_201.jpg", "prompt": "pears"}
 {"schema_version": 1, "image_id": "mcac_204", "query_id": "t37_1", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg", "prompt": "pens"}
 {"schema_version": 1, "image_id": "mcac_204", "query_id": "t37_2", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg", "prompt": "rulers"}
-{"schema_version": 1, "image_id": "mcac_204", "query_id": "t37_3", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg", "prompt": "pencils"}
+{"schema_version": 1, "image_id": "mcac_204", "query_id": "t37_3", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg", "prompt": "cups"}
 {"schema_version": 1, "image_id": "mcac_218", "query_id": "t38_1", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg", "prompt": "amplifiers"}
 {"schema_version": 1, "image_id": "mcac_218", "query_id": "t38_2", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg", "prompt": "guitars"}
 {"schema_version": 1, "image_id": "mcac_218", "query_id": "t38_3", "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg", "prompt": "pears"}

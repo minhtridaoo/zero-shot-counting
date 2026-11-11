@@ -1,0 +1,208 @@
+{
+  "review_status": "USER_CONFIRMED_RECORDED",
+  "split": "test",
+  "reviewer": "Triệu",
+  "recorded_by": "assistant",
+  "source": "Direct user messages in chat",
+  "convention_verbatim": "tôi sẽ nói các ảnh có lỗi thôi, các ảnh bị skip qua mà không nói đến = đã đúng",
+  "convention_note": "An image counts as checked only when it falls inside a range Triệu states as checked; images outside any stated range stay PENDING.",
+  "checked_ranges": [
+    "t01-t40"
+  ],
+  "statements": [
+    {
+      "date": "2026-11-11",
+      "query_id": "t04_2",
+      "image_id": "mcac_19",
+      "target_class": "blueberries",
+      "user_statement_verbatim": "17 và 23 bị trùng",
+      "assistant_check": "MUCCA points 17 [531, 580] and 23 [557, 594] are 29.5 px apart on a 900x760 image, on one blueberry in the rendered sheet; gt_count kept at 25 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t07_2",
+      "image_id": "mcac_75",
+      "target_class": "motorbikes",
+      "user_statement_verbatim": "xe màu đỏ giữa xe 23 và 26 bị miss, trong khi trường hợp people thì vẫn nhận diện ra được người ngồi trên xe màu đỏ này",
+      "assistant_check": "No motorbikes point between MUCCA motorbike points 26 [401, 124] and 23 [394, 180]; the rider has people point 23 [379, 150] (t07_1). gt_count kept at 27 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t08_1",
+      "image_id": "mcac_76",
+      "target_class": "people",
+      "user_statement_verbatim": "bị miss 1 người đứng cạnh #27, có lẽ vì màu áo bị trùng với ô tô đen bên cạnh nên không nhận ra",
+      "assistant_check": "MUCCA people point 27 = [83, 217]; points within 60 px: [(13, [29, 223]), (14, [24, 261]), (15, [70, 213]), (16, [61, 184]), (17, [51, 173]), (18, [80, 167]), (19, [55, 160]), (27, [83, 217]), (28, [90, 167])]. Missing person not verified by assistant on the image; gt_count kept at 30 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t13_2",
+      "image_id": "mcac_93",
+      "target_class": "cars",
+      "user_statement_verbatim": "1 xe nằm cạnh(phía sau) xe #7 không nhận diện được",
+      "assistant_check": "MUCCA cars point 7 = [338, 261]; no other cars point to its right/behind. gt_count kept at 7 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t14_1",
+      "image_id": "mcac_95",
+      "target_class": "people",
+      "user_statement_verbatim": "15 và 16 bị nhận diện trùng 1 người, 15 nhận diện áo có màu đỏ của người 16 = 1 people",
+      "assistant_check": "MUCCA people points 15 = [6, 51], 16 = [7, 36]. gt_count kept at 27 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t15_1",
+      "image_id": "mcac_103",
+      "target_class": "amplifiers",
+      "user_statement_verbatim": "âm ly nằm dưới #15 không được nhận diện",
+      "assistant_check": "MUCCA amplifiers point 15 = [2124, 1653]; points lower in the image: [(3, [471, 1745]), (17, [1576, 1770]), (18, [1035, 1810])] (none on the amp right below 15). gt_count kept at 19 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t15_1",
+      "image_id": "mcac_103",
+      "target_class": "amplifiers",
+      "user_statement_verbatim": "và #7 là 1 cái thùng màu đỏ thôi, nếu #7 nhận diện là 1 âm ly thì thùng màu vàng bên cạnh(nằm dưới#10) cũng phải tính là 1 âm ly rồi",
+      "assistant_check": "MUCCA point 7 = [1216, 1371], point 10 = [1533, 1171]; points below 10 within 250 px in x: [(14, [1771, 1290]), (16, [1547, 1534])]. Labeling inconsistency (cabinet without controls counted at 7 but not the yellow one under 10), recorded as note; gt_count kept (W4 rule)"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t16_2",
+      "image_id": "mcac_104",
+      "target_class": "guitars",
+      "user_statement_verbatim": "1 cây guitar(màu đen) nằm ở phía xéo lên trên bên trái của #16 không được nhận diện",
+      "assistant_check": "MUCCA guitars point 16 = [366, 414]; points up-left within 15% width / 25% height: [(24, [235, 348]), (25, [290, 351])]. gt_count kept at 30 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t21_2",
+      "image_id": "mcac_124",
+      "target_class": "dogs",
+      "user_statement_verbatim": "#1 và #3 là cùng 1 chú chó, từ dãy #19 trở đi thì khá khó để quan sát nên kiểm được ở mức 90% thôi",
+      "assistant_check": "MUCCA dogs points 1 = [138, 313], 3 = [158, 313]; reviewer flags partial confidence for the dense group from point 19 on. gt_count kept at 27 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t23_2",
+      "image_id": "mcac_135",
+      "target_class": "windows",
+      "user_statement_verbatim": "14 không chắc chắn được là 1 cái cửa sổ hay là 1 khung cửa đã được mở toang ra(tôi thấy 2 cửa sổ màu nâu đã được mở)",
+      "assistant_check": "MUCCA windows point 14 = [120, 617]; reviewer unsure whether it is a window or an opened door frame. gt_count kept at 20 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t27_1",
+      "image_id": "mcac_147",
+      "target_class": "chairs",
+      "user_statement_verbatim": "11 là 1 vật không phải ghế",
+      "assistant_check": "MUCCA chairs point 11 = [2653, 29]. gt_count kept at 11 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t27_1",
+      "image_id": "mcac_147",
+      "target_class": "chairs",
+      "user_statement_verbatim": "đúng là có 1 cái ghế số 11 nhưng không phải ở điểm 11, 11 nên nằm ở phạm vi sau đó",
+      "assistant_check": "Correction by the reviewer, supersedes the previous t27_1 statement: a real 11th chair exists near point 11 [2653, 29]; the point is misplaced, not a false object. Count unaffected (reviewer count 11 = MUCCA 11); note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t27_2",
+      "image_id": "mcac_147",
+      "target_class": "desks",
+      "user_statement_verbatim": "nếu vậy thì cũng phải có 8 desk(desk tương ứng với ghế 11",
+      "assistant_check": "Inference from the chair count, not yet a visual observation. Right side: desk points 5 [2783, 63] and 6 [2886, 213]; chairs 9 [2861, 14], 10 [2915, 132], 11 [2653, 29]. In a crop of x 2150-2944, y 0-700 the assistant sees desks 5 and 6 and a chair frame left of desk 5, but no clear 8th desk top. Asked the reviewer whether the 8th desk is visible. gt_count kept at 7 (W4 rule)"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t27_2",
+      "image_id": "mcac_147",
+      "target_class": "desks",
+      "user_statement_verbatim": "tôi cũng thấy có cái bàn ở đó, nếu theo vị trí thì desk đó tương ứng với vị trí ban đầu mà #11 được đặt trong ảnh trước",
+      "assistant_check": "Reviewer confirms visually: a desk is visible at the position of chairs point 11 [2653, 29], with no desks point. Consistent with the assistant crop around chairs point 11, where that point lies on a desk-top corner. Reviewer count 8 vs MUCCA 7; gt_count kept at 7 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t39_1",
+      "image_id": "mcac_222",
+      "target_class": "people",
+      "user_statement_verbatim": "có 1 người mặc áo cam bị miss(giữa 29 và 30), có lẽ do màu áo trùng với màu cái thùng sau người đó nên không nhận diện ra",
+      "assistant_check": "MUCCA people points 29 = [380, 83], 30 = [382, 131]. gt_count kept at 31 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t39_2",
+      "image_id": "mcac_222",
+      "target_class": "motorbikes",
+      "user_statement_verbatim": "tương tự với cái xe của người đó cũng không được nhận diện(có lẽ vì bị người #30 che)",
+      "assistant_check": "Refers to the orange-shirt person reported missing in t39_1 (between people points 29 and 30). Motorbike points with x > 330 on the 390x280 image: [(25, [351, 71]), (26, [387, 179]), (27, [361, 101]), (28, [385, 52])]. gt_count kept at 28 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t39_2",
+      "image_id": "mcac_222",
+      "target_class": "motorbikes",
+      "user_statement_verbatim": "xe 27 là xe của 2 người 28 và 29 mà",
+      "assistant_check": "Reply to the assistant question whether the orange-shirt person rides motorbike 27 [361, 101]: reviewer says bike 27 carries people 28 [369, 74] and 29 [380, 83], so the orange-shirt person rides a separate bike hidden by person 30. Reviewer count 29 vs MUCCA 28; gt_count kept at 28 (W4 rule), note only"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t37_3",
+      "image_id": "mcac_204",
+      "target_class": "pencils",
+      "user_statement_verbatim": "tôi thấy có 3 pencils",
+      "assistant_check": "Proposed absent class pencils is visible: the 3 objects MUCCA labels pens (t37_1) are wooden pencils (sharpened wood tips, erasers). Absent must be swapped to the next backup (cups) after the reviewer checks it. Side effect: t37_1 asks for pens but the image shows pencils; gt_count kept at 3 (W4 rule) and flagged for Trí"
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t29_3/t30_3/t31_3",
+      "target_class": "key holders",
+      "user_statement_verbatim": "cái này, hoặc 1 sợi dây luồn qua mấy chìa khóa lại với nhau có được tính là key holders không?",
+      "assistant_check": "Answered from MUCCA's own key-holder labels (mcac_162-164): decorative fobs/tags/charms and a carabiner are labelled; plain split rings are not. Rule applied: plain ring or string = not a key holder."
+    },
+    {
+      "date": "2026-11-11",
+      "query_id": "t37_3 + t29-t31 + all",
+      "user_statement_verbatim": "không có cốc trong mcac_204, mảng xanh ngọc là cái lockers thôi, xác nhận tất cả đều đã chuẩn",
+      "assistant_check": "cups confirmed absent in mcac_204 -> t37_3 swapped pencils -> cups (first next candidate, D11). The turquoise area is a lock, not a key-holder fob -> key holders absent ok. 'xác nhận tất cả đều đã chuẩn' read as: all 40 test images checked, every query not mentioned is correct."
+    }
+  ],
+  "files_applied": [
+    {
+      "path": "absent_candidates.csv",
+      "before_sha256": "34ace30ae3626d734c76b7175f2746b29ccc44969c2a4cde2564c02b0293c4ac",
+      "after_sha256": "375744ce255dbf00d2c65680c746ad0ae414c731bcb4722dad42661c30e68473"
+    },
+    {
+      "path": "test/manifest.csv",
+      "before_sha256": "3c15c228f403aa760bc2dd2cf3d0e242943d60508f2d274e16438ed2419edf93",
+      "after_sha256": "1f54ec20b45afaaf797c26a592aaeb02450d606fb2334f2a79a3743bb0b635a1"
+    },
+    {
+      "path": "test/inputs.jsonl",
+      "before_sha256": "31379baff06db9cc9fd7c2066ec2d10d3b0bac0356bd30f842d4332f0f74ab3e",
+      "after_sha256": "5fdf6120665122ac87d7026526f3a5831a8eb4e2ea9ceb7c8ecb6aaab7f462ad"
+    }
+  ],
+  "rule": "D11 (Trí 11/11): keep MUCCA gt_count; needs_review + reviewer count in uncertainty_note; visible absent -> first next candidate",
+  "sensitivity_reviewer_counts": {
+    "t04_2": "24",
+    "t07_2": "28",
+    "t08_1": "31",
+    "t13_2": "8",
+    "t14_1": "26",
+    "t15_1": "19–21 tùy định nghĩa",
+    "t16_2": "31",
+    "t21_2": "26",
+    "t23_2": "19–20",
+    "t27_2": "8",
+    "t37_1": "0 (3 vật là bút chì)",
+    "t39_1": "32",
+    "t39_2": "29"
+  },
+  "open_question_for_Tri": "t37_1 (mcac_204, pens, GT 3): the 3 objects are pencils; keep GT 3, drop t37_1 from scoring, or replace the image?",
+  "independent_assistant_visual_review": "partial: assistant compared each flagged statement with MUCCA point coordinates and crops; did not review the unflagged queries",
+  "second_reviewer_confirmed": false,
+  "dataset_locked": false
+}
