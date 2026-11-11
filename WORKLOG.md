@@ -1,5 +1,25 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (đêm, sau) — Triệu: notebook Kaggle cho W8 (test một lần)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Thêm:** `experiments/countgdpp/kaggle_p1_test.ipynb`, dựng từ `kaggle_p1_dev.ipynb`.
+- Ô môi trường và Kiểm A chép nguyên từ W6, để test chạy cùng môi trường với dev.
+- Ô 2 dừng nếu `test/inputs.jsonl` hoặc `test/manifest.csv` khác hash đã khóa, hoặc freeze v2 khác sha256 `64e89ef5…`. Tham số tau 0.20, M = 5, `--replay-b2` lấy thẳng từ freeze.
+- Ô 4 kiểm hash 40 ảnh test.
+- Ô 6 chạy runner **một lần**; Ô 1 chặn nếu phiên đã có `w8_out/p1_test_*`.
+- Ô 7 chạy `p1_controls.py` → `bundle_offline_v2.py` → `apply_freeze_v2.py`; không có `evaluate_research.py`, không chọn lại ngưỡng.
+- Ô 8 gói `for_repo_<stamp>.zip` (json/jsonl/csv/txt) và `FILES_<stamp>.json`.
+
+**Đã kiểm (CPU, không chạy test):**
+- Cú pháp từng ô.
+- Mô phỏng các phép kiểm của Ô 2 trên máy: hash test khớp, freeze sha khớp, tau 0.20 / M 5 / replay_b2.
+- `apply_freeze_v2.py --verify-dev` PASS: 5/5 cách khớp dev selection.
+- **Chưa chạy trên Kaggle.**
+
+**Bước tiếp:** Triệu commit + push, chạy notebook bằng Save Version (GPU T4, Internet, gắn dataset checkpoint), tải `for_repo_*.zip`.
+
 ## 11/11/2026 (đêm) — Trí khóa cấu hình; freeze v2 + công cụ áp lên test
 
 **Quyết định của Trí (chat):** "đồng ý khóa cấu hình đó, viết freeze v2 rồi push luôn". Cấu hình: P(tau 0.20, M = 5)+F, kèm báo cáo B0 / B2 / C6 / B2+F để tham khảo.
