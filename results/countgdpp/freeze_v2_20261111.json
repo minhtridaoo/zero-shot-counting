@@ -1,0 +1,188 @@
+{
+  "status": "FROZEN_V2",
+  "frozen_at": "2026-11-11T14:05:24+07:00",
+  "frozen_by": "Trí (xác nhận trong chat 11/11/2026: \"đồng ý khóa cấu hình đó, viết freeze v2 rồi push luôn\"; assistant ghi)",
+  "rule": "D9 trên dev v2 (MAE cả tập nhỏ nhất, MAE có mặt <= B0, FPR_absent <= B0); ứng viên duy nhất trên cả lưới tau x M, kể cả khi có T/P+T",
+  "main": {
+    "name": "P(tau 0.20, M 5)+F",
+    "source": "tau0.200",
+    "filter": "F",
+    "bounds": {
+      "countgd": [
+        0.23055177927017212,
+        0.9820637702941895
+      ],
+      "clip": [
+        0.12277928739786148,
+        0.3354185223579407
+      ]
+    },
+    "threshold": 0.6041801156064331,
+    "dev": {
+      "all": {
+        "n": 60,
+        "MAE": 3.533333333333333,
+        "RMSE": 6.2048368229954285
+      },
+      "present": {
+        "n": 40,
+        "MAE": 5.05,
+        "RMSE": 7.433034373659253
+      },
+      "absent": {
+        "n": 20,
+        "FPR_absent": 0.05
+      }
+    }
+  },
+  "runner": {
+    "script": "experiments/countgdpp/run_b2_verified_pseudo.py",
+    "args": {
+      "tau_pseudo": [
+        0.2
+      ],
+      "m": 5,
+      "replay_b2": true
+    },
+    "tau_sample": 0.23,
+    "tau_final": 0.23,
+    "max_pseudo": 3,
+    "clip_model": "openai/clip-vit-base-patch32",
+    "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "clip_template": "a photo of {prompt}",
+    "machine": "Kaggle Tesla T4, cùng notebook/môi trường với W6 dev (D1)",
+    "fusion": "F = 0.5*norm(CountGD score, bounds.countgd) + 0.5*norm(CLIP cosine, bounds.clip), norm clamp [0,1], giữ khung khi F >= threshold; bounds và threshold KHÓA từ dev, không chọn lại"
+  },
+  "companions_report_only": {
+    "B0": {
+      "source": "B0",
+      "filter": null,
+      "bounds": null,
+      "threshold": null,
+      "dev": {
+        "all": {
+          "n": 60,
+          "MAE": 6.283333333333333,
+          "RMSE": 11.712528904268853
+        },
+        "present": {
+          "n": 40,
+          "MAE": 8.25,
+          "RMSE": 13.73135098961497
+        },
+        "absent": {
+          "n": 20,
+          "FPR_absent": 0.2
+        }
+      }
+    },
+    "B2": {
+      "source": "B2",
+      "filter": null,
+      "bounds": null,
+      "threshold": null,
+      "dev": {
+        "all": {
+          "n": 60,
+          "MAE": 9.15,
+          "RMSE": 15.432109382712397
+        },
+        "present": {
+          "n": 40,
+          "MAE": 12.0,
+          "RMSE": 18.027756377319946
+        },
+        "absent": {
+          "n": 20,
+          "FPR_absent": 0.2
+        }
+      }
+    },
+    "C6 = B0+F": {
+      "source": "B0",
+      "filter": "F",
+      "bounds": {
+        "countgd": [
+          0.23065003752708435,
+          0.9643355011940002
+        ],
+        "clip": [
+          0.1473497897386551,
+          0.3268432319164276
+        ]
+      },
+      "threshold": 0.4265973317666231,
+      "dev": {
+        "all": {
+          "n": 60,
+          "MAE": 4.016666666666667,
+          "RMSE": 6.977344289436585
+        },
+        "present": {
+          "n": 40,
+          "MAE": 5.8,
+          "RMSE": 8.426149773176359
+        },
+        "absent": {
+          "n": 20,
+          "FPR_absent": 0.05
+        }
+      }
+    },
+    "B2+F": {
+      "source": "B2",
+      "filter": "F",
+      "bounds": {
+        "countgd": [
+          0.23055177927017212,
+          0.9820637702941895
+        ],
+        "clip": [
+          0.12427221983671188,
+          0.3354185223579407
+        ]
+      },
+      "threshold": 0.6227619821113922,
+      "dev": {
+        "all": {
+          "n": 60,
+          "MAE": 3.7333333333333334,
+          "RMSE": 6.44980619863884
+        },
+        "present": {
+          "n": 40,
+          "MAE": 5.15,
+          "RMSE": 7.7168646482881895
+        },
+        "absent": {
+          "n": 20,
+          "FPR_absent": 0.2
+        }
+      }
+    }
+  },
+  "companions_note": "Chỉ báo kèm để tham khảo, không dùng để chọn lại sau khi xem test",
+  "provenance": {
+    "dev_run": "results/countgdpp/p1_dev_kaggle_t4_20261111_1203_m5",
+    "dev_run_config_sha256": "288f785c0df1e03252cb8de48f63af7e6da1c20d189246886a62e16cadaeff03",
+    "selection": "results/countgdpp/p1_dev_kaggle_t4_20261111_1203_m5_dev_selection_T/selection.json",
+    "selection_sha256": "455998e5c09a3be95a1760057a83c4a3a16dffeb00c5f3ecfb6a3bcb2b45eab9",
+    "bundle_sha256": "651a01c140c96cb0eef2b079727d00155f7e49d48e0f2aa7de4c46f3ada34aa9",
+    "dev_manifest_sha256": "52d3f667bcd1b8bd8a7537504e9d8b45d5df50faac98a62b3b051cb5abaf6854",
+    "selection_meta_sha256": "64b161eeb3fa4dbbeb8f5250c2f86dafa1b414048467e5ed5ae8836cfbe308ec",
+    "data_locked_at": "2026-11-11T11:54:55+07:00",
+    "code_sha256": {
+      "experiments/countgdpp/run_b2_verified_pseudo.py": "b60cfb98256d53a06bb0bc960120de2d96c1d1c0ed8b5b6be829ed5781bbfea8",
+      "experiments/countgdpp/pseudo_clip_verifier.py": "6da11952ad11050eab89a651d8ece3f3e193a31b805900440b8ce5d8e3c11e8b",
+      "experiments/countgdpp/p1_controls.py": "a8763bbe785ac2ca124188f3bc44eb758e06bb69b3dce01b10815fec20def186",
+      "experiments/countgdpp/bundle_offline_v2.py": "91fa3f3d914de4143741ef71a4fac92c64e8f3cc3cc3410a8427ff3f5ef1ebe9",
+      "experiments/countgdpp/select_offline_v2.py": "9102371e3046dd76e95ec95db57cc08b6a203a8122ce6cc9c79ab5372ae017cc"
+    }
+  },
+  "test_protocol": "Chạy test MỘT lần trên dev_test_v2/test (40 ảnh, 119 query chấm; t37_1 uncertain theo D12) bằng apply_freeze_v2.py; không chỉnh tham số sau khi xem kết quả test",
+  "limitations": [
+    "Số dev là số khớp trên chính dev (ngưỡng, tau, M chọn trên 60 query) nên lạc quan",
+    "Các cách đứng đầu sát nhau trên dev (3.53 / 3.62 / 3.73 / 4.02); test quyết định",
+    "M=10 có hòa tau0.180+F/tau0.200+F; cấu hình khóa dùng M=5 là ứng viên duy nhất trên cả lưới"
+  ]
+}

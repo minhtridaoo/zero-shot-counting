@@ -46,6 +46,8 @@
 
 > **Bổ sung 11/11 — **D11 (Trí chốt 11/11): GT = số điểm MUCCA gốc.** Chỗ người kiểm đếm khác thì vẫn giữ `gt_count` MUCCA, ghi `needs_review` + số người đếm vào `uncertainty_note`; báo cáo thêm một bảng độ nhạy "nếu dùng số người đếm". Lớp absent nhìn thấy trong ảnh thì đổi sang ứng viên kế tiếp đầu tiên. **Lưu CSV bằng "CSV UTF-8"**, ngày dạng `2026-11-11`.**
 
+> **Bổ sung 11/11 — **D12 (Trí chốt 11/11):** t37_1 (mcac_204, `pens`) đánh `uncertain`, loại khỏi chấm. Lý do: MUCCA gán nhầm **loại** (3 vật là bút chì gỗ), khác lỗi đếm lệch mà D11 nhắm tới; `gt_count` 3 giữ để truy vết; nêu trong hạn chế. Test còn 119 query được chấm.**
+
 ## 4. Kế hoạch tối ưu từ 06/11
 
 Đường găng: **quyết định → dữ liệu khóa → chạy dev → khóa cấu hình → test 1 lần → báo cáo**. Mọi việc khác làm song song.

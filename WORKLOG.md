@@ -1,5 +1,39 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (đêm) — Trí khóa cấu hình; freeze v2 + công cụ áp lên test
+
+**Quyết định của Trí (chat):** "đồng ý khóa cấu hình đó, viết freeze v2 rồi push luôn". Cấu hình: P(tau 0.20, M = 5)+F, kèm báo cáo B0 / B2 / C6 / B2+F để tham khảo.
+
+**Đã làm:**
+- `results/countgdpp/freeze_v2_20261111.json` (sha256 64e89ef53eab306fdbb33cfc39797749ff17cc8635f46ae381d96e45c4f6736d). Chứa:
+  - tham số lấy đúng từ `..._m5_dev_selection_T/selection.json` (bounds CountGD [0.2306, 0.9821], CLIP [0.1228, 0.3354], ngưỡng F 0.60418);
+  - các cách báo kèm cùng tham số dev;
+  - thiết lập runner (tau_pseudo 0.20, M 5, CLIP revision 3d74acf…);
+  - provenance (hash run_config, selection, bundle, manifest dev, selection_meta, 5 file code);
+  - hạn chế.
+- `experiments/countgdpp/apply_freeze_v2.py`: chỉ áp, không chọn lại ngưỡng; kiểm dữ liệu LOCKED và hash manifest khớp bản khóa; loại uncertain; bootstrap theo ảnh so với B0; không ghi đè.
+- **Kiểm:**
+  - `--verify-dev` cho số đếm khớp hệt dev selection ở 5/5 cách (PASS).
+  - Chạy thử toàn bộ đường đi trên dev vào thư mục tạm rồi xóa. Số dev chỉ để kiểm công cụ: P+F so với B0 −2.75, CI [−4.85, −0.80]; số này lạc quan vì ngưỡng chọn trên dev.
+- Thêm mục **W8 (chạy test một lần)** vào GIAO_VIEC_TRIEU_20261106.md; cập nhật BAT_DAU (bước [9] ✅, [10] đang làm), HANDOFF_TRIEU.
+
+**Git:** commit + push theo yêu cầu.
+
+## 11/11/2026 (khuya, sau) — pull T / P+T của Triệu, kiểm lại D9
+
+**Git:** fetch thấy 060a93a (Triệu D9 không có T) và 06e8235 (T, P+T từ raw Kaggle, D9 chạy lại). File D9 của Triệu trùng đường dẫn với file chưa commit của assistant.
+- So nội dung: d9, summary, parameters **trùng hệt**; chỉ khác `tool_sha256` / `bundle_sha256` (khác kiểu xuống dòng giữa hai máy). Hai bên tính độc lập ra cùng kết quả.
+- Lưu bản assistant → `quá khứ/snapshots/2026-11-11_d9_assistant_truoc_pull_06e8235.zip`, xóa bản local, stash tài liệu → pull --ff-only → pop.
+- Xung đột WORKLOG: giữ cả hai. Xóa stash tạm.
+
+**Kiểm độc lập T:**
+- Chạy lại `select_offline_v2.py` trên `..._{m10,m5}_offline_T/bundle.json` vào thư mục tạm (đã xóa): d9, summary, parameters khớp `..._dev_selection_T/selection.json` của Triệu.
+- 7/7 run T (M = 5) có `original_replay_verified = True`.
+
+**Kết quả (M = 5):** T 8.55, P+T 8.25 (đều tốt hơn B2 9.15 nhưng kém B0 6.28); T+F 3.95; P+T+F 3.78; **P+F 3.53**. **D9 không đổi:** M = 5 tau0.200+F `CANDIDATE`; M = 10 hòa tau0.180+F / tau0.200+F.
+
+**Chờ:** Trí khóa cấu hình → assistant viết freeze v2 → Triệu chạy test một lần trên Kaggle T4.
+
 ## 11/11/2026 (tối) — tính T và P+T trên dev từ raw Kaggle, chạy lại D9
 
 *Mục này do assistant soạn theo yêu cầu của Triệu. Chỉ chạy CPU, không gọi model/CLIP.*
@@ -32,6 +66,27 @@
 - Phần lớn mức cải thiện đến từ bộ lọc cuối chọn lại ngưỡng. Đây là số khớp trên chính dev.
 
 **Chưa làm:** biến thể T và P+T (cần raw `.npz` trong Output của Kaggle). Trí quyết có tính T trước khi khóa cấu hình không (16/11).
+
+## 11/11/2026 (khuya) — pull W5 + W6 của Triệu, chấm dev v2 theo D9
+
+**Git:** fetch thấy 6928d12 (W5 khóa + notebook Kaggle) và 6121ebf (W6 output). Local còn 6 file chưa push (bản sửa t37_1 + tài liệu).
+- Snapshot `quá khứ/snapshots/2026-11-11_truoc_pull_6121ebf.zip` → stash → pull --ff-only → stash pop.
+- Xung đột 3 file:
+  - `test/manifest.csv`: **lấy bản Triệu**, vì đây là bản đã khóa (hash df3f739b… ghi trong selection_meta). t37_1 cùng nội dung uncertain theo D12.
+  - `BAT_DAU`: lấy bản Triệu, rồi cập nhật lại.
+  - `WORKLOG`: giữ cả hai.
+- Xóa stash tạm.
+- **Kiểm khóa:** 5 file (dev/test inputs + manifest, absent_candidates) khớp đúng hash trong `selection_meta` (LOCKED 2026-11-11T11:54:55, Triệu).
+
+**W6:** 3 run (m10, m10_rep, m5) + controls (điểm CLIP cho B0/B2/6 tau) + kaggle_meta; Kiểm A, Kiểm C 60/60 theo log của Triệu (Triệu đã kiểm sha256 1.010 file).
+
+**Chấm D9 (CPU, file đã lưu):** `bundle_offline_v2.py` + `select_offline_v2.py --manifest dev/manifest.csv --selection-meta …` cho m10 và m5. Output: `..._m10_offline/`, `..._m10_dev_selection/`, `..._m5_offline/`, `..._m5_dev_selection/`.
+- m5 cho `CANDIDATE` = tau0.200+F; m10 cho `TIE` tau0.180+F / tau0.200+F.
+- Bảng ([reports/DEV_V2_D9_KET_QUA_20261111.md](reports/DEV_V2_D9_KET_QUA_20261111.md)): B0 6.28 / 8.25 / 0.20; **P(0.20, M = 5)+F 3.53 / 5.05 / 0.05**; P(M = 10)+F ≈ 3.62; B2+F 3.73; C6 4.02; B0+S 4.10.
+- Ngưỡng chọn trên dev nên số lạc quan; các cách đứng đầu sát nhau.
+- Chưa có T/P+T (raw `.npz` trên Kaggle).
+
+**Chờ:** Trí khóa cấu hình (§3 báo cáo) → assistant viết freeze v2 → Triệu chạy test một lần.
 
 ## 11/11/2026 (chiều) — Triệu: W6 chạy dev trên Kaggle T4 xong, đưa output vào repo
 
@@ -90,6 +145,23 @@ Raw nằm trong Output của notebook trên Kaggle; Triệu chia sẻ cho Trí.
 **Lưu ý cho Trí (D1):** nền tảng đổi từ Colab T4 sang Kaggle T4, cùng loại GPU nhưng khác driver và môi trường. Vẫn chỉ so các cách trong cùng một lần chạy. **Test (23–24/11) phải chạy trên cùng nền tảng Kaggle T4** để ngưỡng chọn trên dev dùng được. Raw `.npz` nằm trong Output của Kaggle thay vì Drive; Triệu chia sẻ notebook cho Trí.
 
 **Bước tiếp:** Triệu commit + push (Kaggle lấy code từ GitHub), nhập notebook vào Kaggle, bật GPU T4 + Internet, rồi Save & Run All. Xong thì tải `for_repo_<stamp>.zip` để assistant kiểm và chép vào `results/countgdpp/`.
+
+## 11/11/2026 (tối) — pull W3 + W4 của Triệu, kiểm test, quyết định D12
+
+**Git:** fetch thấy `2685dc5` (Triệu W4); `pull --ff-only`, không xung đột (máy sạch sau khi Trí push d86d159).
+
+**W3:** PILOT_SUMMARY §7 ghi Triệu đồng ý 11/11; Trí đã đồng ý 05/11. **Pilot đóng.**
+
+**W4, kiểm độc lập (chỉ đọc):**
+- 3 file test UTF-8 LF; 40 ảnh / 120 query; inputs = manifest.
+- GT present = số điểm MUCCA; absent 0 điểm; verified_by: 67 visual_checked, 13 needs_review, 40 absent_checked; 40/40 absent_ok (Triệu, 2026-11-11).
+- t37_3 pencils → cups: mcac_204 chỉ có nhãn pens/rulers, cups là ứng viên kế tiếp đầu tiên.
+- Ngoài cột người kiểm, chỉ đổi 3 ô của t37_3.
+- Dev giữ nguyên hash (e0b420fc… / 52d3f667…).
+
+**D12 (Trí chọn):** t37_1 → `presence_status=uncertain`, gt_count 3 giữ để truy vết, note ghi lý do. Đây là lỗi gán nhầm loại của MUCCA (bút chì gỗ bị gán pens). Chỉ đổi 1 dòng; `test/manifest.csv` sha256 b99970c3ceba3728a50fcdcad0d66df01ebd00a0170e7db9a67b780ec87cff1c. evaluate_research và select_offline_v2 đều loại uncertain.
+
+**Còn:** W5 Triệu khóa cả hai tập; W6 Triệu chạy dev. Trí push bản có t37_1 trước khi Triệu khóa.
 
 ## 11/11/2026 (tối) — Triệu: W4 kiểm xong 40 ảnh test (D11)
 

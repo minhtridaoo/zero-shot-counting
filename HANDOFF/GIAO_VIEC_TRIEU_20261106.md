@@ -12,6 +12,8 @@
 
 > **Cập nhật 11/11:** Trí đã kiểm xong **dev 20 ảnh**; nội dung dev đã chốt (hash `dev/inputs.jsonl` e0b420fc7585…). **W6 được chạy ngay**, không cần chờ W4/W5: W6 chỉ đọc `dev/inputs.jsonl`. Khi làm W4 (test 40 ảnh) theo **D11**: GT giữ số điểm MUCCA; chỗ đếm khác thì ghi `needs_review` + số mình đếm vào `uncertainty_note`; absent nhìn thấy thì đổi sang ứng viên kế tiếp đầu tiên; lưu **CSV UTF-8** (Excel: "CSV UTF-8 (Comma delimited)"), ngày dạng `2026-11-11`.
 
+> **Cập nhật 11/11 (chiều):** W3 ✅, W4 ✅ (assistant kiểm độc lập đạt). **D12 (Trí chốt 11/11):** t37_1 (mcac_204, `pens`) đánh `uncertain`, loại khỏi chấm. Lý do: MUCCA gán nhầm **loại** (3 vật là bút chì gỗ), khác lỗi đếm lệch mà D11 nhắm tới; `gt_count` 3 giữ để truy vết; nêu trong hạn chế. Test còn 119 query được chấm. **Còn: W5 khóa** (pull trước, rồi đặt LOCKED, người/ngày, hash của dev/test inputs + manifest) và **W6 chạy dev**, làm được ngay, không cần chờ W5.
+
 ## 1. Việc và hạn
 
 | # | Việc | Ước lượng | Hạn | Chặn việc khác? |
@@ -28,6 +30,22 @@
 | W7 | Bắt đầu viết Related Work (CountGD++, PseCo, DAVE, PrACo++/MUCCA, VA-Count) | khoảng 2 giờ | 20/11 | Không |
 
 **Thứ tự làm:** W1 → W2 → W3 (cùng ngày 06/11) → W4 → W5 → W6. W7 làm khi rảnh.
+
+## W8 — chạy TEST một lần (thêm 11/11, sau khi Trí khóa cấu hình)
+
+**Cấu hình đã khóa:** `results/countgdpp/freeze_v2_20261111.json` (sha256 `64e89ef53eab306f…`): **P(tau 0.20, M = 5) + F**, ngưỡng và min/max lấy từ dev. Không được đổi.
+
+1. Trên **Kaggle T4**, cùng môi trường với W6: sao chép `kaggle_p1_dev.ipynb` và đổi input thành `experiments/countgdpp/dev_test_v2/test/inputs.jsonl`. Ô kiểm đầu phải kiểm `test/inputs.jsonl` + `test/manifest.csv` khớp hash trong `selection_meta.json`.
+2. Chạy **một lần**:
+   `run_b2_verified_pseudo.py --inputs …/test/inputs.jsonl --run-id p1_test_kaggle_t4_<stamp> --tau-pseudo 0.20 --m 5 --replay-b2`
+   Có B0 = lượt 1, B2 và tau0.200 trong cùng run.
+3. `p1_controls.py --run results/countgdpp/p1_test_kaggle_t4_<stamp> --run-id p1_test_kaggle_t4_<stamp>_controls` (để có điểm CLIP).
+4. `bundle_offline_v2.py --controls results/countgdpp/p1_test_kaggle_t4_<stamp>_controls --out results/countgdpp/p1_test_kaggle_t4_<stamp>_offline/bundle.json`.
+5. **Chấm duy nhất bằng:**
+   `apply_freeze_v2.py --bundle …_offline/bundle.json --manifest experiments/countgdpp/dev_test_v2/test/manifest.csv --out results/countgdpp/p1_test_kaggle_t4_<stamp>_eval`
+   **Không** chạy ô `evaluate_research.py` (chấm nhanh) cho test, và **không** chọn lại ngưỡng.
+6. Đưa vào repo `predictions_*.jsonl`, `run_config.json`, `candidates.jsonl`, `_controls*`, `_offline/bundle.json`, `_eval/result.json`, `FILES_*.json`. Không đưa `.npz` hay ảnh (D10).
+7. Kết quả xấu cũng **không chạy lại**. Lỗi kỹ thuật (crash, thiếu file) thì ghi lại rồi chạy lại đúng lệnh cũ, kèm ghi chú trong WORKLOG.
 
 ## 2. Lệnh rút dữ liệu (W1)
 

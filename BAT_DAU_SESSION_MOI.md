@@ -16,9 +16,11 @@
 ```
 ✅ [1] Chạy CountGD++    ✅ [2] Pilot tìm lỗi    ✅ [3] Cải tiến v1 (lọc + freeze)
 ✅ [4] Kiểm 10 ảnh mới    ✅ [5] N4 review khung   ✅ [6] Chốt nhánh P + T, D1–D10 (05/11)
-⏳ [7] Dữ liệu v2: đã rút dev 20 + test 40 (05/11), dev đã kiểm 20/20; test chờ kiểm, CHƯA KHÓA   ◀── ĐANG Ở ĐÂY
-   [8] Chạy dev trên T4: P (lưới tau), T, P+T, C6 → [9] chọn 1 cách theo luật D9, khóa cấu hình
-   [10] Test 1 lần trên 40 ảnh → [11] Báo cáo + slide + nộp 02/12
+✅ [7] Dữ liệu v2: dev + test đã kiểm, LOCKED 11/11 (Triệu W5; D11 GT MUCCA, D12 t37_1 uncertain)
+✅ [8] Chạy dev trên Kaggle T4 (Triệu W6, Kiểm A/C 60/60) + chấm D9 (assistant)
+✅ [9] KHÓA CẤU HÌNH 11/11: P(tau 0.20, M = 5)+F → `results/countgdpp/freeze_v2_20261111.json` (dev 3.53 so với B0 6.28)
+⏳ [10] Test 1 lần trên 40 ảnh (Triệu, W8, chấm bằng apply_freeze_v2.py)   ◀── ĐANG Ở ĐÂY
+   [11] Báo cáo + slide + nộp 02/12
 ```
 
 **Nhánh P** (CLIP kiểm mẫu trước lượt 2) đã có code và đã kiểm trên pilot; chưa thử thật vì dữ liệu chưa khóa. **Nhánh R** chỉ để dự phòng. Chi tiết ở mục 1b của file kế hoạch.
@@ -37,14 +39,21 @@
 
 Ảnh hỗ trợ kiểm GT dev: [mở danh sách 40 ảnh có điểm và số thứ tự](experiments/countgdpp/dev_test_v2/dev/gt_review_images/index.html). Đây là nhãn nguồn, không phải dự đoán hay xác nhận người.
 
+**✅ 11/11 (tối) — dev v2 đã chấm theo D9** ([kết quả](reports/DEV_V2_D9_KET_QUA_20261111.md)):
+- B0: MAE 6.28 / có mặt 8.25 / FPR 0.20.
+- **P(tau 0.20, M = 5)+F: 3.53 / 5.05 / 0.05**, ứng viên D9.
+- P(tau 0.18–0.22, M = 10)+F ≈ 3.62; B2+F 3.73; C6 (B0+F) 4.02.
+- Ngưỡng chọn trên chính dev nên số lạc quan; các cách đứng đầu sát nhau, test sẽ quyết.
+- **T / P+T đã có** (Triệu tính từ raw Kaggle; assistant kiểm lại khớp): T 8.55, P+T 8.25, P+T+F 3.78. **D9 không đổi**: P(tau 0.20, M = 5)+F.
+
 ## Việc ngay tiếp theo
 
 | Ai | Việc | Hạn |
 |---|---|---|
-| **Trí** | ✅ Đã xong kiểm 20 ảnh dev (11/11). Tiếp: chờ bảng dev từ W6 để chọn cấu hình theo D9 (khoảng 1 giờ); bắt đầu dàn ý báo cáo | 16/11 |
-| **Triệu** | W3, W4 đã xong 11/11 (test 40 ảnh: 13 `needs_review`, t37_3 đổi sang cups; [báo cáo](reports/TRIEU_W4_KIEM_TEST_20261111.md)). **W5 đã khóa 11/11** (`selection_meta.json` LOCKED, có hash 6 file) | 12–13/11 |
+| **Trí** | ✅ Khóa cấu hình 11/11. Tiếp: **viết báo cáo** (giới thiệu, phương pháp, thiết lập, pilot, N4, dev); phần kết quả test điền sau W8 | 11–29/11 |
+| **Triệu** | **W8: chạy test MỘT lần** trên Kaggle T4 theo mục W8 của GIAO_VIEC_TRIEU_20261106.md; Related Work (W7) | càng sớm càng tốt, ≤ 24/11 |
 | **Triệu** | ✅ **W6 xong 11/11** (Kaggle T4, stamp 20261111_1203: Kiểm A, Kiểm C 60/60 đạt; output nhỏ ở `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, raw trên Kaggle). Trước đó: **W6 chạy trên Kaggle T4** bằng `experiments/countgdpp/kaggle_p1_dev.ipynb` (11/11, thay Colab; test sau này cũng phải chạy Kaggle T4). Nội dung cũ: **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
-| **Assistant** | Đã xong: công cụ T/S/F/D9 (10/10 kiểm đạt, 10/11); chẩn đoán T + C6 trên p4_unseen_v1 (11/11, [kết quả](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)). Tiếp: chấm W6 bằng `select_offline_v2.py` khi dev đã khóa và có output (cần raw P1 trên Drive để tính P+T) | sau W6 |
+| **Assistant** | ✅ freeze v2 (`results/countgdpp/freeze_v2_20261111.json`) + `experiments/countgdpp/apply_freeze_v2.py` (áp lại lên dev: khớp 5/5 cách). Tiếp: kiểm output test của Triệu; soạn nháp báo cáo khi Trí cần | sau W8 |
 
 
 **Giải thích thao tác (10/11):** kiểm absent/GT là xem ảnh gốc để xác nhận nhãn đầu vào dùng chấm, không review output model. Đã đọc bảng: dev vẫn 20 PENDING; có thể bắt đầu mcac_9 (plates=12, cups=4, forks dự kiến vắng mặt). Chưa có xác nhận nhãn mới.

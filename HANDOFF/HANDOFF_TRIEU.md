@@ -1,6 +1,14 @@
 # Handoff Triệu — thực hiện T1–T4 theo kế hoạch V2
 
 > **Trạng thái hiện hành — đồng bộ 02/11/2026:** Bản trước cập nhật `71009c8` đã gồm `415af3b` (V3 + app gán nhãn) và `71009c8` (V5 + đề xuất P). V3/V5 đã nộp; xem [đánh giá đã lưu](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_V3_V5_20261102.md>). Còn V4 (hạn gốc 01/11), V6 (hạn gốc 02/11), V7 duyệt chung dự kiến 03/11. **Dời V4/V6 sang 04/11 chỉ là đề xuất, chưa có xác nhận trong lượt này.** N4 A còn ca nhãn cần thống nhất; app mới dành cho q05 không tự chứng minh N4 đã được sửa. P/T, C6 và dữ liệu dev/test mới đang ở mức đề xuất, chưa duyệt hoặc chạy. Các mốc cũ bên dưới giữ để tra lịch sử; ưu tiên ghi chú này và bảng resume. Đã push đủ 13 file đánh giá/tiến độ trong commit `22a10e2`; kiểm local và remote main khớp ngày 02/11.
+> **11/11 (đêm): CẤU HÌNH ĐÃ KHÓA** (`results/countgdpp/freeze_v2_20261111.json`). Việc tiếp: **W8 chạy test một lần**, theo mục W8 trong GIAO_VIEC_TRIEU_20261106.md (Kaggle T4, chấm duy nhất bằng `apply_freeze_v2.py`).
+
+> **11/11 (khuya, sau):** T / P+T + D9 chạy lại đã nhận. Assistant kiểm độc lập: D9/bảng điểm/ngưỡng khớp; 7/7 run T có replay đạt. Việc tiếp: chờ Trí khóa → **chạy test một lần trên Kaggle T4**.
+
+> **11/11 (khuya):** W5 + W6 đã nhận, kiểm đạt (5 file khóa khớp hash; Kiểm A/C 60/60). Assistant chấm D9 trên dev: ứng viên **P(tau 0.20, M = 5)+F** ([kết quả](../reports/DEV_V2_D9_KET_QUA_20261111.md)). **Chờ Trí khóa cấu hình**, rồi Triệu chạy test một lần. Nếu Trí cần T/P+T thì chia sẻ raw `.npz` W6.
+
+> **11/11 (tối):** W3 + W4 đã nhận, đạt. Trí chốt D12: t37_1 → `uncertain`. Việc tiếp: **W5 khóa**, **W6 chạy dev**.
+
 > **11/11 (chiều):** dev đã chốt nội dung → **bắt đầu W6 ngay**; W4 làm theo D11 (xem đầu GIAO_VIEC_TRIEU_20261106).
 
 > **11/11:** chẩn đoán sớm ([kết quả](../reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)): C6 (B0 + lọc) có triển vọng thắng B0 nhất. **W6 giữ nguyên lệnh**, nhưng nhớ chạy `p1_controls.py` để có điểm CLIP cho cả nguồn B0 (C6). Lưu raw `.npz` trên Drive để assistant tính P+T.
