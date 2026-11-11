@@ -43,6 +43,8 @@ Ngoài ra: t27_1 (chairs) có số khớp 11, nhưng điểm 11 bị đặt lệ
 
 Assistant nghiêng về cách 1 hoặc 2. Quyết định là của Trí, và phải chốt **trước** khi chạy test.
 
+> **Đã chốt 11/11, trước khi khóa:** Trí chọn **cách 2** ở trên (Triệu chuyển lời trong chat; trong bảng hỏi của Trí, cách này là "1. Đánh uncertain, loại khỏi chấm"). `test/manifest.csv` dòng t37_1: `presence_status=uncertain`; `gt_count=3` giữ để lưu vết; ghi chú nêu lý do. Evaluator bỏ query này khỏi mọi chỉ số. Còn 119 query được chấm: 79 có mặt, 40 vắng mặt. Ghi trong `selection_meta.json` → `post_selection_changes`.
+
 ## 4. File đã sửa (chỉ các dòng test)
 
 | File | Thay đổi | sha256 sau khi sửa |

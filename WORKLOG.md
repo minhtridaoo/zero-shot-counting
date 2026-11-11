@@ -1,5 +1,30 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (tối) — Triệu: W5 khóa dev_test_v2; W6 chuyển sang Kaggle T4
+
+*Mục này do assistant soạn theo yêu cầu của Triệu ("tiến hành W5 và W6 thôi"; "chạy kaggle đi, kaggle có tính năng save version còn colab phải treo máy nữa").*
+
+**W5, đã khóa:** `experiments/countgdpp/dev_test_v2/selection_meta.json` → `status=LOCKED`, `locked_at=2026-11-11T11:54:55+07:00` (khóa lại sau khi áp quyết định t37_1 của Trí), `locked_by` = Triệu (assistant ghi).
+- Thêm các trường `review_protocol` (HUONG_DAN_KIEM_V2 + D11), `human_review` (dev: Trí; test: Triệu), `usage_history` (chưa có output model nào trên dev_test_v2 khi khóa), `post_selection_changes` (t37_3 pencils → cups; t37_1 present → `uncertain`, theo quyết định của Trí, Triệu chuyển lời: lỗi gán nhầm loại, loại khỏi mọi chỉ số, giữ gt_count=3 để lưu vết).
+- Trí cũng đã khóa ở máy Trí nhưng chưa push. Triệu chọn tự khóa và push luôn, nên **khi Trí push sẽ xung đột ở `selection_meta.json` và `test/manifest.csv`: giữ bản này** (đã có quyết định t37_1 của Trí), hoặc đối chiếu hai bản rồi chọn một.
+- `locked_file_sha256`:
+  - `dev/inputs.jsonl` e0b420fc7585…, `dev/manifest.csv` 52d3f667bcd1… (khớp hash Trí ghi);
+  - `test/inputs.jsonl` 5fdf61206651…, `test/manifest.csv` df3f739bcd4b…;
+  - `absent_candidates.csv` 375744ce255d…, `human_review_test_20261111.json` bf3c3eeb26c1….
+- sha256 của `selection_meta.json` sau khi khóa: 64b161eeb3fa….
+- Trước khi khóa đã kiểm: 20 + 40 ảnh đều đã kiểm; so với bản rút 05/11 chỉ đổi lớp t37_3 và trạng thái t37_1; không script nào trong repo chạy model trên dev_test_v2.
+
+**W6, notebook mới:** `experiments/countgdpp/kaggle_p1_dev.ipynb`, chạy tự động để dùng Save Version của Kaggle.
+- Lấy code từ GitHub `main`; dừng nếu dev chưa `LOCKED` hoặc hash `dev/inputs.jsonl`, `dev/manifest.csv`, ảnh dev khác bản đã khóa.
+- Môi trường giống Colab đã qua Kiểm A/C (torch 2.5.1+cu121, transformers 4.44.2, numpy 2.2.6, pillow 10.4.0), build CUDA ops cho sm 7.5.
+- Chạy: Kiểm A → P1 trên dev (6 tau 0.18–0.28, M = 10, `--replay-b2`) → `p1_controls.py` + chấm nhanh (ngưỡng cũ, chỉ để xem) → Kiểm C (chạy lại M = 10, so tuyệt đối) → M = 5 → gói `for_repo_<stamp>.zip` (chỉ file D10 cho phép) + raw đầy đủ trong Output.
+- Không đọc thư mục test.
+- Assistant đã kiểm cú pháp từng ô; **chưa chạy trên Kaggle**.
+
+**Lưu ý cho Trí (D1):** nền tảng đổi từ Colab T4 sang Kaggle T4, cùng loại GPU nhưng khác driver và môi trường. Vẫn chỉ so các cách trong cùng một lần chạy. **Test (23–24/11) phải chạy trên cùng nền tảng Kaggle T4** để ngưỡng chọn trên dev dùng được. Raw `.npz` nằm trong Output của Kaggle thay vì Drive; Triệu chia sẻ notebook cho Trí.
+
+**Bước tiếp:** Triệu commit + push (Kaggle lấy code từ GitHub), nhập notebook vào Kaggle, bật GPU T4 + Internet, rồi Save & Run All. Xong thì tải `for_repo_<stamp>.zip` để assistant kiểm và chép vào `results/countgdpp/`.
+
 ## 11/11/2026 (tối) — Triệu: W4 kiểm xong 40 ảnh test (D11)
 
 *Mục này do assistant soạn theo yêu cầu của Triệu.*

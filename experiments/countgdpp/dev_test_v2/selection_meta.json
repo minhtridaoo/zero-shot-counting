@@ -1,5 +1,5 @@
 {
-  "status": "DRAFT_NOT_LOCKED",
+  "status": "LOCKED",
   "rule": "v2_draft_distinct_all_plus_confusable_round_robin",
   "rule_script_sha256": "f751f0b3b103dc9ab4b8a6920df3066a1e936093485739a659d6558d22af5299",
   "mucca_zip_md5": "b182e445445dad017493ffb35803f816",
@@ -475,5 +475,46 @@
     "mcac_178": "0bf8931fee53bd81376c2fcebea04c6e3bb8c84db7ddf1f0dce2a5607ce51b0c",
     "mcac_147": "c937a244114527b5b9c741db966b2b48e387399aa25348f1ef8dbc6c65db9a15",
     "mcac_228": "571124dda8485f8a6518b7d024995f73be2c480fedf51052720ecec6519bee0a"
-  }
+  },
+  "locked_by": "Triệu (yêu cầu trực tiếp trong chat 11/11/2026: \"tiến hành W5 và W6 thôi\", rồi \"Tôi khóa, push luôn\"; assistant ghi)",
+  "locked_at": "2026-11-11T11:54:55+07:00",
+  "review_protocol": "HUONG_DAN_KIEM_V2.md (11/11/2026) + D11 (Trí chốt 11/11/2026, reports/KE_HOACH_TIEP_THEO_20261105.md): GT = số điểm MUCCA; người kiểm đếm khác thì needs_review + số đếm trong uncertainty_note; absent nhìn thấy thì đổi sang ứng viên kế tiếp đầu tiên",
+  "human_review": {
+    "dev": "Trí, 2026-11-11: 20/20 absent_checked, 40 present (30 visual_checked, 10 needs_review)",
+    "test": "Triệu, 2026-11-11: 40/40 absent_checked, 80 present (67 visual_checked, 13 needs_review; t37_1 sau đó đánh uncertain theo Trí); nguyên văn trong human_review_test_20261111.json; báo cáo reports/TRIEU_W4_KIEM_TEST_20261111.md"
+  },
+  "usage_history": "Rút ngày 05/11/2026 chỉ từ annotation MUCCA (select_dev_test_v2.py, seed 331). Khi khóa chưa có output model nào trên dev_test_v2; chẩn đoán T/C6 ngày 11/11 chỉ dùng p4_unseen_v1. Không dùng tập này để chọn ngưỡng/prompt/phương pháp trước khi khóa. Không khẳng định model chưa thấy ảnh trong pretraining.",
+  "post_selection_changes": [
+    {
+      "query_id": "t37_3",
+      "image_id": "mcac_204",
+      "from": "pencils",
+      "to": "cups",
+      "reason": "ảnh có 3 bút chì (MUCCA gán nhầm là pens); cups là ứng viên kế tiếp đầu tiên, Triệu xác nhận không có cốc",
+      "approved_by": "Triệu",
+      "date": "2026-11-11"
+    },
+    {
+      "query_id": "t37_1",
+      "image_id": "mcac_204",
+      "field": "presence_status",
+      "from": "present",
+      "to": "uncertain",
+      "reason": "3 vật MUCCA gán pens là bút chì gỗ; ảnh không có bút mực. Lỗi gán nhầm loại, loại khỏi mọi chỉ số (evaluator bỏ uncertain); gt_count=3 giữ để lưu vết",
+      "approved_by": "Trí (cách 1, Triệu chuyển lời trong chat 11/11/2026)",
+      "date": "2026-11-11"
+    }
+  ],
+  "open_items": [],
+  "locked_file_sha256": {
+    "dev/inputs.jsonl": "e0b420fc7585a2bc06d33070a8d99a73a17fb7ba10324a7c5289c289a3bf7cfd",
+    "dev/manifest.csv": "52d3f667bcd1b8bd8a7537504e9d8b45d5df50faac98a62b3b051cb5abaf6854",
+    "test/inputs.jsonl": "5fdf6120665122ac87d7026526f3a5831a8eb4e2ea9ceb7c8ecb6aaab7f462ad",
+    "test/manifest.csv": "df3f739bcd4b45f335aeea22af77a2ade84a2f8695c02285b10bf2eed9a285ce",
+    "absent_candidates.csv": "375744ce255dbf00d2c65680c746ad0ae414c731bcb4722dad42661c30e68473",
+    "human_review_test_20261111.json": "bf3c3eeb26c12eb5baeb40cabc3dc94c65ac835ca1a55146ee3b13fc4f668b17"
+  },
+  "resolved_items": [
+    "t37_1: Trí chọn cách 1 (uncertain, loại khỏi chấm) trước khi khóa; xem post_selection_changes."
+  ]
 }
