@@ -1,0 +1,4758 @@
+{
+  "commit": "13ac51f0e854178564b66184a3215e47613ea455",
+  "stamp": "20261111_1430",
+  "run_id": "p1_test_kaggle_t4_20261111_1430",
+  "freeze_sha256": "64e89ef53eab306fdbb33cfc39797749ff17cc8635f46ae381d96e45c4f6736d",
+  "files": [
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/candidates.jsonl",
+      "bytes": 103067,
+      "sha256": "27721a9bfb428b2ee7b107702033df905661556ad533014ea708e7887ad5c284"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/predictions_B2.jsonl",
+      "bytes": 688390,
+      "sha256": "b89237b510c16c7ec5f97f36a009b0540026dd92d2b338a845f39f552b641a75"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/predictions_tau0.200.jsonl",
+      "bytes": 687631,
+      "sha256": "9b30008a92c7aad09f1f3b350c571bd57bce1e057c778c0a8e76ee07bfb7936a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/run_config.json",
+      "bytes": 27489,
+      "sha256": "eeffa4e18d1fb66e83e7c717aa58d42e65a007ca050b0b573eb4965cb16fc02a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_1/candidates.jpg",
+      "bytes": 18435,
+      "sha256": "d89f7f27217d4ba394df06d0d583b87f0fc88b663f676bf8bb5e48a7ff76f8cb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_1/final_B2.jpg",
+      "bytes": 21585,
+      "sha256": "e45a4b364b6fd1f721186904b1ac6c02c072307fcfd99784f229d4d7e5e1b020"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_1/final_tau0.200.jpg",
+      "bytes": 21585,
+      "sha256": "e45a4b364b6fd1f721186904b1ac6c02c072307fcfd99784f229d4d7e5e1b020"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_1/stage1_raw.npz",
+      "bytes": 30179,
+      "sha256": "a8dd071d62de4af52940bbc53ddd992efde66f3c061accc0229f734f5a80d5d5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_1/stage2_B2_raw.npz",
+      "bytes": 40206,
+      "sha256": "db0d3ed2b23c47ef81336415ea012187279fe2c782292c7cac588427740047f9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_2/candidates.jpg",
+      "bytes": 18232,
+      "sha256": "e4f438c1da1bcb694bfeb308551725aefe8abd3e1ace089a3f41bb0ca3ce9d44"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_2/final_B2.jpg",
+      "bytes": 21749,
+      "sha256": "637b36281429a1c9ffbf83b62970c5922b3d204018f2d257e1519defbcd177a1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_2/final_tau0.200.jpg",
+      "bytes": 21749,
+      "sha256": "637b36281429a1c9ffbf83b62970c5922b3d204018f2d257e1519defbcd177a1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_2/stage1_raw.npz",
+      "bytes": 30279,
+      "sha256": "4e58d16a71aade274c46f5eb4b7c78fa9b493b0a92fb2c20caad18a804f1b2aa"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_2/stage2_B2_raw.npz",
+      "bytes": 40190,
+      "sha256": "787814ae257898c454801f86c5622afb71c731265f39e6ecc896e65d89c2adea"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_3/candidates.jpg",
+      "bytes": 18818,
+      "sha256": "c085c4e56cdfe95c1aa67d39e88218977e134cfd9f53514acc9c2afa15ae7213"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_3/final_B2.jpg",
+      "bytes": 22079,
+      "sha256": "3f44a611d864cdf37d4fcfb2f2b339741cabf4f49c26f517f2b2cbdb1b5f5fc2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_3/final_tau0.200.jpg",
+      "bytes": 22079,
+      "sha256": "3f44a611d864cdf37d4fcfb2f2b339741cabf4f49c26f517f2b2cbdb1b5f5fc2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_3/stage1_raw.npz",
+      "bytes": 33803,
+      "sha256": "07410f8d53bb95fb212d38cc5fc3094b90f507891940ae3ea0f0742700741c54"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t01_3/stage2_B2_raw.npz",
+      "bytes": 43435,
+      "sha256": "5ec2eea5ca6c83b10faae8027905d3709e0e929c114481ee9d4cf4babf69d329"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_1/candidates.jpg",
+      "bytes": 208724,
+      "sha256": "93cd40d4e8f848ab0e1099384e72bb331b394352f74d6523463bce78f39e11cb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_1/final_B2.jpg",
+      "bytes": 219869,
+      "sha256": "4593d1c363426b8f376f07d2b73fc51bc7bd883fb3687f7d0332e77c5fdc2628"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_1/final_tau0.200.jpg",
+      "bytes": 219869,
+      "sha256": "4593d1c363426b8f376f07d2b73fc51bc7bd883fb3687f7d0332e77c5fdc2628"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_1/stage1_raw.npz",
+      "bytes": 30496,
+      "sha256": "ac42552bd69e1d46a729ab507049ec8d3723d68a6e919190d4e90d403131f8fe"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_1/stage2_B2_raw.npz",
+      "bytes": 40314,
+      "sha256": "7ae6e2573952543cd069c66eba38783224350bb32e50e971d3829b12bf7dbef5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_2/candidates.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_2/final_B2.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_2/final_tau0.200.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_2/stage1_raw.npz",
+      "bytes": 30457,
+      "sha256": "17562fdc806bdedc3eaf5853c28c9628bbdc69132e679e1791f6c1de8b752710"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_3/candidates.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_3/final_B2.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_3/final_tau0.200.jpg",
+      "bytes": 201310,
+      "sha256": "5a97f4ae6a6cede5e67b797f46013b4adef6aa8a04a2b335a8c1cb12880eeba7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t02_3/stage1_raw.npz",
+      "bytes": 30545,
+      "sha256": "37a9e7efbc1d9f80d2bbaaec820533b29755400aba9f5e16877f1adf5920ff93"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_1/candidates.jpg",
+      "bytes": 293955,
+      "sha256": "137f1a2d4576eae048d51d08336ec7ec89cb854d8930a4a42aefe9ac110a8b71"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_1/final_B2.jpg",
+      "bytes": 294917,
+      "sha256": "0156b91378583caabeddade22576f962374da87bf901e401287331275a32404b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_1/final_tau0.200.jpg",
+      "bytes": 294917,
+      "sha256": "0156b91378583caabeddade22576f962374da87bf901e401287331275a32404b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_1/stage1_raw.npz",
+      "bytes": 30396,
+      "sha256": "9e463a0c4c3e3f387973ffb725fca86d40bf46bde077ed36bdae1bf09f806d4a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_1/stage2_B2_raw.npz",
+      "bytes": 40329,
+      "sha256": "a2a28d382fb864e87499b79cd559a636816e7318eacca1b677b877aab3ec8433"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_2/candidates.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_2/final_B2.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_2/final_tau0.200.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_2/stage1_raw.npz",
+      "bytes": 30374,
+      "sha256": "4cc134f039d5f4488748c941fb1597d69048a2f9fd5828afda151b3009b0b3f8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_3/candidates.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_3/final_B2.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_3/final_tau0.200.jpg",
+      "bytes": 288532,
+      "sha256": "eaf79ab45cfc65d4ac55a3cd25201b4e157ebbca2b1f58c4c264cbb1609d68e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t03_3/stage1_raw.npz",
+      "bytes": 30440,
+      "sha256": "ad1a0852073868221fe0cb952ec0deae7e7413ba52a39c010fde8bc5491cbadb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_1/candidates.jpg",
+      "bytes": 130391,
+      "sha256": "93701bf04bb26d8f20f5fa8a4d86e8e6d9d4ebb5d96918f4ae3523524b58682f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_1/final_B2.jpg",
+      "bytes": 135435,
+      "sha256": "daf1fe7777a9e98f72ecbffbe7ff079d6dd855135a79d1093a9e23aaee7389b5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_1/final_tau0.200.jpg",
+      "bytes": 135435,
+      "sha256": "daf1fe7777a9e98f72ecbffbe7ff079d6dd855135a79d1093a9e23aaee7389b5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_1/stage1_raw.npz",
+      "bytes": 37180,
+      "sha256": "5d9972d0058662e399e48858d3619c0bedefc163f34bdde1a17fad7c2f05b1f7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_1/stage2_B2_raw.npz",
+      "bytes": 47344,
+      "sha256": "fd557adc10bcd3854f796ad78c94655d2bdcd226ca50c14a8de32cedb1c7e716"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_2/candidates.jpg",
+      "bytes": 129455,
+      "sha256": "1980928999dd12be722b0d9102cfcc4914aeb90d91c3c11506c6991c69f78a73"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_2/final_B2.jpg",
+      "bytes": 133967,
+      "sha256": "149982e6ed919e7a1098485a7b2cece4a3279b7df19ae9291f580ae49e447d20"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_2/final_tau0.200.jpg",
+      "bytes": 133967,
+      "sha256": "149982e6ed919e7a1098485a7b2cece4a3279b7df19ae9291f580ae49e447d20"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_2/stage1_raw.npz",
+      "bytes": 33828,
+      "sha256": "be6b428655647569f056f07bddaf3707623144e5568a88b24b9b543f88f3b326"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_2/stage2_B2_raw.npz",
+      "bytes": 43578,
+      "sha256": "eab7bb55ed787bd19be50312a845f3d764acdac48b588582b01c309691989956"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_3/candidates.jpg",
+      "bytes": 127316,
+      "sha256": "fb02947a0f07c531ff0f13b778ed0391edb2f78050eb05c23b81f9464a8c6274"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_3/final_B2.jpg",
+      "bytes": 127316,
+      "sha256": "fb02947a0f07c531ff0f13b778ed0391edb2f78050eb05c23b81f9464a8c6274"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_3/final_tau0.200.jpg",
+      "bytes": 127316,
+      "sha256": "fb02947a0f07c531ff0f13b778ed0391edb2f78050eb05c23b81f9464a8c6274"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t04_3/stage1_raw.npz",
+      "bytes": 30639,
+      "sha256": "02c9917e0b2010c9d0dfaa054b0241665ea379823ca87aa3ab4a654bcfb36f5b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_1/candidates.jpg",
+      "bytes": 32104,
+      "sha256": "ff2171a6b7185b4d59d661f960d1956ab98f6744b4d2ae10289badef41aa7004"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_1/final_B2.jpg",
+      "bytes": 35662,
+      "sha256": "ab87f7c356b94e90adea72010687791350bd7cb19ef37d1cd106755f28eb32a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_1/final_tau0.200.jpg",
+      "bytes": 35662,
+      "sha256": "ab87f7c356b94e90adea72010687791350bd7cb19ef37d1cd106755f28eb32a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_1/stage1_raw.npz",
+      "bytes": 33903,
+      "sha256": "2709f6ac750a07f641ab2b3e748bffdeb1867e684c33b44b377c0e7b92ba546b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_1/stage2_B2_raw.npz",
+      "bytes": 43976,
+      "sha256": "9164cd0daef6137b8276efebb310043e8c05b6c5982f5e248509c2a4babf10e8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_2/candidates.jpg",
+      "bytes": 32248,
+      "sha256": "a4c35210b295e50030ad61de080f4c3ef4ee39f41e1e975d42030c0a85ba6da3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_2/final_B2.jpg",
+      "bytes": 34172,
+      "sha256": "8592c41f806bc82a46b060be1d8de3ca99469719be21aff23e13dcf5ea077fbf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_2/final_tau0.200.jpg",
+      "bytes": 34172,
+      "sha256": "8592c41f806bc82a46b060be1d8de3ca99469719be21aff23e13dcf5ea077fbf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_2/stage1_raw.npz",
+      "bytes": 37063,
+      "sha256": "02e97f3f8c4d9a23defd8c913e70417d3d2316b658a49482e905d4a5d0395fa9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_2/stage2_B2_raw.npz",
+      "bytes": 47077,
+      "sha256": "f2f7a7a741ef85c48dd4788bbe1e5cbcf8e09b7ff24eab1a5e39059ba5e1e77b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_3/candidates.jpg",
+      "bytes": 30036,
+      "sha256": "b623fae35801647d207021833bc2d749b901dae2871f2686e33e9f9229a5555d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_3/final_B2.jpg",
+      "bytes": 30036,
+      "sha256": "b623fae35801647d207021833bc2d749b901dae2871f2686e33e9f9229a5555d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_3/final_tau0.200.jpg",
+      "bytes": 30036,
+      "sha256": "b623fae35801647d207021833bc2d749b901dae2871f2686e33e9f9229a5555d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t05_3/stage1_raw.npz",
+      "bytes": 33912,
+      "sha256": "bba1ea0f9937e2cc08ac87c7d29561192905f9385342938386e8c66e992b810e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_1/candidates.jpg",
+      "bytes": 86934,
+      "sha256": "d3186aff22b68be4434796f1d685af404506120e0a63eb0415f7fbd810ab334c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_1/final_B2.jpg",
+      "bytes": 93387,
+      "sha256": "51279dd5114f12e584586c785b574fae3b0d27e70f8fd71d19871ac67c69b906"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_1/final_tau0.200.jpg",
+      "bytes": 93387,
+      "sha256": "51279dd5114f12e584586c785b574fae3b0d27e70f8fd71d19871ac67c69b906"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_1/stage1_raw.npz",
+      "bytes": 29867,
+      "sha256": "200312675954954c0f259fecf514c0dfd82252d1603dfb8f96467f5ab8b8b520"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_1/stage2_B2_raw.npz",
+      "bytes": 40198,
+      "sha256": "c662af304d350428870c7a2562272b8b1532b225b5eba4e5c0dc9a9573dc00cc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_2/candidates.jpg",
+      "bytes": 89183,
+      "sha256": "2ce3603167f41cc6ef597c5b62f412895a2f10a577d58cb4a8bb817e018fced7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_2/final_B2.jpg",
+      "bytes": 93197,
+      "sha256": "fbc82c02ea5f239c4771a404589e44a948432ea258fb1d317ffe9544de3ecaae"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_2/final_tau0.200.jpg",
+      "bytes": 93197,
+      "sha256": "fbc82c02ea5f239c4771a404589e44a948432ea258fb1d317ffe9544de3ecaae"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_2/stage1_raw.npz",
+      "bytes": 33543,
+      "sha256": "2d6fcbf17f5c42effcf4fa04d53e41a2fe60614c523ed99a462f0142a594e0d5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_2/stage2_B2_raw.npz",
+      "bytes": 43650,
+      "sha256": "b93c77499988ca6e6c1bbee6ad0afdacc9249ac2196026bb2ea161582929f126"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_3/candidates.jpg",
+      "bytes": 80398,
+      "sha256": "47afa4460f10a7185f6f9a0bb271978a7052bb4d7b90df514bdd4787b2affc01"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_3/final_B2.jpg",
+      "bytes": 80398,
+      "sha256": "47afa4460f10a7185f6f9a0bb271978a7052bb4d7b90df514bdd4787b2affc01"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_3/final_tau0.200.jpg",
+      "bytes": 80398,
+      "sha256": "47afa4460f10a7185f6f9a0bb271978a7052bb4d7b90df514bdd4787b2affc01"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t06_3/stage1_raw.npz",
+      "bytes": 37176,
+      "sha256": "951f67fd239d1a96fc26627d749dbc97368248cfe879c282afd9e183a97feb5c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/candidates.jpg",
+      "bytes": 54279,
+      "sha256": "c36f624e442b0ab0e5194b9bf37c95d8ce2410991023394511e810f48cf3db79"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/final_B2.jpg",
+      "bytes": 59867,
+      "sha256": "1e7e9e47eb5a8d9e339487b65e7f6d31b816c52afc553d7518b533b1fea9baf1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/final_tau0.200.jpg",
+      "bytes": 59561,
+      "sha256": "a5992adb94fe8ef5ae2d26deb82d16bf6da3dc71398b5f33eada975751ba6af9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/stage1_raw.npz",
+      "bytes": 30447,
+      "sha256": "59447537184f0433c87414f7cdfce96e9f0e778137408be8b84b6ffd08bc4fd2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/stage2_B2_raw.npz",
+      "bytes": 39501,
+      "sha256": "5da188aa01fff78a7488c22dee1cb186c1d7af25fb3443381a9e6d9cb780b26d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_1/stage2_tau0.200_raw.npz",
+      "bytes": 39977,
+      "sha256": "11fa8185531f73d6c64bbb913ac34dd2ed653ee2e94695da563098af60c70d83"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_2/candidates.jpg",
+      "bytes": 53345,
+      "sha256": "801816c350ec0b29fe94d9a1dfbae9e9056793f7c584cbce1748e3162f859dc4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_2/final_B2.jpg",
+      "bytes": 59342,
+      "sha256": "43e1a5b042c5dee8f7b2761cbbf9fb7f035a00d51c0827782175a2d00caac570"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_2/final_tau0.200.jpg",
+      "bytes": 59342,
+      "sha256": "43e1a5b042c5dee8f7b2761cbbf9fb7f035a00d51c0827782175a2d00caac570"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_2/stage1_raw.npz",
+      "bytes": 37027,
+      "sha256": "396ddde5ccea4cdf70db01caddf77348fa5289b1aaa24def940f910c05fbd671"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_2/stage2_B2_raw.npz",
+      "bytes": 46760,
+      "sha256": "f9ceca598344b13d63c599df88fa1e88914fdacd6053c7e4bb27b72d3b34b193"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/candidates.jpg",
+      "bytes": 54226,
+      "sha256": "2d966abc76a22f78054a0abec7b88b0af4147143c9482339316a080b78b03829"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/final_B2.jpg",
+      "bytes": 60233,
+      "sha256": "32070ceb786e0d9d021964a80b87764ebf95b4754c950267710bf37f89746419"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/final_tau0.200.jpg",
+      "bytes": 59924,
+      "sha256": "726319217c9a7727e5bc15ca2dea01dcd42908e2ce16ab74bae65f0d44c68856"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/stage1_raw.npz",
+      "bytes": 30481,
+      "sha256": "921746201ee78b0e9cb8ef53a0a1a380d237ed883fc13f95bb2ed5cbe3bae43c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/stage2_B2_raw.npz",
+      "bytes": 38813,
+      "sha256": "f005af14b45d542f44c4a15f47c07c0a238ba564ba5597dc458dd14daf1b6ecf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t07_3/stage2_tau0.200_raw.npz",
+      "bytes": 33516,
+      "sha256": "bf50e4dde2d25cde02fe92c585edbbe911c9fdc32582a873885471e640b702a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/candidates.jpg",
+      "bytes": 35195,
+      "sha256": "54540b9041be3f8c834195d0be4cecd0394941828e5903e809faa0cec7036492"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/final_B2.jpg",
+      "bytes": 39235,
+      "sha256": "c961ece50b4200871507bb88490db5d08901412938065766f9b8c628328e2450"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/final_tau0.200.jpg",
+      "bytes": 39329,
+      "sha256": "b91a39670bc62de97aca4a2d62822cd612fe3091b707d6c81d8dea1665cd40e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/stage1_raw.npz",
+      "bytes": 30523,
+      "sha256": "f9104e294983bd919d011f5d2f5461756ad3059093345e19816aa7055caa8a1b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/stage2_B2_raw.npz",
+      "bytes": 40376,
+      "sha256": "8391a4c09476d5afd07147fa0511ca814be973a52c788c805a02ff7617caf9ea"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_1/stage2_tau0.200_raw.npz",
+      "bytes": 40415,
+      "sha256": "490da0ab2cf3ffea60995609a6391655288e7b8b19214e9a38a35e2378f6ac22"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_2/candidates.jpg",
+      "bytes": 36233,
+      "sha256": "d254d2574159502e1482a78a35da70505fcbe63b6244732309157cea329cbf14"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_2/final_B2.jpg",
+      "bytes": 38339,
+      "sha256": "95e3e558036914cb5b4461abe99c2fd8b9a49b03f2c7f28f02b340b2af5f942b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_2/final_tau0.200.jpg",
+      "bytes": 38339,
+      "sha256": "95e3e558036914cb5b4461abe99c2fd8b9a49b03f2c7f28f02b340b2af5f942b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_2/stage1_raw.npz",
+      "bytes": 30488,
+      "sha256": "63dd86dad0cf6a72d25e7dfc2c2b49679570983e023029455768154e7e5d5837"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_2/stage2_B2_raw.npz",
+      "bytes": 40208,
+      "sha256": "97f835b80a8982bc569c1fb54d080a0d6764a7b33d6aa6f012620fb32f99ece9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_3/candidates.jpg",
+      "bytes": 36250,
+      "sha256": "1f087cf871df068424aa5d969a88789021553c9e43c5680f2f0fe9ec98131eee"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_3/final_B2.jpg",
+      "bytes": 38291,
+      "sha256": "5cc19545640627ec2f19c530d74f35da7072d3544777fe692e24e3397b95d2db"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_3/final_tau0.200.jpg",
+      "bytes": 38190,
+      "sha256": "d02b8ef30559a8fb101e2c1f25cf27b5d808302bd0a1b2243f132905e7b181db"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_3/stage1_raw.npz",
+      "bytes": 30423,
+      "sha256": "c64619a810bffc80117ff8a0ac30fcf985a44f7f3d332317a7f4238128ba427a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t08_3/stage2_B2_raw.npz",
+      "bytes": 40270,
+      "sha256": "ce50416f2928c3749d1cf33944f66052b517358d91c8c8e2255929141826a33e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_1/candidates.jpg",
+      "bytes": 27377,
+      "sha256": "3827fab50a862e7ac1d93f0b69e92c1073e8d23ed4f14251a626e0da1f800f3e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_1/final_B2.jpg",
+      "bytes": 30664,
+      "sha256": "9164453d46195f9845f00f674eb55f6ea11f4d56b679969103ca53008caf949d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_1/final_tau0.200.jpg",
+      "bytes": 30664,
+      "sha256": "9164453d46195f9845f00f674eb55f6ea11f4d56b679969103ca53008caf949d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_1/stage1_raw.npz",
+      "bytes": 30359,
+      "sha256": "0fb67d292feffef686f8bcc3205042b3f4e373154e97c67da14fd908879fd497"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_1/stage2_B2_raw.npz",
+      "bytes": 40341,
+      "sha256": "efd3ae03642ecb9457ec517792c3c25f2994eb1a9d249a9a3533acc6d5c9b849"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_2/candidates.jpg",
+      "bytes": 27726,
+      "sha256": "1423a417e2b5880a96e69a9a1857861b62b4fdf0653df9b90c67077e6c7fb058"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_2/final_B2.jpg",
+      "bytes": 30457,
+      "sha256": "1764e242b5cba75c58a95b205beca34c8efc0ce4981fd860fd961737aa27ae0c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_2/final_tau0.200.jpg",
+      "bytes": 30457,
+      "sha256": "1764e242b5cba75c58a95b205beca34c8efc0ce4981fd860fd961737aa27ae0c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_2/stage1_raw.npz",
+      "bytes": 30088,
+      "sha256": "1183481d9969646dd45f47a09e1310e06d568018f67ae122ddb436cdfc07e950"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_2/stage2_B2_raw.npz",
+      "bytes": 40052,
+      "sha256": "5f98ddabd6a804f30a48a50bdb0796a3a2ea3a8f0ce719a2f348b0ab13e89873"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_3/candidates.jpg",
+      "bytes": 26177,
+      "sha256": "868c8b9b1755a18a1ccc6167c2538600970dd89c45931bf79d6d0ee7c6657975"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_3/final_B2.jpg",
+      "bytes": 26177,
+      "sha256": "868c8b9b1755a18a1ccc6167c2538600970dd89c45931bf79d6d0ee7c6657975"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_3/final_tau0.200.jpg",
+      "bytes": 26177,
+      "sha256": "868c8b9b1755a18a1ccc6167c2538600970dd89c45931bf79d6d0ee7c6657975"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t09_3/stage1_raw.npz",
+      "bytes": 30434,
+      "sha256": "fba61f43a28e513c92b0dd56cb42a29b83e97724463dd865979053926b58ca2d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_1/candidates.jpg",
+      "bytes": 219745,
+      "sha256": "ec9b93ed542236c5056954c4040aa242ee1796db749af9f5783780c555a30c73"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_1/final_B2.jpg",
+      "bytes": 226278,
+      "sha256": "ca5502bdca05064d4e6746714b36fbcadf8c5384dc08f6f95e3e08ea4806dfbb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_1/final_tau0.200.jpg",
+      "bytes": 226278,
+      "sha256": "ca5502bdca05064d4e6746714b36fbcadf8c5384dc08f6f95e3e08ea4806dfbb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_1/stage1_raw.npz",
+      "bytes": 36760,
+      "sha256": "b1eaab1c18812d5ed08add7d8a331c539fe3ebc0f1c6b2e02061a922b72172ca"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_1/stage2_B2_raw.npz",
+      "bytes": 46742,
+      "sha256": "84cab3aea33274f6a4a48708c9c2ba03f976ad8f4e962a0af9f854c3bc20fb29"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_2/candidates.jpg",
+      "bytes": 220123,
+      "sha256": "b3372fa68035ca837a0ef2b1be462e297f88309ead000451bc0a789c7525219d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_2/final_B2.jpg",
+      "bytes": 226272,
+      "sha256": "dee82b92fa2bf8ea153ba14b249c24fbb806200d1b13751c1d397f69bca7aa3d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_2/final_tau0.200.jpg",
+      "bytes": 226272,
+      "sha256": "dee82b92fa2bf8ea153ba14b249c24fbb806200d1b13751c1d397f69bca7aa3d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_2/stage1_raw.npz",
+      "bytes": 30317,
+      "sha256": "d0512dd3820335a740f13cf2bcfdeed1442f3026cef0bc7d9a5340c9012cb21b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_2/stage2_B2_raw.npz",
+      "bytes": 40382,
+      "sha256": "24b4676c338b11b2058190ab1e5cacaf8858e442f22955fc98883f4fc093dc2d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_3/candidates.jpg",
+      "bytes": 215323,
+      "sha256": "f1b55dfb2131ebf21f502498995138524ccc1002ba4136ea612d4009336a7b8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_3/final_B2.jpg",
+      "bytes": 215323,
+      "sha256": "f1b55dfb2131ebf21f502498995138524ccc1002ba4136ea612d4009336a7b8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_3/final_tau0.200.jpg",
+      "bytes": 215323,
+      "sha256": "f1b55dfb2131ebf21f502498995138524ccc1002ba4136ea612d4009336a7b8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t10_3/stage1_raw.npz",
+      "bytes": 30410,
+      "sha256": "c705dda30f4ae48532bba1cc27c2a7797fc8f26eb403cb6411cfc529718cfcdc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_1/candidates.jpg",
+      "bytes": 89527,
+      "sha256": "837bfd1f1eac6c467f3398a1048f019679925ed9ec6cb13f8172987637ff09bf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_1/final_B2.jpg",
+      "bytes": 96292,
+      "sha256": "d50fafa047c9a73db0eb6d12ea07f1e93b8a6b7477690b77bce18185ee382a41"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_1/final_tau0.200.jpg",
+      "bytes": 96292,
+      "sha256": "d50fafa047c9a73db0eb6d12ea07f1e93b8a6b7477690b77bce18185ee382a41"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_1/stage1_raw.npz",
+      "bytes": 30383,
+      "sha256": "102936d26a5aa0c7b4866a0e742a531d529262fe5729fd24682e3cbb9c1fc0f8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_1/stage2_B2_raw.npz",
+      "bytes": 40393,
+      "sha256": "315c7ff3a0391a15406246a071b63cdb0054da4e5d0413cb0ec3c6d3f208d8a9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/candidates.jpg",
+      "bytes": 89702,
+      "sha256": "91d61e1402834b8fd0ef9ebeef2b62468a7d3a913589db1cb2a96cbce62ed430"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/final_B2.jpg",
+      "bytes": 94467,
+      "sha256": "9ed39e50a495595083b7fcba7a2754f209e07c76d722810e48f230a87593a09d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/final_tau0.200.jpg",
+      "bytes": 94505,
+      "sha256": "c3b9cb328c63711d5633b1ab4a5fd362b988831260e1dff10d70e7573b78e639"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/stage1_raw.npz",
+      "bytes": 36745,
+      "sha256": "78e4a7244c7edd83b7146dd3d301adc553f71e9172d909c52c29fcdb58737cf8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/stage2_B2_raw.npz",
+      "bytes": 46939,
+      "sha256": "6f44eb6c822f52a2545b3d16b6b788be0973cea1da6c14de0bd3948e64f68001"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_2/stage2_tau0.200_raw.npz",
+      "bytes": 46995,
+      "sha256": "5e6ab7bd904a230b3434e9c014b2d85b37af8068d0183286ae6fa78ea3a01457"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_3/candidates.jpg",
+      "bytes": 85684,
+      "sha256": "2ce8e77f562fee40f068091d119110896c314bce627ae22495f4e1087fcf82f4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_3/final_B2.jpg",
+      "bytes": 85684,
+      "sha256": "2ce8e77f562fee40f068091d119110896c314bce627ae22495f4e1087fcf82f4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_3/final_tau0.200.jpg",
+      "bytes": 85684,
+      "sha256": "2ce8e77f562fee40f068091d119110896c314bce627ae22495f4e1087fcf82f4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t11_3/stage1_raw.npz",
+      "bytes": 30382,
+      "sha256": "c1dc178b06363b8057a97925c4817ed08c519a1621551e8646aa9040997d3486"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_1/candidates.jpg",
+      "bytes": 37906,
+      "sha256": "4f40446a0fd27db3db3c1bfb1c1aa9621aa24d550b7df13bbc7b2fd8688a43e4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_1/final_B2.jpg",
+      "bytes": 41137,
+      "sha256": "f90611f79aa9b810a5a46547e42d598371c03e2c6b75efe75b8b00c41ed4c7ca"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_1/final_tau0.200.jpg",
+      "bytes": 41137,
+      "sha256": "f90611f79aa9b810a5a46547e42d598371c03e2c6b75efe75b8b00c41ed4c7ca"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_1/stage1_raw.npz",
+      "bytes": 30340,
+      "sha256": "0aba7f52361c26967f3715acac199594ca43e24fa08d6b5c3f703dda4873c2ae"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_1/stage2_B2_raw.npz",
+      "bytes": 40401,
+      "sha256": "76cdc172ae88666402d006501efeb123ad9623e10dc0438c3cd229fe7ea4bf27"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_2/candidates.jpg",
+      "bytes": 38095,
+      "sha256": "68d7f1a98b5a9a244e97969a1fd086a55ef460f188c3af073ce4d2b9225174c8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_2/final_B2.jpg",
+      "bytes": 41322,
+      "sha256": "956c4f6276ea3af89728050a2169a59d64b7b7d4632ea747d956f0e1f97d8ba9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_2/final_tau0.200.jpg",
+      "bytes": 41322,
+      "sha256": "956c4f6276ea3af89728050a2169a59d64b7b7d4632ea747d956f0e1f97d8ba9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_2/stage1_raw.npz",
+      "bytes": 36645,
+      "sha256": "5cb2b9c3e9c2055e24bbffdc18a9d2d4958a63f3a1a0c32dec58f6ac6a6f0e25"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_2/stage2_B2_raw.npz",
+      "bytes": 46779,
+      "sha256": "2846ce9b0858ab48763b37c59625c98407900fdb14d7d9ade30ce3df486859cf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_3/candidates.jpg",
+      "bytes": 37824,
+      "sha256": "f109094f2208744891e16bf864a3eb44ec6e3de102d9de25b71461d253367d68"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_3/final_B2.jpg",
+      "bytes": 41203,
+      "sha256": "7e5889ec08d83a32b894e49ab721fc3b6264be0f7c4b0f314fe0cad68ca0b0b9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_3/final_tau0.200.jpg",
+      "bytes": 41203,
+      "sha256": "7e5889ec08d83a32b894e49ab721fc3b6264be0f7c4b0f314fe0cad68ca0b0b9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_3/stage1_raw.npz",
+      "bytes": 30220,
+      "sha256": "2a88168bff433ecaf7c1d9be7fa2d5e76a235067ef905a91be8b3627aee0bfcb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t12_3/stage2_B2_raw.npz",
+      "bytes": 40318,
+      "sha256": "0859b3d6f17e9f70ea12a86ad0375fbd2138b6f38787dc2b8b123e078ed9f1e0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_1/candidates.jpg",
+      "bytes": 47212,
+      "sha256": "362bfcc377b7eec212e9a476a56e69e8b1fd1286dd1d085e7b20e217833b75f7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_1/final_B2.jpg",
+      "bytes": 48932,
+      "sha256": "c3fa3af7c16debe51ca773592b1525f4d314b2214f23b57b0adc70e1e08d110b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_1/final_tau0.200.jpg",
+      "bytes": 48932,
+      "sha256": "c3fa3af7c16debe51ca773592b1525f4d314b2214f23b57b0adc70e1e08d110b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_1/stage1_raw.npz",
+      "bytes": 30388,
+      "sha256": "914e61d44d5a133ad159466ffe144edaea86b310b1456a415b1685d705c9e6d9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_1/stage2_B2_raw.npz",
+      "bytes": 37048,
+      "sha256": "fb26600923008f6b2e27a81eca9bb0145c2d676ab6a1cab6b5d6e3ae38032760"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_2/candidates.jpg",
+      "bytes": 47670,
+      "sha256": "9329f71d21d34e1788dd1c910ed64261f01d15739ecd1ba7fa33491cb5274919"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_2/final_B2.jpg",
+      "bytes": 47751,
+      "sha256": "a99c22dec914bf88304b7f2b6b597657ca6a9dacef38b74184f19a88d831443d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_2/final_tau0.200.jpg",
+      "bytes": 47751,
+      "sha256": "a99c22dec914bf88304b7f2b6b597657ca6a9dacef38b74184f19a88d831443d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_2/stage1_raw.npz",
+      "bytes": 30348,
+      "sha256": "010da02364c56ffefb785325ae68b3b065680ac27ec0336c60e94ebe20a91676"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_2/stage2_B2_raw.npz",
+      "bytes": 40102,
+      "sha256": "715177601cf14bc683dcbeabb38545c0ac1e155a3d1141ef45769df305c02bf1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_3/candidates.jpg",
+      "bytes": 45600,
+      "sha256": "1669dbed0fc8e2beaf665bbc00866d46a69ce73d260cdee47bbadaf167851e1a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_3/final_B2.jpg",
+      "bytes": 45600,
+      "sha256": "1669dbed0fc8e2beaf665bbc00866d46a69ce73d260cdee47bbadaf167851e1a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_3/final_tau0.200.jpg",
+      "bytes": 45600,
+      "sha256": "1669dbed0fc8e2beaf665bbc00866d46a69ce73d260cdee47bbadaf167851e1a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t13_3/stage1_raw.npz",
+      "bytes": 30439,
+      "sha256": "85edab973e7b77d18eb68fd82ec08deb0c8a01798c98223a9af506ea050ec0f3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_1/candidates.jpg",
+      "bytes": 58077,
+      "sha256": "f3e6a0c8866c1c796e766a08638aa88ee010a43ee1dca5803795694ffeac296e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_1/final_B2.jpg",
+      "bytes": 62692,
+      "sha256": "71d820e72d657e0b2f7a5dafba8c3594e04382b3873da380d5ee00cdabb77338"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_1/final_tau0.200.jpg",
+      "bytes": 62692,
+      "sha256": "71d820e72d657e0b2f7a5dafba8c3594e04382b3873da380d5ee00cdabb77338"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_1/stage1_raw.npz",
+      "bytes": 30482,
+      "sha256": "d7de8df4397b3f47d8d7402ebe81cf34c41cf0bd3085e99919b6362b14cf27f3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_1/stage2_B2_raw.npz",
+      "bytes": 40374,
+      "sha256": "482d84d177a1b7bb824e0bf7814e80887579d67cb45f91dbf2dc8ff14dd1f57d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_2/candidates.jpg",
+      "bytes": 57983,
+      "sha256": "9ccc5d3dfa57dc5fd46de119900f1a481f31c51554f987f7390e80caf142aef3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_2/final_B2.jpg",
+      "bytes": 63430,
+      "sha256": "8c6acde0024bcd3094e45c1ef6c35b312f49d0946b843420f3f1abe804fb0276"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_2/final_tau0.200.jpg",
+      "bytes": 63430,
+      "sha256": "8c6acde0024bcd3094e45c1ef6c35b312f49d0946b843420f3f1abe804fb0276"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_2/stage1_raw.npz",
+      "bytes": 37065,
+      "sha256": "08a882d8b1592c9320f4d0fbb135c76e0ab1a29320d90ce7f87ea821f7fc8cb1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_2/stage2_B2_raw.npz",
+      "bytes": 46895,
+      "sha256": "bb2b3fb4b37d034249c76d9a88b444247c963fcbbe694d8460fd1fa33cb84c57"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_3/candidates.jpg",
+      "bytes": 58150,
+      "sha256": "5250eeb167c2b611761b8d3f000d1465dfb5ad557f11aff57a7b4274ead2fb47"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_3/final_B2.jpg",
+      "bytes": 62690,
+      "sha256": "303c132e235dfb6d6a64522d349930a80f1e31eb0584b50466678dff66082c26"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_3/final_tau0.200.jpg",
+      "bytes": 62690,
+      "sha256": "303c132e235dfb6d6a64522d349930a80f1e31eb0584b50466678dff66082c26"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_3/stage1_raw.npz",
+      "bytes": 30586,
+      "sha256": "2a8c684ee94b65c18653180be9531c0c9cc400a7ab1ff99f2a3124556503fe3c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t14_3/stage2_B2_raw.npz",
+      "bytes": 40346,
+      "sha256": "3edd3d4d485fd04fdc8139ab27e3628db0d3d3d7484d35117ea86394f0a4e0ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_1/candidates.jpg",
+      "bytes": 1222772,
+      "sha256": "119e126ffff1787d482e335d92712c716fc928dd024bbabf83e1bb30dc47c94b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_1/final_B2.jpg",
+      "bytes": 1248559,
+      "sha256": "476ab71e3b15338ecb080a0fced758496a7b4b74b01f0ab9696f3024a3d5949e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_1/final_tau0.200.jpg",
+      "bytes": 1248559,
+      "sha256": "476ab71e3b15338ecb080a0fced758496a7b4b74b01f0ab9696f3024a3d5949e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_1/stage1_raw.npz",
+      "bytes": 30499,
+      "sha256": "6d1a98c80389b2bc973d0ef86d8498f1d752a5f174fd950503515d7d51d8bca9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_1/stage2_B2_raw.npz",
+      "bytes": 40471,
+      "sha256": "3cb3636a702ef6327d4c46e3d60875279213faa2df090142bcbe87c67249246b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_2/candidates.jpg",
+      "bytes": 1222486,
+      "sha256": "e705da50631f415f4304e14ef82a877a74d9bd52cfc3c47c3ba77de9ee0c5ae8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_2/final_B2.jpg",
+      "bytes": 1234993,
+      "sha256": "61fea652fde53fb9a5be90d7e593fc05a2ca8396ac59f457ef38a1353de1f241"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_2/final_tau0.200.jpg",
+      "bytes": 1234993,
+      "sha256": "61fea652fde53fb9a5be90d7e593fc05a2ca8396ac59f457ef38a1353de1f241"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_2/stage1_raw.npz",
+      "bytes": 30330,
+      "sha256": "6467fee1a223e48a62b98e275fac2d9f66d094f12ff9cf993c3d2b1ff9984303"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_2/stage2_B2_raw.npz",
+      "bytes": 40271,
+      "sha256": "634a883aef24f1dc836c2dfa1430019cd83b7fee1852ab9bfff0cfb73773900e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_3/candidates.jpg",
+      "bytes": 1212398,
+      "sha256": "4d6e4f394f20d62f8aafae248a7a6b760aabfc88d253ebe0df6d14ec7795897f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_3/final_B2.jpg",
+      "bytes": 1212398,
+      "sha256": "4d6e4f394f20d62f8aafae248a7a6b760aabfc88d253ebe0df6d14ec7795897f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_3/final_tau0.200.jpg",
+      "bytes": 1212398,
+      "sha256": "4d6e4f394f20d62f8aafae248a7a6b760aabfc88d253ebe0df6d14ec7795897f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t15_3/stage1_raw.npz",
+      "bytes": 37314,
+      "sha256": "6052c204c6de90d050517ec3572c8e152aa6a057720888df1cec88c491255c2a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_1/candidates.jpg",
+      "bytes": 105248,
+      "sha256": "2c7e536ba52e06d32ee987da7bcf5942412e2752a2cce27e433e29c94658ca08"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_1/final_B2.jpg",
+      "bytes": 124938,
+      "sha256": "75cb28f4aa5bc523c69e285cb1842ce95989a8c236946c865e12025fdaffe71b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_1/final_tau0.200.jpg",
+      "bytes": 125740,
+      "sha256": "400cca84114a50b9cfa7d72c46ae2c20978a272f978043641d81475e297e1ea6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_1/stage1_raw.npz",
+      "bytes": 30441,
+      "sha256": "9ce6e780f3edba78e6cd89385ba5ae0a1840bf3a9083dc4fc3c52e84cb7f7880"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_1/stage2_B2_raw.npz",
+      "bytes": 40450,
+      "sha256": "b235770185ae0ed24a2325fcd255c7b279f706bde8e2409e7a21dfcc66e46eba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_2/candidates.jpg",
+      "bytes": 105186,
+      "sha256": "99811cd66fbd894e69ccc3407be032e152a2108972db2ff2451076f9fa5ae989"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_2/final_B2.jpg",
+      "bytes": 125434,
+      "sha256": "d59deb7ead6528b0e67ce453b5e448be26f0de32501151323c78cf682f3e6fdd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_2/final_tau0.200.jpg",
+      "bytes": 125434,
+      "sha256": "d59deb7ead6528b0e67ce453b5e448be26f0de32501151323c78cf682f3e6fdd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_2/stage1_raw.npz",
+      "bytes": 30515,
+      "sha256": "161dcaccc92a1d5948d20164aa249331d3495f588814e0f227af330b65bfdf0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_2/stage2_B2_raw.npz",
+      "bytes": 40363,
+      "sha256": "14bdc84b394b098dab5af4dd12d1c0644f86e98626ac38405b8927c7c0884f6d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_3/candidates.jpg",
+      "bytes": 101998,
+      "sha256": "1769ea5eaeaaa214bcbf14751a0db98883c3d6596943935b89d7c819e963a6fd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_3/final_B2.jpg",
+      "bytes": 101998,
+      "sha256": "1769ea5eaeaaa214bcbf14751a0db98883c3d6596943935b89d7c819e963a6fd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_3/final_tau0.200.jpg",
+      "bytes": 101998,
+      "sha256": "1769ea5eaeaaa214bcbf14751a0db98883c3d6596943935b89d7c819e963a6fd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t16_3/stage1_raw.npz",
+      "bytes": 30445,
+      "sha256": "68ee978d0abbd798e0868f354962e7e30b1f48e17f26c3026c392e003a2ccfd4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/candidates.jpg",
+      "bytes": 156155,
+      "sha256": "e7ce964d33b9692a5cf377ed76d692c6e6653ec7e1d57a0eaf8077aa651785dc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/final_B2.jpg",
+      "bytes": 155043,
+      "sha256": "a32c4030b6f92e96035efdd429aa9b6465d49f7ab36c7973dcdc5fd2031136e6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/final_tau0.200.jpg",
+      "bytes": 155593,
+      "sha256": "8c4302f7745bcd7a67c25065d067cb7abd62545f3f89d80b416e88172bf4b206"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/stage1_raw.npz",
+      "bytes": 30402,
+      "sha256": "f148cda1c4a520cfb9f55b2b1663976d537a263e3d742cc1e29f7842271d8353"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/stage2_B2_raw.npz",
+      "bytes": 40435,
+      "sha256": "47980eac2cb6b2fd7a86f24accae55f29b254d5b8971235c0302f9b2b4663a13"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_1/stage2_tau0.200_raw.npz",
+      "bytes": 37106,
+      "sha256": "913b67be191025dd58aa6e55a86d30c58ef4389e6ce47cd00bc937e00ec4fb76"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_2/candidates.jpg",
+      "bytes": 153437,
+      "sha256": "67b5439aaa8a688861751a0dd820a26704efa53a5c9cc20beff9577f7743e01c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_2/final_B2.jpg",
+      "bytes": 153353,
+      "sha256": "dca15d6dda55804caac5a26ecf9c03221d8e776d7f31cfb2fde7e39e7c7fe376"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_2/final_tau0.200.jpg",
+      "bytes": 153353,
+      "sha256": "dca15d6dda55804caac5a26ecf9c03221d8e776d7f31cfb2fde7e39e7c7fe376"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_2/stage1_raw.npz",
+      "bytes": 30493,
+      "sha256": "813766af110c45ed267b2834cb8675a14d5690b19dd83cef96564a686a9c38a2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_2/stage2_B2_raw.npz",
+      "bytes": 40535,
+      "sha256": "f99742ca1e09af8f7f45f3f3ec2e1b859dd4ec14c6e954422e5befdebc798f6e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_3/candidates.jpg",
+      "bytes": 146665,
+      "sha256": "c6ce808ac67d44b0bd42283a8bcb6dc6d87fee705b487b35492666ba941b8d5a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_3/final_B2.jpg",
+      "bytes": 146665,
+      "sha256": "c6ce808ac67d44b0bd42283a8bcb6dc6d87fee705b487b35492666ba941b8d5a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_3/final_tau0.200.jpg",
+      "bytes": 146665,
+      "sha256": "c6ce808ac67d44b0bd42283a8bcb6dc6d87fee705b487b35492666ba941b8d5a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t17_3/stage1_raw.npz",
+      "bytes": 30546,
+      "sha256": "4b4c2ef47f38b0160f9b3848a1f72ad0769ee4e41a5e9bce100c80d4ae628a33"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_1/candidates.jpg",
+      "bytes": 42964,
+      "sha256": "677cf4204ab3040342579b55cbcfc445d31b2e2aeed14b6f1be101d127615222"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_1/final_B2.jpg",
+      "bytes": 47014,
+      "sha256": "08f9b384ba421009fabbbfb37ca84318b811237e72034bede9fa223da32c9d04"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_1/final_tau0.200.jpg",
+      "bytes": 47014,
+      "sha256": "08f9b384ba421009fabbbfb37ca84318b811237e72034bede9fa223da32c9d04"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_1/stage1_raw.npz",
+      "bytes": 30227,
+      "sha256": "6d06a17ba2fd623207566c4d21cdd95a43a7d430283751ae23bd56828959f3d0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_1/stage2_B2_raw.npz",
+      "bytes": 40199,
+      "sha256": "51a4355c05a8e06a8f6a6d8a09c5bbf883498e3d1863a71ab8e78e2012b93c4d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/candidates.jpg",
+      "bytes": 44496,
+      "sha256": "8da125d784d49ac2f4930d2e6733c374746fded412c44f48e12e9cffed25bec4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/final_B2.jpg",
+      "bytes": 47106,
+      "sha256": "b9741b95f6aedccbce910fa0e31950fb2996b050fca58273eb0b591fce3dd153"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/final_tau0.200.jpg",
+      "bytes": 47073,
+      "sha256": "1c3cb22321ef4ca35b8139e28560cf5454c2b641baa9abfb34b095a8e617f156"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/stage1_raw.npz",
+      "bytes": 30078,
+      "sha256": "a8ea71841f44c0714d3dd247bc4310ac051d05609b96bf327650318b47f60d92"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/stage2_B2_raw.npz",
+      "bytes": 40145,
+      "sha256": "39b95439b9204d5dc527e2bbedcfd895693b419e03a56c72b9d399e5b0e3a41b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_2/stage2_tau0.200_raw.npz",
+      "bytes": 40175,
+      "sha256": "e9bd386f718841f23d16487e4fb06c7139880c0d8e717f980ff32cfa8ed4222c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_3/candidates.jpg",
+      "bytes": 38038,
+      "sha256": "2dd16a68e81a852e4173d5b00db44250f1e3081518c41f307b47328780c57e05"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_3/final_B2.jpg",
+      "bytes": 38038,
+      "sha256": "2dd16a68e81a852e4173d5b00db44250f1e3081518c41f307b47328780c57e05"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_3/final_tau0.200.jpg",
+      "bytes": 38038,
+      "sha256": "2dd16a68e81a852e4173d5b00db44250f1e3081518c41f307b47328780c57e05"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t18_3/stage1_raw.npz",
+      "bytes": 30490,
+      "sha256": "a36e03d22ddaf6cf7e567e4dd1b99b134151389c30fa997320d0fd6ddc5b5333"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_1/candidates.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_1/final_B2.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_1/final_tau0.200.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_1/stage1_raw.npz",
+      "bytes": 30318,
+      "sha256": "9dc90c78f8a39b82a645e5e8b684eae1adab9394deae7331899bb5964f0d0aad"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_2/candidates.jpg",
+      "bytes": 117458,
+      "sha256": "e8f89cc5b483cc57e9cb77054410283a58aea6708d6a560a9230d01f36d10e2b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_2/final_B2.jpg",
+      "bytes": 118111,
+      "sha256": "61b2e3d4cb41b616e29c431ea30ba1003ce80ffbb2632273f778a583625237d7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_2/final_tau0.200.jpg",
+      "bytes": 118111,
+      "sha256": "61b2e3d4cb41b616e29c431ea30ba1003ce80ffbb2632273f778a583625237d7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_2/stage1_raw.npz",
+      "bytes": 30099,
+      "sha256": "25184b4076233357afc9dbd7984b05e570d487d3638878128d452e4b8d92e58d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_2/stage2_B2_raw.npz",
+      "bytes": 40119,
+      "sha256": "73ae765866659e2b73ec1db0728eae610955ae55d2efff9cc53229d79be64aa6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_3/candidates.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_3/final_B2.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_3/final_tau0.200.jpg",
+      "bytes": 115301,
+      "sha256": "b112b76ebc01cebb0e650a49a51b7a2f9943223f879c3f0077d270ff7d91c89a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t19_3/stage1_raw.npz",
+      "bytes": 30525,
+      "sha256": "dbfacdbfe733a173bff659f4eefeffa92e4d54dab44d819e1b204c900c59f3bb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_1/candidates.jpg",
+      "bytes": 173269,
+      "sha256": "9860e420a611497a0635cf02159f762a4b5347f94916ce7b5ecf2609c8d8d50f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_1/final_B2.jpg",
+      "bytes": 177514,
+      "sha256": "9b9ab39fddb6ebf4d2b77d31a44679192b6c1b953e5d167edf92e86854706c95"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_1/final_tau0.200.jpg",
+      "bytes": 177514,
+      "sha256": "9b9ab39fddb6ebf4d2b77d31a44679192b6c1b953e5d167edf92e86854706c95"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_1/stage1_raw.npz",
+      "bytes": 30455,
+      "sha256": "9092d4bdcfe14362cb8540db052660dc41497299d99e89a9904a03493ddd1015"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_1/stage2_B2_raw.npz",
+      "bytes": 40695,
+      "sha256": "9a06678d7a5adbd8e12bf7d60d6f82fa2e1a775d00a7e36c62517e3604d28744"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_2/candidates.jpg",
+      "bytes": 169149,
+      "sha256": "f17775fb18784e5517232b1b4396e3ad6d0a6dab4cb3a91ef2c8425231a42d77"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_2/final_B2.jpg",
+      "bytes": 172203,
+      "sha256": "43e514cc706bbac48f912a68513227829d484c8412af5223b2f63a37e1fd54c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_2/final_tau0.200.jpg",
+      "bytes": 172203,
+      "sha256": "43e514cc706bbac48f912a68513227829d484c8412af5223b2f63a37e1fd54c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_2/stage1_raw.npz",
+      "bytes": 30354,
+      "sha256": "9e8783ea0c32896acb594f9b7cb9c91b7a08c11f709c31241c48627154e7f535"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_2/stage2_B2_raw.npz",
+      "bytes": 40416,
+      "sha256": "7547a12424cd506f44742e5f5e42657744fb61343dcdad83992ca52f9f46f39a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/candidates.jpg",
+      "bytes": 168613,
+      "sha256": "d84a35cc3a3fa62a243399fac8300dae7fa1d007187b069121360baf479c1da9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/final_B2.jpg",
+      "bytes": 170914,
+      "sha256": "d05a039bc9dfe4b23714f65915b676033d3faa439ac0910861e7670965149db3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/final_tau0.200.jpg",
+      "bytes": 172084,
+      "sha256": "89aa7c7a12cddaf3036fdd948f28dac95285fbaa85725bc490e9d12afd06ae00"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/stage1_raw.npz",
+      "bytes": 30560,
+      "sha256": "b21647124163368d0179ffc0b21f2b7ff540f6abc412469e7f253a918f83a31f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/stage2_B2_raw.npz",
+      "bytes": 40343,
+      "sha256": "160b41107d62c4b9562b9d6d1a8b80822f68abb67f9c4aba7245cab51d122158"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t20_3/stage2_tau0.200_raw.npz",
+      "bytes": 40445,
+      "sha256": "480b947581a33151d761fc38a5d740689edc377de7e976c60494f2f7663f6fba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_1/candidates.jpg",
+      "bytes": 92621,
+      "sha256": "1042c07e55396b39cbcf2d3f3b1e39e174966b551d7d0aefc31b910d3809bdf2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_1/final_B2.jpg",
+      "bytes": 92917,
+      "sha256": "dd47d9fb858d10f107986f84b799127fbe6548e14a461f71ca059d41010247c5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_1/final_tau0.200.jpg",
+      "bytes": 92917,
+      "sha256": "dd47d9fb858d10f107986f84b799127fbe6548e14a461f71ca059d41010247c5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_1/stage1_raw.npz",
+      "bytes": 30427,
+      "sha256": "de97e29aa60e283be2051eb213ae992ed36fdf855c6c82957f932af5c067245f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_1/stage2_B2_raw.npz",
+      "bytes": 40430,
+      "sha256": "5971cdd2b998b574af96a62e088aea83dc9a27f518b36b484defcfc9dad34bf1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_2/candidates.jpg",
+      "bytes": 92013,
+      "sha256": "952f10879bd82a05735d3fe7ccb8333f1360c9e20de336a5ff42139ce98637d2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_2/final_B2.jpg",
+      "bytes": 94730,
+      "sha256": "80fc3644c9d6f4a893120c94938d687ad7b09beaca92b10ec70f9feabe83b91d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_2/final_tau0.200.jpg",
+      "bytes": 94730,
+      "sha256": "80fc3644c9d6f4a893120c94938d687ad7b09beaca92b10ec70f9feabe83b91d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_2/stage1_raw.npz",
+      "bytes": 30472,
+      "sha256": "ebd9b8c721fcfa82f8cf6fa4259baa99cb3c92bbeb652062483169dc4b238db4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_2/stage2_B2_raw.npz",
+      "bytes": 40561,
+      "sha256": "4364a08e68bf57a788f1b05db8a541df417ef42fa6dc3e1cc28fbee7ce968a03"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/candidates.jpg",
+      "bytes": 91933,
+      "sha256": "8ddcc033afb9126eb2bf9e1a0ef5a38527ff2dfc0ca4de4488e574ab5ca2d131"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/final_B2.jpg",
+      "bytes": 94288,
+      "sha256": "c36d10f24552b3e47f164ea2a82c0cfefedbce1d41afddf4780872c2882948ab"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/final_tau0.200.jpg",
+      "bytes": 94361,
+      "sha256": "2bd74e56364e816ff58043c6ccd99919c5959403d306ac5bcc0678f2a9121f06"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/stage1_raw.npz",
+      "bytes": 30543,
+      "sha256": "eb2b6bf0d5765ebb3ca0be69a7d2c26d6d224ba71adc6c05a952972dd3feef3c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/stage2_B2_raw.npz",
+      "bytes": 40498,
+      "sha256": "fa8d6732b39d150fbcecdb2d03319d5ffafb095253b7ca5d79f5921f9da58d85"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t21_3/stage2_tau0.200_raw.npz",
+      "bytes": 37141,
+      "sha256": "c2a58aa11fbe1cd24ba6445eeef7fce5220201ba1d7f4bb831ec397453669773"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_1/candidates.jpg",
+      "bytes": 214236,
+      "sha256": "5d5d6afafe64470ccfdc7bb9861c1744d127bfd7dc5ab928da422819e0a5ce99"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_1/final_B2.jpg",
+      "bytes": 224269,
+      "sha256": "91d1fc0b709b0a168f2768ad15546bfdd00c6ca103ab782edb59a15389ea8eb0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_1/final_tau0.200.jpg",
+      "bytes": 224269,
+      "sha256": "91d1fc0b709b0a168f2768ad15546bfdd00c6ca103ab782edb59a15389ea8eb0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_1/stage1_raw.npz",
+      "bytes": 36764,
+      "sha256": "07274a0e5fbebd3fb7879d6a4d5a91cf29edcef7b0fb491ddb1c78028741f037"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_1/stage2_B2_raw.npz",
+      "bytes": 46948,
+      "sha256": "6eae196960c41c343ca3a5c4ccad9a517b77b02037e806c7cd00b8741efa23cb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_2/candidates.jpg",
+      "bytes": 213330,
+      "sha256": "3a5828c1b5ac3a5800b6b0342bac17594c374f4252a9baa77e3b57cf2fcde53e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_2/final_B2.jpg",
+      "bytes": 220379,
+      "sha256": "fcbfc49817699e110db60067f9021d01312801b2076d03a0d8e3f7eab60a8c7c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_2/final_tau0.200.jpg",
+      "bytes": 220379,
+      "sha256": "fcbfc49817699e110db60067f9021d01312801b2076d03a0d8e3f7eab60a8c7c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_2/stage1_raw.npz",
+      "bytes": 30315,
+      "sha256": "038bdacdd1f68678d2ff948a120add46ac50f48421250592124c85540ec18f7a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_2/stage2_B2_raw.npz",
+      "bytes": 40286,
+      "sha256": "68724a3e954d0e4e76fdbab38e32131fa577fc43c3b367018c0930f8f7b12a0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_3/candidates.jpg",
+      "bytes": 203618,
+      "sha256": "fcd034435ab13f1c91c236d976a1162f554add4e4d8ff84455712f59870f939c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_3/final_B2.jpg",
+      "bytes": 203618,
+      "sha256": "fcd034435ab13f1c91c236d976a1162f554add4e4d8ff84455712f59870f939c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_3/final_tau0.200.jpg",
+      "bytes": 203618,
+      "sha256": "fcd034435ab13f1c91c236d976a1162f554add4e4d8ff84455712f59870f939c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t22_3/stage1_raw.npz",
+      "bytes": 30358,
+      "sha256": "d6935d6c4bf11213a372a526e473029bb576262248519807c1071bc7d5fd3f50"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_1/candidates.jpg",
+      "bytes": 192649,
+      "sha256": "e7a8d1c93d3ead42614c5adb24833ae355b9fb8a5d29afc21dc8a2d8faec7106"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_1/final_B2.jpg",
+      "bytes": 205289,
+      "sha256": "906be89c8d3e5c038ce167f6f0842a09f9d1db7091e2a5b270fbc41e521f1bd1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_1/final_tau0.200.jpg",
+      "bytes": 205289,
+      "sha256": "906be89c8d3e5c038ce167f6f0842a09f9d1db7091e2a5b270fbc41e521f1bd1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_1/stage1_raw.npz",
+      "bytes": 37138,
+      "sha256": "5c93832e766dde7f487cc6c3471e7bb06d17a8f7d7a59d139aeeca25ed0d596e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_1/stage2_B2_raw.npz",
+      "bytes": 46805,
+      "sha256": "715612a5f93019f48769e9a45b39083f4f4b4be6a89fb0b400612c5917263266"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_2/candidates.jpg",
+      "bytes": 192086,
+      "sha256": "081e360c5071da04f72499a8f6ca2e3f48588fe01456afc375a92b50aae2edd9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_2/final_B2.jpg",
+      "bytes": 204531,
+      "sha256": "922ce57c95922972160b1b17846c35836a0f7268934fc8bd98deb83eeb1d560a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_2/final_tau0.200.jpg",
+      "bytes": 204531,
+      "sha256": "922ce57c95922972160b1b17846c35836a0f7268934fc8bd98deb83eeb1d560a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_2/stage1_raw.npz",
+      "bytes": 30349,
+      "sha256": "87e87bca18cee3f81f928a5b27c7f09c0cbd1f220d2f35b54b13467b9928c388"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_2/stage2_B2_raw.npz",
+      "bytes": 40265,
+      "sha256": "3f262f39820438ec4a66dbbf3b344d55f5d9da4766ba2538621ab9e6994c5b25"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_3/candidates.jpg",
+      "bytes": 189426,
+      "sha256": "25b6892268dd8b2aa1ab1a8eea62d083b7a46d407567046eb3978e2432dfca9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_3/final_B2.jpg",
+      "bytes": 189426,
+      "sha256": "25b6892268dd8b2aa1ab1a8eea62d083b7a46d407567046eb3978e2432dfca9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_3/final_tau0.200.jpg",
+      "bytes": 189426,
+      "sha256": "25b6892268dd8b2aa1ab1a8eea62d083b7a46d407567046eb3978e2432dfca9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t23_3/stage1_raw.npz",
+      "bytes": 30226,
+      "sha256": "87aee0287c81f81eee089101745023e722e4427c5e92e140ddfb0586c99a7484"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_1/candidates.jpg",
+      "bytes": 155196,
+      "sha256": "7e3ce35544f700bfbdc8fb28c564b4d754e16cba66dc991c8cd730a95591c57f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_1/final_B2.jpg",
+      "bytes": 161308,
+      "sha256": "4b41f2bb03c8761bbdef8bd8d0b42f439c1df9bb48877c8ca971845ae48007f3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_1/final_tau0.200.jpg",
+      "bytes": 161308,
+      "sha256": "4b41f2bb03c8761bbdef8bd8d0b42f439c1df9bb48877c8ca971845ae48007f3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_1/stage1_raw.npz",
+      "bytes": 37010,
+      "sha256": "2e3e96e5e5ed17519428d64cf02b77fd34ba10ac31f54d37dd3ed0289b520580"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_1/stage2_B2_raw.npz",
+      "bytes": 46926,
+      "sha256": "5e75559d239596319c11317fca59680d844c4e2ce664db89c17d545811d17419"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_2/candidates.jpg",
+      "bytes": 152972,
+      "sha256": "b5683bf2b958520d367ee1e71c02bb1c7cebb07f39ecc72ea9b504c3a3734dbf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_2/final_B2.jpg",
+      "bytes": 164841,
+      "sha256": "4e6a7b148e1d2a0a104fc2c4be5bc7e41496ad1009cc79a7eff0586fce8687ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_2/final_tau0.200.jpg",
+      "bytes": 164841,
+      "sha256": "4e6a7b148e1d2a0a104fc2c4be5bc7e41496ad1009cc79a7eff0586fce8687ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_2/stage1_raw.npz",
+      "bytes": 30479,
+      "sha256": "f4dd0c0caa629bf2c131a12ad6e7a4a4243fe7dc4597bd8e7ca2c016b13c79f7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_2/stage2_B2_raw.npz",
+      "bytes": 40411,
+      "sha256": "da7f5f96193422e522dcb04a8a7bf99891b35d3c150683712af045c5aad2ff1f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_3/candidates.jpg",
+      "bytes": 148110,
+      "sha256": "025bec0cadee80f01453444f6236de2ec170e22a0bb0fd31f787f132dbb90fcb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_3/final_B2.jpg",
+      "bytes": 148110,
+      "sha256": "025bec0cadee80f01453444f6236de2ec170e22a0bb0fd31f787f132dbb90fcb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_3/final_tau0.200.jpg",
+      "bytes": 148110,
+      "sha256": "025bec0cadee80f01453444f6236de2ec170e22a0bb0fd31f787f132dbb90fcb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t24_3/stage1_raw.npz",
+      "bytes": 30375,
+      "sha256": "bfe746edee0b37dc821031ad687bed8ecd6eabc0300559c59e71e1f4c6f4f787"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_1/candidates.jpg",
+      "bytes": 107853,
+      "sha256": "d68b58882c2161aca9ebb2abc42de85b56e3a60b183eb76920ff3eead105d895"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_1/final_B2.jpg",
+      "bytes": 145551,
+      "sha256": "60b034ad390cac5292ca8342bf3b46131336b4b921150c67e9c76272d079079e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_1/final_tau0.200.jpg",
+      "bytes": 145551,
+      "sha256": "60b034ad390cac5292ca8342bf3b46131336b4b921150c67e9c76272d079079e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_1/stage1_raw.npz",
+      "bytes": 30638,
+      "sha256": "f1a7c9b6b8da23cab7e2f9b205f00faf1a4ea7afd04dc836bd537591cb8a8cc9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_1/stage2_B2_raw.npz",
+      "bytes": 40333,
+      "sha256": "36fec52a61a33ee4a55311b3704e5fb8265ec452b8d8f8b84dfc01e34d7177c3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_2/candidates.jpg",
+      "bytes": 112809,
+      "sha256": "5b8c81ba34b634c3c34949b7e7aa35b74edd0a6926a0245a39a5e8ab1ff7f10b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_2/final_B2.jpg",
+      "bytes": 128550,
+      "sha256": "a855430ceacad620b57968da26eaca9fdd9065a746911bac37d28213b89e94d6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_2/final_tau0.200.jpg",
+      "bytes": 128550,
+      "sha256": "a855430ceacad620b57968da26eaca9fdd9065a746911bac37d28213b89e94d6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_2/stage1_raw.npz",
+      "bytes": 33848,
+      "sha256": "361d058dd140387fc8d1c83aa96f8220c2574ca85e4449925ed15cc1eef5b6b7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_2/stage2_B2_raw.npz",
+      "bytes": 43684,
+      "sha256": "3f619849a4081d061d30060c75fd93e0929fb59ee185f47b1f7ec9296f9b28e1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_3/candidates.jpg",
+      "bytes": 101747,
+      "sha256": "6347d6f31ed1660c135bcdb76738b59ece7acbc36c80ca81b7b485df43de7f8a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_3/final_B2.jpg",
+      "bytes": 101747,
+      "sha256": "6347d6f31ed1660c135bcdb76738b59ece7acbc36c80ca81b7b485df43de7f8a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_3/final_tau0.200.jpg",
+      "bytes": 101747,
+      "sha256": "6347d6f31ed1660c135bcdb76738b59ece7acbc36c80ca81b7b485df43de7f8a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t25_3/stage1_raw.npz",
+      "bytes": 30557,
+      "sha256": "5cc31436c33d70decfd3900d20561ea67cd58e29038a33d0e2b85468a213fb7d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_1/candidates.jpg",
+      "bytes": 169292,
+      "sha256": "5fa6e8bb55388aac59df81d22f29dfa87412a2a42af1ff5bc36d09b16d870d30"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_1/final_B2.jpg",
+      "bytes": 210520,
+      "sha256": "2f980155fa0f8523f6dd73be01943d4feca14420ad3e7621ec814b7a8924f8ab"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_1/final_tau0.200.jpg",
+      "bytes": 210520,
+      "sha256": "2f980155fa0f8523f6dd73be01943d4feca14420ad3e7621ec814b7a8924f8ab"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_1/stage1_raw.npz",
+      "bytes": 30309,
+      "sha256": "38647451fa2251d90e14da749ac1ac9e24b12b93346d5fc0a569853ab6ca03e8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_1/stage2_B2_raw.npz",
+      "bytes": 40244,
+      "sha256": "0a4213be3325b55e69b97a2b53b8ba49aac5b66e1daaf5a57267edda7a162b2b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_2/candidates.jpg",
+      "bytes": 169271,
+      "sha256": "a433c7f5ed413ee253a1770615f7e309cce81b6faec64fdf6ba930a9f7cba87d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_2/final_B2.jpg",
+      "bytes": 187000,
+      "sha256": "d288d31d97dc356bd2fbd982cbf12ecea19447a3ce94aec1ea78655f8fb5c45d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_2/final_tau0.200.jpg",
+      "bytes": 187000,
+      "sha256": "d288d31d97dc356bd2fbd982cbf12ecea19447a3ce94aec1ea78655f8fb5c45d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_2/stage1_raw.npz",
+      "bytes": 33429,
+      "sha256": "8926526715e84c92d395eac0b11cdc052a0317d88836b3458f53469af62cc6f6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_2/stage2_B2_raw.npz",
+      "bytes": 43448,
+      "sha256": "90dfce7ec0d0c1be4764aedb239bda8c724fa2424a7de3341adfa8166e578978"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_3/candidates.jpg",
+      "bytes": 164470,
+      "sha256": "02170c6a7d8e0b720360c1e6a5cdac84b06401f62de2fb70545e565bef9843b0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_3/final_B2.jpg",
+      "bytes": 164470,
+      "sha256": "02170c6a7d8e0b720360c1e6a5cdac84b06401f62de2fb70545e565bef9843b0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_3/final_tau0.200.jpg",
+      "bytes": 164470,
+      "sha256": "02170c6a7d8e0b720360c1e6a5cdac84b06401f62de2fb70545e565bef9843b0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t26_3/stage1_raw.npz",
+      "bytes": 33845,
+      "sha256": "cc0fe3cddf45d23586b66e52d4355cbbe4d0edf31efaee119587f9c6ee16579a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_1/candidates.jpg",
+      "bytes": 419878,
+      "sha256": "9b78da96b67297988e867baebe5c46f547e7d6c5078660599e91fd92298524b5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_1/final_B2.jpg",
+      "bytes": 464048,
+      "sha256": "e06d0217bd451d4be966952f89a0dfe7e35675eb46d6c3630c11a67ff16f2538"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_1/final_tau0.200.jpg",
+      "bytes": 464048,
+      "sha256": "e06d0217bd451d4be966952f89a0dfe7e35675eb46d6c3630c11a67ff16f2538"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_1/stage1_raw.npz",
+      "bytes": 30370,
+      "sha256": "92cf9a9b255bdf2815f6c3fbd0d6aa04d6e8f41805b94c9966d84f9c16f563c4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_1/stage2_B2_raw.npz",
+      "bytes": 40496,
+      "sha256": "be5dcc186d5367241da952b8a39526d1b3082660e4e019906f649e0b45d289cb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_2/candidates.jpg",
+      "bytes": 442279,
+      "sha256": "da47caef2c4422a199dddefadae841e80a02b3091b08f0ddeb00dda5dd98c419"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_2/final_B2.jpg",
+      "bytes": 459266,
+      "sha256": "09f9cd28882e256a635814e8eb16137956515798ffb55f7c9df2372c666f02cf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_2/final_tau0.200.jpg",
+      "bytes": 459266,
+      "sha256": "09f9cd28882e256a635814e8eb16137956515798ffb55f7c9df2372c666f02cf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_2/stage1_raw.npz",
+      "bytes": 33847,
+      "sha256": "7c25729f945b6ca46687572979eb2d1ec48d13b80e883ab8cb8752962b7f1b83"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_2/stage2_B2_raw.npz",
+      "bytes": 43916,
+      "sha256": "a7447e4d0a6738d921a147b840965090fac82fbcfea8466c802192b181a65d45"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_3/candidates.jpg",
+      "bytes": 407800,
+      "sha256": "88545d9f6129a3e60c97d1899e87311526599fdaab3cd6d26eab0d2c7dbe0d42"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_3/final_B2.jpg",
+      "bytes": 407800,
+      "sha256": "88545d9f6129a3e60c97d1899e87311526599fdaab3cd6d26eab0d2c7dbe0d42"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_3/final_tau0.200.jpg",
+      "bytes": 407800,
+      "sha256": "88545d9f6129a3e60c97d1899e87311526599fdaab3cd6d26eab0d2c7dbe0d42"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t27_3/stage1_raw.npz",
+      "bytes": 30561,
+      "sha256": "6ba3eb628d1568e6aa991f29012e3d607532ecde6d380b0f8dcb14bda8938c4e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_1/candidates.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_1/final_B2.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_1/final_tau0.200.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_1/stage1_raw.npz",
+      "bytes": 30447,
+      "sha256": "4df595183bda6b6b8157d31eb5949767be618202a9f77e1a894bf24aaee44f7b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_2/candidates.jpg",
+      "bytes": 113401,
+      "sha256": "45bf6513de4a8096d0242d83305d49a830506c55cfcc063e24d369580ed9ad85"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_2/final_B2.jpg",
+      "bytes": 122565,
+      "sha256": "a45b1e2c0aa582988481ff43050dd4785bd63ef1e55ed1cb6c0696b55498ee40"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_2/final_tau0.200.jpg",
+      "bytes": 122565,
+      "sha256": "a45b1e2c0aa582988481ff43050dd4785bd63ef1e55ed1cb6c0696b55498ee40"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_2/stage1_raw.npz",
+      "bytes": 33765,
+      "sha256": "67d400a7164cd4e9d75384b1bac2d9a03d8df19e8422c758abee070c6672b19b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_2/stage2_B2_raw.npz",
+      "bytes": 42969,
+      "sha256": "c6205c43a4c5ab70de2caf881c17318b847a4b7490ddb0d1e73aed4b6c2827ad"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_3/candidates.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_3/final_B2.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_3/final_tau0.200.jpg",
+      "bytes": 103878,
+      "sha256": "c37ddf2666254a9e0994cf7e118c3c913eff5e90796a8c7431b8f65021ed3361"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t28_3/stage1_raw.npz",
+      "bytes": 36623,
+      "sha256": "501c3d8eca8602f2e895db47550ef553a8f541166561afd0190f5d742beb563f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_1/candidates.jpg",
+      "bytes": 17376,
+      "sha256": "a545b3c6b221090aefbe4bdb7ab169156b4f5d6397dfc64d445b64cef9176e64"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_1/final_B2.jpg",
+      "bytes": 19252,
+      "sha256": "b58292d8345bac28de67781eac874805133afa613781872006d46938ca3d9445"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_1/final_tau0.200.jpg",
+      "bytes": 19252,
+      "sha256": "b58292d8345bac28de67781eac874805133afa613781872006d46938ca3d9445"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_1/stage1_raw.npz",
+      "bytes": 30246,
+      "sha256": "025f1143597a301015cda21e816854ecac886e65b69df7c9402c3628e7dea69c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_1/stage2_B2_raw.npz",
+      "bytes": 40013,
+      "sha256": "fd37ff1b7396812cc1f5a1e89bb28c6803ba31683aa3a0278b883110d93a7838"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_2/candidates.jpg",
+      "bytes": 17966,
+      "sha256": "180ae65dc6eced871e1959b7fc4f6958dad816849170a1e0e1b03a531a89cba9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_2/final_B2.jpg",
+      "bytes": 20052,
+      "sha256": "0d30bb4fb0348edde48338f8014a36b16801459c337201fb57877b276b7afe10"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_2/final_tau0.200.jpg",
+      "bytes": 20052,
+      "sha256": "0d30bb4fb0348edde48338f8014a36b16801459c337201fb57877b276b7afe10"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_2/stage1_raw.npz",
+      "bytes": 36927,
+      "sha256": "2227bfcde4d2c3df7b51258b59565a2fdc9f7534f78f4edd555be875a22a98c1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_2/stage2_B2_raw.npz",
+      "bytes": 45410,
+      "sha256": "85d8b7d47ea44bac89bb151bcb16d6830c5a9d33f716d7f5714bcc0eaa4f9e5e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_3/candidates.jpg",
+      "bytes": 16743,
+      "sha256": "ff8b8b182b36347cff41a411f16afafcae0ae55fa175e846b582bf7a59730311"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_3/final_B2.jpg",
+      "bytes": 16743,
+      "sha256": "ff8b8b182b36347cff41a411f16afafcae0ae55fa175e846b582bf7a59730311"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_3/final_tau0.200.jpg",
+      "bytes": 16743,
+      "sha256": "ff8b8b182b36347cff41a411f16afafcae0ae55fa175e846b582bf7a59730311"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t29_3/stage1_raw.npz",
+      "bytes": 33720,
+      "sha256": "92f1bec866296f1551d8c2d49f8841315bf2300063ce2befd9adf49eafc2fd02"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_1/candidates.jpg",
+      "bytes": 169590,
+      "sha256": "7e00ecb7706a9367e4f2b1ade21973ced1a43316610938339dfa22b67ca00f3f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_1/final_B2.jpg",
+      "bytes": 184136,
+      "sha256": "4073b5834aa458ac6ee770836a2da6e89a083c5afaf710c1689950216d189a9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_1/final_tau0.200.jpg",
+      "bytes": 184136,
+      "sha256": "4073b5834aa458ac6ee770836a2da6e89a083c5afaf710c1689950216d189a9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_1/stage1_raw.npz",
+      "bytes": 30367,
+      "sha256": "f3726c490677cee6fa551fc8478bd1149e2e4827a96b05adf08f483c6e678352"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_1/stage2_B2_raw.npz",
+      "bytes": 40118,
+      "sha256": "765195d15233717000d808ce5605d46e2a5e615bcb14ee582284244d2ad1881a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_2/candidates.jpg",
+      "bytes": 170756,
+      "sha256": "64626cd39521813da6641b1a594430ed7d2b26afd03bd66bd73f0930a08f1041"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_2/final_B2.jpg",
+      "bytes": 184485,
+      "sha256": "d651380de02c02962add21b2a68f9ed5ab316ebe755ebbb250261487cc96f730"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_2/final_tau0.200.jpg",
+      "bytes": 184485,
+      "sha256": "d651380de02c02962add21b2a68f9ed5ab316ebe755ebbb250261487cc96f730"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_2/stage1_raw.npz",
+      "bytes": 36989,
+      "sha256": "481bed35bc15d2177b3f968ad76ca953d12c141bbcf4db8a5849cdaf98360c3c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_2/stage2_B2_raw.npz",
+      "bytes": 46168,
+      "sha256": "bf932c4dd0aa75710858e7ad58a8d43cbde1528071d09f55d5e1509ee27ae23d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_3/candidates.jpg",
+      "bytes": 160174,
+      "sha256": "33ec59cadac62a67a4f129db762b502ddc8837ad1818bed6e4383deae333b455"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_3/final_B2.jpg",
+      "bytes": 160174,
+      "sha256": "33ec59cadac62a67a4f129db762b502ddc8837ad1818bed6e4383deae333b455"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_3/final_tau0.200.jpg",
+      "bytes": 160174,
+      "sha256": "33ec59cadac62a67a4f129db762b502ddc8837ad1818bed6e4383deae333b455"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t30_3/stage1_raw.npz",
+      "bytes": 33714,
+      "sha256": "569389c2947885d02d55b66a428923307fe2f9650352abe12fb1e1519caa40c3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_1/candidates.jpg",
+      "bytes": 163256,
+      "sha256": "d85f8e58d5d8f7e5ccb7a07085552fd135823a707902f5a6cd2f6dbaae85257f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_1/final_B2.jpg",
+      "bytes": 177419,
+      "sha256": "87cb00da6981184f2f9874f652ad0295d2e645fe8ced40ecf3a41fb32d9524bd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_1/final_tau0.200.jpg",
+      "bytes": 177419,
+      "sha256": "87cb00da6981184f2f9874f652ad0295d2e645fe8ced40ecf3a41fb32d9524bd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_1/stage1_raw.npz",
+      "bytes": 30239,
+      "sha256": "acc4b65226e9938d195e70a2514886d88e30c1c89450cc893ec6b0d7bbe84a31"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_1/stage2_B2_raw.npz",
+      "bytes": 39764,
+      "sha256": "50f2bcd05ddfdb35d5b99395ef80129cc0a2880971e312e79fad32c960651e3e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_2/candidates.jpg",
+      "bytes": 160947,
+      "sha256": "6a17ef1f15870895fd2f6060fcf2b42e93805699cd7e6910d27f5c410917c69e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_2/final_B2.jpg",
+      "bytes": 169564,
+      "sha256": "61cb0aac146bab1e159136c17b8c0aeeee4695fbe7d5c2702af8f19b8cf8656a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_2/final_tau0.200.jpg",
+      "bytes": 169564,
+      "sha256": "61cb0aac146bab1e159136c17b8c0aeeee4695fbe7d5c2702af8f19b8cf8656a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_2/stage1_raw.npz",
+      "bytes": 37057,
+      "sha256": "cbfd3b4c3f477308cb3f0a3c1093ed7210a9e4d3837db10206f6db016032b684"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_2/stage2_B2_raw.npz",
+      "bytes": 45635,
+      "sha256": "4ba5f23d567bc61b7c632d80f247b02e49f903d33dbe4c4f25c54e6155db092c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_3/candidates.jpg",
+      "bytes": 148811,
+      "sha256": "3c3a97575acc12668267b0df8af7d88aa59b48f47f89022d463e298b5ad52d1c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_3/final_B2.jpg",
+      "bytes": 148811,
+      "sha256": "3c3a97575acc12668267b0df8af7d88aa59b48f47f89022d463e298b5ad52d1c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_3/final_tau0.200.jpg",
+      "bytes": 148811,
+      "sha256": "3c3a97575acc12668267b0df8af7d88aa59b48f47f89022d463e298b5ad52d1c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t31_3/stage1_raw.npz",
+      "bytes": 33875,
+      "sha256": "b37677c074996e6f32d2654a98efdacf1cd9cd7c369f017af9dfc76fce7672ba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_1/candidates.jpg",
+      "bytes": 230670,
+      "sha256": "b123d191801977fa7979f2356932f7ba7ba6b52d0d7f16b853046ebbddde1da9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_1/final_B2.jpg",
+      "bytes": 239335,
+      "sha256": "6f1fb15efb082a1f037801c722e2e0a4def3d7920121454a36429d057e4cbc98"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_1/final_tau0.200.jpg",
+      "bytes": 239335,
+      "sha256": "6f1fb15efb082a1f037801c722e2e0a4def3d7920121454a36429d057e4cbc98"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_1/stage1_raw.npz",
+      "bytes": 30446,
+      "sha256": "e586bb4ede54c7e6005761d03379fd89b798c58c27e36a0c62054aebe252571b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_1/stage2_B2_raw.npz",
+      "bytes": 40449,
+      "sha256": "78fd3c3a2580e667e8e3ba9f201f14ef37b6bc7ac34e0f4e3f07b0b998050142"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/candidates.jpg",
+      "bytes": 233922,
+      "sha256": "feabcbb0d81b17e2356bd25fc05c6d457e67d0fb2e8f5f7d79b436f11ce5f2ef"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/final_B2.jpg",
+      "bytes": 240182,
+      "sha256": "339966e2b3cc3d28d2a42a8ccfd2a801238e0e3fbf8f5ec74051c586493fb506"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/final_tau0.200.jpg",
+      "bytes": 240541,
+      "sha256": "c5cba758b2ca4ab60b1f1f1ee4bb43ae4e97a4b441d6ea1405f5a4e670c5d444"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/stage1_raw.npz",
+      "bytes": 30461,
+      "sha256": "0809e202d7546eda696e27bdcf8513b12751c7cd66cb0dc16c717369023ca51b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/stage2_B2_raw.npz",
+      "bytes": 40438,
+      "sha256": "f66863af86e612e11d0c49a884b1d1377a61a7a339ed7bf52a42d5cd202487e4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_2/stage2_tau0.200_raw.npz",
+      "bytes": 40435,
+      "sha256": "7964416e51f62aa987723733e4b28e15c130bc7cc3854ebfb24dfdc32f34504d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_3/candidates.jpg",
+      "bytes": 222936,
+      "sha256": "66d1c7d296350307afd7bb8c6bb55ce51b704ecdd6865ddab45c53fbf0c3e521"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_3/final_B2.jpg",
+      "bytes": 222936,
+      "sha256": "66d1c7d296350307afd7bb8c6bb55ce51b704ecdd6865ddab45c53fbf0c3e521"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_3/final_tau0.200.jpg",
+      "bytes": 222936,
+      "sha256": "66d1c7d296350307afd7bb8c6bb55ce51b704ecdd6865ddab45c53fbf0c3e521"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t32_3/stage1_raw.npz",
+      "bytes": 30613,
+      "sha256": "4a836653b817322f44331479972c578c657c08fa92bf5d8405493e4877a3571c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_1/candidates.jpg",
+      "bytes": 314703,
+      "sha256": "4aa8ba344f5bca200467ed422a3988084e373604028b11ae479b952c3406c7b4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_1/final_B2.jpg",
+      "bytes": 329726,
+      "sha256": "3c7520b8aff1254cdef9b8f6876ca35c77d78f0d92cd019154248ff465315ca4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_1/final_tau0.200.jpg",
+      "bytes": 329726,
+      "sha256": "3c7520b8aff1254cdef9b8f6876ca35c77d78f0d92cd019154248ff465315ca4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_1/stage1_raw.npz",
+      "bytes": 30425,
+      "sha256": "7091463098f66ad21b3104076d652c0210ec4e273266b03a20b5143cf076dcbf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_1/stage2_B2_raw.npz",
+      "bytes": 40484,
+      "sha256": "75ffd67c054d3a4a1c65f6460dd33ec512f2801430e6e7f13ba80b9db30d1bad"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_2/candidates.jpg",
+      "bytes": 313180,
+      "sha256": "6b3b072c2421a152727805c7f8e9dc1d9995b9a78630f2dfffb7fc4cfc53def6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_2/final_B2.jpg",
+      "bytes": 328396,
+      "sha256": "9cbd2410e912b930755414acb1aab845a09c7e9867b8090b0fb9e29257c13e9d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_2/final_tau0.200.jpg",
+      "bytes": 328396,
+      "sha256": "9cbd2410e912b930755414acb1aab845a09c7e9867b8090b0fb9e29257c13e9d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_2/stage1_raw.npz",
+      "bytes": 30402,
+      "sha256": "def7b9238b296b43eb53082e355745ac970eecd4943ea95ec5da9acd7060a6f4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_2/stage2_B2_raw.npz",
+      "bytes": 40290,
+      "sha256": "7cee6c53ce79340f191ba194e004b49a7cc70d39ce4503f3be7c5513d9c5e455"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_3/candidates.jpg",
+      "bytes": 313022,
+      "sha256": "d44017530fbe5ec80d572bc2e425ce75fb0f2630380ca850e82f02dafa840893"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_3/final_B2.jpg",
+      "bytes": 328075,
+      "sha256": "24cfabf9dcf3821947e1de1c201435b7deac657c5359564f9c4762a122ada4c7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_3/final_tau0.200.jpg",
+      "bytes": 328075,
+      "sha256": "24cfabf9dcf3821947e1de1c201435b7deac657c5359564f9c4762a122ada4c7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_3/stage1_raw.npz",
+      "bytes": 30460,
+      "sha256": "d2fbff17f84367277430dcc5698b0e02dca80c548aa705a183cf728ac296519c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t33_3/stage2_B2_raw.npz",
+      "bytes": 40306,
+      "sha256": "9a1f687f56a04ce3eab1a165cc6c25d00bb3c9337491dbc4c5abdd54d40546c0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_1/candidates.jpg",
+      "bytes": 197316,
+      "sha256": "b71c564178f95172e35ce2f69eec3663856e7bb6137aec38fe1958277e3461a1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_1/final_B2.jpg",
+      "bytes": 211528,
+      "sha256": "9772a9bee2cab14edc20d65ba6a0d5f2ec4f1b4a0a0fbbc74639763b9cff32c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_1/final_tau0.200.jpg",
+      "bytes": 211528,
+      "sha256": "9772a9bee2cab14edc20d65ba6a0d5f2ec4f1b4a0a0fbbc74639763b9cff32c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_1/stage1_raw.npz",
+      "bytes": 30400,
+      "sha256": "060575d6d87008b366a590fd96a4010ea87b3996b5fd3b436eaa8bd36d020110"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_1/stage2_B2_raw.npz",
+      "bytes": 40208,
+      "sha256": "958d99ef042c03a46eaedfcdd2a8d5206508e427ccd358c965033854ea67fef8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_2/candidates.jpg",
+      "bytes": 197676,
+      "sha256": "abbff8e81ccfbfe8ac0e0a98091c6504cca669216843b79e1c13cc2fd75739eb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_2/final_B2.jpg",
+      "bytes": 214454,
+      "sha256": "3ba531bab59a7dcbd5bd8acccc6e3ec8a4989be865dab1223307264f2d3f251e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_2/final_tau0.200.jpg",
+      "bytes": 214454,
+      "sha256": "3ba531bab59a7dcbd5bd8acccc6e3ec8a4989be865dab1223307264f2d3f251e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_2/stage1_raw.npz",
+      "bytes": 30454,
+      "sha256": "7d0f1a1c7a2ea1e796f5dc0f20429e71ff51c3a4ecac2902b3896c5ae898f2bb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_2/stage2_B2_raw.npz",
+      "bytes": 40385,
+      "sha256": "ae894957735b7dc00944dc8ae83524be8e5199622bb9776e06c98874dedcbe7e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/candidates.jpg",
+      "bytes": 197046,
+      "sha256": "759aaf6ee256c19b8de220eb6d19156780bebd62812bf9415f1f8b4ad690fbf5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/final_B2.jpg",
+      "bytes": 214448,
+      "sha256": "c80eaf43c9b70fc251f672299f5babadd860153748881785091c793ace022012"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/final_tau0.200.jpg",
+      "bytes": 213984,
+      "sha256": "bb37822c85a3226c15511a0e10d8cc28bf4eb4de0bacbda058e30c0bbefe111d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/stage1_raw.npz",
+      "bytes": 30415,
+      "sha256": "e43fe9694f54e2ce2793ab7b7367e3b39607bc4b3446dbae888b60f195f815a2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/stage2_B2_raw.npz",
+      "bytes": 40260,
+      "sha256": "809fd043e2d0d3d67d7c971ba49b99d4884f861f619e097a87da7c86c6cb59dd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t34_3/stage2_tau0.200_raw.npz",
+      "bytes": 37034,
+      "sha256": "5736e25242e1b69fa64d5e6d6fedb83a8339cfb5f6403e797233f5aaf0adc683"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_1/candidates.jpg",
+      "bytes": 1008027,
+      "sha256": "86b8f5263738d89ca2f24033f5d9a309421d5678262c46fc4edaf7f27d600a6c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_1/final_B2.jpg",
+      "bytes": 1016000,
+      "sha256": "77f7c5fe28ef0310a729f3aaaa0e458db68a2d1289dce29bcf594fecc92c1fac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_1/final_tau0.200.jpg",
+      "bytes": 1016000,
+      "sha256": "77f7c5fe28ef0310a729f3aaaa0e458db68a2d1289dce29bcf594fecc92c1fac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_1/stage1_raw.npz",
+      "bytes": 30571,
+      "sha256": "f9bbc1b57437c51d907e2a9778e8d9fbc8a013a1a50849cdca5a43041ae52776"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_1/stage2_B2_raw.npz",
+      "bytes": 40607,
+      "sha256": "326b83c3eb4d8b6864099c45eacd0287761a3550f912a47419a11ffd7e3dabe5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_2/candidates.jpg",
+      "bytes": 1018211,
+      "sha256": "5ed1264f2b261d7e3e1e659e211b7a00dc1845c4d180e10ffb64dc1cdc0d5cf3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_2/final_B2.jpg",
+      "bytes": 1015805,
+      "sha256": "0eb4d3cb1ec7fcf715381eee49240a48183caa63aecd31ca626838cc2dd11d25"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_2/final_tau0.200.jpg",
+      "bytes": 1015805,
+      "sha256": "0eb4d3cb1ec7fcf715381eee49240a48183caa63aecd31ca626838cc2dd11d25"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_2/stage1_raw.npz",
+      "bytes": 30507,
+      "sha256": "91816f5589a56593b33c631ea40d026f41288b0bfa423ac8f7cf1372280cc5ef"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_2/stage2_B2_raw.npz",
+      "bytes": 40477,
+      "sha256": "b508dd42765b29498e40f765e01c25735bf141e108df9d0dae9d1197540b8ddd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_3/candidates.jpg",
+      "bytes": 1008069,
+      "sha256": "9e0ebc7c0f152caeed609267832fb71e9923f442e4e949ec6fde395f1ffd3b30"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_3/final_B2.jpg",
+      "bytes": 1015452,
+      "sha256": "8e1e6987312329359d6095b7c83c69ce26a7123df77bf1286e29e0847ec0d184"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_3/final_tau0.200.jpg",
+      "bytes": 1015452,
+      "sha256": "8e1e6987312329359d6095b7c83c69ce26a7123df77bf1286e29e0847ec0d184"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_3/stage1_raw.npz",
+      "bytes": 30526,
+      "sha256": "c7679f17197a6862a6dbb389c4e92907f9488a158c99fc93d56fb925526ccd18"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t35_3/stage2_B2_raw.npz",
+      "bytes": 40683,
+      "sha256": "a869c156f0b1e715b4aa33549fb3018c19677ffdb0f727b09c17dcd679005b52"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_1/candidates.jpg",
+      "bytes": 39871,
+      "sha256": "67df8691f2e6822b75e91801afa63f314e82eb30967f8e11da469a8c60ea3c0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_1/final_B2.jpg",
+      "bytes": 52105,
+      "sha256": "8da1faae981e0202e80093d06cee1632e7bcde4b83bfc928e2cf431492b59907"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_1/final_tau0.200.jpg",
+      "bytes": 52105,
+      "sha256": "8da1faae981e0202e80093d06cee1632e7bcde4b83bfc928e2cf431492b59907"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_1/stage1_raw.npz",
+      "bytes": 29929,
+      "sha256": "7376aac80762ddae55747173f81d0c9570b349a0e0968798d1b66804deca62b2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_1/stage2_B2_raw.npz",
+      "bytes": 38756,
+      "sha256": "8911ea6bfc4225d48ad596faef3bbda48efcf847484189930b0068d26fd2a633"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_2/candidates.jpg",
+      "bytes": 40057,
+      "sha256": "ab59de57f3366dcdb60e4662e7c2821f26a9a3ec8ee97ec5bc8b05b7454fb5eb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_2/final_B2.jpg",
+      "bytes": 52684,
+      "sha256": "eee4dd941818ba07b5800e7eb3aab813bf5c75009e59ecfd7b73013b35578c69"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_2/final_tau0.200.jpg",
+      "bytes": 52684,
+      "sha256": "eee4dd941818ba07b5800e7eb3aab813bf5c75009e59ecfd7b73013b35578c69"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_2/stage1_raw.npz",
+      "bytes": 33721,
+      "sha256": "f0958808a0db9c0fe5231e0ab33ff9ec135299b85febbaba70409702e2285620"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_2/stage2_B2_raw.npz",
+      "bytes": 42293,
+      "sha256": "1f4fd12db1719474e9b7f2922917921115ae3bbe5a4ae1ea0afb1d39bd707bd6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_3/candidates.jpg",
+      "bytes": 35022,
+      "sha256": "a4a9663cd07794c163ab8e9c61a8197cf430e22419ea2c8c274292e54908b3ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_3/final_B2.jpg",
+      "bytes": 35022,
+      "sha256": "a4a9663cd07794c163ab8e9c61a8197cf430e22419ea2c8c274292e54908b3ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_3/final_tau0.200.jpg",
+      "bytes": 35022,
+      "sha256": "a4a9663cd07794c163ab8e9c61a8197cf430e22419ea2c8c274292e54908b3ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t36_3/stage1_raw.npz",
+      "bytes": 31940,
+      "sha256": "99ed03d35001982fbdefd4b4c199d7260c5635fcf3e010a5f05d2fd3e28d0fe7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_1/candidates.jpg",
+      "bytes": 50675,
+      "sha256": "50a1fe93e2e17a940c20bb30532626b5d169ae8b75f745c55ff786a56c606d95"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_1/final_B2.jpg",
+      "bytes": 51620,
+      "sha256": "c27743670f21ff3d190ad82e3f8accd9ab2589b2011b36e36a9c2703bcaf717e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_1/final_tau0.200.jpg",
+      "bytes": 51620,
+      "sha256": "c27743670f21ff3d190ad82e3f8accd9ab2589b2011b36e36a9c2703bcaf717e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_1/stage1_raw.npz",
+      "bytes": 28661,
+      "sha256": "1ac411cfd925898cb9af614e99f1f51bbc73061a6a7925f88bc621bc3230e51b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_1/stage2_B2_raw.npz",
+      "bytes": 37729,
+      "sha256": "dc6c42fc832f9989aed887860029eebc470c5e083c1ed2904c8bec593f2b9079"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_2/candidates.jpg",
+      "bytes": 55758,
+      "sha256": "5a03acb53887c8852977def6ab13e7596f2e46ccd6659d43b9caeba62d730898"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_2/final_B2.jpg",
+      "bytes": 51460,
+      "sha256": "d320f4addfde618e97728b345f7c77cb0b53e8e8005fb26f9d60119028fb9cee"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_2/final_tau0.200.jpg",
+      "bytes": 51460,
+      "sha256": "d320f4addfde618e97728b345f7c77cb0b53e8e8005fb26f9d60119028fb9cee"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_2/stage1_raw.npz",
+      "bytes": 30394,
+      "sha256": "e7c670e13f24ddbb364646f775132598ba2b36e2e0c099b28f396ce7a37e1cfb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_2/stage2_B2_raw.npz",
+      "bytes": 37794,
+      "sha256": "cae45a9c90da5ddf0a4fa934dabf46bf1ae74c7f7cb217e1cad6bcee61a7fa2d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_3/candidates.jpg",
+      "bytes": 43262,
+      "sha256": "20a3785c757c9bda43873fe9dbd629624059e24d59f8bf39d8b141ceb12fc90e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_3/final_B2.jpg",
+      "bytes": 43262,
+      "sha256": "20a3785c757c9bda43873fe9dbd629624059e24d59f8bf39d8b141ceb12fc90e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_3/final_tau0.200.jpg",
+      "bytes": 43262,
+      "sha256": "20a3785c757c9bda43873fe9dbd629624059e24d59f8bf39d8b141ceb12fc90e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t37_3/stage1_raw.npz",
+      "bytes": 28190,
+      "sha256": "f950be93c36037612afe1a934f0a57aa7fe051b7cb399bad891d4c0210078963"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_1/candidates.jpg",
+      "bytes": 1025945,
+      "sha256": "d303ff694b45ee0568f8734268bb40899aab9e01c5d027ada8ee0a53bc2f288b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_1/final_B2.jpg",
+      "bytes": 1079295,
+      "sha256": "a1430764766f61080e732be8784689ad179e9612d26475d9a423361d0eb46275"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_1/final_tau0.200.jpg",
+      "bytes": 1079295,
+      "sha256": "a1430764766f61080e732be8784689ad179e9612d26475d9a423361d0eb46275"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_1/stage1_raw.npz",
+      "bytes": 30541,
+      "sha256": "f0cb23ffe5ae0adc69dacfce24d04bb7f83e98a1a180dcde496d7ade0402555f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_1/stage2_B2_raw.npz",
+      "bytes": 40567,
+      "sha256": "6d59736e0bebea51df23a162855fd3ace13aff4b86ec722fc6d9994270901100"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_2/candidates.jpg",
+      "bytes": 1030987,
+      "sha256": "54d5b8b74f12fa21318e0bd3a767546071a01e871c3659e355e8a131b7288644"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_2/final_B2.jpg",
+      "bytes": 1048396,
+      "sha256": "028c470f86e8c0419cf9231a45e9a34b8c23dc1d8c0dae48a10685ca55686b4e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_2/final_tau0.200.jpg",
+      "bytes": 1048396,
+      "sha256": "028c470f86e8c0419cf9231a45e9a34b8c23dc1d8c0dae48a10685ca55686b4e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_2/stage1_raw.npz",
+      "bytes": 30425,
+      "sha256": "909233bb09c4bba9ff7502fba54d189e90619566e92081c05f48a067748067d6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_2/stage2_B2_raw.npz",
+      "bytes": 40453,
+      "sha256": "6ac30c236b5ccbf1c97c4be204a2b51829beeefd5896b75d68a2da9dbfaf8766"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_3/candidates.jpg",
+      "bytes": 1001299,
+      "sha256": "f512d6643cf09712ea5f18498da73bc8e3507e6de5ad96d5ac9e807b3b4783bf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_3/final_B2.jpg",
+      "bytes": 1001299,
+      "sha256": "f512d6643cf09712ea5f18498da73bc8e3507e6de5ad96d5ac9e807b3b4783bf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_3/final_tau0.200.jpg",
+      "bytes": 1001299,
+      "sha256": "f512d6643cf09712ea5f18498da73bc8e3507e6de5ad96d5ac9e807b3b4783bf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t38_3/stage1_raw.npz",
+      "bytes": 34020,
+      "sha256": "81d771154b9ed818cb6b11067cc87d9b6483f7c6fc9aed14c326568e8990cef5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_1/candidates.jpg",
+      "bytes": 33797,
+      "sha256": "9805a118e29e686420157468cd4918d7f35b037ebd4967e470e1cfbe3310d6e7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_1/final_B2.jpg",
+      "bytes": 36299,
+      "sha256": "b592645cfdcfcaa23b5a7f370c49ff137e3506de47b4d2c0afa9fa5901082c1c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_1/final_tau0.200.jpg",
+      "bytes": 36299,
+      "sha256": "b592645cfdcfcaa23b5a7f370c49ff137e3506de47b4d2c0afa9fa5901082c1c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_1/stage1_raw.npz",
+      "bytes": 30443,
+      "sha256": "4c2952d0dc3a8b335896b22e325e015b8937cc7231dbb84413ee7083e4a7ca0f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_1/stage2_B2_raw.npz",
+      "bytes": 40422,
+      "sha256": "e6815d374bc8085057a53beeb07cc1ca359242e0df1b72e1f289d80c4cb83f4d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_2/candidates.jpg",
+      "bytes": 33759,
+      "sha256": "b77f376fb0901a77f4b206131447e5d943887258117498cdc06f7b53db9da149"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_2/final_B2.jpg",
+      "bytes": 38519,
+      "sha256": "56dcc82c2f2d2b52e4d2161468ee7f2a0f108ecf00240d011c495f746e12fd5b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_2/final_tau0.200.jpg",
+      "bytes": 38519,
+      "sha256": "56dcc82c2f2d2b52e4d2161468ee7f2a0f108ecf00240d011c495f746e12fd5b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_2/stage1_raw.npz",
+      "bytes": 37159,
+      "sha256": "3b57febc797d0ccf7706d1ab88baf62e4f2cd2664a178e0b4a3d1422e2b5f347"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_2/stage2_B2_raw.npz",
+      "bytes": 46962,
+      "sha256": "9e721008459cbdc4d75b31126d2f716f4fdabf3c8dcfe59413f0ceef6b2d56a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_3/candidates.jpg",
+      "bytes": 32562,
+      "sha256": "d9b4553ad0c8a517f9109fd7873cd3e791ffa01630bfa976274ddc53a6e0ee8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_3/final_B2.jpg",
+      "bytes": 32562,
+      "sha256": "d9b4553ad0c8a517f9109fd7873cd3e791ffa01630bfa976274ddc53a6e0ee8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_3/final_tau0.200.jpg",
+      "bytes": 32562,
+      "sha256": "d9b4553ad0c8a517f9109fd7873cd3e791ffa01630bfa976274ddc53a6e0ee8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t39_3/stage1_raw.npz",
+      "bytes": 30519,
+      "sha256": "91e494de1f87fa110d94ca01c9498a757cb593f02775c0483db8adf05217e32b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_1/candidates.jpg",
+      "bytes": 1783575,
+      "sha256": "975f6c8af016b897c140217831f756dc02cf3e1140745a5585174868b2eeef31"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_1/final_B2.jpg",
+      "bytes": 1819071,
+      "sha256": "4277a70f342ee7449508b5a26ead254bd3bfb46e472620b00e95b11a732bfec5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_1/final_tau0.200.jpg",
+      "bytes": 1819071,
+      "sha256": "4277a70f342ee7449508b5a26ead254bd3bfb46e472620b00e95b11a732bfec5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_1/stage1_raw.npz",
+      "bytes": 30430,
+      "sha256": "91ccfe986082d009d4a3abb1d22783c1c58d7e96757002f3fe1cd9f11603e22e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_1/stage2_B2_raw.npz",
+      "bytes": 40354,
+      "sha256": "62913bbca75533608f89b9f5970a508626a9c13326af3dfe6feeda4930437542"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_2/candidates.jpg",
+      "bytes": 1799971,
+      "sha256": "d6d3ee692337617df12850cb73d75fdc1998a6023f0f5de439a5f041026c84d9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_2/final_B2.jpg",
+      "bytes": 1838040,
+      "sha256": "4a589b38c435091168e4e7ef2f7b9eaf9716c17fc7e0ac6205e74e9d8bfa619d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_2/final_tau0.200.jpg",
+      "bytes": 1838040,
+      "sha256": "4a589b38c435091168e4e7ef2f7b9eaf9716c17fc7e0ac6205e74e9d8bfa619d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_2/stage1_raw.npz",
+      "bytes": 29525,
+      "sha256": "1ae6b7bd39527c09c7a2e8946404a8f74c1c133b3e9a3417837847c06c1a50fe"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_2/stage2_B2_raw.npz",
+      "bytes": 40373,
+      "sha256": "30912ddc1982e01c5d328b80587e8dd1f352fcd686b856dd8d5e85090aceea75"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_3/candidates.jpg",
+      "bytes": 1769067,
+      "sha256": "ef0c30509085761e298bafe495e1b1b6ec86dda91d9025995aa336f5472b636a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_3/final_B2.jpg",
+      "bytes": 1769067,
+      "sha256": "ef0c30509085761e298bafe495e1b1b6ec86dda91d9025995aa336f5472b636a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_3/final_tau0.200.jpg",
+      "bytes": 1769067,
+      "sha256": "ef0c30509085761e298bafe495e1b1b6ec86dda91d9025995aa336f5472b636a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430/t40_3/stage1_raw.npz",
+      "bytes": 29449,
+      "sha256": "8af14473526dff99133789ef93d9792bf46343fdb91aca1fac94a709f667a5bb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls/kept_boxes.json",
+      "bytes": 1462639,
+      "sha256": "45f90881710629df52110b212569ec8b5a8ec4a7c3cbb8e6e256867a8a4dfc32"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls/per_query_counts.csv",
+      "bytes": 5735,
+      "sha256": "dfa6a1344478773f7fd96d09dfa221e26392385c21cf1acc943bcc6ecbebf94a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls/run_config.json",
+      "bytes": 1751,
+      "sha256": "b31551629f0895b675d9949389eab67153f300c45635a22217c5b5b7d03cf744"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls/sources_inputs.jsonl",
+      "bytes": 63297,
+      "sha256": "66951508ec025481b073311326895f65e7bd286481b84a6d204ecb584016cfc0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls/sources_predictions.jsonl",
+      "bytes": 638767,
+      "sha256": "a0e920aad180540d817f7a1aba421e4c015df18f91575efb7da7cd26e877ae62"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_1_clip_scores.json",
+      "bytes": 22324,
+      "sha256": "0c5446247fa73cd7e28748d254c151557109f136f8357e9eb6fa5ea3e8b21230"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_2_clip_scores.json",
+      "bytes": 23020,
+      "sha256": "08387d403bd6ae8cc8b7569b6aae6f4fc24873795524c8b26eb304a8574d1da8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_3_clip_scores.json",
+      "bytes": 16854,
+      "sha256": "c734787cfcca341004c402fecc46173e61e06d7d90712dc87faca493071feb0d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_1_clip_scores.json",
+      "bytes": 11998,
+      "sha256": "8b2702740c00ebd226c0781722b5108bd07d276f64defb7390851d4e1458ce0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_2_clip_scores.json",
+      "bytes": 403,
+      "sha256": "29b99d8d4639eeba28e6f3f460802e9a066d3dd15d87a151cca6e706ad6af844"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "e5963b965458a60019347fce159f3aeac2c70f8820de9506577bec0dd67a4941"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_1_clip_scores.json",
+      "bytes": 4473,
+      "sha256": "58be30c237a5c7db0874a5b68bdd699453c809b01d7eea7e780919d2b6fa4ee3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_2_clip_scores.json",
+      "bytes": 403,
+      "sha256": "d1c5dd4d35db4cdf4059b0ab302fb4a39015e894e68edfeb8107920e508065dd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "7a26354b3b8138cfd35c7a5d0f061333b30416f483acbb0fe5c243bf1d9a1cb4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_1_clip_scores.json",
+      "bytes": 20150,
+      "sha256": "2794e16e9075dde533768d1cb751130318e71b5db83b9a0820d86d40726a828e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_2_clip_scores.json",
+      "bytes": 26964,
+      "sha256": "ad9cbe2e4eb97e71c7813ee3b3a1d37ea154b76531b162627c84b5f8ae2b9dc4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "3f6188da93e640daa044d9607c927df6de0af955b28cf164722e3aa00829014c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_1_clip_scores.json",
+      "bytes": 25058,
+      "sha256": "ac1e973bb16b5bc26ebf5cb5a032cb9cfe9039d908aec52018d8f8f825f48f9c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_2_clip_scores.json",
+      "bytes": 25062,
+      "sha256": "82f381157b207941871c1da177f7886d2c5860f62ab660a8c0f9c73325b89d8d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "36c060247f8d9526320a617c28a4e30b89170c480061f87ebaf72158ca88a29b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_1_clip_scores.json",
+      "bytes": 3119,
+      "sha256": "aef7d5e8ff254115cbc03f005b0713c4db690f32dff9d3b4ab0b2ec30ea11cc9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_2_clip_scores.json",
+      "bytes": 4483,
+      "sha256": "c17a75a0beb06fa82cc30ff4e3352f61e89adc7ed4458d297853a91f89780744"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "4357d103d215e709f116b173a99adf9d9c1d36ce1aa958f06673fab80d4c68fb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_1_clip_scores.json",
+      "bytes": 17504,
+      "sha256": "f0d9a96e8e9d1ef9fe37e54bf4e62815b8e34707e230cc3d398fc933d576ec13"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_2_clip_scores.json",
+      "bytes": 23628,
+      "sha256": "045f628c1e05e7f61916d2718bf2ff720d11730d17acf52c5544a5cef5a1da8e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_3_clip_scores.json",
+      "bytes": 9304,
+      "sha256": "2a619706daf48d637475ce6f8d87465ebdffc1c4255b847060e4d3e5b751c60a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_1_clip_scores.json",
+      "bytes": 24280,
+      "sha256": "946fdf3d2840f83f71045c82ea8f1276bfc7b3b2c6eb690b07a3ad5ed139c4db"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_2_clip_scores.json",
+      "bytes": 14024,
+      "sha256": "3c077e77b2f0ff9f77eca95f9bf6863fef905e12d420fb9d8f3bf566e8365407"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_3_clip_scores.json",
+      "bytes": 12686,
+      "sha256": "7cdfa517b18a685dca85ec1558463548c021db06412b07fb129c71136aba47b1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_1_clip_scores.json",
+      "bytes": 14018,
+      "sha256": "f5d3d73ba2888e822853cf6c4dfdc2dea9a6a23c6e476d3c23798ec8c43dcac0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_2_clip_scores.json",
+      "bytes": 16730,
+      "sha256": "9d4cdaa34c8568a8091d75f7d70a721827e7119dde80d4fa1dff75fdd7459f2f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "bf348371b876c26b6d4c6c254fd860931c98a9d730e2692594acd186dad812c8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_1_clip_scores.json",
+      "bytes": 10596,
+      "sha256": "c47f4a4300f74aac0b1ca7c137ea2220b3f2630944cbf825cbf22af1b7d0618e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_2_clip_scores.json",
+      "bytes": 10594,
+      "sha256": "09cbe904a2f2867a0f8d27e89b3d6872430aac286067b63b9baf3e5ca5d857a9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "5ba5bc6d6a6f0484f9fd8044bd48749701e3c93daa15b96cba401660456e9e6b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_1_clip_scores.json",
+      "bytes": 7888,
+      "sha256": "0ffdddee134b99b2aed2712ac2d8d983e6768a7356c7a0ce486155911a566cc2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_2_clip_scores.json",
+      "bytes": 6541,
+      "sha256": "2cecc337cc016102769d40f8bf386ef5d1e5b971268f0d2235e1bd93ee2515f4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "db09df01b4bddb3a70c5d813dda36bbd0efcd4c56aa3c59b8387b014bf408130"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_1_clip_scores.json",
+      "bytes": 8596,
+      "sha256": "0d60f8f9dae1232d4718ebe2ddab07a408899ada0edfaece1404998d3ea094ac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_2_clip_scores.json",
+      "bytes": 8602,
+      "sha256": "64b02ff4ef1e01e6e05d5397a63ba698095dcf3c48cfad124ff1246318027470"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_3_clip_scores.json",
+      "bytes": 8564,
+      "sha256": "5dcd352f1fe38897d047f602ba553fbb517151756537933cdbb7732df3d10d9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_1_clip_scores.json",
+      "bytes": 1777,
+      "sha256": "62773770fb14774acc32e7796a8ff4d45d68ada855ddccffa4938bd61c6c0f27"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_2_clip_scores.json",
+      "bytes": 3813,
+      "sha256": "a0c14264c0a84e3a2547c23c641a7eff591cfc3509326a69bf670187ebc88ea0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "50283ade617b67be28632ae39a22f5dc89ea1848d2360b971551b39ddfa0a636"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_1_clip_scores.json",
+      "bytes": 12688,
+      "sha256": "d6129744165f984fb3b33cdb141c7c6814987a7eacb7ce3b5113b4bde383d210"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_2_clip_scores.json",
+      "bytes": 22216,
+      "sha256": "e26442c712bbb4fec2e1acb3183617dc2ea988a796b98d52776d0cdefab76ae0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_3_clip_scores.json",
+      "bytes": 14024,
+      "sha256": "b5b3ea77148406fe2096c2d10c7dbd1f653f3f6ebd4130e1053fb0b871bfd313"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_1_clip_scores.json",
+      "bytes": 28546,
+      "sha256": "7af27386992cd0700dddfdbbccadffdbb6d9a5a747c4636a11e8d393f7a934bc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_2_clip_scores.json",
+      "bytes": 10624,
+      "sha256": "44c766ca0e63712db0dedff98aea53082674f44458fa92dbb7fb77e4138e63d3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "3856a7ab1c1f506cf14f8315b2e939fef7f01cd70a2383f077dc3eaa78e6bfc4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_1_clip_scores.json",
+      "bytes": 29100,
+      "sha256": "0cd39fb79b04dd6d2091c4c055a641096339004a01beafccc92cf072f3f275c9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_2_clip_scores.json",
+      "bytes": 23540,
+      "sha256": "7a4a3bda37dfa3decafccd6d3600c77f246203b4a5407a9654c36ac2538c904c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "09259386bc15e7c27efe534b2a961c4d7f57a29f7c61661e3711f870ebf8fcb5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_1_clip_scores.json",
+      "bytes": 3123,
+      "sha256": "042763631301df1b2a402a3a06bb0fe1f5871cfa5a6d1316288e99b6a2c72c59"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_2_clip_scores.json",
+      "bytes": 5165,
+      "sha256": "f7f9fb08b674ef9aa90725016257994c82df9abdd0cbf217b62bbb6f683e5b5d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "0635474db6a54993b9d81bdb952eac2be48d1e3e198666c152284ea7a4eb6826"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_1_clip_scores.json",
+      "bytes": 5851,
+      "sha256": "d14c99b75c00a23ae66d69a8bdcba747559ab7fa82795524314362bbe2c63b7a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_2_clip_scores.json",
+      "bytes": 5863,
+      "sha256": "a8d734d8747d6edf0917cebbb2a7581babdb471d871f3038300450fd869775b4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "9f3caf7b0e27de59630a0dfd6f1c1f197ff17e2f871b9ce4bd0c05148018c78d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_1_clip_scores.json",
+      "bytes": 405,
+      "sha256": "a4af0f003b298c2ddb304785f5ffba73bb91695c25948003dd3dac6ee86fc3f5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_2_clip_scores.json",
+      "bytes": 5169,
+      "sha256": "a355eb1fe4c1ab2460217f04d4a5dfe4ed1ec350dbb845c466f14a2878854448"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "8bf7424652b19762188ce8840a446220ca37d503cf51de6538af8563773a8bfe"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_1_clip_scores.json",
+      "bytes": 4491,
+      "sha256": "98f8a540fb6c345801b9a6ba38edd6e87ed6b5d33172374c17236f8c28d8d86b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_2_clip_scores.json",
+      "bytes": 7870,
+      "sha256": "fed0333aa9818cceb652323d7d3cafc1de2474619048a48e0af1a2a5dec3b471"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_3_clip_scores.json",
+      "bytes": 5873,
+      "sha256": "aca2359a4739549e7b5a667c7da86d39b9867977ef95a4322beb254330363c5c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_1_clip_scores.json",
+      "bytes": 5887,
+      "sha256": "af286b8e55991622a997684749b17cc9643461be5b992e4d4673d2e901abffed"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_2_clip_scores.json",
+      "bytes": 19522,
+      "sha256": "ee535eb753ec33f4f7efb9465ef24ea633a5f6183e9a1a2cb08bd5a0131e0f51"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_3_clip_scores.json",
+      "bytes": 11302,
+      "sha256": "4cce9eb9909902d3f40d95ff7a0687138e9d97dee7955da46b2876e3791e1809"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_1_clip_scores.json",
+      "bytes": 3139,
+      "sha256": "9b1c164030c6ff230f08f7dc36039fb4de16f05619cff060286d5f3e2a300131"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_2_clip_scores.json",
+      "bytes": 6513,
+      "sha256": "72c8fb9d47ab100d88ab8b9f90a180188bd67d6c5afaada0b53d0ff76a6692ef"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "d6b10d8418a84bf7a4cff0a32a6ba49a2c06e04be23fdb3f060ede66d0019cf9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_1_clip_scores.json",
+      "bytes": 11336,
+      "sha256": "0cfda78e28e56de931c424b5f486adfb3829047704c519bbdca9e2fec4044848"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_2_clip_scores.json",
+      "bytes": 14698,
+      "sha256": "3b3d22c6c6b79b56b68249ede271754945221f6cb3fd7339a639e66d531f3e7c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "36bf238022ea8d7e02c598ac05e171824fd133bfa9958e9d145adf2c9bcf2b00"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_1_clip_scores.json",
+      "bytes": 7204,
+      "sha256": "9a4689c9ba36470b8a8a1859d7ba6b98fd159ca8864692b22ff0b8b6c30e4087"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_2_clip_scores.json",
+      "bytes": 16100,
+      "sha256": "790a1f1cb4b6085ee49c1f72489143a1086010aef2807f365d6af6b2956471dc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "25dc90319d75226b0d3f2ac8684df323ba73057a16e94d0deff93afc089e23d9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_1_clip_scores.json",
+      "bytes": 20886,
+      "sha256": "c2445a46bd2f9d14d84e963e5e7b81c30d20891a077542ef6ee27df25ad203f2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_2_clip_scores.json",
+      "bytes": 11972,
+      "sha256": "8ec190548f505de7744d30ca2a24feafb546577a49fd71af495dcd572c0da25f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "38e5967948254533197f25e5b6d26f79949a754797e18fdef54e9e27f88e0a02"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_1_clip_scores.json",
+      "bytes": 18144,
+      "sha256": "d9bd7642675b8cea7545fee708d6444d9e0a140101419419b737dc4897ed8dfa"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_2_clip_scores.json",
+      "bytes": 14730,
+      "sha256": "51bf32d20b2d22e2c514c4df30cf9d81f396e2b5d14e139eddc32b419769387f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "d4c7ac2e110abbba5cdb42c7829c841b4474efcc476f9adac2f91282200b9c62"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_1_clip_scores.json",
+      "bytes": 9938,
+      "sha256": "2040be54576ff701c7326947cac58a02e0f9620fa1fd92674f419d669951a322"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_2_clip_scores.json",
+      "bytes": 5173,
+      "sha256": "06354f0e44527c6b6a203bfb4717c13843007c9ab818875a0e7d8123f3a0c18e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "6470cd30c1bce03fc5c544f72e5c1b63094e8265815187f2f17d43b9eb5ab38c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_1_clip_scores.json",
+      "bytes": 413,
+      "sha256": "e39a96894af3a14c5ad28c682b6c03bf253dca985699aa57480af7ccf22bee6a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_2_clip_scores.json",
+      "bytes": 3807,
+      "sha256": "1e344a6b8425df07ec144a926af7982d1b52e407451701838f6797a11f205d03"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "c9fe501b8698bc7f7ad80cde0631cd6891200af572260d2a0c35d355d79cda28"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_1_clip_scores.json",
+      "bytes": 2455,
+      "sha256": "468975ccca4d86e9e16670891991b8618db1c1857333b4c5f028c780cfa2f127"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_2_clip_scores.json",
+      "bytes": 6551,
+      "sha256": "d6d4b4914aa41ef1d92e9ab554e27e4e4d4310ff0988ef9d2fe847f6642302c9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "c3580b64cb54acc74a51bb12e41c36b158639200ef43838132b8373c778ba280"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_1_clip_scores.json",
+      "bytes": 8564,
+      "sha256": "14d6c2021fc37d78dbcb215005caec40b15b4dffbc926df22cf8a19493c7f07b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_2_clip_scores.json",
+      "bytes": 9244,
+      "sha256": "9920d79a1c7380346dbc1e9c2a39ce1f47cd0bbd4abf4b05b97942e51abc8f8a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "c58f71662a74add8bf549765622c86116b8b396c8afffbda90f0a550ca0b9e5d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_1_clip_scores.json",
+      "bytes": 5197,
+      "sha256": "eca863836ad53d824fcb408d96a9c15fb16e381987523bbfdec19d0e06e299fc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_2_clip_scores.json",
+      "bytes": 5885,
+      "sha256": "1bb6d3900bb1244b6ae3285cd782bd1d96aab7c5d5410f507726020c9493ed96"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "7fdcffdf2e405d6f4ec7db891b13a198a7824ee69ff2f2684729e5bbb9b84b38"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_1_clip_scores.json",
+      "bytes": 7910,
+      "sha256": "eb801aee020ffd0e31e54615c416c3b9b71db0ad27dba41d3175d63d79b47a57"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_2_clip_scores.json",
+      "bytes": 7930,
+      "sha256": "414adf633902e1a81db69c35b5df9d0994d169e24a0dee498f60ac23a3619fc2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "e99924c3c7d61938f5bde957f98f554ebe1bdf145a1e57c7c2fd7358944e0bef"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_1_clip_scores.json",
+      "bytes": 63284,
+      "sha256": "9446e40b6e981c0bbf01151017afcd6be9e029992b6b6ac0772a2edcd15f4254"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_2_clip_scores.json",
+      "bytes": 60652,
+      "sha256": "77e195e031135d913de95a2d918951bbd4db3d4149a47889aadd67b9de1fe43a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_3_clip_scores.json",
+      "bytes": 59334,
+      "sha256": "ab050d9b54728fb820e788a96964f2169d36dcce777918c58c7114566df0fb67"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_1_clip_scores.json",
+      "bytes": 24990,
+      "sha256": "d55c3437627d107a56db01d7be023b786ab0bdbbe76e22f8194cb8b5cfd6d955"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_2_clip_scores.json",
+      "bytes": 41962,
+      "sha256": "8a961460ec0deda37789bbe0378c8c584fddb821633ddc9f7775ebb0901ed61d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_3_clip_scores.json",
+      "bytes": 28416,
+      "sha256": "0da2ab2f54c02f8db795c31ae44107316f0d820ec3d7d596f8352f6e77cacf51"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_1_clip_scores.json",
+      "bytes": 16192,
+      "sha256": "e11906e378079d3edb2fcfe874ffe5623e049a8b12179b892dd4e95c6b7afa3b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_2_clip_scores.json",
+      "bytes": 4495,
+      "sha256": "76ee53875fdc40a95e205383e0c17152138c0f65c336aa035ae951a407605726"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_3_clip_scores.json",
+      "bytes": 15510,
+      "sha256": "9f72e8fa77a1d73a5cb768d3fb37494594528db5af3f9356703a56878d20bc00"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_1_clip_scores.json",
+      "bytes": 11292,
+      "sha256": "e3bc2370159266c71a705d9956f2fe00707e16d8c0a6d7e36ca9bfd1172658fe"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_2_clip_scores.json",
+      "bytes": 11352,
+      "sha256": "4c7a9024a2d1f758473d7be98ba6bcb494854d277568b612963796ac3f6ac112"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "4dc2390c841f05ad2ec186943a83c2bc111b2125129913d06cd8c07dea006f20"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_1_clip_scores.json",
+      "bytes": 2441,
+      "sha256": "ac0d6987d42825d713cd09142ae099d6ce9842f9bb22eb5deeff7b63552a180d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_2_clip_scores.json",
+      "bytes": 3815,
+      "sha256": "2da9ebdb95373315b11af3781479e0332d67220bbfa5fd6d6772f6cc220e53de"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "ebd6818cd14d95e8c5475aa62751c0f2d0f79a14d6b0aaaf730e57472003279f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_1_clip_scores.json",
+      "bytes": 12078,
+      "sha256": "5d443f93a785d3983b03b85980aee7e239007826598465d6264c04aad97b57f8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_2_clip_scores.json",
+      "bytes": 6521,
+      "sha256": "d90d5f40b7a4c8969678fdd8ad06a35f425418ff0924e81d2f1082f137c167d0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "023372f6a68bf5c608e699d8538df53c5bdb14bee553fe2d4a5c239d8a9d12d9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_1_clip_scores.json",
+      "bytes": 20868,
+      "sha256": "9cd1748dbf99e572bc23cd89af9211149a1cb4105fce0571f6b381d33d30b1d7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_2_clip_scores.json",
+      "bytes": 18784,
+      "sha256": "c7453c0ce71c8bf2ddd2f480112c52ebb80e36a89f722950c2ab0b5b643e14df"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "5c884a634ddd36c9667f1bac3fb5b44884e28ac49d139783613381a4deae2129"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_1_clip_scores.json",
+      "bytes": 16840,
+      "sha256": "8a7948e0cae93317862f2a6b435f523339e073fc26ad3682092fbda41585b43c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_2_clip_scores.json",
+      "bytes": 5869,
+      "sha256": "c305c2e94ab8f01e76457aea60ae86dd2eb5926dd5578fd58ebf1d5b61e2ab8b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "2e3c8f900ce117342be02264a29a55768f0568ab6cfdc599ce4a00ec3dbf4988"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_1_clip_scores.json",
+      "bytes": 25060,
+      "sha256": "b5dd451e1771baa0329c1a7491f42f3a30d5af3546f894cd266aef98b12a10da"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_2_clip_scores.json",
+      "bytes": 25128,
+      "sha256": "864095ac64dc2775c99810b586493462eb77f1374e7e25abed53d4bcf04407f0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_3_clip_scores.json",
+      "bytes": 23704,
+      "sha256": "48a817803f857963f4845d0eef326c46ab30abacc1cff17f91f616755dc5ec23"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_1_clip_scores.json",
+      "bytes": 11972,
+      "sha256": "3358721206b3cd621c41cfe11301f4a0f168f85007e14fbb9ad97d0514467bc7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_2_clip_scores.json",
+      "bytes": 403,
+      "sha256": "9c9016a040233b2d5b5aa235df6bf40ef2166a1b3addf46d93f5315ae40f5011"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "2aaf38c01b6ce1a78eb817d06484fd8c3c3d016aee5e082ba4556ff150fb59b3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_1_clip_scores.json",
+      "bytes": 5157,
+      "sha256": "2e1b6776c1ab9bc0b3314d4a933d5d2eea477f31056efbc9a81c99f6706fd642"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_2_clip_scores.json",
+      "bytes": 403,
+      "sha256": "20a6fc42a7e929e532c7473097b63533bb381bbc8b49bc1e0a1bf7041fa4dd0f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "fa1b7c8c6e64f3c413aceebbd70740b5b6493b2421279f42ef0d474556c24bd3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_1_clip_scores.json",
+      "bytes": 22832,
+      "sha256": "5aca6e0ebc278fd63be6c20c3f18253c5f8f6fdb166bb48c879f90c97e471d48"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_2_clip_scores.json",
+      "bytes": 18780,
+      "sha256": "d6e94e4f4302d1fcce0285de06c0512ff77b2f248d69a0c64b44bfba62446fea"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "e18f3cda22c8f51ebc04f4fabae43e19f55aa824ca4cfdd691b50f6fb66704c3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_1_clip_scores.json",
+      "bytes": 44784,
+      "sha256": "5a126586ab312d3081219185dfd52a25bdca39f945b3e31fae454bbee50a80d9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_2_clip_scores.json",
+      "bytes": 16850,
+      "sha256": "c6d485ccbd80f817bfdcde7882fe99e97984566cf21a49d67ad8af7b558028ba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "cfc0920eead0c4216cc4a546f05b57b46c39bf565b6cc5d94c93b76dfcf00f2e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_1_clip_scores.json",
+      "bytes": 6521,
+      "sha256": "622c8e179346aa3374cc68d2fe2dd80ceda095ccd6067e48e65add6a54ab872f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_2_clip_scores.json",
+      "bytes": 6501,
+      "sha256": "7128df88460e391b024fa8186eea4703125caacd314cf8ec42e43ac35d01e96c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "452a834b80ee14ab8e8c118e3bde078fa6943305eaa2db78e353fbe46398f6c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_1_clip_scores.json",
+      "bytes": 26346,
+      "sha256": "81cfe1327a7cb3423d081db03ae61d8913721bf712d53d50c04673227617aac2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_2_clip_scores.json",
+      "bytes": 24950,
+      "sha256": "c18977a343445756536380416173e11c088996f1fe365a8d546f0c9b894716d4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_3_clip_scores.json",
+      "bytes": 27048,
+      "sha256": "b2860d98f8efc5ab7fa10647c415820acc9bb063ff2a53c25e0139edc24d5898"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_1_clip_scores.json",
+      "bytes": 24260,
+      "sha256": "aa943550e5fbae37723d508b98f619969e54a03083ab29947f4d5d08008ca654"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_2_clip_scores.json",
+      "bytes": 14046,
+      "sha256": "d29eebe938cfff526249f77b39293e62f3813aebcc7de51d1b3b5657dc3eb00c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_3_clip_scores.json",
+      "bytes": 14030,
+      "sha256": "9abb99d39d9fae16d32e248b6107382e2e881d368c1393ab75ddfff613b6dff1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_1_clip_scores.json",
+      "bytes": 20780,
+      "sha256": "a34bf150fc35a09935f7cda495bffc5387b7f2ff7af745c3a671d90e8ab31bb6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_2_clip_scores.json",
+      "bytes": 17394,
+      "sha256": "58bece031d331c3ff00d6f7572b3abf2ba1364ba34590c1bc80ac60c0cc7fb90"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "ee275524a1d0b9c4de7980ee9aeb8ca7d63f843aebf9a4d79be90df8b7c80720"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_1_clip_scores.json",
+      "bytes": 10646,
+      "sha256": "124ecc4ba1fbc819207d59fc13d20b2e50ed4818e1b6e186d7e5e5914569b84f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_2_clip_scores.json",
+      "bytes": 10618,
+      "sha256": "4b6ed386029864f49f8c07efc9f2907744211b3c1402e6e8fd2453833e6392da"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "f848180c68ec5f8176d04ca1a7c45c46622ceab53686ad0aa235cc68c0298357"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_1_clip_scores.json",
+      "bytes": 9938,
+      "sha256": "24a1a42bd607f5d577e2a5253463aedbf2cd636b29f44f1dda7154597ab63df1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_2_clip_scores.json",
+      "bytes": 7880,
+      "sha256": "92b2b46b37596238cb4371167608a63bf68ef95152b9d5e700b7eaa4a4e1bc07"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "9e9934ee5dfaf35411c354600a225f214de8140f73a60e34b403b792742928b4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_1_clip_scores.json",
+      "bytes": 8564,
+      "sha256": "90d597f8fb13f96ed4df6ab24b137dd4fc6ae27df3329921413c1048f372c549"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_2_clip_scores.json",
+      "bytes": 8600,
+      "sha256": "bad883ce63a2f5538e737f27ad0f5817b1da2d06bc5f323305779f461ebcfd57"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_3_clip_scores.json",
+      "bytes": 8574,
+      "sha256": "bf3e7ac7aa9822411794110abd3835a956a4e51c0f033c4a40b0938babc917ce"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_1_clip_scores.json",
+      "bytes": 9288,
+      "sha256": "7dd23c27c0f3892b31e44af813bb93bb067475f9a3402806afc14e939231e14e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_2_clip_scores.json",
+      "bytes": 4495,
+      "sha256": "0b8eeec129e66b6ee258b43b01e78d0e7d9475ecd452c1addc8ee5d3b6289c5c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "88073e8e8a6cbd8001fd0710315797db89ae363c6b449ec14cdccc80cf4cd780"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_1_clip_scores.json",
+      "bytes": 13386,
+      "sha256": "44cb459b4852e4bddb82333dc8104e8fa61d92f1da834b9107573c1d5625ad54"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_2_clip_scores.json",
+      "bytes": 15394,
+      "sha256": "09914034cb25837c4c41a58a9ec2d72f4c7b96d093267c5306da445ab3bb83fa"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_3_clip_scores.json",
+      "bytes": 12670,
+      "sha256": "cd35a25b2fb13a4fa3651900d048d4a4bf4260df508d93164d9594419f98aefb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_1_clip_scores.json",
+      "bytes": 16804,
+      "sha256": "ec3fe47ffb02411ee75858cbe54a643d453b14a5c05ffd6b4e2b593a34dbe56e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_2_clip_scores.json",
+      "bytes": 10630,
+      "sha256": "e0b78926a298fa63088076c183b883d42c10713adbe2b22381aa8ccd4af99d39"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "770e6329f2c87932c598a0df20e23fb024210e5fe0faf41f1729dec4d0a832f0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_1_clip_scores.json",
+      "bytes": 23640,
+      "sha256": "d0654968719cc826075c23a3c301fb7f85ca9483f4f0a52ca68ff0446799d9a7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_2_clip_scores.json",
+      "bytes": 21544,
+      "sha256": "ac50c5c2a8e96d60c0d27e6afe8b57839dba6b29e5eea79a18bd6a511c3d61e6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "bf11cb68f8b847bb6d0bdba5f32c272bbd27d07dd49ceb1355fd6e437963038b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_1_clip_scores.json",
+      "bytes": 3801,
+      "sha256": "2e64bad1b52101f85c95c6424c27fd00c8fdd52b76016302fca8256a9f02b291"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_2_clip_scores.json",
+      "bytes": 4475,
+      "sha256": "0b3b1ecd50f247d3a93140df73be8c2ee759924816149983eb820c707f01c786"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "fead087f00b0f16a369034fd21352b0be8a2d36b5329d6e78b1d448a9d832ecc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_1_clip_scores.json",
+      "bytes": 5857,
+      "sha256": "2e887f4cfc202beb9e0a0e4fe954ea3bb2a8eea46582b7889d9e02f67b88aa91"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_2_clip_scores.json",
+      "bytes": 5867,
+      "sha256": "7d19eb68bb75943ee79cf721bf93479baf123a70432deed68dbd8fa2bf8a7b62"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "8a04ba80e8de202a001ba46013b2da41dba9750dc9f245b9bba0d2c3f9d09f58"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_1_clip_scores.json",
+      "bytes": 405,
+      "sha256": "d350f282d53ab1ea935b0be5a296b65a1a373e7dd6c5910f319678658387e82b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_2_clip_scores.json",
+      "bytes": 5847,
+      "sha256": "8f2bfce9d201b72f8cfafe07db7f9fd9a45f06119b5584b0884b4e0e63309092"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "a6be34d6a0c799ddfd68989b5832f7abbfd2ed54097bfb7e8f43892b05d21886"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_1_clip_scores.json",
+      "bytes": 9930,
+      "sha256": "adc730e7d7aea7c24577e41e1d9b53bca296f7c8b4f2e5737b3f3642fd27f4ca"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_2_clip_scores.json",
+      "bytes": 8564,
+      "sha256": "dd9e836c23a341bf5bd854e995cd81241c6a51126589b00cf5f91501360f1e0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_3_clip_scores.json",
+      "bytes": 7202,
+      "sha256": "94fd9d4c0b6a898f6ce038dcdf931accee90a5cadb31ba29784503cd370c5bb4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_1_clip_scores.json",
+      "bytes": 5175,
+      "sha256": "5d3137a2b4e835acc43d1dd0a4e067884e591d70b062c1c94743b42dcf3bcb72"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_2_clip_scores.json",
+      "bytes": 19572,
+      "sha256": "dcc49d7300d936bac6e51f98af835bff7d986d15fcac2b55319e0ed87e9625ba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_3_clip_scores.json",
+      "bytes": 16814,
+      "sha256": "f780c0901c07f92cfec0c115f7d5300298d54ce68620fcefbe02d0e5ba49421f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_1_clip_scores.json",
+      "bytes": 7212,
+      "sha256": "8e870be4845928c3e82bf2dc28c017a255b13cfae545647ff112dddc03d4996b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_2_clip_scores.json",
+      "bytes": 6529,
+      "sha256": "e67c58d401ef9122bee220d166fefd31188d418ac6b5cfc4b82d52df08a03130"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "73e76fef541a287a339a07a1ed9cfd0168f8d735abe38c65a1ac3781d2fe982f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_1_clip_scores.json",
+      "bytes": 14696,
+      "sha256": "e890a535ec2e0da58413a488e59a8063ef5dc53f3a7c622e935da229ef564f25"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_2_clip_scores.json",
+      "bytes": 14726,
+      "sha256": "8b23b324ab9eee8f800cc9925a787534055a6b7f6473eec49fb02c6664592cac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "f4851b8137e5b98fcba18e17d862c87af1bbda9b248cd7ed0d4148d74bf87f0c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_1_clip_scores.json",
+      "bytes": 7214,
+      "sha256": "45a4fdb2f64762ca9a8334db7f210e43424ea8e6acf1ae5bc8f014bdd95a1c1d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_2_clip_scores.json",
+      "bytes": 13372,
+      "sha256": "444ea096b53889188ee37870eddba80454c0a6bc2683e2e306e1595870fd3a28"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "6c0104d0e07d64c90e21d8d7a0f8d993da7763f0326442a99b0d805a041d052a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_1_clip_scores.json",
+      "bytes": 29042,
+      "sha256": "06edc9089ecea603d3eb8d8aec099687d647087a02dffab1f88e2116adb458bb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_2_clip_scores.json",
+      "bytes": 12638,
+      "sha256": "b284321a198eda4b075d7be87b9e32432dc99adc3a415528104bb66dc6b142e4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "a17309f281686ad8abebb80399101a87e119c496782e352b69c6b09c7495ee7d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_1_clip_scores.json",
+      "bytes": 33166,
+      "sha256": "712abdeec11e3f61047731fa0f30b8c61928b306dbf0c54659b2bd4b0e2218b3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_2_clip_scores.json",
+      "bytes": 14028,
+      "sha256": "6772e3105fcfecfad59d333fc36b7cbf09d414bbe3fb6ffffb863974483473dc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "d36fb7d5b623861813fe85cdc1bd74441a44d760e4b79ffdbada6427097e9502"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_1_clip_scores.json",
+      "bytes": 13378,
+      "sha256": "55fb7bfe805977485bec3eb0a81790d899f6ce72d874dec7023e4782a605e54c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_2_clip_scores.json",
+      "bytes": 7890,
+      "sha256": "bac2a9698a165a42c0abb11e48249e98460fa20b240237a12ac434f36afdae60"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "cf75825424b7ccbb9bf15e4baf80410c74e228bb098d5168bd70e0cb8f85c135"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_1_clip_scores.json",
+      "bytes": 413,
+      "sha256": "3439a998e779079f25394107bab0f718fc01118b5dd71ec616f0b6ccf7c5b590"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_2_clip_scores.json",
+      "bytes": 10614,
+      "sha256": "919ddbea6bebaa7d4d07bad12dcca4ebbec6b0551a597806da9764bb95f685ce"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "24a444cc9d18d7b86c341586ab57f9d917ac2e6e0ac985e90db07fb12f689420"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_1_clip_scores.json",
+      "bytes": 5853,
+      "sha256": "4f2efb4510a28f3e412985943b842360cd5895ecb680b2463af226fb1382ad4d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_2_clip_scores.json",
+      "bytes": 8592,
+      "sha256": "747d5c40b30ebbdff45632e40ae5feb204636fa8aea2f079366d60737b1d998f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "bf9313767df5667f76962437684731844ddd9b19c436a9b6c3456f7402f946c2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_1_clip_scores.json",
+      "bytes": 7858,
+      "sha256": "60369e9c5c9114868fb49eb03ded81eb4fa8039e39941870e090d590788e1a71"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_2_clip_scores.json",
+      "bytes": 8566,
+      "sha256": "657966b6af14e81625df68b0231eb732bdc6215bbdb88aa4e3c36b50bace531c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "872fce7492066b45006555ef75ef91b35f8418a026b5dfd659cf867220244123"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_1_clip_scores.json",
+      "bytes": 8576,
+      "sha256": "54c657bf64e2a4ce41aea56341ae6381bf5679f2e893e9a1c25f7d9f10764154"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_2_clip_scores.json",
+      "bytes": 5179,
+      "sha256": "0b09c13484fdd8849110ac3706efa9c319b13db826dad7a906efdc8e16b7a1cc"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "80fa34f5f2288c8c0992f8f19859a009857b71001fce2625333b856b1ab42d40"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_1_clip_scores.json",
+      "bytes": 8586,
+      "sha256": "71d36df7c6b2c90981dfe330701224810536ead84db91770a34485df6bc8e996"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_2_clip_scores.json",
+      "bytes": 7910,
+      "sha256": "e601fde28576298755a12602884be0ee0855654eced3e19c9342ad6555bf755b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "c944cce0d79c2142410eb766ad18b5c4a080a3f1bdcffd93d377fd849983da80"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_1_clip_scores.json",
+      "bytes": 69609,
+      "sha256": "8a300d5f350693f5ab853e588e2b3f3bf644a4818a799c08489190ce30cc6463"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_2_clip_scores.json",
+      "bytes": 67448,
+      "sha256": "63b3cdd75a0efa0f81ec5f1fef471e95fd28f4a718a0683a0fe3a0084365873b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_3_clip_scores.json",
+      "bytes": 66784,
+      "sha256": "e02d8bacf316edc02abb3fcca768b49e4098358231d5d31102988270654324a5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_1_clip_scores.json",
+      "bytes": 29728,
+      "sha256": "e3e691a63f3b01478a1339a4adef70a1cdc4a0a46a603f41d1116882f9514840"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_2_clip_scores.json",
+      "bytes": 40678,
+      "sha256": "ae2d84488f3cb973b9c711c16a8ca739da70aea1ad2ab1c4e42f2581bc4105a1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_3_clip_scores.json",
+      "bytes": 37228,
+      "sha256": "d611a3677768f11c2c3b9f84e13bdcf208fbf922a69bfed89ee009fbd4479090"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_1_clip_scores.json",
+      "bytes": 18972,
+      "sha256": "d6fd8e44397c082f96c0f2b0ec254045006da2012349423e62dda9f7e245cde5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_2_clip_scores.json",
+      "bytes": 4475,
+      "sha256": "f7ec50b6ce33fab95f5ae536194c9a4e60e3b9eecdd9003f41b0ca675e6092c2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_3_clip_scores.json",
+      "bytes": 18258,
+      "sha256": "24d00bc879648b57996b21cc56e4dd887af158833bce3f87051c2505a2b9ffd5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_1_clip_scores.json",
+      "bytes": 11976,
+      "sha256": "9066374cb0e5f9321d7641fd3674a63066715013930eb2505802a0c51394d544"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_2_clip_scores.json",
+      "bytes": 11966,
+      "sha256": "ba79783c90e2b21191a31cbb78edbdf51f70dddd5d20406659d08351812099a6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "13b2c34b7cbe0cba92e00f80691477b190b71f41470e3d7501ff37a313d3d1dd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_1_clip_scores.json",
+      "bytes": 2449,
+      "sha256": "c33500cf68293bb7eeac0a2e3c7457fee76db8d592e3e60eafd6e3e08be1a105"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_2_clip_scores.json",
+      "bytes": 2449,
+      "sha256": "6018cd22290449ceae5186f42d5f397c336b66181b75916de0331222b9694773"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_3_clip_scores.json",
+      "bytes": 401,
+      "sha256": "ff4669d8f7179df22f94ccba633008175fd864ab894d960b41261fda159ecf96"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_1_clip_scores.json",
+      "bytes": 14794,
+      "sha256": "8190cbc6f619bda1db0a55eeb3667f0c3eb875e5bb61c92faae17cdd470ec528"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_2_clip_scores.json",
+      "bytes": 6541,
+      "sha256": "0a8f340700fae79c6963518b440d391228d19f5913bce51c627492efd267c586"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_3_clip_scores.json",
+      "bytes": 403,
+      "sha256": "227e05052f35fffea11ef81c671bceb5e70f4310fcd909c63ae193e6b784c45b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_1_clip_scores.json",
+      "bytes": 21520,
+      "sha256": "970436720d23a4f920aa6e729d157cb79e66b7eb509cdc247523c22725653979"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_2_clip_scores.json",
+      "bytes": 37206,
+      "sha256": "0d63c4825af09b5d44ab3a47c836695e16baeabe765517db2c516cda532f4c43"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "22b209206e96e259489ed943ec9686130d578faabca87052c4b85fa2ea3f2304"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_1_clip_scores.json",
+      "bytes": 18820,
+      "sha256": "86f1ae992b719f2f42614386d4a6062e99adbfcbca1f26378d21abcb7813b842"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_2_clip_scores.json",
+      "bytes": 16804,
+      "sha256": "c7a49faa6069c35500324826871f3beb05ed7e75ff92faae018e21ee2e0cad98"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_3_clip_scores.json",
+      "bytes": 405,
+      "sha256": "028a483bfecd591f14385910ff6c5aede2d5172c1ad49af27a71434c28d133a9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/run_config.json",
+      "bytes": 1541,
+      "sha256": "ed75d6b14078be47f0224dea1c28cf32a029f516a2f1835efab9947a5707765f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/summary.json",
+      "bytes": 72075,
+      "sha256": "c084654568569691a556d87860d1b390664f075ddd885e3be7ec329a6d5236dd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_1_clip_scores.json",
+      "bytes": 25066,
+      "sha256": "7c3a059af6847618b214eac08aa71f98755011eaf4bc486cabb14cf6481774c6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_2_clip_scores.json",
+      "bytes": 25134,
+      "sha256": "a676837ab1dc10f7113ac96ba76b7ea41853e313fb3455f051ed525a9a7eac0e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_3_clip_scores.json",
+      "bytes": 23710,
+      "sha256": "79ed67d2140093a0d2dd7d77671f2662c16b35ee905c14f4e96782ec233e0529"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_1_clip_scores.json",
+      "bytes": 11978,
+      "sha256": "34194afa67d691684d4828decca859c6df38f8cbd88fdd58dc714f2e3211600d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_2_clip_scores.json",
+      "bytes": 409,
+      "sha256": "ed55766fd09fb351d89718e0b2ba401d2a4b7d3a766712fc33483ad3666ab31c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "8e363073f6224c2405168a9034a6bce20cbaf0a14c9a1ab9dff373a5907fb55c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_1_clip_scores.json",
+      "bytes": 5163,
+      "sha256": "f3443d6195ffee69284a47545f97eab05aa4d2bb083f6818a33b6b6654dceb71"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_2_clip_scores.json",
+      "bytes": 409,
+      "sha256": "1a1a764d9eb91ee6633fabd26d74d04f55470a64da8d47c436f70f7e08298fe2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "a3b47667b0a8be042d9d01015326ba25b04fd388ea5fda525d76f213dbe25874"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_1_clip_scores.json",
+      "bytes": 22838,
+      "sha256": "bcd958517bcbc3908f9f0704bc3c1359e62bb53cd375e41b808bb0bcade3dc2c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_2_clip_scores.json",
+      "bytes": 18786,
+      "sha256": "0fc2648fc2d7e646d612e7fdba01edbd637eff0f44c77e36c05378fde72c314c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "83450f0820ed161dfa8ca7e283ce1f283cae60becff985e8d4caf1b316d9fe9f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_1_clip_scores.json",
+      "bytes": 44790,
+      "sha256": "f09e05a04767012210dabc0508671c3f55e5467ddb57bbb751a6ff37306bc132"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_2_clip_scores.json",
+      "bytes": 16856,
+      "sha256": "b2aaff0b96f96bff5ac60eaab04ee0145f28e3b50bce4236ac8790352a2dc187"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "1ffb2cfcd28fd4850add75aeca77bdbb1132fcb40c3e8073d81f7d104a10dc34"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_1_clip_scores.json",
+      "bytes": 6527,
+      "sha256": "119c005d66a09d611b16b642351f859efe2ad0fdd289b30a06b48833b5f964da"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_2_clip_scores.json",
+      "bytes": 6507,
+      "sha256": "dce36afaa745bcea926d221b30d630871790dc1dd40cf134251a23f06e82dd0a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_3_clip_scores.json",
+      "bytes": 421,
+      "sha256": "2c1146ed405014a055145bf542b64fd2536394cd172a05bb555472a7e00eb4c3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_1_clip_scores.json",
+      "bytes": 25670,
+      "sha256": "427416110e91a166d6838b59c92d99b1e4410476ffc5df4840f84459da85ff3a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_2_clip_scores.json",
+      "bytes": 24956,
+      "sha256": "393142365b75f31642d3007566614ca2224b0c0c60419d9a7860b462d4a80d1b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_3_clip_scores.json",
+      "bytes": 25710,
+      "sha256": "bbb29bc78dbb60ce37c5c96710d308d71a30b9026df6e6e9de14cb8fb5569fac"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_1_clip_scores.json",
+      "bytes": 24986,
+      "sha256": "0e82c750d14373ec330c9ceea27bb076e70ba7b82d5432c59000815bae5f75cd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_2_clip_scores.json",
+      "bytes": 14052,
+      "sha256": "4e8e02cd9a27d8bc5d06244d6265f10b2c5a11853c915e292eb8f66be47a321d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_3_clip_scores.json",
+      "bytes": 12692,
+      "sha256": "a9ec3a1337601c713e173ff2b0d5b2d313b6463232ff9244e32c01f9caca882c"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_1_clip_scores.json",
+      "bytes": 20786,
+      "sha256": "b7554f47736cc27f185361b74af36e4749082e3e95ad758393eaf95ffacb86af"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_2_clip_scores.json",
+      "bytes": 17400,
+      "sha256": "abe9daaa0b9a758e5c483146bd86bfed5457baea669f51db30eec61be3512d87"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "49d8eeb76cc8bf6ca1898c3fc675255933065eb58faff27da8e6c9608ff40d17"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_1_clip_scores.json",
+      "bytes": 10652,
+      "sha256": "316d02f6367f75f8ccd4595a981d119851e854913eb6d827569c891f7f2b3201"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_2_clip_scores.json",
+      "bytes": 10624,
+      "sha256": "47659f9d847411d241aa6bb4e112625c7dda081d75035f274f24d0dad1853cfd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "56301bbb156e6fc505533dee9dd25d731c73b60d67d890cfd5d1074c6db90c42"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_1_clip_scores.json",
+      "bytes": 9944,
+      "sha256": "d6d7fcf97b959b7d1305517a9a5376ae36fb5ba0a6d3133978cb45501c5cd7aa"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_2_clip_scores.json",
+      "bytes": 7920,
+      "sha256": "ba2f89791478f28b2c498d1ea723af5b83ed1ac15b2ba6cf3d47929929e17785"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "b0b9a07b10614ca0aecc6752982b9058a9b8730ea08ec0d27398f05c3702ce98"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_1_clip_scores.json",
+      "bytes": 8570,
+      "sha256": "94f837fbe2d5f9f7476089c2286af9e199394bc043cda291a53921be044bcfeb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_2_clip_scores.json",
+      "bytes": 8606,
+      "sha256": "38575f4ee5cebdf33626eff6aa25ff6479b865979bf1e21cf77e9091e17f80ae"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_3_clip_scores.json",
+      "bytes": 8580,
+      "sha256": "294dbbd894fe96f0102684da97d0e10be9d8c4c3ec19026fbbb549983fbfe5b2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_1_clip_scores.json",
+      "bytes": 9294,
+      "sha256": "f6902087308e1f7362f3e20bd9dd1c7b2abf3cb4129e515dfbf5176e1e913d1f"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_2_clip_scores.json",
+      "bytes": 4501,
+      "sha256": "f47218f282f1e94a569f39fed2a6408338de54c59986b2e2267c9565c5d97396"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "da2545e850b08b4456832a125ff6f5a9cbeed4bb9d5796da1a94a8700798804a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_1_clip_scores.json",
+      "bytes": 13392,
+      "sha256": "590c269f36bbdb0b72ab95bc214a852ee6c18ee1bc8e4876b2d164ec2b7b751d"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_2_clip_scores.json",
+      "bytes": 15400,
+      "sha256": "214dd340f058c441908530c5724e85ec60315074f88c72c0b6c104020775c636"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_3_clip_scores.json",
+      "bytes": 12676,
+      "sha256": "9bea1f95d60850bfe1a22dc7991eea8515bb1c64793effaab1818536cb7b49e3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_1_clip_scores.json",
+      "bytes": 16810,
+      "sha256": "40924e59f6ddc5ab2e6139671f1d2cd267c37c3bfc588d08cc0220e4c9f23f0a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_2_clip_scores.json",
+      "bytes": 10636,
+      "sha256": "0e89267db1ce2a971568ce5bee63f5239ff3d618d5c1b6e42b5a91179ac25bcf"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_3_clip_scores.json",
+      "bytes": 417,
+      "sha256": "2f6df1a7f9d36f0df2f368b1210bac93dff26eac08c35106ea5cbaef20728dca"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_1_clip_scores.json",
+      "bytes": 29106,
+      "sha256": "ba1fba52e1040d63a0aeed2ddc947c4e1cc9934fa053e837828bb94912bb427a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_2_clip_scores.json",
+      "bytes": 21550,
+      "sha256": "1bc83d4dc40f09cb70e0e082305abf770da596145f634407732007cce6ea753a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "5aff48f85fe49a174e6678d9982637e9e9648aae72abe48967cd82a8495d2ce6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_1_clip_scores.json",
+      "bytes": 4469,
+      "sha256": "ae5bee8f9df7947d58b97f5139b0a2fb355acb31cc18b863721a338efbb3bc17"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_2_clip_scores.json",
+      "bytes": 4481,
+      "sha256": "ee92aed8071f3093f7f0696b233625fdb12e50379c715939932e31af982b0ac7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_3_clip_scores.json",
+      "bytes": 419,
+      "sha256": "383eaafef43f2fe4fa24c99b0eb5e4ab2953b380fd1405d0bb434e21b1be8510"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_1_clip_scores.json",
+      "bytes": 5863,
+      "sha256": "dde1217d8e0185622d9558cb296d908ba2d25cf0741329ec747ebed446725481"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_2_clip_scores.json",
+      "bytes": 5857,
+      "sha256": "4731aca12cb801a908d98b5898eeee4e5526f489940ef6e73aa4388e56d23d40"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "88a70a6936e16e0b0ad2f269b0c9d46722965652aa3770db3751f78272caf386"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_1_clip_scores.json",
+      "bytes": 411,
+      "sha256": "b8e82e180c0a84e73808f1c4f01a09db47a5c6d188236fe5c5743d7c8a6579f0"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_2_clip_scores.json",
+      "bytes": 5853,
+      "sha256": "a456678440edd926772e0f630f9dbbb7dc35da152633bd2f58aef0e5569087c2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "66af2ddc0821f3750925a8855b5ce7c0729e4fa215e365977dd1e549fd4bac16"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_1_clip_scores.json",
+      "bytes": 9936,
+      "sha256": "06a83bdc5b505593b2e23ec23d8fc82a629eef10f6eecdf185599f7e716aca89"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_2_clip_scores.json",
+      "bytes": 8570,
+      "sha256": "3517f6e2260d760439282a5f9a0cb7932e717190b1066510475cc2ed9848d637"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_3_clip_scores.json",
+      "bytes": 7892,
+      "sha256": "e059740b361f2fc0aeedb56d66186aed821f754b452def073194148bbd17bcfb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_1_clip_scores.json",
+      "bytes": 5181,
+      "sha256": "8716b8479ae410f4472d8bea780bb3fdc3ef24b21ff99fceced7c29429cbe0b2"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_2_clip_scores.json",
+      "bytes": 19578,
+      "sha256": "bc4767c185fc82120cae5c27577802b12a0063e7625086ddc65ad2d00595f7bd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_3_clip_scores.json",
+      "bytes": 16740,
+      "sha256": "e44e56a2512c5896d3a8b8893f0613959d4c48ea49ca7b261e6d2542c10f5c39"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_1_clip_scores.json",
+      "bytes": 7218,
+      "sha256": "f55576961e05d30b208e8ea0e21594c4fbd9813455b3685b48ac20ebb647797a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_2_clip_scores.json",
+      "bytes": 6535,
+      "sha256": "c51fac2c52e61caeb91f4c146a374cf4849437fde7c73d2ab2351911da4715cd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "4804125191e71a90a242e762acac2f45fd24a8d65f97f775b980e07214f0b487"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_1_clip_scores.json",
+      "bytes": 14702,
+      "sha256": "bea046242b49b5883fafbe515835b8b3421aff49b94051af0a99d59f43ac06e4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_2_clip_scores.json",
+      "bytes": 14732,
+      "sha256": "7da1751d8cde82a258e6d14782fbebe3adbaf9e7af352818dee53151d75cc1ba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_3_clip_scores.json",
+      "bytes": 419,
+      "sha256": "7f2034bc3a70a074a4c9a6fd80e63b24d7950e38330c69708a6a2ec89c1918fa"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_1_clip_scores.json",
+      "bytes": 7220,
+      "sha256": "ab4adc247a37295ad52d4e2c62f4247812a8a380af4bff97d103cd260c4960ce"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_2_clip_scores.json",
+      "bytes": 13378,
+      "sha256": "5abdbac5e0f4f42540f7bf5e2d40e5539bcde3e38c8e6048fb2c62aadc668c72"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "19e6b141270175218126f2bb859681f0aa0b8eec9cb388692c792e64963b8b16"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_1_clip_scores.json",
+      "bytes": 29048,
+      "sha256": "aef1e09c15792d2a34c4c22e3b98a4ae9f94bb76da8041799d3e7faccf62c88a"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_2_clip_scores.json",
+      "bytes": 12644,
+      "sha256": "b4d5fa6a5bd03d18a94b66e63bf58fb40f75d5110ac311cf377e56757736ffb4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_3_clip_scores.json",
+      "bytes": 415,
+      "sha256": "1f6745434a76d288b78f34a55042dfcdc38ec1bccbf3b6aa3261c25bdef760a3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_1_clip_scores.json",
+      "bytes": 33172,
+      "sha256": "ba75485c9d26dd11eb9d0adfc857cc3e5bd1acbf829b23756466c133897ea4ba"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_2_clip_scores.json",
+      "bytes": 14034,
+      "sha256": "948c9e2e71b55c275fb351c18eb98e79c04d3582833b4ed8a16dd2a629ecea03"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_3_clip_scores.json",
+      "bytes": 413,
+      "sha256": "489c5535e51ae2d9ec15884d99a50d0db0ba7fef9af2b9824d23c32ab89d9ff4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_1_clip_scores.json",
+      "bytes": 13384,
+      "sha256": "9ca8c7870e1fb4d8a92508b998a818e041fa8d318fb8e2b9a1c217bda95c8ec5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_2_clip_scores.json",
+      "bytes": 7896,
+      "sha256": "f20e4d3985e5128cfc95f51fa95049c1d7f45b4b53711264fc665f779a624b64"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "894823a6b23bd9f56c61a4343fd0546223383c61dd05146249fecc2ebf4448a5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_1_clip_scores.json",
+      "bytes": 419,
+      "sha256": "1d29af46bf9d3e0b8054ac3808c4cbf60ed6a218828c3dc272d16828fd9e5ec3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_2_clip_scores.json",
+      "bytes": 10620,
+      "sha256": "eaa7c6774021639df7a4ec5e0f6a6875e365318a701554f3ab1ec3b6593d3fe8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_3_clip_scores.json",
+      "bytes": 419,
+      "sha256": "5c23f03eeab3073a1712015f648eccdff10ae5863f45a41b270b3424946a6d5b"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_1_clip_scores.json",
+      "bytes": 5859,
+      "sha256": "7093969250de568183d3a1f0f64f799893cf1e8d5b7d4974474a0f30725e03ea"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_2_clip_scores.json",
+      "bytes": 8598,
+      "sha256": "79a96a725dbf29fd2022cdfa95a3cd3e9b95456dbd45bf726d4999cc781e2305"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_3_clip_scores.json",
+      "bytes": 421,
+      "sha256": "d01fdbfc6cadeb887d5453e91b5b8deb20a6da2e98a517d851fe7f22df459fe6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_1_clip_scores.json",
+      "bytes": 7864,
+      "sha256": "d90c60e755b69dde153f3192f855f30178e3a4cf5f0bf214920dc3bbfb4b1632"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_2_clip_scores.json",
+      "bytes": 8572,
+      "sha256": "531931c5b8b6431014517a3c64bfc7394a88d3675f99bb1321e6a997c00beea7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_3_clip_scores.json",
+      "bytes": 421,
+      "sha256": "b2f4532c1939b8661b11aef2d813d417f38286455176c35da502cda37793e845"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_1_clip_scores.json",
+      "bytes": 8582,
+      "sha256": "4abf9e7f8f744d39e6c8415307e6b11c53563f613cbee73cab98e17133d217b3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_2_clip_scores.json",
+      "bytes": 5185,
+      "sha256": "0ee426de76385579cedb876e30467adcecacaf92c375fdbb92753659dabad262"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_3_clip_scores.json",
+      "bytes": 421,
+      "sha256": "f364021d76d36b26c550ef25b6d06cb21eea97d48fcb9cf2e7703c225cfb5917"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_1_clip_scores.json",
+      "bytes": 8592,
+      "sha256": "e7c718d09c008c7765d7d2a499c26bf9d225b4419f57dfe6c52fd3e4f3c165b3"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_2_clip_scores.json",
+      "bytes": 7918,
+      "sha256": "995dd921b0c359d2d6e1b8350751dc81871c7984281095419be3a60b2cc80250"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "7d8a7e0f291aa58416adcb5c1e1c6e1574a90b78779d72446ff68a454862b4a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_1_clip_scores.json",
+      "bytes": 69615,
+      "sha256": "57942f90b0735afc1fb7fb82a88e0b07f7a4e12d9fcff4187e0a422316ae4955"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_2_clip_scores.json",
+      "bytes": 67454,
+      "sha256": "9ab6e7f2d18048887daf3933a5e6b5570f16b8954edb23bc312598e9dbeb205e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_3_clip_scores.json",
+      "bytes": 66790,
+      "sha256": "1a67cd580a67adc363455d30865ba0ebb29f10be4cd46140880b49d1e6602b61"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_1_clip_scores.json",
+      "bytes": 29734,
+      "sha256": "05c36fce294053337931e7a17f1770edbe2bce5eeb30b5c4b6451d838ec648a4"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_2_clip_scores.json",
+      "bytes": 40684,
+      "sha256": "05979d04860f33efcaea2195668ced79b718a1b2c0e56484e6391ad3cde9ddd6"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_3_clip_scores.json",
+      "bytes": 37914,
+      "sha256": "5cfc1c2124a855b8bad29b107908bc738e7194437e952f52e7c0793942f2d5f1"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_1_clip_scores.json",
+      "bytes": 18978,
+      "sha256": "b04f882d6ca5ae26f249e03e8889787f5f4f98b9a53c8a14f6da3b97b2de71bd"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_2_clip_scores.json",
+      "bytes": 4481,
+      "sha256": "25055edfd2156346f9b8789779e015fd77aea3fdb2bd0bade815f70c2f67cfdb"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_3_clip_scores.json",
+      "bytes": 18264,
+      "sha256": "8f28bd06104fd4d946407ac55f7d52a761f95ac45a1a8f5f22caee517874f655"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_1_clip_scores.json",
+      "bytes": 11982,
+      "sha256": "011830524898a8748bc190c09c9746b68f2448a2dedcf7d3d12ed4e7b8559593"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_2_clip_scores.json",
+      "bytes": 11972,
+      "sha256": "805782e3a054cda6458f79437f516e236cde039c860ba2cbf6b8fa2e37b5d8ae"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "3b3104160a8e2c49c5fd742382271ddc357c7cdaca816784722080e92276ba64"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_1_clip_scores.json",
+      "bytes": 2455,
+      "sha256": "be4e3b7b98d00f05775bbe6c7d16c3135d42752fc343fefdcf5f37bfe3d4c593"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_2_clip_scores.json",
+      "bytes": 2455,
+      "sha256": "117f6b5dafffd914c4bd349cc3d8527de799a73bb2f7b398336e30262f845b21"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_3_clip_scores.json",
+      "bytes": 407,
+      "sha256": "1b7c6935d76f6958a0afda93d138773f76ff770f05ac028c32d6369f75ed9ad9"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_1_clip_scores.json",
+      "bytes": 14800,
+      "sha256": "361726b15342d01eafee0f8dcac1976effbe6fd952b6c7f45db7728246b77e11"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_2_clip_scores.json",
+      "bytes": 6547,
+      "sha256": "98e5283cf0db7bc56167276957b26aee03de82dde0d41a99536308193c151335"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_3_clip_scores.json",
+      "bytes": 409,
+      "sha256": "1a775d05455cd13eaa2c4be5e45e7501eb5366b4ce6f5f22d4fe36eae00b54a7"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_1_clip_scores.json",
+      "bytes": 21526,
+      "sha256": "1e0e2d6994657de610ac6686bd3974c1618d29efc365c5e16fe465c4cc6c6d68"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_2_clip_scores.json",
+      "bytes": 37212,
+      "sha256": "608a51532809f60394df937c12e1642bc1751fb6a116a0d67665ed05a9ca4f18"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "19494baf1a39e6927943274a6a741d2456dfa26afafc2410261f9288d46cdb75"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_1_clip_scores.json",
+      "bytes": 18826,
+      "sha256": "f6cc480480021d1e085fba841c5cf729eff8a6fc32f3edbe4d7dcd992e60d7e5"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_2_clip_scores.json",
+      "bytes": 16810,
+      "sha256": "baaeb9423e2c6611da38f52ff0984bccb2852f0c1661f36af64350a8fab95cc8"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_3_clip_scores.json",
+      "bytes": 411,
+      "sha256": "f25ae5ee20d4a866242b1aba2159954782767024f7a957475fb123c155b27c2e"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_eval/result.json",
+      "bytes": 14339,
+      "sha256": "f7872d4001e5928b7b2b248b90414d6e98fa4bb7ae41a509011801d06e936713"
+    },
+    {
+      "path": "p1_test_kaggle_t4_20261111_1430_offline/bundle.json",
+      "bytes": 714477,
+      "sha256": "861722c66e7fac14011b81dc5d25349ba17a8939dcb8d4c3894a106d5371013e"
+    },
+    {
+      "path": "packages.txt",
+      "bytes": 1346,
+      "sha256": "ccc138f8ae5957d723ab2e60d2234b4d1914586fe4a9811395f9e4b625283a4d"
+    }
+  ]
+}

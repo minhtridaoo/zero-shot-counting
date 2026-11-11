@@ -1,0 +1,83 @@
+{
+  "query_id": "B0__t13_1",
+  "image_id": "mcac_93",
+  "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_93.jpg",
+  "prompt": "people",
+  "text_prompt": "a photo of people",
+  "clip_model": "openai/clip-vit-base-patch32",
+  "clip_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "device": "cuda",
+  "n_boxes": 2,
+  "rows_original_order": [
+    {
+      "rank": 1,
+      "original_box_xyxy": [
+        151.18397521972656,
+        311.8462219238281,
+        246.9505157470703,
+        485.23724365234375
+      ],
+      "box_xyxy": [
+        151,
+        312,
+        247,
+        485
+      ],
+      "b2_score": 0.3055613934993744,
+      "clip_cosine_target": 0.21337191760540009
+    },
+    {
+      "rank": 2,
+      "original_box_xyxy": [
+        54.296234130859375,
+        285.6999816894531,
+        177.99818420410156,
+        493.7419128417969
+      ],
+      "box_xyxy": [
+        54,
+        286,
+        178,
+        494
+      ],
+      "b2_score": 0.25140902400016785,
+      "clip_cosine_target": 0.2385340929031372
+    }
+  ],
+  "rows_sorted_by_clip": [
+    {
+      "rank": 2,
+      "original_box_xyxy": [
+        54.296234130859375,
+        285.6999816894531,
+        177.99818420410156,
+        493.7419128417969
+      ],
+      "box_xyxy": [
+        54,
+        286,
+        178,
+        494
+      ],
+      "b2_score": 0.25140902400016785,
+      "clip_cosine_target": 0.2385340929031372
+    },
+    {
+      "rank": 1,
+      "original_box_xyxy": [
+        151.18397521972656,
+        311.8462219238281,
+        246.9505157470703,
+        485.23724365234375
+      ],
+      "box_xyxy": [
+        151,
+        312,
+        247,
+        485
+      ],
+      "b2_score": 0.3055613934993744,
+      "clip_cosine_target": 0.21337191760540009
+    }
+  ]
+}

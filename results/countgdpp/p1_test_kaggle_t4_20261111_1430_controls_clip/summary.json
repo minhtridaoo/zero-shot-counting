@@ -1,0 +1,2162 @@
+[
+  {
+    "query_id": "B0__t01_1",
+    "image_id": "mcac_12",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t01_2",
+    "image_id": "mcac_12",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t01_3",
+    "image_id": "mcac_12",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t01_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t02_1",
+    "image_id": "mcac_14",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t02_2",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t02_3",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t02_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t03_1",
+    "image_id": "mcac_15",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t03_2",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t03_3",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t03_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t04_1",
+    "image_id": "mcac_19",
+    "n_boxes": 29,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t04_2",
+    "image_id": "mcac_19",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t04_3",
+    "image_id": "mcac_19",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t04_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t05_1",
+    "image_id": "mcac_25",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t05_2",
+    "image_id": "mcac_25",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t05_3",
+    "image_id": "mcac_25",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t05_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t06_1",
+    "image_id": "mcac_39",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t06_2",
+    "image_id": "mcac_39",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t06_3",
+    "image_id": "mcac_39",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t06_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t07_1",
+    "image_id": "mcac_75",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t07_2",
+    "image_id": "mcac_75",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t07_3",
+    "image_id": "mcac_75",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t07_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t08_1",
+    "image_id": "mcac_76",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t08_2",
+    "image_id": "mcac_76",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t08_3",
+    "image_id": "mcac_76",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t08_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t09_1",
+    "image_id": "mcac_83",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t09_2",
+    "image_id": "mcac_83",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t09_3",
+    "image_id": "mcac_83",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t09_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t10_1",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t10_2",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t10_3",
+    "image_id": "mcac_86",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t10_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t11_1",
+    "image_id": "mcac_87",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t11_2",
+    "image_id": "mcac_87",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t11_3",
+    "image_id": "mcac_87",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t11_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t12_1",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t12_2",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t12_3",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t12_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t13_1",
+    "image_id": "mcac_93",
+    "n_boxes": 2,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t13_2",
+    "image_id": "mcac_93",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t13_3",
+    "image_id": "mcac_93",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t13_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t14_1",
+    "image_id": "mcac_95",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t14_2",
+    "image_id": "mcac_95",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t14_3",
+    "image_id": "mcac_95",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t14_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t15_1",
+    "image_id": "mcac_103",
+    "n_boxes": 41,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t15_2",
+    "image_id": "mcac_103",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t15_3",
+    "image_id": "mcac_103",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t15_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t16_1",
+    "image_id": "mcac_104",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t16_2",
+    "image_id": "mcac_104",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t16_3",
+    "image_id": "mcac_104",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t16_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t17_1",
+    "image_id": "mcac_111",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t17_2",
+    "image_id": "mcac_111",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t17_3",
+    "image_id": "mcac_111",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t17_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t18_1",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t18_2",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t18_3",
+    "image_id": "mcac_113",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t18_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t19_1",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t19_2",
+    "image_id": "mcac_120",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t19_3",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t19_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t20_1",
+    "image_id": "mcac_122",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t20_2",
+    "image_id": "mcac_122",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t20_3",
+    "image_id": "mcac_122",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t20_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t21_1",
+    "image_id": "mcac_124",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t21_2",
+    "image_id": "mcac_124",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t21_3",
+    "image_id": "mcac_124",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t21_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t22_1",
+    "image_id": "mcac_131",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t22_2",
+    "image_id": "mcac_131",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t22_3",
+    "image_id": "mcac_131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t22_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t23_1",
+    "image_id": "mcac_135",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t23_2",
+    "image_id": "mcac_135",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t23_3",
+    "image_id": "mcac_135",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t23_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t24_1",
+    "image_id": "mcac_136",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t24_2",
+    "image_id": "mcac_136",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t24_3",
+    "image_id": "mcac_136",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t24_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t25_1",
+    "image_id": "mcac_142",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t25_2",
+    "image_id": "mcac_142",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t25_3",
+    "image_id": "mcac_142",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t25_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t26_1",
+    "image_id": "mcac_143",
+    "n_boxes": 26,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t26_2",
+    "image_id": "mcac_143",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t26_3",
+    "image_id": "mcac_143",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t26_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t27_1",
+    "image_id": "mcac_147",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t27_2",
+    "image_id": "mcac_147",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t27_3",
+    "image_id": "mcac_147",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t27_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t28_1",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t28_2",
+    "image_id": "mcac_148",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t28_3",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t28_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t29_1",
+    "image_id": "mcac_151",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t29_2",
+    "image_id": "mcac_151",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t29_3",
+    "image_id": "mcac_151",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t29_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t30_1",
+    "image_id": "mcac_159",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t30_2",
+    "image_id": "mcac_159",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t30_3",
+    "image_id": "mcac_159",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t30_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t31_1",
+    "image_id": "mcac_160",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t31_2",
+    "image_id": "mcac_160",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t31_3",
+    "image_id": "mcac_160",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t31_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t32_1",
+    "image_id": "mcac_168",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t32_2",
+    "image_id": "mcac_168",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t32_3",
+    "image_id": "mcac_168",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t32_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t33_1",
+    "image_id": "mcac_171",
+    "n_boxes": 92,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t33_2",
+    "image_id": "mcac_171",
+    "n_boxes": 88,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t33_3",
+    "image_id": "mcac_171",
+    "n_boxes": 86,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t33_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t34_1",
+    "image_id": "mcac_173",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t34_2",
+    "image_id": "mcac_173",
+    "n_boxes": 61,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t34_3",
+    "image_id": "mcac_173",
+    "n_boxes": 41,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t34_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t35_1",
+    "image_id": "mcac_178",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t35_2",
+    "image_id": "mcac_178",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t35_3",
+    "image_id": "mcac_178",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t35_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t36_1",
+    "image_id": "mcac_201",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t36_2",
+    "image_id": "mcac_201",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t36_3",
+    "image_id": "mcac_201",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t36_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t37_1",
+    "image_id": "mcac_204",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t37_2",
+    "image_id": "mcac_204",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t37_3",
+    "image_id": "mcac_204",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t37_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t38_1",
+    "image_id": "mcac_218",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t38_2",
+    "image_id": "mcac_218",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t38_3",
+    "image_id": "mcac_218",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t38_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t39_1",
+    "image_id": "mcac_222",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t39_2",
+    "image_id": "mcac_222",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t39_3",
+    "image_id": "mcac_222",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t39_3_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t40_1",
+    "image_id": "mcac_224",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_1_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t40_2",
+    "image_id": "mcac_224",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_2_clip_scores.json"
+  },
+  {
+    "query_id": "B0__t40_3",
+    "image_id": "mcac_224",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B0__t40_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t01_1",
+    "image_id": "mcac_12",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t01_2",
+    "image_id": "mcac_12",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t01_3",
+    "image_id": "mcac_12",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t01_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t02_1",
+    "image_id": "mcac_14",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t02_2",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t02_3",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t02_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t03_1",
+    "image_id": "mcac_15",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t03_2",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t03_3",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t03_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t04_1",
+    "image_id": "mcac_19",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t04_2",
+    "image_id": "mcac_19",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t04_3",
+    "image_id": "mcac_19",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t04_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t05_1",
+    "image_id": "mcac_25",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t05_2",
+    "image_id": "mcac_25",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t05_3",
+    "image_id": "mcac_25",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t05_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t06_1",
+    "image_id": "mcac_39",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t06_2",
+    "image_id": "mcac_39",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t06_3",
+    "image_id": "mcac_39",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t06_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t07_1",
+    "image_id": "mcac_75",
+    "n_boxes": 38,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t07_2",
+    "image_id": "mcac_75",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t07_3",
+    "image_id": "mcac_75",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t07_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t08_1",
+    "image_id": "mcac_76",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t08_2",
+    "image_id": "mcac_76",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t08_3",
+    "image_id": "mcac_76",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t08_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t09_1",
+    "image_id": "mcac_83",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t09_2",
+    "image_id": "mcac_83",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t09_3",
+    "image_id": "mcac_83",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t09_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t10_1",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t10_2",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t10_3",
+    "image_id": "mcac_86",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t10_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t11_1",
+    "image_id": "mcac_87",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t11_2",
+    "image_id": "mcac_87",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t11_3",
+    "image_id": "mcac_87",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t11_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t12_1",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t12_2",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t12_3",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t12_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t13_1",
+    "image_id": "mcac_93",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t13_2",
+    "image_id": "mcac_93",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t13_3",
+    "image_id": "mcac_93",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t13_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t14_1",
+    "image_id": "mcac_95",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t14_2",
+    "image_id": "mcac_95",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t14_3",
+    "image_id": "mcac_95",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t14_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t15_1",
+    "image_id": "mcac_103",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t15_2",
+    "image_id": "mcac_103",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t15_3",
+    "image_id": "mcac_103",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t15_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t16_1",
+    "image_id": "mcac_104",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t16_2",
+    "image_id": "mcac_104",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t16_3",
+    "image_id": "mcac_104",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t16_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t17_1",
+    "image_id": "mcac_111",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t17_2",
+    "image_id": "mcac_111",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t17_3",
+    "image_id": "mcac_111",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t17_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t18_1",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t18_2",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t18_3",
+    "image_id": "mcac_113",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t18_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t19_1",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t19_2",
+    "image_id": "mcac_120",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t19_3",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t19_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t20_1",
+    "image_id": "mcac_122",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t20_2",
+    "image_id": "mcac_122",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t20_3",
+    "image_id": "mcac_122",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t20_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t21_1",
+    "image_id": "mcac_124",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t21_2",
+    "image_id": "mcac_124",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t21_3",
+    "image_id": "mcac_124",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t21_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t22_1",
+    "image_id": "mcac_131",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t22_2",
+    "image_id": "mcac_131",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t22_3",
+    "image_id": "mcac_131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t22_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t23_1",
+    "image_id": "mcac_135",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t23_2",
+    "image_id": "mcac_135",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t23_3",
+    "image_id": "mcac_135",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t23_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t24_1",
+    "image_id": "mcac_136",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t24_2",
+    "image_id": "mcac_136",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t24_3",
+    "image_id": "mcac_136",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t24_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t25_1",
+    "image_id": "mcac_142",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t25_2",
+    "image_id": "mcac_142",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t25_3",
+    "image_id": "mcac_142",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t25_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t26_1",
+    "image_id": "mcac_143",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t26_2",
+    "image_id": "mcac_143",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t26_3",
+    "image_id": "mcac_143",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t26_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t27_1",
+    "image_id": "mcac_147",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t27_2",
+    "image_id": "mcac_147",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t27_3",
+    "image_id": "mcac_147",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t27_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t28_1",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t28_2",
+    "image_id": "mcac_148",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t28_3",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t28_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t29_1",
+    "image_id": "mcac_151",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t29_2",
+    "image_id": "mcac_151",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t29_3",
+    "image_id": "mcac_151",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t29_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t30_1",
+    "image_id": "mcac_159",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t30_2",
+    "image_id": "mcac_159",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t30_3",
+    "image_id": "mcac_159",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t30_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t31_1",
+    "image_id": "mcac_160",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t31_2",
+    "image_id": "mcac_160",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t31_3",
+    "image_id": "mcac_160",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t31_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t32_1",
+    "image_id": "mcac_168",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t32_2",
+    "image_id": "mcac_168",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t32_3",
+    "image_id": "mcac_168",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t32_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t33_1",
+    "image_id": "mcac_171",
+    "n_boxes": 101,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t33_2",
+    "image_id": "mcac_171",
+    "n_boxes": 98,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t33_3",
+    "image_id": "mcac_171",
+    "n_boxes": 97,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t33_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t34_1",
+    "image_id": "mcac_173",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t34_2",
+    "image_id": "mcac_173",
+    "n_boxes": 59,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t34_3",
+    "image_id": "mcac_173",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t34_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t35_1",
+    "image_id": "mcac_178",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t35_2",
+    "image_id": "mcac_178",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t35_3",
+    "image_id": "mcac_178",
+    "n_boxes": 26,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t35_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t36_1",
+    "image_id": "mcac_201",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t36_2",
+    "image_id": "mcac_201",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t36_3",
+    "image_id": "mcac_201",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t36_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t37_1",
+    "image_id": "mcac_204",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t37_2",
+    "image_id": "mcac_204",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t37_3",
+    "image_id": "mcac_204",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t37_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t38_1",
+    "image_id": "mcac_218",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t38_2",
+    "image_id": "mcac_218",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t38_3",
+    "image_id": "mcac_218",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t38_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t39_1",
+    "image_id": "mcac_222",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t39_2",
+    "image_id": "mcac_222",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t39_3",
+    "image_id": "mcac_222",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t39_3_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t40_1",
+    "image_id": "mcac_224",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_1_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t40_2",
+    "image_id": "mcac_224",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_2_clip_scores.json"
+  },
+  {
+    "query_id": "B2__t40_3",
+    "image_id": "mcac_224",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/B2__t40_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t01_1",
+    "image_id": "mcac_12",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t01_2",
+    "image_id": "mcac_12",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t01_3",
+    "image_id": "mcac_12",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t01_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t02_1",
+    "image_id": "mcac_14",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t02_2",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t02_3",
+    "image_id": "mcac_14",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t02_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t03_1",
+    "image_id": "mcac_15",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t03_2",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t03_3",
+    "image_id": "mcac_15",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t03_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t04_1",
+    "image_id": "mcac_19",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t04_2",
+    "image_id": "mcac_19",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t04_3",
+    "image_id": "mcac_19",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t04_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t05_1",
+    "image_id": "mcac_25",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t05_2",
+    "image_id": "mcac_25",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t05_3",
+    "image_id": "mcac_25",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t05_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t06_1",
+    "image_id": "mcac_39",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t06_2",
+    "image_id": "mcac_39",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t06_3",
+    "image_id": "mcac_39",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t06_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t07_1",
+    "image_id": "mcac_75",
+    "n_boxes": 37,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t07_2",
+    "image_id": "mcac_75",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t07_3",
+    "image_id": "mcac_75",
+    "n_boxes": 37,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t07_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t08_1",
+    "image_id": "mcac_76",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t08_2",
+    "image_id": "mcac_76",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t08_3",
+    "image_id": "mcac_76",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t08_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t09_1",
+    "image_id": "mcac_83",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t09_2",
+    "image_id": "mcac_83",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t09_3",
+    "image_id": "mcac_83",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t09_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t10_1",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t10_2",
+    "image_id": "mcac_86",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t10_3",
+    "image_id": "mcac_86",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t10_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t11_1",
+    "image_id": "mcac_87",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t11_2",
+    "image_id": "mcac_87",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t11_3",
+    "image_id": "mcac_87",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t11_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t12_1",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t12_2",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t12_3",
+    "image_id": "mcac_89",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t12_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t13_1",
+    "image_id": "mcac_93",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t13_2",
+    "image_id": "mcac_93",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t13_3",
+    "image_id": "mcac_93",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t13_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t14_1",
+    "image_id": "mcac_95",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t14_2",
+    "image_id": "mcac_95",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t14_3",
+    "image_id": "mcac_95",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t14_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t15_1",
+    "image_id": "mcac_103",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t15_2",
+    "image_id": "mcac_103",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t15_3",
+    "image_id": "mcac_103",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t15_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t16_1",
+    "image_id": "mcac_104",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t16_2",
+    "image_id": "mcac_104",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t16_3",
+    "image_id": "mcac_104",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t16_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t17_1",
+    "image_id": "mcac_111",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t17_2",
+    "image_id": "mcac_111",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t17_3",
+    "image_id": "mcac_111",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t17_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t18_1",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t18_2",
+    "image_id": "mcac_113",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t18_3",
+    "image_id": "mcac_113",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t18_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t19_1",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t19_2",
+    "image_id": "mcac_120",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t19_3",
+    "image_id": "mcac_120",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t19_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t20_1",
+    "image_id": "mcac_122",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t20_2",
+    "image_id": "mcac_122",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t20_3",
+    "image_id": "mcac_122",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t20_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t21_1",
+    "image_id": "mcac_124",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t21_2",
+    "image_id": "mcac_124",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t21_3",
+    "image_id": "mcac_124",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t21_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t22_1",
+    "image_id": "mcac_131",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t22_2",
+    "image_id": "mcac_131",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t22_3",
+    "image_id": "mcac_131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t22_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t23_1",
+    "image_id": "mcac_135",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t23_2",
+    "image_id": "mcac_135",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t23_3",
+    "image_id": "mcac_135",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t23_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t24_1",
+    "image_id": "mcac_136",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t24_2",
+    "image_id": "mcac_136",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t24_3",
+    "image_id": "mcac_136",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t24_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t25_1",
+    "image_id": "mcac_142",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t25_2",
+    "image_id": "mcac_142",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t25_3",
+    "image_id": "mcac_142",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t25_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t26_1",
+    "image_id": "mcac_143",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t26_2",
+    "image_id": "mcac_143",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t26_3",
+    "image_id": "mcac_143",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t26_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t27_1",
+    "image_id": "mcac_147",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t27_2",
+    "image_id": "mcac_147",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t27_3",
+    "image_id": "mcac_147",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t27_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t28_1",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t28_2",
+    "image_id": "mcac_148",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t28_3",
+    "image_id": "mcac_148",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t28_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t29_1",
+    "image_id": "mcac_151",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t29_2",
+    "image_id": "mcac_151",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t29_3",
+    "image_id": "mcac_151",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t29_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t30_1",
+    "image_id": "mcac_159",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t30_2",
+    "image_id": "mcac_159",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t30_3",
+    "image_id": "mcac_159",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t30_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t31_1",
+    "image_id": "mcac_160",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t31_2",
+    "image_id": "mcac_160",
+    "n_boxes": 7,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t31_3",
+    "image_id": "mcac_160",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t31_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t32_1",
+    "image_id": "mcac_168",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t32_2",
+    "image_id": "mcac_168",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t32_3",
+    "image_id": "mcac_168",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t32_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t33_1",
+    "image_id": "mcac_171",
+    "n_boxes": 101,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t33_2",
+    "image_id": "mcac_171",
+    "n_boxes": 98,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t33_3",
+    "image_id": "mcac_171",
+    "n_boxes": 97,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t33_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t34_1",
+    "image_id": "mcac_173",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t34_2",
+    "image_id": "mcac_173",
+    "n_boxes": 59,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t34_3",
+    "image_id": "mcac_173",
+    "n_boxes": 55,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t34_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t35_1",
+    "image_id": "mcac_178",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t35_2",
+    "image_id": "mcac_178",
+    "n_boxes": 6,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t35_3",
+    "image_id": "mcac_178",
+    "n_boxes": 26,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t35_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t36_1",
+    "image_id": "mcac_201",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t36_2",
+    "image_id": "mcac_201",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t36_3",
+    "image_id": "mcac_201",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t36_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t37_1",
+    "image_id": "mcac_204",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t37_2",
+    "image_id": "mcac_204",
+    "n_boxes": 3,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t37_3",
+    "image_id": "mcac_204",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t37_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t38_1",
+    "image_id": "mcac_218",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t38_2",
+    "image_id": "mcac_218",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t38_3",
+    "image_id": "mcac_218",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t38_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t39_1",
+    "image_id": "mcac_222",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t39_2",
+    "image_id": "mcac_222",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t39_3",
+    "image_id": "mcac_222",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t39_3_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t40_1",
+    "image_id": "mcac_224",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_1_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t40_2",
+    "image_id": "mcac_224",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_2_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__t40_3",
+    "image_id": "mcac_224",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/p1_test_kaggle_t4_20261111_1430_controls_clip/tau0p200__t40_3_clip_scores.json"
+  }
+]

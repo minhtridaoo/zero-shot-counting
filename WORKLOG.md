@@ -1,5 +1,32 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (chiều) — Triệu: W8 chạy TEST một lần; kết quả
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã chạy:** `kaggle_p1_test.ipynb`, Save Version, Kaggle T4, run `p1_test_kaggle_t4_20261111_1430`, commit `13ac51f`. Một lần, không lỗi. Hash test khớp bản khóa, freeze v2 khớp, Kiểm A đạt, t37_1 bị loại (uncertain).
+
+**Kết quả** (119 query; [báo cáo](reports/TRIEU_W8_TEST_20261111.md)):
+
+| Cách | MAE | FPR_absent | So với B0 [CI 95%] |
+|---|---:|---:|---|
+| B0 | 7.71 | 0.25 | — |
+| B2 | 9.61 | 0.25 | +1.90 [+0.81, +3.03] |
+| **Chính P(0.20, M5)+F** | **5.82** | 0.225 | **−1.88 [−3.66, −0.44]** |
+| C6 = B0+F (báo kèm) | 4.63 | 0.10 | −3.08 [−6.62, −0.51] |
+| B2+F (báo kèm) | 5.70 | 0.25 | −2.01 [−3.94, −0.40] |
+
+- Độ nhạy GT theo D11: MAE đổi dưới 0.06.
+- **Đọc kết quả:**
+  - Kết quả chính dương và có ý nghĩa.
+  - B2 kém B0 có ý nghĩa, xác nhận chẩn đoán.
+  - Cải thiện đến từ bộ lọc; P không thêm (B2+F ≈ P+F), và C6 đơn giản nhất lại tốt nhất.
+  - Theo freeze, kết quả chính vẫn là P+F; C6/B2+F chỉ báo kèm.
+
+**Assistant kiểm:** 375 file zip khớp `FILES_*.json`; run `complete`, input/manifest = bản khóa; tính lại từ bundle khớp tuyệt đối cả 5 cách. Đã chép file D10 vào `results/countgdpp/p1_test_kaggle_t4_20261111_1430*`; raw để trên Kaggle.
+
+**Bước tiếp:** Triệu commit + push; Trí điền phần kết quả test vào báo cáo; Triệu làm W7 (Related Work).
+
 ## 11/11/2026 (đêm, sau) — Triệu: notebook Kaggle cho W8 (test một lần)
 
 *Mục này do assistant soạn theo yêu cầu của Triệu.*

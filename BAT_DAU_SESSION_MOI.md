@@ -51,7 +51,7 @@
 | Ai | Việc | Hạn |
 |---|---|---|
 | **Trí** | ✅ Khóa cấu hình 11/11. Tiếp: **viết báo cáo** (giới thiệu, phương pháp, thiết lập, pilot, N4, dev); phần kết quả test điền sau W8 | 11–29/11 |
-| **Triệu** | **W8: chạy test MỘT lần** trên Kaggle T4 theo mục W8 của GIAO_VIEC_TRIEU_20261106.md, bằng notebook `experiments/countgdpp/kaggle_p1_test.ipynb`; Related Work (W7) | càng sớm càng tốt, ≤ 24/11 |
+| **Triệu** | ✅ **W8 xong 11/11** (test một lần, run `p1_test_kaggle_t4_20261111_1430`): chính P(0.20, M5)+F MAE **5.82** so với B0 7.71 (ΔMAE −1.88, CI [−3.66, −0.44]); C6 4.63; B2 9.61. [Báo cáo](reports/TRIEU_W8_TEST_20261111.md). Tiếp: Related Work (W7) | 20/11 |
 | **Triệu** | ✅ **W6 xong 11/11** (Kaggle T4, stamp 20261111_1203: Kiểm A, Kiểm C 60/60 đạt; output nhỏ ở `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, raw trên Kaggle). Trước đó: **W6 chạy trên Kaggle T4** bằng `experiments/countgdpp/kaggle_p1_dev.ipynb` (11/11, thay Colab; test sau này cũng phải chạy Kaggle T4). Nội dung cũ: **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
 | **Assistant** | ✅ freeze v2 (`results/countgdpp/freeze_v2_20261111.json`) + `experiments/countgdpp/apply_freeze_v2.py` (áp lại lên dev: khớp 5/5 cách). Tiếp: kiểm output test của Triệu; soạn nháp báo cáo khi Trí cần | sau W8 |
 

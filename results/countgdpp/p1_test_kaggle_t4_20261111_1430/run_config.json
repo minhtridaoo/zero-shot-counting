@@ -1,0 +1,898 @@
+{
+  "status": "complete",
+  "variant": "P1",
+  "runner": "run_b2_verified_pseudo.py",
+  "scope": "P1 verified pseudo-exemplars; dev only until tau/M are locked",
+  "inputs": [
+    {
+      "schema_version": 1,
+      "image_id": "mcac_12",
+      "query_id": "t01_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_12.jpg",
+      "prompt": "plates"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_12",
+      "query_id": "t01_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_12.jpg",
+      "prompt": "bowls"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_12",
+      "query_id": "t01_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_12.jpg",
+      "prompt": "spoons"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_14",
+      "query_id": "t02_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_14.jpg",
+      "prompt": "forks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_14",
+      "query_id": "t02_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_14.jpg",
+      "prompt": "knives"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_14",
+      "query_id": "t02_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_14.jpg",
+      "prompt": "bowls"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_15",
+      "query_id": "t03_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_15.jpg",
+      "prompt": "forks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_15",
+      "query_id": "t03_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_15.jpg",
+      "prompt": "knives"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_15",
+      "query_id": "t03_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_15.jpg",
+      "prompt": "plates"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_19",
+      "query_id": "t04_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_19.jpg",
+      "prompt": "raspberries"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_19",
+      "query_id": "t04_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_19.jpg",
+      "prompt": "blueberries"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_19",
+      "query_id": "t04_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_19.jpg",
+      "prompt": "bananas"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_25",
+      "query_id": "t05_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_25.jpg",
+      "prompt": "blueberries"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_25",
+      "query_id": "t05_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_25.jpg",
+      "prompt": "red currants"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_25",
+      "query_id": "t05_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_25.jpg",
+      "prompt": "oranges"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_39",
+      "query_id": "t06_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_39.jpg",
+      "prompt": "apples"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_39",
+      "query_id": "t06_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_39.jpg",
+      "prompt": "pears"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_39",
+      "query_id": "t06_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_39.jpg",
+      "prompt": "red currants"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_75",
+      "query_id": "t07_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_75.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_75",
+      "query_id": "t07_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_75.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_75",
+      "query_id": "t07_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_75.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_76",
+      "query_id": "t08_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_76.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_76",
+      "query_id": "t08_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_76.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_76",
+      "query_id": "t08_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_76.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_83",
+      "query_id": "t09_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_83.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_83",
+      "query_id": "t09_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_83.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_83",
+      "query_id": "t09_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_83.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_86",
+      "query_id": "t10_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_86.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_86",
+      "query_id": "t10_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_86.jpg",
+      "prompt": "bicycles"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_86",
+      "query_id": "t10_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_86.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_87",
+      "query_id": "t11_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_87.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_87",
+      "query_id": "t11_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_87.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_87",
+      "query_id": "t11_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_87.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_89",
+      "query_id": "t12_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_89.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_89",
+      "query_id": "t12_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_89.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_89",
+      "query_id": "t12_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_89.jpg",
+      "prompt": "bicycles"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_93",
+      "query_id": "t13_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_93.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_93",
+      "query_id": "t13_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_93.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_93",
+      "query_id": "t13_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_93.jpg",
+      "prompt": "bicycles"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_95",
+      "query_id": "t14_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_95.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_95",
+      "query_id": "t14_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_95.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_95",
+      "query_id": "t14_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_95.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_103",
+      "query_id": "t15_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_103.jpg",
+      "prompt": "amplifiers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_103",
+      "query_id": "t15_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_103.jpg",
+      "prompt": "guitars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_103",
+      "query_id": "t15_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_103.jpg",
+      "prompt": "balconies"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_104",
+      "query_id": "t16_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_104.jpg",
+      "prompt": "amplifiers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_104",
+      "query_id": "t16_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_104.jpg",
+      "prompt": "guitars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_104",
+      "query_id": "t16_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_104.jpg",
+      "prompt": "knives"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_111",
+      "query_id": "t17_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_111.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_111",
+      "query_id": "t17_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_111.jpg",
+      "prompt": "guitars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_111",
+      "query_id": "t17_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_111.jpg",
+      "prompt": "amplifiers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_113",
+      "query_id": "t18_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_113.jpg",
+      "prompt": "cats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_113",
+      "query_id": "t18_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_113.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_113",
+      "query_id": "t18_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_113.jpg",
+      "prompt": "sheep"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_120",
+      "query_id": "t19_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_120.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_120",
+      "query_id": "t19_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_120.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_120",
+      "query_id": "t19_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_120.jpg",
+      "prompt": "sheep"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_122",
+      "query_id": "t20_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_122.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_122",
+      "query_id": "t20_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_122.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_122",
+      "query_id": "t20_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_122.jpg",
+      "prompt": "goats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_124",
+      "query_id": "t21_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_124.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_124",
+      "query_id": "t21_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_124.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_124",
+      "query_id": "t21_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_124.jpg",
+      "prompt": "cows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_131",
+      "query_id": "t22_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_131.jpg",
+      "prompt": "balconies"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_131",
+      "query_id": "t22_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_131.jpg",
+      "prompt": "windows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_131",
+      "query_id": "t22_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_131.jpg",
+      "prompt": "plates"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_135",
+      "query_id": "t23_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_135.jpg",
+      "prompt": "balconies"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_135",
+      "query_id": "t23_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_135.jpg",
+      "prompt": "windows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_135",
+      "query_id": "t23_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_135.jpg",
+      "prompt": "amplifiers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_136",
+      "query_id": "t24_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_136.jpg",
+      "prompt": "balconies"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_136",
+      "query_id": "t24_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_136.jpg",
+      "prompt": "windows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_136",
+      "query_id": "t24_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_136.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_142",
+      "query_id": "t25_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_142.jpg",
+      "prompt": "chairs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_142",
+      "query_id": "t25_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_142.jpg",
+      "prompt": "desks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_142",
+      "query_id": "t25_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_142.jpg",
+      "prompt": "bicycles"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_143",
+      "query_id": "t26_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_143.jpg",
+      "prompt": "chairs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_143",
+      "query_id": "t26_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_143.jpg",
+      "prompt": "desks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_143",
+      "query_id": "t26_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_143.jpg",
+      "prompt": "oranges"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_147",
+      "query_id": "t27_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_147.jpg",
+      "prompt": "chairs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_147",
+      "query_id": "t27_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_147.jpg",
+      "prompt": "desks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_147",
+      "query_id": "t27_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_147.jpg",
+      "prompt": "bowls"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_148",
+      "query_id": "t28_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_148.jpg",
+      "prompt": "cigarettes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_148",
+      "query_id": "t28_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_148.jpg",
+      "prompt": "lighters"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_148",
+      "query_id": "t28_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_148.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_151",
+      "query_id": "t29_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_151.jpg",
+      "prompt": "keys"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_151",
+      "query_id": "t29_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_151.jpg",
+      "prompt": "padlocks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_151",
+      "query_id": "t29_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_151.jpg",
+      "prompt": "key holders"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_159",
+      "query_id": "t30_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_159.jpg",
+      "prompt": "keys"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_159",
+      "query_id": "t30_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_159.jpg",
+      "prompt": "padlocks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_159",
+      "query_id": "t30_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_159.jpg",
+      "prompt": "key holders"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_160",
+      "query_id": "t31_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_160.jpg",
+      "prompt": "keys"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_160",
+      "query_id": "t31_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_160.jpg",
+      "prompt": "padlocks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_160",
+      "query_id": "t31_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_160.jpg",
+      "prompt": "key holders"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_168",
+      "query_id": "t32_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_168.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_168",
+      "query_id": "t32_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_168.jpg",
+      "prompt": "cows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_168",
+      "query_id": "t32_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_168.jpg",
+      "prompt": "cats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_171",
+      "query_id": "t33_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_171.jpg",
+      "prompt": "dogs"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_171",
+      "query_id": "t33_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_171.jpg",
+      "prompt": "goats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_171",
+      "query_id": "t33_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_171.jpg",
+      "prompt": "cows"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_173",
+      "query_id": "t34_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_173.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_173",
+      "query_id": "t34_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_173.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_173",
+      "query_id": "t34_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_173.jpg",
+      "prompt": "trucks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_178",
+      "query_id": "t35_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_178.jpg",
+      "prompt": "cars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_178",
+      "query_id": "t35_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_178.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_178",
+      "query_id": "t35_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_178.jpg",
+      "prompt": "trucks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_201",
+      "query_id": "t36_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_201.jpg",
+      "prompt": "pens"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_201",
+      "query_id": "t36_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_201.jpg",
+      "prompt": "pencils"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_201",
+      "query_id": "t36_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_201.jpg",
+      "prompt": "pears"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_204",
+      "query_id": "t37_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg",
+      "prompt": "pens"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_204",
+      "query_id": "t37_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg",
+      "prompt": "rulers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_204",
+      "query_id": "t37_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_204.jpg",
+      "prompt": "cups"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_218",
+      "query_id": "t38_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg",
+      "prompt": "amplifiers"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_218",
+      "query_id": "t38_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg",
+      "prompt": "guitars"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_218",
+      "query_id": "t38_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_218.jpg",
+      "prompt": "pears"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_222",
+      "query_id": "t39_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_222.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_222",
+      "query_id": "t39_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_222.jpg",
+      "prompt": "motorbikes"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_222",
+      "query_id": "t39_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_222.jpg",
+      "prompt": "trucks"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_224",
+      "query_id": "t40_1",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_224.jpg",
+      "prompt": "people"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_224",
+      "query_id": "t40_2",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_224.jpg",
+      "prompt": "boats"
+    },
+    {
+      "schema_version": 1,
+      "image_id": "mcac_224",
+      "query_id": "t40_3",
+      "image_path": "data_external/mucca_zenodo_19231375/MUCCA_1.0/images/mcac_224.jpg",
+      "prompt": "trucks"
+    }
+  ],
+  "checkpoint_sha256": "b89395d79711c9b9f13f3ef80cd2e528386fb1d70453f99443be4eccab33592f",
+  "source_sha256": "c6adbad84897f266d25ad6d1672ddea5ef52d1fcdd8f6ec54d94be04c8fa32e9",
+  "source_hash_eol": "CRLF-normalized before sha256",
+  "adapter_sha256": "95adcbdfed56330bc3467034a1975f16ec8b70cbee1d62b3e9cc942db2807dbc",
+  "verifier_sha256": "27ff080bcda50082350a02eff13107178df54b3ebb13254cb91c21812d3c6209",
+  "b2_adapter_sha256": "535b4484f259394ee43cc6f8f7b49498a818f0b86adcb92915b3a46479c49af5",
+  "input_sha256": "5fdf6120665122ac87d7026526f3a5831a8eb4e2ea9ceb7c8ecb6aaab7f462ad",
+  "model_commit": "8489f836d75eb407ae778c56cff1f72cc6f8baae",
+  "tau_sample": 0.23,
+  "tau_final": 0.23,
+  "max_pseudo": 3,
+  "m": 5,
+  "tau_pseudo": [
+    0.2
+  ],
+  "outputs": {
+    "B2": "predictions_B2.jsonl",
+    "tau0.200": "predictions_tau0.200.jsonl"
+  },
+  "candidates": "select_pseudo rule with maximum=M; degenerate boxes kept in log with valid=false and never chosen",
+  "verifier": {
+    "model_id": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "template": "a photo of {prompt}",
+    "crop": "round+clamp, no padding (p4_clip_score.crop_box)"
+  },
+  "choose": "valid and clip_cosine >= tau, top 3 by CountGD score; none left -> stage 1 (B0), stage2_executed=false",
+  "rng": "seed 42 before stage 1; RNG state restored to end-of-stage-1 before every stage-2 forward",
+  "references": {},
+  "reference_mode": "stop",
+  "uses_ground_truth": false,
+  "negative_prompts": false,
+  "synthetic": false,
+  "crop": false,
+  "seed": 42,
+  "resize": {
+    "short_side": 800,
+    "max_size": 1333
+  },
+  "device": "Tesla T4",
+  "torch_version": "2.5.1+cu121",
+  "transformers_version": "4.44.2",
+  "clip_resolved_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "allow_tf32": {
+    "matmul": false,
+    "cudnn": true
+  },
+  "python": "3.10.22 (main, Oct  9 2026, 15:21:30) [Clang 22.1.3 ]",
+  "executable": "/tmp/venv310/bin/python",
+  "completed_queries": 120
+}
