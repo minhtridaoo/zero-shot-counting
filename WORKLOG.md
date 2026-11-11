@@ -1,5 +1,20 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (chiều, sau) — chọn lại ngưỡng S/F + D9 trên dev (chưa có T)
+
+*Mục này do assistant soạn; Triệu cho phép chạy ("Ừ, chạy đi"). Chỉ chạy CPU trên file trong repo, không gọi model/CLIP.*
+
+**Lệnh:** `bundle_offline_v2.py --controls results/countgdpp/p1_dev_kaggle_t4_20261111_1203_{m10,m5}_controls` → `*_offline/bundle.json`; `select_offline_v2.py --bundle … --manifest experiments/countgdpp/dev_test_v2/dev/manifest.csv --selection-meta experiments/countgdpp/dev_test_v2/selection_meta.json` → `*_dev_selection/selection.json`.
+
+**Kết quả** ([báo cáo](reports/TRIEU_W6_DEV_D9_20261111.md)):
+- B0: MAE 6.283, có mặt 8.250, FPR_absent 0.20.
+- M = 10: `TIE_REQUIRES_DECISION`, tau0.180+F và tau0.200+F cùng MAE 3.617.
+- M = 5: `CANDIDATE` tau0.200+F, MAE 3.533, có mặt 5.050, FPR 0.05.
+- So sánh: C6 (B0+F) 4.017; B2+F 3.733. P chưa lọc kém B0 ở mọi tau.
+- Phần lớn mức cải thiện đến từ bộ lọc cuối chọn lại ngưỡng. Đây là số khớp trên chính dev.
+
+**Chưa làm:** biến thể T và P+T (cần raw `.npz` trong Output của Kaggle). Trí quyết có tính T trước khi khóa cấu hình không (16/11).
+
 ## 11/11/2026 (chiều) — Triệu: W6 chạy dev trên Kaggle T4 xong, đưa output vào repo
 
 *Mục này do assistant soạn theo yêu cầu của Triệu.*
