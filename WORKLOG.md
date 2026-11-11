@@ -44,6 +44,18 @@ Trạng thái: Chưa làm / Đang làm / Chờ kiểm / Đã xác nhận
 Bước tiếp theo + người làm:
 ```
 
+## 11/11/2026 — Triệu: W4 chuẩn bị công cụ kiểm (ảnh chấm GT + hướng dẫn v2)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã thêm:**
+- `experiments/countgdpp/render_gt_review_v2.py`: vẽ điểm GT MUCCA của hai lớp có mặt cho một tập (dev hoặc test), kèm `index.html` (lớp vắng mặt đề xuất, lớp dự phòng, ảnh chấm GT, ảnh gốc) và `SOURCE_MANIFEST.json`. Chỉ chạy CPU, chỉ đọc nhãn/ảnh, kiểm hash so với `selection_meta.json`, **chỉ ghi ra ngoài repo** (ảnh không commit, theo D10). Thay cho bước vẽ `gt_review_images` của v1, vốn không có script trong repo.
+- `experiments/countgdpp/dev_test_v2/HUONG_DAN_KIEM_V2.md`: cách kiểm absent/GT cho v2 (absent nhìn thấy thì đổi lớp dự phòng, không ghi `uncertain`; GT nghi ngờ ghi `uncertainty_note` và giữ số MUCCA), cách ghi kết quả, điều kiện khóa.
+
+**Đã kiểm script:** assistant chạy `--split dev` ra thư mục tạm ngoài repo: 20 ảnh + `index.html`; số điểm vẽ khớp `gt_count` (script tự kiểm); vị trí điểm và số thứ tự đúng ở 2 ảnh đã xem (d01 mcac_9, d15 mcac_190), số không bị cắt ở mép ảnh; `--out` nằm trong repo bị từ chối. Assistant chỉ xem 2 ảnh để kiểm cách vẽ, không nhận xét nhãn dev (đó là việc của Trí).
+
+**Trạng thái:** công cụ sẵn sàng; tập vẫn DRAFT, 0/60 ảnh đã kiểm. **Bước tiếp:** Triệu chạy script `--split test` và kiểm 40 ảnh (hạn 12/11); Trí chạy `--split dev` và kiểm 20 ảnh.
+
 ## 11/11/2026 — Triệu: W3 ghi duyệt pilot, pilot đóng
 
 *Mục này do assistant soạn theo yêu cầu của Triệu.*

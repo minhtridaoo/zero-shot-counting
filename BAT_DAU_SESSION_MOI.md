@@ -21,7 +21,7 @@
 
 | Ai | Việc | Hạn |
 |---|---|---|
-| **Trí** | Kiểm absent/GT **20 ảnh dev**: `experiments/countgdpp/dev_test_v2/absent_candidates.csv`, lọc `split = dev`. Lớp absent mà nhìn thấy trong ảnh thì đổi sang lớp dự phòng, **không** ghi `uncertain` | 12/11 |
+| **Trí** | Kiểm absent/GT **20 ảnh dev**: `experiments/countgdpp/dev_test_v2/absent_candidates.csv`, lọc `split = dev`. Lớp absent mà nhìn thấy trong ảnh thì đổi sang lớp dự phòng, **không** ghi `uncertain`. Hướng dẫn: `experiments/countgdpp/dev_test_v2/HUONG_DAN_KIEM_V2.md`; ảnh chấm GT: `render_gt_review_v2.py --split dev` (11/11) | 12/11 |
 | **Triệu** | Kiểm absent/GT **40 ảnh test** (W4, đang trễ), khóa dữ liệu (W5). W3 đã xong 11/11 | 12/11 |
 | **Triệu** | Chạy dev trên T4 (W6), theo [HANDOFF/GIAO_VIEC_TRIEU_20261106.md](HANDOFF/GIAO_VIEC_TRIEU_20261106.md) | 13–15/11 |
 | **Assistant** | Chờ Trí cho phép chạy thử CPU: (a) kiểm hồi quy `evaluation/evaluate_research.py` (đã sửa để nhận `uncertain`, chưa chạy thử); (b) viết công cụ ngoại tuyến cho biến thể T, chọn lại ngưỡng S/F riêng từng nguồn, chấm theo luật D9 | trước 13/11 |
