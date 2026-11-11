@@ -43,7 +43,7 @@ Vị trí trong pipeline:
 | H2 | **Bảng kết quả test cuối**: chạy một lần, có CI theo ảnh, đủ chỉ số có mặt / vắng mặt | Chưa |
 | H3 | **Slide + demo** (ví dụ "hỏi people ra chó", trước/sau cải tiến) | Chưa |
 | H4 | **Repo tái lập được**: README chỉ đường từ dữ liệu → lệnh → kết quả; tập dữ liệu và cấu hình đã khóa | Phần lớn đã có |
-| H5 | **Pilot đóng**: Trí và Triệu cùng xác nhận (V7) | Trí đã xác nhận 05/11; **Triệu chưa ghi** (W3) |
+| H5 | **Pilot đóng**: Trí và Triệu cùng xác nhận (V7) | **Đã đóng 11/11** (Trí 05/11, Triệu 11/11; [PILOT_SUMMARY](../reports/PILOT_SUMMARY.md) mục 7) |
 | H6 | Kết luận trung thực: nếu v2 không thắng B0 theo luật D9 thì báo kết quả âm, kèm phân tích | Luật đã chốt |
 
 ## 3. Lịch mới (đường găng in đậm)

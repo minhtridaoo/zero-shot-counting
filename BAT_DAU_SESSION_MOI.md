@@ -1,6 +1,6 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
-**Cập nhật 10/11/2026.**
+**Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng.**
 - Kế hoạch đầy đủ: [roadmap/KE_HOACH_HOAN_THANH_20261110.md](roadmap/KE_HOACH_HOAN_THANH_20261110.md).
 - Nhật ký: [WORKLOG.md](WORKLOG.md). Bản đồ thư mục: [README.md](README.md).
 - Bản cũ của file này (nhiều lớp cập nhật chồng nhau): `quá khứ/2026-11-10_don_dep/BAT_DAU_SESSION_MOI_cu.md`.
@@ -22,7 +22,7 @@
 | Ai | Việc | Hạn |
 |---|---|---|
 | **Trí** | Kiểm absent/GT **20 ảnh dev**: `experiments/countgdpp/dev_test_v2/absent_candidates.csv`, lọc `split = dev`. Lớp absent mà nhìn thấy trong ảnh thì đổi sang lớp dự phòng, **không** ghi `uncertain` | 12/11 |
-| **Triệu** | Kiểm absent/GT **40 ảnh test** (W4, đang trễ), ghi duyệt pilot (W3), khóa dữ liệu (W5) | 12/11 |
+| **Triệu** | Kiểm absent/GT **40 ảnh test** (W4, đang trễ), khóa dữ liệu (W5). W3 đã xong 11/11 | 12/11 |
 | **Triệu** | Chạy dev trên T4 (W6), theo [HANDOFF/GIAO_VIEC_TRIEU_20261106.md](HANDOFF/GIAO_VIEC_TRIEU_20261106.md) | 13–15/11 |
 | **Assistant** | Chờ Trí cho phép chạy thử CPU: (a) kiểm hồi quy `evaluation/evaluate_research.py` (đã sửa để nhận `uncertain`, chưa chạy thử); (b) viết công cụ ngoại tuyến cho biến thể T, chọn lại ngưỡng S/F riêng từng nguồn, chấm theo luật D9 | trước 13/11 |
 

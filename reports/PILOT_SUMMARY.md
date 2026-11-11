@@ -1,5 +1,7 @@
 # Tổng kết pilot CS331 — CountGD++ và lỗi chọn đối tượng
 
+**CẬP NHẬT 11/11/2026: NHÓM ĐÃ DUYỆT — PILOT ĐÃ ĐÓNG.** Trí đồng ý ngày 05/11, Triệu đồng ý ngày 11/11 (mục 7). Dòng này do assistant ghi theo hai xác nhận đó; dòng 27/10 bên dưới giữ làm lịch sử.
+
 **CẬP NHẬT 27/10/2026: TRIỆU ĐÃ CHẤP NHẬN BẢN KIỂM — CHỜ NHÓM DUYỆT.** Số liệu pilot giữ từ run 15/10; review Triệu chốt v1 ngày 19/10 đã đọc lại ngày 20/10. Evaluator đã chạy và được đối chiếu ngày 20/10/2026; chưa coi báo cáo được nhóm duyệt.
 
 **Pilot là bộ thử nhỏ 5 ảnh/15 câu hỏi để tìm lỗi.** Đây là file hoàn thiện ở phần 3, sau khi chạy evaluator ở phần 2. Nhánh benchmark 1.190 ảnh đã có [báo cáo riêng](BENCHMARK_FSCD147.md), không thay thế việc xác nhận các ô dưới đây.
@@ -13,7 +15,7 @@
 - Coverage/IDs đã kiểm: **15/15 B0 và B2; 0 error, 0 uncertain; paired=15**
 - Audit artifact/code: **assistant ngày 20/10 đã đối chiếu trực tiếp đủ 15 dòng, metrics, manual_check và hash nguồn**; không thực thi evaluator/model.
 - Người thực hiện kiểm kỹ thuật: **assistant**. Người đọc, hiểu và chấp nhận kết quả kiểm được ủy quyền: **Triệu — 24/10/2026**, xác nhận trực tiếp trong chat; không ghi Triệu đã tự audit code. Review định tính đã chốt ngày 19/10 là công việc khác.
-- Trạng thái báo cáo: **TRIỆU ĐÃ CHẤP NHẬN KẾT QUẢ KIỂM ĐƯỢC ỦY QUYỀN — CHỜ NHÓM DUYỆT**
+- Trạng thái báo cáo: **NHÓM ĐÃ DUYỆT — PILOT ĐÃ ĐÓNG 11/11/2026** (mục 7; assistant cập nhật). Trước đó: Triệu đã chấp nhận kết quả kiểm được ủy quyền (24/10), chờ nhóm duyệt.
 
 ## 2. Câu hỏi và thiết lập
 
@@ -108,8 +110,8 @@ Audit assistant: output pilot kiểm ngày **20/10**, artifact P4 kiểm ngày *
 - [x] **Triệu tự kiểm chéo Phần 2 — 27/10/2026.** Lần này Triệu tự chạy self-test và evaluator, tự tính lại MAE/RMSE, truy ngược q05_3 về predictions, tự gán nhãn 14 box q05_2 trước khi mở nhãn cũ, và thử 5 ca dữ liệu hỏng; assistant chỉ hướng dẫn. Kết quả khớp run 20/10. [Báo cáo tự kiểm và bằng chứng](TRIEU_TU_KIEM_PHAN2_20261027.md). Kết luận của Triệu, nguyên văn: “Đã check lại metric, q05_3 và tự gán nhãn lại q05_2, check thử đưa dữ liệu hỏng vào thì xảy ra chuyện gì đối với evaluator. Ở q05_2 thì box 12 với [13] chấm khác với nhãn cũ, cũng tùy vào người chấm cũng như máy chấm thì khác nữa, quan điểm mỗi người thôi, theo tôi thì 2 box đó đã làm tốt việc của mình. Nên ghi rõ ở q05_3, thực chất B2 kém hơn B0 thì cũng tùy trường hợp nữa chứ không thể ghi tổng quát như vậy được, các số liệu đó ghi vào báo cáo được đó.” Phạm vi đồng ý: dùng số liệu Phần 2 (MAE/RMSE, 6/4/5, coverage, q05_2) kèm lưu ý độ nhạy ở mục 3. Bản 24/10 phía trên giữ làm lịch sử.
 - **Đánh giá của assistant về bản tự kiểm (27/10 tối):** [DANH_GIA_TRIEU_TU_KIEM_20261027.md](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md>). Nhận xét 1 + q05_2 đạt; q05_3 (nhãn từng khung) và phân tích B2/B0 + đề xuất cải thiện chưa đủ. **Trí chưa nghiệm thu lại.**
 - **Trí nghiệm thu bản tự kiểm của Triệu (V1–V6) và đồng ý duyệt pilot — 05/11/2026**, xác nhận trong chat: "Triệu cần tôi submit việc thì oki luôn nha". Các phần còn thiếu ngày 27/10 (q05_3, 2 ca thử, phân tích B2/B0) đã được bổ sung ở V3–V5 ([đánh giá](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_V3_V5_20261102.md>), [kế hoạch 05/11](KE_HOACH_TIEP_THEO_20261105.md)).
-- Nhóm duyệt nội dung pilot: **Trí ĐỒNG Ý (05/11). Chờ Triệu ghi xác nhận** (việc W3 trong [GIAO_VIEC_TRIEU_20261106](../HANDOFF/GIAO_VIEC_TRIEU_20261106.md)). Khi đủ hai người thì pilot đóng.
-- Quyết định pilot: **còn sửa: phần kiểm chéo (mục 1, 3, 4) và phân tích lỗi q05_2/q05_3, B2>B0**.
+- Nhóm duyệt nội dung pilot: **Trí ĐỒNG Ý (05/11). Triệu ĐỒNG Ý (11/11/2026)**, xác nhận trong chat (việc W3 trong [GIAO_VIEC_TRIEU_20261106](../HANDOFF/GIAO_VIEC_TRIEU_20261106.md)), nguyên văn: “đã đọc đủ, đồng ý”. Câu này gửi sau khi assistant đề nghị đọc mục 3, 4, 6 và kết luận 27/10 của Triệu ở mục 7 (dòng “Triệu tự kiểm chéo Phần 2”). Đủ hai người nên pilot đóng.
+- Quyết định pilot: **ĐÃ ĐÓNG — 11/11/2026** (Trí 05/11 + Triệu 11/11; assistant cập nhật dòng này theo hai xác nhận trên). Ghi chú cũ ngày 27/10 “còn sửa: phần kiểm chéo (mục 1, 3, 4) và phân tích lỗi q05_2/q05_3, B2>B0” đã được bổ sung ở V3–V5 và Trí nghiệm thu ngày 05/11.
 
 Theo dõi riêng cho P4, không phải điều kiện cộng thêm vào pilot:
 
