@@ -1,5 +1,67 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 11/11/2026 (chiều) — kiểm bảng dev của Trí, chuyển mã, chốt nội dung dev, quyết định D11
+
+**Yêu cầu của Trí:** đã xong manifest + absent dev; kiểm giúp và xem còn giúp được gì.
+
+**Kiểm (chỉ đọc):**
+- Cả hai CSV bị Excel lưu sang ANSI (cp1252), thêm một cột trống ở cuối manifest, và đổi ngày thành `11-Nov`.
+- Nội dung đúng: 20/20 absent_ok (mcac_99 giữ `key holders`, nhất quán 3 file); 60/60 query có verified_by (30 visual_checked, 20 absent_checked, 10 needs_review).
+- GT = số điểm MUCCA; prompt manifest = inputs.
+
+**Quyết định của Trí (D11):** giữ GT MUCCA cho 10 query lệch; số người đếm ghi trong note; báo cáo bảng độ nhạy.
+
+**Đã sửa:**
+- Sao lưu bản Excel gốc → `quá khứ/snapshots/2026-11-11_bang_dev_ansi_truoc_chuyen_ma/`.
+- Chuyển 2 file sang UTF-8 LF (giống git), bỏ cột trống, ngày → `2026-11-11`, thêm câu quyết định D11 vào 10 note needs_review.
+- Diff với git: chỉ cột người kiểm thay đổi.
+- Kiểm nhất quán dev: ĐẠT (20 ảnh / 60 query, GT = điểm MUCCA, absent 0 điểm, prompt/class khớp, 20 hash ảnh khớp selection_meta).
+
+**Hash chốt nội dung dev:** `dev/inputs.jsonl` e0b420fc7585a2bc06d33070a8d99a73a17fb7ba10324a7c5289c289a3bf7cfd; `dev/manifest.csv` 52d3f667bcd1b8bd8a7537504e9d8b45d5df50faac98a62b3b051cb5abaf6854. `selection_meta` vẫn DRAFT; LOCKED sau khi test xong.
+
+**Hệ quả:** Triệu chạy W6 ngay (dev không chứa GT trong inputs, không đụng test), song song với W4.
+
+**Đồng bộ:** BAT_DAU, GIAO_VIEC_TRIEU_20261106, HANDOFF_TRIEU, KE_HOACH_TIEP_THEO (D11).
+
+## 11/11/2026 — chẩn đoán T và C6 trên p4_unseen_v1 (song song khi Trí kiểm bảng dev)
+
+**Yêu cầu của Trí:** trong lúc Trí làm bảng absent/manifest dev, làm song song các việc chạy được (ví dụ nhánh T), rồi báo lại vị trí, việc còn lại và đồ án đã cải tiến thật chưa. Trí cho phép chạy.
+
+**Đã chạy** (CPU trên file đã lưu + một lần chấm CLIP; không chạy CountGD++, không đụng dev/test v2 hay file Trí đang sửa):
+1. `evaluation/p4_unseen_T_diagnostic.py` (mới), dùng output T đã replay ngày 10/11. Output: `results/countgdpp/p4_unseen_v1_T_diagnostic_20261111/`.
+2. Đóng gói khung B0 (= lượt 1 của run 27/10) thành `results/countgdpp/p4_unseen_v1_B0_as_pred_20261111/`, rồi `p4_clip_score.py` (WSL Ubuntu, CLIP đã khóa) → `p4_unseen_v1_B0_clip_20261111/` (30 query, 458 khung).
+3. `evaluation/p4_unseen_loio_diagnostic.py` (mới): chọn lại ngưỡng S/F riêng từng nguồn, kiểm chéo giữ 1 ảnh. Output: `p4_unseen_v1_loio_diagnostic_20261111/`.
+
+**Kết quả** ([reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md); **chẩn đoán, tập đã xem**):
+- T so với B2: −4.20 (CI [−7.30, −1.63]). T so với B0: +2.03 (chưa bằng).
+- B0+S: MAE 3.70 / có mặt 4.85 / FPR 0.2. B0+F: 3.73 / 5.10 / 0.1. Cả hai thắng B0 (6.77 / 5.70 / 0.3) theo D9.
+- Ngưỡng B0+S 0.34 ở 9/10 lượt.
+- Mọi biến thể đi qua lượt 2 đều thua B0 ở query có mặt.
+
+**Kết luận sơ bộ:** cải tiến khả thi nhất là hiệu chỉnh 1 lượt (C6). C6 đã có trong D8/D2, nên kế hoạch W6 không đổi. P chưa đo được (raw P1 ở Drive).
+
+**Đồng bộ:** BAT_DAU (khối chẩn đoán + dòng assistant), KE_HOACH_HOAN_THANH 1b, HANDOFF_TRIEU. Không commit/push.
+
+## 11/11/2026 — ảnh hỗ trợ kiểm GT dev
+
+Tạo 40 ảnh hiển thị điểm MUCCA đánh số và index.html trong experiments/countgdpp/dev_test_v2/dev/gt_review_images để Trí kiểm 20 ảnh/40 query present. Nhãn nguồn là points, không có GT bbox; không chạy model/evaluator, không sửa CSV/GT hay xác nhận thay người. Đã xem ảnh mẫu và tăng kích thước/giãn nhãn để đọc được vật xếp chồng. Tiếp: Trí mở index, đối chiếu ảnh gốc rồi điền verified_by/uncertainty_note.
+
+## 11/11/2026 — hướng dẫn Trí điền manifest dev
+
+Trí báo đã điền absent. Đọc CSV thấy dev có 19 absent_ok và mcac_99/key holders=visible; checked_by/date còn trống. Chưa coi absent đã sẵn sàng khóa: cần lớp thay cho mcac_99 được người xác nhận, đồng bộ input/manifest, bổ sung người/ngày kiểm. Manifest dev vẫn nhãn nguồn chờ kiểm. Hướng dẫn chỉ điền verified_by/uncertainty_note cho GT present; giữ gt_count khi bất đồng để xử lý sau. Không sửa nhãn, không chạy evaluator/model. Bước tiếp: Trí kiểm plates/cups ở mcac_9 và điền từng dòng present; hoàn thiện absent còn thiếu.
+
+## 10/11/2026 — assistant: công cụ T / S / F / D9 và kiểm CPU
+
+**Ủy quyền:** Trí yêu cầu làm phần assistant và trả lời "Cho phép chạy kiểm thử CPU" trong chat.
+
+**Đã làm:** thêm `offline_text_v2.py`, `bundle_offline_v2.py`, `select_offline_v2.py`, `evaluation/check_offline_v2.py`; không sửa script cũ. Hướng dẫn tại `experiments/countgdpp/OFFLINE_V2_HUONG_DAN.md`.
+
+**Đã chạy thực tế:** 10 kiểm CPU đạt (evaluator pilot + fixture uncertain/absent, token T/fallback, fit ngưỡng, D9, CLIP rank/hash, chặn draft/test); T replay 30/30 query raw `p4_unseen_v1_b2_20261027`, gồm 8 fallback, khớp tọa độ/điểm nguồn. Fit chẩn đoán 7 nguồn/21 cách pilot P1; không có absent nên D9 không được đánh giá đầy đủ. Không chạy model/CLIP hoặc test v2.
+
+**Bằng chứng:** `results/countgdpp/offline_v2_cpu_20261110/checks.txt`, `check_provenance.json`, `text_replay_final/`, `pilot_diagnostic/`. Lần fit đầu bị chặn vì manifest gốc có 30 query nhưng pilot run chỉ 15; đã dùng bản con riêng đúng 15 query, giữ nguyên manifest gốc.
+
+**Giới hạn và bước tiếp:** raw P1 không có local nên chưa kiểm P+T thật toàn luồng; bundle hiện một run/một M, chưa ghép nhiều M; D9 đồng hạng được báo rõ, không tự chọn thêm luật. Dev mới vẫn chưa kiểm/khóa/chạy; chưa thể kiểm W6 hay chọn cấu hình v2. Xem `reports/ASSISTANT_OFFLINE_V2_20261110.md`. Chưa commit/push thay đổi phiên này.
+
 **Cập nhật 05/11/2026.** Ghi mỗi buổi tại đây; xem trạng thái tổng thể ở [ROADMAP](<quá khứ/2026-11-10_don_dep/roadmap/ROADMAP.md>). [Trang bắt đầu](README.md) · [Handoff](<quá khứ/2026-11-10_don_dep/HANDOFF/HANDOFF.md>).
 
 **Điểm tiếp tục (05/11 chiều, Triệu):** W1 xong: đã rút tập dev/test v2 **một lần** ở `experiments/countgdpp/dev_test_v2/` (dev 20 ảnh/60 query, test 40 ảnh/120 query, `DRAFT_NOT_LOCKED`); assistant kiểm đạt (mục 05/11 chiều bên dưới), chờ Triệu commit. Tiếp: Trí kiểm absent/GT 20 ảnh dev (07–08/11); Triệu làm W3 rồi W4 kiểm 40 ảnh test (hạn 08/11); W5 khóa sau khi cả hai tập đã kiểm.
@@ -43,6 +105,12 @@ Lỗi/điểm chưa rõ:
 Trạng thái: Chưa làm / Đang làm / Chờ kiểm / Đã xác nhận
 Bước tiếp theo + người làm:
 ```
+
+## 10/11/2026 — giải thích việc Trí kiểm absent/GT 20 ảnh dev
+
+Chỉ đọc hướng dẫn, Git và dữ liệu nháp để trả lời câu hỏi; không chạy evaluator/model hoặc sửa nhãn. Đã kiểm absent_candidates.csv: 20 dòng split=dev đều human_check=PENDING. Ví dụ mcac_9 có nhãn nguồn plates=12, cups=4, forks absent=0; đây là nhãn cần người đối chiếu, chưa được xác nhận. Giải thích tách kiểm vật vắng mặt với kiểm GT hai lớp có mặt; PENDING là thiếu xác nhận được lưu, không chứng minh người dùng chưa xem ảnh.
+
+Bước tiếp: Trí mở ảnh gốc mcac_9, kiểm hai số đếm và forks; ghi nhận người/ngày/kết luận vào absent_candidates.csv và dev/manifest.csv. Nếu đổi absent phải đồng bộ prompt/input/manifest trước khóa. Chưa đánh dấu ảnh nào hoàn tất, không thay lịch và quyết định D1–D10.
 
 ## 10/11/2026 (tối) — dọn workspace
 

@@ -44,6 +44,8 @@
 | D9 | Luật chọn cấu hình cuối (chốt **trước** khi xem dev) | Chọn cấu hình có **MAE cả tập nhỏ nhất trên dev**, với điều kiện **MAE có mặt ≤ MAE có mặt của B0** và **FPR_absent ≤ của B0**. Nếu không cấu hình nào đạt điều kiện thì báo kết quả âm (B0 là tốt nhất) | Tránh lặp lại tình huống Fusion "thắng" MAE chung nhờ hy sinh query có mặt |
 | D10 | Output Drive | Nhờ Triệu đưa `predictions_*.jsonl` + `run_config.json` + bảng đối chứng vào repo; bỏ file `.npz` và ảnh | Để kiểm độc lập và trích dẫn được trong báo cáo |
 
+> **Bổ sung 11/11 — **D11 (Trí chốt 11/11): GT = số điểm MUCCA gốc.** Chỗ người kiểm đếm khác thì vẫn giữ `gt_count` MUCCA, ghi `needs_review` + số người đếm vào `uncertainty_note`; báo cáo thêm một bảng độ nhạy "nếu dùng số người đếm". Lớp absent nhìn thấy trong ảnh thì đổi sang ứng viên kế tiếp đầu tiên. **Lưu CSV bằng "CSV UTF-8"**, ngày dạng `2026-11-11`.**
+
 ## 4. Kế hoạch tối ưu từ 06/11
 
 Đường găng: **quyết định → dữ liệu khóa → chạy dev → khóa cấu hình → test 1 lần → báo cáo**. Mọi việc khác làm song song.

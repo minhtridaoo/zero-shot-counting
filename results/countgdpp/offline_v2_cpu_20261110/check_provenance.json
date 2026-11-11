@@ -1,0 +1,23 @@
+{
+  "check_script_sha256": "065f95d2138d0a15c89235df26925aff324268d878997b7d797d0f0192659513",
+  "exit_code": 0,
+  "original_manifest_sha256": "8c20558aac772dcb71d4b17b59febe51123f6b1a63deb8fc2cb3cbcebfaa2a7e",
+  "subset_query_ids": [
+    "q01_1",
+    "q01_2",
+    "q01_3",
+    "q02_1",
+    "q02_2",
+    "q02_3",
+    "q03_1",
+    "q03_2",
+    "q03_3",
+    "q04_1",
+    "q04_2",
+    "q04_3",
+    "q05_1",
+    "q05_2",
+    "q05_3"
+  ],
+  "purpose": "CPU implementation checks only; no dev/test v2 evaluation"
+}

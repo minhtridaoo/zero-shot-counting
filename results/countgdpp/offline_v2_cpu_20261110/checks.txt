@@ -1,0 +1,15 @@
+test_cli_refuses_draft_and_test_split (__main__.OfflineChecks.test_cli_refuses_draft_and_test_split) ... ok
+test_d9_rejects_present_tradeoff_and_handles_ties (__main__.OfflineChecks.test_d9_rejects_present_tradeoff_and_handles_ties) ... ok
+test_empty_boxes (__main__.OfflineChecks.test_empty_boxes) ... ok
+test_evaluator_regression_pilot_and_uncertain_absent (__main__.OfflineChecks.test_evaluator_regression_pilot_and_uncertain_absent) ... ok
+test_fallback_preserves_b0_exactly (__main__.OfflineChecks.test_fallback_preserves_b0_exactly) ... ok
+test_saved_pilot_bundle_matches_original_counts (__main__.OfflineChecks.test_saved_pilot_bundle_matches_original_counts) ... ok
+test_text_bundle_reuses_exact_clip_ranks_and_checks_hash (__main__.OfflineChecks.test_text_bundle_reuses_exact_clip_ranks_and_checks_hash) ... ok
+test_text_ignores_visual_and_special_tokens (__main__.OfflineChecks.test_text_ignores_visual_and_special_tokens) ... ok
+test_threshold_rule_matches_brute_force (__main__.OfflineChecks.test_threshold_rule_matches_brute_force) ... ok
+test_uncertain_excluded_from_fit_and_bounds (__main__.OfflineChecks.test_uncertain_excluded_from_fit_and_bounds) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.936s
+
+OK

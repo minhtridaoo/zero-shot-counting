@@ -15,14 +15,14 @@
 Việc đã xong từ 05/11 đến nay:
 - Triệu W1: rút dữ liệu.
 - Triệu W2: đưa output P1 lên repo. **Assistant đã kiểm độc lập:** Kiểm C trùng tuyệt đối, bảng MAE theo tau khớp từng số, 5 query lệch ở lượt 1 đúng như báo cáo.
-- Assistant: sửa `evaluate_research.py` để nhận GT `uncertain` (loại ra và ghi tên). Đã kiểm cú pháp, **chưa chạy thử**.
+- Assistant: `evaluate_research.py` nhận GT `uncertain`; đã kiểm hồi quy CPU. Đã thêm công cụ T / fit S/F riêng nguồn / chọn D9, **10/10 kiểm đạt**, replay raw B2 30 query khớp nguồn. [Kết quả và giới hạn](../reports/ASSISTANT_OFFLINE_V2_20261110.md).
 
 ## 1b. Nhánh P / R nằm ở đâu (thêm 10/11 theo câu hỏi của Trí)
 
 | Nhánh | Ý tưởng | Trạng thái |
 |---|---|---|
 | **P (chính)** | CLIP kiểm mẫu tự chọn trước lượt 2, bỏ mẫu sai loại | Chọn 05/11; code có (Triệu, 03/11); chạy thử pilot chỉ để kiểm code; **chưa thử trên dev** |
-| **T (bổ sung)** | Lượt 2 chấm khung chỉ bằng điểm chữ, bỏ điểm mẫu ảnh | Thêm 05/11 từ cơ chế ở RA_SOAT §3; chưa có code (việc của assistant, ngoại tuyến) |
+| **T (bổ sung)** | Lượt 2 chấm khung chỉ bằng điểm chữ, bỏ điểm mẫu ảnh | Đã có code ngoại tuyến và kiểm CPU 10/11; chưa có kết quả dev v2; P+T thật chờ raw P1 trên Drive |
 | **R (dự phòng)** | Sửa bộ lọc cuối để không xóa vật đúng | Không làm; chỉ quay lại nếu P và T đều thua trên dev và còn thời gian (khó kịp trước 02/12) |
 | **C6 (đối chứng)** | B0 + bộ lọc, không có lượt 2 | Chạy cùng ở bước [8] |
 
@@ -34,6 +34,8 @@ Vị trí trong pipeline:
 - [11] chương Phương pháp = P (+T); R ghi ở Hướng phát triển.
 
 **Việc kiểm 60 ảnh ở bước [7] đang chặn việc thử nhánh P.**
+
+> **Cập nhật 11/11 (chẩn đoán trên tập đã xem, [chi tiết](../reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)):** T giảm thiệt hại của B2 nhưng chưa bằng B0. **C6 (B0 + lọc, chọn lại ngưỡng) là ứng viên duy nhất thắng B0 theo D9** (ngưỡng ≈ 0.34). Khả năng cao luật D9 trên dev sẽ chọn C6, trừ khi P vượt C6. Báo cáo cần định vị đóng góp đúng: lượt 2 gây hại + cơ chế lỗi + hiệu chỉnh 1 lượt / CLIP xác minh, không trình bày như phương pháp mới lớn.
 
 ## 2. "Hoàn thành" nghĩa là đủ 6 thứ này
 
@@ -77,6 +79,4 @@ Vị trí trong pipeline:
    - ghi duyệt pilot (W3);
    - mốc khóa dữ liệu mới là 12/11.
 2. **Trí:** kiểm dev 20 ảnh. File `experiments/countgdpp/dev_test_v2/absent_candidates.csv`, lọc cột `split = dev` (20 dòng; 40 dòng `test` là của Triệu). Cách làm như lần p4_unseen_v1 (HUONG_DAN_KIEM_DU_LIEU.md). Nếu lớp absent nhìn thấy trong ảnh thì đổi sang lớp dự phòng, đừng ghi `uncertain`.
-3. **Trí cho phép assistant:**
-   - (a) chạy kiểm hồi quy evaluator vừa sửa (CPU, khoảng 1 phút, trên output pilot P1);
-   - (b) viết và thử công cụ T / chọn lại ngưỡng trên raw p4_unseen_v1 ở local (CPU).
+3. **Assistant (cập nhật cuối phiên 10/11):** Trí đã cho phép CPU; đã kiểm hồi quy evaluator và chuẩn bị công cụ T / S/F / D9. Tiếp: kiểm P+T thật tại nơi có raw P1; khi W6 có output thì chấm dev. [Hướng dẫn](../experiments/countgdpp/OFFLINE_V2_HUONG_DAN.md). Chưa chọn hoặc khóa cấu hình từ kết quả chẩn đoán.

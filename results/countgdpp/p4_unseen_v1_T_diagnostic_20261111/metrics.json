@@ -1,0 +1,135 @@
+{
+  "status": "DIAGNOSTIC_ONLY_SEEN_SET",
+  "summary": {
+    "B0": {
+      "all": 6.766666666666667,
+      "present": {
+        "n": 20,
+        "MAE": 5.7,
+        "RMSE": 9.439279633531363,
+        "exact": 4
+      },
+      "absent_mean": 8.9,
+      "absent_nonzero": 3
+    },
+    "B2": {
+      "all": 13.0,
+      "present": {
+        "n": 20,
+        "MAE": 12.95,
+        "RMSE": 21.143556938225885,
+        "exact": 3
+      },
+      "absent_mean": 13.1,
+      "absent_nonzero": 3
+    },
+    "S": {
+      "all": 7.266666666666667,
+      "present": {
+        "n": 20,
+        "MAE": 8.75,
+        "RMSE": 10.79583252926795,
+        "exact": 0
+      },
+      "absent_mean": 4.3,
+      "absent_nonzero": 3
+    },
+    "F": {
+      "all": 5.533333333333333,
+      "present": {
+        "n": 20,
+        "MAE": 7.8,
+        "RMSE": 10.119288512538814,
+        "exact": 0
+      },
+      "absent_mean": 1.0,
+      "absent_nonzero": 3
+    },
+    "T": {
+      "all": 8.8,
+      "present": {
+        "n": 20,
+        "MAE": 7.55,
+        "RMSE": 15.759124341155507,
+        "exact": 3
+      },
+      "absent_mean": 11.3,
+      "absent_nonzero": 3
+    },
+    "TF": {
+      "all": 5.966666666666667,
+      "present": {
+        "n": 20,
+        "MAE": 8.45,
+        "RMSE": 11.070230349906907,
+        "exact": 0
+      },
+      "absent_mean": 1.0,
+      "absent_nonzero": 3
+    }
+  },
+  "comparisons": [
+    {
+      "comparison": "T vs B2",
+      "diff": -4.2,
+      "ci95": [
+        -7.3,
+        -1.6333333333333333
+      ],
+      "better": 12,
+      "worse": 0,
+      "same": 18
+    },
+    {
+      "comparison": "T vs B0",
+      "diff": 2.033333333333333,
+      "ci95": [
+        -0.36666666666666664,
+        5.333333333333333
+      ],
+      "better": 6,
+      "worse": 10,
+      "same": 14
+    },
+    {
+      "comparison": "T vs F",
+      "diff": 3.2666666666666666,
+      "ci95": [
+        -2.433333333333333,
+        11.366666666666667
+      ],
+      "better": 13,
+      "worse": 8,
+      "same": 9
+    },
+    {
+      "comparison": "TF vs F",
+      "diff": 0.43333333333333335,
+      "ci95": [
+        0.06666666666666667,
+        1.0666666666666667
+      ],
+      "better": 0,
+      "worse": 4,
+      "same": 26
+    },
+    {
+      "comparison": "TF vs B0",
+      "diff": -0.8,
+      "ci95": [
+        -5.233333333333333,
+        2.8333333333333335
+      ],
+      "better": 8,
+      "worse": 14,
+      "same": 8
+    }
+  ],
+  "proxy_present_T": {
+    "T_kept": 412,
+    "T_boxes_with_target": 266,
+    "T_boxes_other_only": 137,
+    "T_target_pts_covered": 269,
+    "target_pts_total": 289
+  }
+}

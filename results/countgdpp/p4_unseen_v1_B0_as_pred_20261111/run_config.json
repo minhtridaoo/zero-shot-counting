@@ -1,0 +1,4 @@
+{
+  "note": "B0 = stage 1 of p4_unseen_v1_b2_20261027 (same run), re-packed as predictions for CLIP scoring; no model run",
+  "source": "results\\countgdpp\\p4_unseen_v1_b2_20261027\\predictions.jsonl"
+}

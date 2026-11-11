@@ -38,3 +38,4 @@ data_external/
 # Local safety snapshots (kept on disk only)
 quá khứ/snapshots/2026-1[01]-*.zip
 !quá khứ/snapshots/2026-10-20_*.zip
+quá khứ/snapshots/2026-11-11_bang_dev_ansi_truoc_chuyen_ma/

@@ -17,14 +17,31 @@
 
 **Nhánh P** (CLIP kiểm mẫu trước lượt 2) đã có code và đã kiểm trên pilot; chưa thử thật vì dữ liệu chưa khóa. **Nhánh R** chỉ để dự phòng. Chi tiết ở mục 1b của file kế hoạch.
 
+**Chẩn đoán sớm 11/11 (assistant, CPU, trên p4_unseen_v1 đã xem — không phải kết quả độc lập):** [reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md).
+- **T** cải thiện rõ so với B2: −4.20 MAE, CI [−7.30, −1.63], 12 tốt hơn / 0 kém hơn. Nhưng T **chưa bằng B0**.
+- **C6 = B0 + lọc, chọn lại ngưỡng** (kiểm chéo giữ 1 ảnh) **thắng B0 theo D9**: B0+S MAE 3.70 / có mặt 4.85 (B0: 6.77 / 5.70), CI [−7.37, −0.20]; B0+F chặn vắng mặt tốt nhất (1/10).
+- Ngưỡng B0+S ≈ **0.34** thay cho mặc định 0.23, tức là nâng ngưỡng 1 lượt.
+- Mọi cách đi qua lượt 2 đều thua B0 ở query có mặt. Kế hoạch W6 **không đổi** (C6 đã có trong D8); dev_test_v2 sẽ xác nhận.
+
+**✅ Dev đã chốt nội dung (11/11):** Trí kiểm xong 20 ảnh / 60 query (20/20 absent_ok, 40 GT present: 30 khớp, 10 `needs_review`). Assistant chuyển 2 CSV từ ANSI sang UTF-8, bỏ cột trống Excel thêm, sửa ngày; kiểm nhất quán **ĐẠT** (prompt/class/GT = MUCCA, hash ảnh khớp, chỉ cột người kiểm thay đổi). Hash: `dev/inputs.jsonl` e0b420fc7585…, `dev/manifest.csv` 52d3f667bcd1…. Bản Excel gốc lưu ở `quá khứ/snapshots/2026-11-11_bang_dev_ansi_truoc_chuyen_ma/`.
+- **D11 (Trí chốt 11/11): GT = số điểm MUCCA gốc.** Chỗ người kiểm đếm khác thì vẫn giữ `gt_count` MUCCA, ghi `needs_review` + số người đếm vào `uncertainty_note`; báo cáo thêm một bảng độ nhạy "nếu dùng số người đếm". Lớp absent nhìn thấy trong ảnh thì đổi sang ứng viên kế tiếp đầu tiên. **Lưu CSV bằng "CSV UTF-8"**, ngày dạng `2026-11-11`.
+- **Triệu chạy W6 (dev trên T4) được ngay**, vì W6 chỉ dùng `dev/inputs.jsonl` (không có GT, không đụng test). Khóa chính thức `LOCKED` (W5) sau khi test 40 ảnh kiểm xong.
+
+**Cập nhật 11/11 — kiểm bảng absent dev:** đã có 19 `absent_ok`, riêng `mcac_99/key holders` là `visible`, chưa có lớp thay được xác nhận; người/ngày kiểm còn trống. Tiếp: Trí điền GT present trong dev/manifest.csv và hoàn thiện absent trước khóa. Chưa xác nhận hoàn thành cả 20 ảnh.
+
+Ảnh hỗ trợ kiểm GT dev: [mở danh sách 40 ảnh có điểm và số thứ tự](experiments/countgdpp/dev_test_v2/dev/gt_review_images/index.html). Đây là nhãn nguồn, không phải dự đoán hay xác nhận người.
+
 ## Việc ngay tiếp theo
 
 | Ai | Việc | Hạn |
 |---|---|---|
-| **Trí** | Kiểm absent/GT **20 ảnh dev**: `experiments/countgdpp/dev_test_v2/absent_candidates.csv`, lọc `split = dev`. Lớp absent mà nhìn thấy trong ảnh thì đổi sang lớp dự phòng, **không** ghi `uncertain` | 12/11 |
-| **Triệu** | Kiểm absent/GT **40 ảnh test** (W4, đang trễ), ghi duyệt pilot (W3), khóa dữ liệu (W5) | 12/11 |
-| **Triệu** | Chạy dev trên T4 (W6), theo [HANDOFF/GIAO_VIEC_TRIEU_20261106.md](HANDOFF/GIAO_VIEC_TRIEU_20261106.md) | 13–15/11 |
-| **Assistant** | Chờ Trí cho phép chạy thử CPU: (a) kiểm hồi quy `evaluation/evaluate_research.py` (đã sửa để nhận `uncertain`, chưa chạy thử); (b) viết công cụ ngoại tuyến cho biến thể T, chọn lại ngưỡng S/F riêng từng nguồn, chấm theo luật D9 | trước 13/11 |
+| **Trí** | ✅ Đã xong kiểm 20 ảnh dev (11/11). Tiếp: chờ bảng dev từ W6 để chọn cấu hình theo D9 (khoảng 1 giờ); bắt đầu dàn ý báo cáo | 16/11 |
+| **Triệu** | W3 ghi duyệt pilot; **W4 kiểm 40 ảnh test** theo quy tắc D11 (GT giữ MUCCA, lưu CSV UTF-8); W5 khóa | 12–13/11 |
+| **Triệu** | **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
+| **Assistant** | Đã xong: công cụ T/S/F/D9 (10/10 kiểm đạt, 10/11); chẩn đoán T + C6 trên p4_unseen_v1 (11/11, [kết quả](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)). Tiếp: chấm W6 bằng `select_offline_v2.py` khi dev đã khóa và có output (cần raw P1 trên Drive để tính P+T) | sau W6 |
+
+
+**Giải thích thao tác (10/11):** kiểm absent/GT là xem ảnh gốc để xác nhận nhãn đầu vào dùng chấm, không review output model. Đã đọc bảng: dev vẫn 20 PENDING; có thể bắt đầu mcac_9 (plates=12, cups=4, forks dự kiến vắng mặt). Chưa có xác nhận nhãn mới.
 
 ## Quy tắc cần nhớ
 

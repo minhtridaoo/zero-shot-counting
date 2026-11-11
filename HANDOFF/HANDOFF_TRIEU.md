@@ -1,6 +1,10 @@
 # Handoff Triệu — thực hiện T1–T4 theo kế hoạch V2
 
 > **Trạng thái hiện hành — đồng bộ 02/11/2026:** Bản trước cập nhật `71009c8` đã gồm `415af3b` (V3 + app gán nhãn) và `71009c8` (V5 + đề xuất P). V3/V5 đã nộp; xem [đánh giá đã lưu](<../quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_V3_V5_20261102.md>). Còn V4 (hạn gốc 01/11), V6 (hạn gốc 02/11), V7 duyệt chung dự kiến 03/11. **Dời V4/V6 sang 04/11 chỉ là đề xuất, chưa có xác nhận trong lượt này.** N4 A còn ca nhãn cần thống nhất; app mới dành cho q05 không tự chứng minh N4 đã được sửa. P/T, C6 và dữ liệu dev/test mới đang ở mức đề xuất, chưa duyệt hoặc chạy. Các mốc cũ bên dưới giữ để tra lịch sử; ưu tiên ghi chú này và bảng resume. Đã push đủ 13 file đánh giá/tiến độ trong commit `22a10e2`; kiểm local và remote main khớp ngày 02/11.
+> **11/11 (chiều):** dev đã chốt nội dung → **bắt đầu W6 ngay**; W4 làm theo D11 (xem đầu GIAO_VIEC_TRIEU_20261106).
+
+> **11/11:** chẩn đoán sớm ([kết quả](../reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md)): C6 (B0 + lọc) có triển vọng thắng B0 nhất. **W6 giữ nguyên lệnh**, nhưng nhớ chạy `p1_controls.py` để có điểm CLIP cho cả nguồn B0 (C6). Lưu raw `.npz` trên Drive để assistant tính P+T.
+
 > **10/11:** W1 + W2 đã nhận (output P1 kiểm độc lập khớp). **Đang trễ:** W3 (ghi duyệt pilot), W4 (kiểm test 40 ảnh, hạn cũ 08/11). Mốc mới: **khóa dữ liệu 12/11**, chạy dev 13–15/11 ([kế hoạch](../roadmap/KE_HOACH_HOAN_THANH_20261110.md)).
 
 > **05/11 tối:** việc hiện hành ở [GIAO_VIEC_TRIEU_20261106.md](GIAO_VIEC_TRIEU_20261106.md) (W1–W7). Trí đã chốt D1–D10 và nghiệm thu V3–V6; Triệu làm tiếp, không cần chờ Trí.

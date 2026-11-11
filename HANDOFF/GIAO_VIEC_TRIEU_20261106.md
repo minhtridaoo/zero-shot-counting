@@ -10,6 +10,8 @@
 - **Biến thể thử trên dev:** B0, B2, P (lưới tau), T, P+T, bộ lọc S/F **chọn lại ngưỡng riêng cho từng nguồn**, C6.
 - **Luật chọn cấu hình cuối (D9, chốt trước khi xem dev):** MAE cả tập nhỏ nhất trên dev, với điều kiện MAE có mặt ≤ của B0 và FPR_absent ≤ của B0. Không cấu hình nào đạt thì báo kết quả âm.
 
+> **Cập nhật 11/11:** Trí đã kiểm xong **dev 20 ảnh**; nội dung dev đã chốt (hash `dev/inputs.jsonl` e0b420fc7585…). **W6 được chạy ngay**, không cần chờ W4/W5: W6 chỉ đọc `dev/inputs.jsonl`. Khi làm W4 (test 40 ảnh) theo **D11**: GT giữ số điểm MUCCA; chỗ đếm khác thì ghi `needs_review` + số mình đếm vào `uncertainty_note`; absent nhìn thấy thì đổi sang ứng viên kế tiếp đầu tiên; lưu **CSV UTF-8** (Excel: "CSV UTF-8 (Comma delimited)"), ngày dạng `2026-11-11`.
+
 ## 1. Việc và hạn
 
 | # | Việc | Ước lượng | Hạn | Chặn việc khác? |
