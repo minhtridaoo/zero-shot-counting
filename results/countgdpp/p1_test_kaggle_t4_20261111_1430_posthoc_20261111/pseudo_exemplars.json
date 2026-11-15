@@ -1,0 +1,27 @@
+{
+  "status": "POST_HOC_ANALYSIS",
+  "pseudo_exemplar_check": {
+    "B2": {
+      "q": 119,
+      "q_with": 85,
+      "ex": 224,
+      "own": 184,
+      "other": 40,
+      "none": 0,
+      "abs_q_with": 10
+    },
+    "P": {
+      "q": 119,
+      "q_with": 83,
+      "ex": 220,
+      "own": 187,
+      "other": 33,
+      "none": 0,
+      "abs_q_with": 9
+    }
+  },
+  "same_exemplar_set_B2_vs_P": [
+    108,
+    120
+  ]
+}

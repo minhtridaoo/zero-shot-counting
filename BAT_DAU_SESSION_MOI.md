@@ -1,5 +1,7 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Đợt đồng bộ Git 15/11:** báo cáo và kết quả hậu kiểm được đưa vào commit của phiên này. Việc tiếp theo: Trí đọc mục 4.1/7.6 bản chi tiết rồi gửi thầy; chưa chạy kiểm giả thuyết H2 hoặc thí nghiệm mới.
+
 **Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng; Triệu kiểm xong 40 ảnh test (W4), khóa dữ liệu (W5), chạy dev trên Kaggle (W6).**
 
 > **Trí đọc trước 16/11:** [reports/TRIEU_W6_DEV_D9_20261111.md](reports/TRIEU_W6_DEV_D9_20261111.md). D9 trên dev, **đã có cả T và P+T** (11/11): M = 5 ứng viên tau0.200+F (MAE 3.533 so với B0 6.283); M = 10 hòa tau0.180+F và tau0.200+F. T/P+T không đổi lựa chọn (P+T+F 3.78). Trí chọn và khóa cấu hình.
@@ -19,8 +21,11 @@
 ✅ [7] Dữ liệu v2: dev + test đã kiểm, LOCKED 11/11 (Triệu W5; D11 GT MUCCA, D12 t37_1 uncertain)
 ✅ [8] Chạy dev trên Kaggle T4 (Triệu W6, Kiểm A/C 60/60) + chấm D9 (assistant)
 ✅ [9] KHÓA CẤU HÌNH 11/11: P(tau 0.20, M = 5)+F → `results/countgdpp/freeze_v2_20261111.json` (dev 3.53 so với B0 6.28)
-⏳ [10] Test 1 lần trên 40 ảnh (Triệu, W8, chấm bằng apply_freeze_v2.py)   ◀── ĐANG Ở ĐÂY
-   [11] Báo cáo + slide + nộp 02/12
+✅ [10] TEST một lần (Triệu W8, 11/11): **P+F MAE 5.82 so với B0 7.71 (−1.88, CI [−3.66, −0.44])**; C6 4.63; B2 9.61. Kiểm độc lập khớp ([kết quả](reports/KET_QUA_TEST_CUOI_20261111.md))
+✅ [10b] Gói hậu kiểm + bản tiến độ gửi thầy (11/11, assistant, CPU): khung trùng X/Y, khung đúng loại, thời gian, 6 hình
+✅ [10c] Bản trình bày CHI TIẾT 19 trang (12/11): nền tảng, định nghĩa, phương pháp, giao thức, kết quả, phân tích, hạn chế
+✅ [10d] Sửa theo góp ý của bạn đọc (15/11): T chỉ gỡ khoảng 1/5 tác hại lượt 2; −39% so với B2 chỉ là mô tả; mục 7.6 giải thích thứ hạng C6
+⏳ [11] Báo cáo + slide + demo → nộp 02/12   ◀── ĐANG Ở ĐÂY
 ```
 
 **Nhánh P** (CLIP kiểm mẫu trước lượt 2) đã có code và đã kiểm trên pilot; chưa thử thật vì dữ liệu chưa khóa. **Nhánh R** chỉ để dự phòng. Chi tiết ở mục 1b của file kế hoạch.
@@ -45,6 +50,37 @@
 - P(tau 0.18–0.22, M = 10)+F ≈ 3.62; B2+F 3.73; C6 (B0+F) 4.02.
 - Ngưỡng chọn trên chính dev nên số lạc quan; các cách đứng đầu sát nhau, test sẽ quyết.
 - **T / P+T đã có** (Triệu tính từ raw Kaggle; assistant kiểm lại khớp): T 8.55, P+T 8.25, P+T+F 3.78. **D9 không đổi**: P(tau 0.20, M = 5)+F.
+
+**✅ Thực nghiệm đã xong (11/11).** Kết luận chính ([reports/KET_QUA_TEST_CUOI_20261111.md](reports/KET_QUA_TEST_CUOI_20261111.md)):
+- Cải tiến được kiểm chứng trên test: P+F 5.82 so với B0 7.71.
+- Lượt 2 tự chọn mẫu gây hại: B2 kém B0 có ý nghĩa.
+- Thành phần hiệu quả là bộ lọc Fusion CountGD++ + CLIP: B2+F ≈ P+F; C6 4.63 tốt nhất, nhưng so với P+F chưa có ý nghĩa thống kê.
+- Kết quả chính vẫn là P+F như đã khóa.
+
+**✅ 11/11 (khuya) — gói gửi thầy đã xong** (hậu kiểm, không chạy model, không chọn lại cấu hình):
+- **Bản tiến độ gửi thầy:** [reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md](reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md) + `.docx` + `.pdf` (5 trang). **Trí đọc, sửa tên Triệu đầy đủ rồi gửi (14/11).**
+- **Phân tích:** [reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md](reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md).
+  - Đổi X → Y: B0 64%, B2 71%, P+F 59%, C6 24% khung dùng chung.
+  - Khoảng 1/3 khung đếm là loại khác: B0 34.6%, P+F 32.7%, C6 21.3%.
+  - Thời gian: B0 khoảng 0.89 s, B2/P khoảng 1.5 s + CLIP (CLIP không được ghi).
+- **Hình** ở `reports/figures/`: pipeline, cột kết quả test, 4 ví dụ (blueberries thành công, bowls lỗi X/Y, dogs thất bại, people lọc quá tay).
+- Script: `evaluation/test_xy_overlap_analysis.py`, `evaluation/make_report_figures.py`. Chưa commit/push.
+
+**✅ 12/11 — bản trình bày chi tiết** ([reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md](reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md) + `.docx` + `.pdf`, 19 trang), theo yêu cầu "cặn kẽ, học thuật, dễ hiểu". Dùng làm **khung cho báo cáo cuối**.
+
+Hậu kiểm mới:
+- **Theo loại cặp:** cải thiện ở cặp dễ nhầm (P+F −3.05 [−5.43, −0.96]); cặp khác hẳn chưa khác B0 (+0.51 [−0.72, +1.82]).
+- **F đổi lỗi đếm thừa thành đếm thiếu:** B0 +580/−77, P+F +243/−297.
+- **P chọn lại đúng bộ mẫu B2 ở 108/120 câu.**
+- Đã sửa lỗi ghi sai trong bản hậu kiểm 11/11: mcac_25 có nhãn dâu tây.
+
+Bản tóm tắt gửi thầy đã thêm các ý trên. **Bản `.docx` đang mở trong Word nên chưa ghi đè được.** Bản cập nhật nằm ở `BAO_CAO_TIEN_DO_GUI_THAY_20261111_capnhat_1211.docx`; PDF đã cập nhật.
+
+**✅ 15/11 — sửa bản chi tiết + bản tóm tắt theo góp ý** (bản chi tiết 22 trang, bản tóm tắt 5 trang, đã xuất lại docx/pdf).
+Hậu kiểm dev: `evaluation/dev_posthoc_T_C6.py` → `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_posthoc_20261115/`.
+- T gỡ được 21% [5, 60] tác hại lượt 2 trên dev (67% trên p4_unseen_v1); T vẫn kém B0 (+2.27 [+0.52, +4.12]).
+- C6 trên dev: thứ 7/15 họ phương pháp, thứ 25/90 cấu hình; C6 − P+F = +0.48 [−0.62, +1.63].
+- Dev → test: P+F +2.29, C6 +0.61, B0 +1.42.
 
 ## Việc ngay tiếp theo
 

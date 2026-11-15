@@ -1,5 +1,114 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 15/11/2026 — đồng bộ báo cáo và hậu kiểm lên GitHub
+
+Theo yêu cầu Trí, kiểm đúng remote zero-shot-counting/main; fetch xác nhận không có commit lệch. Rà 28 file (10,52 MiB): báo cáo Markdown/Word/PDF, hình, script và kết quả hậu kiểm. Kiểm cú pháp Python/JSON, tính toàn vẹn DOCX và mẫu token/dấu xung đột đạt. Không chạy evaluator, kiểm thử thực nghiệm hoặc model; không sửa dữ liệu khóa/freeze/dự đoán gốc. Stage đúng danh sách đã rà, commit và push bình thường; xác nhận kết quả bằng HEAD so với ls-remote sau push.
+
+Bước tiếp: Trí đọc lại báo cáo, đặc biệt mục 4.1 và 7.6, trước khi gửi thầy; không tự gửi thay. Giả thuyết H2 vẫn là việc tùy chọn cần cho phép chạy riêng.
+
+
+## 15/11/2026 — sửa báo cáo theo góp ý của bạn đọc (assistant, CPU)
+
+**Góp ý nhận được:**
+- (1) cách chấm max chỉ giải thích khoảng 1/5 tác hại, cần đo bằng T;
+- (2) T trên dev 8.55 nằm giữa B0 6.28 và B2 9.15, đặt giả thuyết mẫu giả làm lệch cách hiểu câu chữ;
+- (3) −24% có CI; −39% so với B2 chỉ báo mô tả;
+- (4) viết rõ thứ hạng C6 và lý do.
+
+**Kiểm trước khi sửa** (`evaluation/dev_posthoc_T_C6.py`, chỉ đọc selection.json của dev + result.json của test):
+- (1) đúng trên dev: 21% [5%, 60%].
+  - Nhưng trên p4_unseen_v1 là 67%, nên ghi "một phần, không ổn định".
+  - T so với B0 dev +2.27 [+0.52, +4.12]; B2 − T +0.60 [+0.12, +1.23].
+- (3) đồng ý: B2 có trong danh sách báo kèm, nhưng phép so sánh cặp P+F với B2 không có trong kế hoạch kiểm định.
+- (4) "thứ 7" đúng khi gom theo họ (7/15), còn theo cấu hình riêng lẻ là 25/90.
+  - C6 − P+F trên dev +0.48 [−0.62, +1.63].
+  - Dev → test: P+F +2.29, B2+F +1.96, B0 +1.42, C6 +0.61, khớp giải thích lạc quan do chọn.
+
+**Đã sửa:**
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md`: Tóm tắt, 1.4, 4.1 (H1/H2 + bảng T), 7.1, 6.6 (RQ3), 7.6 viết lại, 8, 9, phụ lục (+ docx/pdf 22 trang).
+- `reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md`: dòng chẩn đoán, ý 1, ý 7 (+ docx/pdf 5 trang).
+- Thêm dòng làm rõ trong `KET_QUA_TEST_CUOI` và `PHAN_TICH_HAU_KIEM`.
+- Xóa file tạm `_capnhat_1211.docx`.
+- Không sửa báo cáo của Triệu (TRIEU_W8 ghi "thứ 7", khớp cách gom theo họ).
+
+**Tiếp:**
+- Trí đọc lại mục 4.1 và 7.6 rồi gửi thầy.
+- Giả thuyết H2 có thể kiểm sau (so điểm token chữ lượt 1 với lượt 2 trên raw dev). Đây là việc tùy chọn, cần Trí đồng ý vì cần raw .npz trên Kaggle.
+- Chưa commit/push.
+
+## 12/11/2026 — bản trình bày chi tiết đồ án + hậu kiểm theo loại cặp (assistant, CPU)
+
+**Trí yêu cầu:** bản demo còn sơ sài; cần trình bày cặn kẽ, học thuật, dễ hiểu.
+
+**Đã làm:**
+- [reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md](reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md) (+ docx/pdf, 19 trang). Nội dung:
+  - tóm tắt, thuật ngữ, RQ1–RQ3, đóng góp;
+  - nền CountGD++/CLIP;
+  - định nghĩa Y1–Y3 + công thức MAE/RMSE/FPR + lý do bootstrap theo ảnh;
+  - cơ chế max(chữ, mẫu), các biến thể, công thức F + ví dụ số thật;
+  - dữ liệu + giao thức;
+  - kết quả 6 giai đoạn; phân tích; hạn chế; hướng phát triển; tài liệu tham khảo đã kiểm (arXiv: CountGD 2407.04619, CountGD++ 2512.23351, PrACo 2409.15953, MUCCA/PrACo++ 2605.02752).
+- Hậu kiểm mới (không chạy model, không chọn lại):
+  - `evaluation/test_stratified_posthoc.py` → `..._posthoc_20261111/stratified.json`:
+    - cặp khác hẳn 13 ảnh: P+F so với B0 +0.51 [−0.72, +1.82];
+    - cặp dễ nhầm 27 ảnh: −3.05 [−5.43, −0.96];
+    - C6 dễ nhầm −5.13; câu có mặt B0 thừa 580 / thiếu 77, P+F 243 / 297.
+  - `evaluation/test_pseudo_exemplar_check.py` → `pseudo_exemplars.json`: P = B2 ở 108/120 câu; mẫu trúng đúng loại 82% (B2) so với 85% (P).
+  - Hình mới: `fig_strata_errors.png`, `fig_protocol.png`.
+- Sửa: bản hậu kiểm 11/11 ghi nhầm "dâu tây trong mcac_25 không có nhãn". Ảnh có nhãn đủ 5 loại quả; khung xám là mảnh vật.
+- Bản tóm tắt gửi thầy thêm ý 6 (theo loại cặp + P = B2) và trỏ sang bản chi tiết. `.docx` gốc đang mở trong Word nên bản mới là `_capnhat_1211.docx`.
+
+**Tiếp:**
+- Trí đọc bản chi tiết (ưu tiên mục 7.4: cặp khác hẳn chưa cải thiện, cần chuẩn bị trả lời thầy).
+- Đóng Word rồi thay docx tóm tắt.
+- Gửi thầy 14/11. Chưa commit/push.
+
+## 11/11/2026 (khuya) — gói hậu kiểm test + bản tiến độ gửi thầy (assistant, CPU)
+
+**Trí yêu cầu:** "triển khai làm hết những gì có thể rồi báo cáo lại". Mọi phép tính chỉ đọc output test đã lưu: không chạy model, không chấm lại, không chọn lại ngưỡng. F dùng bounds/ngưỡng đã khóa.
+
+**Đã làm:**
+- `evaluation/test_xy_overlap_analysis.py` → `results/countgdpp/p1_test_kaggle_t4_20261111_1430_posthoc_20261111/`.
+  - Khung dùng chung X/Y (IoU ≥ 0.5): B0 64% [51, 75], B2 71%, P+F 59%, B2+F 59%, C6 24% [11, 37].
+  - Điểm GT MUCCA, tỉ lệ khung chỉ trúng loại khác: B0 34.6%, B2 34.6%, P+F 32.7%, C6 21.3%.
+  - F bỏ gần hết khung rác nền (không trúng: 5–9% → khoảng 1%).
+  - Khung ở query vắng mặt nằm trên vật khác có nhãn 92–100% (C6 chỉ 39 khung, B0 260).
+  - Thời gian T4: B0 0.89 s/query; B2 1.52 s; P 1.50 s + CLIP (runner không ghi thời gian CLIP).
+- `evaluation/make_report_figures.py` → `reports/figures/`:
+  - `fig_pipeline.png`, `fig_results_test.png`;
+  - 4 ví dụ: t05_1 blueberries, t01_2 bowls, t33_1 dogs, t40_1 people.
+- Báo cáo: [reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md](reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md); bản gửi thầy [reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md](reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md) (+ docx/pdf qua pandoc + Word).
+
+**Phát hiện mới cho phần thảo luận:**
+- F sau lượt 2 cắt khung rác, nhưng **chưa tách được X/Y**.
+- C6 (lọc ngay sau lượt 1) là cách duy nhất làm câu trả lời thật sự phụ thuộc truy vấn.
+- Lỗi còn lại: nhầm loại cùng nhóm (dê → chó, đĩa → bát), lọc quá tay ở ảnh đông người.
+- Hạn chế phép đo điểm: MUCCA không gán nhãn mọi vật, nên tỉ lệ nhầm loại là cận dưới.
+
+**Tiếp:**
+- Trí đọc bản gửi thầy, điền tên đầy đủ của Triệu, gửi (14/11).
+- 15–25/11 viết báo cáo đầy đủ (Triệu: Related Work).
+- Chưa commit: chờ Trí bảo push.
+
+## 11/11/2026 (đêm, sau) — pull W8 (test một lần), kiểm độc lập kết quả cuối
+
+**Git:** pull --ff-only c311b2c → f24e89d (13ac51f notebook test, f24e89d kết quả W8). Không xung đột.
+
+**Kiểm (CPU, chỉ đọc + tính lại):**
+- `result.json`: freeze sha khớp, manifest = bản khóa; `run_config` complete, T4, input = test khóa, tau 0.20, M 5, không dùng GT.
+- Tính lại từ `_offline/bundle.json` bằng hàm của `apply_freeze_v2.py`: số đếm, metric, bootstrap của 5 cách **khớp tuyệt đối**.
+- Không có lần chấm test nào khác; notebook không chạy evaluate_research.
+
+**Kết quả** ([reports/KET_QUA_TEST_CUOI_20261111.md](reports/KET_QUA_TEST_CUOI_20261111.md)):
+- B0 7.71; B2 9.61 (+1.90 [+0.81, +3.03]).
+- **Chính P+F 5.82 (−1.88 [−3.66, −0.44])**.
+- C6 4.63 (−3.08 [−6.62, −0.51]); B2+F 5.70 (−2.01 [−3.94, −0.40]).
+- So sánh cặp: C6 so với chính −1.19 [−3.32, +0.24]; B2+F so với chính −0.13 [−0.41, +0.18].
+
+**Kết luận:** có cải tiến được kiểm chứng; lượt 2 gây hại; bộ lọc F là thành phần hiệu quả; P không đóng góp thêm; thứ hạng dev đảo trên test (hạn chế).
+
+**Tiếp:** bước [11], viết báo cáo + slide + demo.
+
 ## 11/11/2026 (chiều) — Triệu: W8 chạy TEST một lần; kết quả
 
 *Mục này do assistant soạn theo yêu cầu của Triệu.*

@@ -1,0 +1,211 @@
+{
+  "status": "POST_HOC_ANALYSIS (không chọn lại cấu hình, không chạy model)",
+  "run": "p1_test_kaggle_t4_20261111_1430",
+  "freeze": "freeze_v2_20261111.json",
+  "overlap": {
+    "B0": {
+      "0.5": {
+        "shared_xy_pooled": 0.6443089430894309,
+        "n_boxes_xy": 1476,
+        "shared_xy_mean_per_image": 0.5187611151464718,
+        "images_majority_shared": 22,
+        "n_images": 39,
+        "absent_kept_boxes": 260,
+        "absent_reuse_pooled": 0.9730769230769231,
+        "shared_xy_pooled_ci95": [
+          0.505786249149081,
+          0.7543307086614173
+        ]
+      },
+      "0.8": {
+        "shared_xy_pooled": 0.5982384823848238,
+        "n_boxes_xy": 1476,
+        "shared_xy_mean_per_image": 0.47706767290825697,
+        "images_majority_shared": 21,
+        "n_images": 39,
+        "absent_kept_boxes": 260,
+        "absent_reuse_pooled": 0.9230769230769231
+      }
+    },
+    "B2": {
+      "0.5": {
+        "shared_xy_pooled": 0.7092326139088729,
+        "n_boxes_xy": 1668,
+        "shared_xy_mean_per_image": 0.62693910303279,
+        "images_majority_shared": 29,
+        "n_images": 39,
+        "absent_kept_boxes": 334,
+        "absent_reuse_pooled": 0.9910179640718563,
+        "shared_xy_pooled_ci95": [
+          0.579483695652174,
+          0.8136580201164637
+        ]
+      },
+      "0.8": {
+        "shared_xy_pooled": 0.6642685851318945,
+        "n_boxes_xy": 1668,
+        "shared_xy_mean_per_image": 0.585785928786936,
+        "images_majority_shared": 26,
+        "n_images": 39,
+        "absent_kept_boxes": 334,
+        "absent_reuse_pooled": 0.9700598802395209
+      }
+    },
+    "P+F (chính)": {
+      "0.5": {
+        "shared_xy_pooled": 0.5928338762214984,
+        "n_boxes_xy": 921,
+        "shared_xy_mean_per_image": 0.39206258785645376,
+        "images_majority_shared": 17,
+        "n_images": 39,
+        "absent_kept_boxes": 153,
+        "absent_reuse_pooled": 0.9934640522875817,
+        "shared_xy_pooled_ci95": [
+          0.40145985401459855,
+          0.7375643224699828
+        ]
+      },
+      "0.8": {
+        "shared_xy_pooled": 0.5776330076004343,
+        "n_boxes_xy": 921,
+        "shared_xy_mean_per_image": 0.38168484759897253,
+        "images_majority_shared": 17,
+        "n_images": 39,
+        "absent_kept_boxes": 153,
+        "absent_reuse_pooled": 0.9803921568627451
+      }
+    },
+    "C6 = B0+F": {
+      "0.5": {
+        "shared_xy_pooled": 0.24128686327077747,
+        "n_boxes_xy": 746,
+        "shared_xy_mean_per_image": 0.17679248041683665,
+        "images_majority_shared": 8,
+        "n_images": 37,
+        "absent_kept_boxes": 39,
+        "absent_reuse_pooled": 1.0,
+        "shared_xy_pooled_ci95": [
+          0.1093525179856115,
+          0.3726851851851852
+        ]
+      },
+      "0.8": {
+        "shared_xy_pooled": 0.23324396782841822,
+        "n_boxes_xy": 746,
+        "shared_xy_mean_per_image": 0.1712484748728311,
+        "images_majority_shared": 8,
+        "n_images": 37,
+        "absent_kept_boxes": 39,
+        "absent_reuse_pooled": 0.9487179487179487
+      }
+    },
+    "B2+F": {
+      "0.5": {
+        "shared_xy_pooled": 0.593010146561443,
+        "n_boxes_xy": 887,
+        "shared_xy_mean_per_image": 0.3965340926879388,
+        "images_majority_shared": 17,
+        "n_images": 39,
+        "absent_kept_boxes": 140,
+        "absent_reuse_pooled": 1.0,
+        "shared_xy_pooled_ci95": [
+          0.4099526066350711,
+          0.7296875
+        ]
+      },
+      "0.8": {
+        "shared_xy_pooled": 0.5817361894024803,
+        "n_boxes_xy": 887,
+        "shared_xy_mean_per_image": 0.389181722835569,
+        "images_majority_shared": 17,
+        "n_images": 39,
+        "absent_kept_boxes": 140,
+        "absent_reuse_pooled": 1.0
+      }
+    }
+  },
+  "point_check": {
+    "B0": {
+      "correct": 894,
+      "other_class_only": 512,
+      "no_point": 75,
+      "absent_boxes": 260,
+      "absent_on_object": 249,
+      "present_boxes": 1481,
+      "correct_rate": 0.6036461850101283,
+      "other_class_only_rate": 0.3457123565158677,
+      "absent_on_object_rate": 0.9576923076923077
+    },
+    "B2": {
+      "correct": 946,
+      "other_class_only": 578,
+      "no_point": 147,
+      "absent_boxes": 334,
+      "absent_on_object": 307,
+      "present_boxes": 1671,
+      "correct_rate": 0.566128067025733,
+      "other_class_only_rate": 0.34590065828845,
+      "absent_on_object_rate": 0.9191616766467066
+    },
+    "P+F (chính)": {
+      "correct": 613,
+      "other_class_only": 302,
+      "no_point": 9,
+      "absent_boxes": 153,
+      "absent_on_object": 150,
+      "present_boxes": 924,
+      "correct_rate": 0.6634199134199135,
+      "other_class_only_rate": 0.3268398268398268,
+      "absent_on_object_rate": 0.9803921568627451
+    },
+    "C6 = B0+F": {
+      "correct": 574,
+      "other_class_only": 159,
+      "no_point": 13,
+      "absent_boxes": 39,
+      "absent_on_object": 39,
+      "present_boxes": 746,
+      "correct_rate": 0.7694369973190348,
+      "other_class_only_rate": 0.2131367292225201,
+      "absent_on_object_rate": 1.0
+    },
+    "B2+F": {
+      "correct": 592,
+      "other_class_only": 290,
+      "no_point": 8,
+      "absent_boxes": 140,
+      "absent_on_object": 137,
+      "present_boxes": 890,
+      "correct_rate": 0.6651685393258427,
+      "other_class_only_rate": 0.3258426966292135,
+      "absent_on_object_rate": 0.9785714285714285
+    }
+  },
+  "runtime_ms": {
+    "B2": {
+      "n": 119,
+      "stage2_executed": 85,
+      "stage1_ms_median": 884.07,
+      "stage1_ms_mean": 889.7979831932773,
+      "stage2_ms_median": 898.81,
+      "stage2_ms_mean": 880.0674117647059,
+      "total_ms_mean": 1518.41756302521,
+      "warmup_first_query_stage1_ms": 3268.31
+    },
+    "P (tau0.200)": {
+      "n": 119,
+      "stage2_executed": 83,
+      "stage1_ms_median": 884.07,
+      "stage1_ms_mean": 889.7979831932773,
+      "stage2_ms_median": 894.48,
+      "stage2_ms_mean": 879.0944578313253,
+      "total_ms_mean": 1502.9478991596638,
+      "warmup_first_query_stage1_ms": 3268.31
+    },
+    "B0": {
+      "n": 119,
+      "total_ms_mean": 889.7979831932773,
+      "note": "B0 = lượt 1 (cùng lần chạy)"
+    }
+  }
+}

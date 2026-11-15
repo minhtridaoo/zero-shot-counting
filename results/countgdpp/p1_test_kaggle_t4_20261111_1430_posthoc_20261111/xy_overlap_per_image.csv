@@ -1,0 +1,401 @@
+config,iou,image_id,x_query,x_prompt,y_query,y_prompt,n_x,n_y,shared,shared_rate,z_query,z_prompt,n_z,z_reuse
+B0,0.5,mcac_12,t01_1,plates,t01_2,bowls,32,33,61,0.9384615384615385,t01_3,spoons,24,21
+B0,0.8,mcac_12,t01_1,plates,t01_2,bowls,32,33,58,0.8923076923076924,t01_3,spoons,24,17
+B0,0.5,mcac_14,t02_1,forks,t02_2,knives,17,0,0,0.0,t02_3,bowls,0,0
+B0,0.8,mcac_14,t02_1,forks,t02_2,knives,17,0,0,0.0,t02_3,bowls,0,0
+B0,0.5,mcac_15,t03_1,forks,t03_2,knives,6,0,0,0.0,t03_3,plates,0,0
+B0,0.8,mcac_15,t03_1,forks,t03_2,knives,6,0,0,0.0,t03_3,plates,0,0
+B0,0.5,mcac_19,t04_1,raspberries,t04_2,blueberries,29,39,56,0.8235294117647058,t04_3,bananas,0,0
+B0,0.8,mcac_19,t04_1,raspberries,t04_2,blueberries,29,39,56,0.8235294117647058,t04_3,bananas,0,0
+B0,0.5,mcac_25,t05_1,blueberries,t05_2,red currants,36,36,66,0.9166666666666666,t05_3,oranges,0,0
+B0,0.8,mcac_25,t05_1,blueberries,t05_2,red currants,36,36,64,0.8888888888888888,t05_3,oranges,0,0
+B0,0.5,mcac_39,t06_1,apples,t06_2,pears,4,6,8,0.8,t06_3,red currants,0,0
+B0,0.8,mcac_39,t06_1,apples,t06_2,pears,4,6,8,0.8,t06_3,red currants,0,0
+B0,0.5,mcac_75,t07_1,people,t07_2,motorbikes,25,34,43,0.7288135593220338,t07_3,boats,13,10
+B0,0.8,mcac_75,t07_1,people,t07_2,motorbikes,25,34,43,0.7288135593220338,t07_3,boats,13,10
+B0,0.5,mcac_76,t08_1,people,t08_2,cars,35,20,38,0.6909090909090909,t08_3,boats,18,18
+B0,0.8,mcac_76,t08_1,people,t08_2,cars,35,20,32,0.5818181818181818,t08_3,boats,18,18
+B0,0.5,mcac_83,t09_1,people,t09_2,cars,20,24,34,0.7727272727272727,t09_3,boats,0,0
+B0,0.8,mcac_83,t09_1,people,t09_2,cars,20,24,34,0.7727272727272727,t09_3,boats,0,0
+B0,0.5,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,15,30,1.0,t10_3,boats,0,0
+B0,0.8,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,15,26,0.8666666666666667,t10_3,boats,0,0
+B0,0.5,mcac_87,t11_1,people,t11_2,motorbikes,11,9,16,0.8,t11_3,boats,0,0
+B0,0.8,mcac_87,t11_1,people,t11_2,motorbikes,11,9,16,0.8,t11_3,boats,0,0
+B0,0.5,mcac_89,t12_1,people,t12_2,motorbikes,12,12,24,1.0,t12_3,bicycles,12,12
+B0,0.8,mcac_89,t12_1,people,t12_2,motorbikes,12,12,24,1.0,t12_3,bicycles,12,12
+B0,0.5,mcac_93,t13_1,people,t13_2,cars,2,5,0,0.0,t13_3,bicycles,0,0
+B0,0.8,mcac_93,t13_1,people,t13_2,cars,2,5,0,0.0,t13_3,bicycles,0,0
+B0,0.5,mcac_95,t14_1,people,t14_2,motorbikes,18,32,33,0.66,t14_3,cars,20,20
+B0,0.8,mcac_95,t14_1,people,t14_2,motorbikes,18,32,22,0.44,t14_3,cars,20,14
+B0,0.5,mcac_103,t15_1,amplifiers,t15_2,guitars,41,15,31,0.5535714285714286,t15_3,balconies,0,0
+B0,0.8,mcac_103,t15_1,amplifiers,t15_2,guitars,41,15,30,0.5357142857142857,t15_3,balconies,0,0
+B0,0.5,mcac_104,t16_1,amplifiers,t16_2,guitars,42,34,61,0.8026315789473685,t16_3,knives,0,0
+B0,0.8,mcac_104,t16_1,amplifiers,t16_2,guitars,42,34,48,0.631578947368421,t16_3,knives,0,0
+B0,0.5,mcac_111,t17_1,people,t17_2,guitars,4,7,3,0.2727272727272727,t17_3,amplifiers,0,0
+B0,0.8,mcac_111,t17_1,people,t17_2,guitars,4,7,0,0.0,t17_3,amplifiers,0,0
+B0,0.5,mcac_113,t18_1,cats,t18_2,dogs,8,8,16,1.0,t18_3,sheep,0,0
+B0,0.8,mcac_113,t18_1,cats,t18_2,dogs,8,8,16,1.0,t18_3,sheep,0,0
+B0,0.5,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+B0,0.8,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+B0,0.5,mcac_122,t20_1,people,t20_2,dogs,6,11,7,0.4117647058823529,t20_3,goats,8,8
+B0,0.8,mcac_122,t20_1,people,t20_2,dogs,6,11,6,0.35294117647058826,t20_3,goats,8,8
+B0,0.5,mcac_124,t21_1,people,t21_2,dogs,8,28,4,0.1111111111111111,t21_3,cows,16,15
+B0,0.8,mcac_124,t21_1,people,t21_2,dogs,8,28,4,0.1111111111111111,t21_3,cows,16,13
+B0,0.5,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+B0,0.8,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+B0,0.5,mcac_135,t23_1,balconies,t23_2,windows,16,21,32,0.8648648648648649,t23_3,amplifiers,0,0
+B0,0.8,mcac_135,t23_1,balconies,t23_2,windows,16,21,32,0.8648648648648649,t23_3,amplifiers,0,0
+B0,0.5,mcac_136,t24_1,balconies,t24_2,windows,10,23,0,0.0,t24_3,boats,0,0
+B0,0.8,mcac_136,t24_1,balconies,t24_2,windows,10,23,0,0.0,t24_3,boats,0,0
+B0,0.5,mcac_142,t25_1,chairs,t25_2,desks,30,17,2,0.0425531914893617,t25_3,bicycles,0,0
+B0,0.8,mcac_142,t25_1,chairs,t25_2,desks,30,17,2,0.0425531914893617,t25_3,bicycles,0,0
+B0,0.5,mcac_143,t26_1,chairs,t26_2,desks,26,21,0,0.0,t26_3,oranges,0,0
+B0,0.8,mcac_143,t26_1,chairs,t26_2,desks,26,21,0,0.0,t26_3,oranges,0,0
+B0,0.5,mcac_147,t27_1,chairs,t27_2,desks,14,7,0,0.0,t27_3,bowls,0,0
+B0,0.8,mcac_147,t27_1,chairs,t27_2,desks,14,7,0,0.0,t27_3,bowls,0,0
+B0,0.5,mcac_148,t28_1,cigarettes,t28_2,lighters,0,5,0,0.0,t28_3,motorbikes,0,0
+B0,0.8,mcac_148,t28_1,cigarettes,t28_2,lighters,0,5,0,0.0,t28_3,motorbikes,0,0
+B0,0.5,mcac_151,t29_1,keys,t29_2,padlocks,3,9,2,0.16666666666666666,t29_3,key holders,0,0
+B0,0.8,mcac_151,t29_1,keys,t29_2,padlocks,3,9,2,0.16666666666666666,t29_3,key holders,0,0
+B0,0.5,mcac_159,t30_1,keys,t30_2,padlocks,12,13,24,0.96,t30_3,key holders,0,0
+B0,0.8,mcac_159,t30_1,keys,t30_2,padlocks,12,13,22,0.88,t30_3,key holders,0,0
+B0,0.5,mcac_160,t31_1,keys,t31_2,padlocks,7,8,13,0.8666666666666667,t31_3,key holders,0,0
+B0,0.8,mcac_160,t31_1,keys,t31_2,padlocks,7,8,12,0.8,t31_3,key holders,0,0
+B0,0.5,mcac_168,t32_1,dogs,t32_2,cows,11,11,22,1.0,t32_3,cats,0,0
+B0,0.8,mcac_168,t32_1,dogs,t32_2,cows,11,11,20,0.9090909090909091,t32_3,cats,0,0
+B0,0.5,mcac_171,t33_1,dogs,t33_2,goats,92,88,175,0.9722222222222222,t33_3,cows,86,86
+B0,0.8,mcac_171,t33_1,dogs,t33_2,goats,92,88,168,0.9333333333333333,t33_3,cows,86,86
+B0,0.5,mcac_173,t34_1,cars,t34_2,boats,36,61,72,0.7422680412371134,t34_3,trucks,41,41
+B0,0.8,mcac_173,t34_1,cars,t34_2,boats,36,61,72,0.7422680412371134,t34_3,trucks,41,40
+B0,0.5,mcac_178,t35_1,cars,t35_2,boats,23,6,4,0.13793103448275862,t35_3,trucks,22,22
+B0,0.8,mcac_178,t35_1,cars,t35_2,boats,23,6,4,0.13793103448275862,t35_3,trucks,22,22
+B0,0.5,mcac_201,t36_1,pens,t36_2,pencils,16,16,32,1.0,t36_3,pears,0,0
+B0,0.8,mcac_201,t36_1,pens,t36_2,pencils,16,16,32,1.0,t36_3,pears,0,0
+B0,0.5,mcac_204,,,,,,,,,t37_3,cups,0,0
+B0,0.8,mcac_204,,,,,,,,,t37_3,cups,0,0
+B0,0.5,mcac_218,t38_1,amplifiers,t38_2,guitars,17,9,18,0.6923076923076923,t38_3,pears,0,0
+B0,0.8,mcac_218,t38_1,amplifiers,t38_2,guitars,17,9,18,0.6923076923076923,t38_3,pears,0,0
+B0,0.5,mcac_222,t39_1,people,t39_2,motorbikes,30,27,18,0.3157894736842105,t39_3,trucks,0,0
+B0,0.8,mcac_222,t39_1,people,t39_2,motorbikes,30,27,12,0.21052631578947367,t39_3,trucks,0,0
+B0,0.5,mcac_224,t40_1,people,t40_2,boats,24,8,6,0.1875,t40_3,trucks,0,0
+B0,0.8,mcac_224,t40_1,people,t40_2,boats,24,8,0,0.0,t40_3,trucks,0,0
+B2,0.5,mcac_12,t01_1,plates,t01_2,bowls,36,36,71,0.9861111111111112,t01_3,spoons,34,34
+B2,0.8,mcac_12,t01_1,plates,t01_2,bowls,36,36,66,0.9166666666666666,t01_3,spoons,34,33
+B2,0.5,mcac_14,t02_1,forks,t02_2,knives,17,0,0,0.0,t02_3,bowls,0,0
+B2,0.8,mcac_14,t02_1,forks,t02_2,knives,17,0,0,0.0,t02_3,bowls,0,0
+B2,0.5,mcac_15,t03_1,forks,t03_2,knives,7,0,0,0.0,t03_3,plates,0,0
+B2,0.8,mcac_15,t03_1,forks,t03_2,knives,7,0,0,0.0,t03_3,plates,0,0
+B2,0.5,mcac_19,t04_1,raspberries,t04_2,blueberries,33,27,30,0.5,t04_3,bananas,0,0
+B2,0.8,mcac_19,t04_1,raspberries,t04_2,blueberries,33,27,28,0.4666666666666667,t04_3,bananas,0,0
+B2,0.5,mcac_25,t05_1,blueberries,t05_2,red currants,65,24,6,0.06741573033707865,t05_3,oranges,0,0
+B2,0.8,mcac_25,t05_1,blueberries,t05_2,red currants,65,24,6,0.06741573033707865,t05_3,oranges,0,0
+B2,0.5,mcac_39,t06_1,apples,t06_2,pears,9,9,18,1.0,t06_3,red currants,0,0
+B2,0.8,mcac_39,t06_1,apples,t06_2,pears,9,9,18,1.0,t06_3,red currants,0,0
+B2,0.5,mcac_75,t07_1,people,t07_2,motorbikes,38,36,72,0.972972972972973,t07_3,boats,39,37
+B2,0.8,mcac_75,t07_1,people,t07_2,motorbikes,38,36,72,0.972972972972973,t07_3,boats,39,37
+B2,0.5,mcac_76,t08_1,people,t08_2,cars,35,20,40,0.7272727272727273,t08_3,boats,20,20
+B2,0.8,mcac_76,t08_1,people,t08_2,cars,35,20,38,0.6909090909090909,t08_3,boats,20,20
+B2,0.5,mcac_83,t09_1,people,t09_2,cars,30,25,50,0.9090909090909091,t09_3,boats,0,0
+B2,0.8,mcac_83,t09_1,people,t09_2,cars,30,25,50,0.9090909090909091,t09_3,boats,0,0
+B2,0.5,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,15,28,0.9333333333333333,t10_3,boats,0,0
+B2,0.8,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,15,26,0.8666666666666667,t10_3,boats,0,0
+B2,0.5,mcac_87,t11_1,people,t11_2,motorbikes,14,11,22,0.88,t11_3,boats,0,0
+B2,0.8,mcac_87,t11_1,people,t11_2,motorbikes,14,11,22,0.88,t11_3,boats,0,0
+B2,0.5,mcac_89,t12_1,people,t12_2,motorbikes,12,12,24,1.0,t12_3,bicycles,12,12
+B2,0.8,mcac_89,t12_1,people,t12_2,motorbikes,12,12,24,1.0,t12_3,bicycles,12,12
+B2,0.5,mcac_93,t13_1,people,t13_2,cars,13,6,10,0.5263157894736842,t13_3,bicycles,0,0
+B2,0.8,mcac_93,t13_1,people,t13_2,cars,13,6,10,0.5263157894736842,t13_3,bicycles,0,0
+B2,0.5,mcac_95,t14_1,people,t14_2,motorbikes,19,22,38,0.926829268292683,t14_3,cars,18,18
+B2,0.8,mcac_95,t14_1,people,t14_2,motorbikes,19,22,28,0.6829268292682927,t14_3,cars,18,17
+B2,0.5,mcac_103,t15_1,amplifiers,t15_2,guitars,24,15,30,0.7692307692307693,t15_3,balconies,0,0
+B2,0.8,mcac_103,t15_1,amplifiers,t15_2,guitars,24,15,30,0.7692307692307693,t15_3,balconies,0,0
+B2,0.5,mcac_104,t16_1,amplifiers,t16_2,guitars,34,31,62,0.9538461538461539,t16_3,knives,0,0
+B2,0.8,mcac_104,t16_1,amplifiers,t16_2,guitars,34,31,62,0.9538461538461539,t16_3,knives,0,0
+B2,0.5,mcac_111,t17_1,people,t17_2,guitars,5,6,3,0.2727272727272727,t17_3,amplifiers,0,0
+B2,0.8,mcac_111,t17_1,people,t17_2,guitars,5,6,0,0.0,t17_3,amplifiers,0,0
+B2,0.5,mcac_113,t18_1,cats,t18_2,dogs,8,8,16,1.0,t18_3,sheep,0,0
+B2,0.8,mcac_113,t18_1,cats,t18_2,dogs,8,8,16,1.0,t18_3,sheep,0,0
+B2,0.5,mcac_120,t19_1,people,t19_2,dogs,0,8,0,0.0,t19_3,sheep,0,0
+B2,0.8,mcac_120,t19_1,people,t19_2,dogs,0,8,0,0.0,t19_3,sheep,0,0
+B2,0.5,mcac_122,t20_1,people,t20_2,dogs,14,12,12,0.46153846153846156,t20_3,goats,10,10
+B2,0.8,mcac_122,t20_1,people,t20_2,dogs,14,12,12,0.46153846153846156,t20_3,goats,10,9
+B2,0.5,mcac_124,t21_1,people,t21_2,dogs,7,28,0,0.0,t21_3,cows,24,24
+B2,0.8,mcac_124,t21_1,people,t21_2,dogs,7,28,0,0.0,t21_3,cows,24,22
+B2,0.5,mcac_131,t22_1,balconies,t22_2,windows,10,9,12,0.631578947368421,t22_3,plates,0,0
+B2,0.8,mcac_131,t22_1,balconies,t22_2,windows,10,9,12,0.631578947368421,t22_3,plates,0,0
+B2,0.5,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+B2,0.8,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+B2,0.5,mcac_136,t24_1,balconies,t24_2,windows,10,19,0,0.0,t24_3,boats,0,0
+B2,0.8,mcac_136,t24_1,balconies,t24_2,windows,10,19,0,0.0,t24_3,boats,0,0
+B2,0.5,mcac_142,t25_1,chairs,t25_2,desks,42,18,34,0.5666666666666667,t25_3,bicycles,0,0
+B2,0.8,mcac_142,t25_1,chairs,t25_2,desks,42,18,32,0.5333333333333333,t25_3,bicycles,0,0
+B2,0.5,mcac_143,t26_1,chairs,t26_2,desks,48,20,40,0.5882352941176471,t26_3,oranges,0,0
+B2,0.8,mcac_143,t26_1,chairs,t26_2,desks,48,20,40,0.5882352941176471,t26_3,oranges,0,0
+B2,0.5,mcac_147,t27_1,chairs,t27_2,desks,19,11,15,0.5,t27_3,bowls,0,0
+B2,0.8,mcac_147,t27_1,chairs,t27_2,desks,19,11,12,0.4,t27_3,bowls,0,0
+B2,0.5,mcac_148,t28_1,cigarettes,t28_2,lighters,0,15,0,0.0,t28_3,motorbikes,0,0
+B2,0.8,mcac_148,t28_1,cigarettes,t28_2,lighters,0,15,0,0.0,t28_3,motorbikes,0,0
+B2,0.5,mcac_151,t29_1,keys,t29_2,padlocks,8,12,12,0.6,t29_3,key holders,0,0
+B2,0.8,mcac_151,t29_1,keys,t29_2,padlocks,8,12,10,0.5,t29_3,key holders,0,0
+B2,0.5,mcac_159,t30_1,keys,t30_2,padlocks,11,12,22,0.9565217391304348,t30_3,key holders,0,0
+B2,0.8,mcac_159,t30_1,keys,t30_2,padlocks,11,12,22,0.9565217391304348,t30_3,key holders,0,0
+B2,0.5,mcac_160,t31_1,keys,t31_2,padlocks,12,7,15,0.7894736842105263,t31_3,key holders,0,0
+B2,0.8,mcac_160,t31_1,keys,t31_2,padlocks,12,7,14,0.7368421052631579,t31_3,key holders,0,0
+B2,0.5,mcac_168,t32_1,dogs,t32_2,cows,12,11,22,0.9565217391304348,t32_3,cats,0,0
+B2,0.8,mcac_168,t32_1,dogs,t32_2,cows,12,11,22,0.9565217391304348,t32_3,cats,0,0
+B2,0.5,mcac_171,t33_1,dogs,t33_2,goats,101,98,196,0.9849246231155779,t33_3,cows,97,96
+B2,0.8,mcac_171,t33_1,dogs,t33_2,goats,101,98,192,0.964824120603015,t33_3,cows,97,96
+B2,0.5,mcac_173,t34_1,cars,t34_2,boats,43,59,86,0.8431372549019608,t34_3,trucks,54,54
+B2,0.8,mcac_173,t34_1,cars,t34_2,boats,43,59,84,0.8235294117647058,t34_3,trucks,54,53
+B2,0.5,mcac_178,t35_1,cars,t35_2,boats,27,6,2,0.06060606060606061,t35_3,trucks,26,26
+B2,0.8,mcac_178,t35_1,cars,t35_2,boats,27,6,2,0.06060606060606061,t35_3,trucks,26,25
+B2,0.5,mcac_201,t36_1,pens,t36_2,pencils,17,17,34,1.0,t36_3,pears,0,0
+B2,0.8,mcac_201,t36_1,pens,t36_2,pencils,17,17,34,1.0,t36_3,pears,0,0
+B2,0.5,mcac_204,,,,,,,,,t37_3,cups,0,0
+B2,0.8,mcac_204,,,,,,,,,t37_3,cups,0,0
+B2,0.5,mcac_218,t38_1,amplifiers,t38_2,guitars,21,9,18,0.6,t38_3,pears,0,0
+B2,0.8,mcac_218,t38_1,amplifiers,t38_2,guitars,21,9,16,0.5333333333333333,t38_3,pears,0,0
+B2,0.5,mcac_222,t39_1,people,t39_2,motorbikes,31,54,63,0.7411764705882353,t39_3,trucks,0,0
+B2,0.8,mcac_222,t39_1,people,t39_2,motorbikes,31,54,38,0.4470588235294118,t39_3,trucks,0,0
+B2,0.5,mcac_224,t40_1,people,t40_2,boats,27,24,38,0.7450980392156863,t40_3,trucks,0,0
+B2,0.8,mcac_224,t40_1,people,t40_2,boats,27,24,28,0.5490196078431373,t40_3,trucks,0,0
+P+F (chính),0.5,mcac_12,t01_1,plates,t01_2,bowls,16,17,32,0.9696969696969697,t01_3,spoons,16,15
+P+F (chính),0.8,mcac_12,t01_1,plates,t01_2,bowls,16,17,30,0.9090909090909091,t01_3,spoons,16,15
+P+F (chính),0.5,mcac_14,t02_1,forks,t02_2,knives,8,0,0,0.0,t02_3,bowls,0,0
+P+F (chính),0.8,mcac_14,t02_1,forks,t02_2,knives,8,0,0,0.0,t02_3,bowls,0,0
+P+F (chính),0.5,mcac_15,t03_1,forks,t03_2,knives,2,0,0,0.0,t03_3,plates,0,0
+P+F (chính),0.8,mcac_15,t03_1,forks,t03_2,knives,2,0,0,0.0,t03_3,plates,0,0
+P+F (chính),0.5,mcac_19,t04_1,raspberries,t04_2,blueberries,12,16,0,0.0,t04_3,bananas,0,0
+P+F (chính),0.8,mcac_19,t04_1,raspberries,t04_2,blueberries,12,16,0,0.0,t04_3,bananas,0,0
+P+F (chính),0.5,mcac_25,t05_1,blueberries,t05_2,red currants,8,7,0,0.0,t05_3,oranges,0,0
+P+F (chính),0.8,mcac_25,t05_1,blueberries,t05_2,red currants,8,7,0,0.0,t05_3,oranges,0,0
+P+F (chính),0.5,mcac_39,t06_1,apples,t06_2,pears,3,9,6,0.5,t06_3,red currants,0,0
+P+F (chính),0.8,mcac_39,t06_1,apples,t06_2,pears,3,9,6,0.5,t06_3,red currants,0,0
+P+F (chính),0.5,mcac_75,t07_1,people,t07_2,motorbikes,31,32,62,0.9841269841269841,t07_3,boats,4,4
+P+F (chính),0.8,mcac_75,t07_1,people,t07_2,motorbikes,31,32,62,0.9841269841269841,t07_3,boats,4,4
+P+F (chính),0.5,mcac_76,t08_1,people,t08_2,cars,16,10,18,0.6923076923076923,t08_3,boats,0,0
+P+F (chính),0.8,mcac_76,t08_1,people,t08_2,cars,16,10,18,0.6923076923076923,t08_3,boats,0,0
+P+F (chính),0.5,mcac_83,t09_1,people,t09_2,cars,20,20,40,1.0,t09_3,boats,0,0
+P+F (chính),0.8,mcac_83,t09_1,people,t09_2,cars,20,20,40,1.0,t09_3,boats,0,0
+P+F (chính),0.5,mcac_86,t10_1,motorbikes,t10_2,bicycles,10,13,20,0.8695652173913043,t10_3,boats,0,0
+P+F (chính),0.8,mcac_86,t10_1,motorbikes,t10_2,bicycles,10,13,20,0.8695652173913043,t10_3,boats,0,0
+P+F (chính),0.5,mcac_87,t11_1,people,t11_2,motorbikes,9,9,16,0.8888888888888888,t11_3,boats,0,0
+P+F (chính),0.8,mcac_87,t11_1,people,t11_2,motorbikes,9,9,16,0.8888888888888888,t11_3,boats,0,0
+P+F (chính),0.5,mcac_89,t12_1,people,t12_2,motorbikes,9,11,18,0.9,t12_3,bicycles,11,11
+P+F (chính),0.8,mcac_89,t12_1,people,t12_2,motorbikes,9,11,18,0.9,t12_3,bicycles,11,11
+P+F (chính),0.5,mcac_93,t13_1,people,t13_2,cars,2,2,0,0.0,t13_3,bicycles,0,0
+P+F (chính),0.8,mcac_93,t13_1,people,t13_2,cars,2,2,0,0.0,t13_3,bicycles,0,0
+P+F (chính),0.5,mcac_95,t14_1,people,t14_2,motorbikes,10,13,20,0.8695652173913043,t14_3,cars,9,9
+P+F (chính),0.8,mcac_95,t14_1,people,t14_2,motorbikes,10,13,16,0.6956521739130435,t14_3,cars,9,9
+P+F (chính),0.5,mcac_103,t15_1,amplifiers,t15_2,guitars,15,15,30,1.0,t15_3,balconies,0,0
+P+F (chính),0.8,mcac_103,t15_1,amplifiers,t15_2,guitars,15,15,30,1.0,t15_3,balconies,0,0
+P+F (chính),0.5,mcac_104,t16_1,amplifiers,t16_2,guitars,0,27,0,0.0,t16_3,knives,0,0
+P+F (chính),0.8,mcac_104,t16_1,amplifiers,t16_2,guitars,0,27,0,0.0,t16_3,knives,0,0
+P+F (chính),0.5,mcac_111,t17_1,people,t17_2,guitars,3,1,0,0.0,t17_3,amplifiers,0,0
+P+F (chính),0.8,mcac_111,t17_1,people,t17_2,guitars,3,1,0,0.0,t17_3,amplifiers,0,0
+P+F (chính),0.5,mcac_113,t18_1,cats,t18_2,dogs,6,7,10,0.7692307692307693,t18_3,sheep,0,0
+P+F (chính),0.8,mcac_113,t18_1,cats,t18_2,dogs,6,7,10,0.7692307692307693,t18_3,sheep,0,0
+P+F (chính),0.5,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+P+F (chính),0.8,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+P+F (chính),0.5,mcac_122,t20_1,people,t20_2,dogs,0,7,0,0.0,t20_3,goats,5,5
+P+F (chính),0.8,mcac_122,t20_1,people,t20_2,dogs,0,7,0,0.0,t20_3,goats,5,5
+P+F (chính),0.5,mcac_124,t21_1,people,t21_2,dogs,4,14,0,0.0,t21_3,cows,11,11
+P+F (chính),0.8,mcac_124,t21_1,people,t21_2,dogs,4,14,0,0.0,t21_3,cows,11,9
+P+F (chính),0.5,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+P+F (chính),0.8,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+P+F (chính),0.5,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+P+F (chính),0.8,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+P+F (chính),0.5,mcac_136,t24_1,balconies,t24_2,windows,10,10,0,0.0,t24_3,boats,0,0
+P+F (chính),0.8,mcac_136,t24_1,balconies,t24_2,windows,10,10,0,0.0,t24_3,boats,0,0
+P+F (chính),0.5,mcac_142,t25_1,chairs,t25_2,desks,24,11,22,0.6285714285714286,t25_3,bicycles,0,0
+P+F (chính),0.8,mcac_142,t25_1,chairs,t25_2,desks,24,11,22,0.6285714285714286,t25_3,bicycles,0,0
+P+F (chính),0.5,mcac_143,t26_1,chairs,t26_2,desks,7,20,0,0.0,t26_3,oranges,0,0
+P+F (chính),0.8,mcac_143,t26_1,chairs,t26_2,desks,7,20,0,0.0,t26_3,oranges,0,0
+P+F (chính),0.5,mcac_147,t27_1,chairs,t27_2,desks,1,5,0,0.0,t27_3,bowls,0,0
+P+F (chính),0.8,mcac_147,t27_1,chairs,t27_2,desks,1,5,0,0.0,t27_3,bowls,0,0
+P+F (chính),0.5,mcac_148,t28_1,cigarettes,t28_2,lighters,0,9,0,0.0,t28_3,motorbikes,0,0
+P+F (chính),0.8,mcac_148,t28_1,cigarettes,t28_2,lighters,0,9,0,0.0,t28_3,motorbikes,0,0
+P+F (chính),0.5,mcac_151,t29_1,keys,t29_2,padlocks,3,4,0,0.0,t29_3,key holders,0,0
+P+F (chính),0.8,mcac_151,t29_1,keys,t29_2,padlocks,3,4,0,0.0,t29_3,key holders,0,0
+P+F (chính),0.5,mcac_159,t30_1,keys,t30_2,padlocks,7,10,14,0.8235294117647058,t30_3,key holders,0,0
+P+F (chính),0.8,mcac_159,t30_1,keys,t30_2,padlocks,7,10,14,0.8235294117647058,t30_3,key holders,0,0
+P+F (chính),0.5,mcac_160,t31_1,keys,t31_2,padlocks,1,5,0,0.0,t31_3,key holders,0,0
+P+F (chính),0.8,mcac_160,t31_1,keys,t31_2,padlocks,1,5,0,0.0,t31_3,key holders,0,0
+P+F (chính),0.5,mcac_168,t32_1,dogs,t32_2,cows,8,6,12,0.8571428571428571,t32_3,cats,0,0
+P+F (chính),0.8,mcac_168,t32_1,dogs,t32_2,cows,8,6,12,0.8571428571428571,t32_3,cats,0,0
+P+F (chính),0.5,mcac_171,t33_1,dogs,t33_2,goats,72,65,130,0.948905109489051,t33_3,cows,64,64
+P+F (chính),0.8,mcac_171,t33_1,dogs,t33_2,goats,72,65,130,0.948905109489051,t33_3,cows,64,64
+P+F (chính),0.5,mcac_173,t34_1,cars,t34_2,boats,19,25,8,0.18181818181818182,t34_3,trucks,20,20
+P+F (chính),0.8,mcac_173,t34_1,cars,t34_2,boats,19,25,8,0.18181818181818182,t34_3,trucks,20,20
+P+F (chính),0.5,mcac_178,t35_1,cars,t35_2,boats,16,2,0,0.0,t35_3,trucks,13,13
+P+F (chính),0.8,mcac_178,t35_1,cars,t35_2,boats,16,2,0,0.0,t35_3,trucks,13,13
+P+F (chính),0.5,mcac_201,t36_1,pens,t36_2,pencils,14,16,28,0.9333333333333333,t36_3,pears,0,0
+P+F (chính),0.8,mcac_201,t36_1,pens,t36_2,pencils,14,16,28,0.9333333333333333,t36_3,pears,0,0
+P+F (chính),0.5,mcac_204,,,,,,,,,t37_3,cups,0,0
+P+F (chính),0.8,mcac_204,,,,,,,,,t37_3,cups,0,0
+P+F (chính),0.5,mcac_218,t38_1,amplifiers,t38_2,guitars,4,9,0,0.0,t38_3,pears,0,0
+P+F (chính),0.8,mcac_218,t38_1,amplifiers,t38_2,guitars,4,9,0,0.0,t38_3,pears,0,0
+P+F (chính),0.5,mcac_222,t39_1,people,t39_2,motorbikes,22,25,16,0.3404255319148936,t39_3,trucks,0,0
+P+F (chính),0.8,mcac_222,t39_1,people,t39_2,motorbikes,22,25,8,0.1702127659574468,t39_3,trucks,0,0
+P+F (chính),0.5,mcac_224,t40_1,people,t40_2,boats,13,2,2,0.13333333333333333,t40_3,trucks,0,0
+P+F (chính),0.8,mcac_224,t40_1,people,t40_2,boats,13,2,2,0.13333333333333333,t40_3,trucks,0,0
+C6 = B0+F,0.5,mcac_12,t01_1,plates,t01_2,bowls,19,20,38,0.9743589743589743,t01_3,spoons,0,0
+C6 = B0+F,0.8,mcac_12,t01_1,plates,t01_2,bowls,19,20,36,0.9230769230769231,t01_3,spoons,0,0
+C6 = B0+F,0.5,mcac_14,t02_1,forks,t02_2,knives,6,0,0,0.0,t02_3,bowls,0,0
+C6 = B0+F,0.8,mcac_14,t02_1,forks,t02_2,knives,6,0,0,0.0,t02_3,bowls,0,0
+C6 = B0+F,0.5,mcac_15,t03_1,forks,t03_2,knives,4,0,0,0.0,t03_3,plates,0,0
+C6 = B0+F,0.8,mcac_15,t03_1,forks,t03_2,knives,4,0,0,0.0,t03_3,plates,0,0
+C6 = B0+F,0.5,mcac_19,t04_1,raspberries,t04_2,blueberries,15,5,2,0.1,t04_3,bananas,0,0
+C6 = B0+F,0.8,mcac_19,t04_1,raspberries,t04_2,blueberries,15,5,2,0.1,t04_3,bananas,0,0
+C6 = B0+F,0.5,mcac_25,t05_1,blueberries,t05_2,red currants,9,7,8,0.5,t05_3,oranges,0,0
+C6 = B0+F,0.8,mcac_25,t05_1,blueberries,t05_2,red currants,9,7,8,0.5,t05_3,oranges,0,0
+C6 = B0+F,0.5,mcac_39,t06_1,apples,t06_2,pears,3,5,6,0.75,t06_3,red currants,0,0
+C6 = B0+F,0.8,mcac_39,t06_1,apples,t06_2,pears,3,5,6,0.75,t06_3,red currants,0,0
+C6 = B0+F,0.5,mcac_75,t07_1,people,t07_2,motorbikes,0,27,0,0.0,t07_3,boats,0,0
+C6 = B0+F,0.8,mcac_75,t07_1,people,t07_2,motorbikes,0,27,0,0.0,t07_3,boats,0,0
+C6 = B0+F,0.5,mcac_76,t08_1,people,t08_2,cars,10,16,0,0.0,t08_3,boats,0,0
+C6 = B0+F,0.8,mcac_76,t08_1,people,t08_2,cars,10,16,0,0.0,t08_3,boats,0,0
+C6 = B0+F,0.5,mcac_83,t09_1,people,t09_2,cars,0,20,0,0.0,t09_3,boats,0,0
+C6 = B0+F,0.8,mcac_83,t09_1,people,t09_2,cars,0,20,0,0.0,t09_3,boats,0,0
+C6 = B0+F,0.5,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,11,22,0.8461538461538461,t10_3,boats,0,0
+C6 = B0+F,0.8,mcac_86,t10_1,motorbikes,t10_2,bicycles,15,11,18,0.6923076923076923,t10_3,boats,0,0
+C6 = B0+F,0.5,mcac_87,t11_1,people,t11_2,motorbikes,0,9,0,0.0,t11_3,boats,0,0
+C6 = B0+F,0.8,mcac_87,t11_1,people,t11_2,motorbikes,0,9,0,0.0,t11_3,boats,0,0
+C6 = B0+F,0.5,mcac_89,t12_1,people,t12_2,motorbikes,0,12,0,0.0,t12_3,bicycles,2,2
+C6 = B0+F,0.8,mcac_89,t12_1,people,t12_2,motorbikes,0,12,0,0.0,t12_3,bicycles,2,2
+C6 = B0+F,0.5,mcac_93,t13_1,people,t13_2,cars,0,2,0,0.0,t13_3,bicycles,0,0
+C6 = B0+F,0.8,mcac_93,t13_1,people,t13_2,cars,0,2,0,0.0,t13_3,bicycles,0,0
+C6 = B0+F,0.5,mcac_95,t14_1,people,t14_2,motorbikes,0,25,0,0.0,t14_3,cars,0,0
+C6 = B0+F,0.8,mcac_95,t14_1,people,t14_2,motorbikes,0,25,0,0.0,t14_3,cars,0,0
+C6 = B0+F,0.5,mcac_103,t15_1,amplifiers,t15_2,guitars,11,15,0,0.0,t15_3,balconies,0,0
+C6 = B0+F,0.8,mcac_103,t15_1,amplifiers,t15_2,guitars,11,15,0,0.0,t15_3,balconies,0,0
+C6 = B0+F,0.5,mcac_104,t16_1,amplifiers,t16_2,guitars,0,28,0,0.0,t16_3,knives,0,0
+C6 = B0+F,0.8,mcac_104,t16_1,amplifiers,t16_2,guitars,0,28,0,0.0,t16_3,knives,0,0
+C6 = B0+F,0.5,mcac_111,t17_1,people,t17_2,guitars,0,0,0,,t17_3,amplifiers,0,0
+C6 = B0+F,0.8,mcac_111,t17_1,people,t17_2,guitars,0,0,0,,t17_3,amplifiers,0,0
+C6 = B0+F,0.5,mcac_113,t18_1,cats,t18_2,dogs,5,7,8,0.6666666666666666,t18_3,sheep,0,0
+C6 = B0+F,0.8,mcac_113,t18_1,cats,t18_2,dogs,5,7,8,0.6666666666666666,t18_3,sheep,0,0
+C6 = B0+F,0.5,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+C6 = B0+F,0.8,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+C6 = B0+F,0.5,mcac_122,t20_1,people,t20_2,dogs,0,10,0,0.0,t20_3,goats,0,0
+C6 = B0+F,0.8,mcac_122,t20_1,people,t20_2,dogs,0,10,0,0.0,t20_3,goats,0,0
+C6 = B0+F,0.5,mcac_124,t21_1,people,t21_2,dogs,0,17,0,0.0,t21_3,cows,0,0
+C6 = B0+F,0.8,mcac_124,t21_1,people,t21_2,dogs,0,17,0,0.0,t21_3,cows,0,0
+C6 = B0+F,0.5,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+C6 = B0+F,0.8,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+C6 = B0+F,0.5,mcac_135,t23_1,balconies,t23_2,windows,13,21,26,0.7647058823529411,t23_3,amplifiers,0,0
+C6 = B0+F,0.8,mcac_135,t23_1,balconies,t23_2,windows,13,21,26,0.7647058823529411,t23_3,amplifiers,0,0
+C6 = B0+F,0.5,mcac_136,t24_1,balconies,t24_2,windows,10,13,0,0.0,t24_3,boats,0,0
+C6 = B0+F,0.8,mcac_136,t24_1,balconies,t24_2,windows,10,13,0,0.0,t24_3,boats,0,0
+C6 = B0+F,0.5,mcac_142,t25_1,chairs,t25_2,desks,18,15,0,0.0,t25_3,bicycles,0,0
+C6 = B0+F,0.8,mcac_142,t25_1,chairs,t25_2,desks,18,15,0,0.0,t25_3,bicycles,0,0
+C6 = B0+F,0.5,mcac_143,t26_1,chairs,t26_2,desks,17,20,0,0.0,t26_3,oranges,0,0
+C6 = B0+F,0.8,mcac_143,t26_1,chairs,t26_2,desks,17,20,0,0.0,t26_3,oranges,0,0
+C6 = B0+F,0.5,mcac_147,t27_1,chairs,t27_2,desks,9,5,0,0.0,t27_3,bowls,0,0
+C6 = B0+F,0.8,mcac_147,t27_1,chairs,t27_2,desks,9,5,0,0.0,t27_3,bowls,0,0
+C6 = B0+F,0.5,mcac_148,t28_1,cigarettes,t28_2,lighters,0,1,0,0.0,t28_3,motorbikes,0,0
+C6 = B0+F,0.8,mcac_148,t28_1,cigarettes,t28_2,lighters,0,1,0,0.0,t28_3,motorbikes,0,0
+C6 = B0+F,0.5,mcac_151,t29_1,keys,t29_2,padlocks,0,0,0,,t29_3,key holders,0,0
+C6 = B0+F,0.8,mcac_151,t29_1,keys,t29_2,padlocks,0,0,0,,t29_3,key holders,0,0
+C6 = B0+F,0.5,mcac_159,t30_1,keys,t30_2,padlocks,9,8,10,0.5882352941176471,t30_3,key holders,0,0
+C6 = B0+F,0.8,mcac_159,t30_1,keys,t30_2,padlocks,9,8,10,0.5882352941176471,t30_3,key holders,0,0
+C6 = B0+F,0.5,mcac_160,t31_1,keys,t31_2,padlocks,2,5,0,0.0,t31_3,key holders,0,0
+C6 = B0+F,0.8,mcac_160,t31_1,keys,t31_2,padlocks,2,5,0,0.0,t31_3,key holders,0,0
+C6 = B0+F,0.5,mcac_168,t32_1,dogs,t32_2,cows,0,4,0,0.0,t32_3,cats,0,0
+C6 = B0+F,0.8,mcac_168,t32_1,dogs,t32_2,cows,0,4,0,0.0,t32_3,cats,0,0
+C6 = B0+F,0.5,mcac_171,t33_1,dogs,t33_2,goats,66,7,14,0.1917808219178082,t33_3,cows,23,23
+C6 = B0+F,0.8,mcac_171,t33_1,dogs,t33_2,goats,66,7,14,0.1917808219178082,t33_3,cows,23,22
+C6 = B0+F,0.5,mcac_173,t34_1,cars,t34_2,boats,19,50,34,0.4927536231884058,t34_3,trucks,6,6
+C6 = B0+F,0.8,mcac_173,t34_1,cars,t34_2,boats,19,50,34,0.4927536231884058,t34_3,trucks,6,6
+C6 = B0+F,0.5,mcac_178,t35_1,cars,t35_2,boats,17,4,0,0.0,t35_3,trucks,8,8
+C6 = B0+F,0.8,mcac_178,t35_1,cars,t35_2,boats,17,4,0,0.0,t35_3,trucks,8,7
+C6 = B0+F,0.5,mcac_201,t36_1,pens,t36_2,pencils,12,6,12,0.6666666666666666,t36_3,pears,0,0
+C6 = B0+F,0.8,mcac_201,t36_1,pens,t36_2,pencils,12,6,12,0.6666666666666666,t36_3,pears,0,0
+C6 = B0+F,0.5,mcac_204,,,,,,,,,t37_3,cups,0,0
+C6 = B0+F,0.8,mcac_204,,,,,,,,,t37_3,cups,0,0
+C6 = B0+F,0.5,mcac_218,t38_1,amplifiers,t38_2,guitars,2,9,0,0.0,t38_3,pears,0,0
+C6 = B0+F,0.8,mcac_218,t38_1,amplifiers,t38_2,guitars,2,9,0,0.0,t38_3,pears,0,0
+C6 = B0+F,0.5,mcac_222,t39_1,people,t39_2,motorbikes,0,24,0,0.0,t39_3,trucks,0,0
+C6 = B0+F,0.8,mcac_222,t39_1,people,t39_2,motorbikes,0,24,0,0.0,t39_3,trucks,0,0
+C6 = B0+F,0.5,mcac_224,t40_1,people,t40_2,boats,3,4,0,0.0,t40_3,trucks,0,0
+C6 = B0+F,0.8,mcac_224,t40_1,people,t40_2,boats,3,4,0,0.0,t40_3,trucks,0,0
+B2+F,0.5,mcac_12,t01_1,plates,t01_2,bowls,16,16,32,1.0,t01_3,spoons,13,13
+B2+F,0.8,mcac_12,t01_1,plates,t01_2,bowls,16,16,30,0.9375,t01_3,spoons,13,13
+B2+F,0.5,mcac_14,t02_1,forks,t02_2,knives,8,0,0,0.0,t02_3,bowls,0,0
+B2+F,0.8,mcac_14,t02_1,forks,t02_2,knives,8,0,0,0.0,t02_3,bowls,0,0
+B2+F,0.5,mcac_15,t03_1,forks,t03_2,knives,2,0,0,0.0,t03_3,plates,0,0
+B2+F,0.8,mcac_15,t03_1,forks,t03_2,knives,2,0,0,0.0,t03_3,plates,0,0
+B2+F,0.5,mcac_19,t04_1,raspberries,t04_2,blueberries,12,16,0,0.0,t04_3,bananas,0,0
+B2+F,0.8,mcac_19,t04_1,raspberries,t04_2,blueberries,12,16,0,0.0,t04_3,bananas,0,0
+B2+F,0.5,mcac_25,t05_1,blueberries,t05_2,red currants,8,7,0,0.0,t05_3,oranges,0,0
+B2+F,0.8,mcac_25,t05_1,blueberries,t05_2,red currants,8,7,0,0.0,t05_3,oranges,0,0
+B2+F,0.5,mcac_39,t06_1,apples,t06_2,pears,3,9,6,0.5,t06_3,red currants,0,0
+B2+F,0.8,mcac_39,t06_1,apples,t06_2,pears,3,9,6,0.5,t06_3,red currants,0,0
+B2+F,0.5,mcac_75,t07_1,people,t07_2,motorbikes,29,31,56,0.9333333333333333,t07_3,boats,1,1
+B2+F,0.8,mcac_75,t07_1,people,t07_2,motorbikes,29,31,56,0.9333333333333333,t07_3,boats,1,1
+B2+F,0.5,mcac_76,t08_1,people,t08_2,cars,10,10,18,0.9,t08_3,boats,4,4
+B2+F,0.8,mcac_76,t08_1,people,t08_2,cars,10,10,18,0.9,t08_3,boats,4,4
+B2+F,0.5,mcac_83,t09_1,people,t09_2,cars,20,20,40,1.0,t09_3,boats,0,0
+B2+F,0.8,mcac_83,t09_1,people,t09_2,cars,20,20,40,1.0,t09_3,boats,0,0
+B2+F,0.5,mcac_86,t10_1,motorbikes,t10_2,bicycles,10,10,14,0.7,t10_3,boats,0,0
+B2+F,0.8,mcac_86,t10_1,motorbikes,t10_2,bicycles,10,10,14,0.7,t10_3,boats,0,0
+B2+F,0.5,mcac_87,t11_1,people,t11_2,motorbikes,9,9,16,0.8888888888888888,t11_3,boats,0,0
+B2+F,0.8,mcac_87,t11_1,people,t11_2,motorbikes,9,9,16,0.8888888888888888,t11_3,boats,0,0
+B2+F,0.5,mcac_89,t12_1,people,t12_2,motorbikes,9,11,18,0.9,t12_3,bicycles,11,11
+B2+F,0.8,mcac_89,t12_1,people,t12_2,motorbikes,9,11,18,0.9,t12_3,bicycles,11,11
+B2+F,0.5,mcac_93,t13_1,people,t13_2,cars,2,2,0,0.0,t13_3,bicycles,0,0
+B2+F,0.8,mcac_93,t13_1,people,t13_2,cars,2,2,0,0.0,t13_3,bicycles,0,0
+B2+F,0.5,mcac_95,t14_1,people,t14_2,motorbikes,9,13,18,0.8181818181818182,t14_3,cars,8,8
+B2+F,0.8,mcac_95,t14_1,people,t14_2,motorbikes,9,13,16,0.7272727272727273,t14_3,cars,8,8
+B2+F,0.5,mcac_103,t15_1,amplifiers,t15_2,guitars,15,15,30,1.0,t15_3,balconies,0,0
+B2+F,0.8,mcac_103,t15_1,amplifiers,t15_2,guitars,15,15,30,1.0,t15_3,balconies,0,0
+B2+F,0.5,mcac_104,t16_1,amplifiers,t16_2,guitars,8,27,16,0.45714285714285713,t16_3,knives,0,0
+B2+F,0.8,mcac_104,t16_1,amplifiers,t16_2,guitars,8,27,16,0.45714285714285713,t16_3,knives,0,0
+B2+F,0.5,mcac_111,t17_1,people,t17_2,guitars,1,0,0,0.0,t17_3,amplifiers,0,0
+B2+F,0.8,mcac_111,t17_1,people,t17_2,guitars,1,0,0,0.0,t17_3,amplifiers,0,0
+B2+F,0.5,mcac_113,t18_1,cats,t18_2,dogs,6,7,10,0.7692307692307693,t18_3,sheep,0,0
+B2+F,0.8,mcac_113,t18_1,cats,t18_2,dogs,6,7,10,0.7692307692307693,t18_3,sheep,0,0
+B2+F,0.5,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+B2+F,0.8,mcac_120,t19_1,people,t19_2,dogs,0,7,0,0.0,t19_3,sheep,0,0
+B2+F,0.5,mcac_122,t20_1,people,t20_2,dogs,0,7,0,0.0,t20_3,goats,5,5
+B2+F,0.8,mcac_122,t20_1,people,t20_2,dogs,0,7,0,0.0,t20_3,goats,5,5
+B2+F,0.5,mcac_124,t21_1,people,t21_2,dogs,3,14,0,0.0,t21_3,cows,6,6
+B2+F,0.8,mcac_124,t21_1,people,t21_2,dogs,3,14,0,0.0,t21_3,cows,6,6
+B2+F,0.5,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+B2+F,0.8,mcac_131,t22_1,balconies,t22_2,windows,4,9,0,0.0,t22_3,plates,0,0
+B2+F,0.5,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+B2+F,0.8,mcac_135,t23_1,balconies,t23_2,windows,21,21,42,1.0,t23_3,amplifiers,0,0
+B2+F,0.5,mcac_136,t24_1,balconies,t24_2,windows,10,10,0,0.0,t24_3,boats,0,0
+B2+F,0.8,mcac_136,t24_1,balconies,t24_2,windows,10,10,0,0.0,t24_3,boats,0,0
+B2+F,0.5,mcac_142,t25_1,chairs,t25_2,desks,22,11,22,0.6666666666666666,t25_3,bicycles,0,0
+B2+F,0.8,mcac_142,t25_1,chairs,t25_2,desks,22,11,22,0.6666666666666666,t25_3,bicycles,0,0
+B2+F,0.5,mcac_143,t26_1,chairs,t26_2,desks,6,20,0,0.0,t26_3,oranges,0,0
+B2+F,0.8,mcac_143,t26_1,chairs,t26_2,desks,6,20,0,0.0,t26_3,oranges,0,0
+B2+F,0.5,mcac_147,t27_1,chairs,t27_2,desks,0,5,0,0.0,t27_3,bowls,0,0
+B2+F,0.8,mcac_147,t27_1,chairs,t27_2,desks,0,5,0,0.0,t27_3,bowls,0,0
+B2+F,0.5,mcac_148,t28_1,cigarettes,t28_2,lighters,0,6,0,0.0,t28_3,motorbikes,0,0
+B2+F,0.8,mcac_148,t28_1,cigarettes,t28_2,lighters,0,6,0,0.0,t28_3,motorbikes,0,0
+B2+F,0.5,mcac_151,t29_1,keys,t29_2,padlocks,3,3,0,0.0,t29_3,key holders,0,0
+B2+F,0.8,mcac_151,t29_1,keys,t29_2,padlocks,3,3,0,0.0,t29_3,key holders,0,0
+B2+F,0.5,mcac_159,t30_1,keys,t30_2,padlocks,7,9,12,0.75,t30_3,key holders,0,0
+B2+F,0.8,mcac_159,t30_1,keys,t30_2,padlocks,7,9,12,0.75,t30_3,key holders,0,0
+B2+F,0.5,mcac_160,t31_1,keys,t31_2,padlocks,1,5,0,0.0,t31_3,key holders,0,0
+B2+F,0.8,mcac_160,t31_1,keys,t31_2,padlocks,1,5,0,0.0,t31_3,key holders,0,0
+B2+F,0.5,mcac_168,t32_1,dogs,t32_2,cows,7,5,10,0.8333333333333334,t32_3,cats,0,0
+B2+F,0.8,mcac_168,t32_1,dogs,t32_2,cows,7,5,10,0.8333333333333334,t32_3,cats,0,0
+B2+F,0.5,mcac_171,t33_1,dogs,t33_2,goats,71,61,122,0.9242424242424242,t33_3,cows,64,64
+B2+F,0.8,mcac_171,t33_1,dogs,t33_2,goats,71,61,122,0.9242424242424242,t33_3,cows,64,64
+B2+F,0.5,mcac_173,t34_1,cars,t34_2,boats,19,23,4,0.09523809523809523,t34_3,trucks,15,15
+B2+F,0.8,mcac_173,t34_1,cars,t34_2,boats,19,23,4,0.09523809523809523,t34_3,trucks,15,15
+B2+F,0.5,mcac_178,t35_1,cars,t35_2,boats,15,2,0,0.0,t35_3,trucks,13,13
+B2+F,0.8,mcac_178,t35_1,cars,t35_2,boats,15,2,0,0.0,t35_3,trucks,13,13
+B2+F,0.5,mcac_201,t36_1,pens,t36_2,pencils,13,15,26,0.9285714285714286,t36_3,pears,0,0
+B2+F,0.8,mcac_201,t36_1,pens,t36_2,pencils,13,15,26,0.9285714285714286,t36_3,pears,0,0
+B2+F,0.5,mcac_204,,,,,,,,,t37_3,cups,0,0
+B2+F,0.8,mcac_204,,,,,,,,,t37_3,cups,0,0
+B2+F,0.5,mcac_218,t38_1,amplifiers,t38_2,guitars,3,9,0,0.0,t38_3,pears,0,0
+B2+F,0.8,mcac_218,t38_1,amplifiers,t38_2,guitars,3,9,0,0.0,t38_3,pears,0,0
+B2+F,0.5,mcac_222,t39_1,people,t39_2,motorbikes,22,23,12,0.26666666666666666,t39_3,trucks,0,0
+B2+F,0.8,mcac_222,t39_1,people,t39_2,motorbikes,22,23,6,0.13333333333333333,t39_3,trucks,0,0
+B2+F,0.5,mcac_224,t40_1,people,t40_2,boats,13,2,2,0.13333333333333333,t40_3,trucks,0,0
+B2+F,0.8,mcac_224,t40_1,people,t40_2,boats,13,2,2,0.13333333333333333,t40_3,trucks,0,0

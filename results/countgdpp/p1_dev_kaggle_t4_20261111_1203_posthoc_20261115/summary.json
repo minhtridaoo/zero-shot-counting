@@ -1,0 +1,274 @@
+{
+  "status": "POST_HOC_ANALYSIS (dev, không chọn lại cấu hình)",
+  "T_share": {
+    "MAE": {
+      "B0": 6.283333333333333,
+      "T": 8.55,
+      "B2": 9.15
+    },
+    "T-B0": {
+      "diff": 2.2666666666666675,
+      "ci95": [
+        0.5166666666666666,
+        4.116666666666667
+      ]
+    },
+    "B2-T": {
+      "diff": 0.5999999999999996,
+      "ci95": [
+        0.11666666666666714,
+        1.2333333333333325
+      ]
+    },
+    "B2-B0": {
+      "diff": 2.866666666666667,
+      "ci95": [
+        1.0166666666666666,
+        4.866666666666666
+      ]
+    },
+    "share_recovered_by_T": {
+      "value": 0.2093023255813952,
+      "ci95": [
+        0.05464480874316921,
+        0.5999999999999996
+      ],
+      "valid_draws": 4999,
+      "note": "ratio of two noisy differences; unstable when B2-B0 is near 0"
+    }
+  },
+  "C6_rank": {
+    "n_rows": 90,
+    "winner": {
+      "run": "m5",
+      "config": "tau0.200+F",
+      "MAE": 3.533333333333333,
+      "source": "tau0.200",
+      "rank": 1
+    },
+    "C6": {
+      "run": "m5",
+      "config": "B0+F",
+      "MAE": 4.016666666666667,
+      "source": "B0",
+      "rank": 25
+    },
+    "C6_rank_unique": 23,
+    "n_unique": 81,
+    "C6_minus_winner": {
+      "diff": 0.4833333333333334,
+      "ci95": [
+        -0.6166666666666667,
+        1.6333333333333333
+      ]
+    },
+    "top12_unique": [
+      {
+        "rank": 1,
+        "run": "m5",
+        "config": "tau0.200+F",
+        "MAE": 3.533
+      },
+      {
+        "rank": 2,
+        "run": "m5",
+        "config": "tau0.180+F",
+        "MAE": 3.617
+      },
+      {
+        "rank": 3,
+        "run": "m10",
+        "config": "tau0.180+F",
+        "MAE": 3.617
+      },
+      {
+        "rank": 4,
+        "run": "m10",
+        "config": "tau0.200+F",
+        "MAE": 3.617
+      },
+      {
+        "rank": 5,
+        "run": "m10",
+        "config": "tau0.220+F",
+        "MAE": 3.633
+      },
+      {
+        "rank": 6,
+        "run": "m5",
+        "config": "tau0.220+F",
+        "MAE": 3.65
+      },
+      {
+        "rank": 7,
+        "run": "m5",
+        "config": "B2+F",
+        "MAE": 3.733
+      },
+      {
+        "rank": 8,
+        "run": "m5",
+        "config": "tau0.200_T+F",
+        "MAE": 3.783
+      },
+      {
+        "rank": 9,
+        "run": "m5",
+        "config": "tau0.220_T+F",
+        "MAE": 3.817
+      },
+      {
+        "rank": 10,
+        "run": "m10",
+        "config": "tau0.220_T+F",
+        "MAE": 3.817
+      },
+      {
+        "rank": 11,
+        "run": "m5",
+        "config": "tau0.280+F",
+        "MAE": 3.867
+      },
+      {
+        "rank": 12,
+        "run": "m5",
+        "config": "tau0.280_T+F",
+        "MAE": 3.883
+      }
+    ],
+    "family_ranking": [
+      {
+        "rank": 1,
+        "family": "P+F",
+        "run": "m5",
+        "config": "tau0.200+F",
+        "MAE": 3.533
+      },
+      {
+        "rank": 2,
+        "family": "B2+F",
+        "run": "m5",
+        "config": "B2+F",
+        "MAE": 3.733
+      },
+      {
+        "rank": 3,
+        "family": "P+T+F",
+        "run": "m5",
+        "config": "tau0.200_T+F",
+        "MAE": 3.783
+      },
+      {
+        "rank": 4,
+        "family": "P+S",
+        "run": "m5",
+        "config": "tau0.220+S",
+        "MAE": 3.933
+      },
+      {
+        "rank": 5,
+        "family": "T+F",
+        "run": "m5",
+        "config": "T+F",
+        "MAE": 3.95
+      },
+      {
+        "rank": 6,
+        "family": "P+T+S",
+        "run": "m5",
+        "config": "tau0.280_T+S",
+        "MAE": 3.983
+      },
+      {
+        "rank": 7,
+        "family": "B0+F",
+        "run": "m10",
+        "config": "B0+F",
+        "MAE": 4.017
+      },
+      {
+        "rank": 8,
+        "family": "B0+S",
+        "run": "m5",
+        "config": "B0+S",
+        "MAE": 4.1
+      },
+      {
+        "rank": 9,
+        "family": "B2+S",
+        "run": "m10",
+        "config": "B2+S",
+        "MAE": 4.467
+      },
+      {
+        "rank": 10,
+        "family": "T+S",
+        "run": "m10",
+        "config": "T+S",
+        "MAE": 4.467
+      },
+      {
+        "rank": 11,
+        "family": "B0",
+        "run": "m5",
+        "config": "B0",
+        "MAE": 6.283
+      },
+      {
+        "rank": 12,
+        "family": "P+T",
+        "run": "m10",
+        "config": "tau0.280_T",
+        "MAE": 6.6
+      },
+      {
+        "rank": 13,
+        "family": "P",
+        "run": "m10",
+        "config": "tau0.280",
+        "MAE": 6.633
+      },
+      {
+        "rank": 14,
+        "family": "T",
+        "run": "m5",
+        "config": "T",
+        "MAE": 8.55
+      },
+      {
+        "rank": 15,
+        "family": "B2",
+        "run": "m5",
+        "config": "B2",
+        "MAE": 9.15
+      }
+    ],
+    "dev_to_test": {
+      "B0": {
+        "dev": 6.283333333333333,
+        "test": 7.705882352941177,
+        "change": 1.4225490196078434
+      },
+      "B2": {
+        "dev": 9.15,
+        "test": 9.605042016806722,
+        "change": 0.45504201680672196
+      },
+      "P(tau 0.20, M 5)+F": {
+        "dev": 3.533333333333333,
+        "test": 5.823529411764706,
+        "change": 2.2901960784313724
+      },
+      "B2+F": {
+        "dev": 3.7333333333333334,
+        "test": 5.697478991596639,
+        "change": 1.9641456582633054
+      },
+      "C6 = B0+F": {
+        "dev": 4.016666666666667,
+        "test": 4.630252100840337,
+        "change": 0.61358543417367
+      }
+    }
+  }
+}

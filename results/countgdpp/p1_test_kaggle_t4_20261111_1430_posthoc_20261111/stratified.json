@@ -1,0 +1,187 @@
+{
+  "status": "POST_HOC_ANALYSIS",
+  "source": "_eval/result.json per_query_counts",
+  "result": {
+    "P(tau 0.20, M 5)+F": {
+      "distinct": {
+        "n_images": 13,
+        "n": 39,
+        "MAE": 5.102564102564102,
+        "MAE_present": 6.115384615384615,
+        "FPR_absent": 0.38461538461538464,
+        "vs_B0": {
+          "diff": 0.5128205128205128,
+          "ci95": [
+            -0.717948717948718,
+            1.8205128205128205
+          ]
+        }
+      },
+      "confusable": {
+        "n_images": 27,
+        "n": 80,
+        "MAE": 6.175,
+        "MAE_present": 7.188679245283019,
+        "FPR_absent": 0.14814814814814814,
+        "vs_B0": {
+          "diff": -3.05,
+          "ci95": [
+            -5.432098765432099,
+            -0.9629629629629629
+          ]
+        }
+      },
+      "present_errors": {
+        "n": 79,
+        "over_n": 20,
+        "over_sum": 243,
+        "under_n": 49,
+        "under_sum": 297,
+        "exact_n": 10,
+        "within_10pct": 16
+      }
+    },
+    "B0": {
+      "distinct": {
+        "n_images": 13,
+        "n": 39,
+        "MAE": 4.589743589743589,
+        "MAE_present": 3.5384615384615383,
+        "FPR_absent": 0.46153846153846156
+      },
+      "confusable": {
+        "n_images": 27,
+        "n": 80,
+        "MAE": 9.225,
+        "MAE_present": 10.660377358490566,
+        "FPR_absent": 0.14814814814814814
+      },
+      "present_errors": {
+        "n": 79,
+        "over_n": 50,
+        "over_sum": 580,
+        "under_n": 17,
+        "under_sum": 77,
+        "exact_n": 12,
+        "within_10pct": 20
+      }
+    },
+    "B2": {
+      "distinct": {
+        "n_images": 13,
+        "n": 39,
+        "MAE": 7.051282051282051,
+        "MAE_present": 5.846153846153846,
+        "FPR_absent": 0.46153846153846156,
+        "vs_B0": {
+          "diff": 2.4615384615384617,
+          "ci95": [
+            0.38461538461538464,
+            4.743589743589744
+          ]
+        }
+      },
+      "confusable": {
+        "n_images": 27,
+        "n": 80,
+        "MAE": 10.85,
+        "MAE_present": 12.39622641509434,
+        "FPR_absent": 0.14814814814814814,
+        "vs_B0": {
+          "diff": 1.625,
+          "ci95": [
+            0.3924050632911392,
+            2.8625
+          ]
+        }
+      },
+      "present_errors": {
+        "n": 79,
+        "over_n": 61,
+        "over_sum": 751,
+        "under_n": 13,
+        "under_sum": 58,
+        "exact_n": 5,
+        "within_10pct": 13
+      }
+    },
+    "C6 = B0+F": {
+      "distinct": {
+        "n_images": 13,
+        "n": 39,
+        "MAE": 5.717948717948718,
+        "MAE_present": 8.5,
+        "FPR_absent": 0.07692307692307693,
+        "vs_B0": {
+          "diff": 1.1282051282051282,
+          "ci95": [
+            -0.8717948717948718,
+            3.5128205128205128
+          ]
+        }
+      },
+      "confusable": {
+        "n_images": 27,
+        "n": 80,
+        "MAE": 4.1,
+        "MAE_present": 5.490566037735849,
+        "FPR_absent": 0.1111111111111111,
+        "vs_B0": {
+          "diff": -5.125,
+          "ci95": [
+            -10.160493827160494,
+            -1.6
+          ]
+        }
+      },
+      "present_errors": {
+        "n": 79,
+        "over_n": 17,
+        "over_sum": 140,
+        "under_n": 47,
+        "under_sum": 372,
+        "exact_n": 15,
+        "within_10pct": 23
+      }
+    },
+    "B2+F": {
+      "distinct": {
+        "n_images": 13,
+        "n": 39,
+        "MAE": 5.230769230769231,
+        "MAE_present": 6.5,
+        "FPR_absent": 0.46153846153846156,
+        "vs_B0": {
+          "diff": 0.6410256410256411,
+          "ci95": [
+            -0.8461538461538461,
+            2.0256410256410255
+          ]
+        }
+      },
+      "confusable": {
+        "n_images": 27,
+        "n": 80,
+        "MAE": 5.925,
+        "MAE_present": 6.962264150943396,
+        "FPR_absent": 0.14814814814814814,
+        "vs_B0": {
+          "diff": -3.3,
+          "ci95": [
+            -5.901234567901234,
+            -1.05
+          ]
+        }
+      },
+      "present_errors": {
+        "n": 79,
+        "over_n": 20,
+        "over_sum": 225,
+        "under_n": 49,
+        "under_sum": 313,
+        "exact_n": 10,
+        "within_10pct": 18
+      }
+    }
+  }
+}
