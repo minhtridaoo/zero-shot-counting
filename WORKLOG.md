@@ -24,7 +24,7 @@ Theo yêu cầu Trí, rà soát và chỉnh lại cho thống nhất. **Mục n�
 - Mới `HUONG_DAN_KIEM_TRIEU.md`.
 - Cập nhật W9 trong giao việc Triệu, roadmap H7, README, BAT_DAU.
 
-**Trạng thái:** commit cục bộ, ghim lại notebook; **chưa push**, nên notebook chưa sẵn sàng chạy.
+**Trạng thái:** notebook ghim `cfc1ddb8f0afd3bc2fa4aaabb503efeef1ef8e6f` (commit bản rà soát; đã kiểm 3 hash mẫu, freeze v2 và script chấm mới trong commit này). **Chưa push**, nên notebook chưa sẵn sàng chạy.
 
 ## 20/11/2026 (sau) — chia phần FSC-147 / FSCD-147, ghim commit notebook (assistant, chưa chạy model)
 
