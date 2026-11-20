@@ -8,7 +8,8 @@ CLIP 0.40: F giữ với mọi bounds trong freeze v2) và khung "xấu" (0.24 /
   B2       (10,2)(18,0) (45,5) (60,0)   -> B2  = 12, 18, 50, 60; B2+F = 10, 18, 45, 60
   tau0.200 (10,0)(20,5) (50,5) (58,0)   -> P   = 10, 25, 55, 58; P+F  = 10, 20, 50, 58
 Đáp án tính tay ở EXPECTED bên dưới. Kiểm thêm: Δ = MAE(A) − MAE(B) của các cặp khai báo, nhóm gt40 có Δ hằng
-nên CI phải đúng [10, 10], và hai trường hợp phải bị từ chối (manifest bị sửa, thư mục kết quả đã có).
+nên CI phải đúng [10, 10], và 5 trường hợp phải bị từ chối: thư mục kết quả đã có, crop=True, synthetic=True,
+query_id trùng trong một nguồn, manifest bị sửa (sai hash).
 
 Example (from CS331 root):  python experiments/fsc147_survey/selftest_score_fsc147.py
 """
@@ -59,7 +60,8 @@ def build(tmp):
     meta = dict(status="SAMPLE_FIXED_BEFORE_RUN", file_sha256={n: sha(sample / n) for n in ("inputs.jsonl", "manifest.csv")})
     (sample / "sample_meta.json").write_text(json.dumps(meta), encoding="utf-8")
     cfg = dict(status="complete", input_sha256=meta["file_sha256"]["inputs.jsonl"], tau_pseudo=[0.2], m=5,
-               outputs={"B2": "predictions_B2.jsonl", "tau0.200": "predictions_tau0.200.jsonl"}, crop=False, synthetic=False, device="fake")
+               outputs={"B2": "predictions_B2.jsonl", "tau0.200": "predictions_tau0.200.jsonl"}, crop=False, synthetic=False,
+               uses_ground_truth=False, device="fake")
     (run / "run_config.json").write_text(json.dumps(cfg), encoding="utf-8")
     sources = {}
     for name, spec in SPEC.items():
@@ -103,6 +105,19 @@ def main():
             check(res["primary_by_stratum"]["gt40"]["ci95"] == [10.0, 10.0], f"CI gt40 cần [10, 10]: {res['primary_by_stratum']['gt40']['ci95']}")
             check(sum(1 for _ in open(out / "per_query.csv", encoding="utf-8")) == 1 + len(GT), "per_query.csv sai số dòng")
             check(score(tmp, sample, run, out).returncode != 0, "phải từ chối khi thư mục kết quả đã có")
+        # run_config có crop=True -> phải từ chối
+        cfg_path = run / "run_config.json"; good_cfg = cfg_path.read_text(encoding="utf-8")
+        cfg_path.write_text(json.dumps(dict(json.loads(good_cfg), crop=True)), encoding="utf-8")
+        check(score(tmp, sample, run, tmp / "eval_crop").returncode != 0, "phải từ chối run có crop=True")
+        cfg_path.write_text(json.dumps(dict(json.loads(good_cfg), synthetic=True)), encoding="utf-8")
+        check(score(tmp, sample, run, tmp / "eval_synth").returncode != 0, "phải từ chối run có synthetic=True")
+        cfg_path.write_text(good_cfg, encoding="utf-8")
+        # bundle có query trùng trong một nguồn -> phải từ chối
+        bundle_path = tmp / "bundle.json"; good_bundle = bundle_path.read_text(encoding="utf-8")
+        b = json.loads(good_bundle); b["sources"]["B2"].append(dict(b["sources"]["B2"][0]))
+        bundle_path.write_text(json.dumps(b), encoding="utf-8")
+        check(score(tmp, sample, run, tmp / "eval_dup").returncode != 0, "phải từ chối nguồn có query_id trùng")
+        bundle_path.write_text(good_bundle, encoding="utf-8")
         with (sample / "manifest.csv").open("a", encoding="utf-8", newline="") as f:
             f.write("q5,img_q5,apple,7,le40,present\n")
         check(score(tmp, sample, run, tmp / "eval_tampered").returncode != 0, "phải từ chối manifest bị sửa (sai hash)")
@@ -110,7 +125,7 @@ def main():
         shutil.rmtree(tmp, ignore_errors=True)
     if failures:
         print("SELF-TEST FAIL:"); [print(" -", f) for f in failures]; raise SystemExit(1)
-    print("SELF-TEST PASS: số đếm, MAE/RMSE/Bias/thừa/thiếu/=0, Δ các cặp, nhóm, CI hằng, hai trường hợp từ chối")
+    print("SELF-TEST PASS: số đếm, MAE/RMSE/Bias/thừa/thiếu/=0, Δ các cặp, nhóm, CI hằng, 5 trường hợp từ chối")
 
 
 if __name__ == "__main__":

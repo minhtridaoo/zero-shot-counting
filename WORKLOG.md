@@ -1,5 +1,19 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 (tối) — Trí đồng ý thiết kế; chỉnh nhẹ script chấm (assistant; chưa chạy model, evaluator hay self-test)
+
+**Trí đồng ý** thiết kế và phân công (một khảo sát 300 ảnh; Trí chạy GPU, Triệu kiểm; không còn hai notebook riêng). Trí đã tự đọc file thật trong worktree; hash mẫu và freeze khớp khai báo. **Chưa sẵn sàng chạy hoàn toàn** vì self-test chưa thực thi.
+
+**Chỉnh theo góp ý:**
+- `score_fsc147_present_only.py` giờ **từ chối** thay vì chỉ ghi lại: `query_id`/`image_id` trùng (manifest hoặc trong một nguồn của bundle), và `run_config` có `crop`, `synthetic`, `uses_ground_truth` khác false.
+- `selftest_score_fsc147.py` thêm 3 ca từ chối (crop=True, synthetic=True, query trùng), tổng 5 ca. Chỉ kiểm cú pháp, **chưa chạy**.
+- Khai báo và notebook: push nhánh chứa commit đã ghim là đủ, không bắt buộc gộp `main`; sửa code sau self-test thì ghim lại commit mới.
+- Lỗi khung suy biến ghi rõ là **rủi ro đọc từ code, chưa xảy ra** trên 300 ảnh.
+
+**Ghi luồng** khảo sát và luồng hoàn thành đồ án vào `BAT_DAU_SESSION_MOI.md` và khai báo (mục 10b).
+
+**Tiếp:** Trí cho phép → assistant chạy `python experiments/fsc147_survey/selftest_score_fsc147.py` → đạt thì push nhánh; lỗi thì sửa, kiểm lại, ghim lại.
+
 ## 20/11/2026 (rà soát) — thống nhất kế hoạch khảo sát FSC-147 (assistant; chưa chạy model, evaluator hay self-test)
 
 Theo yêu cầu Trí, rà soát và chỉnh lại cho thống nhất. **Mục này thay phần phân công ở hai mục 20/11 bên dưới.**

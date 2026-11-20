@@ -52,7 +52,7 @@ Vị trí trong pipeline:
 
 > **Bổ sung 20/11 (đã rà soát; không đổi kết quả chính):** thêm H7, một khảo sát bổ sung trên 300 ảnh FSC-147 test. Trí chạy, Triệu kiểm. Không tách FSC-147 / FSCD-147, không chạy lại benchmark cũ. Đây là việc phụ: đóng 24/11, không kịp thì ghi hạn chế. Ưu tiên chính vẫn là H1 và H3, viết song song.
 
-| H7 | **Khảo sát bổ sung** FSC-147 test, 300 ảnh: so sánh chính B0 − B2 ([khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md)) | 20/11: đã chuẩn bị và rà soát; chưa push, chưa chạy |
+| H7 | **Khảo sát bổ sung** FSC-147 test, 300 ảnh: so sánh chính B0 − B2 ([khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md)) | 20/11: thiết kế đã duyệt; chờ self-test, push; chưa chạy |
 
 ## 3. Lịch mới (đường găng in đậm)
 

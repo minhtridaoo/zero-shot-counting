@@ -2,7 +2,7 @@
 
 **Soạn:** assistant (Claude) theo yêu cầu của Trí, 20/11/2026; rà soát và thống nhất lại cùng ngày. Ý tưởng gốc: đề xuất A trong bản so sánh nhóm khác của Triệu (19/11).
 **Phân công:** **Trí chạy** notebook Kaggle. **Triệu kiểm** thiết kế, danh sách mẫu và kết quả theo [HUONG_DAN_KIEM_TRIEU.md](HUONG_DAN_KIEM_TRIEU.md), đồng thời tiếp tục phần báo cáo được giao.
-**Trạng thái:** CHỜ TRÍ DUYỆT. **Chưa chạy model, evaluator hay self-test.** Mẫu 300 ảnh đã cố định từ trước khi chạy.
+**Trạng thái:** Trí đồng ý thiết kế và phân công (20/11). **Chưa chạy model, evaluator hay self-test.** Chưa sẵn sàng chạy: còn chờ self-test và push. Mẫu 300 ảnh đã cố định từ trước khi chạy.
 
 Chỉ có **một** khảo sát, trên 300 ảnh. Không tách thành hai lượt FSC-147 và FSCD-147, và không chạy lại benchmark FSCD-147 cũ (8,34 / 24,64). Báo cáo cuối viết song song ngay từ bây giờ. Khảo sát đóng ngày 24/11; không kịp thì ghi vào phần hạn chế.
 
@@ -89,8 +89,13 @@ Ký hiệu: Δ = MAE(A) − MAE(B). Δ > 0 nghĩa là A sai nhiều hơn B.
 - Notebook dừng nếu thiếu dù chỉ 1 trong 300 ảnh. Không thay bằng ảnh khác.
 - Runner dừng ở câu lỗi đầu tiên và ghi lỗi.
 - **Lỗi kỹ thuật** (crash môi trường, hết phiên Kaggle, tải thiếu): chạy lại **đúng notebook này, toàn bộ 300 ảnh**, với run-id mới, và ghi vào WORKLOG. Tối đa 2 lần chạy lại.
-- **Lỗi lặp lại ở cùng một ảnh** (ví dụ `select_pseudo` báo khung mẫu suy biến, hoặc không tìm thấy token của câu truy vấn): chạy lại không giúp được. **Không loại ảnh đó để chạy tiếp.** Ghi khảo sát là **chưa hoàn tất**, kèm id ảnh và thông báo lỗi, rồi đưa vào phần hạn chế.
-- Script chấm từ chối khi bundle không phủ đủ đúng 300 câu, khi hash của mẫu đổi, khi run khác tau/M/`--replay-b2` của freeze, hoặc khi thư mục kết quả đã có.
+- **Lỗi lặp lại ở cùng một ảnh:** chạy lại không giúp được. Hai khả năng thấy được khi đọc code: `select_pseudo` báo khung mẫu suy biến, hoặc không tìm thấy token của câu truy vấn. **Đây là rủi ro đọc từ code, chưa xảy ra trên 300 ảnh này.** **Không loại ảnh đó để chạy tiếp.** Ghi khảo sát là **chưa hoàn tất**, kèm id ảnh và thông báo lỗi, rồi đưa vào phần hạn chế.
+- Script chấm **từ chối** (không chấm) khi:
+  - bundle không phủ đủ đúng 300 câu, hoặc có `query_id` / `image_id` trùng;
+  - hash của mẫu đổi;
+  - run khác tau/M/`--replay-b2` của freeze;
+  - `run_config` có `crop`, `synthetic` hoặc `uses_ground_truth` khác false;
+  - thư mục kết quả đã có.
 - Không chạy lại vì kết quả xấu.
 
 ## 8. Giới hạn diễn giải (ghi nguyên vào báo cáo)
@@ -119,12 +124,25 @@ Ký hiệu: Δ = MAE(A) − MAE(B). Δ > 0 nghĩa là A sai nhiều hơn B.
 
 | Ngày | Việc |
 |---|---|
-| 20–21/11 | Kiểm dữ liệu (xong), chốt thiết kế (bản này), Trí duyệt. Nếu Trí cho phép: chạy self-test dữ liệu giả |
-| 21/11 | Commit + push lên GitHub, ghim notebook vào commit đã push |
+| 20–21/11 | Kiểm dữ liệu (xong), Trí duyệt thiết kế (xong 20/11). Sau khi Trí cho phép: chạy self-test dữ liệu giả; lỗi thì sửa script, kiểm lại, ghim commit mới |
+| 21/11 | Push nhánh chứa commit đã ghim lên GitHub, kiểm notebook lấy được đúng commit. Triệu kiểm phần A |
 | 22–23/11 | Trí chạy Kaggle **một lần**. Assistant và Triệu kiểm |
 | **24/11** | **Đóng.** Chưa xong hoặc chưa hoàn tất thì ghi vào hạn chế, không để ảnh hưởng báo cáo |
 
 Thời gian chạy trên FSC-147 **chưa đo**. Mốc tham khảo duy nhất là lần test MUCCA trên T4 (ảnh khác): lượt 1 khoảng 0,91 s/câu, mỗi lượt 2 khoảng 0,88 s/câu. Notebook ghi thời gian thật vào `timing.json`. Nếu thiếu dữ liệu, GPU hoặc checkpoint thì báo sớm để thu gọn hoặc bỏ.
+
+## 10b. Luồng khảo sát (Trí chốt 20/11)
+
+1. Trí duyệt thiết kế.
+2. Assistant chạy self-test dữ liệu giả **sau khi Trí cho phép**.
+3. Nếu lỗi: sửa script → kiểm lại → ghim commit cuối.
+4. Push nhánh chứa commit đã ghim lên GitHub. Kiểm notebook lấy được đúng commit đó.
+5. Triệu kiểm phần A: thiết kế + danh sách 300 ảnh.
+6. Trí gắn dữ liệu/checkpoint và chạy notebook Kaggle. Notebook chạy model → áp bộ lọc đã khóa → chấm 5 cách → xuất ZIP.
+7. Trí tải ZIP, gửi assistant và Triệu.
+8. Assistant tổng hợp. Triệu kiểm đủ ảnh, đúng cấu hình, tính lại điểm (phần B–C).
+9. Đưa bảng kết quả, nhận xét và hạn chế vào báo cáo.
+10. Đóng khảo sát ngày 24/11.
 
 ## 11. Lệnh chạy (từ thư mục gốc CS331; trên Kaggle là Ô 7–8 của notebook)
 
@@ -147,11 +165,14 @@ python experiments/fsc147_survey/score_fsc147_present_only.py --run results/coun
 
 `RUN = fsc147_survey_kaggle_t4_<stamp>`. Notebook duy nhất: [kaggle_fsc147_survey.ipynb](kaggle_fsc147_survey.ipynb), dành cho Trí.
 
-**Ghim commit:** notebook checkout đúng commit ghi ở `REPO_REF` (Ô 1) và dừng nếu HEAD khác. **Chưa sẵn sàng chạy** cho tới khi commit đó đã có trên GitHub (xem [BAT_DAU_SESSION_MOI.md](../../BAT_DAU_SESSION_MOI.md)). Khi gộp vào `main`, dùng merge hoặc fast-forward, không squash hay rebase, để SHA không đổi.
+**Ghim commit:** notebook checkout đúng commit ghi ở `REPO_REF` (Ô 1) và dừng nếu HEAD khác.
+- **Push nhánh** chứa commit đó lên GitHub là đủ để notebook lấy code. **Không bắt buộc gộp vào `main` trước.** Nếu sau này gộp, dùng merge hoặc fast-forward, không squash hay rebase, để SHA không đổi.
+- **Nếu sửa code sau self-test, phải ghim lại commit mới** và push commit đó.
+- **Chưa sẵn sàng chạy** cho tới khi self-test đạt và commit đã ghim có trên GitHub.
 
 ## 12. Đầu ra
 
-- **Trước khi chạy (đã có):** bản này, `sample_300/`, `make_fsc147_sample.py`, `score_fsc147_present_only.py`, `selftest_score_fsc147.py` (chưa chạy), notebook, `HUONG_DAN_KIEM_TRIEU.md`.
+- **Trước khi chạy (đã có):** bản này, `sample_300/`, `make_fsc147_sample.py`, `score_fsc147_present_only.py`, `selftest_score_fsc147.py` (5 ca từ chối; chưa chạy), notebook, `HUONG_DAN_KIEM_TRIEU.md`.
 - **Sau khi chạy:** `results/countgdpp/RUN*` chỉ gồm file nhỏ json/jsonl/csv/txt (D10); raw `.npz` để trên Kaggle. Gồm:
   - `RUN_eval/result.json` và `per_query.csv` (số đếm từng câu của 5 cách);
   - `predictions_*.jsonl`;

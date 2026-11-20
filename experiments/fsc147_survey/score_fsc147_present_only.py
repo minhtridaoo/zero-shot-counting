@@ -13,6 +13,9 @@ So sánh khai báo trước (Δ = MAE(A) − MAE(B); bootstrap theo ảnh, 5000 
   PHỤ    P+F − B0
   BÁO KÈM (mô tả, không quy cho lượt 2): C6 = B0+F, B2+F, và C6 − B2+F (hai bộ lọc có ngưỡng khác nhau trong freeze).
 Chỉ số: MAE, RMSE, Bias, tổng đếm thừa / đếm thiếu, số câu trả 0; toàn mẫu và theo nhóm GT <= 40 / > 40.
+Từ chối (không chấm) khi: mẫu đổi hash, freeze đổi hash, run chưa xong / khác inputs / khác tau-M-replay_b2,
+run_config có crop, synthetic hoặc uses_ground_truth khác false, query_id hoặc image_id trùng, nguồn không phủ đủ
+đúng các câu của mẫu, hoặc thư mục kết quả đã có.
 
 Example (from CS331 root):
   python experiments/fsc147_survey/score_fsc147_present_only.py --run results/countgdpp/RUN \
@@ -97,15 +100,22 @@ def main():
     if (run_cfg.get("status") != "complete" or run_cfg.get("input_sha256") != meta["file_sha256"]["inputs.jsonl"]
             or run_cfg.get("tau_pseudo") != args_fz["tau_pseudo"] or run_cfg.get("m") != args_fz["m"] or "B2" not in run_cfg.get("outputs", {})):
         raise ValueError("Run không hoàn tất, khác inputs của mẫu, hoặc khác tau/M/--replay-b2 của freeze")
+    for key in ("crop", "synthetic", "uses_ground_truth"):
+        if run_cfg.get(key) is not False:
+            raise ValueError(f"run_config.{key} phải là false (khai báo trước), đang là {run_cfg.get(key)!r}")
 
     bundle = json.loads((ROOT / a.bundle).read_text(encoding="utf-8"))
     if Path(bundle["run_id"]).as_posix().rstrip("/") != Path(a.run).as_posix().rstrip("/"):
         raise ValueError(f"Bundle thuộc run khác: {bundle['run_id']}")
     man = list(csv.DictReader((sample / "manifest.csv").open(encoding="utf-8", newline="")))
     ids = {r["query_id"] for r in man}
+    if len(ids) != len(man) or len({r["image_id"] for r in man}) != len(man):
+        raise ValueError("Manifest có query_id hoặc image_id trùng")
     src = {}
     for name, rows in bundle["sources"].items():
         byq = {r["query_id"]: r for r in rows}
+        if len(byq) != len(rows):
+            raise ValueError(f"Nguồn {name} có query_id trùng")
         if set(byq) != ids:
             raise ValueError(f"Nguồn {name} không phủ đúng {len(ids)} câu của mẫu")
         for r in man:
