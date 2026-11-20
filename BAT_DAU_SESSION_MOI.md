@@ -11,7 +11,7 @@
 - Không tách FSC-147 / FSCD-147 (cùng ảnh, cùng split), không chạy lại benchmark 8,34.
 - **Câu hỏi chính:** giữ hay bỏ lượt 2 tốt hơn trên mẫu này. So sánh chính B0 − B2; phụ P+F − B2, P+F − B0; C6 − B2+F chỉ mô tả.
 - Tài liệu: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), có mục "thay đổi so với đề xuất của Triệu".
-- Vị trí: các file ở worktree `D:\MINHTRIHOCCODE\HOCKI5\CS331\.claude\worktrees\kind-chaplygin-249b83\experiments\fsc147_survey\`, nhánh `claude/kind-chaplygin-249b83`. Notebook ghim commit `__PIN__`. Nhánh **đã push** ([GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)), chưa gộp `main`, nên checkout chính chưa thấy nếu chưa `git fetch` và checkout nhánh. Còn chờ trước khi chạy: Trí duyệt chính thức, Triệu kiểm phần A.
+- Vị trí: các file ở worktree `D:\MINHTRIHOCCODE\HOCKI5\CS331\.claude\worktrees\kind-chaplygin-249b83\experiments\fsc147_survey\`, nhánh `claude/kind-chaplygin-249b83`. Notebook ghim commit `4cd89092c5160dc0dc79455adba42ff096a44664`. Nhánh **đã push** ([GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)), chưa gộp `main`, nên checkout chính chưa thấy nếu chưa `git fetch` và checkout nhánh. Còn chờ trước khi chạy: Trí duyệt chính thức, Triệu kiểm phần A.
 
 **Luồng khảo sát (Trí chốt 20/11):**
 1. Trí duyệt thiết kế.

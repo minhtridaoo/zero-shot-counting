@@ -16,7 +16,7 @@ Trí cho phép chạy self-test dữ liệu giả, hoàn thiện bàn giao và p
 - **Không có lỗi phải sửa trong script chấm**; chỉ sửa file self-test để kiểm chặt hơn. Không sửa file khóa, freeze hay mẫu; không đổi đáp án.
 
 **Ghim và push:**
-- Notebook ghim `__PIN__` (commit chứa script chấm đã kiểm và self-test bản cuối).
+- Notebook ghim `4cd89092c5160dc0dc79455adba42ff096a44664` (commit chứa script chấm đã kiểm và self-test bản cuối).
 - Push nhánh `claude/kind-chaplygin-249b83`, không force, chưa gộp `main`. Đã kiểm trên remote. [Nhánh trên GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83).
 
 **Trạng thái:**

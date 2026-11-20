@@ -9,7 +9,7 @@
 - **Khảo sát thật chưa chạy**, chưa có kết quả FSC-147 mới. **Không cần GPU** cho phần của Triệu.
 - **Triệu chưa kiểm mục nào.** A1–A4: chờ Triệu, trước khi Trí chạy. B1–B10, C1–C5: chờ kết quả. Assistant không tự ghi "Đạt" thay Triệu.
 
-**Xem trên GitHub:** [nhánh `claude/kind-chaplygin-249b83`](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83). Notebook ghim commit `__PIN__`; các tệp của phần A nằm trong `experiments/fsc147_survey/` ở commit đó.
+**Xem trên GitHub:** [nhánh `claude/kind-chaplygin-249b83`](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83). Notebook ghim commit `4cd89092c5160dc0dc79455adba42ff096a44664`; các tệp của phần A nằm trong `experiments/fsc147_survey/` ở commit đó.
 
 Mỗi mục có 3 trạng thái: **Đạt**, **Không đạt** (ghi lý do), **Chưa kiểm được** (ghi vì sao). Không đánh "Đạt" khi chưa tự xem.
 

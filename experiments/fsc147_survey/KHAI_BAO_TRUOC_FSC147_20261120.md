@@ -9,7 +9,7 @@
 **Trạng thái (20/11):**
 - Trao đổi 20/11 ghi nhận Trí thấy ổn về thiết kế và phân công. Duyệt chính thức trước khi chạy vẫn là việc của Trí.
 - Self-test dữ liệu giả **PASS** (20/11). Đã kiểm: số đếm sau lọc F; MAE, RMSE, Bias, đếm thừa/thiếu, số câu trả 0 của 5 cách; Δ của 4 cặp khai báo; Δ theo nhóm ≤ 40 / > 40; CI bằng [10, 10] khi Δ hằng; 5 ca từ chối đúng lý do (thư mục kết quả đã có, crop=True, synthetic=True, query trùng, manifest sai hash). Cố ý đưa đáp án sai thì self-test báo FAIL đúng chỗ.
-- Notebook ghim commit `__PIN__`; nhánh đã push lên GitHub ([nhánh](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)).
+- Notebook ghim commit `4cd89092c5160dc0dc79455adba42ff096a44664`; nhánh đã push lên GitHub ([nhánh](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)).
 - **Khảo sát thật chưa chạy, chưa có kết quả FSC-147 mới.** Triệu chưa kiểm mục nào. Mẫu 300 ảnh đã cố định từ trước khi chạy.
 
 Chỉ có **một** khảo sát, trên 300 ảnh. Không tách thành hai lượt FSC-147 và FSCD-147, và không chạy lại benchmark FSCD-147 cũ (8,34 / 24,64). Báo cáo cuối viết song song ngay từ bây giờ. Khảo sát đóng ngày 24/11; không kịp thì ghi vào phần hạn chế.
