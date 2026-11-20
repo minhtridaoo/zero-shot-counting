@@ -119,7 +119,7 @@ python experiments/fsc147_survey/score_fsc147_present_only.py --run results/coun
 
 `RUN = fsc147_survey_kaggle_t4_<stamp>`. Notebook: [kaggle_fsc147_survey.ipynb](kaggle_fsc147_survey.ipynb). Môi trường (Ô 3) và Kiểm A (Ô 5) chép nguyên từ notebook test W8.
 
-**Ghim commit:** notebook checkout đúng một commit cố định (`REPO_REF` ở Ô 1) và dừng nếu HEAD khác commit đó. Commit này phải có trên GitHub trước khi chạy. Khi đưa vào `main`, dùng merge hoặc fast-forward, không squash hay rebase, để SHA không đổi.
+**Ghim commit:** `e73ad371b397e3361678d78a211bc492955f7ce1` (20/11, chứa mẫu 300 ảnh và hai script). Notebook checkout đúng commit này (`REPO_REF` ở Ô 1) và dừng nếu HEAD khác commit đó. Commit này phải có trên GitHub trước khi chạy. Khi đưa vào `main`, dùng merge hoặc fast-forward, không squash hay rebase, để SHA không đổi.
 
 ## 11. Đầu ra
 

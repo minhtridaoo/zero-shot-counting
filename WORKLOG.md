@@ -1,5 +1,21 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 (sau) — chia phần FSC-147 / FSCD-147, ghim commit notebook (assistant, chưa chạy model)
+
+**Trí chốt phân công:** FSC-147 là phần Trí chạy; FSCD-147 là phần của Triệu. Sửa lại mục 20/11 bên dưới: chỗ ghi "Triệu chạy notebook" nay là **Trí chạy**.
+
+**Ranh giới:** FSC-147 test và FSCD-147 test là cùng 1.190 ảnh. Triệu không chạy lại cặp B0/B2/P+F trên các ảnh này. Phần FSCD-147 (W9 trong `HANDOFF/GIAO_VIEC_TRIEU_20261106.md`) chờ Triệu xác nhận là tổng hợp kết quả đã có hay chạy mới; chạy mới cần Trí duyệt.
+
+**Ghim commit:** notebook `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` checkout `e73ad371b397e3361678d78a211bc492955f7ce1` và dừng nếu HEAD khác commit này.
+- Lỗi phát hiện trước khi ghim: `sample_300/inputs.jsonl` ghi trên Windows có CRLF, Git đổi sang LF khi commit. Như vậy bản trên Kaggle sẽ lệch hash và notebook dừng ở Ô 2.
+- Đã sửa: thêm `/experiments/fsc147_survey/sample_300/** -text` vào `.gitattributes`. Kiểm lại: hash blob trong commit đã ghim khớp `sample_meta.json` (`c1cfb321…`, `30ea7987…`).
+
+**Cập nhật:** pipeline [11a]/[11b] và bảng việc trong `BAT_DAU_SESSION_MOI.md`; H7 và lịch 20–24/11 trong roadmap; W9 trong giao việc Triệu; README.
+
+**Trạng thái Git:** 2 commit cục bộ trên nhánh `claude/kind-chaplygin-249b83` (worktree `.claude/worktrees/kind-chaplygin-249b83`), **chưa push**. Checkout chính `main` vẫn ở 406ba54 nên chưa thấy `experiments/fsc147_survey/`.
+
+**Tiếp:** Trí duyệt → push nhánh → gộp vào `main` (merge/fast-forward, không squash để giữ SHA) → Trí chạy notebook 22–23/11 → đóng 24/11.
+
 ## 20/11/2026 — chuẩn bị khảo sát bổ sung FSC-147 (assistant, CPU, chưa chạy model)
 
 Trí giao: thiết kế khảo sát "bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không", 300 ảnh, chuẩn bị đủ trước khi xin chạy.

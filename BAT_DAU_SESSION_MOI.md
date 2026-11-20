@@ -9,7 +9,7 @@
 **Cập nhật 20/11 — thêm hai phần kiểm tổng quát (chưa chạy model):**
 - **FSC-147 — Trí chạy.** Câu hỏi: bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không. Mẫu cố định 300 ảnh (seed 331).
   - Cặp chính B0 − B2 (chỉ khác lượt 2). Cặp phụ P+F − B2, P+F − B0. C6/B2+F chỉ báo kèm.
-  - Đã có: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), `sample_300/`, 2 script mới, notebook [kaggle_fsc147_survey.ipynb](experiments/fsc147_survey/kaggle_fsc147_survey.ipynb) đã ghim commit.
+  - Đã có: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), `sample_300/`, 2 script mới, notebook [kaggle_fsc147_survey.ipynb](experiments/fsc147_survey/kaggle_fsc147_survey.ipynb) ghim commit `e73ad371b397`.
 - **FSCD-147 — Triệu.** Chờ Triệu xác nhận phần của mình là tổng hợp kết quả đã có (benchmark 8,34 + kiểm Bảng 1 bài báo) hay chạy mới (notebook `experiments/benchmark_fscd147/COUNTGDPP_FSCD147_KAGGLE.ipynb`, cần Trí duyệt).
   - FSC-147 test và FSCD-147 test là **cùng 1.190 ảnh**, nên Triệu không chạy lại cặp B0/B2/P+F.
 - Các file đang ở worktree `.claude/worktrees/kind-chaplygin-249b83`, nhánh `claude/kind-chaplygin-249b83`, **chưa push**. Checkout chính chưa thấy cho tới khi push và gộp vào `main`.
