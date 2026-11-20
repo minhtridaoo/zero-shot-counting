@@ -1,8 +1,16 @@
 # Khai báo trước — khảo sát bổ sung FSC-147, 300 ảnh
 
 **Soạn:** assistant (Claude) theo yêu cầu của Trí, 20/11/2026; rà soát và thống nhất lại cùng ngày. Ý tưởng gốc: đề xuất A trong bản so sánh nhóm khác của Triệu (19/11).
-**Phân công:** **Trí chạy** notebook Kaggle. **Triệu kiểm** thiết kế, danh sách mẫu và kết quả theo [HUONG_DAN_KIEM_TRIEU.md](HUONG_DAN_KIEM_TRIEU.md), đồng thời tiếp tục phần báo cáo được giao.
-**Trạng thái:** Trí đồng ý thiết kế và phân công (20/11). **Chưa chạy model, evaluator hay self-test.** Chưa sẵn sàng chạy: còn chờ self-test và push. Mẫu 300 ảnh đã cố định từ trước khi chạy.
+**Phân công:**
+- **Trí:** duyệt thiết kế chính thức trước khi chạy; chạy notebook Kaggle khi các bước chuẩn bị đạt; tải ZIP, gửi assistant và Triệu.
+- **Triệu:** kiểm phần A (thiết kế + mẫu) **trước khi Trí chạy**; sau khi có kết quả thì kiểm phần B/C theo [HUONG_DAN_KIEM_TRIEU.md](HUONG_DAN_KIEM_TRIEU.md); tiếp tục phần báo cáo được giao.
+- **Assistant (Claude):** kiểm script, chuẩn bị notebook, tổng hợp kết quả, cập nhật tài liệu. Không đánh dấu duyệt thay Trí hay Triệu.
+
+**Trạng thái (20/11):**
+- Trao đổi 20/11 ghi nhận Trí thấy ổn về thiết kế và phân công. Duyệt chính thức trước khi chạy vẫn là việc của Trí.
+- Self-test dữ liệu giả **PASS** (20/11). Đã kiểm: số đếm sau lọc F; MAE, RMSE, Bias, đếm thừa/thiếu, số câu trả 0 của 5 cách; Δ của 4 cặp khai báo; Δ theo nhóm ≤ 40 / > 40; CI bằng [10, 10] khi Δ hằng; 5 ca từ chối đúng lý do (thư mục kết quả đã có, crop=True, synthetic=True, query trùng, manifest sai hash). Cố ý đưa đáp án sai thì self-test báo FAIL đúng chỗ.
+- Notebook ghim commit `__PIN__`; nhánh đã push lên GitHub ([nhánh](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)).
+- **Khảo sát thật chưa chạy, chưa có kết quả FSC-147 mới.** Triệu chưa kiểm mục nào. Mẫu 300 ảnh đã cố định từ trước khi chạy.
 
 Chỉ có **một** khảo sát, trên 300 ảnh. Không tách thành hai lượt FSC-147 và FSCD-147, và không chạy lại benchmark FSCD-147 cũ (8,34 / 24,64). Báo cáo cuối viết song song ngay từ bây giờ. Khảo sát đóng ngày 24/11; không kịp thì ghi vào phần hạn chế.
 
@@ -124,8 +132,8 @@ Ký hiệu: Δ = MAE(A) − MAE(B). Δ > 0 nghĩa là A sai nhiều hơn B.
 
 | Ngày | Việc |
 |---|---|
-| 20–21/11 | Kiểm dữ liệu (xong), Trí duyệt thiết kế (xong 20/11). Sau khi Trí cho phép: chạy self-test dữ liệu giả; lỗi thì sửa script, kiểm lại, ghim commit mới |
-| 21/11 | Push nhánh chứa commit đã ghim lên GitHub, kiểm notebook lấy được đúng commit. Triệu kiểm phần A |
+| 20/11 | Kiểm dữ liệu (xong). Self-test dữ liệu giả **PASS**. Ghim notebook, push nhánh (xong) |
+| 21/11 | Trí duyệt thiết kế chính thức. Triệu kiểm phần A |
 | 22–23/11 | Trí chạy Kaggle **một lần**. Assistant và Triệu kiểm |
 | **24/11** | **Đóng.** Chưa xong hoặc chưa hoàn tất thì ghi vào hạn chế, không để ảnh hưởng báo cáo |
 
@@ -134,9 +142,9 @@ Thời gian chạy trên FSC-147 **chưa đo**. Mốc tham khảo duy nhất là
 ## 10b. Luồng khảo sát (Trí chốt 20/11)
 
 1. Trí duyệt thiết kế.
-2. Assistant chạy self-test dữ liệu giả **sau khi Trí cho phép**.
-3. Nếu lỗi: sửa script → kiểm lại → ghim commit cuối.
-4. Push nhánh chứa commit đã ghim lên GitHub. Kiểm notebook lấy được đúng commit đó.
+2. ✅ Assistant chạy self-test dữ liệu giả (Trí cho phép 20/11): **PASS**.
+3. Không có lỗi phải sửa trong script chấm. Self-test được làm chặt hơn: mỗi ca từ chối phải báo đúng lý do.
+4. ✅ Push nhánh chứa commit đã ghim lên GitHub; đã kiểm commit có trên remote.
 5. Triệu kiểm phần A: thiết kế + danh sách 300 ảnh.
 6. Trí gắn dữ liệu/checkpoint và chạy notebook Kaggle. Notebook chạy model → áp bộ lọc đã khóa → chấm 5 cách → xuất ZIP.
 7. Trí tải ZIP, gửi assistant và Triệu.
@@ -168,11 +176,11 @@ python experiments/fsc147_survey/score_fsc147_present_only.py --run results/coun
 **Ghim commit:** notebook checkout đúng commit ghi ở `REPO_REF` (Ô 1) và dừng nếu HEAD khác.
 - **Push nhánh** chứa commit đó lên GitHub là đủ để notebook lấy code. **Không bắt buộc gộp vào `main` trước.** Nếu sau này gộp, dùng merge hoặc fast-forward, không squash hay rebase, để SHA không đổi.
 - **Nếu sửa code sau self-test, phải ghim lại commit mới** và push commit đó.
-- **Chưa sẵn sàng chạy** cho tới khi self-test đạt và commit đã ghim có trên GitHub.
+- Self-test đã đạt và commit đã ghim đã có trên GitHub. **Còn chờ trước khi chạy:** Trí duyệt chính thức và Triệu kiểm phần A.
 
 ## 12. Đầu ra
 
-- **Trước khi chạy (đã có):** bản này, `sample_300/`, `make_fsc147_sample.py`, `score_fsc147_present_only.py`, `selftest_score_fsc147.py` (5 ca từ chối; chưa chạy), notebook, `HUONG_DAN_KIEM_TRIEU.md`.
+- **Trước khi chạy (đã có):** bản này, `sample_300/`, `make_fsc147_sample.py`, `score_fsc147_present_only.py`, `selftest_score_fsc147.py` (**PASS** 20/11), notebook, `HUONG_DAN_KIEM_TRIEU.md`.
 - **Sau khi chạy:** `results/countgdpp/RUN*` chỉ gồm file nhỏ json/jsonl/csv/txt (D10); raw `.npz` để trên Kaggle. Gồm:
   - `RUN_eval/result.json` và `per_query.csv` (số đếm từng câu của 5 cách);
   - `predictions_*.jsonl`;

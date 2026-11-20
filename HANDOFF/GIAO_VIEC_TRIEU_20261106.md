@@ -55,6 +55,8 @@
 2. **Sau khi có kết quả (chậm nhất 24/11):** làm phần B (đủ 300 ảnh, đúng cấu hình) và phần C (tự tính lại MAE, Δ chính, cách đọc CI).
 3. Báo Trí bảng Đạt / Không đạt / Chưa kiểm được.
 
+**Trạng thái 20/11:** self-test dữ liệu giả PASS; nhánh đã push ([GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)); khảo sát thật chưa chạy. Triệu chưa kiểm mục nào; phần A làm trước, không cần GPU.
+
 W7 (Related Work) và phần báo cáo được giao vẫn tiếp tục song song.
 
 ## 2. Lệnh rút dữ liệu (W1)

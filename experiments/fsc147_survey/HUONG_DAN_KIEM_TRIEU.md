@@ -2,6 +2,15 @@
 
 *Assistant soạn theo yêu cầu của Trí, 20/11/2026.* Trí chạy notebook; Triệu là người kiểm độc lập. Không cần GPU. Ghi kết quả kiểm vào WORKLOG, mục của Triệu.
 
+## Trạng thái hiện tại (20/11)
+
+- **Đã chuẩn bị:** bản khai báo, mẫu 300 ảnh, script tạo mẫu, script chấm, self-test, notebook cho Trí.
+- **Self-test dữ liệu giả: PASS** (assistant chạy 20/11, Trí cho phép).
+- **Khảo sát thật chưa chạy**, chưa có kết quả FSC-147 mới. **Không cần GPU** cho phần của Triệu.
+- **Triệu chưa kiểm mục nào.** A1–A4: chờ Triệu, trước khi Trí chạy. B1–B10, C1–C5: chờ kết quả. Assistant không tự ghi "Đạt" thay Triệu.
+
+**Xem trên GitHub:** [nhánh `claude/kind-chaplygin-249b83`](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83). Notebook ghim commit `__PIN__`; các tệp của phần A nằm trong `experiments/fsc147_survey/` ở commit đó.
+
 Mỗi mục có 3 trạng thái: **Đạt**, **Không đạt** (ghi lý do), **Chưa kiểm được** (ghi vì sao). Không đánh "Đạt" khi chưa tự xem.
 
 ## A. Trước khi Trí chạy (21/11): kiểm thiết kế và mẫu

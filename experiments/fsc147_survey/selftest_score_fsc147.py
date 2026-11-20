@@ -84,6 +84,10 @@ def main():
     tmp = Path(tempfile.mkdtemp(prefix="fsc147_selftest_"))
     failures = []
     check = lambda ok, msg: None if ok else failures.append(msg)
+    def rejects(p, expected, label):
+        """Ca từ chối chỉ đạt khi script dừng VÀ báo đúng lý do mong đợi (không tính lỗi vì nguyên nhân khác)."""
+        text = (p.stdout or "") + (p.stderr or "")
+        check(p.returncode != 0 and expected in text, f"{label}: cần dừng với '{expected}', nhận mã {p.returncode}: {text[-400:]}")
     try:
         sample, run = build(tmp)
         out = tmp / "eval"
@@ -104,28 +108,28 @@ def main():
                 check(math.isclose(c["diff"], want, abs_tol=1e-9), f"nhóm {s}: Δ = {c['diff']}, cần {want}")
             check(res["primary_by_stratum"]["gt40"]["ci95"] == [10.0, 10.0], f"CI gt40 cần [10, 10]: {res['primary_by_stratum']['gt40']['ci95']}")
             check(sum(1 for _ in open(out / "per_query.csv", encoding="utf-8")) == 1 + len(GT), "per_query.csv sai số dòng")
-            check(score(tmp, sample, run, out).returncode != 0, "phải từ chối khi thư mục kết quả đã có")
+            rejects(score(tmp, sample, run, out), "Đã có kết quả", "thư mục kết quả đã có")
         # run_config có crop=True -> phải từ chối
         cfg_path = run / "run_config.json"; good_cfg = cfg_path.read_text(encoding="utf-8")
         cfg_path.write_text(json.dumps(dict(json.loads(good_cfg), crop=True)), encoding="utf-8")
-        check(score(tmp, sample, run, tmp / "eval_crop").returncode != 0, "phải từ chối run có crop=True")
+        rejects(score(tmp, sample, run, tmp / "eval_crop"), "run_config.crop phải là false", "crop=True")
         cfg_path.write_text(json.dumps(dict(json.loads(good_cfg), synthetic=True)), encoding="utf-8")
-        check(score(tmp, sample, run, tmp / "eval_synth").returncode != 0, "phải từ chối run có synthetic=True")
+        rejects(score(tmp, sample, run, tmp / "eval_synth"), "run_config.synthetic phải là false", "synthetic=True")
         cfg_path.write_text(good_cfg, encoding="utf-8")
         # bundle có query trùng trong một nguồn -> phải từ chối
         bundle_path = tmp / "bundle.json"; good_bundle = bundle_path.read_text(encoding="utf-8")
         b = json.loads(good_bundle); b["sources"]["B2"].append(dict(b["sources"]["B2"][0]))
         bundle_path.write_text(json.dumps(b), encoding="utf-8")
-        check(score(tmp, sample, run, tmp / "eval_dup").returncode != 0, "phải từ chối nguồn có query_id trùng")
+        rejects(score(tmp, sample, run, tmp / "eval_dup"), "Nguồn B2 có query_id trùng", "query trùng")
         bundle_path.write_text(good_bundle, encoding="utf-8")
         with (sample / "manifest.csv").open("a", encoding="utf-8", newline="") as f:
             f.write("q5,img_q5,apple,7,le40,present\n")
-        check(score(tmp, sample, run, tmp / "eval_tampered").returncode != 0, "phải từ chối manifest bị sửa (sai hash)")
+        rejects(score(tmp, sample, run, tmp / "eval_tampered"), "manifest.csv khác hash lúc tạo mẫu", "manifest bị sửa")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
     if failures:
         print("SELF-TEST FAIL:"); [print(" -", f) for f in failures]; raise SystemExit(1)
-    print("SELF-TEST PASS: số đếm, MAE/RMSE/Bias/thừa/thiếu/=0, Δ các cặp, nhóm, CI hằng, 5 trường hợp từ chối")
+    print("SELF-TEST PASS: số đếm, MAE/RMSE/Bias/thừa/thiếu/=0, Δ các cặp, nhóm, CI hằng, 5 trường hợp từ chối đúng lý do")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,31 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 (khuya) — self-test PASS, ghim notebook, push nhánh (assistant; chưa chạy model hay khảo sát thật)
+
+Trí cho phép chạy self-test dữ liệu giả, hoàn thiện bàn giao và push nhánh để Triệu xem tiến độ.
+
+**Self-test** `python experiments/fsc147_survey/selftest_score_fsc147.py`:
+- Lần 1: **PASS**.
+- Làm chặt self-test: mỗi ca từ chối phải báo **đúng lý do**, không chỉ "có báo lỗi". Chạy lại: **PASS**.
+- Kiểm độ nhạy: cố ý đưa 2 đáp án sai (MAE của B2, Δ B0 − B2) thì self-test báo **FAIL** đúng 2 chỗ.
+- Các ca đã kiểm:
+  - số đếm sau lọc F (bounds/ngưỡng freeze v2);
+  - MAE, RMSE, Bias, thừa/thiếu, số câu = 0 của B0, B2, P+F, C6, B2+F;
+  - Δ của 4 cặp khai báo; Δ nhóm ≤ 40 / > 40; CI [10, 10] khi Δ hằng; số dòng `per_query.csv`;
+  - từ chối: thư mục đã có, crop=True, synthetic=True, query trùng, manifest sai hash.
+- **Không có lỗi phải sửa trong script chấm**; chỉ sửa file self-test để kiểm chặt hơn. Không sửa file khóa, freeze hay mẫu; không đổi đáp án.
+
+**Ghim và push:**
+- Notebook ghim `__PIN__` (commit chứa script chấm đã kiểm và self-test bản cuối).
+- Push nhánh `claude/kind-chaplygin-249b83`, không force, chưa gộp `main`. Đã kiểm trên remote. [Nhánh trên GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83).
+
+**Trạng thái:**
+- Khảo sát thật **chưa chạy**, chưa có kết quả FSC-147 mới.
+- Triệu chưa kiểm mục nào.
+- Duyệt chính thức trước khi chạy là việc của Trí.
+
+**Tiếp:** Trí duyệt + Triệu kiểm phần A (21/11) → Trí chạy Kaggle (22–23/11) → assistant tổng hợp, Triệu kiểm B/C → đóng 24/11. Báo cáo viết song song.
+
 ## 20/11/2026 (tối) — Trí đồng ý thiết kế; chỉnh nhẹ script chấm (assistant; chưa chạy model, evaluator hay self-test)
 
 **Trí đồng ý** thiết kế và phân công (một khảo sát 300 ảnh; Trí chạy GPU, Triệu kiểm; không còn hai notebook riêng). Trí đã tự đọc file thật trong worktree; hash mẫu và freeze khớp khai báo. **Chưa sẵn sàng chạy hoàn toàn** vì self-test chưa thực thi.
