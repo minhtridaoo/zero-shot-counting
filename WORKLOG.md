@@ -1,5 +1,55 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 — chuẩn bị khảo sát bổ sung FSC-147 (assistant, CPU, chưa chạy model)
+
+Trí giao: thiết kế khảo sát "bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không", 300 ảnh, chuẩn bị đủ trước khi xin chạy.
+
+**Kiểm dữ liệu:**
+- Nhãn FSCD-147 test có trong repo, sha256 khớp lần kiểm 20/10.
+- 1.190 ảnh, mỗi ảnh 1 lớp và 3 khung mẫu; GT từ 8 đến 3.701.
+- Lần benchmark 15/10 chạy cấu hình đầy đủ (cắt ảnh + mẫu GPT-5), không có cặp B0/B2, nên không dùng lại được; phải chạy mới.
+
+**Đã làm** (`experiments/fsc147_survey/`):
+- `make_fsc147_sample.py`, đã chạy một lần: ra `sample_300/` (300 ảnh, seed 331, 27 lớp, 163 ảnh ≤ 40 / 137 ảnh > 40, GT từ 8 đến 621).
+- `score_fsc147_present_only.py`: chỉ import `counts_for` từ `apply_freeze_v2.py`, không sửa file đã khóa. Mới qua kiểm cú pháp, chưa chạy thử.
+- `kaggle_fsc147_survey.ipynb`: Ô 3 và Ô 5 chép nguyên từ W8. Các ô code đã qua kiểm cú pháp.
+- `KHAI_BAO_TRUOC_FSC147_20261120.md`.
+
+**Thiết kế:**
+- Một run chung `--tau-pseudo 0.20 --m 5 --replay-b2`, `crop=False`, `synthetic=False`.
+- Cặp chính B0 − B2 (chỉ khác lượt 2). Cặp phụ P+F − B2 và P+F − B0.
+- C6 − B2+F chỉ báo kèm, vì freeze đặt ngưỡng F riêng cho từng nguồn.
+- Bootstrap theo ảnh, 5.000 lần, seed 331. Báo theo nhóm GT ≤ 40 / > 40.
+
+**Chưa làm / tiếp:**
+- Trí duyệt thiết kế và lệnh chạy.
+- Commit + push (notebook lấy code từ `main`).
+- Triệu xác nhận chưa chạy riêng, rồi chạy 22–23/11. Đóng 24/11.
+- Thời gian chạy trên FSC-147 chưa đo.
+
+## 19/11/2026 — rà bản so sánh nhóm khác của Triệu (assistant, chỉ đọc)
+
+Đọc `workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md`. Kiểm trong repo các ý kỹ thuật, đều đúng: runner ghi `crop=False`, `synthetic=False`; `apply_freeze_v2.py` chia cho `len(absn)` nên sẽ lỗi khi không có câu vắng mặt; FSCD-147 8.34/24.64 khớp `BENCHMARK_FSCD147.md`; có `CountGDPlusPlus/app.py`. Chưa kiểm số 16.55 → 10.29 trong Bảng 1 bài báo.
+
+Đề xuất của assistant cho Trí: ưu tiên báo cáo cuối, rồi demo (bản tĩnh trước), sau đó mới làm A. A nên làm bản thu nhỏ, khai báo trước, hạn 24/11; quá hạn thì chỉ ghi vào phần hạn chế. Chờ Trí quyết A. Không chạy gì.
+
+## 18/11/2026 — cập nhật tiến độ (assistant, chỉ đọc + sửa tài liệu)
+
+Theo yêu cầu Trí "cập nhật tiến độ". Fetch remote zero-shot-counting: main vẫn ở 406ba54 (15/11), không có commit mới. Không chạy model, evaluator hay thí nghiệm.
+
+**Tình trạng 6 sản phẩm (H1–H6):**
+- H1 báo cáo cuối: có bản chi tiết 22 trang làm khung; chưa có bản cuối; Related Work (Triệu, W7, hạn 20/11) chưa có trong repo.
+- H2 bảng test: xong 11/11.
+- H3 slide + demo: chưa bắt đầu; có sẵn 6 hình.
+- H4 repo tái lập: phần lớn đã có.
+- H5 pilot: đóng 11/11. H6 luật kết luận: đã chốt, kết quả dương.
+
+**Lịch:** thực nghiệm xong sớm khoảng 12 ngày so với kế hoạch 10/11. Còn 14 ngày, chỉ còn viết.
+
+**Đã sửa:** đầu `BAT_DAU_SESSION_MOI.md` (tiến độ + 4 việc tiếp theo), bước [11]; bảng H1–H3 và dòng đầu `roadmap/KE_HOACH_HOAN_THANH_20261110.md`.
+
+**Tiếp:** Trí xác nhận đã gửi thầy chưa; Triệu nộp Related Work; bắt đầu chuyển bản chi tiết thành báo cáo cuối.
+
 ## 15/11/2026 — đồng bộ báo cáo và hậu kiểm lên GitHub
 
 Theo yêu cầu Trí, kiểm đúng remote zero-shot-counting/main; fetch xác nhận không có commit lệch. Rà 28 file (10,52 MiB): báo cáo Markdown/Word/PDF, hình, script và kết quả hậu kiểm. Kiểm cú pháp Python/JSON, tính toàn vẹn DOCX và mẫu token/dấu xung đột đạt. Không chạy evaluator, kiểm thử thực nghiệm hoặc model; không sửa dữ liệu khóa/freeze/dự đoán gốc. Stage đúng danh sách đã rà, commit và push bình thường; xác nhận kết quả bằng HEAD so với ls-remote sau push.

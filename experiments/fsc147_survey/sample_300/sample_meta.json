@@ -1,0 +1,58 @@
+{
+  "status": "SAMPLE_FIXED_BEFORE_RUN",
+  "purpose": "Khảo sát bổ sung: bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không",
+  "source": "CountGDPlusPlus/data/fscd147/countgd_test_fscd147.json",
+  "source_sha256": "e301c6933396b98040ff9b7d86e18d66c14cc8c2118ce0e4cae24f4f5807c35c",
+  "split": "FSCD-147 test (= FSC-147 test, 1190 ảnh)",
+  "seed": 331,
+  "n": 300,
+  "method": "random.Random(331).sample(sorted(coco image ids), 300)",
+  "image_dir": "data_external/fsc147/images_384_VarV2",
+  "prompt_rule": "tên lớp FSC-147 nguyên văn",
+  "gt_rule": "số chú thích điểm (area == 4); bỏ 3 khung mẫu",
+  "strata": {
+    "le40": 163,
+    "gt40": 137
+  },
+  "gt_summary": {
+    "min": 8,
+    "median": 36.0,
+    "max": 621,
+    "total": 19670
+  },
+  "classes": {
+    "apple": 52,
+    "watch": 5,
+    "crab cake": 1,
+    "sunglasses": 12,
+    "marble": 19,
+    "elephant": 8,
+    "lego": 6,
+    "carrom board piece": 4,
+    "egg": 18,
+    "strawberry": 43,
+    "nail polish": 8,
+    "tree log": 8,
+    "cashew nut": 9,
+    "finger food": 13,
+    "sticky note": 4,
+    "deer": 8,
+    "marker": 11,
+    "stamp": 18,
+    "comic book": 9,
+    "sheep": 6,
+    "green pea": 17,
+    "keyboard key": 8,
+    "ski": 3,
+    "candy piece": 1,
+    "sauce bottle": 3,
+    "red bean": 3,
+    "hot air balloon": 3
+  },
+  "file_sha256": {
+    "inputs.jsonl": "c1cfb321119ae2c39c0ec229a20b2c5802a477b55bee2279a61ae2b42422211e",
+    "manifest.csv": "30ea79874998dc32f6534842c72f102bf44d2e3b9b5a4bc65905284981072d33"
+  },
+  "image_sha256": "chưa có: ảnh chỉ có trên Kaggle; notebook ghi hash 300 ảnh lúc chạy",
+  "tool_sha256": "c3b7783ccd91c618dd56c8ec78f877a6aa79c231cbd3af077ad1031967c89142"
+}

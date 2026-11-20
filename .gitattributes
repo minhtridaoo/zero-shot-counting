@@ -8,3 +8,4 @@
 /experiments/countgdpp/run_b2_frozen.py -text
 /experiments/countgdpp/p4_*.py -text
 /evaluation/p4_*.py -text
+/experiments/fsc147_survey/sample_300/** -text

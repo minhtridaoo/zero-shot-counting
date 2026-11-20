@@ -47,6 +47,18 @@
 6. Đưa vào repo `predictions_*.jsonl`, `run_config.json`, `candidates.jsonl`, `_controls*`, `_offline/bundle.json`, `_eval/result.json`, `FILES_*.json`. Không đưa `.npz` hay ảnh (D10).
 7. Kết quả xấu cũng **không chạy lại**. Lỗi kỹ thuật (crash, thiếu file) thì ghi lại rồi chạy lại đúng lệnh cũ, kèm ghi chú trong WORKLOG.
 
+## W9 — FSCD-147 (thêm 20/11, Trí giao)
+
+Trí phân công: **FSC-147 do Trí chạy**, **FSCD-147 là phần của Triệu**.
+
+1. **Xác nhận trước** (báo Trí): phần FSCD-147 của Triệu là **tổng hợp kết quả đã có** hay **chạy mới**. Nếu đã chạy gì riêng thì báo ngay, để tránh trùng.
+   - Tổng hợp (assistant đề xuất, không cần GPU): dùng benchmark đã kiểm (MAE 8,34, [BENCHMARK_FSCD147.md](../reports/BENCHMARK_FSCD147.md)). Tự mở Bảng 1 bài báo CountGD++ (arXiv 2512.23351) để kiểm các số 16,55 / 10,29 / 8,39 mà bản so sánh 19/11 lấy từ slide nhóm khác.
+   - Chạy mới: dùng `experiments/benchmark_fscd147/COUNTGDPP_FSCD147_KAGGLE.ipynb`, **chỉ sau khi Trí duyệt** (AGENTS.md quy tắc 4).
+2. **Không chạy lại cặp B0/B2/P+F** trên FSC-147 / FSCD-147 test: cùng 1.190 ảnh với khảo sát của Trí ([khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md)).
+3. **Hạn 24/11.** Kết quả đưa vào mục "Kiểm khả năng tổng quát" của báo cáo, báo riêng với MUCCA, không so điểm trực tiếp giữa các bộ.
+
+W7 (Related Work) vẫn hạn 20/11.
+
 ## 2. Lệnh rút dữ liệu (W1)
 
 ```text

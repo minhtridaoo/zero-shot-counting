@@ -18,6 +18,7 @@
 | `reports/` | **Báo cáo kết quả** dùng để viết báo cáo cuối (xem danh sách dưới) |
 | `experiments/countgdpp/` | Code chạy model + **dữ liệu đã khóa** (`p4_unseen_v1/`, `dev_test_v2/`, `m4_inputs/`) |
 | `experiments/benchmark_fscd147/` | Notebook Kaggle tái lập benchmark FSCD-147 |
+| `experiments/fsc147_survey/` | Kiểm tổng quát FSC-147 (Trí): mẫu cố định 300 ảnh, script tạo mẫu / chấm, notebook Kaggle ghim commit, bản khai báo trước |
 | `evaluation/` | Code chấm điểm (evaluator, scorer, tạo gói review, app gán nhãn) |
 | `results/countgdpp/` | Output các lần chạy; danh mục ở [results/README.md](results/README.md) |
 | `workspace Trí and Triệu/` | Dữ liệu pilot MUCCA 10 ảnh và review gốc của Triệu. Manifest pilot trỏ vào đây, **không di chuyển** |
