@@ -12,6 +12,8 @@
 
 **Ghi luồng** khảo sát và luồng hoàn thành đồ án vào `BAT_DAU_SESSION_MOI.md` và khai báo (mục 10b).
 
+**Ghim:** notebook `d5339c2e56dd60bee3be9a478a03e5b19922eea5`.
+
 **Tiếp:** Trí cho phép → assistant chạy `python experiments/fsc147_survey/selftest_score_fsc147.py` → đạt thì push nhánh; lỗi thì sửa, kiểm lại, ghim lại.
 
 ## 20/11/2026 (rà soát) — thống nhất kế hoạch khảo sát FSC-147 (assistant; chưa chạy model, evaluator hay self-test)

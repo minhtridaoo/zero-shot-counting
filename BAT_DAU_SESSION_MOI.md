@@ -33,7 +33,7 @@
 5. Tập trình bày, chuẩn bị câu hỏi phản biện.
 6. Rà bản nộp, nộp 02/12.
 
-**Đang ở:** Trí đã đồng ý thiết kế và phân công (20/11). Việc kế tiếp: Trí cho phép assistant chạy self-test dữ liệu giả.
+**Đang ở:** Trí đã đồng ý thiết kế và phân công (20/11). Việc kế tiếp: Trí cho phép assistant chạy self-test dữ liệu giả. Notebook đang ghim `d5339c2e56dd` (ghim lại nếu sửa code sau self-test).
 
 **Đợt đồng bộ Git 15/11:** báo cáo và kết quả hậu kiểm được đưa vào commit của phiên này. Việc tiếp theo: Trí đọc mục 4.1/7.6 bản chi tiết rồi gửi thầy; chưa chạy kiểm giả thuyết H2 hoặc thí nghiệm mới.
 
