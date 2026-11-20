@@ -1,4 +1,4 @@
-"""Chấm khảo sát FSC-147 (chỉ câu có mặt) bằng cấu hình ĐÃ KHÓA freeze v2 — không chọn lại, không chỉnh ngưỡng.
+"""Chấm khảo sát bổ sung FSC-147 test, 300 ảnh (chỉ câu có mặt) bằng cấu hình ĐÃ KHÓA freeze v2 — không chọn lại, không chỉnh ngưỡng.
 
 Vì sao có file mới: apply_freeze_v2.py (đã ghi hash, không sửa) chia cho số câu vắng mặt và đòi manifest MUCCA đã khóa;
 FSC-147 không có câu vắng mặt. File này chỉ IMPORT counts_for/norm từ apply_freeze_v2.py, nên cách tính số đếm
@@ -53,15 +53,21 @@ def metrics(c, rows):
 
 
 def bootstrap(ca, cb, rows):
-    """Δ = MAE(A) − MAE(B), bootstrap theo ảnh (mỗi ảnh đúng một câu). CI lấy phân vị như apply_freeze_v2.py."""
-    err = lambda c: {r["query_id"]: abs(c[r["query_id"]] - int(r["gt_count"])) for r in rows}
-    ea, eb = err(ca), err(cb)
-    diffs = [ea[r["query_id"]] - eb[r["query_id"]] for r in rows]
+    """Δ = MAE(A) − MAE(B), bootstrap GHÉP CẶP theo ảnh: mỗi lần lấy lại cùng một bộ ảnh (có hoàn lại) cho cả A và B.
+    Mỗi ảnh có đúng một câu. CI lấy phân vị như apply_freeze_v2.py."""
+    images = sorted({r["image_id"] for r in rows})
+    if len(images) != len(rows):
+        raise ValueError("Mỗi ảnh phải có đúng một câu")
+    by_image = {r["image_id"]: r for r in rows}
+    err = lambda c, r: abs(c[r["query_id"]] - int(r["gt_count"]))
+    delta = lambda imgs: sum(err(ca, by_image[i]) - err(cb, by_image[i]) for i in imgs) / len(imgs)
     rng = random.Random(SEED)
-    bs = sorted(sum(rng.choice(diffs) for _ in diffs) / len(diffs) for _ in range(N_BOOT))
+    bs = sorted(delta([rng.choice(images) for _ in images]) for _ in range(N_BOOT))
     lo, hi = bs[int(.025 * N_BOOT) - 1], bs[int(.975 * N_BOOT) - 1]
-    reading = "A kém hơn B (CI > 0)" if lo > 0 else "A tốt hơn B (CI < 0)" if hi < 0 else "không thấy khác biệt (CI chứa 0)"
-    return dict(diff=sum(diffs) / len(diffs), ci95=[lo, hi], reading=reading, n_images=len(rows),
+    reading = ("A kém hơn B trên mẫu này (CI > 0)" if lo > 0 else "A tốt hơn B trên mẫu này (CI < 0)" if hi < 0
+               else "chưa thấy khác biệt rõ (CI chứa 0; không chứng minh hai cách như nhau)")
+    ea = {r["query_id"]: err(ca, r) for r in rows}; eb = {r["query_id"]: err(cb, r) for r in rows}
+    return dict(diff=delta(images), ci95=[lo, hi], reading=reading, n_images=len(rows),
                 A_better=sum(ea[q] < eb[q] for q in ea), A_worse=sum(ea[q] > eb[q] for q in ea), same=sum(ea[q] == eb[q] for q in ea))
 
 
@@ -70,16 +76,18 @@ def main():
     ap.add_argument("--run", required=True, help="Thư mục run_b2_verified_pseudo.py, tương đối với CS331")
     ap.add_argument("--bundle", required=True, help="bundle.json từ bundle_offline_v2.py của cùng run")
     ap.add_argument("--out", required=True, help="Thư mục kết quả mới, tương đối với CS331; không ghi đè")
+    ap.add_argument("--sample-dir", default=str(SAMPLE), help="Mặc định: mẫu cố định sample_300. Chỉ đổi khi chạy self-test dữ liệu giả")
     a = ap.parse_args()
+    sample = Path(a.sample_dir) if Path(a.sample_dir).is_absolute() else ROOT / a.sample_dir
     out = ROOT / a.out
     if out.exists():
         raise SystemExit("Đã có kết quả. Khảo sát chạy một lần; không ghi đè.")
 
-    meta = json.loads((SAMPLE / "sample_meta.json").read_text(encoding="utf-8"))
+    meta = json.loads((sample / "sample_meta.json").read_text(encoding="utf-8"))
     if meta["status"] != "SAMPLE_FIXED_BEFORE_RUN":
         raise ValueError("Mẫu chưa cố định")
     for name, digest in meta["file_sha256"].items():
-        if sha(SAMPLE / name) != digest:
+        if sha(sample / name) != digest:
             raise ValueError(f"{name} khác hash lúc tạo mẫu")
     if sha(FREEZE) != FREEZE_SHA256:
         raise ValueError("freeze v2 khác sha256 đã khóa")
@@ -93,7 +101,7 @@ def main():
     bundle = json.loads((ROOT / a.bundle).read_text(encoding="utf-8"))
     if Path(bundle["run_id"]).as_posix().rstrip("/") != Path(a.run).as_posix().rstrip("/"):
         raise ValueError(f"Bundle thuộc run khác: {bundle['run_id']}")
-    man = list(csv.DictReader((SAMPLE / "manifest.csv").open(encoding="utf-8", newline="")))
+    man = list(csv.DictReader((sample / "manifest.csv").open(encoding="utf-8", newline="")))
     ids = {r["query_id"] for r in man}
     src = {}
     for name, rows in bundle["sources"].items():
@@ -118,10 +126,10 @@ def main():
     primary_by_stratum = {s: bootstrap(counts["B0"], counts["B2"], groups[s]) for s in strata}
 
     out.mkdir(parents=True)
-    res = dict(status="FSC147_SURVEY_RESULT", scope="khảo sát 300 ảnh FSCD-147 test; không đại diện toàn bộ FSC-147; không thay kết quả chính MUCCA",
+    res = dict(status="FSC147_SURVEY_RESULT", scope="khảo sát bổ sung 300 ảnh FSC-147 test; chỉ câu có mặt; không phải benchmark đầy đủ, không nói gì về lớp vắng mặt; không thay kết quả chính MUCCA",
                crop=run_cfg.get("crop"), synthetic=run_cfg.get("synthetic"), device=run_cfg.get("device"),
                freeze_sha256=FREEZE_SHA256, run=a.run, run_config_sha256=sha(ROOT / a.run / "run_config.json"),
-               bundle_sha256=sha(ROOT / a.bundle), sample_meta_sha256=sha(SAMPLE / "sample_meta.json"),
+               bundle_sha256=sha(ROOT / a.bundle), sample_dir=str(a.sample_dir), sample_meta_sha256=sha(sample / "sample_meta.json"),
                delta_definition="Δ = MAE(A) − MAE(B)", bootstrap=dict(n=N_BOOT, seed=SEED, unit="ảnh"),
                summary=table, comparisons=comparisons, primary_by_stratum=primary_by_stratum,
                per_query_counts=counts, tool_sha256=sha(__file__))

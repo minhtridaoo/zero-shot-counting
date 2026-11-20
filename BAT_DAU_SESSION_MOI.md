@@ -6,20 +6,20 @@
 - **Còn thiếu:** (1) báo cáo cuối đúng mẫu nộp; (2) Related Work của Triệu (W7, hạn 20/11, chưa thấy trong repo); (3) slide; (4) demo trước/sau cải tiến.
 - Chưa xác nhận được trong repo: Trí đã gửi bản tóm tắt cho thầy chưa, thầy góp ý gì.
 
-**Cập nhật 20/11 — thêm hai phần kiểm tổng quát (chưa chạy model):**
-- **FSC-147 — Trí chạy.** Câu hỏi: bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không. Mẫu cố định 300 ảnh (seed 331).
-  - Cặp chính B0 − B2 (chỉ khác lượt 2). Cặp phụ P+F − B2, P+F − B0. C6/B2+F chỉ báo kèm.
-  - Đã có: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), `sample_300/`, 2 script mới, notebook [kaggle_fsc147_survey.ipynb](experiments/fsc147_survey/kaggle_fsc147_survey.ipynb) ghim commit `e73ad371b397`.
-- **FSCD-147 — Triệu.** Chờ Triệu xác nhận phần của mình là tổng hợp kết quả đã có (benchmark 8,34 + kiểm Bảng 1 bài báo) hay chạy mới (notebook `experiments/benchmark_fscd147/COUNTGDPP_FSCD147_KAGGLE.ipynb`, cần Trí duyệt).
-  - FSC-147 test và FSCD-147 test là **cùng 1.190 ảnh**, nên Triệu không chạy lại cặp B0/B2/P+F.
-- Các file đang ở worktree `.claude/worktrees/kind-chaplygin-249b83`, nhánh `claude/kind-chaplygin-249b83`, **chưa push**. Checkout chính chưa thấy cho tới khi push và gộp vào `main`.
+**Cập nhật 20/11 (đã rà soát) — một khảo sát bổ sung FSC-147 test, 300 ảnh (chưa chạy model, evaluator hay self-test):**
+- **Phân công:** Trí chạy notebook Kaggle. Triệu kiểm thiết kế, mẫu và kết quả theo [HUONG_DAN_KIEM_TRIEU.md](experiments/fsc147_survey/HUONG_DAN_KIEM_TRIEU.md), và tiếp tục phần báo cáo được giao.
+- Không tách FSC-147 / FSCD-147 (cùng ảnh, cùng split), không chạy lại benchmark 8,34.
+- **Câu hỏi chính:** giữ hay bỏ lượt 2 tốt hơn trên mẫu này. So sánh chính B0 − B2; phụ P+F − B2, P+F − B0; C6 − B2+F chỉ mô tả.
+- Tài liệu: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), có mục "thay đổi so với đề xuất của Triệu".
+- Vị trí: các file ở worktree `D:\MINHTRIHOCCODE\HOCKI5\CS331\.claude\worktrees\kind-chaplygin-249b83\experiments\fsc147_survey\`, nhánh `claude/kind-chaplygin-249b83`. **Chưa push**, nên checkout chính chưa thấy và **notebook chưa sẵn sàng chạy**.
 
 **Việc tiếp theo, theo thứ tự:**
-1. Trí: báo đã gửi bản tóm tắt cho thầy chưa; duyệt bản khai báo FSC-147.
-2. Push nhánh có commit đã ghim lên GitHub, rồi gộp vào `main` (merge hoặc fast-forward, không squash).
-3. Trí chạy notebook FSC-147 (22–23/11). Triệu xác nhận phần FSCD-147 và nộp Related Work (W7). **Hạn đóng hai phần này: 24/11.**
-4. Trí + assistant: chuyển bản chi tiết thành báo cáo cuối (19–25/11).
-5. Slide + demo tĩnh (25–29/11), dùng lại hình trong `reports/figures/`; tập thuyết trình 30/11–01/12.
+1. Trí: duyệt bản khai báo; quyết có cho chạy self-test dữ liệu giả không; báo đã gửi bản tóm tắt cho thầy chưa.
+2. Push nhánh (đã có commit ghim notebook) lên GitHub, rồi gộp vào `main` bằng merge/fast-forward, không squash.
+3. Triệu kiểm phần A (thiết kế + mẫu) trước khi chạy, 21/11.
+4. Trí chạy notebook một lần (22–23/11). Triệu kiểm phần B–C. **Đóng 24/11**; không kịp thì ghi hạn chế.
+5. **Song song ngay:** Trí + assistant viết báo cáo cuối (19–25/11); Triệu nộp Related Work (W7).
+6. Slide + demo tĩnh (25–29/11); tập thuyết trình 30/11–01/12.
 
 **Đợt đồng bộ Git 15/11:** báo cáo và kết quả hậu kiểm được đưa vào commit của phiên này. Việc tiếp theo: Trí đọc mục 4.1/7.6 bản chi tiết rồi gửi thầy; chưa chạy kiểm giả thuyết H2 hoặc thí nghiệm mới.
 
@@ -46,8 +46,7 @@
 ✅ [10b] Gói hậu kiểm + bản tiến độ gửi thầy (11/11, assistant, CPU): khung trùng X/Y, khung đúng loại, thời gian, 6 hình
 ✅ [10c] Bản trình bày CHI TIẾT 19 trang (12/11): nền tảng, định nghĩa, phương pháp, giao thức, kết quả, phân tích, hạn chế
 ✅ [10d] Sửa theo góp ý của bạn đọc (15/11): T chỉ gỡ khoảng 1/5 tác hại lượt 2; −39% so với B2 chỉ là mô tả; mục 7.6 giải thích thứ hạng C6
-⏳ [11a] Kiểm tổng quát FSC-147, 300 ảnh (Trí): đã chuẩn bị + ghim commit 20/11; chờ duyệt, push, chạy 22–23/11; đóng 24/11
-⏳ [11b] FSCD-147 (Triệu): chờ xác nhận tổng hợp hay chạy mới; đóng 24/11
+⏳ [11a] Khảo sát bổ sung FSC-147 test, 300 ảnh: Trí chạy, Triệu kiểm. Đã chuẩn bị + rà soát 20/11; chờ duyệt, push, chạy 22–23/11; đóng 24/11
 ⏳ [11] Báo cáo cuối + slide + demo → nộp 02/12   ◀── ĐANG Ở ĐÂY (18/11: có khung 22 trang; chưa có báo cáo cuối, Related Work, slide, demo)
 ```
 
@@ -111,10 +110,10 @@ Hậu kiểm dev: `evaluation/dev_posthoc_T_C6.py` → `results/countgdpp/p1_dev
 
 | Ai | Việc | Hạn |
 |---|---|---|
-| **Trí** | (1) Báo đã gửi bản tóm tắt cho thầy chưa. (2) Duyệt [khai báo FSC-147](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md). (3) Sau khi push: chạy `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` trên Kaggle T4, một lần | 21/11; chạy 22–23/11 |
-| **Trí** | Viết báo cáo cuối từ bản chi tiết 22 trang | 19–25/11 |
-| **Triệu** | (1) Xác nhận phần FSCD-147: tổng hợp kết quả đã có hay chạy mới (chạy mới cần Trí duyệt). (2) Related Work (W7) | W7: 20/11; FSCD-147: 24/11 |
-| **Assistant** | Đã xong: script tạo mẫu, script chấm, notebook đã ghim commit. Tiếp: kiểm output FSC-147; soạn đoạn "Kiểm khả năng tổng quát"; hỗ trợ báo cáo cuối | 24/11 |
+| **Trí** | (1) Duyệt [khai báo FSC-147](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md); quyết self-test. (2) Sau khi push: chạy `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` trên Kaggle T4, một lần. (3) Báo đã gửi bản tóm tắt cho thầy chưa | duyệt 21/11; chạy 22–23/11 |
+| **Trí** | Viết báo cáo cuối từ bản chi tiết 22 trang (song song, không chờ khảo sát) | 19–25/11 |
+| **Triệu** | (1) Kiểm khảo sát theo [HUONG_DAN_KIEM_TRIEU.md](experiments/fsc147_survey/HUONG_DAN_KIEM_TRIEU.md): phần A trước khi chạy, phần B–C sau khi có kết quả. (2) Related Work (W7) và phần báo cáo được giao | A: 21/11; B–C: 24/11 |
+| **Assistant** | Đã viết: script tạo mẫu, script chấm, self-test (chưa chạy), notebook, hướng dẫn kiểm. Tiếp: kiểm output; soạn đoạn "Kiểm khả năng tổng quát"; hỗ trợ báo cáo cuối | 24/11 |
 | **Cả nhóm** | Slide + demo tĩnh; tập thuyết trình | 25/11–01/12 |
 
 

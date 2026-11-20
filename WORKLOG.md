@@ -1,5 +1,31 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 (rà soát) — thống nhất kế hoạch khảo sát FSC-147 (assistant; chưa chạy model, evaluator hay self-test)
+
+Theo yêu cầu Trí, rà soát và chỉnh lại cho thống nhất. **Mục này thay phần phân công ở hai mục 20/11 bên dưới.**
+
+**Phạm vi và phân công:**
+- Một khảo sát duy nhất trên 300 ảnh. Trí chạy, Triệu kiểm, báo cáo viết song song.
+- Không tách FSC-147 / FSCD-147, không chạy lại benchmark 8,34. Đóng 24/11.
+
+**Kiểm dữ liệu (chỉ đọc):**
+- Nhãn `countgd_test_fscd147.json` có trong repo từ commit đầu, hash khớp benchmark. Ảnh lấy từ link FSCD-147 trong README CountGD++ (`FSC147_384_V2`).
+- Đếm bằng điểm `area == 4`. Tên lớp lấy từ `categories`.
+- Cách gọi thống nhất: "FSC-147 test".
+- Mẫu ở `experiments/fsc147_survey/sample_300/` (worktree `.claude/worktrees/kind-chaplygin-249b83`). Tính lại seed 331 ra đúng 300 id đã lưu; GT, tên file, tên lớp khớp; 3 hash khớp bản trong commit e73ad37. Giữ nguyên mẫu.
+
+**Kiểm code:** B0 và B2 chỉ khác ở việc có lượt 2: cùng lượt 1, trạng thái ngẫu nhiên được trả lại, mẫu lấy từ lượt 1; không có khung > 0.23 thì B2 = B0. Phát hiện `select_pseudo` báo lỗi khi gặp khung mẫu suy biến, nên ghi vào quy tắc lỗi: lỗi lặp lại ở một ảnh thì không bỏ ảnh, ghi khảo sát chưa hoàn tất.
+
+**Sửa:**
+- `score_fsc147_present_only.py`: bootstrap ghép cặp lấy lại theo id ảnh; câu đọc "chưa thấy khác biệt rõ"; thêm `--sample-dir` cho self-test.
+- Mới `selftest_score_fsc147.py`: 4 ảnh giả, đáp án tính tay. **Chưa chạy, chờ Trí cho phép.**
+- Viết lại bản khai báo, thêm mục 9 "thay đổi so với đề xuất của Triệu".
+- Notebook: hướng dẫn gắn dữ liệu/checkpoint, Save Version, tải zip; dừng nếu thiếu ảnh.
+- Mới `HUONG_DAN_KIEM_TRIEU.md`.
+- Cập nhật W9 trong giao việc Triệu, roadmap H7, README, BAT_DAU.
+
+**Trạng thái:** commit cục bộ, ghim lại notebook; **chưa push**, nên notebook chưa sẵn sàng chạy.
+
 ## 20/11/2026 (sau) — chia phần FSC-147 / FSCD-147, ghim commit notebook (assistant, chưa chạy model)
 
 **Trí chốt phân công:** FSC-147 là phần Trí chạy; FSCD-147 là phần của Triệu. Sửa lại mục 20/11 bên dưới: chỗ ghi "Triệu chạy notebook" nay là **Trí chạy**.

@@ -50,9 +50,9 @@ Vị trí trong pipeline:
 | H5 | **Pilot đóng**: Trí và Triệu cùng xác nhận (V7) | **Đã đóng 11/11** (Trí 05/11, Triệu 11/11; [PILOT_SUMMARY](../reports/PILOT_SUMMARY.md) mục 7) |
 | H6 | Kết luận trung thực: nếu v2 không thắng B0 theo luật D9 thì báo kết quả âm, kèm phân tích | Luật đã chốt |
 
-> **Bổ sung 20/11 (không đổi kết quả chính):** thêm H7, kiểm tổng quát trên ảnh một loại. Phần FSC-147 do Trí chạy, phần FSCD-147 là của Triệu. Đây là việc phụ: hạn đóng 24/11; chưa xong thì ghi vào hạn chế. Ưu tiên chính vẫn là H1 và H3.
+> **Bổ sung 20/11 (đã rà soát; không đổi kết quả chính):** thêm H7, một khảo sát bổ sung trên 300 ảnh FSC-147 test. Trí chạy, Triệu kiểm. Không tách FSC-147 / FSCD-147, không chạy lại benchmark cũ. Đây là việc phụ: đóng 24/11, không kịp thì ghi hạn chế. Ưu tiên chính vẫn là H1 và H3, viết song song.
 
-| H7 | **Kiểm tổng quát** (bổ sung): FSC-147 300 ảnh, cặp B0 − B2 (Trí); FSCD-147 (Triệu) | 20/11: đã chuẩn bị, chưa chạy |
+| H7 | **Khảo sát bổ sung** FSC-147 test, 300 ảnh: so sánh chính B0 − B2 ([khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md)) | 20/11: đã chuẩn bị và rà soát; chưa push, chưa chạy |
 
 ## 3. Lịch mới (đường găng in đậm)
 
@@ -65,7 +65,7 @@ Vị trí trong pipeline:
 | 16–22/11 | **Viết báo cáo phần 1–5** (khoảng 4 giờ) | Related Work (W7, khoảng 2 giờ) | Dựng bảng/hình từ kết quả có sẵn |
 | **23–24/11** | — | **Chạy test một lần** | Chấm + CI |
 | 25–29/11 | Viết kết quả + hạn chế, slide, demo (khoảng 5 giờ) | Góp slide; review N4 nhỏ trên test (tùy chọn) | Kiểm số trong báo cáo |
-| **Bổ sung 20/11: 20–24/11** | Duyệt khai báo; **chạy FSC-147 300 ảnh** (`experiments/fsc147_survey/`, một lần, 22–23/11) | **FSCD-147**: xác nhận tổng hợp hay chạy mới | Script + notebook ghim commit (xong 20/11); kiểm output; đóng 24/11 |
+| **Bổ sung 20/11: 20–24/11** | Duyệt khai báo; **chạy khảo sát 300 ảnh** (`experiments/fsc147_survey/`, một lần, 22–23/11); viết báo cáo song song | **Kiểm** thiết kế + mẫu (21/11) và kết quả (24/11); Related Work | Script, self-test (chưa chạy), notebook ghim commit, hướng dẫn kiểm; kiểm output; đóng 24/11 |
 | 30/11–01/12 | Đệm + tập thuyết trình | | |
 | **02/12** | **Nộp** | | |
 
