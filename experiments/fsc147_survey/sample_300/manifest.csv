@@ -1,0 +1,301 @@
+query_id,image_id,coco_image_id,file_name,prompt,gt_count,stratum,presence_status
+fq_2226,fsc_2226,10,2226.jpg,apple,47,gt40,present
+fq_7676,fsc_7676,15,7676.jpg,watch,29,le40,present
+fq_3114,fsc_3114,20,3114.jpg,crab cake,17,le40,present
+fq_2052,fsc_2052,32,2052.jpg,sunglasses,8,le40,present
+fq_5578,fsc_5578,41,5578.jpg,marble,32,le40,present
+fq_7550,fsc_7550,46,7550.jpg,elephant,20,le40,present
+fq_7590,fsc_7590,47,7590.jpg,lego,100,gt40,present
+fq_7713,fsc_7713,49,7713.jpg,carrom board piece,19,le40,present
+fq_5933,fsc_5933,50,5933.jpg,egg,12,le40,present
+fq_323,fsc_323,59,323.jpg,strawberry,25,le40,present
+fq_5585,fsc_5585,61,5585.jpg,marble,32,le40,present
+fq_7512,fsc_7512,63,7512.jpg,nail polish,98,gt40,present
+fq_339,fsc_339,66,339.jpg,strawberry,18,le40,present
+fq_4963,fsc_4963,68,4963.jpg,tree log,218,gt40,present
+fq_5148,fsc_5148,69,5148.jpg,cashew nut,36,le40,present
+fq_5843,fsc_5843,71,5843.jpg,strawberry,74,gt40,present
+fq_5381,fsc_5381,74,5381.jpg,finger food,9,le40,present
+fq_6732,fsc_6732,75,6732.jpg,egg,39,le40,present
+fq_7097,fsc_7097,76,7097.jpg,sticky note,47,gt40,present
+fq_6548,fsc_6548,78,6548.jpg,sunglasses,18,le40,present
+fq_5792,fsc_5792,82,5792.jpg,cashew nut,21,le40,present
+fq_5564,fsc_5564,83,5564.jpg,finger food,16,le40,present
+fq_7596,fsc_7596,84,7596.jpg,apple,298,gt40,present
+fq_3282,fsc_3282,93,3282.jpg,finger food,31,le40,present
+fq_4072,fsc_4072,96,4072.jpg,marble,11,le40,present
+fq_2274,fsc_2274,101,2274.jpg,apple,66,gt40,present
+fq_4929,fsc_4929,102,4929.jpg,strawberry,36,le40,present
+fq_2614,fsc_2614,107,2614.jpg,deer,20,le40,present
+fq_4923,fsc_4923,112,4923.jpg,strawberry,31,le40,present
+fq_5830,fsc_5830,115,5830.jpg,strawberry,35,le40,present
+fq_4875,fsc_4875,117,4875.jpg,strawberry,40,le40,present
+fq_6658,fsc_6658,119,6658.jpg,marker,361,gt40,present
+fq_5852,fsc_5852,130,5852.jpg,strawberry,42,gt40,present
+fq_2907,fsc_2907,133,2907.jpg,stamp,28,le40,present
+fq_6906,fsc_6906,137,6906.jpg,comic book,36,le40,present
+fq_7312,fsc_7312,139,7312.jpg,deer,21,le40,present
+fq_5836,fsc_5836,141,5836.jpg,strawberry,18,le40,present
+fq_4908,fsc_4908,142,4908.jpg,strawberry,24,le40,present
+fq_7661,fsc_7661,149,7661.jpg,apple,36,le40,present
+fq_2010,fsc_2010,151,2010.jpg,sunglasses,15,le40,present
+fq_7171,fsc_7171,152,7171.jpg,lego,13,le40,present
+fq_327,fsc_327,154,327.jpg,strawberry,12,le40,present
+fq_2910,fsc_2910,156,2910.jpg,stamp,14,le40,present
+fq_2049,fsc_2049,162,2049.jpg,sunglasses,79,gt40,present
+fq_6922,fsc_6922,167,6922.jpg,comic book,70,gt40,present
+fq_6750,fsc_6750,168,6750.jpg,sheep,109,gt40,present
+fq_5599,fsc_5599,178,5599.jpg,marble,33,le40,present
+fq_5357,fsc_5357,180,5357.jpg,marble,12,le40,present
+fq_6270,fsc_6270,182,6270.jpg,apple,92,gt40,present
+fq_3333,fsc_3333,188,3333.jpg,green pea,113,gt40,present
+fq_1462,fsc_1462,189,1462.jpg,keyboard key,409,gt40,present
+fq_3309,fsc_3309,194,3309.jpg,green pea,16,le40,present
+fq_5807,fsc_5807,203,5807.jpg,cashew nut,110,gt40,present
+fq_6964,fsc_6964,210,6964.jpg,sticky note,75,gt40,present
+fq_5509,fsc_5509,212,5509.jpg,green pea,155,gt40,present
+fq_4502,fsc_4502,216,4502.jpg,ski,21,le40,present
+fq_695,fsc_695,217,695.jpg,apple,11,le40,present
+fq_3331,fsc_3331,231,3331.jpg,green pea,133,gt40,present
+fq_290,fsc_290,234,290.jpg,strawberry,13,le40,present
+fq_7700,fsc_7700,238,7700.jpg,lego,30,le40,present
+fq_5143,fsc_5143,239,5143.jpg,cashew nut,63,gt40,present
+fq_2177,fsc_2177,242,2177.jpg,apple,27,le40,present
+fq_5796,fsc_5796,250,5796.jpg,cashew nut,71,gt40,present
+fq_7668,fsc_7668,257,7668.jpg,egg,23,le40,present
+fq_7144,fsc_7144,258,7144.jpg,apple,92,gt40,present
+fq_6893,fsc_6893,261,6893.jpg,sheep,81,gt40,present
+fq_2243,fsc_2243,262,2243.jpg,apple,544,gt40,present
+fq_333,fsc_333,263,333.jpg,strawberry,32,le40,present
+fq_7216,fsc_7216,265,7216.jpg,stamp,25,le40,present
+fq_7065,fsc_7065,277,7065.jpg,elephant,16,le40,present
+fq_2017,fsc_2017,281,2017.jpg,sunglasses,104,gt40,present
+fq_4073,fsc_4073,284,4073.jpg,marble,25,le40,present
+fq_714,fsc_714,286,714.jpg,apple,100,gt40,present
+fq_7625,fsc_7625,289,7625.jpg,apple,25,le40,present
+fq_5936,fsc_5936,294,5936.jpg,egg,18,le40,present
+fq_6923,fsc_6923,295,6923.jpg,stamp,28,le40,present
+fq_5594,fsc_5594,296,5594.jpg,marble,15,le40,present
+fq_5812,fsc_5812,297,5812.jpg,strawberry,51,gt40,present
+fq_2007,fsc_2007,299,2007.jpg,sunglasses,108,gt40,present
+fq_1888,fsc_1888,300,1888.jpg,elephant,11,le40,present
+fq_2039,fsc_2039,312,2039.jpg,sunglasses,81,gt40,present
+fq_2927,fsc_2927,323,2927.jpg,stamp,49,gt40,present
+fq_4943,fsc_4943,324,4943.jpg,tree log,65,gt40,present
+fq_3324,fsc_3324,326,3324.jpg,green pea,56,gt40,present
+fq_2143,fsc_2143,328,2143.jpg,apple,9,le40,present
+fq_6756,fsc_6756,340,6756.jpg,egg,35,le40,present
+fq_7463,fsc_7463,344,7463.jpg,elephant,21,le40,present
+fq_7096,fsc_7096,345,7096.jpg,apple,19,le40,present
+fq_7650,fsc_7650,346,7650.jpg,apple,52,gt40,present
+fq_5817,fsc_5817,351,5817.jpg,strawberry,41,gt40,present
+fq_7462,fsc_7462,353,7462.jpg,nail polish,146,gt40,present
+fq_306,fsc_306,356,306.jpg,strawberry,30,le40,present
+fq_5942,fsc_5942,359,5942.jpg,egg,10,le40,present
+fq_4500,fsc_4500,372,4500.jpg,ski,8,le40,present
+fq_716,fsc_716,373,716.jpg,apple,182,gt40,present
+fq_4898,fsc_4898,390,4898.jpg,strawberry,51,gt40,present
+fq_3276,fsc_3276,395,3276.jpg,finger food,18,le40,present
+fq_7514,fsc_7514,401,7514.jpg,egg,28,le40,present
+fq_7136,fsc_7136,403,7136.jpg,nail polish,87,gt40,present
+fq_7695,fsc_7695,412,7695.jpg,comic book,40,le40,present
+fq_6261,fsc_6261,416,6261.jpg,apple,324,gt40,present
+fq_5924,fsc_5924,422,5924.jpg,egg,16,le40,present
+fq_7131,fsc_7131,426,7131.jpg,keyboard key,123,gt40,present
+fq_5827,fsc_5827,427,5827.jpg,strawberry,56,gt40,present
+fq_2192,fsc_2192,429,2192.jpg,apple,24,le40,present
+fq_4118,fsc_4118,430,4118.jpg,finger food,13,le40,present
+fq_5507,fsc_5507,434,5507.jpg,green pea,262,gt40,present
+fq_6813,fsc_6813,436,6813.jpg,carrom board piece,19,le40,present
+fq_6660,fsc_6660,445,6660.jpg,marker,10,le40,present
+fq_4077,fsc_4077,462,4077.jpg,marble,221,gt40,present
+fq_4905,fsc_4905,472,4905.jpg,strawberry,250,gt40,present
+fq_2038,fsc_2038,474,2038.jpg,sunglasses,198,gt40,present
+fq_3269,fsc_3269,477,3269.jpg,finger food,20,le40,present
+fq_328,fsc_328,481,328.jpg,strawberry,35,le40,present
+fq_5808,fsc_5808,494,5808.jpg,cashew nut,53,gt40,present
+fq_7547,fsc_7547,497,7547.jpg,elephant,19,le40,present
+fq_4916,fsc_4916,499,4916.jpg,strawberry,91,gt40,present
+fq_4940,fsc_4940,502,4940.jpg,tree log,31,le40,present
+fq_3694,fsc_3694,503,3694.jpg,candy piece,34,le40,present
+fq_6258,fsc_6258,504,6258.jpg,apple,13,le40,present
+fq_6051,fsc_6051,508,6051.jpg,keyboard key,84,gt40,present
+fq_3322,fsc_3322,515,3322.jpg,green pea,450,gt40,present
+fq_2009,fsc_2009,525,2009.jpg,sunglasses,198,gt40,present
+fq_2159,fsc_2159,531,2159.jpg,apple,621,gt40,present
+fq_2166,fsc_2166,535,2166.jpg,apple,119,gt40,present
+fq_7161,fsc_7161,548,7161.jpg,stamp,36,le40,present
+fq_1106,fsc_1106,552,1106.jpg,marker,49,gt40,present
+fq_286,fsc_286,553,286.jpg,strawberry,10,le40,present
+fq_7328,fsc_7328,554,7328.jpg,sheep,51,gt40,present
+fq_330,fsc_330,558,330.jpg,strawberry,25,le40,present
+fq_2194,fsc_2194,562,2194.jpg,apple,38,le40,present
+fq_6935,fsc_6935,567,6935.jpg,nail polish,60,gt40,present
+fq_4071,fsc_4071,571,4071.jpg,marble,48,gt40,present
+fq_6654,fsc_6654,573,6654.jpg,marker,41,gt40,present
+fq_7278,fsc_7278,579,7278.jpg,nail polish,72,gt40,present
+fq_2286,fsc_2286,582,2286.jpg,apple,14,le40,present
+fq_7071,fsc_7071,584,7071.jpg,sauce bottle,44,gt40,present
+fq_4110,fsc_4110,590,4110.jpg,finger food,12,le40,present
+fq_2025,fsc_2025,593,2025.jpg,sunglasses,60,gt40,present
+fq_6656,fsc_6656,597,6656.jpg,marker,100,gt40,present
+fq_7298,fsc_7298,600,7298.jpg,apple,24,le40,present
+fq_2951,fsc_2951,601,2951.jpg,stamp,14,le40,present
+fq_2612,fsc_2612,602,2612.jpg,deer,28,le40,present
+fq_6283,fsc_6283,605,6283.jpg,apple,21,le40,present
+fq_5597,fsc_5597,611,5597.jpg,marble,128,gt40,present
+fq_2933,fsc_2933,620,2933.jpg,stamp,45,gt40,present
+fq_342,fsc_342,630,342.jpg,strawberry,63,gt40,present
+fq_6259,fsc_6259,631,6259.jpg,apple,74,gt40,present
+fq_991,fsc_991,632,991.jpg,watch,93,gt40,present
+fq_6279,fsc_6279,633,6279.jpg,apple,10,le40,present
+fq_2248,fsc_2248,641,2248.jpg,apple,53,gt40,present
+fq_995,fsc_995,642,995.jpg,watch,20,le40,present
+fq_5581,fsc_5581,643,5581.jpg,marble,8,le40,present
+fq_5935,fsc_5935,644,5935.jpg,egg,15,le40,present
+fq_4956,fsc_4956,646,4956.jpg,tree log,102,gt40,present
+fq_6048,fsc_6048,656,6048.jpg,keyboard key,103,gt40,present
+fq_5368,fsc_5368,658,5368.jpg,marble,153,gt40,present
+fq_3317,fsc_3317,663,3317.jpg,green pea,43,gt40,present
+fq_7381,fsc_7381,665,7381.jpg,marker,72,gt40,present
+fq_5849,fsc_5849,667,5849.jpg,strawberry,38,le40,present
+fq_5934,fsc_5934,677,5934.jpg,egg,17,le40,present
+fq_4114,fsc_4114,681,4114.jpg,finger food,12,le40,present
+fq_5809,fsc_5809,685,5809.jpg,cashew nut,26,le40,present
+fq_2265,fsc_2265,689,2265.jpg,apple,57,gt40,present
+fq_7522,fsc_7522,696,7522.jpg,keyboard key,84,gt40,present
+fq_2227,fsc_2227,699,2227.jpg,apple,11,le40,present
+fq_5601,fsc_5601,700,5601.jpg,marble,22,le40,present
+fq_1889,fsc_1889,702,1889.jpg,elephant,17,le40,present
+fq_2953,fsc_2953,704,2953.jpg,stamp,22,le40,present
+fq_335,fsc_335,707,335.jpg,strawberry,12,le40,present
+fq_6898,fsc_6898,708,6898.jpg,nail polish,221,gt40,present
+fq_4966,fsc_4966,713,4966.jpg,tree log,46,gt40,present
+fq_717,fsc_717,717,717.jpg,apple,20,le40,present
+fq_4964,fsc_4964,720,4964.jpg,tree log,51,gt40,present
+fq_6804,fsc_6804,722,6804.jpg,egg,12,le40,present
+fq_7034,fsc_7034,723,7034.jpg,nail polish,43,gt40,present
+fq_2163,fsc_2163,725,2163.jpg,apple,13,le40,present
+fq_6710,fsc_6710,732,6710.jpg,sticky note,121,gt40,present
+fq_3502,fsc_3502,733,3502.jpg,red bean,70,gt40,present
+fq_325,fsc_325,741,325.jpg,strawberry,33,le40,present
+fq_3308,fsc_3308,742,3308.jpg,green pea,153,gt40,present
+fq_6271,fsc_6271,746,6271.jpg,apple,240,gt40,present
+fq_4407,fsc_4407,759,4407.jpg,hot air balloon,69,gt40,present
+fq_6249,fsc_6249,761,6249.jpg,apple,111,gt40,present
+fq_7557,fsc_7557,762,7557.jpg,comic book,21,le40,present
+fq_989,fsc_989,766,989.jpg,watch,69,gt40,present
+fq_5922,fsc_5922,768,5922.jpg,egg,35,le40,present
+fq_6852,fsc_6852,772,6852.jpg,egg,68,gt40,present
+fq_4938,fsc_4938,779,4938.jpg,tree log,58,gt40,present
+fq_2252,fsc_2252,784,2252.jpg,apple,82,gt40,present
+fq_5596,fsc_5596,785,5596.jpg,marble,40,le40,present
+fq_1061,fsc_1061,786,1061.jpg,sheep,22,le40,present
+fq_4930,fsc_4930,787,4930.jpg,strawberry,74,gt40,present
+fq_6959,fsc_6959,789,6959.jpg,marker,212,gt40,present
+fq_6928,fsc_6928,809,6928.jpg,egg,30,le40,present
+fq_705,fsc_705,811,705.jpg,apple,46,gt40,present
+fq_4920,fsc_4920,813,4920.jpg,strawberry,20,le40,present
+fq_7472,fsc_7472,820,7472.jpg,deer,15,le40,present
+fq_3318,fsc_3318,834,3318.jpg,green pea,185,gt40,present
+fq_910,fsc_910,835,910.jpg,comic book,18,le40,present
+fq_2923,fsc_2923,836,2923.jpg,stamp,86,gt40,present
+fq_2204,fsc_2204,838,2204.jpg,apple,9,le40,present
+fq_4289,fsc_4289,845,4289.jpg,green pea,43,gt40,present
+fq_1886,fsc_1886,852,1886.jpg,elephant,12,le40,present
+fq_7188,fsc_7188,853,7188.jpg,egg,67,gt40,present
+fq_2153,fsc_2153,859,2153.jpg,apple,12,le40,present
+fq_6250,fsc_6250,869,6250.jpg,apple,42,gt40,present
+fq_2140,fsc_2140,873,2140.jpg,apple,21,le40,present
+fq_4894,fsc_4894,874,4894.jpg,strawberry,11,le40,present
+fq_3500,fsc_3500,876,3500.jpg,red bean,15,le40,present
+fq_7420,fsc_7420,879,7420.jpg,deer,21,le40,present
+fq_6262,fsc_6262,885,6262.jpg,apple,74,gt40,present
+fq_4918,fsc_4918,887,4918.jpg,strawberry,95,gt40,present
+fq_4287,fsc_4287,888,4287.jpg,green pea,27,le40,present
+fq_7240,fsc_7240,890,7240.jpg,egg,49,gt40,present
+fq_697,fsc_697,893,697.jpg,apple,52,gt40,present
+fq_4892,fsc_4892,898,4892.jpg,strawberry,50,gt40,present
+fq_4939,fsc_4939,904,4939.jpg,tree log,20,le40,present
+fq_315,fsc_315,908,315.jpg,strawberry,53,gt40,present
+fq_349,fsc_349,911,349.jpg,strawberry,39,le40,present
+fq_4305,fsc_4305,912,4305.jpg,green pea,77,gt40,present
+fq_4881,fsc_4881,916,4881.jpg,strawberry,35,le40,present
+fq_909,fsc_909,919,909.jpg,comic book,62,gt40,present
+fq_7076,fsc_7076,922,7076.jpg,sauce bottle,31,le40,present
+fq_7129,fsc_7129,923,7129.jpg,keyboard key,104,gt40,present
+fq_2008,fsc_2008,924,2008.jpg,sunglasses,42,gt40,present
+fq_5464,fsc_5464,926,5464.jpg,green pea,54,gt40,present
+fq_7452,fsc_7452,931,7452.jpg,egg,85,gt40,present
+fq_5385,fsc_5385,936,5385.jpg,finger food,9,le40,present
+fq_2932,fsc_2932,942,2932.jpg,stamp,25,le40,present
+fq_2046,fsc_2046,944,2046.jpg,sunglasses,20,le40,present
+fq_7693,fsc_7693,947,7693.jpg,apple,81,gt40,present
+fq_3649,fsc_3649,954,3649.jpg,cashew nut,35,le40,present
+fq_5587,fsc_5587,958,5587.jpg,marble,16,le40,present
+fq_3281,fsc_3281,960,3281.jpg,finger food,15,le40,present
+fq_2913,fsc_2913,963,2913.jpg,stamp,15,le40,present
+fq_682,fsc_682,967,682.jpg,watch,14,le40,present
+fq_7366,fsc_7366,968,7366.jpg,sheep,44,gt40,present
+fq_4067,fsc_4067,970,4067.jpg,marble,42,gt40,present
+fq_6833,fsc_6833,972,6833.jpg,deer,17,le40,present
+fq_5582,fsc_5582,973,5582.jpg,marble,47,gt40,present
+fq_3494,fsc_3494,975,3494.jpg,red bean,37,le40,present
+fq_2179,fsc_2179,977,2179.jpg,apple,16,le40,present
+fq_2942,fsc_2942,982,2942.jpg,stamp,25,le40,present
+fq_6842,fsc_6842,984,6842.jpg,lego,36,le40,present
+fq_1537,fsc_1537,985,1537.jpg,keyboard key,110,gt40,present
+fq_904,fsc_904,988,904.jpg,comic book,12,le40,present
+fq_3326,fsc_3326,991,3326.jpg,green pea,122,gt40,present
+fq_3275,fsc_3275,995,3275.jpg,finger food,12,le40,present
+fq_309,fsc_309,996,309.jpg,strawberry,113,gt40,present
+fq_906,fsc_906,997,906.jpg,comic book,235,gt40,present
+fq_5814,fsc_5814,1001,5814.jpg,strawberry,34,le40,present
+fq_2920,fsc_2920,1010,2920.jpg,stamp,13,le40,present
+fq_2162,fsc_2162,1012,2162.jpg,apple,34,le40,present
+fq_4934,fsc_4934,1017,4934.jpg,strawberry,19,le40,present
+fq_2938,fsc_2938,1025,2938.jpg,stamp,9,le40,present
+fq_3655,fsc_3655,1026,3655.jpg,cashew nut,13,le40,present
+fq_5591,fsc_5591,1027,5591.jpg,marble,32,le40,present
+fq_2285,fsc_2285,1029,2285.jpg,apple,48,gt40,present
+fq_6653,fsc_6653,1034,6653.jpg,marker,309,gt40,present
+fq_7153,fsc_7153,1035,7153.jpg,deer,18,le40,present
+fq_4414,fsc_4414,1036,4414.jpg,hot air balloon,11,le40,present
+fq_4876,fsc_4876,1041,4876.jpg,strawberry,42,gt40,present
+fq_5508,fsc_5508,1042,5508.jpg,green pea,84,gt40,present
+fq_7117,fsc_7117,1045,7117.jpg,carrom board piece,24,le40,present
+fq_6860,fsc_6860,1046,6860.jpg,lego,512,gt40,present
+fq_6823,fsc_6823,1058,6823.jpg,sauce bottle,23,le40,present
+fq_6892,fsc_6892,1060,6892.jpg,stamp,54,gt40,present
+fq_4495,fsc_4495,1061,4495.jpg,ski,10,le40,present
+fq_6278,fsc_6278,1069,6278.jpg,apple,45,gt40,present
+fq_7173,fsc_7173,1072,7173.jpg,egg,48,gt40,present
+fq_2237,fsc_2237,1074,2237.jpg,apple,20,le40,present
+fq_7443,fsc_7443,1078,7443.jpg,marker,292,gt40,present
+fq_2279,fsc_2279,1079,2279.jpg,apple,37,le40,present
+fq_6247,fsc_6247,1085,6247.jpg,apple,15,le40,present
+fq_4086,fsc_4086,1086,4086.jpg,marble,12,le40,present
+fq_7195,fsc_7195,1090,7195.jpg,lego,384,gt40,present
+fq_6275,fsc_6275,1102,6275.jpg,apple,32,le40,present
+fq_2211,fsc_2211,1103,2211.jpg,apple,49,gt40,present
+fq_5842,fsc_5842,1106,5842.jpg,strawberry,52,gt40,present
+fq_6950,fsc_6950,1109,6950.jpg,comic book,24,le40,present
+fq_6649,fsc_6649,1110,6649.jpg,marker,108,gt40,present
+fq_4409,fsc_4409,1114,4409.jpg,hot air balloon,9,le40,present
+fq_2229,fsc_2229,1118,2229.jpg,apple,111,gt40,present
+fq_7043,fsc_7043,1124,7043.jpg,nail polish,95,gt40,present
+fq_3284,fsc_3284,1135,3284.jpg,finger food,16,le40,present
+fq_350,fsc_350,1144,350.jpg,strawberry,17,le40,present
+fq_7520,fsc_7520,1145,7520.jpg,carrom board piece,19,le40,present
+fq_3334,fsc_3334,1152,3334.jpg,green pea,146,gt40,present
+fq_317,fsc_317,1155,317.jpg,strawberry,14,le40,present
+fq_7480,fsc_7480,1156,7480.jpg,elephant,22,le40,present
+fq_7120,fsc_7120,1158,7120.jpg,sticky note,47,gt40,present
+fq_7047,fsc_7047,1159,7047.jpg,sheep,54,gt40,present
+fq_3274,fsc_3274,1160,3274.jpg,finger food,9,le40,present
+fq_6043,fsc_6043,1161,6043.jpg,keyboard key,102,gt40,present
+fq_4895,fsc_4895,1165,4895.jpg,strawberry,8,le40,present
+fq_2947,fsc_2947,1166,2947.jpg,stamp,36,le40,present
+fq_6644,fsc_6644,1171,6644.jpg,marker,500,gt40,present
+fq_2935,fsc_2935,1178,2935.jpg,stamp,13,le40,present
+fq_7588,fsc_7588,1189,7588.jpg,deer,39,le40,present

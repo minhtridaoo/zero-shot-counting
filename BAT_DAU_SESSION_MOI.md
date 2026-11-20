@@ -1,5 +1,43 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Tiến độ 18/11/2026 (còn 14 ngày đến hạn nộp 02/12):**
+- Thực nghiệm **đã xong hết** từ 11/11: dev, khóa cấu hình, test một lần (P+F MAE 5.82 so với B0 7.71). Không còn thí nghiệm bắt buộc nào.
+- Đã có: bản chi tiết 22 trang (khung báo cáo cuối), bản tóm tắt gửi thầy 5 trang, 6 hình, các script hậu kiểm. Tất cả đã push lên GitHub (commit 406ba54, 15/11). Từ 15/11 đến 18/11 chưa có commit mới.
+- **Còn thiếu:** (1) báo cáo cuối đúng mẫu nộp; (2) Related Work của Triệu (W7, hạn 20/11, chưa thấy trong repo); (3) slide; (4) demo trước/sau cải tiến.
+- Chưa xác nhận được trong repo: Trí đã gửi bản tóm tắt cho thầy chưa, thầy góp ý gì.
+
+**Cập nhật 20/11 — một khảo sát bổ sung FSC-147 test, 300 ảnh. Self-test dữ liệu giả PASS; nhánh đã push; khảo sát thật CHƯA chạy, chưa có kết quả FSC-147 mới:**
+- **Phân công:** Trí chạy notebook Kaggle. Triệu kiểm thiết kế, mẫu và kết quả theo [HUONG_DAN_KIEM_TRIEU.md](experiments/fsc147_survey/HUONG_DAN_KIEM_TRIEU.md), và tiếp tục phần báo cáo được giao.
+- Không tách FSC-147 / FSCD-147 (cùng ảnh, cùng split), không chạy lại benchmark 8,34.
+- **Câu hỏi chính:** giữ hay bỏ lượt 2 tốt hơn trên mẫu này. So sánh chính B0 − B2; phụ P+F − B2, P+F − B0; C6 − B2+F chỉ mô tả.
+- Tài liệu: [bản khai báo trước](experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), có mục "thay đổi so với đề xuất của Triệu".
+- Vị trí: các file ở worktree `D:\MINHTRIHOCCODE\HOCKI5\CS331\.claude\worktrees\kind-chaplygin-249b83\experiments\fsc147_survey\`, nhánh `claude/kind-chaplygin-249b83`. Notebook ghim commit `4cd89092c5160dc0dc79455adba42ff096a44664`. Nhánh **đã push** ([GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)), chưa gộp `main`, nên checkout chính chưa thấy nếu chưa `git fetch` và checkout nhánh. Còn chờ trước khi chạy: Trí duyệt chính thức, Triệu kiểm phần A.
+
+**Luồng khảo sát (Trí chốt 20/11):**
+1. Trí duyệt thiết kế.
+2. ✅ Self-test dữ liệu giả **PASS** (20/11): số đếm, chỉ số của 5 cách, Δ 4 cặp, nhóm, CI, 5 ca từ chối đúng lý do. Không có lỗi phải sửa trong script chấm.
+3. ✅ Ghim notebook vào commit chứa script đã kiểm.
+4. ✅ Push nhánh lên GitHub, đã kiểm commit có trên remote.
+5. Triệu kiểm phần A: thiết kế + danh sách 300 ảnh.
+6. Trí gắn dữ liệu/checkpoint và chạy notebook Kaggle. Notebook chạy model → áp bộ lọc đã khóa → chấm 5 cách → xuất ZIP.
+7. Trí tải ZIP, gửi assistant và Triệu.
+8. Assistant tổng hợp. Triệu kiểm đủ ảnh, đúng cấu hình, tính lại điểm (phần B–C).
+9. Đưa bảng kết quả, nhận xét và hạn chế vào báo cáo.
+10. Đóng khảo sát ngày 24/11.
+
+**Luồng hoàn thành đồ án (song song với khảo sát):**
+1. Viết báo cáo từ kết quả MUCCA đã có, ngay bây giờ.
+2. Bổ sung khảo sát FSC-147 nếu hoàn tất.
+3. Chốt báo cáo.
+4. Hoàn thiện slide và demo tĩnh.
+5. Tập trình bày, chuẩn bị câu hỏi phản biện.
+6. Rà bản nộp, nộp 02/12.
+
+**Đang ở:** bước 5 của luồng khảo sát.
+- Việc kế tiếp: **Trí** duyệt thiết kế chính thức; **Triệu** kiểm phần A (chưa kiểm mục nào).
+- Sau đó Trí chạy Kaggle (22–23/11).
+- Song song: **Trí + assistant** viết báo cáo cuối.
+
 **Đợt đồng bộ Git 15/11:** báo cáo và kết quả hậu kiểm được đưa vào commit của phiên này. Việc tiếp theo: Trí đọc mục 4.1/7.6 bản chi tiết rồi gửi thầy; chưa chạy kiểm giả thuyết H2 hoặc thí nghiệm mới.
 
 **Cập nhật 10/11/2026; 11/11: Triệu ghi duyệt pilot (W3), pilot đã đóng; Triệu kiểm xong 40 ảnh test (W4), khóa dữ liệu (W5), chạy dev trên Kaggle (W6).**
@@ -25,7 +63,8 @@
 ✅ [10b] Gói hậu kiểm + bản tiến độ gửi thầy (11/11, assistant, CPU): khung trùng X/Y, khung đúng loại, thời gian, 6 hình
 ✅ [10c] Bản trình bày CHI TIẾT 19 trang (12/11): nền tảng, định nghĩa, phương pháp, giao thức, kết quả, phân tích, hạn chế
 ✅ [10d] Sửa theo góp ý của bạn đọc (15/11): T chỉ gỡ khoảng 1/5 tác hại lượt 2; −39% so với B2 chỉ là mô tả; mục 7.6 giải thích thứ hạng C6
-⏳ [11] Báo cáo + slide + demo → nộp 02/12   ◀── ĐANG Ở ĐÂY
+⏳ [11a] Khảo sát bổ sung FSC-147 test, 300 ảnh: Trí chạy, Triệu kiểm. Self-test PASS + push 20/11; chờ Trí duyệt + Triệu kiểm A → chạy 22–23/11; đóng 24/11. Chưa có kết quả mới
+⏳ [11] Báo cáo cuối + slide + demo → nộp 02/12   ◀── ĐANG Ở ĐÂY (18/11: có khung 22 trang; chưa có báo cáo cuối, Related Work, slide, demo)
 ```
 
 **Nhánh P** (CLIP kiểm mẫu trước lượt 2) đã có code và đã kiểm trên pilot; chưa thử thật vì dữ liệu chưa khóa. **Nhánh R** chỉ để dự phòng. Chi tiết ở mục 1b của file kế hoạch.
@@ -84,12 +123,15 @@ Hậu kiểm dev: `evaluation/dev_posthoc_T_C6.py` → `results/countgdpp/p1_dev
 
 ## Việc ngay tiếp theo
 
+*Cập nhật 20/11. Các dòng đã xong trước đó (W6, W8, freeze v2) xem WORKLOG 11/11.*
+
 | Ai | Việc | Hạn |
 |---|---|---|
-| **Trí** | ✅ Khóa cấu hình 11/11. Tiếp: **viết báo cáo** (giới thiệu, phương pháp, thiết lập, pilot, N4, dev); phần kết quả test điền sau W8 | 11–29/11 |
-| **Triệu** | ✅ **W8 xong 11/11** (test một lần, run `p1_test_kaggle_t4_20261111_1430`): chính P(0.20, M5)+F MAE **5.82** so với B0 7.71 (ΔMAE −1.88, CI [−3.66, −0.44]); C6 4.63; B2 9.61. [Báo cáo](reports/TRIEU_W8_TEST_20261111.md). Tiếp: Related Work (W7) | 20/11 |
-| **Triệu** | ✅ **W6 xong 11/11** (Kaggle T4, stamp 20261111_1203: Kiểm A, Kiểm C 60/60 đạt; output nhỏ ở `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, raw trên Kaggle). Trước đó: **W6 chạy trên Kaggle T4** bằng `experiments/countgdpp/kaggle_p1_dev.ipynb` (11/11, thay Colab; test sau này cũng phải chạy Kaggle T4). Nội dung cũ: **W6 chạy dev trên T4: được bắt đầu ngay** (dev đã chốt nội dung), song song với W4. Nhớ chạy `p1_controls.py` (để có C6) và giữ raw `.npz` trên Drive | 12–15/11 |
-| **Assistant** | ✅ freeze v2 (`results/countgdpp/freeze_v2_20261111.json`) + `experiments/countgdpp/apply_freeze_v2.py` (áp lại lên dev: khớp 5/5 cách). Tiếp: kiểm output test của Triệu; soạn nháp báo cáo khi Trí cần | sau W8 |
+| **Trí** | (1) Duyệt thiết kế chính thức; ✅ đã cho phép self-test (PASS 20/11). (2) Sau khi Triệu kiểm A: gắn dữ liệu/checkpoint, chạy `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` trên Kaggle T4, một lần. (3) Báo đã gửi bản tóm tắt cho thầy chưa | duyệt 21/11; chạy 22–23/11 |
+| **Trí** | Viết báo cáo cuối từ bản chi tiết 22 trang (song song, không chờ khảo sát) | 19–25/11 |
+| **Triệu** | (1) Kiểm khảo sát theo [HUONG_DAN_KIEM_TRIEU.md](experiments/fsc147_survey/HUONG_DAN_KIEM_TRIEU.md): phần A trước khi chạy, phần B–C sau khi có kết quả. (2) Related Work (W7) và phần báo cáo được giao | A: 21/11; B–C: 24/11 |
+| **Assistant** | Đã xong: script tạo mẫu, script chấm, self-test (**PASS** 20/11), notebook ghim commit, hướng dẫn kiểm, push nhánh. Tiếp: kiểm output; soạn đoạn "Kiểm khả năng tổng quát"; hỗ trợ báo cáo cuối | 24/11 |
+| **Cả nhóm** | Slide + demo tĩnh; tập thuyết trình | 25/11–01/12 |
 
 
 **Giải thích thao tác (10/11):** kiểm absent/GT là xem ảnh gốc để xác nhận nhãn đầu vào dùng chấm, không review output model. Đã đọc bảng: dev vẫn 20 PENDING; có thể bắt đầu mcac_9 (plates=12, cups=4, forks dự kiến vắng mặt). Chưa có xác nhận nhãn mới.

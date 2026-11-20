@@ -1,5 +1,139 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 20/11/2026 (khuya) — self-test PASS, ghim notebook, push nhánh (assistant; chưa chạy model hay khảo sát thật)
+
+Trí cho phép chạy self-test dữ liệu giả, hoàn thiện bàn giao và push nhánh để Triệu xem tiến độ.
+
+**Self-test** `python experiments/fsc147_survey/selftest_score_fsc147.py`:
+- Lần 1: **PASS**.
+- Làm chặt self-test: mỗi ca từ chối phải báo **đúng lý do**, không chỉ "có báo lỗi". Chạy lại: **PASS**.
+- Kiểm độ nhạy: cố ý đưa 2 đáp án sai (MAE của B2, Δ B0 − B2) thì self-test báo **FAIL** đúng 2 chỗ.
+- Các ca đã kiểm:
+  - số đếm sau lọc F (bounds/ngưỡng freeze v2);
+  - MAE, RMSE, Bias, thừa/thiếu, số câu = 0 của B0, B2, P+F, C6, B2+F;
+  - Δ của 4 cặp khai báo; Δ nhóm ≤ 40 / > 40; CI [10, 10] khi Δ hằng; số dòng `per_query.csv`;
+  - từ chối: thư mục đã có, crop=True, synthetic=True, query trùng, manifest sai hash.
+- **Không có lỗi phải sửa trong script chấm**; chỉ sửa file self-test để kiểm chặt hơn. Không sửa file khóa, freeze hay mẫu; không đổi đáp án.
+
+**Ghim và push:**
+- Notebook ghim `4cd89092c5160dc0dc79455adba42ff096a44664` (commit chứa script chấm đã kiểm và self-test bản cuối).
+- Push nhánh `claude/kind-chaplygin-249b83`, không force, chưa gộp `main`. Đã kiểm trên remote. [Nhánh trên GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83).
+
+**Trạng thái:**
+- Khảo sát thật **chưa chạy**, chưa có kết quả FSC-147 mới.
+- Triệu chưa kiểm mục nào.
+- Duyệt chính thức trước khi chạy là việc của Trí.
+
+**Tiếp:** Trí duyệt + Triệu kiểm phần A (21/11) → Trí chạy Kaggle (22–23/11) → assistant tổng hợp, Triệu kiểm B/C → đóng 24/11. Báo cáo viết song song.
+
+## 20/11/2026 (tối) — Trí đồng ý thiết kế; chỉnh nhẹ script chấm (assistant; chưa chạy model, evaluator hay self-test)
+
+**Trí đồng ý** thiết kế và phân công (một khảo sát 300 ảnh; Trí chạy GPU, Triệu kiểm; không còn hai notebook riêng). Trí đã tự đọc file thật trong worktree; hash mẫu và freeze khớp khai báo. **Chưa sẵn sàng chạy hoàn toàn** vì self-test chưa thực thi.
+
+**Chỉnh theo góp ý:**
+- `score_fsc147_present_only.py` giờ **từ chối** thay vì chỉ ghi lại: `query_id`/`image_id` trùng (manifest hoặc trong một nguồn của bundle), và `run_config` có `crop`, `synthetic`, `uses_ground_truth` khác false.
+- `selftest_score_fsc147.py` thêm 3 ca từ chối (crop=True, synthetic=True, query trùng), tổng 5 ca. Chỉ kiểm cú pháp, **chưa chạy**.
+- Khai báo và notebook: push nhánh chứa commit đã ghim là đủ, không bắt buộc gộp `main`; sửa code sau self-test thì ghim lại commit mới.
+- Lỗi khung suy biến ghi rõ là **rủi ro đọc từ code, chưa xảy ra** trên 300 ảnh.
+
+**Ghi luồng** khảo sát và luồng hoàn thành đồ án vào `BAT_DAU_SESSION_MOI.md` và khai báo (mục 10b).
+
+**Ghim:** notebook `d5339c2e56dd60bee3be9a478a03e5b19922eea5`.
+
+**Tiếp:** Trí cho phép → assistant chạy `python experiments/fsc147_survey/selftest_score_fsc147.py` → đạt thì push nhánh; lỗi thì sửa, kiểm lại, ghim lại.
+
+## 20/11/2026 (rà soát) — thống nhất kế hoạch khảo sát FSC-147 (assistant; chưa chạy model, evaluator hay self-test)
+
+Theo yêu cầu Trí, rà soát và chỉnh lại cho thống nhất. **Mục này thay phần phân công ở hai mục 20/11 bên dưới.**
+
+**Phạm vi và phân công:**
+- Một khảo sát duy nhất trên 300 ảnh. Trí chạy, Triệu kiểm, báo cáo viết song song.
+- Không tách FSC-147 / FSCD-147, không chạy lại benchmark 8,34. Đóng 24/11.
+
+**Kiểm dữ liệu (chỉ đọc):**
+- Nhãn `countgd_test_fscd147.json` có trong repo từ commit đầu, hash khớp benchmark. Ảnh lấy từ link FSCD-147 trong README CountGD++ (`FSC147_384_V2`).
+- Đếm bằng điểm `area == 4`. Tên lớp lấy từ `categories`.
+- Cách gọi thống nhất: "FSC-147 test".
+- Mẫu ở `experiments/fsc147_survey/sample_300/` (worktree `.claude/worktrees/kind-chaplygin-249b83`). Tính lại seed 331 ra đúng 300 id đã lưu; GT, tên file, tên lớp khớp; 3 hash khớp bản trong commit e73ad37. Giữ nguyên mẫu.
+
+**Kiểm code:** B0 và B2 chỉ khác ở việc có lượt 2: cùng lượt 1, trạng thái ngẫu nhiên được trả lại, mẫu lấy từ lượt 1; không có khung > 0.23 thì B2 = B0. Phát hiện `select_pseudo` báo lỗi khi gặp khung mẫu suy biến, nên ghi vào quy tắc lỗi: lỗi lặp lại ở một ảnh thì không bỏ ảnh, ghi khảo sát chưa hoàn tất.
+
+**Sửa:**
+- `score_fsc147_present_only.py`: bootstrap ghép cặp lấy lại theo id ảnh; câu đọc "chưa thấy khác biệt rõ"; thêm `--sample-dir` cho self-test.
+- Mới `selftest_score_fsc147.py`: 4 ảnh giả, đáp án tính tay. **Chưa chạy, chờ Trí cho phép.**
+- Viết lại bản khai báo, thêm mục 9 "thay đổi so với đề xuất của Triệu".
+- Notebook: hướng dẫn gắn dữ liệu/checkpoint, Save Version, tải zip; dừng nếu thiếu ảnh.
+- Mới `HUONG_DAN_KIEM_TRIEU.md`.
+- Cập nhật W9 trong giao việc Triệu, roadmap H7, README, BAT_DAU.
+
+**Trạng thái:** notebook ghim `cfc1ddb8f0afd3bc2fa4aaabb503efeef1ef8e6f` (commit bản rà soát; đã kiểm 3 hash mẫu, freeze v2 và script chấm mới trong commit này). **Chưa push**, nên notebook chưa sẵn sàng chạy.
+
+## 20/11/2026 (sau) — chia phần FSC-147 / FSCD-147, ghim commit notebook (assistant, chưa chạy model)
+
+**Trí chốt phân công:** FSC-147 là phần Trí chạy; FSCD-147 là phần của Triệu. Sửa lại mục 20/11 bên dưới: chỗ ghi "Triệu chạy notebook" nay là **Trí chạy**.
+
+**Ranh giới:** FSC-147 test và FSCD-147 test là cùng 1.190 ảnh. Triệu không chạy lại cặp B0/B2/P+F trên các ảnh này. Phần FSCD-147 (W9 trong `HANDOFF/GIAO_VIEC_TRIEU_20261106.md`) chờ Triệu xác nhận là tổng hợp kết quả đã có hay chạy mới; chạy mới cần Trí duyệt.
+
+**Ghim commit:** notebook `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` checkout `e73ad371b397e3361678d78a211bc492955f7ce1` và dừng nếu HEAD khác commit này.
+- Lỗi phát hiện trước khi ghim: `sample_300/inputs.jsonl` ghi trên Windows có CRLF, Git đổi sang LF khi commit. Như vậy bản trên Kaggle sẽ lệch hash và notebook dừng ở Ô 2.
+- Đã sửa: thêm `/experiments/fsc147_survey/sample_300/** -text` vào `.gitattributes`. Kiểm lại: hash blob trong commit đã ghim khớp `sample_meta.json` (`c1cfb321…`, `30ea7987…`).
+
+**Cập nhật:** pipeline [11a]/[11b] và bảng việc trong `BAT_DAU_SESSION_MOI.md`; H7 và lịch 20–24/11 trong roadmap; W9 trong giao việc Triệu; README.
+
+**Trạng thái Git:** 2 commit cục bộ trên nhánh `claude/kind-chaplygin-249b83` (worktree `.claude/worktrees/kind-chaplygin-249b83`), **chưa push**. Checkout chính `main` vẫn ở 406ba54 nên chưa thấy `experiments/fsc147_survey/`.
+
+**Tiếp:** Trí duyệt → push nhánh → gộp vào `main` (merge/fast-forward, không squash để giữ SHA) → Trí chạy notebook 22–23/11 → đóng 24/11.
+
+## 20/11/2026 — chuẩn bị khảo sát bổ sung FSC-147 (assistant, CPU, chưa chạy model)
+
+Trí giao: thiết kế khảo sát "bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không", 300 ảnh, chuẩn bị đủ trước khi xin chạy.
+
+**Kiểm dữ liệu:**
+- Nhãn FSCD-147 test có trong repo, sha256 khớp lần kiểm 20/10.
+- 1.190 ảnh, mỗi ảnh 1 lớp và 3 khung mẫu; GT từ 8 đến 3.701.
+- Lần benchmark 15/10 chạy cấu hình đầy đủ (cắt ảnh + mẫu GPT-5), không có cặp B0/B2, nên không dùng lại được; phải chạy mới.
+
+**Đã làm** (`experiments/fsc147_survey/`):
+- `make_fsc147_sample.py`, đã chạy một lần: ra `sample_300/` (300 ảnh, seed 331, 27 lớp, 163 ảnh ≤ 40 / 137 ảnh > 40, GT từ 8 đến 621).
+- `score_fsc147_present_only.py`: chỉ import `counts_for` từ `apply_freeze_v2.py`, không sửa file đã khóa. Mới qua kiểm cú pháp, chưa chạy thử.
+- `kaggle_fsc147_survey.ipynb`: Ô 3 và Ô 5 chép nguyên từ W8. Các ô code đã qua kiểm cú pháp.
+- `KHAI_BAO_TRUOC_FSC147_20261120.md`.
+
+**Thiết kế:**
+- Một run chung `--tau-pseudo 0.20 --m 5 --replay-b2`, `crop=False`, `synthetic=False`.
+- Cặp chính B0 − B2 (chỉ khác lượt 2). Cặp phụ P+F − B2 và P+F − B0.
+- C6 − B2+F chỉ báo kèm, vì freeze đặt ngưỡng F riêng cho từng nguồn.
+- Bootstrap theo ảnh, 5.000 lần, seed 331. Báo theo nhóm GT ≤ 40 / > 40.
+
+**Chưa làm / tiếp:**
+- Trí duyệt thiết kế và lệnh chạy.
+- Commit + push (notebook lấy code từ `main`).
+- Triệu xác nhận chưa chạy riêng, rồi chạy 22–23/11. Đóng 24/11.
+- Thời gian chạy trên FSC-147 chưa đo.
+
+## 19/11/2026 — rà bản so sánh nhóm khác của Triệu (assistant, chỉ đọc)
+
+Đọc `workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md`. Kiểm trong repo các ý kỹ thuật, đều đúng: runner ghi `crop=False`, `synthetic=False`; `apply_freeze_v2.py` chia cho `len(absn)` nên sẽ lỗi khi không có câu vắng mặt; FSCD-147 8.34/24.64 khớp `BENCHMARK_FSCD147.md`; có `CountGDPlusPlus/app.py`. Chưa kiểm số 16.55 → 10.29 trong Bảng 1 bài báo.
+
+Đề xuất của assistant cho Trí: ưu tiên báo cáo cuối, rồi demo (bản tĩnh trước), sau đó mới làm A. A nên làm bản thu nhỏ, khai báo trước, hạn 24/11; quá hạn thì chỉ ghi vào phần hạn chế. Chờ Trí quyết A. Không chạy gì.
+
+## 18/11/2026 — cập nhật tiến độ (assistant, chỉ đọc + sửa tài liệu)
+
+Theo yêu cầu Trí "cập nhật tiến độ". Fetch remote zero-shot-counting: main vẫn ở 406ba54 (15/11), không có commit mới. Không chạy model, evaluator hay thí nghiệm.
+
+**Tình trạng 6 sản phẩm (H1–H6):**
+- H1 báo cáo cuối: có bản chi tiết 22 trang làm khung; chưa có bản cuối; Related Work (Triệu, W7, hạn 20/11) chưa có trong repo.
+- H2 bảng test: xong 11/11.
+- H3 slide + demo: chưa bắt đầu; có sẵn 6 hình.
+- H4 repo tái lập: phần lớn đã có.
+- H5 pilot: đóng 11/11. H6 luật kết luận: đã chốt, kết quả dương.
+
+**Lịch:** thực nghiệm xong sớm khoảng 12 ngày so với kế hoạch 10/11. Còn 14 ngày, chỉ còn viết.
+
+**Đã sửa:** đầu `BAT_DAU_SESSION_MOI.md` (tiến độ + 4 việc tiếp theo), bước [11]; bảng H1–H3 và dòng đầu `roadmap/KE_HOACH_HOAN_THANH_20261110.md`.
+
+**Tiếp:** Trí xác nhận đã gửi thầy chưa; Triệu nộp Related Work; bắt đầu chuyển bản chi tiết thành báo cáo cuối.
+
 ## 15/11/2026 — đồng bộ báo cáo và hậu kiểm lên GitHub
 
 Theo yêu cầu Trí, kiểm đúng remote zero-shot-counting/main; fetch xác nhận không có commit lệch. Rà 28 file (10,52 MiB): báo cáo Markdown/Word/PDF, hình, script và kết quả hậu kiểm. Kiểm cú pháp Python/JSON, tính toàn vẹn DOCX và mẫu token/dấu xung đột đạt. Không chạy evaluator, kiểm thử thực nghiệm hoặc model; không sửa dữ liệu khóa/freeze/dự đoán gốc. Stage đúng danh sách đã rà, commit và push bình thường; xác nhận kết quả bằng HEAD so với ls-remote sau push.

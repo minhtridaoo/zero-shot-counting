@@ -47,6 +47,18 @@
 6. Đưa vào repo `predictions_*.jsonl`, `run_config.json`, `candidates.jsonl`, `_controls*`, `_offline/bundle.json`, `_eval/result.json`, `FILES_*.json`. Không đưa `.npz` hay ảnh (D10).
 7. Kết quả xấu cũng **không chạy lại**. Lỗi kỹ thuật (crash, thiếu file) thì ghi lại rồi chạy lại đúng lệnh cũ, kèm ghi chú trong WORKLOG.
 
+## W9 — kiểm khảo sát bổ sung FSC-147 test, 300 ảnh (thêm 20/11, Trí giao; đã rà soát cùng ngày)
+
+**Trí chạy** notebook Kaggle. **Triệu kiểm**, không chạy model. Chỉ có một khảo sát; không tách FSC-147 / FSCD-147 (cùng ảnh, cùng split) và **không chạy lại benchmark FSCD-147 cũ** (8,34 / 24,64).
+
+1. **Trước khi Trí chạy (21/11):** làm phần A trong [HUONG_DAN_KIEM_TRIEU.md](../experiments/fsc147_survey/HUONG_DAN_KIEM_TRIEU.md): đọc [bản khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md), xem mục 9 (thay đổi so với đề xuất A của Triệu), kiểm danh sách mẫu và hash.
+2. **Sau khi có kết quả (chậm nhất 24/11):** làm phần B (đủ 300 ảnh, đúng cấu hình) và phần C (tự tính lại MAE, Δ chính, cách đọc CI).
+3. Báo Trí bảng Đạt / Không đạt / Chưa kiểm được.
+
+**Trạng thái 20/11:** self-test dữ liệu giả PASS; nhánh đã push ([GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83)); khảo sát thật chưa chạy. Triệu chưa kiểm mục nào; phần A làm trước, không cần GPU.
+
+W7 (Related Work) và phần báo cáo được giao vẫn tiếp tục song song.
+
 ## 2. Lệnh rút dữ liệu (W1)
 
 ```text

@@ -1,6 +1,8 @@
 # Kế hoạch đến khi hoàn thành — cập nhật 10/11/2026
 
 **Repo đã đổi tên:** `github.com/minhtridaoo/zero-shot-counting` (remote local đã trỏ lại). HEAD `e7fb20c`.
+**Cập nhật 18/11: còn 14 ngày đến hạn 02/12.** Thực nghiệm (dev, khóa, test) đã xong 11/11, sớm hơn lịch khoảng 12 ngày; phần còn lại chỉ là viết báo cáo cuối, slide, demo. Dòng dưới là ghi chú cũ 10/11:
+
 **Còn 22 ngày đến hạn 02/12.** Lịch 05/11 đã trễ khoảng 4 ngày ở bước kiểm/khóa dữ liệu. Kế hoạch dưới đây đã dời lịch và vẫn còn 2 ngày đệm.
 
 ## 1. Đang ở đâu
@@ -41,12 +43,16 @@ Vị trí trong pipeline:
 
 | # | Sản phẩm | Trạng thái |
 |---|---|---|
-| H1 | **Báo cáo cuối** đủ mục: bài toán X/Y → CountGD++ B0/B2 → pilot + lỗi → cải tiến v1 + kết quả 10 ảnh → N4 + cơ chế lỗi → cải tiến v2 (P/T) trên dev → **kết quả test 40 ảnh** → hạn chế → kết luận | Có khoảng 60% tư liệu; **chưa viết** |
-| H2 | **Bảng kết quả test cuối**: chạy một lần, có CI theo ảnh, đủ chỉ số có mặt / vắng mặt | Chưa |
-| H3 | **Slide + demo** (ví dụ "hỏi people ra chó", trước/sau cải tiến) | Chưa |
+| H1 | **Báo cáo cuối** đủ mục: bài toán X/Y → CountGD++ B0/B2 → pilot + lỗi → cải tiến v1 + kết quả 10 ảnh → N4 + cơ chế lỗi → cải tiến v2 (P/T) trên dev → **kết quả test 40 ảnh** → hạn chế → kết luận | 18/11: có bản chi tiết 22 trang ([BAO_CAO_CHI_TIET_DO_AN_20261112](../reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md)) làm khung; **chưa có bản báo cáo cuối**, Related Work (W7) chưa có trong repo |
+| H2 | **Bảng kết quả test cuối**: chạy một lần, có CI theo ảnh, đủ chỉ số có mặt / vắng mặt | **Xong 11/11** ([KET_QUA_TEST_CUOI](../reports/KET_QUA_TEST_CUOI_20261111.md)) |
+| H3 | **Slide + demo** (ví dụ "hỏi people ra chó", trước/sau cải tiến) | Chưa (18/11); đã có 6 hình ở `reports/figures/` dùng lại được |
 | H4 | **Repo tái lập được**: README chỉ đường từ dữ liệu → lệnh → kết quả; tập dữ liệu và cấu hình đã khóa | Phần lớn đã có |
 | H5 | **Pilot đóng**: Trí và Triệu cùng xác nhận (V7) | **Đã đóng 11/11** (Trí 05/11, Triệu 11/11; [PILOT_SUMMARY](../reports/PILOT_SUMMARY.md) mục 7) |
 | H6 | Kết luận trung thực: nếu v2 không thắng B0 theo luật D9 thì báo kết quả âm, kèm phân tích | Luật đã chốt |
+
+> **Bổ sung 20/11 (đã rà soát; không đổi kết quả chính):** thêm H7, một khảo sát bổ sung trên 300 ảnh FSC-147 test. Trí chạy, Triệu kiểm. Không tách FSC-147 / FSCD-147, không chạy lại benchmark cũ. Đây là việc phụ: đóng 24/11, không kịp thì ghi hạn chế. Ưu tiên chính vẫn là H1 và H3, viết song song.
+
+| H7 | **Khảo sát bổ sung** FSC-147 test, 300 ảnh: so sánh chính B0 − B2 ([khai báo](../experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md)) | 20/11: self-test PASS, nhánh đã push; chờ Trí duyệt chính thức + Triệu kiểm A; khảo sát chưa chạy |
 
 ## 3. Lịch mới (đường găng in đậm)
 
@@ -59,6 +65,7 @@ Vị trí trong pipeline:
 | 16–22/11 | **Viết báo cáo phần 1–5** (khoảng 4 giờ) | Related Work (W7, khoảng 2 giờ) | Dựng bảng/hình từ kết quả có sẵn |
 | **23–24/11** | — | **Chạy test một lần** | Chấm + CI |
 | 25–29/11 | Viết kết quả + hạn chế, slide, demo (khoảng 5 giờ) | Góp slide; review N4 nhỏ trên test (tùy chọn) | Kiểm số trong báo cáo |
+| **Bổ sung 20/11: 20–24/11** | Duyệt khai báo; **chạy khảo sát 300 ảnh** (`experiments/fsc147_survey/`, một lần, 22–23/11); viết báo cáo song song | **Kiểm** thiết kế + mẫu (21/11) và kết quả (24/11); Related Work | Script, self-test (chưa chạy), notebook ghim commit, hướng dẫn kiểm; kiểm output; đóng 24/11 |
 | 30/11–01/12 | Đệm + tập thuyết trình | | |
 | **02/12** | **Nộp** | | |
 
