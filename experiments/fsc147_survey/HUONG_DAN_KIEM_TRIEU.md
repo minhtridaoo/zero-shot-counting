@@ -9,11 +9,13 @@
 - **Khảo sát thật chưa chạy**, chưa có kết quả FSC-147 mới. **Không cần GPU** cho phần của Triệu.
 - **Triệu chưa kiểm mục nào.** A1–A4: chờ Triệu, trước khi Trí chạy. B1–B10, C1–C5: chờ kết quả. Assistant không tự ghi "Đạt" thay Triệu.
 
+**Cập nhật 21/11:** `main` đã merge khảo sát (`ecb1905`, PR #1); tệp xem được ngay trên `main`. Commit ghim giữ nguyên.
+
 **Xem trên GitHub:** [nhánh `claude/kind-chaplygin-249b83`](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83). Notebook ghim commit `4cd89092c5160dc0dc79455adba42ff096a44664`; các tệp của phần A nằm trong `experiments/fsc147_survey/` ở commit đó.
 
 Mỗi mục có 3 trạng thái: **Đạt**, **Không đạt** (ghi lý do), **Chưa kiểm được** (ghi vì sao). Không đánh "Đạt" khi chưa tự xem.
 
-## A. Trước khi Trí chạy (21/11): kiểm thiết kế và mẫu
+## A. Trong ngày 21/11, trước khi Trí chạy: kiểm thiết kế và mẫu
 
 1. Đọc [KHAI_BAO_TRUOC_FSC147_20261120.md](KHAI_BAO_TRUOC_FSC147_20261120.md). Kiểm các điểm:
    - So sánh chính là B0 − B2. P+F − B2 và P+F − B0 là phụ. C6 − B2+F chỉ mô tả.
@@ -67,4 +69,4 @@ Trí gửi `for_repo_<stamp>.zip` và phần in ra của Ô 2, 5, 7, 8.
 
 ## D. Báo lại
 
-Gửi Trí một bảng gồm mục A1–A4, B1–B10, C1–C5 với trạng thái Đạt / Không đạt / Chưa kiểm được. Hạn: A trước khi Trí chạy (21/11); B và C trong ngày nhận kết quả, chậm nhất 24/11.
+Gửi Trí một bảng gồm mục A1–A4, B1–B10, C1–C5 với trạng thái Đạt / Không đạt / Chưa kiểm được. Hạn: A **trong ngày 21/11, trước khi Trí chạy**; B và C trong ngày nhận kết quả, chậm nhất 24/11.
