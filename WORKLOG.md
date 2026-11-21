@@ -1,5 +1,26 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 21/11/2026 — chốt bàn giao khảo sát FSC-147 (assistant; chỉ tài liệu, không chạy gì)
+
+Trí yêu cầu chốt bàn giao, không mở rộng thử nghiệm.
+
+**Git:**
+- Fetch: `main` = `ecb1905`, merge PR #1, gộp nhánh `5988c22` và `3ac3a60` (so sánh nhóm khác của Triệu).
+- Commit ghim `4cd89092c5160dc0dc79455adba42ff096a44664` đã nằm trong `main`. **Giữ nguyên commit ghim; không chạy lại self-test.**
+- Các mục cũ ghi "chưa gộp `main`" là đúng tại thời điểm viết; trạng thái hiện tại sửa trong BAT_DAU, khai báo, hướng dẫn kiểm, giao việc, roadmap.
+
+**Bàn giao:**
+- Hạn phần A của Triệu đổi thành **trong ngày 21/11, trước khi Trí chạy**.
+- Thêm `HUONG_DAN_CHAY_KAGGLE_TRI.md`:
+  - tải notebook từ `main`, Ô 1 phải ghim `4cd8909…` (bản notebook bên trong `4cd8909` còn ghim SHA cũ);
+  - gắn checkpoint/ảnh, chọn GPU T4 x2 + Internet;
+  - Save & Run All (Commit), tải zip + log;
+  - bảng các trường hợp phải dừng và gửi log.
+
+**Checkout local** `D:\MINHTRIHOCCODE\HOCKI5\CS331`: có ghi chú chưa commit trong BAT_DAU/WORKLOG (phiên kiểm 20–21/11). Assistant không sửa; cần snapshot trước khi pull.
+
+**Trạng thái:** self-test PASS; khảo sát thật chưa chạy; chờ Trí duyệt chính thức và Triệu kiểm phần A. Báo cáo viết song song.
+
 ## 20/11/2026 (khuya) — self-test PASS, ghim notebook, push nhánh (assistant; chưa chạy model hay khảo sát thật)
 
 Trí cho phép chạy self-test dữ liệu giả, hoàn thiện bàn giao và push nhánh để Triệu xem tiến độ.
