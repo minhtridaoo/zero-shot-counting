@@ -1,5 +1,28 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 22/11/2026 — lời dặn của Trí: Triệu chạy thay, chốt đồ án; cẩm nang + kế hoạch slide (assistant; không chạy gì)
+
+**Trí dặn (ghi lại để Triệu cập nhật tiếp):**
+- Hôm nay Trí không có thời gian. Đã báo trước Triệu: **Triệu chạy task của Trí thay Trí**, làm hết những gì có thể trong ngày, chốt đồ án.
+- Tối nay Trí + Triệu họp: chuẩn bị gì, hành trang gì, trình bày gì với thầy.
+- Cần một **cẩm nang** chứa toàn bộ đồ án (md/html), rồi **kế hoạch slide và cách trình bày**: thầy và các bạn dễ hiểu, nhóm trơn tru, tự tin, không có gì không biết.
+- Việc hữu ích chưa được giao thì **hỏi Trí trước**.
+
+**Đã làm:**
+- Đồng bộ nhánh với `main` (`5941167`, merge PR #2).
+- Viết `HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md`: thứ tự việc, chạy Kaggle thay Trí, đưa kết quả vào repo, Related Work, cuối ngày.
+- Viết `reports/CAM_NANG_DO_AN_CS331.md` + `.html` (tự chứa hình): 0–15 mục, mọi số lấy từ báo cáo đã kiểm, chỗ chưa có ghi "chờ".
+- Viết `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` + `.html`: 16 slide + dự phòng, kịch bản, 18 câu hỏi, hành trang, lịch, chương trình họp, 6 việc chờ Trí quyết.
+- Cập nhật BAT_DAU (khối 22/11), giao việc (W10), README.
+
+**Ghi chú trung thực:**
+- Duyệt thiết kế khảo sát: assistant chỉ ghi lại lời Trí (20/11 "Ổn về thiết kế và phân công rồi"; 21/11 "Phần chuẩn bị ổn rồi"; 22/11 giao Triệu chạy). Assistant không ký thay.
+- Triệu vừa kiểm A vừa chạy, nên kiểm B/C cần assistant kiểm độc lập sau.
+- Lý do chọn CLIP ViT-B/32 chưa có trong tài liệu; để Trí xác nhận (câu hỏi 5 của kế hoạch slide).
+- Trích dẫn PseCo/DAVE/VA-Count chưa kiểm.
+
+**Tiếp (Triệu):** theo file HANDOFF ngày 22/11; cuối ngày thêm mục WORKLOG mới trên cùng.
+
 ## 21/11/2026 — chốt bàn giao khảo sát FSC-147 (assistant; chỉ tài liệu, không chạy gì)
 
 Trí yêu cầu chốt bàn giao, không mở rộng thử nghiệm.

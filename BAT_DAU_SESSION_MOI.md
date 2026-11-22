@@ -1,5 +1,15 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 22/11 — Triệu chạy thay Trí, chốt đồ án; chuẩn bị thuyết trình:**
+- **Lời dặn của Trí (22/11):** hôm nay Trí không có thời gian. Trí đã báo trước Triệu: **Triệu chạy task của Trí thay Trí** và cố gắng làm hết trong ngày để chốt đồ án. **Tối nay** Trí và Triệu họp lên kế hoạch hành trang và nội dung trình bày với thầy.
+- **Triệu bắt đầu ở:** [HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md](HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md). Thứ tự: pull → kiểm A → chạy Kaggle khảo sát FSC-147 → đọc cẩm nang → Related Work → kiểm B/C → cập nhật WORKLOG/BAT_DAU, push.
+- **Tài liệu mới:**
+  - [Cẩm nang đồ án](reports/CAM_NANG_DO_AN_CS331.md) (bản HTML có hình: `reports/CAM_NANG_DO_AN_CS331.html`);
+  - [Kế hoạch slide và thuyết trình](reports/KE_HOACH_SLIDE_THUYET_TRINH.md): dàn 16 slide, kịch bản, 18 câu hỏi phản biện, hành trang, chương trình họp tối.
+- **Thay đổi vai trò:** Triệu vừa kiểm A vừa chạy. Kiểm B/C cần assistant kiểm độc lập sau đó.
+- **Chờ Trí quyết** (mục 10 kế hoạch slide): Q1 assistant dựng nháp `.pptx`; Q2 nháp báo cáo cuối; Q3 demo trực tiếp; Q4 kiểm H2; Q5 slide về dùng AI; Q6 gộp ghi chú chưa commit trên máy Trí.
+- **Trạng thái thực:** khảo sát thật **chưa chạy** (tính đến lúc soạn); chưa có kết quả FSC-147; Related Work chưa có; chưa có file slide.
+
 **Cập nhật 21/11 — chốt bàn giao khảo sát FSC-147 (không mở rộng thử nghiệm):**
 - **Trạng thái Git (21/11):** `main` trên GitHub đã merge khảo sát tại `ecb1905` (PR #1, gộp nhánh `5988c22` và commit `3ac3a60` của Triệu). Notebook vẫn ghim `4cd89092c5160dc0dc79455adba42ff096a44664` (đã nằm trong `main`); việc merge không đổi commit chạy và không cần chạy lại self-test.
 - **Trạng thái:** self-test dữ liệu giả PASS (20/11). Khảo sát thật **chưa chạy**, chưa có kết quả FSC-147 mới. Chưa tự chạy model.
