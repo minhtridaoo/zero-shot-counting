@@ -1,5 +1,51 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 22/11/2026 (tối) — chuẩn bị thử nghiệm sơ bộ hướng 1 (gán khung theo CLIP giữa các loại), CHƯA chạy (assistant)
+
+Triệu yêu cầu tiến hành hướng 1 trong `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md`.
+
+**Đã làm (chỉ soạn tài liệu và code, đọc file):**
+- Khai báo trước: `experiments/xy_clip_assign/KHAI_BAO_TRUOC_XY_CLIP_20261122.md`.
+  - Chỉ trên dev; bước A không có tham số (giữ khung khi CLIP thấy giống loại được hỏi nhất).
+  - Hai tập loại: A_Q (các câu trên cùng ảnh) và A_V (45 lớp MUCCA).
+  - So sánh chính P+F+A_Q − P+F, trên tỉ lệ khung dùng chung X/Y và MAE câu có mặt.
+  - Cách đọc và giới hạn đặt trước.
+- Script: `experiments/xy_clip_assign/xy_clip_assign_dev.py`.
+  - Tự dừng nếu hash sai, nếu không tái lập được MAE dev của cấu hình gốc, hoặc nếu cosine CLIP tính lại lệch bundle ≥ 1e-3.
+  - Không đọc tập test.
+- `--check-only` (chỉ đọc file, không tải CLIP) **đạt**: hash dev manifest, bundle `m5_offline_T` (trùng provenance của freeze), freeze, annotations, class_mapping đều khớp; tái lập MAE dev P+F 3,5333, B0 6,2833, C6 4,0167.
+
+**Chạy (sau khi Triệu báo Trí đồng ý):**
+- Hai lần dừng vì lỗi kỹ thuật, **chưa tính số nào**:
+  - `torch` 2.2 không nạp được `.bin`, chuyển sang nạp `model.safetensors` (hash được kiểm; `.bin` ở revision ghim trùng hash của lần chạy trên Kaggle);
+  - TensorFlow hỏng, tắt bằng `USE_TF=0`.
+
+  Cả hai đã ghi vào khai báo §8 trước khi có kết quả.
+- Lần chạy đạt: `results/countgdpp/xy_clip_assign_dev_20261122_1755/`. Tái lập CLIP lệch lớn nhất 1,37e-06.
+- **Kết quả (dev):**
+  - **Chính P+F+A_Q − P+F:** khung dùng chung X/Y −0,587 [−0,735; −0,404] (61,6% → 2,9%); MAE câu có mặt +1,88 [−0,03; +3,73] → **đánh đổi**.
+  - B0+A_Q − B0: cả hai giảm (có dấu hiệu giúp trên dev), nhưng B0+A_Q vẫn kém P+F.
+  - Bước A bỏ nhầm khoảng 30% khung đúng loại, vì CLIP trên ô cắt nhỏ, loại gần nghĩa.
+  - Báo cáo: `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
+  - Không chạy test, không chỉnh lại gì.
+
+**Cập nhật số liệu vào báo cáo và slide (Triệu yêu cầu):**
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md`:
+  - Tóm tắt (2 ý bổ sung);
+  - 7.6 (lưu ý C6 trên FSC-147);
+  - 7.7 (thời gian CLIP);
+  - **mục mới 7.8** (khảo sát FSC-147) và **7.9** (thử nghiệm dev);
+  - hạn chế 2, 4, 5, 8;
+  - kết luận (thêm "Phạm vi áp dụng");
+  - hướng phát triển 1–3;
+  - phụ lục A.
+
+  **Bản `.docx` / `.pdf` chưa xuất lại** (máy Triệu không có pandoc). Chưa sửa câu "người thứ hai" (chờ Trí, xem ý họp tối).
+- `reports/CAM_NANG_DO_AN_CS331.md`: bảng diễn tiến (10b), bảng số tra nhanh, hạn chế 4/5/8/9, hướng phát triển, tình trạng sản phẩm, bảng tìm file.
+- `reports/KE_HOACH_SLIDE_THUYET_TRINH.md`: S15 (thêm bảng thử nghiệm dev, 1:00), kịch bản S15 và S16 (phạm vi áp dụng), câu hỏi 13 và 14, **câu hỏi mới 19 (DAVE) và 20 (tin được thử nghiệm dev không)**.
+
+  Tổng thời lượng tăng khoảng 15 giây; nếu cần thì rút S14.
+
 ## 22/11/2026 (chiều) — Triệu chạy thay Trí: kiểm A, Kaggle khảo sát FSC-147, Related Work nháp (Triệu + assistant)
 
 Triệu chạy thay Trí theo lời dặn 22/11. Kiểm B/C do Triệu tự làm, chờ assistant kiểm độc lập.

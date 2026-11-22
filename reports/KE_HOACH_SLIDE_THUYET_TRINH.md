@@ -34,7 +34,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | S12 | Giúp ở đâu, chưa giúp ở đâu | Cặp dễ nhầm: −3.05 (chắc). Cặp khác hẳn: +0.51 (chưa chắc, 13 ảnh) | `fig_strata_errors.png` | Triệu | 1:00 |
 | S13 | Ví dụ thành công / thất bại | blueberries (thành công) · dogs–dê (thất bại) · people (lọc quá tay) | 3 hình `fig_example_*` | Trí + Triệu | 1:15 |
 | S14 | *(rút được)* Bài học chọn mô hình + khảo sát FSC-147 | C6 hạng 7/15 họ trên dev nhưng tốt nhất trên test; không đổi kết quả chính sau khi xem test. Khảo sát FSC-147 (300 ảnh một loại): B0 − B2 +0,55 [−3,00; +4,30], chưa khác rõ; P+F kém hơn B2 (+4,69 [+2,25; +7,50]), do đếm thiếu ở ảnh > 40 vật | Bảng dev → test | Triệu | 1:00 |
-| S15 | Hạn chế và hướng phát triển | 4 hạn chế chính; 3 hướng: C6 trên tập mới, CLIP tương phản giữa các loại, kiểm H2 | 2 cột | Trí | 0:45 |
+| S15 | Hạn chế và hướng phát triển | 4 hạn chế chính (thêm: X/Y chưa giải xong, sai khoảng nửa số vật; phạm vi: ảnh nhiều loại, ít đến vừa vật). **Thử nghiệm sơ bộ trên dev:** gán khung theo CLIP, khung dùng chung X/Y 62% → 3% nhưng MAE có mặt 5,05 → 6,92 (bỏ nhầm 30% vật đúng). Hướng tiếp: chỉ phân xử khung bị tranh chấp; ngưỡng theo mật độ; kiểm H2 | 2 cột + bảng nhỏ 2×2 (dùng chung / MAE có mặt) | Trí | 1:00 |
 | S16 | Kết luận | 3 câu trả lời RQ1–RQ3 + "cảm ơn, mời thầy và các bạn hỏi" | — | Trí | 0:30 |
 
 **Tổng khoảng 16 phút.** Rút S14 (−1:00) và nói gọn S3, S5 (−0:30) để về 15 phút.
@@ -81,9 +81,9 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 
 **S14 (Triệu).** "Một bài học: trên dev, cách đơn giản C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm ghi C6 là giả thuyết cho lần kiểm sau." "Nhóm cũng kiểm thêm 300 ảnh FSC-147, mỗi ảnh một loại. Ở đó giữ hay bỏ lượt 2 chưa khác nhau rõ. Còn cấu hình của nhóm thì kém hơn, vì bộ lọc chọn trên ảnh 3–40 vật đã lọc quá tay ở ảnh dày. Nên nhóm ghi rõ: cải tiến dành cho ảnh nhiều loại, ít đến vừa vật."
 
-**S15.** "Hạn chế: mẫu nhỏ, một nguồn dữ liệu, ngưỡng toàn cục, CLIP yếu với vật gần nghĩa. Hướng tiếp theo: kiểm C6 trên tập mới; chấm mỗi khung với mọi tên loại trong ảnh rồi gán cho loại giống nhất; kiểm giả thuyết H2."
+**S15.** "Hạn chế: mẫu nhỏ, ngưỡng toàn cục, CLIP yếu với vật gần nghĩa. Bài X/Y cũng chưa giải xong: sau cải tiến, sai số vẫn khoảng nửa số vật. Nhóm đã thử sơ bộ trên dev một hướng nhắm thẳng vào chỗ này: gán mỗi khung cho loại mà CLIP thấy giống nhất. Tỉ lệ khung dùng chung giữa X và Y giảm từ khoảng 60% xuống 3%, nhưng CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30% vật đúng, nên số đếm chưa tốt hơn. Bước tiếp là chỉ phân xử những khung bị hai câu hỏi tranh nhau, và dùng ngưỡng theo mật độ vật."
 
-**S16.** "Tóm lại: CountGD++ đếm lẫn loại khi ảnh có nhiều loại, và lượt 2 làm nặng thêm. Một bộ lọc dùng CLIP, không cần huấn luyện, giảm 24% sai số trên tập test khóa trước. Cải thiện tập trung ở cặp dễ nhầm. Em cảm ơn thầy và các bạn đã lắng nghe."
+**S16.** "Tóm lại: CountGD++ đếm lẫn loại khi ảnh có nhiều loại, và lượt 2 làm nặng thêm. Một bộ lọc dùng CLIP, không cần huấn luyện, giảm 24% sai số trên tập test khóa trước. Cải thiện tập trung ở cặp dễ nhầm, và dành cho ảnh nhiều loại, ít đến vừa vật; trên ảnh một loại, ảnh dày thì nên giữ CountGD++ gốc. Em cảm ơn thầy và các bạn đã lắng nghe."
 
 # 4. Câu hỏi phản biện có thể gặp (chia người trả lời)
 
@@ -101,12 +101,14 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | 10 | Có làm hỏng ảnh một loại (FSC-147) không? | Có, ở ảnh dày. Trên 300 ảnh FSC-147: P+F MAE 18,01 so với B2 13,32 (kém hơn, CI [+2,25; +7,50]), chủ yếu ở ảnh > 40 vật do bộ lọc gây đếm thiếu. Ảnh ≤ 40 vật thì ngang nhau (3,50 so với 3,44). Bỏ lượt 2 (B0 − B2) chưa khác rõ. Không so với 8,34 / 10,29 vì khác điều kiện (không cắt ảnh, không mẫu GPT-5) | Triệu | D7 |
 | 11 | Tại sao lượt 2 hại? | max(chữ, mẫu) + mẫu giả sai loại; T chỉ gỡ khoảng 1/5; giả thuyết H2 | Triệu | — |
 | 12 | Câu vắng mặt xử lý thế nào? | Z khó, cùng nhóm nghĩa, người kiểm; khung đếm nhầm 92–100% nằm trên vật thật khác; C6 FPR 0.10 | Triệu | D1 |
-| 13 | Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa? | Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm này; chỉ 13 ảnh; hướng "CLIP tương phản" nhắm thẳng vào đó | Trí | — |
-| 14 | Thời gian chạy? | B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP chưa đo; C6 tiết kiệm khoảng 40% | Triệu | D9 |
+| 13 | Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa? | Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm này; chỉ 13 ảnh. Hướng "CLIP tương phản" đã thử sơ bộ trên dev: khung dùng chung 62% → 3% nhưng MAE có mặt chưa tốt hơn (5,05 → 6,92), vì CLIP bỏ nhầm 30% vật đúng | Trí | — |
+| 14 | Thời gian chạy? | B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP khoảng 1,3 s/câu (đo ở khảo sát FSC-147, ảnh nhiều khung hơn MUCCA); C6 tiết kiệm khoảng 40% thời gian CountGD++ | Triệu | D9 |
 | 15 | Ngưỡng θ 0.604 ở đâu ra? | Chọn trên dev theo D9, cùng min/max, khóa trong freeze v2 (hash) | Trí | D2 |
 | 16 | Tái lập thế nào? | Repo public; dữ liệu và cấu hình có hash; notebook Kaggle; Kiểm A + Kiểm C | Triệu | — |
 | 17 | Đóng góp của từng thành viên? | Xem mục 6 | cả hai | — |
 | 18 | Có dùng AI hỗ trợ không? | Có, dùng assistant (Claude) để viết code, kiểm số và soạn tài liệu. Mọi số liệu được tính lại độc lập; các quyết định do nhóm chốt. *(Thống nhất câu này tối nay)* | Trí | — |
+| 19 | DAVE (CVPR 2024) đã dùng CLIP để lọc, nhóm em mới ở đâu? | DAVE quyết định theo cụm khung và huấn luyện bộ phát hiện riêng. F quyết định cho từng khung, gắn vào CountGD++ có sẵn, không huấn luyện, kết hợp điểm CLIP với điểm CountGD++. Đóng góp chính của nhóm là chẩn đoán lỗi lượt 2 trên ảnh nhiều loại và kiểm chứng bằng giao thức khóa trước | Triệu | — |
+| 20 | Thử nghiệm gán khung theo CLIP chỉ trên dev, có tin được không? | Chỉ là sơ bộ. Khai báo trước, không có tham số nào phải chỉnh, không chạy trên test, không đổi kết quả chính. Dev đã dùng để chọn F nên số lạc quan; muốn kết luận cần một tập mới | Triệu | — |
 
 **Mẹo trả lời:**
 

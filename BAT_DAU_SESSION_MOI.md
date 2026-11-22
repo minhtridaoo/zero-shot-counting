@@ -1,5 +1,12 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 22/11 (khuya) — thử nghiệm sơ bộ hướng 1 ĐÃ CHẠY (dev, Triệu báo Trí đồng ý):**
+- Kết quả: [reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md](reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md); run `results/countgdpp/xy_clip_assign_dev_20261122_1755/`.
+- Gán khung theo CLIP **tách X/Y gần như hoàn toàn**: khung dùng chung 61,6% → 2,9%, FPR 0.
+- Nhưng bước A **bỏ nhầm khoảng 30% khung đúng loại**, nên MAE câu có mặt không tốt hơn P+F (+1,88 [−0,03; +3,73]). Đọc theo khai báo: **đánh đổi**.
+- **Đã đưa số vào:** bản chi tiết (mục mới 7.8 FSC-147, 7.9 thử nghiệm dev, kết luận "phạm vi áp dụng"), cẩm nang, kế hoạch slide (S15, S16, câu hỏi 19–20). Hướng tiếp: chỉ phân xử khung bị tranh chấp (chưa thử).
+- **Còn:** xuất lại `.docx`/`.pdf`/`.html` (cần pandoc, máy Trí có); sửa câu "người thứ hai" và dòng khai báo AI (chờ Trí).
+
 **Cập nhật 22/11 (tối) — khảo sát FSC-147 ĐÃ CHẠY và kiểm độc lập PASS:**
 - Run `fsc147_survey_kaggle_t4_20261122_1618` (Triệu, một lần, 300/300); đầu ra ở `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618*`.
 - **Chính B0 − B2: +0,55 [−3,00; +4,30], chưa thấy khác biệt rõ.**

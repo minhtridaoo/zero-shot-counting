@@ -99,6 +99,14 @@ Cải tiến giảm lỗi nhưng chưa xóa được lỗi. Sai số vẫn kho�
 3. **Cách trình bày.** Không nói "nhóm đề xuất phương pháp mới giúp CountGD++ đếm đúng loại". Nên nói:
    > "Nhóm tìm ra và đo được vì sao CountGD++ đếm nhầm loại trên ảnh nhiều loại. Nhóm cho thấy một bước lọc đơn giản, không cần huấn luyện, giảm lỗi 24% trong đúng phạm vi đó, kiểm bằng giao thức khóa trước, và chỉ ra rõ nó chưa làm được gì."
 
+## 4b. Cập nhật 22/11 (khuya): đã thử hướng 1 trên dev
+
+Sau khi Triệu báo Trí đồng ý, assistant chạy thử nghiệm theo bản khai báo `experiments/xy_clip_assign/KHAI_BAO_TRUOC_XY_CLIP_20261122.md`. Kết quả chi tiết ở `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
+- **Khung dùng chung X/Y:** 61,6% → **2,9%**. Câu vắng mặt không còn bị báo nhầm.
+- **MAE câu có mặt:** 5,05 → 6,92 (+1,88 [−0,03; +3,73]). Đọc theo khai báo: **đánh đổi**.
+- Nguyên nhân: CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30% khung đúng loại.
+- Hướng tiếp (chưa thử): chỉ phân xử các khung bị X và Y tranh nhau.
+
 ## 5. Cần Trí quyết
 
 | # | Câu hỏi | Lựa chọn |

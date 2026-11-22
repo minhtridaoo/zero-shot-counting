@@ -1,6 +1,6 @@
 ---
 title: "Đếm đối tượng zero-shot trong ảnh nhiều loại vật: chẩn đoán và giảm lỗi \"đếm nhầm loại\" của CountGD++"
-subtitle: "Đồ án CS331 · Bản trình bày chi tiết giữa kỳ · Nhóm: Đào Xuân Minh Trí, Triệu · 12/11/2026, sửa 15/11/2026"
+subtitle: "Đồ án CS331 · Bản trình bày chi tiết giữa kỳ · Nhóm: Đào Xuân Minh Trí, Triệu · 12/11/2026, sửa 15/11/2026, bổ sung 22/11/2026 (mục 7.8–7.9)"
 ---
 
 # Tóm tắt
@@ -25,6 +25,15 @@ Phân tích sâu hơn cho thấy:
 - thành phần thực sự có ích là **bộ lọc F**, còn bước P gần như luôn chọn lại đúng bộ mẫu cũ;
 - F chủ yếu **đổi lỗi đếm thừa thành đếm thiếu**;
 - cải thiện tập trung ở **cặp vật dễ nhầm** (cùng nhóm: các loại quả, bát–đĩa…); với cặp vật khác hẳn nhau, chưa thấy khác biệt rõ so với một lượt.
+
+Hai kiểm tra bổ sung (22/11, mục 7.8–7.9):
+
+- **Khảo sát 300 ảnh FSC-147** (một loại vật mỗi ảnh):
+  - giữ hay bỏ lượt 2 **chưa khác nhau rõ**;
+  - cấu hình đã khóa **kém hơn CountGD++ gốc** (+4,69 MAE, CI [+2,25; +7,50]), vì lọc quá tay ở ảnh dày.
+
+  → Phạm vi của cải tiến: **ảnh nhiều loại, ít đến vừa vật**.
+- **Thử nghiệm sơ bộ trên dev** (gán khung cho loại mà CLIP thấy giống nhất): tỉ lệ khung dùng chung X/Y giảm từ 62% xuống 3%, nhưng số đếm chưa tốt hơn, vì CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30% vật đúng.
 
 # Cách đọc tài liệu
 
@@ -499,27 +508,106 @@ Lưu ý: test chỉ tính 5 cách đã khai báo trong file khóa, nên "thứ 1
 
 - Khi các cách đứng đầu trên dev nằm trong cùng khoảng nhiễu, nên ưu tiên **cách đơn giản hơn** (giống "quy tắc một sai số chuẩn" trong chọn mô hình), hoặc dùng dev lớn hơn / kiểm chéo.
 - Nhóm **không đổi** kết quả chính sau khi xem test: P+F vẫn là kết quả chính đúng giao thức. Nếu đổi sang C6 sau khi nhìn test, con số 4.63 sẽ trở thành một ước lượng thiên lệch, đúng loại lỗi mà giao thức khóa trước ngăn chặn.
-- C6 được nêu như một **giả thuyết mạnh cho lần kiểm tiếp theo** trên dữ liệu mới.
+- C6 được nêu như một **giả thuyết cho lần kiểm tiếp theo** trên dữ liệu mới, kèm lưu ý: trên mẫu FSC-147 một loại, ảnh dày, C6 **kém nhất** (MAE 25,11; mục 7.8), vì bộ lọc chọn trên ảnh 3–40 vật đã lọc quá tay. C6 cần ngưỡng theo mật độ vật trước khi dùng rộng.
 
 ## 7.7 Chi phí tính toán
 
 Trên Kaggle T4:
 
 - B0 khoảng **0.89 s/câu**;
-- B2 và P khoảng **1.5 s/câu** (lượt 2 chạy ở khoảng 70% số câu), chưa tính thời gian CLIP. Runner không ghi thời gian CLIP.
+- B2 và P khoảng **1.5 s/câu** (lượt 2 chạy ở khoảng 70% số câu), chưa tính thời gian CLIP. Runner của lần test MUCCA không ghi thời gian CLIP.
 
 C6 bỏ được lượt 2, nên tiết kiệm khoảng 40% thời gian CountGD++.
+
+**Thời gian CLIP đo được ở khảo sát FSC-147 (22/11, Kaggle T4):**
+- runner (lượt 1 + lượt 2 của B2 và P) mất 571,5 s cho 300 câu, khoảng 1,9 s/câu;
+- chấm CLIP cho toàn bộ khung mất 404,1 s, khoảng 1,3 s/câu.
+
+Số này đo trên ảnh FSC-147 (trung bình 66 vật/ảnh), nhiều khung hơn ảnh MUCCA, nên chỉ là mức tham khảo.
+
+## 7.8 Kiểm khả năng tổng quát: khảo sát 300 ảnh FSC-147 (bổ sung 22/11)
+
+**Mục đích:** kiểm xem trên ảnh **một loại vật**, giữ hay bỏ lượt 2 tốt hơn, và cấu hình đã khóa đứng ở đâu. Khai báo trước: `experiments/fsc147_survey/KHAI_BAO_TRUOC_FSC147_20261120.md`.
+
+**Thiết kế:**
+- mẫu cố định 300 ảnh FSC-147 test (seed 331, chọn trước khi chạy), mọi câu đều có mặt;
+- một lần chạy trên Kaggle T4, không cắt ảnh, không mẫu GPT-5;
+- tham số giữ nguyên từ freeze v2;
+- so sánh chính **B0 − B2**; bootstrap ghép cặp theo ảnh.
+
+**Kiểm:** Kiểm A của notebook đạt (lệch lớn nhất 3,28e-07). Trợ lý AI tính lại toàn bộ số đếm, chỉ số và CI bằng một script viết riêng, không dùng code chấm của repo; khớp hết.
+
+| Cách | MAE | Bias | Đếm thừa / thiếu | MAE ảnh ≤ 40 vật | MAE ảnh > 40 vật |
+|---|---:|---:|---|---:|---:|
+| B0 | 13,88 | −1,54 | 1.851 / 2.312 | 3,95 | 25,69 |
+| B2 | **13,32** | −0,23 | 1.964 / 2.033 | **3,44** | **25,09** |
+| P+F (đã khóa) | 18,01 | −14,68 | 500 / 4.904 | 3,50 | 35,28 |
+| B2+F | 17,98 | −14,79 | 478 / 4.915 | 3,65 | 35,02 |
+| C6 | 25,11 | −20,93 | 627 / 6.907 | 5,34 | 48,64 |
+
+| So sánh (khai báo trước) | Δ MAE | CI 95% | Đọc |
+|---|---:|---|---|
+| **B0 − B2 (chính)** | +0,55 | [−3,00; +4,30] | Chưa thấy khác biệt rõ (cả hai nhóm ≤ 40 / > 40 cũng chứa 0) |
+| P+F − B2 | +4,69 | [+2,25; +7,50] | P+F kém hơn trên mẫu này |
+| P+F − B0 | +4,14 | [+0,56; +8,09] | P+F kém hơn trên mẫu này |
+
+**Đọc kết quả:**
+- Trên ảnh một loại, **giữ hay bỏ lượt 2 chưa khác nhau rõ**. Kết luận "lượt 2 gây hại" (mục 7.1) chỉ áp dụng cho **ảnh nhiều loại**.
+- Cấu hình đã khóa kém hơn, **chủ yếu ở ảnh > 40 vật**, vì bộ lọc F (chọn trên ảnh MUCCA 3–40 vật) bỏ cả vật đúng. P+F đếm thiếu 4.904 vật, so với 2.033 của B2. Ở ảnh ≤ 40 vật, P+F ngang B2.
+- **Phạm vi áp dụng của cải tiến:** ảnh nhiều loại, ít đến vừa vật. Ảnh một loại, dày thì giữ CountGD++ gốc.
+
+**Giới hạn:**
+- Chỉ đúng cho mẫu và điều kiện này, không phải benchmark đầy đủ.
+- Không nói gì về lớp vắng mặt.
+- Không so với 8,34 / 10,29 / 8,39, vì các số đó chạy với cắt ảnh, mẫu GPT-5, trên đủ 1.190 ảnh.
+
+Chi tiết: `reports/TRIEU_FSC147_KHAO_SAT_20261122.md`.
+
+## 7.9 Thử nghiệm sơ bộ: gán khung theo CLIP giữa các loại (chỉ dev, 22/11)
+
+**Mục đích:** thử hướng phát triển 2 (mục 9), nhắm thẳng vào việc hỏi X mà trả về khung của Y.
+
+**Cách làm (bước A, không có tham số):** với mỗi khung đang được giữ, CLIP so ô cắt với tên **các loại được hỏi trên cùng ảnh** (X, Y, Z). Khung chỉ được giữ nếu giống loại được hỏi nhất.
+- Khai báo trước: `experiments/xy_clip_assign/KHAI_BAO_TRUOC_XY_CLIP_20261122.md`. Trí đồng ý trước khi chạy (Triệu chuyển lời 22/11).
+- **Chỉ chạy trên dev (20 ảnh), không chạy trên test.**
+- CLIP tính lại trên CPU khớp điểm đã tính trên Kaggle (lệch lớn nhất 1,37e-06).
+
+| Dev (20 ảnh) | P+F (đã khóa) | P+F + bước A |
+|---|---:|---:|
+| **Khung dùng chung X/Y** | 61,6% | **2,9%** |
+| Khung đúng loại | 70,2% | 83,0% |
+| FPR câu vắng mặt | 0,05 | 0,00 |
+| **MAE câu có mặt** | **5,05** | 6,92 |
+| Đếm thừa / thiếu (câu có mặt) | 76 / 126 | 19 / 258 |
+
+So sánh chính (khai báo trước):
+- khung dùng chung −0,587, CI [−0,735; −0,404];
+- MAE câu có mặt +1,88, CI [−0,03; +3,73].
+
+→ **Đánh đổi.**
+
+**Đọc kết quả:**
+- Bước A **tách X/Y gần như hoàn toàn**, và có chọn lọc: bỏ 67% khung sai loại (127 → 42) nhưng chỉ 30% khung đúng loại (327 → 230).
+- Tuy vậy 30% vật đúng bị bỏ nhầm làm đếm thiếu tăng gấp đôi, nên **số đếm không tốt hơn**.
+- Chỗ nghẽn vì vậy không nằm ở luật gán, mà ở **độ tin cậy của CLIP trên ô cắt nhỏ** với các loại gần nghĩa (khớp hạn chế 5).
+- Áp bước A lên B0 (chưa lọc gì) thì cả hai chỉ số cùng giảm trên dev (MAE có mặt 8,25 → 6,40), nhưng vẫn kém P+F.
+
+**Giới hạn:**
+- Dev 20 ảnh, đã dùng để chọn F, nên kết quả chỉ là sơ bộ.
+- Bước A giả định biết các loại khác được hỏi trên cùng ảnh.
+
+Chi tiết: `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
 
 # 8. Hạn chế
 
 1. **Cỡ mẫu nhỏ:** 40 ảnh test, trong đó chỉ 13 ảnh cặp khác hẳn. Khoảng tin cậy rộng; nhận xét theo nhóm cặp là hậu kiểm, chỉ mang tính mô tả.
-2. **Một nguồn dữ liệu:** chỉ dùng MUCCA. Chưa kiểm ảnh từ nguồn khác.
+2. **Một nguồn dữ liệu cho kết quả chính:** MUCCA. Khảo sát bổ sung trên 300 ảnh FSC-147 (mục 7.8) chỉ có câu có mặt, không cắt ảnh, nên chưa phải kiểm chứng đầy đủ trên nguồn khác.
 3. **Nhãn:** GT là số điểm MUCCA; 15/120 câu test có ghi chú cần xem lại. Bảng độ nhạy cho thấy không đổi kết luận. Phép kiểm "điểm trong khung" là xấp xỉ dễ dãi (khung to phủ nhiều vật vẫn tính đúng); N4 cho thấy phép kiểm tự động lạc quan hơn người kiểm.
-4. **Ngưỡng cố định toàn cục:** F dùng một ngưỡng cho mọi ảnh, nên ảnh đông vật bị lọc quá tay.
-5. **CLIP có giới hạn riêng:** với ô cắt nhỏ và các loại gần nghĩa (dê–chó–cừu), điểm CLIP không đủ để tách loại (ví dụ ở mục 7.5).
+4. **Ngưỡng cố định toàn cục:** F dùng một ngưỡng cho mọi ảnh, nên ảnh đông vật bị lọc quá tay. Khảo sát FSC-147 xác nhận điều này: ở ảnh > 40 vật, P+F có MAE 35,28 so với 25,09 của B2 (mục 7.8).
+5. **CLIP có giới hạn riêng:** với ô cắt nhỏ và các loại gần nghĩa (dê–chó–cừu), điểm CLIP không đủ để tách loại (ví dụ ở mục 7.5). Thử nghiệm gán khung theo CLIP (mục 7.9) cho thấy CLIP bỏ nhầm khoảng 30% khung đúng loại.
 6. **Lạc quan do chọn trên dev:** thứ hạng dev không giữ được trên test (mục 7.6).
 7. **Phân tích cơ chế lượt 2 dựa trên dev và tập chẩn đoán**, chưa có T trên test; tỉ lệ T gỡ được (21% và 67%) không ổn định.
-8. **Thời gian CLIP chưa được đo.**
+8. **Thời gian CLIP chỉ đo trên khảo sát FSC-147** (khoảng 1,3 s/câu trên T4, mục 7.7), chưa đo trên lần test MUCCA.
 
 # 9. Kết luận và hướng phát triển
 
@@ -528,12 +616,15 @@ C6 bỏ được lượt 2, nên tiết kiệm khoảng 40% thời gian CountGD+
 - **RQ1.** Trong ảnh nhiều loại, CountGD++ thường trả về cùng một nhóm khung dù đổi câu hỏi (64% khung dùng chung giữa X và Y); khoảng 1/3 khung là vật loại khác. Cơ chế hai lượt tự chọn mẫu làm lỗi nặng thêm. Cách chấm max ở lượt 2 chỉ giải thích một phần (khoảng 1/5 trên dev, theo biến thể T); phần còn lại nhiều khả năng do mẫu giả làm lệch cách mô hình chấm theo chữ (giả thuyết H2, chưa kiểm).
 - **RQ2.** Có thể giảm lỗi mà không huấn luyện lại. Thành phần hiệu quả là **lọc khung bằng điểm kết hợp CountGD++ + CLIP**. Kiểm mẫu bằng CLIP (P) với ngưỡng đã chọn gần như không đổi bộ mẫu.
 - **RQ3.** Trên test khóa trước, cấu hình chính giảm MAE 24% so với một lượt, CI 95% không chứa 0. So với hai lượt gốc giảm 39%; đây chỉ là con số mô tả, không kiểm định. Cải thiện tập trung ở cặp dễ nhầm và đi kèm xu hướng đếm thiếu.
+- **Phạm vi áp dụng.** Trên 300 ảnh FSC-147 một loại vật, cấu hình đã khóa kém hơn CountGD++ gốc, chủ yếu ở ảnh dày (mục 7.8). Cải tiến dành cho **ảnh nhiều loại, ít đến vừa vật**. Ngay cả trong phạm vi đó, sai số vẫn khoảng một nửa số vật thật, nên bài X/Y **chưa được giải quyết xong**.
 
-**Hướng phát triển** (chỉ đề xuất, không chạy trên test này):
+**Hướng phát triển** (không chạy trên test này):
 
-1. Lọc ngay sau lượt 1 (C6) và kiểm trên một tập mới, độc lập.
-2. **So sánh tương phản giữa các loại trong ảnh:** chấm mỗi khung bằng CLIP với *mọi* tên loại có trong câu hỏi, rồi gán khung cho loại giống nhất. Cách này nhắm thẳng vào yêu cầu Y3.
-3. Ngưỡng thích ứng theo mật độ vật, để tránh lọc quá tay ở ảnh đông.
+1. Lọc ngay sau lượt 1 (C6) và kiểm trên một tập mới, độc lập; cần kèm ngưỡng theo mật độ (C6 kém nhất trên FSC-147 ảnh dày).
+2. **So sánh tương phản giữa các loại trong ảnh:** chấm mỗi khung bằng CLIP với *mọi* tên loại có trong câu hỏi, rồi gán khung cho loại giống nhất.
+   - **Đã thử sơ bộ trên dev (mục 7.9):** khung dùng chung X/Y giảm từ 62% xuống 3%, nhưng số đếm chưa tốt hơn vì CLIP bỏ nhầm khoảng 30% vật đúng.
+   - Bước tiếp: **chỉ phân xử các khung bị X và Y tranh nhau**, giữ nguyên các khung khác; dùng bộ kiểm mạnh hơn (CLIP lớn hơn, cắt có ngữ cảnh). Kiểm trên một tập mới.
+3. Ngưỡng thích ứng theo mật độ vật, để tránh lọc quá tay ở ảnh đông (mục 7.8 cho thấy cần thiết).
 4. Kiểm giả thuyết H2: so điểm token chữ của cùng khung ở lượt 1 và lượt 2. Nếu H2 đúng thì không sửa ở cách chấm được nữa, mà phải kiểm mẫu chặt hơn (τ cao hơn, điều kiện "mẫu chỉ chứa một vật") hoặc bỏ lượt 2.
 5. Dùng câu chỉ định "không đếm X" (negative prompt) có sẵn trong CountGD++ để tách X/Y.
 
@@ -573,6 +664,8 @@ Không chạy thêm thực nghiệm trên test.
 | 6.6 | `reports/KET_QUA_TEST_CUOI_20261111.md`, `results/countgdpp/p1_test_kaggle_t4_20261111_1430_eval/result.json` |
 | 4.1, 7.6 (T, thứ hạng C6) | `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_posthoc_20261115/summary.json` (script `evaluation/dev_posthoc_T_C6.py`) |
 | 7.2–7.4 | `reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md`, `results/countgdpp/p1_test_kaggle_t4_20261111_1430_posthoc_20261111/` (script `evaluation/test_xy_overlap_analysis.py`, `test_stratified_posthoc.py`, `test_pseudo_exemplar_check.py`) |
+| 7.7 (thời gian CLIP), 7.8 | `reports/TRIEU_FSC147_KHAO_SAT_20261122.md`, `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618*` (kiểm độc lập: `evaluation/check_fsc147_survey_independent.py`) |
+| 7.9 | `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`, `results/countgdpp/xy_clip_assign_dev_20261122_1755/` (script `experiments/xy_clip_assign/xy_clip_assign_dev.py`) |
 | Cấu hình khóa | `results/countgdpp/freeze_v2_20261111.json` |
 | Dữ liệu khóa | `experiments/countgdpp/dev_test_v2/` (`selection_meta.json` có hash) |
 | Hình | `reports/figures/` (script `evaluation/make_report_figures.py`) |

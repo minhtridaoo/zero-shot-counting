@@ -29,6 +29,7 @@ subtitle: "Mọi thứ cần biết để viết báo cáo, làm slide và trả
 | 8. Khóa + test | 11/11 | Khóa cấu hình (freeze v2); Triệu chạy test **một lần**; assistant tính lại độc lập | P+F 5.82 so với B0 7.71; B2 9.61; C6 4.63 |
 | 9. Hậu kiểm + báo cáo | 11–15/11 | Phân tích X/Y, theo loại cặp, P = B2, thứ hạng C6; bản chi tiết 22 trang | Giải thích được vì sao F giúp, vì sao P không giúp |
 | 10. Khảo sát bổ sung FSC-147 | 20–24/11 | 300 ảnh một loại vật; câu hỏi: bỏ lượt 2 có hại không | Chạy 22/11: B0 − B2 chưa khác rõ; P+F kém hơn trên mẫu này (đếm thiếu ở ảnh dày) |
+| 10b. Thử nghiệm sơ bộ "gán khung theo CLIP" | 22/11 | Chỉ trên dev, khai báo trước, Trí đồng ý; gán mỗi khung cho loại CLIP thấy giống nhất | Khung dùng chung X/Y 62% → 3%, nhưng MAE có mặt 5,05 → 6,92 (bỏ nhầm khoảng 30% vật đúng): đánh đổi |
 | 11. Báo cáo, slide, nộp | đến 02/12 | Báo cáo cuối, slide, demo tĩnh, tập trình bày | — |
 
 # 2. Thuật ngữ (nói được bằng lời thường)
@@ -401,6 +402,12 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
 | Cặp khác hẳn, P+F so với B0 | +0.51 [−0.72, +1.82] (chưa chắc) |
 | T gỡ được tác hại lượt 2 | 21% dev, 67% p4 |
 | Thời gian T4: B0 / B2 | 0.89 / khoảng 1.5 s/câu |
+| Thời gian CLIP (FSC-147, T4) | khoảng 1,3 s/câu (404 s / 300 câu) |
+| **FSC-147 300 ảnh: B0 / B2 / P+F / C6** | 13,88 / **13,32** / 18,01 / 25,11 |
+| FSC-147: B0 − B2 (chính) | +0,55 [−3,00; +4,30], chưa khác rõ |
+| **FSC-147: P+F − B2** | **+4,69 [+2,25; +7,50]** (kém hơn; ảnh > 40 vật: 35,28 so với 25,09) |
+| **Dev, gán khung theo CLIP: khung dùng chung X/Y** | **61,6% → 2,9%** |
+| Dev, gán khung theo CLIP: MAE có mặt | 5,05 → 6,92 (+1,88 [−0,03; +3,73]); bỏ 30% khung đúng loại |
 | Cấu hình khóa | P(τ 0.20, M 5)+F, θ 0.604; freeze sha `64e89ef5…` |
 | Dữ liệu | MUCCA 200 ảnh, 45 loại; test 40 ảnh = 13 khác hẳn + 27 dễ nhầm |
 
@@ -409,17 +416,20 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
 1. Cỡ mẫu nhỏ: 40 ảnh test, chỉ 13 ảnh cặp khác hẳn; CI rộng.
 2. Một nguồn dữ liệu (MUCCA). Khảo sát FSC-147 là bổ sung, chỉ có câu có mặt.
 3. Nhãn: 15/120 câu test có ghi chú cần xem lại (độ nhạy không đổi kết luận). Phép kiểm "điểm trong khung" dễ dãi.
-4. F dùng một ngưỡng toàn cục, nên ảnh đông vật bị lọc quá tay.
-5. CLIP yếu với ô cắt nhỏ và loại gần nghĩa (dê–chó–cừu).
+4. F dùng một ngưỡng toàn cục, nên ảnh đông vật bị lọc quá tay. **FSC-147 xác nhận:** P+F kém CountGD++ gốc ở ảnh > 40 vật. Phạm vi cải tiến: ảnh nhiều loại, ít đến vừa vật.
+5. CLIP yếu với ô cắt nhỏ và loại gần nghĩa (dê–chó–cừu). **Thử nghiệm dev xác nhận:** gán khung theo CLIP bỏ nhầm khoảng 30% khung đúng loại.
 6. Lạc quan do chọn trên dev: thứ hạng đổi trên test.
 7. Phân tích cơ chế lượt 2 làm trên dev và tập chẩn đoán; chưa có T trên test; H2 chưa kiểm.
-8. Thời gian CLIP chưa đo.
+8. Thời gian CLIP chỉ đo ở khảo sát FSC-147 (khoảng 1,3 s/câu), chưa đo trên test MUCCA.
+9. **Bài X/Y chưa giải xong:** sau cải tiến, sai số câu có mặt vẫn khoảng một nửa số vật thật (MAE 6,84 trên trung bình 12,4 vật).
 
 # 12. Hướng phát triển
 
-1. Kiểm C6 (lọc ngay sau lượt 1) trên một tập mới, độc lập.
+1. Kiểm C6 (lọc ngay sau lượt 1) trên một tập mới, độc lập; cần kèm ngưỡng theo mật độ (C6 kém nhất trên FSC-147 ảnh dày).
 2. **So sánh tương phản giữa các loại:** chấm mỗi khung bằng CLIP với *mọi* tên loại trong ảnh, rồi gán khung cho loại giống nhất. Đây là cùng một mô hình, cùng một thang điểm. Cách này khác hướng "giành khung bằng điểm CountGD++" mà nhóm khác thử thất bại.
-3. Ngưỡng thích ứng theo mật độ vật.
+   - **Đã thử sơ bộ trên dev (22/11):** khung dùng chung X/Y 62% → 3%, nhưng MAE có mặt 5,05 → 6,92, vì CLIP bỏ nhầm khoảng 30% vật đúng. Chi tiết: `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
+   - **Bước tiếp:** chỉ phân xử những khung bị X và Y tranh nhau; dùng bộ kiểm mạnh hơn.
+3. Ngưỡng thích ứng theo mật độ vật (khảo sát FSC-147 cho thấy cần).
 4. Kiểm H2: so điểm token chữ của cùng khung ở lượt 1 và lượt 2.
 5. Dùng negative prompt "không đếm X" có sẵn trong CountGD++.
 
@@ -452,7 +462,10 @@ Repo: `github.com/minhtridaoo/zero-shot-counting`.
 | Cấu hình khóa | `results/countgdpp/freeze_v2_20261111.json` |
 | Dữ liệu khóa | `experiments/countgdpp/dev_test_v2/` |
 | Hình | `reports/figures/` (script `evaluation/make_report_figures.py`) |
-| Khảo sát FSC-147 | `experiments/fsc147_survey/` |
+| Khảo sát FSC-147 | `experiments/fsc147_survey/`, `reports/TRIEU_FSC147_KHAO_SAT_20261122.md` |
+| Thử nghiệm gán khung theo CLIP (dev) | `experiments/xy_clip_assign/`, `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md` |
+| Điểm yếu + hướng giải quyết | `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md` |
+| Related Work (nháp) | `reports/RELATED_WORK_TRIEU_20261122.md` |
 | So sánh nhóm khác | `workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md` |
 | Trạng thái + nhật ký | `BAT_DAU_SESSION_MOI.md`, `WORKLOG.md` |
 | Việc Triệu hôm nay | `HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md` |
@@ -461,13 +474,14 @@ Repo: `github.com/minhtridaoo/zero-shot-counting`.
 
 | # | Sản phẩm | Trạng thái |
 |---|---|---|
-| H1 | Báo cáo cuối | Có khung 22 trang; **thiếu Related Work** (Triệu, hôm nay); cần chuyển sang bản nộp |
+| H1 | Báo cáo cuối | Có khung chi tiết (đã thêm mục 7.8 FSC-147 và 7.9 thử nghiệm dev ngày 22/11); Related Work có nháp (`reports/RELATED_WORK_TRIEU_20261122.md`); cần chuyển sang bản nộp |
 | H2 | Bảng kết quả test | ✅ Xong 11/11 |
 | H3 | Slide + demo | Có kế hoạch ([KE_HOACH_SLIDE_THUYET_TRINH.md](KE_HOACH_SLIDE_THUYET_TRINH.md)) và 8 hình; **chưa có file slide** |
 | H4 | Repo tái lập | Phần lớn có |
 | H5 | Pilot đóng | ✅ 11/11 |
 | H6 | Kết luận trung thực | ✅ |
-| H7 | Khảo sát FSC-147 | Self-test PASS; Triệu chạy 22/11; đóng 24/11 |
+| H7 | Khảo sát FSC-147 | ✅ Chạy 22/11, kiểm độc lập PASS (mục 9) |
+| — | Thử nghiệm sơ bộ hướng 1 (dev) | ✅ Chạy 22/11; đánh đổi (mục 12) |
 
 # 15. Tài liệu tham khảo (đã kiểm trong bản chi tiết)
 
