@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Kế hoạch slide và thuyết trình đồ án CS331</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+white-space: pre-wrap;
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style>body{max-width:980px;margin:auto;padding:1.5em;font-family:"Segoe UI",Arial,sans-serif;line-height:1.55;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:.93em}th,td{border:1px solid #bbb;padding:.35em .6em;vertical-align:top}th{background:#eef2f7}img{max-width:100%}td img{max-width:420px}blockquote{border-left:4px solid #5b8def;margin:1em 0;padding:.3em 1em;background:#f4f7fd}code{background:#f2f2f2;padding:0 .2em}h1{border-bottom:2px solid #5b8def;padding-bottom:.2em;margin-top:1.6em}#TOC{background:#fafafa;border:1px solid #ddd;padding:.5em 1.5em}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Kế hoạch slide và thuyết trình đồ án CS331</h1>
+<p class="subtitle">Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện,
+hành trang · assistant soạn 22/11/2026 cho buổi họp tối của Trí và
+Triệu</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#mạch-kể-một-câu-cho-mỗi-phần" id="toc-mạch-kể-một-câu-cho-mỗi-phần">1. Mạch kể (một câu cho mỗi
+phần)</a></li>
+<li><a href="#dàn-slide-15-phút" id="toc-dàn-slide-15-phút">2. Dàn slide
+(15 phút)</a></li>
+<li><a href="#kịch-bản-nói-gợi-ý-nói-theo-ý-mình-không-đọc" id="toc-kịch-bản-nói-gợi-ý-nói-theo-ý-mình-không-đọc">3. Kịch bản nói
+(gợi ý, nói theo ý mình, không đọc)</a></li>
+<li><a href="#câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời" id="toc-câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời">4. Câu hỏi phản
+biện có thể gặp (chia người trả lời)</a></li>
+<li><a href="#demo-tĩnh-khuyên-dùng-thay-demo-trực-tiếp" id="toc-demo-tĩnh-khuyên-dùng-thay-demo-trực-tiếp">5. Demo tĩnh (khuyên
+dùng thay demo trực tiếp)</a></li>
+<li><a href="#phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay" id="toc-phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay">6. Phân công nói
+và đóng góp (đề xuất, chốt tối nay)</a></li>
+<li><a href="#hành-trang-ngày-báo-cáo-checklist" id="toc-hành-trang-ngày-báo-cáo-checklist">7. Hành trang ngày báo cáo
+(checklist)</a></li>
+<li><a href="#lịch-từ-nay-đến-0212" id="toc-lịch-từ-nay-đến-0212">8.
+Lịch từ nay đến 02/12</a></li>
+<li><a href="#chương-trình-buổi-họp-tối-2211-khoảng-6075-phút" id="toc-chương-trình-buổi-họp-tối-2211-khoảng-6075-phút">9. Chương trình
+buổi họp tối 22/11 (khoảng 60–75 phút)</a></li>
+<li><a href="#việc-chờ-trí-quyết-assistant-đề-xuất-trí-chưa-giao" id="toc-việc-chờ-trí-quyết-assistant-đề-xuất-trí-chưa-giao">10. Việc chờ
+Trí quyết (assistant đề xuất, Trí chưa giao)</a></li>
+</ul>
+</nav>
+<blockquote>
+<p>Nội dung chi tiết và mọi con số: <a href="CAM_NANG_DO_AN_CS331.md">CAM_NANG_DO_AN_CS331.md</a>. <strong>Giả
+định cần Trí và Triệu xác nhận tối nay:</strong> thời lượng trình bày
+<strong>15 phút + 5–10 phút hỏi đáp</strong>, hai người cùng nói. Nếu
+thầy cho 10 phút thì bỏ các slide đánh dấu <em>(rút được)</em>. Nếu cho
+20 phút thì thêm slide dự phòng.</p>
+</blockquote>
+<h1 id="mạch-kể-một-câu-cho-mỗi-phần">1. Mạch kể (một câu cho mỗi
+phần)</h1>
+<ol type="1">
+<li><strong>Vấn đề:</strong> mô hình đếm theo chữ có thật sự đếm đúng
+loại được hỏi không, khi ảnh có nhiều loại?</li>
+<li><strong>Chẩn đoán:</strong> không. CountGD++ trả về cùng một nhóm
+khung dù đổi câu hỏi, và lượt 2 tự chọn mẫu còn làm tệ hơn.</li>
+<li><strong>Cải tiến:</strong> thêm CLIP làm người kiểm thứ hai: kiểm
+mẫu (P) và lọc khung (F). Không cần huấn luyện.</li>
+<li><strong>Kiểm chứng trung thực:</strong> chọn trên dev, khóa, test
+chạy một lần. Kết quả: giảm 24% MAE so với một lượt, CI không chứa
+0.</li>
+<li><strong>Hiểu sâu:</strong> cái giúp là F, không phải P. Giúp ở cặp
+dễ nhầm, chưa giúp ở cặp khác hẳn. Bài học về chọn mô hình.</li>
+</ol>
+<blockquote>
+<p><strong>Nguyên tắc trình bày:</strong> mỗi slide một ý, có một con số
+hoặc một hình. Chữ trên slide ít, phần giải thích nằm ở lời nói. Mọi con
+số đọc kèm đơn vị và ý nghĩa (“MAE 5.82, tức trung bình sai khoảng 6 vật
+mỗi câu”).</p>
+</blockquote>
+<h1 id="dàn-slide-15-phút">2. Dàn slide (15 phút)</h1>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Tiêu đề slide</th>
+<th>Nội dung trên slide</th>
+<th>Hình / bảng</th>
+<th>Người nói</th>
+<th>Thời gian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>Tên đề tài</td>
+<td>“Đếm đúng loại vật trong ảnh nhiều loại: chẩn đoán và giảm lỗi đếm
+nhầm loại của CountGD++”; tên nhóm, môn, ngày</td>
+<td>—</td>
+<td>Trí</td>
+<td>0:20</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Bài toán X/Y</td>
+<td>Một ảnh có bát và đĩa; hỏi “bowls” phải ra bát, hỏi “plates” phải ra
+đĩa, hỏi “forks” (không có) phải ra 0</td>
+<td>Ảnh mcac_12 với 3 câu hỏi</td>
+<td>Trí</td>
+<td>1:00</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Vì sao khó, vì sao quan trọng</td>
+<td>Benchmark FSC-147 phần lớn chỉ có 1 loại mỗi ảnh, nên mô hình “đếm
+thứ nổi bật” vẫn được điểm cao. MUCCA: ảnh thật, nhiều loại có nhãn</td>
+<td>2 ảnh: FSC-147 và MUCCA cạnh nhau</td>
+<td>Trí</td>
+<td>1:00</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>CountGD++ đếm thế nào</td>
+<td>Lượt 1: chữ → khung &gt; 0.23. Lượt 2: lấy 3 khung chắc nhất làm mẫu
+giả → chạy lại. Ví von “người đếm chỉ vào 3 vật”</td>
+<td><code>fig_pipeline.png</code> (nửa trái)</td>
+<td>Trí</td>
+<td>1:15</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>Câu hỏi nghiên cứu</td>
+<td>RQ1 chẩn đoán, RQ2 sửa không huấn luyện, RQ3 kiểm trên ảnh chưa
+thấy</td>
+<td>3 ô chữ</td>
+<td>Trí</td>
+<td>0:30</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>Chẩn đoán: lỗi ở đâu</td>
+<td>N4: mẫu giả chỉ <strong>1/21</strong> đúng loại; “people” và “cars”
+trùng <strong>21/21 khung</strong>. Test: B0 dùng chung
+<strong>64%</strong> khung giữa X và Y; khoảng 1/3 khung là vật loại
+khác</td>
+<td>Ảnh minh họa khung trùng + 2 con số lớn</td>
+<td>Triệu</td>
+<td>1:30</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>Cơ chế lượt 2</td>
+<td>Điểm lượt 2 = max(giống chữ, giống mẫu). Biến thể T bỏ max: chỉ gỡ
+khoảng <strong>1/5</strong> tác hại (dev). Giả thuyết H2: mẫu giả làm
+lệch cả điểm theo chữ (chưa kiểm)</td>
+<td>Công thức max + bảng T nhỏ</td>
+<td>Triệu</td>
+<td>1:15</td>
+</tr>
+<tr>
+<td>S8</td>
+<td>Cải tiến P và F</td>
+<td>P: CLIP kiểm mẫu trước lượt 2. F: 0.5·CountGD++ + 0.5·CLIP ≥ θ.
+Không huấn luyện</td>
+<td><code>fig_pipeline.png</code> (nửa phải) + bảng ví dụ 4 khung
+blueberries</td>
+<td>Trí</td>
+<td>1:30</td>
+</tr>
+<tr>
+<td>S9</td>
+<td>Giao thức “chọn trước, xem sau”</td>
+<td>Dữ liệu người kiểm + khóa hash → luật D9 chốt trước → chọn trên dev
+→ khóa → test <strong>một lần</strong> → người thứ hai tính lại</td>
+<td><code>fig_protocol.png</code></td>
+<td>Triệu</td>
+<td>1:15</td>
+</tr>
+<tr>
+<td>S10</td>
+<td>Kết quả test</td>
+<td>B0 7.71 → <strong>P+F 5.82</strong> (−24%, CI [−3.66, −0.44]); B2
+9.61 (lượt 2 gây hại, có ý nghĩa)</td>
+<td><code>fig_results_test.png</code></td>
+<td>Trí</td>
+<td>1:30</td>
+</tr>
+<tr>
+<td>S11</td>
+<td>Cái gì thật sự giúp</td>
+<td>P = B2 ở <strong>108/120</strong> câu, nên P không giúp; B2+F ≈ P+F,
+nên <strong>F</strong> là thứ có tác dụng. F đổi đếm thừa thành đếm
+thiếu (+580/−77 → +243/−297)</td>
+<td>Bảng 3 dòng + mũi tên</td>
+<td>Triệu</td>
+<td>1:15</td>
+</tr>
+<tr>
+<td>S12</td>
+<td>Giúp ở đâu, chưa giúp ở đâu</td>
+<td>Cặp dễ nhầm: −3.05 (chắc). Cặp khác hẳn: +0.51 (chưa chắc, 13
+ảnh)</td>
+<td><code>fig_strata_errors.png</code></td>
+<td>Triệu</td>
+<td>1:00</td>
+</tr>
+<tr>
+<td>S13</td>
+<td>Ví dụ thành công / thất bại</td>
+<td>blueberries (thành công) · dogs–dê (thất bại) · people (lọc quá
+tay)</td>
+<td>3 hình <code>fig_example_*</code></td>
+<td>Trí + Triệu</td>
+<td>1:15</td>
+</tr>
+<tr>
+<td>S14</td>
+<td><em>(rút được)</em> Bài học chọn mô hình + khảo sát FSC-147</td>
+<td>C6 hạng 7/15 họ trên dev nhưng tốt nhất trên test; không đổi kết quả
+chính sau khi xem test. Khảo sát FSC-147: <strong>số chờ</strong></td>
+<td>Bảng dev → test</td>
+<td>Triệu</td>
+<td>1:00</td>
+</tr>
+<tr>
+<td>S15</td>
+<td>Hạn chế và hướng phát triển</td>
+<td>4 hạn chế chính; 3 hướng: C6 trên tập mới, CLIP tương phản giữa các
+loại, kiểm H2</td>
+<td>2 cột</td>
+<td>Trí</td>
+<td>0:45</td>
+</tr>
+<tr>
+<td>S16</td>
+<td>Kết luận</td>
+<td>3 câu trả lời RQ1–RQ3 + “cảm ơn, mời thầy và các bạn hỏi”</td>
+<td>—</td>
+<td>Trí</td>
+<td>0:30</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tổng khoảng 16 phút.</strong> Rút S14 (−1:00) và nói gọn S3,
+S5 (−0:30) để về 15 phút.</p>
+<p><strong>Slide dự phòng (để sau S16, chỉ mở khi được
+hỏi):</strong></p>
+<ul>
+<li>D1: bảng đầy đủ 5 cách trên test (MAE, MAE có mặt, FPR).</li>
+<li>D2: bảng dev (D9) và lưới τ/M.</li>
+<li>D3: bảng khung đúng loại / loại khác / không trúng.</li>
+<li>D4: thứ hạng dev theo họ phương pháp.</li>
+<li>D5: v1 trên p4_unseen_v1.</li>
+<li>D6: ví dụ “bowls” (lỗi X/Y còn lại).</li>
+<li>D7: kết quả khảo sát FSC-147 đầy đủ.</li>
+<li>D8: D1–D12.</li>
+<li>D9: chi phí thời gian.</li>
+</ul>
+<h1 id="kịch-bản-nói-gợi-ý-nói-theo-ý-mình-không-đọc">3. Kịch bản nói
+(gợi ý, nói theo ý mình, không đọc)</h1>
+<p><strong>S1.</strong> “Chào thầy và các bạn. Nhóm em gồm Trí và Triệu.
+Đề tài của nhóm là kiểm tra xem một mô hình đếm vật hiện đại có thật sự
+đếm đúng loại vật được hỏi không, khi trong ảnh có nhiều loại.”</p>
+<p><strong>S2.</strong> “Ví dụ ảnh này có bát và đĩa. Hỏi ‘bowls’ thì
+đáp án là 3 cái bát. Đổi sang hỏi ‘plates’ thì mô hình phải đếm đĩa,
+không được đếm lại bát. Hỏi ‘forks’, thứ không có trong ảnh, thì phải
+trả 0. Thầy gọi đây là bài toán X/Y, và đó là câu hỏi xuyên suốt đồ
+án.”</p>
+<p><strong>S3.</strong> “Vì sao cần hỏi vậy? Bộ dữ liệu chuẩn FSC-147
+gần như ảnh nào cũng chỉ có một loại nổi bật. Một mô hình chỉ cần ‘đếm
+thứ nổi bật nhất’ cũng được điểm cao. Nhóm dùng MUCCA, bộ ảnh thật năm
+2026 có nhãn điểm cho nhiều loại trong cùng một ảnh, nên kiểm được đúng
+câu hỏi này.”</p>
+<p><strong>S4.</strong> “Mô hình nhóm chọn là CountGD++, công bố ở CVPR
+2026. Lượt 1, mô hình đọc câu chữ và khoanh những thứ trông giống. Lượt
+2, nó lấy 3 khung nó chắc nhất làm mẫu rồi chạy lại. Hình dung một người
+đếm chỉ vào 3 vật và nói ‘đếm hết những thứ trông như thế này’. Nếu 3
+vật đó sai loại thì lượt 2 sai rất tự tin. Nhóm không huấn luyện lại,
+chỉ dùng checkpoint công khai.”</p>
+<p><strong>S5.</strong> “Nhóm đặt ba câu hỏi: mô hình sai ở đâu; sửa
+được mà không huấn luyện lại không; và mức sửa có còn đúng trên ảnh chưa
+từng dùng không.”</p>
+<p><strong>S6 (Triệu).</strong> “Để chẩn đoán, em gán nhãn mù 117 khung.
+Kết quả: mẫu giả chỉ đúng loại 1 trên 21 lần. Ở một ảnh, hỏi ‘people’ và
+hỏi ‘cars’ cho ra 21 trên 21 khung giống hệt nhau. Trên tập test, đổi
+câu hỏi từ X sang Y thì 64% khung vẫn được dùng lại, và khoảng một phần
+ba khung rơi vào vật loại khác.”</p>
+<p><strong>S7 (Triệu).</strong> “Đọc mã, nhóm thấy ở lượt 2, điểm của
+khung là max giữa ‘giống chữ’ và ‘giống mẫu’. Vậy khung chỉ cần giống
+mẫu sai là được tính. Nhóm thử biến thể T bỏ max: nó chỉ gỡ được khoảng
+một phần năm tác hại trên dev. Vì vậy nhóm kết luận max chỉ là một phần
+nguyên nhân. Phần còn lại, nhóm đặt giả thuyết là mẫu giả làm lệch luôn
+cách mô hình hiểu câu chữ. Giả thuyết này chưa kiểm.”</p>
+<p><strong>S8.</strong> “Cải tiến dùng CLIP làm người kiểm thứ hai. CLIP
+không đếm, chỉ chấm xem một ô ảnh có giống ‘a photo of bowls’ không. P
+là kiểm mẫu bằng CLIP trước lượt 2. F là lọc từng khung bằng điểm kết
+hợp: một nửa điểm CountGD++, một nửa điểm CLIP, giữ khung vượt ngưỡng.
+Ví dụ ở bảng này: khung rác bị bỏ, nhưng cũng có khung đúng bị bỏ
+nhầm.”</p>
+<p><strong>S9 (Triệu).</strong> “Vì dữ liệu ít mà tham số nhiều, nhóm
+làm theo kiểu ‘chọn trước, xem sau’. Dữ liệu được người kiểm rồi khóa
+bằng hash. Luật chọn cấu hình được viết ra trước khi chạy dev. Chọn trên
+dev xong thì khóa lại, rồi chạy test đúng một lần. Kết quả được người
+thứ hai tính lại và khớp tuyệt đối. Kết quả xấu cũng không chạy
+lại.”</p>
+<p><strong>S10.</strong> “Trên 40 ảnh test, 119 câu hỏi: CountGD++ một
+lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi câu. Cấu hình đã khóa
+còn 5.82, giảm 24%. Khoảng tin cậy 95% của mức giảm không chứa 0. Lượt 2
+gốc thì tệ hơn một lượt, 9.61, và cũng có ý nghĩa thống kê.”</p>
+<p><strong>S11 (Triệu).</strong> “Phân tích sau đó cho thấy P gần như
+luôn chọn lại đúng bộ mẫu cũ, 108 trên 120 câu, và B2 cộng F cho kết quả
+gần bằng P cộng F. Vậy thành phần có tác dụng là bộ lọc F. F đổi lỗi đếm
+thừa thành đếm thiếu: thừa giảm từ 580 xuống 243, nhưng thiếu tăng từ 77
+lên 297.”</p>
+<p><strong>S12 (Triệu).</strong> “Chia theo loại cặp: với cặp dễ nhầm
+như bát–đĩa hay các loại quả, cải thiện rõ, khoảng 3 vật mỗi câu. Với
+cặp khác hẳn như người–xe, chưa thấy khác biệt chắc chắn, và chỉ có 13
+ảnh. Nhóm nói thẳng điều này: phương pháp chưa giải quyết xong mọi dạng
+X/Y.”</p>
+<p><strong>S13.</strong> “Ba ví dụ. Blueberries: B2 đếm 65, P+F đếm 8,
+đáp án 7. Dogs: đàn dê bị đếm là chó ở mọi cách, vì CLIP cũng không phân
+biệt được dê và chó ở ô ảnh nhỏ. People: F bỏ cả người thật, còn 13 trên
+31.”</p>
+<p><strong>S14 (Triệu).</strong> “Một bài học: trên dev, cách đơn giản
+C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong
+khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm
+ghi C6 là giả thuyết cho lần kiểm sau.” (Thêm một câu về khảo sát
+FSC-147 khi có số.)</p>
+<p><strong>S15.</strong> “Hạn chế: mẫu nhỏ, một nguồn dữ liệu, ngưỡng
+toàn cục, CLIP yếu với vật gần nghĩa. Hướng tiếp theo: kiểm C6 trên tập
+mới; chấm mỗi khung với mọi tên loại trong ảnh rồi gán cho loại giống
+nhất; kiểm giả thuyết H2.”</p>
+<p><strong>S16.</strong> “Tóm lại: CountGD++ đếm lẫn loại khi ảnh có
+nhiều loại, và lượt 2 làm nặng thêm. Một bộ lọc dùng CLIP, không cần
+huấn luyện, giảm 24% sai số trên tập test khóa trước. Cải thiện tập
+trung ở cặp dễ nhầm. Em cảm ơn thầy và các bạn đã lắng nghe.”</p>
+<h1 id="câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời">4. Câu hỏi phản
+biện có thể gặp (chia người trả lời)</h1>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Câu hỏi</th>
+<th>Ý trả lời ngắn</th>
+<th>Người trả lời</th>
+<th>Slide dự phòng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sao không huấn luyện lại / fine-tune?</td>
+<td>Câu hỏi là về mô hình công khai; MUCCA chỉ 200 ảnh, không đủ để vừa
+huấn luyện vừa có tập kiểm độc lập; sửa ở đầu ra dễ tái lập</td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>40 ảnh có quá ít không?</td>
+<td>Có, đó là hạn chế số 1. Vì vậy nhóm dùng bootstrap theo ảnh và khóa
+trước test. Kết quả chính vẫn có CI không chứa 0</td>
+<td>Triệu</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sao C6 tốt hơn mà không chọn C6?</td>
+<td>Luật chọn D9 chốt trước, dev chọn P+F. Đổi sau khi xem test là thiên
+lệch. C6 − P+F có CI chứa 0, nên chưa chắc C6 tốt hơn</td>
+<td>Triệu</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>P không giúp thì sao vẫn gọi là cải tiến chính?</td>
+<td>Kết quả chính là cấu hình đã khóa P+F, đúng giao thức. Nhóm báo
+trung thực rằng phần có tác dụng là F; P quá nhẹ tay (108/120 câu giống
+B2)</td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Sao dùng CLIP ViT-B/32 mà không dùng ViT-L/14?</td>
+<td>Chốt từ giai đoạn v1 (pilot), sau đó khóa để không đổi biến giữa các
+giai đoạn; nhẹ hơn trên T4. Thử ViT-L là hướng phát triển. <em>(Trí xác
+nhận lý do thật tối nay)</em></td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CI tính thế nào, sao theo ảnh?</td>
+<td>3 câu trong một ảnh không độc lập; lấy lại 40 ảnh 5.000 lần, lấy
+phân vị 2.5% và 97.5%</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>7</td>
+<td>GT có đúng không?</td>
+<td>GT là số điểm MUCCA; người kiểm cả dev và test; 15/120 câu có ghi
+chú; độ nhạy dùng số người đếm: MAE đổi dưới 0.06</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>“Có ý nghĩa thống kê” nghĩa là gì ở đây?</td>
+<td>CI 95% của chênh lệch MAE không chứa 0</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Khác nhóm Hoàng Anh – Duy thế nào?</td>
+<td>Câu trả lời mẫu ở mục 12b của cẩm nang (CLIP từng khung so với cả
+ảnh; ảnh nhiều loại; chẩn đoán cơ chế)</td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Có làm hỏng ảnh một loại (FSC-147) không?</td>
+<td>Trả lời bằng số khảo sát 300 ảnh nếu có. Chưa có thì nói: “chưa kiểm
+xong, kết luận chỉ áp dụng cho ảnh nhiều loại”</td>
+<td>Triệu</td>
+<td>D7</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Tại sao lượt 2 hại?</td>
+<td>max(chữ, mẫu) + mẫu giả sai loại; T chỉ gỡ khoảng 1/5; giả thuyết
+H2</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Câu vắng mặt xử lý thế nào?</td>
+<td>Z khó, cùng nhóm nghĩa, người kiểm; khung đếm nhầm 92–100% nằm trên
+vật thật khác; C6 FPR 0.10</td>
+<td>Triệu</td>
+<td>D1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa?</td>
+<td>Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm
+này; chỉ 13 ảnh; hướng “CLIP tương phản” nhắm thẳng vào đó</td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Thời gian chạy?</td>
+<td>B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP chưa đo;
+C6 tiết kiệm khoảng 40%</td>
+<td>Triệu</td>
+<td>D9</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Ngưỡng θ 0.604 ở đâu ra?</td>
+<td>Chọn trên dev theo D9, cùng min/max, khóa trong freeze v2
+(hash)</td>
+<td>Trí</td>
+<td>D2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Tái lập thế nào?</td>
+<td>Repo public; dữ liệu và cấu hình có hash; notebook Kaggle; Kiểm A +
+Kiểm C</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Đóng góp của từng thành viên?</td>
+<td>Xem mục 6</td>
+<td>cả hai</td>
+<td>—</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Có dùng AI hỗ trợ không?</td>
+<td>Có, dùng assistant (Claude) để viết code, kiểm số và soạn tài liệu.
+Mọi số liệu được tính lại độc lập; các quyết định do nhóm chốt.
+<em>(Thống nhất câu này tối nay)</em></td>
+<td>Trí</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Mẹo trả lời:</strong></p>
+<ol type="1">
+<li>Nhắc lại câu hỏi bằng lời mình.</li>
+<li>Trả lời trong 1–2 câu, kèm 1 con số.</li>
+<li>Nói giới hạn nếu có.</li>
+<li>Không biết thì nói “nhóm chưa kiểm điều đó; nếu làm, nhóm sẽ…”. Đừng
+đoán.</li>
+</ol>
+<h1 id="demo-tĩnh-khuyên-dùng-thay-demo-trực-tiếp">5. Demo tĩnh (khuyên
+dùng thay demo trực tiếp)</h1>
+<ul>
+<li>Dùng 4 hình <code>reports/figures/fig_example_*.png</code>. Mỗi hình
+đặt 4 cách cạnh nhau, khung tô màu theo đúng / sai loại.</li>
+<li><strong>Thứ tự kể:</strong>
+<ol type="1">
+<li>thành công (blueberries);</li>
+<li>lỗi X/Y còn lại (bowls–đĩa);</li>
+<li>thất bại (dogs–dê);</li>
+<li>lọc quá tay (people).</li>
+</ol></li>
+<li>Lý do không demo trực tiếp: cần GPU + mạng, dễ hỏng lúc trình bày.
+Nhóm khác demo Gradio. Nếu nhóm muốn làm, xem mục 8.</li>
+</ul>
+<h1 id="phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay">6. Phân công nói
+và đóng góp (đề xuất, chốt tối nay)</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phần</th>
+<th>Trí</th>
+<th>Triệu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mở đầu, bài toán, mô hình, cải tiến, kết quả chính, kết luận</td>
+<td>S1–S5, S8, S10, S15–S16</td>
+<td></td>
+</tr>
+<tr>
+<td>Chẩn đoán, giao thức, phân tích, bài học</td>
+<td></td>
+<td>S6, S7, S9, S11, S12, S14</td>
+</tr>
+<tr>
+<td>Ví dụ</td>
+<td>S13 (một nửa)</td>
+<td>S13 (một nửa)</td>
+</tr>
+<tr>
+<td>Đóng góp thực tế</td>
+<td>Pilot, review bằng mắt, kiểm dev, khóa cấu hình, báo cáo chi
+tiết</td>
+<td>Kiểm chéo evaluator, N4 (117 khung), kiểm test, chạy dev + test +
+khảo sát trên Kaggle, so sánh nhóm khác, Related Work</td>
+</tr>
+</tbody>
+</table>
+<h1 id="hành-trang-ngày-báo-cáo-checklist">7. Hành trang ngày báo cáo
+(checklist)</h1>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>File slide (<code>.pptx</code> + bản
+<code>.pdf</code> dự phòng), chép vào USB và lưu trên
+Drive.</label></li>
+<li><label><input type="checkbox"></input>Báo cáo cuối
+<code>.pdf</code>.</label></li>
+<li><label><input type="checkbox"></input>Mở sẵn repo GitHub trên trình
+duyệt.</label></li>
+<li><label><input type="checkbox"></input>Bản in hoặc trên điện thoại: <a href="CAM_NANG_DO_AN_CS331.md#10-bảng-số-tra-nhanh-thuộc-lòng-các-số-in-đậm">bảng
+số tra nhanh</a> và bảng câu hỏi phản biện (mục 4).</label></li>
+<li><label><input type="checkbox"></input>Hình ví dụ ở độ phân giải gốc, phòng
+khi máy chiếu mờ.</label></li>
+<li><label><input type="checkbox"></input>Laptop sạc đầy, bộ chuyển
+HDMI.</label></li>
+<li><label><input type="checkbox"></input>Đã tập ít nhất 2 lần, bấm
+giờ.</label></li>
+</ul>
+<h1 id="lịch-từ-nay-đến-0212">8. Lịch từ nay đến 02/12</h1>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ngày</th>
+<th>Việc</th>
+<th>Ai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>22/11</td>
+<td>Triệu: khảo sát, Related Work, đọc cẩm nang. <strong>Tối: họp
+chốt</strong> (mục 9)</td>
+<td>Triệu; cả hai buổi tối</td>
+</tr>
+<tr>
+<td>23–25/11</td>
+<td>Báo cáo cuối: chuyển bản chi tiết thành bản nộp, thêm Related Work +
+khảo sát</td>
+<td>Trí chính, Triệu rà</td>
+</tr>
+<tr>
+<td>24/11</td>
+<td>Đóng khảo sát FSC-147</td>
+<td>Triệu + assistant</td>
+</tr>
+<tr>
+<td>25–28/11</td>
+<td>Làm slide theo mục 2, chèn hình</td>
+<td>chia theo mục 6</td>
+</tr>
+<tr>
+<td>29–30/11</td>
+<td>Tập 2 lần, bấm giờ; luyện câu hỏi mục 4</td>
+<td>cả hai</td>
+</tr>
+<tr>
+<td>01/12</td>
+<td>Rà bản nộp (báo cáo, slide, repo), đẩy bản cuối</td>
+<td>cả hai</td>
+</tr>
+<tr>
+<td><strong>02/12</strong></td>
+<td><strong>Nộp</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="chương-trình-buổi-họp-tối-2211-khoảng-6075-phút">9. Chương trình
+buổi họp tối 22/11 (khoảng 60–75 phút)</h1>
+<ol type="1">
+<li>(10 phút) Triệu báo kết quả ngày hôm nay: khảo sát, Related Work,
+chỗ chưa hiểu.</li>
+<li>(10 phút) Chốt thời lượng trình bày thầy yêu cầu và mẫu slide / mẫu
+báo cáo (nếu thầy có quy định).</li>
+<li>(15 phút) Đi qua dàn slide mục 2; sửa nếu cần; chốt ai nói slide
+nào.</li>
+<li>(15 phút) Hỏi nhau 10 câu ở mục 4; ghi câu nào chưa trả lời
+được.</li>
+<li>(10 phút) Quyết các việc ở mục 10.</li>
+<li>(5 phút) Chốt lịch mục 8 và ghi vào
+<code>BAT_DAU_SESSION_MOI.md</code>.</li>
+</ol>
+<h1 id="việc-chờ-trí-quyết-assistant-đề-xuất-trí-chưa-giao">10. Việc chờ
+Trí quyết (assistant đề xuất, Trí chưa giao)</h1>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Đề xuất</th>
+<th>Lợi</th>
+<th>Chi phí</th>
+<th>Assistant khuyên</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td>Assistant dựng <strong>bản nháp slide <code>.pptx</code></strong>
+theo dàn mục 2, chèn hình có sẵn</td>
+<td>Tiết kiệm 3–4 giờ</td>
+<td>Nhóm vẫn phải chỉnh lời, giao diện</td>
+<td><strong>Nên</strong></td>
+</tr>
+<tr>
+<td>Q2</td>
+<td>Assistant chuyển bản chi tiết 22 trang thành <strong>bản nháp báo
+cáo cuối</strong> (chèn Related Work + khảo sát khi có)</td>
+<td>Đỡ việc 23–25/11</td>
+<td>Trí phải rà</td>
+<td><strong>Nên</strong></td>
+</tr>
+<tr>
+<td>Q3</td>
+<td>Demo Gradio trực tiếp (ảnh X/Y, so B0 và P+F)</td>
+<td>Gây ấn tượng, nhóm khác có</td>
+<td>Cần GPU và mạng lúc trình bày, rủi ro hỏng; khoảng nửa ngày làm</td>
+<td>Không, trừ khi thầy yêu cầu demo trực tiếp</td>
+</tr>
+<tr>
+<td>Q4</td>
+<td>Kiểm giả thuyết H2 (so điểm token chữ lượt 1 và lượt 2)</td>
+<td>Trả lời trọn RQ1</td>
+<td>Cần raw <code>.npz</code> trên Kaggle + chạy; trái tinh thần “không
+mở rộng thử nghiệm”</td>
+<td>Không, để hướng phát triển</td>
+</tr>
+<tr>
+<td>Q5</td>
+<td>Thêm slide 1 phút “nhóm dùng AI hỗ trợ ra sao”</td>
+<td>Minh bạch, tránh bị hỏi bất ngờ</td>
+<td>Không đáng kể</td>
+<td>Tùy quy định của thầy</td>
+</tr>
+<tr>
+<td>Q6</td>
+<td>Gộp các ghi chú chưa commit trên máy Trí (BAT_DAU/WORKLOG) vào
+<code>main</code></td>
+<td>Repo thống nhất</td>
+<td>10 phút</td>
+<td><strong>Nên</strong>, khi Trí rảnh</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

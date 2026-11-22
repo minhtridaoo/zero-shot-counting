@@ -59,6 +59,13 @@
 
 W7 (Related Work) và phần báo cáo được giao vẫn tiếp tục song song.
 
+## W10 — 22/11: chạy thay Trí và chốt đồ án (Trí giao)
+
+Trí bận cả ngày 22/11 và đã nhờ Triệu chạy task của Trí. Làm theo [TRIEU_NGAY_22_11_CHOT_DO_AN.md](TRIEU_NGAY_22_11_CHOT_DO_AN.md):
+- kiểm A, chạy khảo sát FSC-147 trên Kaggle, kiểm B/C;
+- viết Related Work (W7);
+- đọc [cẩm nang](../reports/CAM_NANG_DO_AN_CS331.md) và [kế hoạch slide](../reports/KE_HOACH_SLIDE_THUYET_TRINH.md) để họp với Trí tối 22/11.
+
 ## 2. Lệnh rút dữ liệu (W1)
 
 ```text

@@ -18,6 +18,7 @@
 | `reports/` | **Báo cáo kết quả** dùng để viết báo cáo cuối (xem danh sách dưới) |
 | `experiments/countgdpp/` | Code chạy model + **dữ liệu đã khóa** (`p4_unseen_v1/`, `dev_test_v2/`, `m4_inputs/`) |
 | `experiments/benchmark_fscd147/` | Notebook Kaggle tái lập benchmark FSCD-147 |
+| `reports/CAM_NANG_DO_AN_CS331.md` (+ `.html`) | **Cẩm nang đồ án:** toàn bộ nội dung, số liệu, hạn chế, repo map. Kèm `reports/KE_HOACH_SLIDE_THUYET_TRINH.md`: dàn slide, kịch bản, câu hỏi phản biện |
 | `experiments/fsc147_survey/` | Khảo sát bổ sung FSC-147 test, 300 ảnh (Trí chạy, Triệu kiểm): bản khai báo trước, mẫu cố định, script tạo mẫu / chấm / self-test, notebook Kaggle ghim commit, hướng dẫn kiểm (Triệu), hướng dẫn chạy Kaggle (Trí) |
 | `evaluation/` | Code chấm điểm (evaluator, scorer, tạo gói review, app gán nhãn) |
 | `results/countgdpp/` | Output các lần chạy; danh mục ở [results/README.md](results/README.md) |
