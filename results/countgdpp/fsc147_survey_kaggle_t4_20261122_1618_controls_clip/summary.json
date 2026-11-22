@@ -1,0 +1,5402 @@
+[
+  {
+    "query_id": "B0__fq_1061",
+    "image_id": "fsc_1061",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1061_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1106",
+    "image_id": "fsc_1106",
+    "n_boxes": 95,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1106_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1462",
+    "image_id": "fsc_1462",
+    "n_boxes": 305,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1462_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1537",
+    "image_id": "fsc_1537",
+    "n_boxes": 118,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1537_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1886",
+    "image_id": "fsc_1886",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1886_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1888",
+    "image_id": "fsc_1888",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1888_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_1889",
+    "image_id": "fsc_1889",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_1889_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2007",
+    "image_id": "fsc_2007",
+    "n_boxes": 161,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2007_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2008",
+    "image_id": "fsc_2008",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2008_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2009",
+    "image_id": "fsc_2009",
+    "n_boxes": 375,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2009_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2010",
+    "image_id": "fsc_2010",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2010_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2017",
+    "image_id": "fsc_2017",
+    "n_boxes": 144,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2017_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2025",
+    "image_id": "fsc_2025",
+    "n_boxes": 106,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2025_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2038",
+    "image_id": "fsc_2038",
+    "n_boxes": 380,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2038_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2039",
+    "image_id": "fsc_2039",
+    "n_boxes": 88,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2039_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2046",
+    "image_id": "fsc_2046",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2046_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2049",
+    "image_id": "fsc_2049",
+    "n_boxes": 143,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2049_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2052",
+    "image_id": "fsc_2052",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2052_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2140",
+    "image_id": "fsc_2140",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2140_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2143",
+    "image_id": "fsc_2143",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2143_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2153",
+    "image_id": "fsc_2153",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2153_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2159",
+    "image_id": "fsc_2159",
+    "n_boxes": 740,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2159_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2162",
+    "image_id": "fsc_2162",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2162_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2163",
+    "image_id": "fsc_2163",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2163_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2166",
+    "image_id": "fsc_2166",
+    "n_boxes": 94,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2166_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2177",
+    "image_id": "fsc_2177",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2177_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2179",
+    "image_id": "fsc_2179",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2179_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2192",
+    "image_id": "fsc_2192",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2192_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2194",
+    "image_id": "fsc_2194",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2194_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2204",
+    "image_id": "fsc_2204",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2204_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2211",
+    "image_id": "fsc_2211",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2211_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2226",
+    "image_id": "fsc_2226",
+    "n_boxes": 69,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2226_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2227",
+    "image_id": "fsc_2227",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2227_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2229",
+    "image_id": "fsc_2229",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2229_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2237",
+    "image_id": "fsc_2237",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2237_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2243",
+    "image_id": "fsc_2243",
+    "n_boxes": 543,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2243_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2248",
+    "image_id": "fsc_2248",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2248_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2252",
+    "image_id": "fsc_2252",
+    "n_boxes": 90,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2252_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2265",
+    "image_id": "fsc_2265",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2265_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2274",
+    "image_id": "fsc_2274",
+    "n_boxes": 64,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2274_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2279",
+    "image_id": "fsc_2279",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2279_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2285",
+    "image_id": "fsc_2285",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2285_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2286",
+    "image_id": "fsc_2286",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2286_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2612",
+    "image_id": "fsc_2612",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2612_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2614",
+    "image_id": "fsc_2614",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2614_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_286",
+    "image_id": "fsc_286",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_286_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_290",
+    "image_id": "fsc_290",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_290_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2907",
+    "image_id": "fsc_2907",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2907_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2910",
+    "image_id": "fsc_2910",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2910_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2913",
+    "image_id": "fsc_2913",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2913_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2920",
+    "image_id": "fsc_2920",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2920_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2923",
+    "image_id": "fsc_2923",
+    "n_boxes": 84,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2923_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2927",
+    "image_id": "fsc_2927",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2927_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2932",
+    "image_id": "fsc_2932",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2932_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2933",
+    "image_id": "fsc_2933",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2933_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2935",
+    "image_id": "fsc_2935",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2935_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2938",
+    "image_id": "fsc_2938",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2938_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2942",
+    "image_id": "fsc_2942",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2942_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2947",
+    "image_id": "fsc_2947",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2947_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2951",
+    "image_id": "fsc_2951",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2951_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_2953",
+    "image_id": "fsc_2953",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_2953_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_306",
+    "image_id": "fsc_306",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_306_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_309",
+    "image_id": "fsc_309",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_309_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3114",
+    "image_id": "fsc_3114",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3114_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_315",
+    "image_id": "fsc_315",
+    "n_boxes": 62,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_315_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_317",
+    "image_id": "fsc_317",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_317_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_323",
+    "image_id": "fsc_323",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_323_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_325",
+    "image_id": "fsc_325",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_325_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3269",
+    "image_id": "fsc_3269",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3269_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_327",
+    "image_id": "fsc_327",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_327_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3274",
+    "image_id": "fsc_3274",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3274_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3275",
+    "image_id": "fsc_3275",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3275_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3276",
+    "image_id": "fsc_3276",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3276_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_328",
+    "image_id": "fsc_328",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_328_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3281",
+    "image_id": "fsc_3281",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3281_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3282",
+    "image_id": "fsc_3282",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3282_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3284",
+    "image_id": "fsc_3284",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3284_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_330",
+    "image_id": "fsc_330",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_330_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3308",
+    "image_id": "fsc_3308",
+    "n_boxes": 151,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3308_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3309",
+    "image_id": "fsc_3309",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3309_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3317",
+    "image_id": "fsc_3317",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3317_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3318",
+    "image_id": "fsc_3318",
+    "n_boxes": 165,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3318_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3322",
+    "image_id": "fsc_3322",
+    "n_boxes": 436,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3322_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3324",
+    "image_id": "fsc_3324",
+    "n_boxes": 60,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3324_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3326",
+    "image_id": "fsc_3326",
+    "n_boxes": 121,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3326_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_333",
+    "image_id": "fsc_333",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_333_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3331",
+    "image_id": "fsc_3331",
+    "n_boxes": 137,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3331_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3333",
+    "image_id": "fsc_3333",
+    "n_boxes": 118,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3333_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3334",
+    "image_id": "fsc_3334",
+    "n_boxes": 146,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3334_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_335",
+    "image_id": "fsc_335",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_335_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_339",
+    "image_id": "fsc_339",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_339_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_342",
+    "image_id": "fsc_342",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_342_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_349",
+    "image_id": "fsc_349",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_349_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3494",
+    "image_id": "fsc_3494",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3494_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_350",
+    "image_id": "fsc_350",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_350_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3500",
+    "image_id": "fsc_3500",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3500_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3502",
+    "image_id": "fsc_3502",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3502_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3649",
+    "image_id": "fsc_3649",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3649_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3655",
+    "image_id": "fsc_3655",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3655_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_3694",
+    "image_id": "fsc_3694",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_3694_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4067",
+    "image_id": "fsc_4067",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4067_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4071",
+    "image_id": "fsc_4071",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4071_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4072",
+    "image_id": "fsc_4072",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4072_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4073",
+    "image_id": "fsc_4073",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4073_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4077",
+    "image_id": "fsc_4077",
+    "n_boxes": 194,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4077_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4086",
+    "image_id": "fsc_4086",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4086_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4110",
+    "image_id": "fsc_4110",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4110_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4114",
+    "image_id": "fsc_4114",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4114_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4118",
+    "image_id": "fsc_4118",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4118_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4287",
+    "image_id": "fsc_4287",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4287_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4289",
+    "image_id": "fsc_4289",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4289_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4305",
+    "image_id": "fsc_4305",
+    "n_boxes": 83,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4305_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4407",
+    "image_id": "fsc_4407",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4407_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4409",
+    "image_id": "fsc_4409",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4409_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4414",
+    "image_id": "fsc_4414",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4414_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4495",
+    "image_id": "fsc_4495",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4495_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4500",
+    "image_id": "fsc_4500",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4500_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4502",
+    "image_id": "fsc_4502",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4502_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4875",
+    "image_id": "fsc_4875",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4875_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4876",
+    "image_id": "fsc_4876",
+    "n_boxes": 41,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4876_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4881",
+    "image_id": "fsc_4881",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4881_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4892",
+    "image_id": "fsc_4892",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4892_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4894",
+    "image_id": "fsc_4894",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4894_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4895",
+    "image_id": "fsc_4895",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4895_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4898",
+    "image_id": "fsc_4898",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4898_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4905",
+    "image_id": "fsc_4905",
+    "n_boxes": 285,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4905_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4908",
+    "image_id": "fsc_4908",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4908_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4916",
+    "image_id": "fsc_4916",
+    "n_boxes": 99,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4916_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4918",
+    "image_id": "fsc_4918",
+    "n_boxes": 94,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4918_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4920",
+    "image_id": "fsc_4920",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4920_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4923",
+    "image_id": "fsc_4923",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4923_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4929",
+    "image_id": "fsc_4929",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4929_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4930",
+    "image_id": "fsc_4930",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4930_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4934",
+    "image_id": "fsc_4934",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4934_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4938",
+    "image_id": "fsc_4938",
+    "n_boxes": 75,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4938_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4939",
+    "image_id": "fsc_4939",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4939_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4940",
+    "image_id": "fsc_4940",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4940_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4943",
+    "image_id": "fsc_4943",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4943_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4956",
+    "image_id": "fsc_4956",
+    "n_boxes": 114,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4956_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4963",
+    "image_id": "fsc_4963",
+    "n_boxes": 226,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4963_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4964",
+    "image_id": "fsc_4964",
+    "n_boxes": 57,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4964_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_4966",
+    "image_id": "fsc_4966",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_4966_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5143",
+    "image_id": "fsc_5143",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5143_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5148",
+    "image_id": "fsc_5148",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5148_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5357",
+    "image_id": "fsc_5357",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5357_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5368",
+    "image_id": "fsc_5368",
+    "n_boxes": 77,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5368_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5381",
+    "image_id": "fsc_5381",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5381_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5385",
+    "image_id": "fsc_5385",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5385_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5464",
+    "image_id": "fsc_5464",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5464_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5507",
+    "image_id": "fsc_5507",
+    "n_boxes": 260,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5507_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5508",
+    "image_id": "fsc_5508",
+    "n_boxes": 99,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5508_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5509",
+    "image_id": "fsc_5509",
+    "n_boxes": 152,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5509_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5564",
+    "image_id": "fsc_5564",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5564_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5578",
+    "image_id": "fsc_5578",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5578_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5581",
+    "image_id": "fsc_5581",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5581_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5582",
+    "image_id": "fsc_5582",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5582_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5585",
+    "image_id": "fsc_5585",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5585_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5587",
+    "image_id": "fsc_5587",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5587_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5591",
+    "image_id": "fsc_5591",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5591_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5594",
+    "image_id": "fsc_5594",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5594_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5596",
+    "image_id": "fsc_5596",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5596_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5597",
+    "image_id": "fsc_5597",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5597_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5599",
+    "image_id": "fsc_5599",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5599_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5601",
+    "image_id": "fsc_5601",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5601_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5792",
+    "image_id": "fsc_5792",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5792_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5796",
+    "image_id": "fsc_5796",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5796_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5807",
+    "image_id": "fsc_5807",
+    "n_boxes": 110,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5807_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5808",
+    "image_id": "fsc_5808",
+    "n_boxes": 57,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5808_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5809",
+    "image_id": "fsc_5809",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5809_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5812",
+    "image_id": "fsc_5812",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5812_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5814",
+    "image_id": "fsc_5814",
+    "n_boxes": 38,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5814_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5817",
+    "image_id": "fsc_5817",
+    "n_boxes": 42,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5817_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5827",
+    "image_id": "fsc_5827",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5827_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5830",
+    "image_id": "fsc_5830",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5830_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5836",
+    "image_id": "fsc_5836",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5836_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5842",
+    "image_id": "fsc_5842",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5842_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5843",
+    "image_id": "fsc_5843",
+    "n_boxes": 78,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5843_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5849",
+    "image_id": "fsc_5849",
+    "n_boxes": 41,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5849_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5852",
+    "image_id": "fsc_5852",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5852_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5922",
+    "image_id": "fsc_5922",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5922_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5924",
+    "image_id": "fsc_5924",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5924_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5933",
+    "image_id": "fsc_5933",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5933_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5934",
+    "image_id": "fsc_5934",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5934_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5935",
+    "image_id": "fsc_5935",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5935_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5936",
+    "image_id": "fsc_5936",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5936_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_5942",
+    "image_id": "fsc_5942",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_5942_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6043",
+    "image_id": "fsc_6043",
+    "n_boxes": 103,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6043_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6048",
+    "image_id": "fsc_6048",
+    "n_boxes": 94,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6048_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6051",
+    "image_id": "fsc_6051",
+    "n_boxes": 86,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6051_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6247",
+    "image_id": "fsc_6247",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6247_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6249",
+    "image_id": "fsc_6249",
+    "n_boxes": 132,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6249_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6250",
+    "image_id": "fsc_6250",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6250_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6258",
+    "image_id": "fsc_6258",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6258_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6259",
+    "image_id": "fsc_6259",
+    "n_boxes": 85,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6259_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6261",
+    "image_id": "fsc_6261",
+    "n_boxes": 382,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6261_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6262",
+    "image_id": "fsc_6262",
+    "n_boxes": 83,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6262_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6270",
+    "image_id": "fsc_6270",
+    "n_boxes": 99,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6270_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6271",
+    "image_id": "fsc_6271",
+    "n_boxes": 255,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6271_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6275",
+    "image_id": "fsc_6275",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6275_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6278",
+    "image_id": "fsc_6278",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6278_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6279",
+    "image_id": "fsc_6279",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6279_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6283",
+    "image_id": "fsc_6283",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6283_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6548",
+    "image_id": "fsc_6548",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6548_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6644",
+    "image_id": "fsc_6644",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6644_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6649",
+    "image_id": "fsc_6649",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6649_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6653",
+    "image_id": "fsc_6653",
+    "n_boxes": 315,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6653_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6654",
+    "image_id": "fsc_6654",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6654_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6656",
+    "image_id": "fsc_6656",
+    "n_boxes": 106,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6656_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6658",
+    "image_id": "fsc_6658",
+    "n_boxes": 362,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6658_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6660",
+    "image_id": "fsc_6660",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6660_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6710",
+    "image_id": "fsc_6710",
+    "n_boxes": 120,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6710_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6732",
+    "image_id": "fsc_6732",
+    "n_boxes": 168,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6732_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6750",
+    "image_id": "fsc_6750",
+    "n_boxes": 118,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6750_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6756",
+    "image_id": "fsc_6756",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6756_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6804",
+    "image_id": "fsc_6804",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6804_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6813",
+    "image_id": "fsc_6813",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6813_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_682",
+    "image_id": "fsc_682",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_682_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6823",
+    "image_id": "fsc_6823",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6823_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6833",
+    "image_id": "fsc_6833",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6833_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6842",
+    "image_id": "fsc_6842",
+    "n_boxes": 183,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6842_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6852",
+    "image_id": "fsc_6852",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6852_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6860",
+    "image_id": "fsc_6860",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6860_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6892",
+    "image_id": "fsc_6892",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6892_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6893",
+    "image_id": "fsc_6893",
+    "n_boxes": 79,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6893_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6898",
+    "image_id": "fsc_6898",
+    "n_boxes": 241,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6898_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6906",
+    "image_id": "fsc_6906",
+    "n_boxes": 37,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6906_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6922",
+    "image_id": "fsc_6922",
+    "n_boxes": 71,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6922_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6923",
+    "image_id": "fsc_6923",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6923_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6928",
+    "image_id": "fsc_6928",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6928_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6935",
+    "image_id": "fsc_6935",
+    "n_boxes": 69,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6935_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_695",
+    "image_id": "fsc_695",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_695_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6950",
+    "image_id": "fsc_6950",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6950_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6959",
+    "image_id": "fsc_6959",
+    "n_boxes": 55,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6959_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_6964",
+    "image_id": "fsc_6964",
+    "n_boxes": 75,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_6964_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_697",
+    "image_id": "fsc_697",
+    "n_boxes": 55,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_697_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7034",
+    "image_id": "fsc_7034",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7034_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7043",
+    "image_id": "fsc_7043",
+    "n_boxes": 96,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7043_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7047",
+    "image_id": "fsc_7047",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7047_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_705",
+    "image_id": "fsc_705",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_705_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7065",
+    "image_id": "fsc_7065",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7065_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7071",
+    "image_id": "fsc_7071",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7071_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7076",
+    "image_id": "fsc_7076",
+    "n_boxes": 46,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7076_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7096",
+    "image_id": "fsc_7096",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7096_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7097",
+    "image_id": "fsc_7097",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7097_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7117",
+    "image_id": "fsc_7117",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7117_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7120",
+    "image_id": "fsc_7120",
+    "n_boxes": 49,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7120_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7129",
+    "image_id": "fsc_7129",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7129_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7131",
+    "image_id": "fsc_7131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7131_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7136",
+    "image_id": "fsc_7136",
+    "n_boxes": 92,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7136_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_714",
+    "image_id": "fsc_714",
+    "n_boxes": 109,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_714_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7144",
+    "image_id": "fsc_7144",
+    "n_boxes": 92,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7144_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7153",
+    "image_id": "fsc_7153",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7153_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_716",
+    "image_id": "fsc_716",
+    "n_boxes": 189,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_716_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7161",
+    "image_id": "fsc_7161",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7161_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_717",
+    "image_id": "fsc_717",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_717_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7171",
+    "image_id": "fsc_7171",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7171_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7173",
+    "image_id": "fsc_7173",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7173_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7188",
+    "image_id": "fsc_7188",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7188_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7195",
+    "image_id": "fsc_7195",
+    "n_boxes": 255,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7195_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7216",
+    "image_id": "fsc_7216",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7216_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7240",
+    "image_id": "fsc_7240",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7240_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7278",
+    "image_id": "fsc_7278",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7278_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7298",
+    "image_id": "fsc_7298",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7298_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7312",
+    "image_id": "fsc_7312",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7312_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7328",
+    "image_id": "fsc_7328",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7328_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7366",
+    "image_id": "fsc_7366",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7366_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7381",
+    "image_id": "fsc_7381",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7381_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7420",
+    "image_id": "fsc_7420",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7420_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7443",
+    "image_id": "fsc_7443",
+    "n_boxes": 296,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7443_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7452",
+    "image_id": "fsc_7452",
+    "n_boxes": 91,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7452_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7462",
+    "image_id": "fsc_7462",
+    "n_boxes": 154,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7462_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7463",
+    "image_id": "fsc_7463",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7463_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7472",
+    "image_id": "fsc_7472",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7472_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7480",
+    "image_id": "fsc_7480",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7480_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7512",
+    "image_id": "fsc_7512",
+    "n_boxes": 99,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7512_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7514",
+    "image_id": "fsc_7514",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7514_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7520",
+    "image_id": "fsc_7520",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7520_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7522",
+    "image_id": "fsc_7522",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7522_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7547",
+    "image_id": "fsc_7547",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7547_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7550",
+    "image_id": "fsc_7550",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7550_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7557",
+    "image_id": "fsc_7557",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7557_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7588",
+    "image_id": "fsc_7588",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7588_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7590",
+    "image_id": "fsc_7590",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7590_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7596",
+    "image_id": "fsc_7596",
+    "n_boxes": 351,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7596_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7625",
+    "image_id": "fsc_7625",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7625_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7650",
+    "image_id": "fsc_7650",
+    "n_boxes": 63,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7650_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7661",
+    "image_id": "fsc_7661",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7661_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7668",
+    "image_id": "fsc_7668",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7668_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7676",
+    "image_id": "fsc_7676",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7676_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7693",
+    "image_id": "fsc_7693",
+    "n_boxes": 86,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7693_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7695",
+    "image_id": "fsc_7695",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7695_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7700",
+    "image_id": "fsc_7700",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7700_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_7713",
+    "image_id": "fsc_7713",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_7713_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_904",
+    "image_id": "fsc_904",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_904_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_906",
+    "image_id": "fsc_906",
+    "n_boxes": 220,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_906_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_909",
+    "image_id": "fsc_909",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_909_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_910",
+    "image_id": "fsc_910",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_910_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_989",
+    "image_id": "fsc_989",
+    "n_boxes": 69,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_989_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_991",
+    "image_id": "fsc_991",
+    "n_boxes": 97,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_991_clip_scores.json"
+  },
+  {
+    "query_id": "B0__fq_995",
+    "image_id": "fsc_995",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B0__fq_995_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1061",
+    "image_id": "fsc_1061",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1061_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1106",
+    "image_id": "fsc_1106",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1106_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1462",
+    "image_id": "fsc_1462",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1462_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1537",
+    "image_id": "fsc_1537",
+    "n_boxes": 112,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1537_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1886",
+    "image_id": "fsc_1886",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1886_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1888",
+    "image_id": "fsc_1888",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1888_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_1889",
+    "image_id": "fsc_1889",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_1889_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2007",
+    "image_id": "fsc_2007",
+    "n_boxes": 159,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2007_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2008",
+    "image_id": "fsc_2008",
+    "n_boxes": 78,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2008_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2009",
+    "image_id": "fsc_2009",
+    "n_boxes": 378,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2009_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2010",
+    "image_id": "fsc_2010",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2010_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2017",
+    "image_id": "fsc_2017",
+    "n_boxes": 143,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2017_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2025",
+    "image_id": "fsc_2025",
+    "n_boxes": 105,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2025_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2038",
+    "image_id": "fsc_2038",
+    "n_boxes": 381,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2038_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2039",
+    "image_id": "fsc_2039",
+    "n_boxes": 60,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2039_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2046",
+    "image_id": "fsc_2046",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2046_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2049",
+    "image_id": "fsc_2049",
+    "n_boxes": 143,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2049_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2052",
+    "image_id": "fsc_2052",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2052_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2140",
+    "image_id": "fsc_2140",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2140_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2143",
+    "image_id": "fsc_2143",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2143_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2153",
+    "image_id": "fsc_2153",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2153_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2159",
+    "image_id": "fsc_2159",
+    "n_boxes": 695,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2159_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2162",
+    "image_id": "fsc_2162",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2162_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2163",
+    "image_id": "fsc_2163",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2163_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2166",
+    "image_id": "fsc_2166",
+    "n_boxes": 101,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2166_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2177",
+    "image_id": "fsc_2177",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2177_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2179",
+    "image_id": "fsc_2179",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2179_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2192",
+    "image_id": "fsc_2192",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2192_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2194",
+    "image_id": "fsc_2194",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2194_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2204",
+    "image_id": "fsc_2204",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2204_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2211",
+    "image_id": "fsc_2211",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2211_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2226",
+    "image_id": "fsc_2226",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2226_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2227",
+    "image_id": "fsc_2227",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2227_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2229",
+    "image_id": "fsc_2229",
+    "n_boxes": 102,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2229_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2237",
+    "image_id": "fsc_2237",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2237_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2243",
+    "image_id": "fsc_2243",
+    "n_boxes": 526,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2243_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2248",
+    "image_id": "fsc_2248",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2248_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2252",
+    "image_id": "fsc_2252",
+    "n_boxes": 90,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2252_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2265",
+    "image_id": "fsc_2265",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2265_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2274",
+    "image_id": "fsc_2274",
+    "n_boxes": 64,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2274_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2279",
+    "image_id": "fsc_2279",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2279_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2285",
+    "image_id": "fsc_2285",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2285_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2286",
+    "image_id": "fsc_2286",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2286_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2612",
+    "image_id": "fsc_2612",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2612_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2614",
+    "image_id": "fsc_2614",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2614_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_286",
+    "image_id": "fsc_286",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_286_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_290",
+    "image_id": "fsc_290",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_290_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2907",
+    "image_id": "fsc_2907",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2907_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2910",
+    "image_id": "fsc_2910",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2910_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2913",
+    "image_id": "fsc_2913",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2913_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2920",
+    "image_id": "fsc_2920",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2920_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2923",
+    "image_id": "fsc_2923",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2923_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2927",
+    "image_id": "fsc_2927",
+    "n_boxes": 49,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2927_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2932",
+    "image_id": "fsc_2932",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2932_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2933",
+    "image_id": "fsc_2933",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2933_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2935",
+    "image_id": "fsc_2935",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2935_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2938",
+    "image_id": "fsc_2938",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2938_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2942",
+    "image_id": "fsc_2942",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2942_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2947",
+    "image_id": "fsc_2947",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2947_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2951",
+    "image_id": "fsc_2951",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2951_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_2953",
+    "image_id": "fsc_2953",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_2953_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_306",
+    "image_id": "fsc_306",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_306_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_309",
+    "image_id": "fsc_309",
+    "n_boxes": 110,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_309_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3114",
+    "image_id": "fsc_3114",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3114_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_315",
+    "image_id": "fsc_315",
+    "n_boxes": 63,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_315_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_317",
+    "image_id": "fsc_317",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_317_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_323",
+    "image_id": "fsc_323",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_323_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_325",
+    "image_id": "fsc_325",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_325_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3269",
+    "image_id": "fsc_3269",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3269_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_327",
+    "image_id": "fsc_327",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_327_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3274",
+    "image_id": "fsc_3274",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3274_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3275",
+    "image_id": "fsc_3275",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3275_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3276",
+    "image_id": "fsc_3276",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3276_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_328",
+    "image_id": "fsc_328",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_328_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3281",
+    "image_id": "fsc_3281",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3281_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3282",
+    "image_id": "fsc_3282",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3282_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3284",
+    "image_id": "fsc_3284",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3284_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_330",
+    "image_id": "fsc_330",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_330_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3308",
+    "image_id": "fsc_3308",
+    "n_boxes": 189,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3308_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3309",
+    "image_id": "fsc_3309",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3309_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3317",
+    "image_id": "fsc_3317",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3317_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3318",
+    "image_id": "fsc_3318",
+    "n_boxes": 192,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3318_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3322",
+    "image_id": "fsc_3322",
+    "n_boxes": 470,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3322_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3324",
+    "image_id": "fsc_3324",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3324_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3326",
+    "image_id": "fsc_3326",
+    "n_boxes": 131,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3326_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_333",
+    "image_id": "fsc_333",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_333_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3331",
+    "image_id": "fsc_3331",
+    "n_boxes": 146,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3331_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3333",
+    "image_id": "fsc_3333",
+    "n_boxes": 121,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3333_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3334",
+    "image_id": "fsc_3334",
+    "n_boxes": 158,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3334_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_335",
+    "image_id": "fsc_335",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_335_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_339",
+    "image_id": "fsc_339",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_339_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_342",
+    "image_id": "fsc_342",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_342_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_349",
+    "image_id": "fsc_349",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_349_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3494",
+    "image_id": "fsc_3494",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3494_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_350",
+    "image_id": "fsc_350",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_350_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3500",
+    "image_id": "fsc_3500",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3500_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3502",
+    "image_id": "fsc_3502",
+    "n_boxes": 73,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3502_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3649",
+    "image_id": "fsc_3649",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3649_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3655",
+    "image_id": "fsc_3655",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3655_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_3694",
+    "image_id": "fsc_3694",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_3694_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4067",
+    "image_id": "fsc_4067",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4067_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4071",
+    "image_id": "fsc_4071",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4071_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4072",
+    "image_id": "fsc_4072",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4072_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4073",
+    "image_id": "fsc_4073",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4073_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4077",
+    "image_id": "fsc_4077",
+    "n_boxes": 231,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4077_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4086",
+    "image_id": "fsc_4086",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4086_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4110",
+    "image_id": "fsc_4110",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4110_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4114",
+    "image_id": "fsc_4114",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4114_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4118",
+    "image_id": "fsc_4118",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4118_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4287",
+    "image_id": "fsc_4287",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4287_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4289",
+    "image_id": "fsc_4289",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4289_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4305",
+    "image_id": "fsc_4305",
+    "n_boxes": 86,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4305_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4407",
+    "image_id": "fsc_4407",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4407_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4409",
+    "image_id": "fsc_4409",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4409_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4414",
+    "image_id": "fsc_4414",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4414_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4495",
+    "image_id": "fsc_4495",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4495_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4500",
+    "image_id": "fsc_4500",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4500_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4502",
+    "image_id": "fsc_4502",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4502_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4875",
+    "image_id": "fsc_4875",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4875_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4876",
+    "image_id": "fsc_4876",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4876_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4881",
+    "image_id": "fsc_4881",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4881_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4892",
+    "image_id": "fsc_4892",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4892_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4894",
+    "image_id": "fsc_4894",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4894_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4895",
+    "image_id": "fsc_4895",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4895_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4898",
+    "image_id": "fsc_4898",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4898_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4905",
+    "image_id": "fsc_4905",
+    "n_boxes": 296,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4905_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4908",
+    "image_id": "fsc_4908",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4908_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4916",
+    "image_id": "fsc_4916",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4916_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4918",
+    "image_id": "fsc_4918",
+    "n_boxes": 94,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4918_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4920",
+    "image_id": "fsc_4920",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4920_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4923",
+    "image_id": "fsc_4923",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4923_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4929",
+    "image_id": "fsc_4929",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4929_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4930",
+    "image_id": "fsc_4930",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4930_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4934",
+    "image_id": "fsc_4934",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4934_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4938",
+    "image_id": "fsc_4938",
+    "n_boxes": 69,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4938_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4939",
+    "image_id": "fsc_4939",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4939_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4940",
+    "image_id": "fsc_4940",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4940_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4943",
+    "image_id": "fsc_4943",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4943_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4956",
+    "image_id": "fsc_4956",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4956_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4963",
+    "image_id": "fsc_4963",
+    "n_boxes": 223,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4963_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4964",
+    "image_id": "fsc_4964",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4964_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_4966",
+    "image_id": "fsc_4966",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_4966_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5143",
+    "image_id": "fsc_5143",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5143_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5148",
+    "image_id": "fsc_5148",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5148_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5357",
+    "image_id": "fsc_5357",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5357_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5368",
+    "image_id": "fsc_5368",
+    "n_boxes": 158,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5368_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5381",
+    "image_id": "fsc_5381",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5381_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5385",
+    "image_id": "fsc_5385",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5385_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5464",
+    "image_id": "fsc_5464",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5464_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5507",
+    "image_id": "fsc_5507",
+    "n_boxes": 280,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5507_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5508",
+    "image_id": "fsc_5508",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5508_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5509",
+    "image_id": "fsc_5509",
+    "n_boxes": 156,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5509_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5564",
+    "image_id": "fsc_5564",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5564_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5578",
+    "image_id": "fsc_5578",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5578_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5581",
+    "image_id": "fsc_5581",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5581_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5582",
+    "image_id": "fsc_5582",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5582_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5585",
+    "image_id": "fsc_5585",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5585_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5587",
+    "image_id": "fsc_5587",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5587_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5591",
+    "image_id": "fsc_5591",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5591_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5594",
+    "image_id": "fsc_5594",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5594_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5596",
+    "image_id": "fsc_5596",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5596_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5597",
+    "image_id": "fsc_5597",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5597_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5599",
+    "image_id": "fsc_5599",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5599_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5601",
+    "image_id": "fsc_5601",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5601_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5792",
+    "image_id": "fsc_5792",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5792_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5796",
+    "image_id": "fsc_5796",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5796_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5807",
+    "image_id": "fsc_5807",
+    "n_boxes": 111,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5807_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5808",
+    "image_id": "fsc_5808",
+    "n_boxes": 60,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5808_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5809",
+    "image_id": "fsc_5809",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5809_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5812",
+    "image_id": "fsc_5812",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5812_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5814",
+    "image_id": "fsc_5814",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5814_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5817",
+    "image_id": "fsc_5817",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5817_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5827",
+    "image_id": "fsc_5827",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5827_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5830",
+    "image_id": "fsc_5830",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5830_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5836",
+    "image_id": "fsc_5836",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5836_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5842",
+    "image_id": "fsc_5842",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5842_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5843",
+    "image_id": "fsc_5843",
+    "n_boxes": 78,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5843_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5849",
+    "image_id": "fsc_5849",
+    "n_boxes": 46,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5849_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5852",
+    "image_id": "fsc_5852",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5852_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5922",
+    "image_id": "fsc_5922",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5922_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5924",
+    "image_id": "fsc_5924",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5924_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5933",
+    "image_id": "fsc_5933",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5933_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5934",
+    "image_id": "fsc_5934",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5934_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5935",
+    "image_id": "fsc_5935",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5935_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5936",
+    "image_id": "fsc_5936",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5936_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_5942",
+    "image_id": "fsc_5942",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_5942_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6043",
+    "image_id": "fsc_6043",
+    "n_boxes": 102,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6043_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6048",
+    "image_id": "fsc_6048",
+    "n_boxes": 103,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6048_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6051",
+    "image_id": "fsc_6051",
+    "n_boxes": 84,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6051_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6247",
+    "image_id": "fsc_6247",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6247_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6249",
+    "image_id": "fsc_6249",
+    "n_boxes": 131,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6249_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6250",
+    "image_id": "fsc_6250",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6250_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6258",
+    "image_id": "fsc_6258",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6258_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6259",
+    "image_id": "fsc_6259",
+    "n_boxes": 84,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6259_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6261",
+    "image_id": "fsc_6261",
+    "n_boxes": 387,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6261_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6262",
+    "image_id": "fsc_6262",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6262_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6270",
+    "image_id": "fsc_6270",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6270_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6271",
+    "image_id": "fsc_6271",
+    "n_boxes": 259,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6271_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6275",
+    "image_id": "fsc_6275",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6275_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6278",
+    "image_id": "fsc_6278",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6278_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6279",
+    "image_id": "fsc_6279",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6279_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6283",
+    "image_id": "fsc_6283",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6283_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6548",
+    "image_id": "fsc_6548",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6548_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6644",
+    "image_id": "fsc_6644",
+    "n_boxes": 568,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6644_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6649",
+    "image_id": "fsc_6649",
+    "n_boxes": 79,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6649_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6653",
+    "image_id": "fsc_6653",
+    "n_boxes": 311,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6653_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6654",
+    "image_id": "fsc_6654",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6654_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6656",
+    "image_id": "fsc_6656",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6656_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6658",
+    "image_id": "fsc_6658",
+    "n_boxes": 369,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6658_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6660",
+    "image_id": "fsc_6660",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6660_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6710",
+    "image_id": "fsc_6710",
+    "n_boxes": 116,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6710_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6732",
+    "image_id": "fsc_6732",
+    "n_boxes": 162,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6732_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6750",
+    "image_id": "fsc_6750",
+    "n_boxes": 107,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6750_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6756",
+    "image_id": "fsc_6756",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6756_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6804",
+    "image_id": "fsc_6804",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6804_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6813",
+    "image_id": "fsc_6813",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6813_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_682",
+    "image_id": "fsc_682",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_682_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6823",
+    "image_id": "fsc_6823",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6823_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6833",
+    "image_id": "fsc_6833",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6833_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6842",
+    "image_id": "fsc_6842",
+    "n_boxes": 116,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6842_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6852",
+    "image_id": "fsc_6852",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6852_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6860",
+    "image_id": "fsc_6860",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6860_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6892",
+    "image_id": "fsc_6892",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6892_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6893",
+    "image_id": "fsc_6893",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6893_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6898",
+    "image_id": "fsc_6898",
+    "n_boxes": 272,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6898_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6906",
+    "image_id": "fsc_6906",
+    "n_boxes": 37,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6906_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6922",
+    "image_id": "fsc_6922",
+    "n_boxes": 71,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6922_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6923",
+    "image_id": "fsc_6923",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6923_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6928",
+    "image_id": "fsc_6928",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6928_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6935",
+    "image_id": "fsc_6935",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6935_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_695",
+    "image_id": "fsc_695",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_695_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6950",
+    "image_id": "fsc_6950",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6950_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6959",
+    "image_id": "fsc_6959",
+    "n_boxes": 243,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6959_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_6964",
+    "image_id": "fsc_6964",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_6964_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_697",
+    "image_id": "fsc_697",
+    "n_boxes": 55,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_697_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7034",
+    "image_id": "fsc_7034",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7034_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7043",
+    "image_id": "fsc_7043",
+    "n_boxes": 95,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7043_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7047",
+    "image_id": "fsc_7047",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7047_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_705",
+    "image_id": "fsc_705",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_705_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7065",
+    "image_id": "fsc_7065",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7065_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7071",
+    "image_id": "fsc_7071",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7071_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7076",
+    "image_id": "fsc_7076",
+    "n_boxes": 38,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7076_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7096",
+    "image_id": "fsc_7096",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7096_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7097",
+    "image_id": "fsc_7097",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7097_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7117",
+    "image_id": "fsc_7117",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7117_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7120",
+    "image_id": "fsc_7120",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7120_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7129",
+    "image_id": "fsc_7129",
+    "n_boxes": 105,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7129_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7131",
+    "image_id": "fsc_7131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7131_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7136",
+    "image_id": "fsc_7136",
+    "n_boxes": 88,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7136_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_714",
+    "image_id": "fsc_714",
+    "n_boxes": 109,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_714_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7144",
+    "image_id": "fsc_7144",
+    "n_boxes": 92,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7144_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7153",
+    "image_id": "fsc_7153",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7153_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_716",
+    "image_id": "fsc_716",
+    "n_boxes": 201,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_716_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7161",
+    "image_id": "fsc_7161",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7161_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_717",
+    "image_id": "fsc_717",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_717_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7171",
+    "image_id": "fsc_7171",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7171_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7173",
+    "image_id": "fsc_7173",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7173_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7188",
+    "image_id": "fsc_7188",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7188_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7195",
+    "image_id": "fsc_7195",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7195_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7216",
+    "image_id": "fsc_7216",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7216_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7240",
+    "image_id": "fsc_7240",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7240_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7278",
+    "image_id": "fsc_7278",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7278_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7298",
+    "image_id": "fsc_7298",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7298_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7312",
+    "image_id": "fsc_7312",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7312_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7328",
+    "image_id": "fsc_7328",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7328_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7366",
+    "image_id": "fsc_7366",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7366_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7381",
+    "image_id": "fsc_7381",
+    "n_boxes": 75,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7381_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7420",
+    "image_id": "fsc_7420",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7420_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7443",
+    "image_id": "fsc_7443",
+    "n_boxes": 293,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7443_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7452",
+    "image_id": "fsc_7452",
+    "n_boxes": 91,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7452_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7462",
+    "image_id": "fsc_7462",
+    "n_boxes": 149,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7462_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7463",
+    "image_id": "fsc_7463",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7463_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7472",
+    "image_id": "fsc_7472",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7472_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7480",
+    "image_id": "fsc_7480",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7480_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7512",
+    "image_id": "fsc_7512",
+    "n_boxes": 98,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7512_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7514",
+    "image_id": "fsc_7514",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7514_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7520",
+    "image_id": "fsc_7520",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7520_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7522",
+    "image_id": "fsc_7522",
+    "n_boxes": 85,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7522_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7547",
+    "image_id": "fsc_7547",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7547_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7550",
+    "image_id": "fsc_7550",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7550_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7557",
+    "image_id": "fsc_7557",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7557_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7588",
+    "image_id": "fsc_7588",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7588_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7590",
+    "image_id": "fsc_7590",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7590_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7596",
+    "image_id": "fsc_7596",
+    "n_boxes": 346,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7596_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7625",
+    "image_id": "fsc_7625",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7625_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7650",
+    "image_id": "fsc_7650",
+    "n_boxes": 63,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7650_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7661",
+    "image_id": "fsc_7661",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7661_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7668",
+    "image_id": "fsc_7668",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7668_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7676",
+    "image_id": "fsc_7676",
+    "n_boxes": 29,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7676_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7693",
+    "image_id": "fsc_7693",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7693_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7695",
+    "image_id": "fsc_7695",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7695_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7700",
+    "image_id": "fsc_7700",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7700_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_7713",
+    "image_id": "fsc_7713",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_7713_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_904",
+    "image_id": "fsc_904",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_904_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_906",
+    "image_id": "fsc_906",
+    "n_boxes": 223,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_906_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_909",
+    "image_id": "fsc_909",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_909_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_910",
+    "image_id": "fsc_910",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_910_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_989",
+    "image_id": "fsc_989",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_989_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_991",
+    "image_id": "fsc_991",
+    "n_boxes": 97,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_991_clip_scores.json"
+  },
+  {
+    "query_id": "B2__fq_995",
+    "image_id": "fsc_995",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/B2__fq_995_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1061",
+    "image_id": "fsc_1061",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1061_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1106",
+    "image_id": "fsc_1106",
+    "n_boxes": 61,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1106_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1462",
+    "image_id": "fsc_1462",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1462_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1537",
+    "image_id": "fsc_1537",
+    "n_boxes": 112,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1537_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1886",
+    "image_id": "fsc_1886",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1886_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1888",
+    "image_id": "fsc_1888",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1888_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_1889",
+    "image_id": "fsc_1889",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_1889_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2007",
+    "image_id": "fsc_2007",
+    "n_boxes": 159,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2007_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2008",
+    "image_id": "fsc_2008",
+    "n_boxes": 78,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2008_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2009",
+    "image_id": "fsc_2009",
+    "n_boxes": 378,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2009_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2010",
+    "image_id": "fsc_2010",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2010_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2017",
+    "image_id": "fsc_2017",
+    "n_boxes": 143,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2017_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2025",
+    "image_id": "fsc_2025",
+    "n_boxes": 105,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2025_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2038",
+    "image_id": "fsc_2038",
+    "n_boxes": 381,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2038_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2039",
+    "image_id": "fsc_2039",
+    "n_boxes": 60,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2039_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2046",
+    "image_id": "fsc_2046",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2046_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2049",
+    "image_id": "fsc_2049",
+    "n_boxes": 143,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2049_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2052",
+    "image_id": "fsc_2052",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2052_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2140",
+    "image_id": "fsc_2140",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2140_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2143",
+    "image_id": "fsc_2143",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2143_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2153",
+    "image_id": "fsc_2153",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2153_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2159",
+    "image_id": "fsc_2159",
+    "n_boxes": 695,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2159_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2162",
+    "image_id": "fsc_2162",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2162_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2163",
+    "image_id": "fsc_2163",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2163_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2166",
+    "image_id": "fsc_2166",
+    "n_boxes": 101,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2166_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2177",
+    "image_id": "fsc_2177",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2177_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2179",
+    "image_id": "fsc_2179",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2179_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2192",
+    "image_id": "fsc_2192",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2192_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2194",
+    "image_id": "fsc_2194",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2194_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2204",
+    "image_id": "fsc_2204",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2204_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2211",
+    "image_id": "fsc_2211",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2211_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2226",
+    "image_id": "fsc_2226",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2226_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2227",
+    "image_id": "fsc_2227",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2227_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2229",
+    "image_id": "fsc_2229",
+    "n_boxes": 102,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2229_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2237",
+    "image_id": "fsc_2237",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2237_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2243",
+    "image_id": "fsc_2243",
+    "n_boxes": 526,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2243_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2248",
+    "image_id": "fsc_2248",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2248_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2252",
+    "image_id": "fsc_2252",
+    "n_boxes": 90,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2252_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2265",
+    "image_id": "fsc_2265",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2265_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2274",
+    "image_id": "fsc_2274",
+    "n_boxes": 64,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2274_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2279",
+    "image_id": "fsc_2279",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2279_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2285",
+    "image_id": "fsc_2285",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2285_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2286",
+    "image_id": "fsc_2286",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2286_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2612",
+    "image_id": "fsc_2612",
+    "n_boxes": 27,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2612_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2614",
+    "image_id": "fsc_2614",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2614_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_286",
+    "image_id": "fsc_286",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_286_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_290",
+    "image_id": "fsc_290",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_290_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2907",
+    "image_id": "fsc_2907",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2907_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2910",
+    "image_id": "fsc_2910",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2910_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2913",
+    "image_id": "fsc_2913",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2913_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2920",
+    "image_id": "fsc_2920",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2920_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2923",
+    "image_id": "fsc_2923",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2923_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2927",
+    "image_id": "fsc_2927",
+    "n_boxes": 49,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2927_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2932",
+    "image_id": "fsc_2932",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2932_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2933",
+    "image_id": "fsc_2933",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2933_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2935",
+    "image_id": "fsc_2935",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2935_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2938",
+    "image_id": "fsc_2938",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2938_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2942",
+    "image_id": "fsc_2942",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2942_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2947",
+    "image_id": "fsc_2947",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2947_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2951",
+    "image_id": "fsc_2951",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2951_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_2953",
+    "image_id": "fsc_2953",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_2953_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_306",
+    "image_id": "fsc_306",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_306_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_309",
+    "image_id": "fsc_309",
+    "n_boxes": 110,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_309_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3114",
+    "image_id": "fsc_3114",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3114_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_315",
+    "image_id": "fsc_315",
+    "n_boxes": 63,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_315_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_317",
+    "image_id": "fsc_317",
+    "n_boxes": 14,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_317_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_323",
+    "image_id": "fsc_323",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_323_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_325",
+    "image_id": "fsc_325",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_325_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3269",
+    "image_id": "fsc_3269",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3269_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_327",
+    "image_id": "fsc_327",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_327_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3274",
+    "image_id": "fsc_3274",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3274_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3275",
+    "image_id": "fsc_3275",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3275_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3276",
+    "image_id": "fsc_3276",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3276_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_328",
+    "image_id": "fsc_328",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_328_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3281",
+    "image_id": "fsc_3281",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3281_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3282",
+    "image_id": "fsc_3282",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3282_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3284",
+    "image_id": "fsc_3284",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3284_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_330",
+    "image_id": "fsc_330",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_330_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3308",
+    "image_id": "fsc_3308",
+    "n_boxes": 189,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3308_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3309",
+    "image_id": "fsc_3309",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3309_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3317",
+    "image_id": "fsc_3317",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3317_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3318",
+    "image_id": "fsc_3318",
+    "n_boxes": 192,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3318_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3322",
+    "image_id": "fsc_3322",
+    "n_boxes": 470,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3322_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3324",
+    "image_id": "fsc_3324",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3324_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3326",
+    "image_id": "fsc_3326",
+    "n_boxes": 131,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3326_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_333",
+    "image_id": "fsc_333",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_333_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3331",
+    "image_id": "fsc_3331",
+    "n_boxes": 146,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3331_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3333",
+    "image_id": "fsc_3333",
+    "n_boxes": 121,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3333_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3334",
+    "image_id": "fsc_3334",
+    "n_boxes": 158,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3334_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_335",
+    "image_id": "fsc_335",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_335_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_339",
+    "image_id": "fsc_339",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_339_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_342",
+    "image_id": "fsc_342",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_342_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_349",
+    "image_id": "fsc_349",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_349_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3494",
+    "image_id": "fsc_3494",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3494_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_350",
+    "image_id": "fsc_350",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_350_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3500",
+    "image_id": "fsc_3500",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3500_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3502",
+    "image_id": "fsc_3502",
+    "n_boxes": 73,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3502_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3649",
+    "image_id": "fsc_3649",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3649_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3655",
+    "image_id": "fsc_3655",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3655_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_3694",
+    "image_id": "fsc_3694",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_3694_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4067",
+    "image_id": "fsc_4067",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4067_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4071",
+    "image_id": "fsc_4071",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4071_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4072",
+    "image_id": "fsc_4072",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4072_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4073",
+    "image_id": "fsc_4073",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4073_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4077",
+    "image_id": "fsc_4077",
+    "n_boxes": 231,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4077_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4086",
+    "image_id": "fsc_4086",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4086_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4110",
+    "image_id": "fsc_4110",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4110_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4114",
+    "image_id": "fsc_4114",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4114_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4118",
+    "image_id": "fsc_4118",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4118_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4287",
+    "image_id": "fsc_4287",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4287_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4289",
+    "image_id": "fsc_4289",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4289_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4305",
+    "image_id": "fsc_4305",
+    "n_boxes": 86,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4305_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4407",
+    "image_id": "fsc_4407",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4407_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4409",
+    "image_id": "fsc_4409",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4409_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4414",
+    "image_id": "fsc_4414",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4414_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4495",
+    "image_id": "fsc_4495",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4495_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4500",
+    "image_id": "fsc_4500",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4500_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4502",
+    "image_id": "fsc_4502",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4502_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4875",
+    "image_id": "fsc_4875",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4875_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4876",
+    "image_id": "fsc_4876",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4876_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4881",
+    "image_id": "fsc_4881",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4881_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4892",
+    "image_id": "fsc_4892",
+    "n_boxes": 53,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4892_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4894",
+    "image_id": "fsc_4894",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4894_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4895",
+    "image_id": "fsc_4895",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4895_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4898",
+    "image_id": "fsc_4898",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4898_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4905",
+    "image_id": "fsc_4905",
+    "n_boxes": 296,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4905_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4908",
+    "image_id": "fsc_4908",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4908_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4916",
+    "image_id": "fsc_4916",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4916_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4918",
+    "image_id": "fsc_4918",
+    "n_boxes": 94,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4918_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4920",
+    "image_id": "fsc_4920",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4920_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4923",
+    "image_id": "fsc_4923",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4923_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4929",
+    "image_id": "fsc_4929",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4929_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4930",
+    "image_id": "fsc_4930",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4930_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4934",
+    "image_id": "fsc_4934",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4934_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4938",
+    "image_id": "fsc_4938",
+    "n_boxes": 69,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4938_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4939",
+    "image_id": "fsc_4939",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4939_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4940",
+    "image_id": "fsc_4940",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4940_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4943",
+    "image_id": "fsc_4943",
+    "n_boxes": 66,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4943_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4956",
+    "image_id": "fsc_4956",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4956_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4963",
+    "image_id": "fsc_4963",
+    "n_boxes": 223,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4963_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4964",
+    "image_id": "fsc_4964",
+    "n_boxes": 58,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4964_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_4966",
+    "image_id": "fsc_4966",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_4966_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5143",
+    "image_id": "fsc_5143",
+    "n_boxes": 65,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5143_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5148",
+    "image_id": "fsc_5148",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5148_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5357",
+    "image_id": "fsc_5357",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5357_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5368",
+    "image_id": "fsc_5368",
+    "n_boxes": 158,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5368_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5381",
+    "image_id": "fsc_5381",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5381_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5385",
+    "image_id": "fsc_5385",
+    "n_boxes": 9,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5385_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5464",
+    "image_id": "fsc_5464",
+    "n_boxes": 52,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5464_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5507",
+    "image_id": "fsc_5507",
+    "n_boxes": 280,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5507_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5508",
+    "image_id": "fsc_5508",
+    "n_boxes": 104,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5508_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5509",
+    "image_id": "fsc_5509",
+    "n_boxes": 156,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5509_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5564",
+    "image_id": "fsc_5564",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5564_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5578",
+    "image_id": "fsc_5578",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5578_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5581",
+    "image_id": "fsc_5581",
+    "n_boxes": 8,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5581_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5582",
+    "image_id": "fsc_5582",
+    "n_boxes": 47,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5582_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5585",
+    "image_id": "fsc_5585",
+    "n_boxes": 32,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5585_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5587",
+    "image_id": "fsc_5587",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5587_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5591",
+    "image_id": "fsc_5591",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5591_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5594",
+    "image_id": "fsc_5594",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5594_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5596",
+    "image_id": "fsc_5596",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5596_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5597",
+    "image_id": "fsc_5597",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5597_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5599",
+    "image_id": "fsc_5599",
+    "n_boxes": 33,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5599_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5601",
+    "image_id": "fsc_5601",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5601_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5792",
+    "image_id": "fsc_5792",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5792_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5796",
+    "image_id": "fsc_5796",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5796_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5807",
+    "image_id": "fsc_5807",
+    "n_boxes": 111,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5807_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5808",
+    "image_id": "fsc_5808",
+    "n_boxes": 60,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5808_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5809",
+    "image_id": "fsc_5809",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5809_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5812",
+    "image_id": "fsc_5812",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5812_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5814",
+    "image_id": "fsc_5814",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5814_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5817",
+    "image_id": "fsc_5817",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5817_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5827",
+    "image_id": "fsc_5827",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5827_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5830",
+    "image_id": "fsc_5830",
+    "n_boxes": 34,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5830_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5836",
+    "image_id": "fsc_5836",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5836_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5842",
+    "image_id": "fsc_5842",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5842_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5843",
+    "image_id": "fsc_5843",
+    "n_boxes": 78,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5843_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5849",
+    "image_id": "fsc_5849",
+    "n_boxes": 46,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5849_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5852",
+    "image_id": "fsc_5852",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5852_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5922",
+    "image_id": "fsc_5922",
+    "n_boxes": 35,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5922_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5924",
+    "image_id": "fsc_5924",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5924_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5933",
+    "image_id": "fsc_5933",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5933_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5934",
+    "image_id": "fsc_5934",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5934_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5935",
+    "image_id": "fsc_5935",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5935_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5936",
+    "image_id": "fsc_5936",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5936_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_5942",
+    "image_id": "fsc_5942",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_5942_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6043",
+    "image_id": "fsc_6043",
+    "n_boxes": 102,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6043_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6048",
+    "image_id": "fsc_6048",
+    "n_boxes": 103,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6048_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6051",
+    "image_id": "fsc_6051",
+    "n_boxes": 84,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6051_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6247",
+    "image_id": "fsc_6247",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6247_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6249",
+    "image_id": "fsc_6249",
+    "n_boxes": 131,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6249_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6250",
+    "image_id": "fsc_6250",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6250_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6258",
+    "image_id": "fsc_6258",
+    "n_boxes": 13,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6258_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6259",
+    "image_id": "fsc_6259",
+    "n_boxes": 84,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6259_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6261",
+    "image_id": "fsc_6261",
+    "n_boxes": 387,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6261_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6262",
+    "image_id": "fsc_6262",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6262_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6270",
+    "image_id": "fsc_6270",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6270_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6271",
+    "image_id": "fsc_6271",
+    "n_boxes": 259,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6271_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6275",
+    "image_id": "fsc_6275",
+    "n_boxes": 50,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6275_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6278",
+    "image_id": "fsc_6278",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6278_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6279",
+    "image_id": "fsc_6279",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6279_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6283",
+    "image_id": "fsc_6283",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6283_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6548",
+    "image_id": "fsc_6548",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6548_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6644",
+    "image_id": "fsc_6644",
+    "n_boxes": 593,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6644_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6649",
+    "image_id": "fsc_6649",
+    "n_boxes": 79,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6649_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6653",
+    "image_id": "fsc_6653",
+    "n_boxes": 311,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6653_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6654",
+    "image_id": "fsc_6654",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6654_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6656",
+    "image_id": "fsc_6656",
+    "n_boxes": 100,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6656_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6658",
+    "image_id": "fsc_6658",
+    "n_boxes": 355,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6658_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6660",
+    "image_id": "fsc_6660",
+    "n_boxes": 10,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6660_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6710",
+    "image_id": "fsc_6710",
+    "n_boxes": 116,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6710_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6732",
+    "image_id": "fsc_6732",
+    "n_boxes": 162,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6732_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6750",
+    "image_id": "fsc_6750",
+    "n_boxes": 107,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6750_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6756",
+    "image_id": "fsc_6756",
+    "n_boxes": 39,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6756_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6804",
+    "image_id": "fsc_6804",
+    "n_boxes": 12,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6804_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6813",
+    "image_id": "fsc_6813",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6813_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_682",
+    "image_id": "fsc_682",
+    "n_boxes": 15,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_682_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6823",
+    "image_id": "fsc_6823",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6823_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6833",
+    "image_id": "fsc_6833",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6833_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6842",
+    "image_id": "fsc_6842",
+    "n_boxes": 116,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6842_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6852",
+    "image_id": "fsc_6852",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6852_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6860",
+    "image_id": "fsc_6860",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6860_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6892",
+    "image_id": "fsc_6892",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6892_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6893",
+    "image_id": "fsc_6893",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6893_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6898",
+    "image_id": "fsc_6898",
+    "n_boxes": 272,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6898_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6906",
+    "image_id": "fsc_6906",
+    "n_boxes": 37,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6906_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6922",
+    "image_id": "fsc_6922",
+    "n_boxes": 71,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6922_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6923",
+    "image_id": "fsc_6923",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6923_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6928",
+    "image_id": "fsc_6928",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6928_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6935",
+    "image_id": "fsc_6935",
+    "n_boxes": 68,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6935_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_695",
+    "image_id": "fsc_695",
+    "n_boxes": 11,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_695_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6950",
+    "image_id": "fsc_6950",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6950_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6959",
+    "image_id": "fsc_6959",
+    "n_boxes": 243,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6959_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_6964",
+    "image_id": "fsc_6964",
+    "n_boxes": 76,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_6964_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_697",
+    "image_id": "fsc_697",
+    "n_boxes": 55,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_697_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7034",
+    "image_id": "fsc_7034",
+    "n_boxes": 43,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7034_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7043",
+    "image_id": "fsc_7043",
+    "n_boxes": 95,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7043_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7047",
+    "image_id": "fsc_7047",
+    "n_boxes": 54,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7047_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_705",
+    "image_id": "fsc_705",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_705_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7065",
+    "image_id": "fsc_7065",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7065_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7071",
+    "image_id": "fsc_7071",
+    "n_boxes": 82,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7071_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7076",
+    "image_id": "fsc_7076",
+    "n_boxes": 38,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7076_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7096",
+    "image_id": "fsc_7096",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7096_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7097",
+    "image_id": "fsc_7097",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7097_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7117",
+    "image_id": "fsc_7117",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7117_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7120",
+    "image_id": "fsc_7120",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7120_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7129",
+    "image_id": "fsc_7129",
+    "n_boxes": 105,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7129_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7131",
+    "image_id": "fsc_7131",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7131_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7136",
+    "image_id": "fsc_7136",
+    "n_boxes": 88,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7136_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_714",
+    "image_id": "fsc_714",
+    "n_boxes": 109,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_714_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7144",
+    "image_id": "fsc_7144",
+    "n_boxes": 92,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7144_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7153",
+    "image_id": "fsc_7153",
+    "n_boxes": 21,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7153_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_716",
+    "image_id": "fsc_716",
+    "n_boxes": 201,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_716_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7161",
+    "image_id": "fsc_7161",
+    "n_boxes": 36,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7161_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_717",
+    "image_id": "fsc_717",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_717_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7171",
+    "image_id": "fsc_7171",
+    "n_boxes": 5,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7171_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7173",
+    "image_id": "fsc_7173",
+    "n_boxes": 48,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7173_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7188",
+    "image_id": "fsc_7188",
+    "n_boxes": 67,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7188_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7195",
+    "image_id": "fsc_7195",
+    "n_boxes": 4,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7195_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7216",
+    "image_id": "fsc_7216",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7216_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7240",
+    "image_id": "fsc_7240",
+    "n_boxes": 56,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7240_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7278",
+    "image_id": "fsc_7278",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7278_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7298",
+    "image_id": "fsc_7298",
+    "n_boxes": 24,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7298_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7312",
+    "image_id": "fsc_7312",
+    "n_boxes": 31,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7312_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7328",
+    "image_id": "fsc_7328",
+    "n_boxes": 51,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7328_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7366",
+    "image_id": "fsc_7366",
+    "n_boxes": 45,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7366_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7381",
+    "image_id": "fsc_7381",
+    "n_boxes": 75,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7381_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7420",
+    "image_id": "fsc_7420",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7420_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7443",
+    "image_id": "fsc_7443",
+    "n_boxes": 293,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7443_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7452",
+    "image_id": "fsc_7452",
+    "n_boxes": 91,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7452_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7462",
+    "image_id": "fsc_7462",
+    "n_boxes": 149,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7462_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7463",
+    "image_id": "fsc_7463",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7463_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7472",
+    "image_id": "fsc_7472",
+    "n_boxes": 17,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7472_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7480",
+    "image_id": "fsc_7480",
+    "n_boxes": 23,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7480_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7512",
+    "image_id": "fsc_7512",
+    "n_boxes": 98,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7512_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7514",
+    "image_id": "fsc_7514",
+    "n_boxes": 28,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7514_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7520",
+    "image_id": "fsc_7520",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7520_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7522",
+    "image_id": "fsc_7522",
+    "n_boxes": 85,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7522_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7547",
+    "image_id": "fsc_7547",
+    "n_boxes": 19,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7547_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7550",
+    "image_id": "fsc_7550",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7550_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7557",
+    "image_id": "fsc_7557",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7557_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7588",
+    "image_id": "fsc_7588",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7588_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7590",
+    "image_id": "fsc_7590",
+    "n_boxes": 0,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7590_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7596",
+    "image_id": "fsc_7596",
+    "n_boxes": 346,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7596_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7625",
+    "image_id": "fsc_7625",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7625_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7650",
+    "image_id": "fsc_7650",
+    "n_boxes": 63,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7650_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7661",
+    "image_id": "fsc_7661",
+    "n_boxes": 44,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7661_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7668",
+    "image_id": "fsc_7668",
+    "n_boxes": 25,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7668_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7676",
+    "image_id": "fsc_7676",
+    "n_boxes": 29,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7676_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7693",
+    "image_id": "fsc_7693",
+    "n_boxes": 81,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7693_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7695",
+    "image_id": "fsc_7695",
+    "n_boxes": 40,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7695_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7700",
+    "image_id": "fsc_7700",
+    "n_boxes": 30,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7700_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_7713",
+    "image_id": "fsc_7713",
+    "n_boxes": 20,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_7713_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_904",
+    "image_id": "fsc_904",
+    "n_boxes": 16,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_904_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_906",
+    "image_id": "fsc_906",
+    "n_boxes": 223,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_906_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_909",
+    "image_id": "fsc_909",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_909_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_910",
+    "image_id": "fsc_910",
+    "n_boxes": 18,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_910_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_989",
+    "image_id": "fsc_989",
+    "n_boxes": 72,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_989_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_991",
+    "image_id": "fsc_991",
+    "n_boxes": 97,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_991_clip_scores.json"
+  },
+  {
+    "query_id": "tau0p200__fq_995",
+    "image_id": "fsc_995",
+    "n_boxes": 22,
+    "output_file": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip/tau0p200__fq_995_clip_scores.json"
+  }
+]

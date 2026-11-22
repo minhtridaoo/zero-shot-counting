@@ -1,0 +1,45 @@
+{
+  "runner": "p1_controls.py",
+  "adapter_sha256": "8b03cbb562c78cb420b3619c1671dab364145a3cd88eab786b1f2c2c1e3763e2",
+  "clip_scorer_sha256": "c51666fab1ae354bac8b4a31b6b26ceae93fe1e8404a4672f5b9d54f841cd771",
+  "freeze_applier_sha256": "cf2784bb188527f4b8a06889167a2cc862be942fb26300c7b2293bf4033e8ef8",
+  "freeze": "results/countgdpp/p4_candidate_freeze_20261021.json",
+  "freeze_sha256": "3c4634e79d21d0c58bd7c0e3db0972c3a3eeff6d25996c716b4def1267def4da",
+  "frozen_values": {
+    "b2_threshold": 0.9067394733428955,
+    "fusion_threshold": 0.6551826746408328,
+    "bounds": {
+      "B2": [
+        0.2326723337173462,
+        0.9772246479988098
+      ],
+      "CLIP": [
+        0.1666240692138672,
+        0.3146958649158478
+      ]
+    }
+  },
+  "p1_run": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618",
+  "p1_run_config_sha256": "5f2bd3fec0e235e65c951212f4ca0fc9bf15d8195307b390d9b3684eb56a91a6",
+  "prediction_sha256": {
+    "predictions_B2.jsonl": "c3b033075472eca572531b401eb2f2df4b21ee93bfd8bf2f5c0b5215be321162",
+    "predictions_tau0.200.jsonl": "90fa3b4877d2dc2d973617e8a98dc678918a76a65e0bc9e002e0527fa55ca0ea"
+  },
+  "clip_scores": "results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618_controls_clip",
+  "clip_run_config_sha256": "c6fa36a45c2a9688e23d30eb502e5c40d061f2155885a3580c2e3c379452b394",
+  "sources": [
+    "B0",
+    "B2",
+    "tau0.200"
+  ],
+  "methods": "per source X: X (all boxes), X+S (score >= b2_threshold), X+F (Fusion 50/50 >= threshold)",
+  "plan_names": {
+    "F": "B2+F",
+    "S-only": "B2+S",
+    "C6": "B0+F",
+    "P": "tauX",
+    "P+F": "tauX+F"
+  },
+  "note": "Freeze fitted on pilot B2 boxes; on B0/P boxes the box's own CountGD++ score replaces b2_score. No refit, no GT.",
+  "uses_ground_truth": false
+}

@@ -1,5 +1,62 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 22/11/2026 (chiều) — Triệu chạy thay Trí: kiểm A, Kaggle khảo sát FSC-147, Related Work nháp (Triệu + assistant)
+
+Triệu chạy thay Trí theo lời dặn 22/11. Kiểm B/C do Triệu tự làm, chờ assistant kiểm độc lập.
+
+**Git:** Triệu pull `main` = `b7b9015` (fast-forward, không xung đột).
+
+**Đã làm:**
+- **Kiểm A** (thiết kế + mẫu 300 ảnh). Assistant gom bằng chứng vào `reports/TRIEU_FSC147_KHAO_SAT_20261122.md`, mọi mục đều thấy đạt:
+  - 300 dòng, không trùng, đều `present`, `inputs.jsonl` không có GT;
+  - 3 sha256 khớp khai báo;
+  - lấy lại mẫu trong thư mục tạm ra đúng hash;
+  - script chấm đúng thiết kế (Δ, bootstrap ghép cặp, F từ freeze);
+  - commit ghim `4cd8909` giống `main` ở mọi file liên quan.
+
+  **Cột "Triệu" do Triệu tự điền**; assistant không đánh dấu thay.
+- **Kaggle:** **chưa chạy** (tính đến lúc ghi). Triệu sẽ tự import notebook và chạy một lần; version / giờ ghi vào báo cáo khảo sát.
+- **Related Work (W7) nháp:** `reports/RELATED_WORK_TRIEU_20261122.md`, do assistant soạn.
+  - Đọc abstract arXiv của PseCo, DAVE, VA-Count, PrACo; thêm mục 3.2–3.4 của DAVE, mục 3.2–3.3 của PrACo, README GitHub của VA-Count. Không trích số.
+  - 3 chỗ ⚠ đã kiểm xong:
+    - VA-Count là ECCV 2024 (theo README của tác giả; chưa đối chiếu kỷ yếu);
+    - PrACo gồm negative-label test + mosaic test;
+    - **bản theo câu chữ của DAVE dùng CLIP loại cụm khung**, gần bước F nhất; bản nháp đã ghi 3 điểm khác.
+- **Bộ kiểm độc lập B/C:** `evaluation/check_fsc147_survey_independent.py`.
+  - Không import code repo; tự cài lại bộ đếm F, chỉ số, Δ và bootstrap.
+  - Thử trên run test MUCCA 11/11 (`--selftest-w8`): số đếm cả 5 cách khớp, **PASS**.
+  - Chỉ đọc file, không chạy model.
+
+- **Kaggle (cập nhật sau):** Triệu chạy một lần, run `fsc147_survey_kaggle_t4_20261122_1618`, hoàn tất 300/300.
+  - Assistant giải nén `for_repo_20261122_1618.zip`, kiểm sha256 **917/917** file trong ZIP theo `FILES_*.json`, tất cả khớp. 900 `.jpg` + 594 `.npz` có trong danh sách nhưng không nằm trong ZIP, đúng D10.
+  - Đã chép vào `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618{,_controls,_controls_clip,_eval,_offline,_kaggle_meta}/`.
+- **Kiểm độc lập B/C** (`evaluation/check_fsc147_survey_independent.py`): **PASS mọi mục chạy được.**
+  - Cấu hình, 300 ảnh, predictions đều đúng.
+  - Số đếm của 5 cách tự tính = `per_query.csv`.
+  - Chỉ số của 3 nhóm, Δ và CI của 4 cặp, Δ chính theo nhóm: đều khớp `result.json`.
+  - **B1–B3 xác nhận bằng log Kaggle** (`notebook258d8120dd.log`, lưu thành `..._kaggle_meta/kaggle_log_20261122_1618.txt`):
+    - commit ghim `4cd8909…`;
+    - mẫu và freeze khớp;
+    - **KIEM A: 663 khung, lệch lớn nhất 3.28e-07** (< 1e-3);
+    - checkpoint đúng bản audit 14/10;
+    - 0 dòng lỗi; khoảng 26 phút.
+- **Kết quả khảo sát (300 ảnh FSC-147, chỉ câu có mặt):**
+  - MAE: B0 13,88, B2 13,32, P+F 18,01, B2+F 17,98, C6 25,11.
+  - **Chính B0 − B2: +0,55 [−3,00; +4,30], chưa thấy khác biệt rõ** (cả nhóm ≤ 40 và > 40 đều có CI chứa 0).
+  - Phụ: P+F − B2 +4,69 [+2,25; +7,50]; P+F − B0 +4,14 [+0,56; +8,09]. **P+F kém hơn trên mẫu này**, chủ yếu ở ảnh > 40 vật (35,28 so với B2 25,09), do bộ lọc gây đếm thiếu (thiếu 4.904 so với 2.033). Ảnh ≤ 40 vật thì ngang (3,50 so với 3,44).
+  - C6 kém nhất.
+  - Thời gian: runner 571,5 s / 300 câu; điểm CLIP 404,1 s. Từ nay có số đo thời gian CLIP (trước đây là hạn chế 7).
+- **Đã điền số** vào:
+  - `reports/TRIEU_FSC147_KHAO_SAT_20261122.md` (kèm bản nháp nhận xét của assistant);
+  - `reports/CAM_NANG_DO_AN_CS331.md` mục 9 và bảng tiến độ;
+  - `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` S14, kịch bản S14, câu hỏi 10.
+
+  **Chưa cập nhật** hai bản `.html` của cẩm nang và kế hoạch slide.
+
+**Tiếp:**
+- Triệu: ghi tên version Kaggle; điền cột "Triệu"; commit + push.
+- Họp tối với Trí: thống nhất cách đưa kết quả FSC-147 vào báo cáo (phạm vi áp dụng: ảnh nhiều loại, ít đến vừa vật) và sửa câu "C6 cần kiểm tiếp".
+
 ## 22/11/2026 — lời dặn của Trí: Triệu chạy thay, chốt đồ án; cẩm nang + kế hoạch slide (assistant; không chạy gì)
 
 **Trí dặn (ghi lại để Triệu cập nhật tiếp):**

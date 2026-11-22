@@ -28,7 +28,7 @@ subtitle: "Mọi thứ cần biết để viết báo cáo, làm slide và trả
 | 7. Dev | 11/11 | Triệu chạy dev trên Kaggle T4; chấm theo luật D9 | Chọn P(τ 0.20, M 5)+F, MAE dev 3.53 |
 | 8. Khóa + test | 11/11 | Khóa cấu hình (freeze v2); Triệu chạy test **một lần**; assistant tính lại độc lập | P+F 5.82 so với B0 7.71; B2 9.61; C6 4.63 |
 | 9. Hậu kiểm + báo cáo | 11–15/11 | Phân tích X/Y, theo loại cặp, P = B2, thứ hạng C6; bản chi tiết 22 trang | Giải thích được vì sao F giúp, vì sao P không giúp |
-| 10. Khảo sát bổ sung FSC-147 | 20–24/11 | 300 ảnh một loại vật; câu hỏi: bỏ lượt 2 có hại không | Self-test PASS; **kết quả: chờ** |
+| 10. Khảo sát bổ sung FSC-147 | 20–24/11 | 300 ảnh một loại vật; câu hỏi: bỏ lượt 2 có hại không | Chạy 22/11: B0 − B2 chưa khác rõ; P+F kém hơn trên mẫu này (đếm thiếu ở ảnh dày) |
 | 11. Báo cáo, slide, nộp | đến 02/12 | Báo cáo cuối, slide, demo tĩnh, tập trình bày | — |
 
 # 2. Thuật ngữ (nói được bằng lời thường)
@@ -351,17 +351,25 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
   - so sánh chính **B0 − B2**; phụ P+F − B2, P+F − B0; C6 − B2+F chỉ mô tả;
   - `crop=False`, `synthetic=False`;
   - bootstrap ghép cặp theo ảnh.
-- **Trạng thái:** self-test dữ liệu giả PASS (20/11); notebook ghim `4cd8909…`; **Triệu chạy thay Trí ngày 22/11**.
-- **Kết quả:** **chờ** (Triệu điền sau khi chạy và kiểm):
+- **Trạng thái:** self-test dữ liệu giả PASS (20/11); notebook ghim `4cd8909…`. **Triệu chạy thay Trí ngày 22/11**, run `fsc147_survey_kaggle_t4_20261122_1618`: hoàn tất 300/300 câu. Assistant kiểm độc lập B/C: **PASS**. Log Kaggle xác nhận Kiểm A của notebook đạt (lệch lớn nhất 3.28e-07). Chi tiết: `reports/TRIEU_FSC147_KHAO_SAT_20261122.md`.
+- **Kết quả** (300 ảnh, mọi câu có mặt):
 
 | Cách | MAE | RMSE | Bias | Ghi chú |
 |---|---:|---:|---:|---|
-| B0 | chờ | | | |
-| B2 | chờ | | | |
-| P+F | chờ | | | |
-| C6 | chờ | | | |
-| B2+F | chờ | | | |
-| **B0 − B2** [CI] | chờ | | | cách đọc: CI > 0 → bỏ lượt 2 làm sai số tăng trên mẫu này |
+| B0 | 13,88 | 49,00 | −1,54 | |
+| B2 | **13,32** | 48,62 | −0,23 | tốt nhất trên mẫu này |
+| P+F | 18,01 | 55,21 | −14,68 | thiếu 4.904 vật (B2: 2.033) |
+| C6 | 25,11 | 71,55 | −20,93 | kém nhất; 36 câu trả 0 |
+| B2+F | 17,98 | 53,18 | −14,79 | |
+| **B0 − B2** [CI] | +0,55 [−3,00; +4,30] | | | **chưa thấy khác biệt rõ** (CI chứa 0); cả hai nhóm ≤ 40 / > 40 cũng chứa 0 |
+| P+F − B2 [CI] | +4,69 [+2,25; +7,50] | | | P+F kém hơn B2 trên mẫu này |
+| P+F − B0 [CI] | +4,14 [+0,56; +8,09] | | | P+F kém hơn B0 trên mẫu này |
+
+- **Đọc kết quả:**
+  - Trên ảnh một loại, **giữ hay bỏ lượt 2 chưa khác nhau rõ**.
+  - **Cấu hình đã khóa kém hơn**, chủ yếu ở ảnh > 40 vật (MAE P+F 35,28 so với B2 25,09), vì bộ lọc F (chọn trên MUCCA 3–40 vật) **lọc quá tay, gây đếm thiếu**.
+  - Ở ảnh ≤ 40 vật, P+F ngang B2 (3,50 so với 3,44).
+  - → Phạm vi của cải tiến: ảnh nhiều loại, ít đến vừa vật. Ảnh dày, một loại thì giữ CountGD++ gốc.
 
 - **Giới hạn khi nói:**
   - chỉ áp dụng cho mẫu và điều kiện này, không phải benchmark đầy đủ;

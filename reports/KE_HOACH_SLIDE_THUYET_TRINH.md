@@ -33,7 +33,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | S11 | Cái gì thật sự giúp | P = B2 ở **108/120** câu, nên P không giúp; B2+F ≈ P+F, nên **F** là thứ có tác dụng. F đổi đếm thừa thành đếm thiếu (+580/−77 → +243/−297) | Bảng 3 dòng + mũi tên | Triệu | 1:15 |
 | S12 | Giúp ở đâu, chưa giúp ở đâu | Cặp dễ nhầm: −3.05 (chắc). Cặp khác hẳn: +0.51 (chưa chắc, 13 ảnh) | `fig_strata_errors.png` | Triệu | 1:00 |
 | S13 | Ví dụ thành công / thất bại | blueberries (thành công) · dogs–dê (thất bại) · people (lọc quá tay) | 3 hình `fig_example_*` | Trí + Triệu | 1:15 |
-| S14 | *(rút được)* Bài học chọn mô hình + khảo sát FSC-147 | C6 hạng 7/15 họ trên dev nhưng tốt nhất trên test; không đổi kết quả chính sau khi xem test. Khảo sát FSC-147: **số chờ** | Bảng dev → test | Triệu | 1:00 |
+| S14 | *(rút được)* Bài học chọn mô hình + khảo sát FSC-147 | C6 hạng 7/15 họ trên dev nhưng tốt nhất trên test; không đổi kết quả chính sau khi xem test. Khảo sát FSC-147 (300 ảnh một loại): B0 − B2 +0,55 [−3,00; +4,30], chưa khác rõ; P+F kém hơn B2 (+4,69 [+2,25; +7,50]), do đếm thiếu ở ảnh > 40 vật | Bảng dev → test | Triệu | 1:00 |
 | S15 | Hạn chế và hướng phát triển | 4 hạn chế chính; 3 hướng: C6 trên tập mới, CLIP tương phản giữa các loại, kiểm H2 | 2 cột | Trí | 0:45 |
 | S16 | Kết luận | 3 câu trả lời RQ1–RQ3 + "cảm ơn, mời thầy và các bạn hỏi" | — | Trí | 0:30 |
 
@@ -79,7 +79,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 
 **S13.** "Ba ví dụ. Blueberries: B2 đếm 65, P+F đếm 8, đáp án 7. Dogs: đàn dê bị đếm là chó ở mọi cách, vì CLIP cũng không phân biệt được dê và chó ở ô ảnh nhỏ. People: F bỏ cả người thật, còn 13 trên 31."
 
-**S14 (Triệu).** "Một bài học: trên dev, cách đơn giản C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm ghi C6 là giả thuyết cho lần kiểm sau." (Thêm một câu về khảo sát FSC-147 khi có số.)
+**S14 (Triệu).** "Một bài học: trên dev, cách đơn giản C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm ghi C6 là giả thuyết cho lần kiểm sau." "Nhóm cũng kiểm thêm 300 ảnh FSC-147, mỗi ảnh một loại. Ở đó giữ hay bỏ lượt 2 chưa khác nhau rõ. Còn cấu hình của nhóm thì kém hơn, vì bộ lọc chọn trên ảnh 3–40 vật đã lọc quá tay ở ảnh dày. Nên nhóm ghi rõ: cải tiến dành cho ảnh nhiều loại, ít đến vừa vật."
 
 **S15.** "Hạn chế: mẫu nhỏ, một nguồn dữ liệu, ngưỡng toàn cục, CLIP yếu với vật gần nghĩa. Hướng tiếp theo: kiểm C6 trên tập mới; chấm mỗi khung với mọi tên loại trong ảnh rồi gán cho loại giống nhất; kiểm giả thuyết H2."
 
@@ -98,7 +98,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | 7 | GT có đúng không? | GT là số điểm MUCCA; người kiểm cả dev và test; 15/120 câu có ghi chú; độ nhạy dùng số người đếm: MAE đổi dưới 0.06 | Triệu | — |
 | 8 | "Có ý nghĩa thống kê" nghĩa là gì ở đây? | CI 95% của chênh lệch MAE không chứa 0 | Triệu | — |
 | 9 | Khác nhóm Hoàng Anh – Duy thế nào? | Câu trả lời mẫu ở mục 12b của cẩm nang (CLIP từng khung so với cả ảnh; ảnh nhiều loại; chẩn đoán cơ chế) | Trí | — |
-| 10 | Có làm hỏng ảnh một loại (FSC-147) không? | Trả lời bằng số khảo sát 300 ảnh nếu có. Chưa có thì nói: "chưa kiểm xong, kết luận chỉ áp dụng cho ảnh nhiều loại" | Triệu | D7 |
+| 10 | Có làm hỏng ảnh một loại (FSC-147) không? | Có, ở ảnh dày. Trên 300 ảnh FSC-147: P+F MAE 18,01 so với B2 13,32 (kém hơn, CI [+2,25; +7,50]), chủ yếu ở ảnh > 40 vật do bộ lọc gây đếm thiếu. Ảnh ≤ 40 vật thì ngang nhau (3,50 so với 3,44). Bỏ lượt 2 (B0 − B2) chưa khác rõ. Không so với 8,34 / 10,29 vì khác điều kiện (không cắt ảnh, không mẫu GPT-5) | Triệu | D7 |
 | 11 | Tại sao lượt 2 hại? | max(chữ, mẫu) + mẫu giả sai loại; T chỉ gỡ khoảng 1/5; giả thuyết H2 | Triệu | — |
 | 12 | Câu vắng mặt xử lý thế nào? | Z khó, cùng nhóm nghĩa, người kiểm; khung đếm nhầm 92–100% nằm trên vật thật khác; C6 FPR 0.10 | Triệu | D1 |
 | 13 | Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa? | Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm này; chỉ 13 ảnh; hướng "CLIP tương phản" nhắm thẳng vào đó | Trí | — |

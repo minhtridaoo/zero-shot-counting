@@ -1,5 +1,24 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 22/11 (tối) — khảo sát FSC-147 ĐÃ CHẠY và kiểm độc lập PASS:**
+- Run `fsc147_survey_kaggle_t4_20261122_1618` (Triệu, một lần, 300/300); đầu ra ở `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618*`.
+- **Chính B0 − B2: +0,55 [−3,00; +4,30], chưa thấy khác biệt rõ.**
+- P+F kém hơn B2 (+4,69 [+2,25; +7,50]) và kém hơn B0, chủ yếu ở ảnh > 40 vật (bộ lọc gây đếm thiếu). C6 kém nhất.
+- Báo cáo: [reports/TRIEU_FSC147_KHAO_SAT_20261122.md](reports/TRIEU_FSC147_KHAO_SAT_20261122.md). Đã điền vào cẩm nang mục 9 và slide S14 / câu hỏi 10 (chưa cập nhật bản `.html`).
+- Log Kaggle xác nhận Kiểm A đạt (lệch lớn nhất 3.28e-07), commit ghim đúng, 0 lỗi.
+- **Còn thiếu:** tên version Kaggle, cột "Triệu". Trí xem lại khi rảnh.
+- **Việc kế tiếp:** Triệu commit + push; họp tối thống nhất cách đưa kết quả này vào báo cáo cuối (phạm vi áp dụng; sửa câu "C6 cần kiểm tiếp").
+
+**Cập nhật 22/11 (chiều) — chuẩn bị khảo sát FSC-147 (đã chạy sau đó, xem khối trên):**
+- **Đã xong:** pull `b7b9015`; bằng chứng kiểm A (`reports/TRIEU_FSC147_KHAO_SAT_20261122.md`, Triệu tự điền cột "Triệu"); nháp Related Work (`reports/RELATED_WORK_TRIEU_20261122.md`, 3 chỗ ⚠ đã kiểm xong); bộ kiểm độc lập `evaluation/check_fsc147_survey_independent.py` (self-test trên run MUCCA PASS).
+- **Chưa chạy:** notebook khảo sát trên Kaggle. Triệu tự import và chạy một lần.
+- **Việc kế tiếp:**
+  1. Tải ZIP + log, chép vào `results/countgdpp/fsc147_survey_kaggle_t4_<stamp>*`, Triệu điền B/C.
+  2. Assistant chạy: `python evaluation/check_fsc147_survey_independent.py --root . --run results/countgdpp/fsc147_survey_kaggle_t4_<stamp> --kaggle-meta results/countgdpp/fsc147_survey_kaggle_t4_<stamp>_kaggle_meta`.
+  3. Điền cẩm nang mục 9 + slide S14.
+  4. Commit + push.
+- **Tối nay:** họp Trí + Triệu. Mang Q1–Q6 (mục 10 kế hoạch slide) cho Trí quyết.
+
 **Cập nhật 22/11 — Triệu chạy thay Trí, chốt đồ án; chuẩn bị thuyết trình:**
 - **Lời dặn của Trí (22/11):** hôm nay Trí không có thời gian. Trí đã báo trước Triệu: **Triệu chạy task của Trí thay Trí** và cố gắng làm hết trong ngày để chốt đồ án. **Tối nay** Trí và Triệu họp lên kế hoạch hành trang và nội dung trình bày với thầy.
 - **Triệu bắt đầu ở:** [HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md](HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md). Thứ tự: pull → kiểm A → chạy Kaggle khảo sát FSC-147 → đọc cẩm nang → Related Work → kiểm B/C → cập nhật WORKLOG/BAT_DAU, push.
