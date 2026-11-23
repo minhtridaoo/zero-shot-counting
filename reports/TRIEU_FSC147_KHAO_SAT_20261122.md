@@ -8,7 +8,7 @@ Triệu chạy thay Trí theo lời dặn 22/11 (xem `HANDOFF/TRIEU_NGAY_22_11_C
 
 - Kaggle version: … (Triệu điền); run: `fsc147_survey_kaggle_t4_20261122_1618`
 - Giờ bắt đầu / kết thúc: … / … (Triệu điền)
-- Thời gian (`timing.json`): runner 571,5 s cho 300 câu (khoảng 1,9 s/câu, gồm lượt 1 + lượt 2 của B2 và P); điểm CLIP cho các khung 404,1 s (khoảng 1,3 s/câu)
+- Thời gian (`timing.json`): runner 571,5 s cho 300 câu (gồm lượt 1 + lượt 2 của B2 và P); `controls_clip_seconds` 404,1 s là **tổng thời gian bước `p1_controls`** chấm CLIP cho khung của cả ba nguồn (B0, B2, P), không phải thời gian CLIP riêng của một cấu hình
 - Lỗi / chạy lại: … (Triệu điền; theo ZIP thì run hoàn tất 300/300, mọi câu `ok`)
 - ZIP: `for_repo_20261122_1618.zip`. Assistant giải nén, kiểm sha256 của **917/917** file có trong ZIP theo `FILES_20261122_1618.json` (khớp hết). 900 ảnh `.jpg` và 594 tệp `.npz` có trong danh sách nhưng không có trong ZIP, đúng quy ước D10. Đã chép vào `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618*` và `..._kaggle_meta/`.
 
@@ -97,9 +97,12 @@ Assistant kiểm bằng `evaluation/check_fsc147_survey_independent.py`. Script 
 
 1. **Câu hỏi chính.** Trên mẫu 300 ảnh một loại vật này, với điều kiện không cắt ảnh và không mẫu GPT-5, **chưa thấy khác biệt rõ giữa giữ và bỏ lượt 2**: B2 13,32 so với B0 13,88; CI của chênh lệch chứa 0, ở cả hai nhóm.
 2. **Cấu hình đã khóa (P+F) kém hơn trên mẫu này:** cao hơn B2 khoảng 4,7 và cao hơn B0 khoảng 4,1 MAE (CI đều > 0).
-   - Theo bảng mô tả, phần kém hơn **tập trung ở ảnh nhiều vật (> 40)**: MAE 35,28 so với 25,09. Ở ảnh ≤ 40 vật, P+F ngang B2 (3,50 so với 3,44) và thấp hơn B0.
-   - Nguyên nhân thấy được là **đếm thiếu**: P+F thiếu 4.904 vật so với 2.033 của B2, và Bias −14,68. Bộ lọc F được chọn trên MUCCA (3–40 vật mỗi loại), nên ở ảnh dày nó bỏ cả vật đúng. Bản khai báo §8 đã nêu trước rủi ro này.
-3. **C6 kém nhất trên mẫu này** (MAE 25,11, thiếu 6.907 vật, 36 câu trả 0). Vì vậy hướng "C6 cần kiểm tiếp" trong báo cáo chính phải ghi kèm: trên ảnh một loại, dày, C6 lọc quá tay.
+   - Theo bảng mô tả, phần kém hơn **tập trung ở ảnh nhiều vật (> 40)**: MAE 35,28 so với 25,09. Ở ảnh ≤ 40 vật, MAE của P+F và B2 **gần nhau** (3,50 và 3,44); khảo sát không kiểm định để nói hai cách tương đương.
+   - Lỗi chủ yếu là **đếm thiếu**: ở nhóm > 40 vật, P+F thiếu 4.416 vật so với 1.910 của B2 (toàn mẫu: 4.904 so với 2.033; Bias −14,68).
+   - **Một giải thích có thể** là bộ lọc F chọn trên MUCCA (3–40 vật mỗi loại) nên lọc quá tay ở ảnh dày. Khảo sát **chưa tách được** ảnh hưởng của mật độ vật với khác biệt giữa hai bộ dữ liệu. Bản khai báo §8 đã nêu trước rủi ro này.
+
+   *(Sửa 23/11 theo rà soát của Trí 22/11: tách số đếm thiếu theo nhóm, bỏ chữ "ngang", không khẳng định nguyên nhân.)*
+3. **C6 kém nhất trên mẫu này** (MAE 25,11, thiếu 6.907 vật, 36 câu trả 0). Vì vậy hướng "C6 cần kiểm tiếp" trong báo cáo chính phải ghi kèm: trên ảnh một loại, dày, C6 đếm thiếu nặng (nguyên nhân chưa tách được, xem ý 2).
 4. **Phạm vi áp dụng.** Cải tiến của đồ án (bộ lọc F với ngưỡng chọn trên MUCCA) phù hợp với ảnh nhiều loại, ít đến vừa vật. Với ảnh một loại, nhiều vật, nên giữ CountGD++ gốc, hoặc chọn lại ngưỡng F theo mật độ (hướng phát triển).
 
 **Giới hạn khi nói** (theo khai báo §8):

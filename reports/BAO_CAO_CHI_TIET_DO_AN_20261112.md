@@ -30,7 +30,7 @@ Hai kiểm tra bổ sung (22/11, mục 7.8–7.9):
 
 - **Khảo sát 300 ảnh FSC-147** (một loại vật mỗi ảnh):
   - giữ hay bỏ lượt 2 **chưa khác nhau rõ**;
-  - cấu hình đã khóa **kém hơn CountGD++ gốc** (+4,69 MAE, CI [+2,25; +7,50]), vì lọc quá tay ở ảnh dày.
+  - cấu hình đã khóa **kém hơn CountGD++ gốc** (+4,69 MAE, CI [+2,25; +7,50]), chủ yếu do đếm thiếu ở ảnh dày.
 
   → Phạm vi của cải tiến: **ảnh nhiều loại, ít đến vừa vật**.
 - **Thử nghiệm sơ bộ trên dev** (gán khung cho loại mà CLIP thấy giống nhất): tỉ lệ khung dùng chung X/Y giảm từ 62% xuống 3%, nhưng số đếm chưa tốt hơn, vì CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30% vật đúng.
@@ -508,7 +508,7 @@ Lưu ý: test chỉ tính 5 cách đã khai báo trong file khóa, nên "thứ 1
 
 - Khi các cách đứng đầu trên dev nằm trong cùng khoảng nhiễu, nên ưu tiên **cách đơn giản hơn** (giống "quy tắc một sai số chuẩn" trong chọn mô hình), hoặc dùng dev lớn hơn / kiểm chéo.
 - Nhóm **không đổi** kết quả chính sau khi xem test: P+F vẫn là kết quả chính đúng giao thức. Nếu đổi sang C6 sau khi nhìn test, con số 4.63 sẽ trở thành một ước lượng thiên lệch, đúng loại lỗi mà giao thức khóa trước ngăn chặn.
-- C6 được nêu như một **giả thuyết cho lần kiểm tiếp theo** trên dữ liệu mới, kèm lưu ý: trên mẫu FSC-147 một loại, ảnh dày, C6 **kém nhất** (MAE 25,11; mục 7.8), vì bộ lọc chọn trên ảnh 3–40 vật đã lọc quá tay. C6 cần ngưỡng theo mật độ vật trước khi dùng rộng.
+- C6 được nêu như một **giả thuyết cho lần kiểm tiếp theo** trên dữ liệu mới, kèm lưu ý: trên mẫu FSC-147 một loại, ảnh dày, C6 **kém nhất** (MAE 25,11; mục 7.8), chủ yếu do đếm thiếu. Có thể vì bộ lọc chọn trên ảnh 3–40 vật lọc quá tay ở ảnh dày; khảo sát chưa tách được nguyên nhân. Trước khi dùng rộng, C6 cần được kiểm thêm, ví dụ với ngưỡng theo mật độ vật.
 
 ## 7.7 Chi phí tính toán
 
@@ -519,9 +519,9 @@ Trên Kaggle T4:
 
 C6 bỏ được lượt 2, nên tiết kiệm khoảng 40% thời gian CountGD++.
 
-**Thời gian CLIP đo được ở khảo sát FSC-147 (22/11, Kaggle T4):**
-- runner (lượt 1 + lượt 2 của B2 và P) mất 571,5 s cho 300 câu, khoảng 1,9 s/câu;
-- chấm CLIP cho toàn bộ khung mất 404,1 s, khoảng 1,3 s/câu.
+**Thời gian ghi được ở khảo sát FSC-147 (22/11, Kaggle T4):**
+- runner (lượt 1 + lượt 2 của B2 và P) mất 571,5 s cho 300 câu;
+- bước `p1_controls` chấm CLIP cho khung của **cả ba nguồn** (B0, B2, P) mất 404,1 s cho 300 câu. Đây là tổng thời gian của bước chấm, **không phải** thời gian CLIP riêng của một cấu hình.
 
 Số này đo trên ảnh FSC-147 (trung bình 66 vật/ảnh), nhiều khung hơn ảnh MUCCA, nên chỉ là mức tham khảo.
 
@@ -553,7 +553,9 @@ Số này đo trên ảnh FSC-147 (trung bình 66 vật/ảnh), nhiều khung h�
 
 **Đọc kết quả:**
 - Trên ảnh một loại, **giữ hay bỏ lượt 2 chưa khác nhau rõ**. Kết luận "lượt 2 gây hại" (mục 7.1) chỉ áp dụng cho **ảnh nhiều loại**.
-- Cấu hình đã khóa kém hơn, **chủ yếu ở ảnh > 40 vật**, vì bộ lọc F (chọn trên ảnh MUCCA 3–40 vật) bỏ cả vật đúng. P+F đếm thiếu 4.904 vật, so với 2.033 của B2. Ở ảnh ≤ 40 vật, P+F ngang B2.
+- Cấu hình đã khóa kém hơn, **chủ yếu ở ảnh > 40 vật** (MAE 35,28 so với 25,09), và lỗi chủ yếu là **đếm thiếu**: ở nhóm này P+F thiếu 4.416 vật so với 1.910 của B2 (toàn mẫu: 4.904 so với 2.033).
+- Ở ảnh ≤ 40 vật, MAE của P+F và B2 **gần nhau** (3,50 và 3,44); khảo sát không kiểm định để nói hai cách tương đương.
+- **Một giải thích có thể** là bộ lọc F chọn trên ảnh MUCCA 3–40 vật nên lọc quá tay ở ảnh dày. Khảo sát **chưa tách được** ảnh hưởng của mật độ vật với khác biệt giữa hai bộ dữ liệu.
 - **Phạm vi áp dụng của cải tiến:** ảnh nhiều loại, ít đến vừa vật. Ảnh một loại, dày thì giữ CountGD++ gốc.
 
 **Giới hạn:**
@@ -603,11 +605,11 @@ Chi tiết: `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
 1. **Cỡ mẫu nhỏ:** 40 ảnh test, trong đó chỉ 13 ảnh cặp khác hẳn. Khoảng tin cậy rộng; nhận xét theo nhóm cặp là hậu kiểm, chỉ mang tính mô tả.
 2. **Một nguồn dữ liệu cho kết quả chính:** MUCCA. Khảo sát bổ sung trên 300 ảnh FSC-147 (mục 7.8) chỉ có câu có mặt, không cắt ảnh, nên chưa phải kiểm chứng đầy đủ trên nguồn khác.
 3. **Nhãn:** GT là số điểm MUCCA; 15/120 câu test có ghi chú cần xem lại. Bảng độ nhạy cho thấy không đổi kết luận. Phép kiểm "điểm trong khung" là xấp xỉ dễ dãi (khung to phủ nhiều vật vẫn tính đúng); N4 cho thấy phép kiểm tự động lạc quan hơn người kiểm.
-4. **Ngưỡng cố định toàn cục:** F dùng một ngưỡng cho mọi ảnh, nên ảnh đông vật bị lọc quá tay. Khảo sát FSC-147 xác nhận điều này: ở ảnh > 40 vật, P+F có MAE 35,28 so với 25,09 của B2 (mục 7.8).
+4. **Ngưỡng cố định toàn cục:** F dùng một ngưỡng cho mọi ảnh, nên ảnh đông vật có thể bị lọc quá tay. Khảo sát FSC-147 phù hợp với điều này: ở ảnh > 40 vật, P+F có MAE 35,28 so với 25,09 của B2, chủ yếu do đếm thiếu (mục 7.8). Nhưng khảo sát chưa tách được ảnh hưởng của mật độ với khác biệt giữa hai bộ dữ liệu.
 5. **CLIP có giới hạn riêng:** với ô cắt nhỏ và các loại gần nghĩa (dê–chó–cừu), điểm CLIP không đủ để tách loại (ví dụ ở mục 7.5). Thử nghiệm gán khung theo CLIP (mục 7.9) cho thấy CLIP bỏ nhầm khoảng 30% khung đúng loại.
 6. **Lạc quan do chọn trên dev:** thứ hạng dev không giữ được trên test (mục 7.6).
 7. **Phân tích cơ chế lượt 2 dựa trên dev và tập chẩn đoán**, chưa có T trên test; tỉ lệ T gỡ được (21% và 67%) không ổn định.
-8. **Thời gian CLIP chỉ đo trên khảo sát FSC-147** (khoảng 1,3 s/câu trên T4, mục 7.7), chưa đo trên lần test MUCCA.
+8. **Thời gian CLIP chỉ ghi ở khảo sát FSC-147**, dưới dạng tổng thời gian bước chấm cho cả ba nguồn khung (mục 7.7). Chưa đo riêng thời gian CLIP của từng cấu hình, chưa đo trên lần test MUCCA.
 
 # 9. Kết luận và hướng phát triển
 

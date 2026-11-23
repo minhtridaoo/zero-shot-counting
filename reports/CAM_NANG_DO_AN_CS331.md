@@ -368,8 +368,9 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
 
 - **Đọc kết quả:**
   - Trên ảnh một loại, **giữ hay bỏ lượt 2 chưa khác nhau rõ**.
-  - **Cấu hình đã khóa kém hơn**, chủ yếu ở ảnh > 40 vật (MAE P+F 35,28 so với B2 25,09), vì bộ lọc F (chọn trên MUCCA 3–40 vật) **lọc quá tay, gây đếm thiếu**.
-  - Ở ảnh ≤ 40 vật, P+F ngang B2 (3,50 so với 3,44).
+  - **Cấu hình đã khóa kém hơn**, chủ yếu ở ảnh > 40 vật (MAE P+F 35,28 so với B2 25,09), và lỗi chủ yếu là **đếm thiếu**: ở nhóm này thiếu 4.416 so với 1.910 (toàn mẫu 4.904 so với 2.033).
+  - Một giải thích **có thể** là bộ lọc F chọn trên MUCCA 3–40 vật nên lọc quá tay; khảo sát **chưa tách được** mật độ vật với khác biệt giữa hai bộ dữ liệu.
+  - Ở ảnh ≤ 40 vật, P+F và B2 **gần nhau** (3,50 so với 3,44); không kiểm định tương đương.
   - → Phạm vi của cải tiến: ảnh nhiều loại, ít đến vừa vật. Ảnh dày, một loại thì giữ CountGD++ gốc.
 
 - **Giới hạn khi nói:**
@@ -402,7 +403,7 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
 | Cặp khác hẳn, P+F so với B0 | +0.51 [−0.72, +1.82] (chưa chắc) |
 | T gỡ được tác hại lượt 2 | 21% dev, 67% p4 |
 | Thời gian T4: B0 / B2 | 0.89 / khoảng 1.5 s/câu |
-| Thời gian CLIP (FSC-147, T4) | khoảng 1,3 s/câu (404 s / 300 câu) |
+| Thời gian chấm CLIP (FSC-147, T4) | 404 s / 300 câu, tổng cho khung của cả 3 nguồn (B0, B2, P); không phải thời gian CLIP riêng một cấu hình |
 | **FSC-147 300 ảnh: B0 / B2 / P+F / C6** | 13,88 / **13,32** / 18,01 / 25,11 |
 | FSC-147: B0 − B2 (chính) | +0,55 [−3,00; +4,30], chưa khác rõ |
 | **FSC-147: P+F − B2** | **+4,69 [+2,25; +7,50]** (kém hơn; ảnh > 40 vật: 35,28 so với 25,09) |
@@ -416,11 +417,11 @@ Trên T4: B0 khoảng 0.89 s/câu; B2 và P khoảng 1.5 s/câu, chưa tính CLI
 1. Cỡ mẫu nhỏ: 40 ảnh test, chỉ 13 ảnh cặp khác hẳn; CI rộng.
 2. Một nguồn dữ liệu (MUCCA). Khảo sát FSC-147 là bổ sung, chỉ có câu có mặt.
 3. Nhãn: 15/120 câu test có ghi chú cần xem lại (độ nhạy không đổi kết luận). Phép kiểm "điểm trong khung" dễ dãi.
-4. F dùng một ngưỡng toàn cục, nên ảnh đông vật bị lọc quá tay. **FSC-147 xác nhận:** P+F kém CountGD++ gốc ở ảnh > 40 vật. Phạm vi cải tiến: ảnh nhiều loại, ít đến vừa vật.
+4. F dùng một ngưỡng toàn cục, nên ảnh đông vật có thể bị lọc quá tay. **FSC-147 phù hợp với điều này:** P+F kém CountGD++ gốc ở ảnh > 40 vật, chủ yếu do đếm thiếu (nguyên nhân chưa tách được). Phạm vi cải tiến: ảnh nhiều loại, ít đến vừa vật.
 5. CLIP yếu với ô cắt nhỏ và loại gần nghĩa (dê–chó–cừu). **Thử nghiệm dev xác nhận:** gán khung theo CLIP bỏ nhầm khoảng 30% khung đúng loại.
 6. Lạc quan do chọn trên dev: thứ hạng đổi trên test.
 7. Phân tích cơ chế lượt 2 làm trên dev và tập chẩn đoán; chưa có T trên test; H2 chưa kiểm.
-8. Thời gian CLIP chỉ đo ở khảo sát FSC-147 (khoảng 1,3 s/câu), chưa đo trên test MUCCA.
+8. Thời gian CLIP chỉ ghi ở khảo sát FSC-147, dưới dạng tổng bước chấm cho 3 nguồn khung; chưa đo riêng từng cấu hình, chưa đo trên test MUCCA.
 9. **Bài X/Y chưa giải xong:** sau cải tiến, sai số câu có mặt vẫn khoảng một nửa số vật thật (MAE 6,84 trên trung bình 12,4 vật).
 
 # 12. Hướng phát triển

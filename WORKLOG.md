@@ -1,5 +1,32 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 23/11/2026 (tối) — sửa 3 lỗi diễn giải khảo sát FSC-147 theo rà soát của Trí (Triệu + assistant)
+
+Triệu pull `ba68803` (slide v2, báo cáo LaTeX). Theo ghi chú rà ngày 22/11 của Trí, sửa ba lỗi diễn giải. Các lỗi này nằm trong bản nháp của assistant và đã lan sang báo cáo LaTeX và slide. **Không đổi số liệu, không chạy gì.**
+
+1. **Số đếm thiếu:** 4.904 / 2.033 là số **toàn mẫu**; câu nói về nhóm > 40 vật nay dùng **4.416 / 1.910** (lấy từ `result.json`, `summary.gt40`).
+2. **"Ngang":** ở ảnh ≤ 40 vật, 3,50 và 3,44 chỉ là "gần nhau", không có kiểm định tương đương.
+3. **Nguyên nhân và thời gian:**
+   - "Vì F chọn trên ảnh 3–40 vật" sửa thành "**có thể** do…; chưa tách được mật độ vật với khác biệt giữa hai bộ dữ liệu".
+   - `controls_clip_seconds` 404,1 s là **tổng bước chấm CLIP cho 3 nguồn** (B0, B2, P), không phải "1,3 s/câu" của một cấu hình.
+
+**File đã sửa:**
+- `final/report/main.tex`: mục chi phí (thời gian CLIP) và đoạn đọc kết quả FSC-147.
+- `final/slides/main.tex`: slide FSC-147 (hai gạch đầu dòng mới + lời nói), slide hạn chế, slide dự phòng chi phí.
+- `reports/TRIEU_FSC147_KHAO_SAT_20261122.md` (ghi chú sửa ngay trong file).
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md` (tóm tắt, 7.6, 7.7, 7.8, hạn chế 4 và 8).
+- `reports/CAM_NANG_DO_AN_CS331.md` (mục 9, bảng số tra nhanh, hạn chế 4 và 8).
+- `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` (câu hỏi 10 và 14).
+- `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md`.
+
+Các mục WORKLOG/BAT_DAU cũ giữ nguyên như lịch sử.
+
+**Chưa làm:**
+- **Biên dịch lại PDF** báo cáo và slide: máy Triệu không có LaTeX, cần Trí chạy `latexmk -xelatex main.tex`.
+- Xuất lại `.docx`/`.html`.
+
+**Kiểm trích dẫn (việc của Triệu theo phân công):** PseCo, DAVE, VA-Count trong `final/refs.bib` khớp tác giả, năm, hội nghị và số arXiv với trang arXiv / README tác giả mà assistant đọc ngày 22/11.
+
 ## 23/11/2026 — đưa slide v2 và tài liệu đi kèm về nhánh chính để xuất bản
 
 Theo yêu cầu Trí: tìm thấy bộ slide v2 chưa commit tại `.claude/worktrees/latex-presentation-split-c554f5`. Sao lưu thay đổi trước đồng bộ, fast-forward 16 commit đến `bf0797c`, giữ ghi chú kiểm tra local 20–22/11, sao chép đúng các tài liệu thay đổi và nguồn/hình/PDF trong `final/`; bỏ qua tệp biên dịch tạm theo `.gitignore`. Giữ nguyên worktree nguồn. Trí xác nhận slide v2 đã xong; **báo cáo chi tiết chưa sửa theo slide v2**, bản báo cáo đi kèm chỉ là bản hiện có. Không chạy model/evaluator/self-test, không sửa dữ liệu khóa hoặc ký duyệt thay người dùng. Tiếp theo: cập nhật báo cáo theo slide v2 và rà bản nộp trước 02/12.

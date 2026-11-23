@@ -53,7 +53,7 @@ Cải tiến giảm lỗi nhưng chưa xóa được lỗi. Sai số vẫn kho�
 | P+F | 18,01 | 3,50 | 35,28 |
 | C6 | 25,11 | 5,34 | 48,64 |
 
-- P+F kém hơn B2: +4,69 [+2,25; +7,50]. Nguyên nhân là **đếm thiếu ở ảnh dày** (thiếu 4.904 vật so với 2.033), vì ngưỡng F chọn trên ảnh MUCCA 3–40 vật.
+- P+F kém hơn B2: +4,69 [+2,25; +7,50], chủ yếu do **đếm thiếu ở ảnh dày** (nhóm > 40 vật: thiếu 4.416 so với 1.910; toàn mẫu 4.904 so với 2.033). Có thể vì ngưỡng F chọn trên ảnh MUCCA 3–40 vật; khảo sát chưa tách được nguyên nhân.
 - C6 tốt nhất trên MUCCA nhưng kém nhất ở đây.
 - Giữ hay bỏ lượt 2 (B0 − B2): +0,55 [−3,00; +4,30], chưa thấy khác biệt rõ.
 

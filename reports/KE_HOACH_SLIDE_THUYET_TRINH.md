@@ -102,11 +102,11 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | 7 | GT có đúng không? | GT là số điểm MUCCA; người kiểm cả dev và test; 15/120 câu có ghi chú; độ nhạy dùng số người đếm: MAE đổi dưới 0.06 | Triệu | — |
 | 8 | "Có ý nghĩa thống kê" nghĩa là gì ở đây? | CI 95% của chênh lệch MAE không chứa 0 | Triệu | — |
 | 9 | Khác nhóm Hoàng Anh – Duy thế nào? | Câu trả lời mẫu ở mục 12b của cẩm nang (CLIP từng khung so với cả ảnh; ảnh nhiều loại; chẩn đoán cơ chế) | Trí | — |
-| 10 | Có làm hỏng ảnh một loại (FSC-147) không? | Có, ở ảnh dày. Trên 300 ảnh FSC-147: P+F MAE 18,01 so với B2 13,32 (kém hơn, CI [+2,25; +7,50]), chủ yếu ở ảnh > 40 vật do bộ lọc gây đếm thiếu. Ảnh ≤ 40 vật thì ngang nhau (3,50 so với 3,44). Bỏ lượt 2 (B0 − B2) chưa khác rõ. Không so với 8,34 / 10,29 vì khác điều kiện (không cắt ảnh, không mẫu GPT-5) | Triệu | D7 |
+| 10 | Có làm hỏng ảnh một loại (FSC-147) không? | Có, ở ảnh dày. Trên 300 ảnh FSC-147: P+F MAE 18,01 so với B2 13,32 (kém hơn, CI [+2,25; +7,50]), chủ yếu ở ảnh > 40 vật, lỗi là đếm thiếu (thiếu 4.416 so với 1.910). Có thể do ngưỡng F chọn trên ảnh ít vật; chưa tách được mật độ với khác biệt bộ dữ liệu. Ảnh ≤ 40 vật thì gần nhau (3,50 so với 3,44), chưa kiểm định tương đương. Bỏ lượt 2 (B0 − B2) chưa khác rõ. Không so với 8,34 / 10,29 vì khác điều kiện (không cắt ảnh, không mẫu GPT-5) | Triệu | D7 |
 | 11 | Tại sao lượt 2 hại? | max(chữ, mẫu) + mẫu giả sai loại; T chỉ gỡ khoảng 1/5; giả thuyết H2 | Triệu | — |
 | 12 | Câu vắng mặt xử lý thế nào? | Z khó, cùng nhóm nghĩa, người kiểm; khung đếm nhầm 92–100% nằm trên vật thật khác; C6 FPR 0.10 | Triệu | D1 |
 | 13 | Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa? | Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm này; chỉ 13 ảnh. Hướng "CLIP tương phản" đã thử sơ bộ trên dev: khung dùng chung 62% → 3% nhưng MAE có mặt chưa tốt hơn (5,05 → 6,92), vì CLIP bỏ nhầm 30% vật đúng | Trí | — |
-| 14 | Thời gian chạy? | B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP khoảng 1,3 s/câu (đo ở khảo sát FSC-147, ảnh nhiều khung hơn MUCCA); C6 tiết kiệm khoảng 40% thời gian CountGD++ | Triệu | D9 |
+| 14 | Thời gian chạy? | B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP: ở khảo sát FSC-147, bước chấm khung của cả 3 nguồn mất 404 s cho 300 câu (ảnh nhiều khung hơn MUCCA); chưa đo riêng từng cấu hình; C6 tiết kiệm khoảng 40% thời gian CountGD++ | Triệu | D9 |
 | 15 | Ngưỡng θ 0.604 ở đâu ra? | Chọn trên dev theo D9, cùng min/max, khóa trong freeze v2 (hash) | Trí | D2 |
 | 16 | Tái lập thế nào? | Repo public; dữ liệu và cấu hình có hash; notebook Kaggle; Kiểm A + Kiểm C | Triệu | — |
 | 17 | Đóng góp của từng thành viên? | Xem mục 6 | cả hai | — |

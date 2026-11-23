@@ -1,5 +1,7 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 23/11 (tối) — Triệu sửa 3 lỗi diễn giải FSC-147 theo rà soát của Trí:** số đếm thiếu nhóm > 40 là 4.416 / 1.910; ≤ 40 vật chỉ "gần nhau"; nguyên nhân chỉ là "có thể"; 404 s là tổng bước chấm CLIP cho 3 nguồn. Đã sửa trong `final/report/main.tex`, `final/slides/main.tex` và các file `.md` (xem WORKLOG). **Cần Trí biên dịch lại PDF** (máy Triệu không có LaTeX). Trích dẫn PseCo/DAVE/VA-Count trong `refs.bib` đã đối chiếu, khớp.
+
 **Cập nhật 23/11/2026 — bàn giao slide v2 lên GitHub:** Trí báo đã làm xong slide v2. Bộ hiện tại: `final/slides/main.tex`, `main.pdf`, `notes.pdf`; phân công ở `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md`. Đã đồng bộ checkout chính với remote trước khi đưa tài liệu từ worktree Claude sang. **Báo cáo chi tiết (gồm `final/report/`) CHƯA đồng bộ theo slide v2.** Việc tiếp theo: sửa báo cáo theo slide v2, rà số liệu/trích dẫn/hình, điền thông tin bìa và chốt phần trình bày với Triệu. Phiên này chỉ đồng bộ Git và tài liệu, không chạy thực nghiệm hoặc duyệt chất lượng slide thay người dùng. Các ghi chú kiểm tra 20–22/11 bên dưới là lịch sử tại thời điểm đó.
 
 **Rà khảo sát 22/11:** remote c2928ca đã có run Triệu 20261122_1618 (300 ảnh); số MAE/CI trong ảnh khớp result.json. Xem WORKLOG mới: cần sửa phạm vi số đếm thiếu, cách diễn giải nguyên nhân/thời gian, bổ sung version Kaggle và xác nhận Triệu. Chưa tái chạy evaluator; chưa merge checkout local.

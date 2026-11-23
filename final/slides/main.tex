@@ -730,12 +730,13 @@ Cách & MAE $\downarrow$ & Bias & $\le$40 vật & $>$40 vật\\
 \begin{itemize}\small
 \item \textbf{Chính} \Bzero{} $-$ \Btwo: $+0.55$ [$-3.00$, $+4.30$]: ảnh một loại thì giữ hay bỏ lượt 2 \emph{chưa khác rõ}
 \item \PF{} $-$ \Btwo: \alert{$+4.69$} [$+2.25$, $+7.50$]
-\item Nguyên nhân: ngưỡng F chọn trên ảnh 3--40 vật $\Rightarrow$ \textbf{đếm thiếu} ở ảnh dày (thiếu 4904 so với 2033)
+\item Kém chủ yếu ở ảnh $>$40 vật, do \textbf{đếm thiếu}: thiếu 4416 so với 1910 (\Btwo)
+\item Có thể do ngưỡng F chọn trên ảnh 3--40 vật; chưa tách được mật độ với khác biệt bộ dữ liệu
 \end{itemize}
 \end{column}
 \end{columns}
 \takeaway{Phạm vi áp dụng: ảnh nhiều loại, ít đến vừa vật. Ảnh một loại, dày: giữ CountGD++ gốc.}
-\note{[0:55] Em chạy thêm một khảo sát khai báo trước trên 300 ảnh FSC-147, mỗi ảnh một loại. Giữ hay bỏ lượt 2 chưa khác nhau rõ, nên kết luận lượt 2 gây hại chỉ đúng cho ảnh nhiều loại. Cấu hình của nhóm kém hơn, chủ yếu ở ảnh trên 40 vật, vì ngưỡng F chọn trên ảnh ít vật đã lọc quá tay. Ở ảnh tối đa 40 vật thì ngang nhau.}
+\note{[0:55] Em chạy thêm một khảo sát khai báo trước trên 300 ảnh FSC-147, mỗi ảnh một loại. Giữ hay bỏ lượt 2 chưa khác nhau rõ, nên kết luận lượt 2 gây hại chỉ đúng cho ảnh nhiều loại. Cấu hình của nhóm kém hơn, chủ yếu ở ảnh trên 40 vật, và lỗi là đếm thiếu. Một giải thích có thể là ngưỡng F chọn trên ảnh ít vật nên lọc quá tay, nhưng khảo sát chưa tách được ảnh hưởng của mật độ với khác biệt giữa hai bộ dữ liệu. Ở ảnh tối đa 40 vật thì hai cách gần nhau.}
 \end{frame}
 
 \begin{frame}{Các hướng thử thêm (chỉ trên dev)}
@@ -798,7 +799,7 @@ Cách & Dev & Test & Đổi\\
 \item 40 ảnh test, chỉ 13 ảnh cặp khác hẳn; phân tích theo nhóm là hậu kiểm
 \item Kết quả chính chỉ trên một nguồn (MUCCA)
 \item 15/120 câu test có ghi chú nhãn (độ nhạy: MAE đổi $<0.06$)
-\item Thời gian CLIP chỉ đo trên FSC-147 (khoảng 1.3 s/câu)
+\item Thời gian CLIP chỉ ghi ở khảo sát FSC-147 (tổng bước chấm 3 nguồn), chưa đo riêng từng cấu hình
 \end{itemize}
 \end{column}
 \end{columns}
@@ -892,7 +893,7 @@ p4\_unseen\_v1 (30 câu) & MAE & MAE có mặt & Đếm TB câu vắng mặt & K
 \begin{itemize}\small
 \item \Bzero: khoảng 0.89 s/câu
 \item \Btwo, P: khoảng 1.5 s/câu (lượt 2 ở khoảng 70\% câu)
-\item CLIP: khoảng 1.3 s/câu (đo trên FSC-147, ảnh nhiều khung)
+\item CLIP: chấm khung của 3 nguồn mất 404 s / 300 câu (FSC-147, ảnh nhiều khung); chưa đo riêng từng cấu hình
 \item \Csix{} bỏ lượt 2: tiết kiệm khoảng 40\% thời gian CountGD++
 \end{itemize}
 \end{column}
