@@ -4,6 +4,10 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 ---
 
 > Nội dung chi tiết và mọi con số: [CAM_NANG_DO_AN_CS331.md](CAM_NANG_DO_AN_CS331.md).
+>
+> **Cập nhật 23/11 (sau):** slide đã làm lại thành **bản 2** (30 slide nội dung, 5 phần, khoảng 24 phút); dàn và phân công mới ở `PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` mục 3. Ghi chú cũ dưới đây là của bản 1.
+>
+> **Cập nhật 23/11:** đã có **slide Beamer** `final/slides/main.pdf` (16 slide chính + 5 dự phòng; lời nói nằm trong `final/slides/notes.pdf`). **Phân công nói đã đổi** so với mục 2 và 6 dưới đây (S9 do Trí nói; S13–S15 do Triệu nói; S14 cũ về bài học C6 được gộp vào S15): xem [PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md](PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md). Mục 2 dưới đây giữ lại làm lịch sử dàn ý.
 > **Giả định cần Trí và Triệu xác nhận tối nay:** thời lượng trình bày **15 phút + 5–10 phút hỏi đáp**, hai người cùng nói. Nếu thầy cho 10 phút thì bỏ các slide đánh dấu *(rút được)*. Nếu cho 20 phút thì thêm slide dự phòng.
 
 # 1. Mạch kể (một câu cho mỗi phần)
@@ -28,7 +32,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 | S6 | Chẩn đoán: lỗi ở đâu | N4: mẫu giả chỉ **1/21** đúng loại; "people" và "cars" trùng **21/21 khung**. Test: B0 dùng chung **64%** khung giữa X và Y; khoảng 1/3 khung là vật loại khác | Ảnh minh họa khung trùng + 2 con số lớn | Triệu | 1:30 |
 | S7 | Cơ chế lượt 2 | Điểm lượt 2 = max(giống chữ, giống mẫu). Biến thể T bỏ max: chỉ gỡ khoảng **1/5** tác hại (dev). Giả thuyết H2: mẫu giả làm lệch cả điểm theo chữ (chưa kiểm) | Công thức max + bảng T nhỏ | Triệu | 1:15 |
 | S8 | Cải tiến P và F | P: CLIP kiểm mẫu trước lượt 2. F: 0.5·CountGD++ + 0.5·CLIP ≥ θ. Không huấn luyện | `fig_pipeline.png` (nửa phải) + bảng ví dụ 4 khung blueberries | Trí | 1:30 |
-| S9 | Giao thức "chọn trước, xem sau" | Dữ liệu người kiểm + khóa hash → luật D9 chốt trước → chọn trên dev → khóa → test **một lần** → người thứ hai tính lại | `fig_protocol.png` | Triệu | 1:15 |
+| S9 | Giao thức "chọn trước, xem sau" | Dữ liệu người kiểm + khóa hash → luật D9 chốt trước → chọn trên dev → khóa → test **một lần** → tính lại độc lập bằng script riêng | `fig_protocol.png` | Triệu | 1:15 |
 | S10 | Kết quả test | B0 7.71 → **P+F 5.82** (−24%, CI [−3.66, −0.44]); B2 9.61 (lượt 2 gây hại, có ý nghĩa) | `fig_results_test.png` | Trí | 1:30 |
 | S11 | Cái gì thật sự giúp | P = B2 ở **108/120** câu, nên P không giúp; B2+F ≈ P+F, nên **F** là thứ có tác dụng. F đổi đếm thừa thành đếm thiếu (+580/−77 → +243/−297) | Bảng 3 dòng + mũi tên | Triệu | 1:15 |
 | S12 | Giúp ở đâu, chưa giúp ở đâu | Cặp dễ nhầm: −3.05 (chắc). Cặp khác hẳn: +0.51 (chưa chắc, 13 ảnh) | `fig_strata_errors.png` | Triệu | 1:00 |
@@ -69,7 +73,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 
 **S8.** "Cải tiến dùng CLIP làm người kiểm thứ hai. CLIP không đếm, chỉ chấm xem một ô ảnh có giống 'a photo of bowls' không. P là kiểm mẫu bằng CLIP trước lượt 2. F là lọc từng khung bằng điểm kết hợp: một nửa điểm CountGD++, một nửa điểm CLIP, giữ khung vượt ngưỡng. Ví dụ ở bảng này: khung rác bị bỏ, nhưng cũng có khung đúng bị bỏ nhầm."
 
-**S9 (Triệu).** "Vì dữ liệu ít mà tham số nhiều, nhóm làm theo kiểu 'chọn trước, xem sau'. Dữ liệu được người kiểm rồi khóa bằng hash. Luật chọn cấu hình được viết ra trước khi chạy dev. Chọn trên dev xong thì khóa lại, rồi chạy test đúng một lần. Kết quả được người thứ hai tính lại và khớp tuyệt đối. Kết quả xấu cũng không chạy lại."
+**S9 (Triệu).** "Vì dữ liệu ít mà tham số nhiều, nhóm làm theo kiểu 'chọn trước, xem sau'. Dữ liệu được người kiểm rồi khóa bằng hash. Luật chọn cấu hình được viết ra trước khi chạy dev. Chọn trên dev xong thì khóa lại, rồi chạy test đúng một lần. Kết quả được tính lại độc lập bằng một script viết riêng và khớp tuyệt đối. Kết quả xấu cũng không chạy lại."
 
 **S10.** "Trên 40 ảnh test, 119 câu hỏi: CountGD++ một lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi câu. Cấu hình đã khóa còn 5.82, giảm 24%. Khoảng tin cậy 95% của mức giảm không chứa 0. Lượt 2 gốc thì tệ hơn một lượt, 9.61, và cũng có ý nghĩa thống kê."
 
@@ -127,7 +131,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
   4. lọc quá tay (people).
 - Lý do không demo trực tiếp: cần GPU + mạng, dễ hỏng lúc trình bày. Nhóm khác demo Gradio. Nếu nhóm muốn làm, xem mục 8.
 
-# 6. Phân công nói và đóng góp (đề xuất, chốt tối nay)
+# 6. Phân công nói và đóng góp (bản cũ 22/11, đã thay bằng `PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` ngày 23/11)
 
 | Phần | Trí | Triệu |
 |---|---|---|
@@ -171,8 +175,8 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 
 | # | Đề xuất | Lợi | Chi phí | Assistant khuyên |
 |---|---|---|---|---|
-| Q1 | Assistant dựng **bản nháp slide `.pptx`** theo dàn mục 2, chèn hình có sẵn | Tiết kiệm 3–4 giờ | Nhóm vẫn phải chỉnh lời, giao diện | **Nên** |
-| Q2 | Assistant chuyển bản chi tiết 22 trang thành **bản nháp báo cáo cuối** (chèn Related Work + khảo sát khi có) | Đỡ việc 23–25/11 | Trí phải rà | **Nên** |
+| Q1 | Assistant dựng **bản nháp slide** theo dàn mục 2, chèn hình có sẵn | Tiết kiệm 3–4 giờ | Nhóm vẫn phải chỉnh lời, giao diện | ✅ 23/11: Trí chọn LaTeX/Beamer, `final/slides/main.pdf` |
+| Q2 | Assistant chuyển bản chi tiết 22 trang thành **bản nháp báo cáo cuối** (chèn Related Work + khảo sát khi có) | Đỡ việc 23–25/11 | Trí phải rà | ✅ 23/11: `final/report/main.pdf` (LaTeX, đã gộp Related Work, FSC-147, thử nghiệm dev) |
 | Q3 | Demo Gradio trực tiếp (ảnh X/Y, so B0 và P+F) | Gây ấn tượng, nhóm khác có | Cần GPU và mạng lúc trình bày, rủi ro hỏng; khoảng nửa ngày làm | Không, trừ khi thầy yêu cầu demo trực tiếp |
 | Q4 | Kiểm giả thuyết H2 (so điểm token chữ lượt 1 và lượt 2) | Trả lời trọn RQ1 | Cần raw `.npz` trên Kaggle + chạy; trái tinh thần "không mở rộng thử nghiệm" | Không, để hướng phát triển |
 | Q5 | Thêm slide 1 phút "nhóm dùng AI hỗ trợ ra sao" | Minh bạch, tránh bị hỏi bất ngờ | Không đáng kể | Tùy quy định của thầy |

@@ -169,8 +169,8 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style>body{max-width:980px;margin:auto;padding:1.5em;font-family:"Segoe UI",Arial,sans-serif;line-height:1.55;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:.93em}th,td{border:1px solid #bbb;padding:.35em .6em;vertical-align:top}th{background:#eef2f7}img{max-width:100%}td img{max-width:420px}blockquote{border-left:4px solid #5b8def;margin:1em 0;padding:.3em 1em;background:#f4f7fd}code{background:#f2f2f2;padding:0 .2em}h1{border-bottom:2px solid #5b8def;padding-bottom:.2em;margin-top:1.6em}#TOC{background:#fafafa;border:1px solid #ddd;padding:.5em 1.5em}</style>
 </head>
 <body>
 <header id="title-block-header">
@@ -179,36 +179,22 @@ vertical-align: middle;
 hành trang · assistant soạn 22/11/2026 cho buổi họp tối của Trí và
 Triệu</p>
 </header>
-<nav id="TOC" role="doc-toc">
-<ul>
-<li><a href="#mạch-kể-một-câu-cho-mỗi-phần" id="toc-mạch-kể-một-câu-cho-mỗi-phần">1. Mạch kể (một câu cho mỗi
-phần)</a></li>
-<li><a href="#dàn-slide-15-phút" id="toc-dàn-slide-15-phút">2. Dàn slide
-(15 phút)</a></li>
-<li><a href="#kịch-bản-nói-gợi-ý-nói-theo-ý-mình-không-đọc" id="toc-kịch-bản-nói-gợi-ý-nói-theo-ý-mình-không-đọc">3. Kịch bản nói
-(gợi ý, nói theo ý mình, không đọc)</a></li>
-<li><a href="#câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời" id="toc-câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời">4. Câu hỏi phản
-biện có thể gặp (chia người trả lời)</a></li>
-<li><a href="#demo-tĩnh-khuyên-dùng-thay-demo-trực-tiếp" id="toc-demo-tĩnh-khuyên-dùng-thay-demo-trực-tiếp">5. Demo tĩnh (khuyên
-dùng thay demo trực tiếp)</a></li>
-<li><a href="#phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay" id="toc-phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay">6. Phân công nói
-và đóng góp (đề xuất, chốt tối nay)</a></li>
-<li><a href="#hành-trang-ngày-báo-cáo-checklist" id="toc-hành-trang-ngày-báo-cáo-checklist">7. Hành trang ngày báo cáo
-(checklist)</a></li>
-<li><a href="#lịch-từ-nay-đến-0212" id="toc-lịch-từ-nay-đến-0212">8.
-Lịch từ nay đến 02/12</a></li>
-<li><a href="#chương-trình-buổi-họp-tối-2211-khoảng-6075-phút" id="toc-chương-trình-buổi-họp-tối-2211-khoảng-6075-phút">9. Chương trình
-buổi họp tối 22/11 (khoảng 60–75 phút)</a></li>
-<li><a href="#việc-chờ-trí-quyết-assistant-đề-xuất-trí-chưa-giao" id="toc-việc-chờ-trí-quyết-assistant-đề-xuất-trí-chưa-giao">10. Việc chờ
-Trí quyết (assistant đề xuất, Trí chưa giao)</a></li>
-</ul>
-</nav>
 <blockquote>
-<p>Nội dung chi tiết và mọi con số: <a href="CAM_NANG_DO_AN_CS331.md">CAM_NANG_DO_AN_CS331.md</a>. <strong>Giả
-định cần Trí và Triệu xác nhận tối nay:</strong> thời lượng trình bày
-<strong>15 phút + 5–10 phút hỏi đáp</strong>, hai người cùng nói. Nếu
-thầy cho 10 phút thì bỏ các slide đánh dấu <em>(rút được)</em>. Nếu cho
-20 phút thì thêm slide dự phòng.</p>
+<p>Nội dung chi tiết và mọi con số: <a href="CAM_NANG_DO_AN_CS331.md">CAM_NANG_DO_AN_CS331.md</a>.</p>
+<p><strong>Cập nhật 23/11 (sau):</strong> slide đã làm lại thành
+<strong>bản 2</strong> (30 slide nội dung, 5 phần, khoảng 24 phút); dàn
+và phân công mới ở <code>PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md</code> mục
+3. Ghi chú cũ dưới đây là của bản 1.</p>
+<p><strong>Cập nhật 23/11:</strong> đã có <strong>slide Beamer</strong>
+<code>final/slides/main.pdf</code> (16 slide chính + 5 dự phòng; lời nói
+nằm trong <code>final/slides/notes.pdf</code>). <strong>Phân công nói đã
+đổi</strong> so với mục 2 và 6 dưới đây (S9 do Trí nói; S13–S15 do Triệu
+nói; S14 cũ về bài học C6 được gộp vào S15): xem <a href="PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md">PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md</a>.
+Mục 2 dưới đây giữ lại làm lịch sử dàn ý. <strong>Giả định cần Trí và
+Triệu xác nhận tối nay:</strong> thời lượng trình bày <strong>15 phút +
+5–10 phút hỏi đáp</strong>, hai người cùng nói. Nếu thầy cho 10 phút thì
+bỏ các slide đánh dấu <em>(rút được)</em>. Nếu cho 20 phút thì thêm
+slide dự phòng.</p>
 </blockquote>
 <h1 id="mạch-kể-một-câu-cho-mỗi-phần">1. Mạch kể (một câu cho mỗi
 phần)</h1>
@@ -332,7 +318,8 @@ blueberries</td>
 <td>S9</td>
 <td>Giao thức “chọn trước, xem sau”</td>
 <td>Dữ liệu người kiểm + khóa hash → luật D9 chốt trước → chọn trên dev
-→ khóa → test <strong>một lần</strong> → người thứ hai tính lại</td>
+→ khóa → test <strong>một lần</strong> → tính lại độc lập bằng script
+riêng</td>
 <td><code>fig_protocol.png</code></td>
 <td>Triệu</td>
 <td>1:15</td>
@@ -378,7 +365,9 @@ tay)</td>
 <td>S14</td>
 <td><em>(rút được)</em> Bài học chọn mô hình + khảo sát FSC-147</td>
 <td>C6 hạng 7/15 họ trên dev nhưng tốt nhất trên test; không đổi kết quả
-chính sau khi xem test. Khảo sát FSC-147: <strong>số chờ</strong></td>
+chính sau khi xem test. Khảo sát FSC-147 (300 ảnh một loại): B0 − B2
++0,55 [−3,00; +4,30], chưa khác rõ; P+F kém hơn B2 (+4,69 [+2,25;
++7,50]), do đếm thiếu ở ảnh &gt; 40 vật</td>
 <td>Bảng dev → test</td>
 <td>Triệu</td>
 <td>1:00</td>
@@ -386,11 +375,14 @@ chính sau khi xem test. Khảo sát FSC-147: <strong>số chờ</strong></td>
 <tr>
 <td>S15</td>
 <td>Hạn chế và hướng phát triển</td>
-<td>4 hạn chế chính; 3 hướng: C6 trên tập mới, CLIP tương phản giữa các
-loại, kiểm H2</td>
-<td>2 cột</td>
+<td>4 hạn chế chính (thêm: X/Y chưa giải xong, sai khoảng nửa số vật;
+phạm vi: ảnh nhiều loại, ít đến vừa vật). <strong>Thử nghiệm sơ bộ trên
+dev:</strong> gán khung theo CLIP, khung dùng chung X/Y 62% → 3% nhưng
+MAE có mặt 5,05 → 6,92 (bỏ nhầm 30% vật đúng). Hướng tiếp: chỉ phân xử
+khung bị tranh chấp; ngưỡng theo mật độ; kiểm H2</td>
+<td>2 cột + bảng nhỏ 2×2 (dùng chung / MAE có mặt)</td>
 <td>Trí</td>
-<td>0:45</td>
+<td>1:00</td>
 </tr>
 <tr>
 <td>S16</td>
@@ -461,9 +453,9 @@ nhầm.”</p>
 <p><strong>S9 (Triệu).</strong> “Vì dữ liệu ít mà tham số nhiều, nhóm
 làm theo kiểu ‘chọn trước, xem sau’. Dữ liệu được người kiểm rồi khóa
 bằng hash. Luật chọn cấu hình được viết ra trước khi chạy dev. Chọn trên
-dev xong thì khóa lại, rồi chạy test đúng một lần. Kết quả được người
-thứ hai tính lại và khớp tuyệt đối. Kết quả xấu cũng không chạy
-lại.”</p>
+dev xong thì khóa lại, rồi chạy test đúng một lần. Kết quả được tính lại
+độc lập bằng một script viết riêng và khớp tuyệt đối. Kết quả xấu cũng
+không chạy lại.”</p>
 <p><strong>S10.</strong> “Trên 40 ảnh test, 119 câu hỏi: CountGD++ một
 lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi câu. Cấu hình đã khóa
 còn 5.82, giảm 24%. Khoảng tin cậy 95% của mức giảm không chứa 0. Lượt 2
@@ -485,16 +477,25 @@ biệt được dê và chó ở ô ảnh nhỏ. People: F bỏ cả người th
 <p><strong>S14 (Triệu).</strong> “Một bài học: trên dev, cách đơn giản
 C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong
 khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm
-ghi C6 là giả thuyết cho lần kiểm sau.” (Thêm một câu về khảo sát
-FSC-147 khi có số.)</p>
-<p><strong>S15.</strong> “Hạn chế: mẫu nhỏ, một nguồn dữ liệu, ngưỡng
-toàn cục, CLIP yếu với vật gần nghĩa. Hướng tiếp theo: kiểm C6 trên tập
-mới; chấm mỗi khung với mọi tên loại trong ảnh rồi gán cho loại giống
-nhất; kiểm giả thuyết H2.”</p>
+ghi C6 là giả thuyết cho lần kiểm sau.” “Nhóm cũng kiểm thêm 300 ảnh
+FSC-147, mỗi ảnh một loại. Ở đó giữ hay bỏ lượt 2 chưa khác nhau rõ. Còn
+cấu hình của nhóm thì kém hơn, vì bộ lọc chọn trên ảnh 3–40 vật đã lọc
+quá tay ở ảnh dày. Nên nhóm ghi rõ: cải tiến dành cho ảnh nhiều loại, ít
+đến vừa vật.”</p>
+<p><strong>S15.</strong> “Hạn chế: mẫu nhỏ, ngưỡng toàn cục, CLIP yếu
+với vật gần nghĩa. Bài X/Y cũng chưa giải xong: sau cải tiến, sai số vẫn
+khoảng nửa số vật. Nhóm đã thử sơ bộ trên dev một hướng nhắm thẳng vào
+chỗ này: gán mỗi khung cho loại mà CLIP thấy giống nhất. Tỉ lệ khung
+dùng chung giữa X và Y giảm từ khoảng 60% xuống 3%, nhưng CLIP trên ô
+cắt nhỏ bỏ nhầm khoảng 30% vật đúng, nên số đếm chưa tốt hơn. Bước tiếp
+là chỉ phân xử những khung bị hai câu hỏi tranh nhau, và dùng ngưỡng
+theo mật độ vật.”</p>
 <p><strong>S16.</strong> “Tóm lại: CountGD++ đếm lẫn loại khi ảnh có
 nhiều loại, và lượt 2 làm nặng thêm. Một bộ lọc dùng CLIP, không cần
 huấn luyện, giảm 24% sai số trên tập test khóa trước. Cải thiện tập
-trung ở cặp dễ nhầm. Em cảm ơn thầy và các bạn đã lắng nghe.”</p>
+trung ở cặp dễ nhầm, và dành cho ảnh nhiều loại, ít đến vừa vật; trên
+ảnh một loại, ảnh dày thì nên giữ CountGD++ gốc. Em cảm ơn thầy và các
+bạn đã lắng nghe.”</p>
 <h1 id="câu-hỏi-phản-biện-có-thể-gặp-chia-người-trả-lời">4. Câu hỏi phản
 biện có thể gặp (chia người trả lời)</h1>
 <table>
@@ -591,8 +592,11 @@ chú; độ nhạy dùng số người đếm: MAE đổi dưới 0.06</td>
 <tr>
 <td>10</td>
 <td>Có làm hỏng ảnh một loại (FSC-147) không?</td>
-<td>Trả lời bằng số khảo sát 300 ảnh nếu có. Chưa có thì nói: “chưa kiểm
-xong, kết luận chỉ áp dụng cho ảnh nhiều loại”</td>
+<td>Có, ở ảnh dày. Trên 300 ảnh FSC-147: P+F MAE 18,01 so với B2 13,32
+(kém hơn, CI [+2,25; +7,50]), chủ yếu ở ảnh &gt; 40 vật do bộ lọc gây
+đếm thiếu. Ảnh ≤ 40 vật thì ngang nhau (3,50 so với 3,44). Bỏ lượt 2 (B0
+− B2) chưa khác rõ. Không so với 8,34 / 10,29 vì khác điều kiện (không
+cắt ảnh, không mẫu GPT-5)</td>
 <td>Triệu</td>
 <td>D7</td>
 </tr>
@@ -616,15 +620,18 @@ vật thật khác; C6 FPR 0.10</td>
 <td>13</td>
 <td>Cặp khác hẳn chưa cải thiện, vậy X/Y giải được chưa?</td>
 <td>Chưa hoàn toàn. Đó là phát hiện trung thực; B0 vốn đã tốt ở nhóm
-này; chỉ 13 ảnh; hướng “CLIP tương phản” nhắm thẳng vào đó</td>
+này; chỉ 13 ảnh. Hướng “CLIP tương phản” đã thử sơ bộ trên dev: khung
+dùng chung 62% → 3% nhưng MAE có mặt chưa tốt hơn (5,05 → 6,92), vì CLIP
+bỏ nhầm 30% vật đúng</td>
 <td>Trí</td>
 <td>—</td>
 </tr>
 <tr>
 <td>14</td>
 <td>Thời gian chạy?</td>
-<td>B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP chưa đo;
-C6 tiết kiệm khoảng 40%</td>
+<td>B0 khoảng 0.89 s/câu, B2/P khoảng 1.5 s/câu trên T4; CLIP khoảng 1,3
+s/câu (đo ở khảo sát FSC-147, ảnh nhiều khung hơn MUCCA); C6 tiết kiệm
+khoảng 40% thời gian CountGD++</td>
 <td>Triệu</td>
 <td>D9</td>
 </tr>
@@ -660,6 +667,26 @@ Mọi số liệu được tính lại độc lập; các quyết định do nh�
 <td>Trí</td>
 <td>—</td>
 </tr>
+<tr>
+<td>19</td>
+<td>DAVE (CVPR 2024) đã dùng CLIP để lọc, nhóm em mới ở đâu?</td>
+<td>DAVE quyết định theo cụm khung và huấn luyện bộ phát hiện riêng. F
+quyết định cho từng khung, gắn vào CountGD++ có sẵn, không huấn luyện,
+kết hợp điểm CLIP với điểm CountGD++. Đóng góp chính của nhóm là chẩn
+đoán lỗi lượt 2 trên ảnh nhiều loại và kiểm chứng bằng giao thức khóa
+trước</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Thử nghiệm gán khung theo CLIP chỉ trên dev, có tin được không?</td>
+<td>Chỉ là sơ bộ. Khai báo trước, không có tham số nào phải chỉnh, không
+chạy trên test, không đổi kết quả chính. Dev đã dùng để chọn F nên số
+lạc quan; muốn kết luận cần một tập mới</td>
+<td>Triệu</td>
+<td>—</td>
+</tr>
 </tbody>
 </table>
 <p><strong>Mẹo trả lời:</strong></p>
@@ -685,8 +712,9 @@ dùng thay demo trực tiếp)</h1>
 <li>Lý do không demo trực tiếp: cần GPU + mạng, dễ hỏng lúc trình bày.
 Nhóm khác demo Gradio. Nếu nhóm muốn làm, xem mục 8.</li>
 </ul>
-<h1 id="phân-công-nói-và-đóng-góp-đề-xuất-chốt-tối-nay">6. Phân công nói
-và đóng góp (đề xuất, chốt tối nay)</h1>
+<h1 id="phân-công-nói-và-đóng-góp-bản-cũ-2211-đã-thay-bằng-phan_cong_tri_trieu_bao_cao_slide.md-ngày-2311">6.
+Phân công nói và đóng góp (bản cũ 22/11, đã thay bằng
+<code>PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md</code> ngày 23/11)</h1>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -835,11 +863,12 @@ Trí quyết (assistant đề xuất, Trí chưa giao)</h1>
 <tbody>
 <tr>
 <td>Q1</td>
-<td>Assistant dựng <strong>bản nháp slide <code>.pptx</code></strong>
-theo dàn mục 2, chèn hình có sẵn</td>
+<td>Assistant dựng <strong>bản nháp slide</strong> theo dàn mục 2, chèn
+hình có sẵn</td>
 <td>Tiết kiệm 3–4 giờ</td>
 <td>Nhóm vẫn phải chỉnh lời, giao diện</td>
-<td><strong>Nên</strong></td>
+<td>✅ 23/11: Trí chọn LaTeX/Beamer,
+<code>final/slides/main.pdf</code></td>
 </tr>
 <tr>
 <td>Q2</td>
@@ -847,7 +876,8 @@ theo dàn mục 2, chèn hình có sẵn</td>
 cáo cuối</strong> (chèn Related Work + khảo sát khi có)</td>
 <td>Đỡ việc 23–25/11</td>
 <td>Trí phải rà</td>
-<td><strong>Nên</strong></td>
+<td>✅ 23/11: <code>final/report/main.pdf</code> (LaTeX, đã gộp Related
+Work, FSC-147, thử nghiệm dev)</td>
 </tr>
 <tr>
 <td>Q3</td>

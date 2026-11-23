@@ -467,16 +467,18 @@ Repo: `github.com/minhtridaoo/zero-shot-counting`.
 | Điểm yếu + hướng giải quyết | `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md` |
 | Related Work (nháp) | `reports/RELATED_WORK_TRIEU_20261122.md` |
 | So sánh nhóm khác | `workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md` |
+| Báo cáo cuối + slide (LaTeX) | `final/report/main.tex`, `final/slides/main.tex`, `final/refs.bib` |
+| Phân công Trí – Triệu | `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` |
 | Trạng thái + nhật ký | `BAT_DAU_SESSION_MOI.md`, `WORKLOG.md` |
 | Việc Triệu hôm nay | `HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md` |
 
-# 14. Tình trạng 6 sản phẩm phải nộp (22/11)
+# 14. Tình trạng 6 sản phẩm phải nộp (23/11)
 
 | # | Sản phẩm | Trạng thái |
 |---|---|---|
-| H1 | Báo cáo cuối | Có khung chi tiết (đã thêm mục 7.8 FSC-147 và 7.9 thử nghiệm dev ngày 22/11); Related Work có nháp (`reports/RELATED_WORK_TRIEU_20261122.md`); cần chuyển sang bản nộp |
+| H1 | Báo cáo cuối | **Nháp LaTeX đầy đủ 23/11:** `final/report/main.pdf` (21 trang, gộp Related Work, FSC-147, thử nghiệm dev). Còn: điền tên/MSSV/giảng viên, hai bạn rà theo phân công, chốt khai báo AI |
 | H2 | Bảng kết quả test | ✅ Xong 11/11 |
-| H3 | Slide + demo | Có kế hoạch ([KE_HOACH_SLIDE_THUYET_TRINH.md](KE_HOACH_SLIDE_THUYET_TRINH.md)) và 8 hình; **chưa có file slide** |
+| H3 | Slide + demo | **Slide Beamer 23/11:** `final/slides/main.pdf` (bản 2: 30 slide nội dung + 4 dự phòng), kịch bản nói `final/slides/notes.pdf`; demo tĩnh bằng 4 hình ví dụ. Phân công nói: [PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md](PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md) |
 | H4 | Repo tái lập | Phần lớn có |
 | H5 | Pilot đóng | ✅ 11/11 |
 | H6 | Kết luận trung thực | ✅ |

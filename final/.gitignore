@@ -1,0 +1,16 @@
+# LaTeX build files (keep main.pdf / notes.pdf)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.run.xml
+*.snm
+*.toc
+*.vrb
+*.xdv
+preview/

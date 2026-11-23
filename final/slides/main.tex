@@ -1,0 +1,931 @@
+% Slide thuyết trình CS331 (bản 2, 23/11/2026) — biên dịch: latexmk -xelatex main.tex
+% Kịch bản nói: latexmk -xelatex notes.tex (cùng nội dung, in phần \note của từng slide)
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme[progressbar=frametitle,numbering=none,sectionpage=progressbar]{metropolis}
+\ifdefined\withnotes
+  \setbeameroption{show only notes}
+  \setbeamerfont{note page}{size=\large}
+\fi
+
+\usepackage{fontspec}
+\usepackage[vietnamese]{babel}
+\setsansfont{TeX Gyre Heros}
+\setmainfont{TeX Gyre Heros}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{booktabs,array,tabularx,multirow}
+\usepackage{pifont}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+\graphicspath{{../../reports/figures/}{../shared/figures/}}
+\input{../shared/macros.tex}
+
+% ---------------------------------------------------------------- look
+\setbeamercolor{frametitle}{bg=accent!92!black,fg=white}
+\setbeamercolor{progress bar}{fg=good,bg=accent!25}
+\setbeamercolor{alerted text}{fg=bad}
+\setbeamercolor{example text}{fg=good}
+\setbeamercolor{normal text}{fg=black!88,bg=white}
+\setbeamercolor{block title}{bg=accent!12,fg=accent!70!black}
+\setbeamercolor{block body}{bg=accent!4}
+\setbeamercolor{block title alerted}{bg=bad!12,fg=bad!80!black}
+\setbeamercolor{block body alerted}{bg=bad!4}
+\setbeamercolor{block title example}{bg=good!12,fg=good!70!black}
+\setbeamercolor{block body example}{bg=good!4}
+\metroset{block=fill}
+\setbeamerfont{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamerfont{block title}{size=\small,series=\bfseries}
+\setbeamertemplate{itemize items}{\textcolor{accent}{\small$\blacktriangleright$}}
+\setlength{\leftmargini}{1.2em}
+
+% Speaker label + source line + page number in the footline
+\gdef\currentspeaker{}\gdef\currentsource{}
+\newcommand{\speaker}[1]{\gdef\currentspeaker{#1}}
+\newcommand{\source}[1]{\gdef\currentsource{#1}}
+\AtBeginEnvironment{frame}{\gdef\currentspeaker{}\gdef\currentsource{}}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=4.2mm,dp=1.8mm,leftskip=3mm,rightskip=3mm]{footline}%
+    \ifx\currentspeaker\empty\else
+      {\tiny\bfseries\colorbox{softgray}{\textcolor{white}{Trình bày: \currentspeaker}}}\hspace{2mm}\fi
+    {\tiny\color{softgray}\currentsource}%
+    \hfill{\tiny\color{softgray}\insertframenumber/\inserttotalframenumber}%
+  \end{beamercolorbox}}
+
+\tikzset{
+  sb/.style={draw=black!55,rounded corners=2pt,fill=#1,align=center,minimum height=10mm,inner sep=3pt,font=\sffamily\scriptsize},
+  sa/.style={-{Stealth[length=1.8mm]},thick,black!70}}
+
+\newcommand{\bignum}[1]{{\Large\bfseries\color{accent}#1}}
+\newcommand{\takeaway}[1]{\par\vspace{1.5mm}{\centering\colorbox{accent!10}{\parbox{0.94\linewidth}{\centering\small\bfseries\color{accent!75!black}#1}}\par}}
+
+\title{Đếm đúng loại vật trong ảnh nhiều loại:\\chẩn đoán và giảm lỗi ``đếm nhầm loại'' của CountGD++}
+\subtitle{Diagnosing and reducing class confusion of CountGD++ in multi-class images}
+\author{Đào Xuân Minh Trí \quad \todo{MSSV}\qquad \todo{họ tên} Triệu \quad \todo{MSSV}}
+\institute{\todo{Trường / Khoa} \quad·\quad Môn CS331 \todo{tên môn} \quad·\quad GVHD: \todo{tên giảng viên}}
+\date{\todo{ngày báo cáo}}
+
+\begin{document}
+
+% ================================================================ Title
+\begin{frame}
+\titlepage
+\speaker{Trí}
+\note{[0:20] Chào thầy và các bạn. Nhóm em gồm Trí và Triệu. Đề tài: kiểm tra và cải thiện việc mô hình đếm theo chữ CountGD++ có đếm đúng loại vật được hỏi hay không khi trong ảnh có nhiều loại.}
+\end{frame}
+
+\begin{frame}{Nội dung}
+\speaker{Trí}
+\setbeamertemplate{section in toc}[sections numbered]
+\tableofcontents
+\note{[0:15] Bài trình bày gồm năm phần: lý do, bài toán, phương pháp, thực nghiệm, và giới hạn, kết luận.}
+\end{frame}
+
+% ================================================================ 1
+\section{Lý do thực hiện đề tài}
+
+\begin{frame}{Bối cảnh: đếm vật chỉ bằng tên lớp}
+\speaker{Trí}
+\source{Ranjan và cs., CVPR 2021; Amini-Naieni \& Zisserman, CVPR 2026}
+\begin{columns}[T]
+\begin{column}{0.54\textwidth}
+\begin{itemize}
+\item \textbf{Đếm không phân biệt lớp} (class-agnostic): loại vật được chỉ định lúc dùng, không huấn luyện riêng từng lớp
+\item Chỉ định bằng khung mẫu, hoặc chỉ bằng \textbf{câu chữ} (zero-shot, text-only): thực tế người dùng chỉ có tên lớp
+\item \textbf{CountGD++} (CVPR 2026): mô hình đếm theo chữ mạnh, có cơ chế tự chọn \emph{mẫu giả} lúc suy luận
+\end{itemize}
+\end{column}
+\begin{column}{0.42\textwidth}
+\begin{block}{Kiểm tra môi trường (FSCD-147 test, 1.190 ảnh)}
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& MAE $\downarrow$ & RMSE $\downarrow$\\
+\midrule
+Bài báo (Ours t+p+s) & 8.39 & 27.03\\
+Nhóm chạy lại & \textbf{8.34} & \textbf{24.64}\\
+\bottomrule
+\end{tabular}\\[1mm]
+{\scriptsize Cùng checkpoint công khai $\Rightarrow$ môi trường đúng; không phải cải tiến.}
+\end{block}
+\end{column}
+\end{columns}
+\takeaway{Câu hỏi: chỉ với tên lớp, mô hình có đếm \emph{đúng loại được hỏi} không?}
+\note{[0:50] Đếm vật có nhiều ứng dụng. Hướng hiện đại cho phép chỉ định loại vật ngay lúc dùng, kể cả chỉ bằng tên lớp. Nhóm chọn CountGD++, công bố CVPR 2026. Trước hết nhóm chạy lại benchmark của bài báo, được MAE 8.34 so với 8.39, nên môi trường chạy đúng.}
+\end{frame}
+
+\begin{frame}{Khoảng trống: benchmark quen thuộc không kiểm tra ``đếm đúng loại''}
+\speaker{Trí}
+\source{Ciampi và cs., WACV 2025 (PrACo); Pacini và cs., 2026 (MUCCA)}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{alertblock}{FSC-147: mỗi ảnh một loại nổi bật}
+\begin{itemize}\small
+\item Lớp được hỏi luôn có mặt
+\item ``Đếm thứ nổi bật nhất'' vẫn đạt điểm cao
+\item PrACo: mô hình mạnh vẫn đếm khi hỏi lớp \emph{không có} trong ảnh
+\end{itemize}
+\end{alertblock}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{exampleblock}{MUCCA (2026): ảnh thật, nhiều loại}
+\begin{itemize}\small
+\item 200 ảnh, 45 lớp, nhãn \textbf{điểm theo từng lớp} trong cùng ảnh
+\item Đo được: hỏi X có đếm nhầm Y không; hỏi lớp vắng mặt có trả 0 không
+\end{itemize}
+\end{exampleblock}
+\end{column}
+\end{columns}
+\vspace{2mm}
+\begin{block}{Bài toán X/Y (theo câu hỏi của giảng viên)}
+\small Cùng một ảnh có X và Y: hỏi X phải đếm X; đổi sang Y phải đếm Y và \textbf{không đếm lại X}; hỏi Z không có thì phải trả \textbf{0}.
+\end{block}
+\note{[0:50] Benchmark chuẩn FSC-147 gần như ảnh nào cũng một loại, nên không kiểm được việc đếm đúng loại. PrACo đã chỉ ra mô hình vẫn đếm khi hỏi lớp không có. MUCCA là bộ ảnh thật năm 2026 có nhãn nhiều lớp trong cùng ảnh, nên kiểm được đúng bài X/Y.}
+\end{frame}
+
+\begin{frame}{Công trình liên quan và vị trí của đồ án}
+\speaker{Trí}
+\source{Huang và cs., CVPR 2024; Pelhan và cs., CVPR 2024; Zhu và cs., ECCV 2024}
+\small
+\begin{tabularx}{\textwidth}{@{}l X l l@{}}
+\toprule
+Công trình & Ý chính & Huấn luyện? & Liên hệ\\
+\midrule
+CountGD / CountGD++ & Đếm theo chữ trên nền Grounding DINO; mẫu giả hai lượt & có & mô hình gốc\\
+PseCo & SAM đề xuất, bộ phân loại CLIP chưng cất & có & \\
+VA-Count & Tìm mẫu tốt, học tương phản loại mẫu xấu & có & gần bước \textbf{P}\\
+DAVE & Phát hiện rồi kiểm; bản theo chữ dùng CLIP loại \emph{cụm} khung & có & gần bước \textbf{F}\\
+PrACo, MUCCA & Đo độ bám câu chữ (lớp vắng mặt, vật gây nhiễu) & không & cách đánh giá\\
+\midrule
+\textbf{Đồ án} & Chẩn đoán lỗi trên ảnh nhiều loại; kiểm \textbf{từng khung} bằng CLIP; giao thức khóa trước & \textbf{không} & \\
+\bottomrule
+\end{tabularx}
+\takeaway{Đồ án nằm giữa ``huấn luyện mô hình mới'' và ``chỉ đánh giá'': sửa ở bước suy luận của mô hình có sẵn.}
+\note{[0:45] Các công trình tự tạo mẫu như PseCo, VA-Count, DAVE đều huấn luyện thêm. Gần nhất với bước lọc F là bản theo chữ của DAVE, nhưng DAVE loại theo cụm và có huấn luyện; F kiểm từng khung, không huấn luyện. PrACo và MUCCA chỉ đánh giá. Đồ án nằm giữa: chẩn đoán và sửa ở bước suy luận.}
+\end{frame}
+
+% ================================================================ 2
+\section{Mô tả bài toán}
+
+\begin{frame}{Định nghĩa: input, output và ba yêu cầu}
+\speaker{Trí}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\textbf{Input:} ảnh $I$ và tên lớp $t$ (chỉ chữ, không khung mẫu)\\[1mm]
+\textbf{Output:} số đếm $\hat n(I,t)\in\mathbb{N}$ và tập khung $B(I,t)$\\[1mm]
+\textbf{Nhãn:} $\mathcal{C}(I)$ là tập lớp có trong ảnh, $n_c(I)$ là số vật lớp $c$\\[2mm]
+\textbf{Mỗi ảnh đánh giá có 3 câu hỏi:}
+\begin{itemize}\small
+\item 2 câu \textbf{có mặt}: X, Y $\in\mathcal{C}(I)$
+\item 1 câu \textbf{vắng mặt} Z ``khó'' (cùng nhóm nghĩa), người kiểm xác nhận không có
+\end{itemize}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{block}{Ba yêu cầu}
+\small
+\textbf{(Y1)} $t\in\mathcal{C}(I)\Rightarrow \hat n(I,t)\approx n_t(I)$\\[1.5mm]
+\textbf{(Y2)} $t\notin\mathcal{C}(I)\Rightarrow \hat n(I,t)=0$\\[1.5mm]
+\textbf{(Y3)} $X\neq Y \Rightarrow B(I,X)$ và $B(I,Y)$ \textbf{khác nhau}: mỗi khung thuộc đúng loại được hỏi
+\end{block}
+\end{column}
+\end{columns}
+\note{[0:50] Input là ảnh và tên lớp, không có khung mẫu. Output là số đếm và các khung. Mỗi ảnh có hai câu có mặt X, Y và một câu vắng mặt Z được chọn khó, cùng nhóm nghĩa. Ba yêu cầu: đếm đúng khi có mặt, trả 0 khi vắng mặt, và đổi câu hỏi thì tập khung phải đổi.}
+\end{frame}
+
+\begin{frame}{Minh họa: ba câu hỏi khác nhau, gần như cùng một tập khung}
+\speaker{Trí}
+\source{Ảnh MUCCA mcac\_12 (test). Khung: CountGD++ hai lượt (\Btwo), dự đoán đã lưu}
+\centering
+\begin{tabular}{@{}c@{\hspace{2mm}}c@{\hspace{2mm}}c@{}}
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_1.png} &
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_2.png} &
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_3.png}\\
+\small X = ``plates'': đếm \alert{36} (đáp án 16) &
+\small Y = ``bowls'': đếm \alert{36} (đáp án 3) &
+\small Z = ``spoons'': đếm \alert{34} (đáp án 0)
+\end{tabular}
+\takeaway{36/36 khung của câu ``plates'' cũng có trong câu ``bowls'' (IoU $\ge 0.5$): mô hình gần như không đổi khung theo câu hỏi.}
+\note{[0:50] Đây là ví dụ thật trên tập test. Một ảnh có đĩa, bát, cốc, ly. Hỏi plates, đáp án 16; hỏi bowls, đáp án 3; hỏi spoons, không có, đáp án 0. CountGD++ trả 36, 36 và 34, và cả 36 khung của câu plates đều xuất hiện lại ở câu bowls. Đây chính là lỗi X/Y.}
+\end{frame}
+
+\begin{frame}{Câu hỏi nghiên cứu và đóng góp}
+\speaker{Trí}
+\begin{columns}[T]
+\begin{column}{0.32\textwidth}
+\begin{block}{RQ1 · Chẩn đoán}
+\small \cgdpp{} sai ở đâu trên ảnh nhiều loại? Lỗi đến từ bước nào?
+\end{block}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{block}{RQ2 · Cải tiến}
+\small Giảm được lỗi mà \textbf{không huấn luyện lại} không?
+\end{block}
+\end{column}
+\begin{column}{0.32\textwidth}
+\begin{block}{RQ3 · Kiểm chứng}
+\small Cải thiện có giữ trên ảnh \textbf{chưa từng dùng}, khi cấu hình khóa trước?
+\end{block}
+\end{column}
+\end{columns}
+\vspace{3mm}
+\textbf{Đóng góp}
+\begin{enumerate}\small
+\item Chẩn đoán định lượng: khung dùng chung X/Y, mẫu giả sai loại, đóng góp của cách chấm $\max$ (biến thể T)
+\item Hai bước không huấn luyện dùng CLIP: kiểm mẫu giả (\Pv) và lọc khung (\Fv), có đối chứng tách bạch
+\item Giao thức ``chọn trước, xem sau'': dữ liệu khóa, luật chọn chốt trước, test chạy một lần
+\item Báo cáo cả kết quả âm và phạm vi áp dụng
+\end{enumerate}
+\note{[0:40] Ba câu hỏi: mô hình sai ở đâu, sửa được mà không huấn luyện lại không, và mức sửa có còn trên ảnh chưa dùng không. Bốn đóng góp như trên slide. Chuyển: em mời thầy xem cách CountGD++ đếm.}
+\end{frame}
+
+% ================================================================ 3
+\section{Phương pháp}
+
+\begin{frame}{Baseline CountGD++: suy luận một lượt (\Bzero) và hai lượt (\Btwo)}
+\speaker{Trí}
+\source{Amini-Naieni \& Zisserman, CVPR 2026; mã \texttt{CountGDPlusPlus/process\_folder.py}}
+\begin{center}
+\begin{tikzpicture}[node distance=5mm]
+\node[sb=boxgray] (i) {Ảnh +\\``bowls .''};
+\node[sb=boxblue,right=of i] (l1) {\textbf{Lượt 1}\\900 khung đề xuất};
+\node[sb=boxgray,right=of l1] (t) {Giữ khung\\$s(b)>0.23$};
+\node[sb=boxorange,right=of t] (m) {Top-3 khung\\= \textbf{mẫu giả}};
+\node[sb=boxblue,right=of m] (l2) {\textbf{Lượt 2}\\chữ + mẫu giả};
+\node[sb=boxgray,right=of l2] (o) {Số đếm =\\số khung $>0.23$};
+\draw[sa] (i)--(l1); \draw[sa] (l1)--(t); \draw[sa] (t)--(m); \draw[sa] (m)--(l2); \draw[sa] (l2)--(o);
+\node[font=\scriptsize\bfseries,text=accent,below=1mm of t] {\Bzero{} dừng ở đây};
+\end{tikzpicture}
+\end{center}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\textbf{Điểm của một khung}
+\[ s(b)=\max_{k\,\in\,\text{token trước dấu chấm}} s_k(b) \]
+{\small Ở lượt 2, mỗi mẫu giả chiếm thêm một token, nên phép $\max$ gồm cả token chữ lẫn token mẫu.}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{block}{Hình dung}
+\small Người đếm chỉ vào 3 vật mình chắc nhất: ``đếm hết những thứ trông như thế này''. Nếu 3 vật đó \alert{sai loại}, lượt 2 sai một cách tự tin.
+\end{block}
+{\scriptsize Checkpoint công khai, không huấn luyện lại. Lượt 1 rỗng thì \Btwo{} trả kết quả \Bzero.}
+\end{column}
+\end{columns}
+\note{[1:00] Lượt 1, mô hình đọc câu chữ và chấm điểm 900 khung; khung trên 0.23 được tính. Đó là B0. Lượt 2 lấy 3 khung chắc nhất làm mẫu giả rồi chạy lại; đó là chế độ hai lượt B2. Điểm của khung là max qua các token, và ở lượt 2 có cả token mẫu. Chuyển: phần chẩn đoán, bạn Triệu trình bày.}
+\end{frame}
+
+\begin{frame}{Chẩn đoán: ba vấn đề và hướng xử lý}
+\speaker{Triệu}
+\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth}@{}}
+\toprule
+Vấn đề & Biểu hiện (bằng chứng) & Nguyên nhân & Hướng xử lý\\
+\midrule
+\textbf{VĐ1.} Khung không phụ thuộc câu hỏi & 64\% khung dùng chung X/Y (test); 21/21 khung trùng ``people''--``cars'' & Mô hình ``trỏ'' vào vật nổi bật & \textbf{F}: CLIP kiểm từng khung theo đúng chữ\\
+\textbf{VĐ2.} Mẫu giả sai loại & Chỉ 1/21 mẫu giả đúng loại (review mù) & Top-3 theo điểm, không kiểm loại & \textbf{P}: CLIP kiểm mẫu trước lượt 2\\
+\textbf{VĐ3.} Lượt 2 khuếch đại lỗi & \Btwo{} kém \Bzero{} ở pilot, p4 và test & Điểm lượt 2 $=\max(\text{chữ},\text{mẫu})$ & \textbf{T}: chấm chỉ bằng chữ (phép thử)\\
+\bottomrule
+\end{tabularx}
+\takeaway{Mỗi vấn đề có bằng chứng đo trực tiếp; mỗi hướng xử lý được thử tách bạch để biết cái nào thật sự giúp.}
+\note{[0:45] Từ pilot, review khung và tập test, nhóm tách ra ba vấn đề. Một: khung gần như không đổi theo câu hỏi. Hai: mẫu giả thường sai loại. Ba: lượt 2 khuếch đại lỗi do cách chấm max. Mỗi vấn đề có một hướng xử lý, và nhóm thử riêng từng hướng.}
+\end{frame}
+
+\begin{frame}{VĐ1: đổi câu hỏi, khung vẫn y nguyên}
+\speaker{Triệu}
+\source{Ảnh mcac\_88 (tập p4\_unseen\_v1), \Btwo; số liệu test: hậu kiểm 39 ảnh}
+\centering
+\begin{tabular}{@{}c@{\hspace{2mm}}c@{\hspace{2mm}}c@{}}
+\includegraphics[width=0.24\textwidth]{xy_mcac88_B2_u07_1.png} &
+\includegraphics[width=0.24\textwidth]{xy_mcac88_B2_u07_2.png} &
+\includegraphics[width=0.24\textwidth]{xy_mcac88_B2_u07_3.png}\\
+\scriptsize ``people'': \alert{21} (đáp án 6) & \scriptsize ``cars'': 22 (đáp án 22) & \scriptsize ``bicycles'': \alert{24} (đáp án 0)
+\end{tabular}
+\vspace{2mm}
+\begin{columns}[T]
+\begin{column}{0.47\textwidth}
+\begin{itemize}\small
+\item 21/21 khung ``people'' trùng khung ``cars'' (IoU $\ge 0.8$)
+\item Hỏi người hay xe đạp, mô hình đều trả về các ô tô
+\end{itemize}
+\end{column}
+\begin{column}{0.47\textwidth}
+\begin{itemize}\small
+\item Test (\Bzero): \textbf{64\%} khung dùng chung X/Y; \textbf{35\%} khung là vật loại khác
+\item Câu vắng mặt: 92--100\% khung đếm nhầm nằm trên vật khác \emph{có thật}
+\end{itemize}
+\end{column}
+\end{columns}
+\note{[0:55] Ở ảnh này, hỏi people, cars hay bicycles đều ra gần như cùng các khung ô tô: 21 trên 21 khung của câu people trùng với câu cars. Trên tập test, đổi câu hỏi thì 64 phần trăm khung vẫn được dùng lại, một phần ba khung là vật loại khác. Khi hỏi lớp vắng mặt, khung đếm nhầm gần như luôn nằm trên một vật có thật khác, không phải trên nền.}
+\end{frame}
+
+\begin{frame}{VĐ2: mẫu giả thường rơi vào vật loại khác}
+\speaker{Triệu}
+\source{Review mù N4 (Triệu gán nhãn, Trí đối chiếu 9/9 khung chồng nhau); pilot 5 ảnh}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Review mù 117 khung của 7 câu lỗi}
+\begin{center}\small
+\begin{tabular}{@{}lr@{}}
+\toprule
+21 mẫu giả & Số lượng\\
+\midrule
+Đúng loại & \textbf{1}\\
+Một khung bao nhiều vật & 10\\
+Sai loại & 10\\
+\bottomrule
+\end{tabular}
+\end{center}
+{\scriptsize Câu lỗi chọn có chủ đích: phân tích lỗi, không phải mẫu đại diện.}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Pilot (5 ảnh, 15 câu có mặt)}
+\begin{itemize}\small
+\item Chỉ 23/42 mẫu giả đúng loại
+\item Hỏi ``blackberries'' (21 quả): \Btwo{} đếm \alert{79}
+\item MAE \Bzero{} 19.4, \Btwo{} 22.0
+\end{itemize}
+\begin{block}{Hệ quả}
+\small Mẫu sai loại $\Rightarrow$ lượt 2 ``tìm thêm'' vật giống mẫu sai $\Rightarrow$ đếm thừa vật loại khác.
+\end{block}
+\end{column}
+\end{columns}
+\note{[0:50] Em gán nhãn mù 117 khung. Trong 21 mẫu giả, chỉ 1 mẫu đúng loại; 10 mẫu là một khung bao nhiều vật, 10 mẫu sai loại. Ở pilot cũng vậy: chỉ 23 trên 42 mẫu đúng loại, và có câu blackberries 21 quả mà B2 đếm 79.}
+\end{frame}
+
+\begin{frame}{VĐ3: cách chấm $\max$ ở lượt 2, và phép thử \Tv}
+\speaker{Triệu}
+\source{Dev v2 (20 ảnh) và p4\_unseen\_v1 (10 ảnh); CI 95\% bootstrap theo ảnh}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\[ s_{\text{lượt 2}}(b)=\max\bigl(\underbrace{s_{\text{chữ}}(b)}_{\text{giống ``people''?}},\ \underbrace{s_{\text{mẫu}}(b)}_{\text{giống mẫu giả?}}\bigr) \]
+\textbf{Ví dụ đã lưu} (hỏi ``people''): khung ô tô có $s_{\text{chữ}}=0.077$ nhưng $s_{\text{mẫu}}=0.970$ $\Rightarrow$ được giữ.\\[2mm]
+\textbf{Giả thuyết H1:} tác hại của lượt 2 là do $\max$.\\
+\textbf{Phép thử \Tv:} giữ lượt 2, chỉ chấm bằng token chữ.
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{center}\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+MAE $\downarrow$ & \Bzero & \Tv & \Btwo\\
+\midrule
+dev v2 & 6.28 & 8.55 & 9.15\\
+p4\_unseen\_v1 & 6.77 & 8.80 & 13.00\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{itemize}\small
+\item \Tv{} gỡ được \textbf{21\%} tác hại trên dev [5\%, 60\%]
+\item \Tv{} vẫn kém \Bzero: $+2.27$ [$+0.52$, $+4.12$]
+\end{itemize}
+\begin{alertblock}{Kết luận}
+\small $\max$ chỉ giải thích \textbf{một phần}. H2 (chưa kiểm): mẫu giả làm lệch cả điểm theo chữ.
+\end{alertblock}
+\end{column}
+\end{columns}
+\note{[1:00] Đọc mã, ở lượt 2 điểm khung là max giữa giống chữ và giống mẫu. Ví dụ đã lưu: khung ô tô có điểm chữ chỉ 0.077 nhưng điểm mẫu 0.97, nên vẫn được giữ khi hỏi people. Nhóm thử biến thể T bỏ max: chỉ gỡ được khoảng một phần năm tác hại, và T vẫn kém B0. Vậy max chỉ là một phần; phần còn lại nhóm đặt giả thuyết H2, chưa kiểm. Chuyển: từ chẩn đoán này, Trí trình bày cách sửa.}
+\end{frame}
+
+\begin{frame}{Cải tiến P: CLIP kiểm mẫu giả trước lượt 2}
+\speaker{Trí}
+\source{CLIP ViT-B/32 (Radford và cs., ICML 2021), revision cố định}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\begin{block}{Thuật toán P($\tau$, $M$)}
+\small
+\begin{enumerate}
+\item Lấy $M$ khung điểm cao nhất của lượt 1
+\item Cắt từng khung, tính $c=\cos\bigl(\text{CLIP}_{\text{ảnh}}(\text{ô cắt}),\ \text{CLIP}_{\text{chữ}}(\text{``a photo of }t\text{''})\bigr)$
+\item Giữ ứng viên có $c \ge \tau$; lấy tối đa 3 theo điểm CountGD++
+\item Không còn ứng viên nào $\Rightarrow$ trả kết quả \Bzero
+\end{enumerate}
+\end{block}
+\end{column}
+\begin{column}{0.44\textwidth}
+\textbf{Ý tưởng:} sửa \emph{đầu vào} của lượt 2 (VĐ2) thay vì chỉ lọc ở cuối.\\[2mm]
+\textbf{CLIP không đếm:} chỉ trả lời ``ô ảnh này có giống loại được hỏi không''.\\[2mm]
+\textbf{Tham số chọn trên dev:} $\tau\in\{0.18,\dots,0.28\}$, $M\in\{5,10\}$ $\Rightarrow$ khóa $\tau=0.20$, $M=5$.
+\end{column}
+\end{columns}
+\note{[0:50] Cải tiến P nhắm vào vấn đề 2. Trước lượt 2, xét 5 khung điểm cao nhất, dùng CLIP so ô cắt với câu a photo of tên lớp, chỉ giữ những khung đủ giống, rồi mới chọn mẫu. Nếu không còn mẫu nào thì trả kết quả một lượt.}
+\end{frame}
+
+\begin{frame}{Cải tiến F: lọc khung bằng điểm kết hợp CountGD++ + CLIP}
+\speaker{Trí}
+\source{Câu test t05\_1 (``blueberries'', ảnh 5 loại quả); tham số khóa trong \texttt{freeze\_v2\_20261111.json}}
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+Với khung $b$: điểm CountGD++ $a_b$, cosine CLIP $c_b$
+\[ \tilde a_b=\mathrm{clip}\Bigl(\tfrac{a_b-a_{\min}}{a_{\max}-a_{\min}},0,1\Bigr),\ \ \tilde c_b \text{ tương tự} \]
+\[ F_b=0.5\,\tilde a_b+0.5\,\tilde c_b \ \ge\ \theta \Rightarrow \text{giữ} \]
+{\small Chọn trên dev rồi khóa: $a\in[0.231,0.982]$, $c\in[0.123,0.335]$, $\theta=0.604$.}
+\end{column}
+\begin{column}{0.50\textwidth}
+\begin{center}\scriptsize
+\begin{tabular}{@{}rrrrll@{}}
+\toprule
+\# & $a$ & $c$ & $F$ & Quyết định & Vật thật\\
+\midrule
+1 & 0.911 & 0.251 & \textbf{0.753} & giữ & việt quất \textcolor{good}{\ding{51}}\\
+2 & 0.761 & 0.215 & 0.571 & bỏ & việt quất \textcolor{bad}{\ding{55}}\\
+3 & 0.888 & 0.274 & 0.793 & giữ & quả khác \textcolor{bad}{\ding{55}}\\
+4 & 0.727 & 0.218 & 0.554 & bỏ & không có vật \textcolor{good}{\ding{51}}\\
+\bottomrule
+\end{tabular}
+\end{center}
+{\small F bỏ được khung rác, nhưng có thể bỏ nhầm vật đúng và giữ vật sai khi CLIP cũng nhầm.}
+\end{column}
+\end{columns}
+\note{[0:55] Cải tiến F nhắm vào vấn đề 1. Mỗi khung có điểm CountGD++ và điểm CLIP; đưa cả hai về 0 đến 1, cộng một nửa mỗi bên, giữ khung vượt ngưỡng 0.604. Ví dụ thật: khung rác bị bỏ, nhưng có một quả việt quất bị bỏ nhầm và một quả khác loại bị giữ nhầm.}
+\end{frame}
+
+\begin{frame}{Tổng thể: các biến thể được so sánh}
+\speaker{Trí}
+\centering
+\resizebox{0.80\textwidth}{!}{\input{../shared/figures/pipeline.tex}}\\[1mm]
+\scriptsize
+\begin{tabular}{@{}llll@{}}
+\toprule
+Ký hiệu & Mô tả & Vai trò & Trạng thái\\
+\midrule
+\Bzero, \Btwo & CountGD++ một lượt / hai lượt & mốc so sánh & đối chứng\\
+\textbf{\PF} & P($\tau$ 0.20, $M$ 5) rồi lọc F & \textbf{cấu hình chính} & khóa trước test\\
+\BtwoF & lượt 2 gốc rồi lọc F & tách đóng góp của P & đối chứng báo kèm\\
+\Csix & \Bzero{} + F, bỏ lượt 2 & đối chứng bắt buộc & đối chứng báo kèm\\
+\Tv, \Sv & chấm chỉ chữ / lọc bằng ngưỡng điểm & phép thử, lọc đơn giản & chỉ trên dev\\
+\bottomrule
+\end{tabular}
+\note{[0:40] Đây là toàn bộ các biến thể. Cấu hình chính là P cộng F, khóa trước test. B2 cộng F dùng để tách đóng góp của P; C6 là lọc ngay sau lượt 1, bỏ lượt 2, là đối chứng bắt buộc. Chuyển: phần dữ liệu và giao thức, Triệu trình bày.}
+\end{frame}
+
+% ================================================================ 4
+\section{Thực nghiệm}
+
+\begin{frame}{Dữ liệu: MUCCA, bốn tập rời nhau}
+\speaker{Triệu}
+\source{MUCCA 1.0, Zenodo 19231375, CC-BY-4.0; script rút mẫu \texttt{select\_dev\_test\_v2.py}, seed 331}
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+\centering
+\setlength{\tabcolsep}{1pt}
+\begin{tabular}{ccc}
+\includegraphics[width=0.32\linewidth]{mucca_mcac_12.png} &
+\includegraphics[width=0.32\linewidth]{mucca_mcac_25.png} &
+\includegraphics[width=0.32\linewidth]{mucca_mcac_171.png}\\[-0.5mm]
+\tiny đĩa--bát & \tiny việt quất--lý chua & \tiny chó--dê\\
+\includegraphics[width=0.32\linewidth]{mucca_mcac_224.png} &
+\includegraphics[width=0.32\linewidth]{mucca_mcac_88.png} &
+\includegraphics[width=0.32\linewidth]{mucca_mcac_84.png}\\[-0.5mm]
+\tiny người--thuyền & \tiny người--ô tô & \tiny người--xe máy
+\end{tabular}
+\end{column}
+\begin{column}{0.52\textwidth}
+\small
+\begin{tabular}{@{}lll@{}}
+\toprule
+Tập & Ảnh / câu & Dùng để\\
+\midrule
+Pilot & 5 / 15 & tìm lỗi, v1\\
+p4\_unseen\_v1 & 10 / 30 & kiểm v1, review N4\\
+\textbf{dev v2} & 20 / 60 & chọn cấu hình\\
+\textbf{test v2} & 40 / 119 & đo một lần\\
+\bottomrule
+\end{tabular}\\[2mm]
+\begin{itemize}\scriptsize
+\item Rút theo luật cố định, chỉ đọc nhãn: mỗi lớp 3--40 vật
+\item Cặp \textbf{khác hẳn} (khác siêu nhóm, vd người--xe) lấy hết; còn lại cặp \textbf{dễ nhầm} (cùng siêu nhóm)
+\item Test: 13 ảnh khác hẳn + 27 ảnh dễ nhầm
+\item Người kiểm từng ảnh (Trí: dev, Triệu: test), rồi khóa SHA-256
+\end{itemize}
+\end{column}
+\end{columns}
+\note{[0:55] Dữ liệu là MUCCA, 200 ảnh thật nhiều loại. Nhóm chia bốn tập rời nhau. Dev và test được rút bằng script, chỉ đọc nhãn. Cặp khác hẳn như người xe rất hiếm, chỉ 19 ảnh đủ điều kiện, nên lấy hết; còn lại là cặp dễ nhầm như đĩa bát. Em kiểm từng ảnh test, Trí kiểm dev, rồi khóa bằng mã băm.}
+\end{frame}
+
+\begin{frame}{Giao thức ``chọn trước, xem sau'' và chỉ số đánh giá}
+\speaker{Triệu}
+\source{Efron, 1979 (bootstrap); luật D9 trong \texttt{reports/KE\_HOACH\_TIEP\_THEO\_20261105.md}}
+\begin{center}
+\begin{tikzpicture}[node distance=3mm]
+\node[sb=boxgray,text width=20mm] (d) {Dữ liệu được\\người kiểm, khóa};
+\node[sb=boxyellow,text width=20mm,right=of d] (r) {Luật chọn \textbf{D9}\\viết trước};
+\node[sb=boxblue,text width=20mm,right=of r] (dv) {Chọn trên dev,\\\textbf{khóa} cấu hình};
+\node[sb=boxgreen,text width=20mm,right=of dv] (t) {Test chạy\\\textbf{một lần}};
+\node[sb=boxgray,text width=20mm,right=of t] (c) {Tính lại độc lập\\bằng script riêng};
+\draw[sa] (d)--(r); \draw[sa] (r)--(dv); \draw[sa] (dv)--(t); \draw[sa] (t)--(c);
+\end{tikzpicture}
+\end{center}
+\begin{columns}[T]
+\begin{column}{0.50\textwidth}
+\begin{block}{Chỉ số}
+\small
+$\MAE=\frac{1}{|Q|}\sum_q|\hat n_q-n_q|$ (chỉ số chính)\\[1mm]
+$\FPRabs$ = tỉ lệ câu vắng mặt có $\hat n>0$\\[1mm]
+Khung dùng chung X/Y: tỉ lệ khung có khung trùng (IoU $\ge 0.5$) ở câu kia
+\end{block}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{block}{Luật D9 và độ tin cậy}
+\small
+D9: MAE dev nhỏ nhất, \emph{với điều kiện} MAE câu có mặt và $\FPRabs$ không kém \Bzero.\\[1mm]
+CI 95\%: bootstrap \textbf{theo ảnh} (5000 lần), vì 3 câu cùng ảnh không độc lập.
+\end{block}
+\end{column}
+\end{columns}
+\note{[1:00] Vì dữ liệu ít mà tham số nhiều, nhóm làm theo kiểu chọn trước, xem sau. Luật chọn D9 được viết trước khi chạy dev: lấy MAE nhỏ nhất, nhưng không được làm hỏng câu có mặt hay câu vắng mặt so với B0. Chọn xong thì khóa, em chạy test đúng một lần trên Kaggle, rồi kết quả được tính lại bằng script riêng. Khoảng tin cậy lấy mẫu lại theo ảnh, vì ba câu cùng ảnh không độc lập. Chuyển: kết quả, Trí trình bày.}
+\end{frame}
+
+\begin{frame}{Kết quả dev: luật D9 chọn P($\tau$ 0.20, $M$ 5) + F}
+\speaker{Trí}
+\source{Dev v2: 20 ảnh, 60 câu; khoảng 90 cấu hình}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Cách & MAE $\downarrow$ & MAE có mặt $\downarrow$ & $\FPRabs$ $\downarrow$\\
+\midrule
+\Bzero & 6.28 & 8.25 & 0.20\\
+\Btwo & 9.15 & 12.00 & 0.20\\
+\textbf{P(0.20, 5)+F} & \textbf{3.53} & 5.05 & \textbf{0.05}\\
+\BtwoF & 3.73 & 5.15 & 0.20\\
+P+T+F & 3.78 & -- & --\\
+\Csix & 4.02 & 5.80 & 0.05\\
+\bottomrule
+\end{tabular}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{itemize}\small
+\item Cấu hình thắng D9 được khóa vào file freeze (có mã băm)
+\item Các cấu hình đứng đầu rất sát nhau: 7 họ phương pháp chỉ cách nhau 0.49 MAE
+\item Ngưỡng chọn ngay trên dev $\Rightarrow$ số dev là \alert{lạc quan}
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Dev chỉ dùng để chọn; con số để báo cáo là test.}
+\note{[0:40] Trên dev, theo luật D9, cấu hình được chọn là P tau 0.20, M bằng 5, cộng F, MAE 3.53. Các cách đứng đầu rất sát nhau và ngưỡng được chọn ngay trên dev, nên số này lạc quan. Con số để báo cáo là test.}
+\end{frame}
+
+\begin{frame}{Kết quả test: giảm 24\% sai số so với CountGD++ một lượt}
+\speaker{Trí}
+\source{Test v2: 40 ảnh, 119 câu (79 có mặt, 40 vắng mặt); chạy một lần trên Kaggle T4}
+\begin{columns}[c]
+\begin{column}{0.48\textwidth}
+\includegraphics[width=\linewidth]{fig_results_test.png}
+\end{column}
+\begin{column}{0.50\textwidth}
+\centering\small
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Cách & MAE & $\FPRabs$ & $\Delta$ so với \Bzero{} [CI 95\%]\\
+\midrule
+\Bzero & 7.71 & 0.250 & --\\
+\Btwo & 9.61 & 0.250 & \alert{$+1.90$} [$+0.81$, $+3.03$]\\
+\textbf{\PF} & \textbf{5.82} & \textbf{0.225} & $\mathbf{-1.88}$ [$-3.66$, $-0.44$]\\
+\BtwoF & 5.70 & 0.250 & $-2.01$ [$-3.94$, $-0.40$]\\
+\Csix & 4.63 & 0.100 & $-3.08$ [$-6.62$, $-0.51$]\\
+\bottomrule
+\end{tabular}\\[2mm]
+\begin{itemize}\scriptsize
+\item \textbf{RQ3:} cấu hình khóa giảm MAE 7.71 $\to$ 5.82, CI không chứa 0
+\item Lượt 2 gốc làm \emph{kém đi} một cách đáng tin cậy
+\item \BtwoF, \Csix: đối chứng khai báo trước, không đổi thành phương pháp chính
+\end{itemize}
+\end{column}
+\end{columns}
+\note{[1:10] Trên 40 ảnh test chưa từng dùng, CountGD++ một lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi câu. Cấu hình đã khóa còn 5.82, giảm 24 phần trăm, khoảng tin cậy không chứa 0. Lượt 2 gốc tệ hơn một lượt, 9.61, cũng đáng tin cậy. Hai dòng dưới là đối chứng khai báo trước; nhóm không đổi chúng thành kết quả chính sau khi xem test. Chuyển: vì sao có mức giảm này, Triệu phân tích.}
+\end{frame}
+
+\begin{frame}{Phân rã: bộ lọc F tạo ra cải thiện, P gần như không}
+\speaker{Triệu}
+\source{Hậu kiểm trên test, không dùng để chọn hay đổi phương pháp}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\begin{block}{P gần như không đổi bộ mẫu}
+\small
+\begin{itemize}
+\item P chọn \textbf{đúng y hệt} mẫu của \Btwo{} ở \bignum{108/120} câu
+\item $\tau=0.20$ khá thấp: top-3 thường đều qua ngưỡng
+\item \BtwoF{} $-$ \PF: $-0.13$ [$-0.41$, $+0.18$]
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{block}{F đổi đếm thừa thành đếm thiếu}
+\centering\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+79 câu có mặt & Tổng thừa & Tổng thiếu\\
+\midrule
+\Bzero & $+580$ & $-77$\\
+\Btwo & $+751$ & $-58$\\
+\PF & $+243$ & \alert{$-297$}\\
+\bottomrule
+\end{tabular}\\[1mm]
+\raggedright\scriptsize F bỏ các khung ``không chắc'', trong đó có cả vật đúng.
+\end{block}
+\end{column}
+\end{columns}
+\takeaway{Thành phần có tác dụng là F; P đúng hướng nhưng quá nhẹ tay để thay đổi đầu vào lượt 2.}
+\note{[0:55] Phân tích sau test cho thấy P gần như luôn chọn lại đúng bộ mẫu cũ, 108 trên 120 câu, nên B2 cộng F gần bằng P cộng F. Vậy phần có tác dụng là bộ lọc F. Nhưng F đổi lỗi đếm thừa thành đếm thiếu: thừa giảm từ 580 xuống 243, thiếu tăng từ 77 lên 297.}
+\end{frame}
+
+\begin{frame}{F dọn khung rác, nhưng chưa tách hẳn X với Y}
+\speaker{Triệu}
+\source{Kiểm theo điểm nhãn MUCCA (79 câu có mặt); khung dùng chung trên 39 ảnh, CI 95\%}
+\centering\small
+\begin{tabular}{@{}lrrrrl@{}}
+\toprule
+Cách & Khung giữ & Đúng loại $\uparrow$ & Chỉ loại khác $\downarrow$ & Không trúng $\downarrow$ & Dùng chung X/Y $\downarrow$\\
+\midrule
+\Bzero & 1481 & 60.4\% & 34.6\% & 5.1\% & 64\% [51, 75]\\
+\Btwo & 1671 & 56.6\% & 34.6\% & 8.8\% & 71\% [58, 81]\\
+\PF & 924 & 66.3\% & 32.7\% & \textbf{1.0\%} & 59\% [40, 74]\\
+\Csix & 746 & \textbf{76.9\%} & \textbf{21.3\%} & 1.7\% & \textbf{24\%} [11, 37]\\
+\bottomrule
+\end{tabular}\\[3mm]
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+\begin{itemize}\small
+\item Sau lượt 2, F chủ yếu bỏ khung \emph{không chứa vật} (8.8\% $\to$ 1.0\%)
+\item Vẫn khoảng 1/3 khung là vật loại khác
+\end{itemize}
+\end{column}
+\begin{column}{0.46\textwidth}
+\begin{itemize}\small
+\item Lọc ngay sau lượt 1 (\Csix) tách rõ hơn: 24\% dùng chung, 21\% sai loại
+\item Kiểm ``điểm trong khung'' là xấp xỉ dễ dãi
+\end{itemize}
+\end{column}
+\end{columns}
+\note{[0:50] Xét từng khung theo điểm nhãn: áp sau lượt 2, F chủ yếu bỏ khung rác, từ 8.8 xuống 1 phần trăm, nhưng vẫn khoảng một phần ba khung là vật loại khác và 59 phần trăm khung dùng chung. Lọc ngay sau lượt 1, tức C6, tách rõ hơn nhiều.}
+\end{frame}
+
+\begin{frame}{Theo loại cặp: cải thiện ở cặp dễ nhầm, chưa rõ ở cặp khác hẳn}
+\speaker{Triệu}
+\source{Hậu kiểm; nhóm cặp khác hẳn chỉ có 13 ảnh}
+\begin{columns}[c]
+\begin{column}{0.50\textwidth}
+\includegraphics[width=\linewidth]{fig_strata_errors.png}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\scriptsize
+\begin{tabular}{@{}lll@{}}
+\toprule
+$\Delta$ MAE so với \Bzero & Khác hẳn (13) & Dễ nhầm (27)\\
+\midrule
+\Btwo & $+2.46$ [$+0.38$, $+4.74$] & $+1.63$ [$+0.39$, $+2.86$]\\
+\PF & $+0.51$ [$-0.72$, $+1.82$] & $\mathbf{-3.05}$ [$-5.43$, $-0.96$]\\
+\Csix & $+1.13$ [$-0.87$, $+3.51$] & $\mathbf{-5.13}$ [$-10.16$, $-1.60$]\\
+\bottomrule
+\end{tabular}\\[2mm]
+\begin{itemize}\scriptsize
+\item Dễ nhầm (quả--quả, bát--đĩa): \Bzero{} đếm thừa nhiều, bộ lọc có tác dụng rõ
+\item Khác hẳn (người--xe): \Bzero{} vốn khá tốt (MAE 4.59); lọc có xu hướng đếm thiếu
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Phương pháp chưa giải quyết xong mọi dạng X/Y.}
+\note{[0:50] Chia theo loại cặp: với cặp dễ nhầm, P cộng F giảm khoảng 3 vật mỗi câu, khoảng tin cậy không chứa 0. Với cặp khác hẳn, đúng dạng người xe thầy nêu, chưa thấy khác biệt chắc chắn, và chỉ có 13 ảnh. Nhóm nói thẳng: phương pháp chưa giải xong mọi dạng X/Y.}
+\end{frame}
+
+\begin{frame}{Ví dụ: thành công và lỗi X/Y còn lại}
+\speaker{Triệu}
+\source{Xanh: trúng đúng loại · đỏ: chỉ trúng loại khác · xám: không trúng điểm nhãn}
+\centering
+\includegraphics[width=0.80\textwidth]{fig_example_t05_1_mcac_25.png}\\[-0.5mm]
+{\scriptsize\textcolor{good}{\textbf{Thành công}} ``blueberries'' (đáp án 7): \Bzero{} 36 · \Btwo{} 65 · \PF{} \textbf{8} · \Csix{} 9}\\[1mm]
+\includegraphics[width=0.80\textwidth]{fig_example_t01_2_mcac_12.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Lỗi X/Y còn lại}} ``bowls'' (đáp án 3): chồng đĩa vẫn bị đếm là bát ở mọi cách (\PF{} 17, \Csix{} 20)}
+\note{[0:45] Ví dụ thành công: blueberries, B2 đếm 65 vì khoanh từng hạt của quả mâm xôi, P cộng F đếm 8, đáp án 7. Ví dụ lỗi còn lại: bowls, chồng đĩa vẫn bị đếm là bát ở mọi cách.}
+\end{frame}
+
+\begin{frame}{Ví dụ thất bại: CLIP nhầm loại gần nghĩa, và lọc quá tay}
+\speaker{Triệu}
+\centering
+\includegraphics[width=0.80\textwidth]{fig_example_t33_1_mcac_171.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Nhầm loại}} ``dogs'' (đáp án 4): đàn dê bị đếm là chó (66--101) ở mọi cách; CLIP không tách được dê và chó ở ô cắt nhỏ}\\[1mm]
+\includegraphics[width=0.54\textwidth]{fig_example_t40_1_mcac_224.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Lọc quá tay}} ``people'' (đáp án 31): không có khung sai loại, nhưng F bỏ cả người thật (\PF{} 13, \Csix{} 3)}
+\note{[0:45] Hai kiểu thất bại. Dogs: đàn dê bị đếm là chó ở mọi cách, vì CLIP trên ô cắt nhỏ cũng không phân biệt được dê và chó. People: không có khung sai loại, nhưng bộ lọc bỏ cả người thật, chỉ còn 13 trên 31.}
+\end{frame}
+
+\begin{frame}{Tổng quát hóa: 300 ảnh FSC-147 một loại vật}
+\speaker{Triệu}
+\source{Khai báo trước 20/11; một lần chạy Kaggle T4; không cắt ảnh, không mẫu GPT-5; kiểm độc lập PASS}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\centering\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Cách & MAE $\downarrow$ & Bias & $\le$40 vật & $>$40 vật\\
+\midrule
+\Bzero & 13.88 & $-1.54$ & 3.95 & 25.69\\
+\Btwo & \textbf{13.32} & $-0.23$ & \textbf{3.44} & \textbf{25.09}\\
+\PF & 18.01 & $-14.68$ & 3.50 & \alert{35.28}\\
+\BtwoF & 17.98 & $-14.79$ & 3.65 & 35.02\\
+\Csix & 25.11 & $-20.93$ & 5.34 & \alert{48.64}\\
+\bottomrule
+\end{tabular}\\[1mm]
+\raggedright\scriptsize Không so với 8.34 / 8.39: khác điều kiện (cắt ảnh, mẫu GPT-5, đủ 1.190 ảnh).
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{itemize}\small
+\item \textbf{Chính} \Bzero{} $-$ \Btwo: $+0.55$ [$-3.00$, $+4.30$]: ảnh một loại thì giữ hay bỏ lượt 2 \emph{chưa khác rõ}
+\item \PF{} $-$ \Btwo: \alert{$+4.69$} [$+2.25$, $+7.50$]
+\item Nguyên nhân: ngưỡng F chọn trên ảnh 3--40 vật $\Rightarrow$ \textbf{đếm thiếu} ở ảnh dày (thiếu 4904 so với 2033)
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Phạm vi áp dụng: ảnh nhiều loại, ít đến vừa vật. Ảnh một loại, dày: giữ CountGD++ gốc.}
+\note{[0:55] Em chạy thêm một khảo sát khai báo trước trên 300 ảnh FSC-147, mỗi ảnh một loại. Giữ hay bỏ lượt 2 chưa khác nhau rõ, nên kết luận lượt 2 gây hại chỉ đúng cho ảnh nhiều loại. Cấu hình của nhóm kém hơn, chủ yếu ở ảnh trên 40 vật, vì ngưỡng F chọn trên ảnh ít vật đã lọc quá tay. Ở ảnh tối đa 40 vật thì ngang nhau.}
+\end{frame}
+
+\begin{frame}{Các hướng thử thêm (chỉ trên dev)}
+\speaker{Triệu}
+\source{Khai báo trước 22/11, không chạy trên test; dev đã dùng để chọn F nên kết quả chỉ là sơ bộ}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\begin{block}{Gán khung theo CLIP giữa các loại (bước A)}
+\small Mỗi khung so CLIP với \emph{mọi} lớp được hỏi trên ảnh (X, Y, Z); chỉ giữ khung nếu giống lớp đang hỏi nhất. Không có tham số.\\[1mm]
+\centering
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Dev & \PF & + bước A\\
+\midrule
+Khung dùng chung X/Y $\downarrow$ & 61.6\% & \textbf{2.9\%}\\
+Khung đúng loại $\uparrow$ & 70.2\% & 83.0\%\\
+MAE câu có mặt $\downarrow$ & \textbf{5.05} & 6.92\\
+\bottomrule
+\end{tabular}\\[1mm]
+\raggedright\scriptsize Chính: dùng chung $-0.587$ [$-0.735$, $-0.404$]; MAE $+1.88$ [$-0.03$, $+3.73$] $\Rightarrow$ \textbf{đánh đổi}: bỏ nhầm khoảng 30\% vật đúng.
+\end{block}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{alertblock}{Bài học chọn cấu hình (\Csix)}
+\scriptsize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Cách & Dev & Test & Đổi\\
+\midrule
+\Bzero & 6.28 & 7.71 & $+1.42$\\
+\PF{} (thắng D9) & 3.53 & 5.82 & $+2.29$\\
+\Csix & 4.02 & 4.63 & $+0.61$\\
+\bottomrule
+\end{tabular}\\[1mm]
+\small Chênh lệch nằm trong nhiễu ở cả hai tập; cấu hình thắng dev ``hụt'' nhiều nhất. \textbf{Không đổi} kết quả chính sau khi xem test.
+\end{alertblock}
+\end{column}
+\end{columns}
+\note{[1:00] Nhóm thử thêm một hướng nhắm thẳng vào X/Y: gán mỗi khung cho lớp mà CLIP thấy giống nhất. Khung dùng chung giảm từ 62 xuống 3 phần trăm, nhưng CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30 phần trăm vật đúng, nên số đếm chưa tốt hơn. Bài học thứ hai: C6 đứng thứ 7 trên dev nhưng tốt nhất trên test; chênh lệch nằm trong nhiễu, nên nhóm không đổi kết quả chính sau khi xem test.}
+\end{frame}
+
+% ================================================================ 5
+\section{Giới hạn và kết luận}
+
+\begin{frame}{Những điều kết quả này chưa nói được}
+\speaker{Triệu}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Về phương pháp}
+\begin{itemize}\small
+\item X/Y \textbf{chưa giải xong}: MAE câu có mặt 6.84 trên trung bình 12.4 vật; vẫn 59\% khung dùng chung
+\item Ngưỡng F toàn cục: lọc quá tay ở ảnh dày
+\item CLIP yếu với ô cắt nhỏ, loại gần nghĩa (dê--chó, chồng đĩa--bát)
+\item Cơ chế lượt 2: H2 chưa kiểm; \Tv{} chưa có trên test
+\end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+\textbf{Về cách đánh giá}
+\begin{itemize}\small
+\item 40 ảnh test, chỉ 13 ảnh cặp khác hẳn; phân tích theo nhóm là hậu kiểm
+\item Kết quả chính chỉ trên một nguồn (MUCCA)
+\item 15/120 câu test có ghi chú nhãn (độ nhạy: MAE đổi $<0.06$)
+\item Thời gian CLIP chỉ đo trên FSC-147 (khoảng 1.3 s/câu)
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Không gọi đây là SOTA: cải thiện có phạm vi, có điều kiện, và đi kèm xu hướng đếm thiếu.}
+\note{[0:50] Nhóm tự nêu những điều kết quả chưa nói được. Về phương pháp: X/Y chưa giải xong, ngưỡng toàn cục, CLIP yếu với loại gần nghĩa, giả thuyết H2 chưa kiểm. Về đánh giá: mẫu nhỏ, một nguồn dữ liệu, một số nhãn cần xem lại. Chuyển: Trí tóm tắt kết luận.}
+\end{frame}
+
+\begin{frame}{Kết luận: vấn đề, cải tiến và kết quả}
+\speaker{Trí}
+\small
+\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\toprule
+Vấn đề (RQ1) & Cải tiến (RQ2) & Kết quả (RQ3, test khóa trước)\\
+\midrule
+VĐ1. Khung không phụ thuộc câu hỏi & \textbf{F}: CLIP kiểm từng khung & \textcolor{good}{\ding{51}} \PF{} 7.71 $\to$ \textbf{5.82} ($-24\%$, CI không chứa 0); tập trung ở cặp dễ nhầm\\
+VĐ2. Mẫu giả sai loại & \textbf{P}: CLIP kiểm mẫu & \textcolor{bad}{\ding{55}} gần như không đổi bộ mẫu (108/120 câu như \Btwo)\\
+VĐ3. Lượt 2 khuếch đại lỗi & \textbf{T}: bỏ $\max$ (phép thử) & một phần: gỡ 21\% tác hại trên dev; \Btwo{} kém \Bzero{} trên test\\
+\midrule
+Phạm vi & FSC-147 300 ảnh & \textcolor{bad}{\ding{55}} kém hơn gốc ở ảnh dày ($+4.69$) $\Rightarrow$ dùng cho ảnh nhiều loại, ít đến vừa vật\\
+\bottomrule
+\end{tabularx}
+\takeaway{Sửa ở bước suy luận giảm được lỗi đếm nhầm loại, nhưng bài X/Y mới được giảm nhẹ, chưa được giải quyết.}
+\note{[1:00] Tóm lại: CountGD++ đếm lẫn loại trên ảnh nhiều loại, và lượt 2 làm nặng thêm. Bộ lọc F dùng CLIP, không huấn luyện, giảm 24 phần trăm sai số trên test khóa trước. P gần như không đóng góp; cách chấm max chỉ giải thích một phần. Cải tiến dành cho ảnh nhiều loại, ít đến vừa vật.}
+\end{frame}
+
+\begin{frame}{Hướng phát triển}
+\speaker{Trí}
+\begin{enumerate}
+\item \textbf{Chỉ phân xử khung bị X và Y tranh nhau} bằng CLIP, giữ nguyên các khung khác; dùng bộ kiểm mạnh hơn (CLIP lớn hơn, ô cắt có ngữ cảnh)
+\item \textbf{Ngưỡng thích ứng theo mật độ vật} để tránh đếm thiếu ở ảnh dày
+\item \textbf{Kiểm \Csix} (lọc ngay sau lượt 1) trên một tập mới, độc lập
+\item \textbf{Kiểm giả thuyết H2}: so điểm token chữ của cùng khung ở lượt 1 và lượt 2
+\item Dùng câu chỉ định ``không đếm Y'' có sẵn trong CountGD++ khi hỏi X
+\end{enumerate}
+\vspace{2mm}
+{\small Mọi hướng trên đều cần một tập kiểm mới: tập test hiện tại đã được dùng một lần.}
+\note{[0:30] Các hướng tiếp theo: chỉ phân xử khung bị tranh chấp, ngưỡng theo mật độ, kiểm C6 và giả thuyết H2 trên dữ liệu mới.}
+\end{frame}
+
+\begin{frame}[standout]
+Cảm ơn thầy và các bạn đã lắng nghe!\\[4mm]
+{\normalsize Mã nguồn, dữ liệu khóa và kết quả:}\\
+{\small\url{https://github.com/minhtridaoo/zero-shot-counting}}
+\note{Em cảm ơn thầy và các bạn. Nhóm sẵn sàng nhận câu hỏi. Nếu thầy muốn xem thêm, nhóm có slide dự phòng và demo tĩnh bằng các hình ví dụ.}
+\end{frame}
+
+% ================================================================ Backup
+\appendix
+\section*{Slide dự phòng}
+
+\begin{frame}{Dự phòng · Kết quả test đầy đủ}
+\small\centering
+\begin{tabular}{@{}lrrrrl@{}}
+\toprule
+Cách & MAE & RMSE & MAE có mặt & $\FPRabs$ & $\Delta$ so với \Bzero{} [CI 95\%]\\
+\midrule
+\Bzero & 7.71 & 16.63 & 8.32 & 0.250 & --\\
+\Btwo & 9.61 & 19.87 & 10.24 & 0.250 & $+1.90$ [$+0.81$, $+3.03$]\\
+\textbf{\PF} & \textbf{5.82} & 12.11 & 6.84 & 0.225 & $-1.88$ [$-3.66$, $-0.44$]\\
+\BtwoF & 5.70 & 11.85 & 6.81 & 0.250 & $-2.01$ [$-3.94$, $-0.40$]\\
+\Csix & 4.63 & 9.63 & 6.48 & 0.100 & $-3.08$ [$-6.62$, $-0.51$]\\
+\bottomrule
+\end{tabular}\\[3mm]
+\raggedright
+\begin{itemize}\small
+\item \Csix{} $-$ \PF: $-1.19$ [$-3.32$, $+0.24$], chưa đủ chắc
+\item Độ nhạy D11 (đáp án theo số người đếm): MAE đổi dưới 0.06, thứ tự không đổi
+\item So với \Btwo{} giảm 39\%: con số mô tả, không nằm trong kiểm định khai báo trước
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Dự phòng · Cải tiến v1 trên 10 ảnh mới}
+\small\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+p4\_unseen\_v1 (30 câu) & MAE & MAE có mặt & Đếm TB câu vắng mặt & Khung sai loại\\
+\midrule
+\Bzero & 6.77 & \textbf{5.70} & 8.9 & 106\\
+\Btwo & 13.00 & 12.95 & 13.1 & 238\\
+\Btwo{} + lọc điểm & 7.27 & 8.75 & 4.3 & 92\\
+\Btwo{} + kết hợp & \textbf{5.53} & 7.80 & \textbf{1.0} & \textbf{31}\\
+\bottomrule
+\end{tabular}\\[3mm]
+\raggedright\small Lọc kết hợp chặn vắng mặt tốt nhưng bỏ khoảng nửa vật đúng $\Rightarrow$ v2 sửa thêm nguồn lỗi (mẫu giả, bước P).
+\end{frame}
+
+\begin{frame}{Dự phòng · Chi phí tính toán và tái lập}
+\begin{columns}[T]
+\begin{column}{0.46\textwidth}
+\textbf{Kaggle T4}
+\begin{itemize}\small
+\item \Bzero: khoảng 0.89 s/câu
+\item \Btwo, P: khoảng 1.5 s/câu (lượt 2 ở khoảng 70\% câu)
+\item CLIP: khoảng 1.3 s/câu (đo trên FSC-147, ảnh nhiều khung)
+\item \Csix{} bỏ lượt 2: tiết kiệm khoảng 40\% thời gian CountGD++
+\end{itemize}
+\end{column}
+\begin{column}{0.50\textwidth}
+\textbf{Tái lập}
+\begin{itemize}\small
+\item Dữ liệu dev/test \texttt{LOCKED} kèm SHA-256
+\item Cấu hình khóa: \texttt{freeze\_v2\_20261111.json} (sha \texttt{64e89ef5\ldots})
+\item Kiểm A: lượt 1 của P trùng \Bzero; Kiểm C: \Btwo{} chạy lại trùng 60/60
+\item Kết quả tính lại độc lập từ đầu ra thô, khớp tuyệt đối
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dự phòng · Thứ hạng dev theo họ phương pháp}
+\small\centering
+\begin{tabular}{@{}rlr@{}}
+\toprule
+Hạng & Họ (thành viên tốt nhất) & MAE dev\\
+\midrule
+1 & \PF & 3.53\\
+2 & \BtwoF & 3.73\\
+3 & P+T+F & 3.78\\
+4 & P+S & 3.93\\
+5 & T+F & 3.95\\
+6 & P+T+S & 3.98\\
+7 & \Csix{} (\Bzero+F) & 4.02\\
+11 & \Bzero & 6.28\\
+15 & \Btwo & 9.15\\
+\bottomrule
+\end{tabular}\\[2mm]
+\raggedright\small 7 họ đầu cách nhau 0.49 MAE trong khi một CI điển hình rộng khoảng 2: 60 câu dev không đủ phân biệt các cách đứng đầu.
+\end{frame}
+
+\end{document}

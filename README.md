@@ -15,6 +15,8 @@
 | `WORKLOG.md` | Nhật ký mọi lượt làm việc (mục mới nhất ở trên cùng) |
 | `AGENTS.md` | Quy tắc cho assistant khi mở phiên mới |
 | `HANDOFF/` | Việc của Triệu: `GIAO_VIEC_TRIEU_20261106.md` (W1–W7), `HANDOFF_TRIEU.md` |
+| `final/` | **Bản nộp LaTeX (nháp 23/11):** `final/report/main.pdf` (báo cáo cuối 21 trang), `final/slides/main.pdf` (bản 2: 30 slide nội dung, 5 phần, + 4 dự phòng), `final/slides/notes.pdf` (kịch bản nói). Biên dịch: `latexmk -xelatex main.tex` |
+| `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` | **Phân công Trí – Triệu** (đề xuất 23/11): ai rà chương nào, ai nói slide nào, ai trả lời câu hỏi nào |
 | `reports/` | **Báo cáo kết quả** dùng để viết báo cáo cuối (xem danh sách dưới) |
 | `experiments/countgdpp/` | Code chạy model + **dữ liệu đã khóa** (`p4_unseen_v1/`, `dev_test_v2/`, `m4_inputs/`) |
 | `experiments/benchmark_fscd147/` | Notebook Kaggle tái lập benchmark FSCD-147 |

@@ -1,5 +1,69 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 23/11/2026 — đưa slide v2 và tài liệu đi kèm về nhánh chính để xuất bản
+
+Theo yêu cầu Trí: tìm thấy bộ slide v2 chưa commit tại `.claude/worktrees/latex-presentation-split-c554f5`. Sao lưu thay đổi trước đồng bộ, fast-forward 16 commit đến `bf0797c`, giữ ghi chú kiểm tra local 20–22/11, sao chép đúng các tài liệu thay đổi và nguồn/hình/PDF trong `final/`; bỏ qua tệp biên dịch tạm theo `.gitignore`. Giữ nguyên worktree nguồn. Trí xác nhận slide v2 đã xong; **báo cáo chi tiết chưa sửa theo slide v2**, bản báo cáo đi kèm chỉ là bản hiện có. Không chạy model/evaluator/self-test, không sửa dữ liệu khóa hoặc ký duyệt thay người dùng. Tiếp theo: cập nhật báo cáo theo slide v2 và rà bản nộp trước 02/12.
+
+## 22/11/2026 — rà kết quả khảo sát Triệu từ remote (chỉ đọc)
+
+Fetch origin/main c2928ca, đọc result.json, timing và báo cáo TRIEU_FSC147. Số MAE/CI trong ảnh khớp artifact; chưa chạy lại evaluator/kiểm bootstrap. Phát hiện cần sửa diễn giải: thiếu 4.904/2.033 là toàn mẫu, nhóm >40 là 4.416/1.910; MAE 3,50/3,44 chỉ gần nhau, không chứng minh tương đương; nguyên nhân do mật độ/miền chưa được tách riêng. controls_clip_seconds=404,1 là thời gian p1_controls cho các nguồn trong khảo sát, không phải latency CLIP riêng một cấu hình. Báo cáo còn thiếu version Kaggle và cột xác nhận Triệu. Không chạy model, không pull/merge/push. Tiếp: sửa lời báo cáo, bổ sung dấu vết người chạy, giữ cấu hình/mẫu và kết quả.
+
+
+## 21/11/2026 — đối chiếu bàn giao khảo sát với remote
+
+Chỉ đọc code/tài liệu và fetch main, không chạy self-test hoặc model, không merge/push. Remote nhánh khảo sát khớp 5988c22; notebook ghim 4cd89092c5160dc0dc79455adba42ff096a44664. Code self-test có kiểm lý do từ chối; PASS và kiểm đáp án sai được Claude ghi trong WORKLOG, phiên này không tái chạy. Phát hiện thông tin 'chưa merge' đã cũ: remote main = ecb1905, merge PR #1, đã chứa khảo sát. Tiếp: Claude cập nhật trạng thái Git và câu 'trước 21/11' thành 'trong 21/11, trước khi chạy'; Trí duyệt, Triệu kiểm A; sau đó Trí Kaggle. Không đánh dấu duyệt thay người dùng.
+
+
+## 20/11/2026 — rà worktree khảo sát Claude (chỉ đọc)
+
+Đã tìm đúng .claude/worktrees/kind-chaplygin-249b83, HEAD 09201fa. Đọc khai báo, notebook, scorer, self-test và hướng dẫn Triệu. Hash 3 file mẫu và freeze khớp khai báo; scorer/mẫu tại cfc1ddb không khác HEAD. Thiết kế một khảo sát 300 ảnh, Trí chạy/Triệu kiểm đã thống nhất. Chưa chạy self-test/model/evaluator, chưa kiểm remote. Cần self-test trước GPU; nên tăng kiểm từ chối query trùng và crop/synthetic sai trong scorer. Commit ghim chỉ cần được push trên nhánh có thể fetch; merge main không phải điều kiện chạy. Lỗi khung suy biến là nhánh lỗi trong code, chưa chứng minh xảy ra trên mẫu. Tiếp: duyệt → self-test → push/kiểm commit → Triệu kiểm A → Trí Kaggle → kiểm kết quả → báo cáo; báo cáo viết song song.
+
+
+## 20/11/2026 — kiểm notebook FSC/FSCD theo yêu cầu Trí
+
+Chỉ đọc repo, không chạy evaluator/self-test/inference. Checkout HEAD 3ac3a60: chưa có experiments/fsc147_survey; có notebook benchmark FSCD-147 cũ (text + synthetic + pseudo + crop), không phải notebook khảo sát năm cấu hình. BENCHMARK_FSCD147.md đã ghi kết quả 1.190 ảnh. Đề xuất Triệu dùng lẫn tên FSC/FSCD và cùng bộ test 1.190 ảnh: cần đối chiếu ID/split trước khi chia thành hai lượt chạy để tránh trùng. Báo cáo có thể viết ngay; khảo sát là bổ sung tùy chọn. Chưa kiểm trạng thái GitHub trực tiếp. Tiếp: Claude xác nhận checkout chứa file mới, mục tiêu riêng từng người, notebook và commit tương ứng.
+
+
+## 23/11/2026 (sau) — slide bản 2: 30 slide, 5 phần, học thuật hơn (assistant, theo yêu cầu Trí)
+
+Trí gửi slide của nhóm Hoàng Anh – Duy (44 slide) để tham khảo cách trình bày và chia việc; yêu cầu làm lại slide theo dàn mới, nội dung kỹ hơn, bố cục rõ, học thuật hơn. Báo cáo để sau.
+
+**Không chạy mô hình.** Chỉ đọc dự đoán đã lưu và vẽ hình.
+
+**Đã làm:**
+- `final/slides/main.tex` viết lại: bìa, mục lục, 5 phần (lý do, bài toán, phương pháp, thực nghiệm, giới hạn và kết luận), 30 slide nội dung + 4 dự phòng. Thêm: định nghĩa hình thức Y1–Y3, slide công trình liên quan, bảng "3 vấn đề → hướng xử lý", mỗi vấn đề một slide bằng chứng, thuật toán P, slide dữ liệu có ảnh mẫu, slide giao thức + chỉ số, bảng kết luận vấn đề → cải tiến → kết quả, slide "những điều kết quả chưa nói được". Chân slide ghi "Trình bày" và nguồn số liệu. Kịch bản nói có thời gian từng slide (`notes.pdf`).
+- Hình mới `final/shared/figures/make_slide_figures.py` (đọc `predictions_B2.jsonl` test 11/11 và `p4_unseen_v1_b2_20261027/predictions.jsonl`, ảnh MUCCA trong `data_external/` của checkout chính):
+  - mcac_12, B2: plates 36 / bowls 36 / spoons 34 (đáp án 16 / 3 / 0); 36/36 khung plates trùng khung bowls (IoU ≥ 0,5).
+  - mcac_88, B2: people 21 / cars 22 / bicycles 24; 21/21 khung trùng (IoU ≥ 0,8), **khớp số N4**.
+  - 6 ảnh MUCCA mẫu cho slide dữ liệu.
+  - Bỏ `make_crops.py` và `crop_mcac12_B0.png` của bản 1 (không dùng nữa).
+- Biên dịch sạch; đã xem mọi slide, sửa bảng "3 vấn đề" và slide VĐ1 bị vỡ bố cục.
+- `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` mục 3 và 5 cập nhật: Trí khoảng 12 phút, Triệu khoảng 12 phút; cách rút còn 20 hoặc 15 phút.
+
+**Trí chốt thời lượng 20–25 phút** → giữ bản 2 (khoảng 24 phút). **Còn mở:** các `[TODO]` ở bìa; Triệu đồng ý phần nói; báo cáo LaTeX chưa đồng bộ với các hình/slide mới (để sau theo lời Trí).
+
+## 23/11/2026 — phân công Trí–Triệu; báo cáo cuối và slide bằng LaTeX (assistant, theo yêu cầu Trí)
+
+Trí yêu cầu: chia việc trình bày / phụ trách giữa Trí và Triệu, cập nhật lại tài liệu, rồi viết báo cáo chi tiết và slide bằng LaTeX.
+
+**Không chạy thực nghiệm nào.** Chỉ đọc file kết quả, soạn tài liệu, biên dịch LaTeX. Số test đối chiếu lại với `results/countgdpp/p1_test_kaggle_t4_20261111_1430_eval/result.json` (khớp).
+
+**Đã làm:**
+- `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` (**đề xuất**, chưa chốt): đóng góp từng người theo WORKLOG; ai rà chương nào của báo cáo; 16 slide chia Trí khoảng 8:10 (S1–S5, S8–S10, S16), Triệu khoảng 7:10 (S6–S7, S11–S15); ai trả lời câu hỏi nào; lịch đến 02/12.
+- `final/report/main.tex` → `main.pdf` (21 trang, XeLaTeX + biber): gộp bản chi tiết, Related Work (W7), khảo sát FSC-147, thử nghiệm gán khung; bảng đóng góp; nháp khai báo AI; phụ lục nguồn số liệu. `final/refs.bib` lấy từ danh mục đã kiểm.
+- `final/slides/main.tex` → `main.pdf` (Beamer metropolis 16:9, 16 slide + 5 dự phòng, nhãn "Người nói" ở chân slide); `notes.pdf` là kịch bản nói.
+- `final/shared/`: macros chung, hình pipeline TikZ, `make_crops.py` cắt một ô từ `reports/figures/fig_example_t01_2_mcac_12.png` cho slide 2 (ảnh phái sinh).
+- Biên dịch sạch (không lỗi, không tham chiếu thiếu); đã xem mọi trang báo cáo và mọi slide, sửa chỗ tràn.
+- Sửa câu "người thứ hai tính lại" trong bản chi tiết và kế hoạch slide thành "tính lại độc lập bằng script riêng (trợ lý AI)", vì thực tế là assistant tính lại.
+- Cập nhật: README (thêm `final/`), cẩm nang mục 13–14, kế hoạch slide (ghi chú phân công mới, Q1/Q2 xong). Xuất lại `CAM_NANG_DO_AN_CS331.html`, `KE_HOACH_SLIDE_THUYET_TRINH.html`, `BAO_CAO_CHI_TIET_DO_AN_20261112.docx` bằng pandoc. `BAO_CAO_CHI_TIET_GUI_THAY.pdf` cũ không xuất lại (bản LaTeX thay thế).
+
+**Còn mở (chờ người):**
+- Trí và Triệu chốt bảng phân công; Triệu đồng ý phần nói của mình.
+- Điền `[TODO]`: tên đầy đủ + MSSV Triệu, MSSV Trí, giảng viên, trường/khoa, ngày báo cáo.
+- Chốt câu khai báo AI và bảng đóng góp (cả hai cùng xác nhận).
+- Thời lượng thầy cho (đang giả định 15 phút).
+- Triệu kiểm lại trích dẫn PseCo, DAVE, VA-Count trong `final/refs.bib`.
+
 ## 22/11/2026 (tối) — chuẩn bị thử nghiệm sơ bộ hướng 1 (gán khung theo CLIP giữa các loại), CHƯA chạy (assistant)
 
 Triệu yêu cầu tiến hành hướng 1 trong `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md`.

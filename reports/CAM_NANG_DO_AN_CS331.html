@@ -169,8 +169,8 @@ width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
-  <style>body{max-width:980px;margin:auto;padding:1.5em;font-family:"Segoe UI",Arial,sans-serif;line-height:1.55;color:#222}table{border-collapse:collapse;margin:1em 0;font-size:.93em}th,td{border:1px solid #bbb;padding:.35em .6em;vertical-align:top}th{background:#eef2f7}img{max-width:100%}td img{max-width:420px}blockquote{border-left:4px solid #5b8def;margin:1em 0;padding:.3em 1em;background:#f4f7fd}code{background:#f2f2f2;padding:0 .2em}h1{border-bottom:2px solid #5b8def;padding-bottom:.2em;margin-top:1.6em}#TOC{background:#fafafa;border:1px solid #ddd;padding:.5em 1.5em}</style>
 </head>
 <body>
 <header id="title-block-header">
@@ -179,69 +179,6 @@ nhiều loại với CountGD++</h1>
 <p class="subtitle">Mọi thứ cần biết để viết báo cáo, làm slide và trả
 lời thầy · Nhóm Đào Xuân Minh Trí, Triệu · bản 22/11/2026</p>
 </header>
-<nav id="TOC" role="doc-toc">
-<ul>
-<li><a href="#đồ-án-trong-5-câu" id="toc-đồ-án-trong-5-câu">0. Đồ án
-trong 5 câu</a></li>
-<li><a href="#câu-chuyện-đồ-án-kể-theo-thứ-tự-thời-gian" id="toc-câu-chuyện-đồ-án-kể-theo-thứ-tự-thời-gian">1. Câu chuyện đồ án
-(kể theo thứ tự thời gian)</a></li>
-<li><a href="#thuật-ngữ-nói-được-bằng-lời-thường" id="toc-thuật-ngữ-nói-được-bằng-lời-thường">2. Thuật ngữ (nói được bằng
-lời thường)</a></li>
-<li><a href="#b.-phần-nền-tảng-vì-sao-bài-toán-này-quan-trọng" id="toc-b.-phần-nền-tảng-vì-sao-bài-toán-này-quan-trọng">2b. Phần nền
-tảng: vì sao bài toán này quan trọng</a></li>
-<li><a href="#mô-hình-countgd-đủ-để-giải-thích-trên-slide" id="toc-mô-hình-countgd-đủ-để-giải-thích-trên-slide">3. Mô hình
-CountGD++ (đủ để giải thích trên slide)</a></li>
-<li><a href="#bài-toán-và-cách-đo" id="toc-bài-toán-và-cách-đo">4. Bài
-toán và cách đo</a></li>
-<li><a href="#các-biến-thể-bảng-phải-thuộc" id="toc-các-biến-thể-bảng-phải-thuộc">5. Các biến thể (bảng phải
-thuộc)</a></li>
-<li><a href="#dữ-liệu-và-giao-thức-chọn-trước-xem-sau" id="toc-dữ-liệu-và-giao-thức-chọn-trước-xem-sau">6. Dữ liệu và giao thức
-“chọn trước, xem sau”</a></li>
-<li><a href="#quyết-định-đã-chốt-d1d12" id="toc-quyết-định-đã-chốt-d1d12">7. Quyết định đã chốt
-(D1–D12)</a></li>
-<li><a href="#kết-quả-và-phân-tích" id="toc-kết-quả-và-phân-tích">8. Kết
-quả và phân tích</a>
-<ul>
-<li><a href="#pilot-và-v1" id="toc-pilot-và-v1">8.1 Pilot và v1</a></li>
-<li><a href="#n4-review-khung-bằng-người" id="toc-n4-review-khung-bằng-người">8.2 N4: review khung bằng
-người</a></li>
-<li><a href="#chẩn-đoán-cơ-chế-lượt-2-biến-thể-t" id="toc-chẩn-đoán-cơ-chế-lượt-2-biến-thể-t">8.3 Chẩn đoán cơ chế lượt 2:
-biến thể T</a></li>
-<li><a href="#dev-v2-20-ảnh-60-câu" id="toc-dev-v2-20-ảnh-60-câu">8.4
-Dev v2 (20 ảnh, 60 câu)</a></li>
-<li><a href="#kết-quả-cuối-trên-test-40-ảnh-119-câu-79-có-mặt-40-vắng-mặt" id="toc-kết-quả-cuối-trên-test-40-ảnh-119-câu-79-có-mặt-40-vắng-mặt">8.5
-Kết quả cuối trên test (40 ảnh, 119 câu: 79 có mặt, 40 vắng
-mặt)</a></li>
-<li><a href="#vì-sao-lượt-2-gây-hại" id="toc-vì-sao-lượt-2-gây-hại">8.6
-Vì sao lượt 2 gây hại</a></li>
-<li><a href="#vì-sao-p-không-đóng-góp" id="toc-vì-sao-p-không-đóng-góp">8.7 Vì sao P không đóng góp</a></li>
-<li><a href="#f-thật-sự-làm-gì" id="toc-f-thật-sự-làm-gì">8.8 F thật sự
-làm gì</a></li>
-<li><a href="#theo-loại-cặp-hậu-kiểm" id="toc-theo-loại-cặp-hậu-kiểm">8.9 Theo loại cặp (hậu kiểm)</a></li>
-<li><a href="#bốn-ví-dụ-dùng-cho-slidedemo-tĩnh" id="toc-bốn-ví-dụ-dùng-cho-slidedemo-tĩnh">8.10 Bốn ví dụ (dùng cho
-slide/demo tĩnh)</a></li>
-<li><a href="#thứ-hạng-c6-và-bài-học-chọn-mô-hình" id="toc-thứ-hạng-c6-và-bài-học-chọn-mô-hình">8.11 Thứ hạng C6 và bài học
-chọn mô hình</a></li>
-<li><a href="#chi-phí" id="toc-chi-phí">8.12 Chi phí</a></li>
-</ul></li>
-<li><a href="#khảo-sát-bổ-sung-fsc-147-300-ảnh" id="toc-khảo-sát-bổ-sung-fsc-147-300-ảnh">9. Khảo sát bổ sung FSC-147
-(300 ảnh)</a></li>
-<li><a href="#bảng-số-tra-nhanh-thuộc-lòng-các-số-in-đậm" id="toc-bảng-số-tra-nhanh-thuộc-lòng-các-số-in-đậm">10. Bảng số tra
-nhanh (thuộc lòng các số in đậm)</a></li>
-<li><a href="#hạn-chế-nói-chủ-động-đừng-đợi-bị-hỏi" id="toc-hạn-chế-nói-chủ-động-đừng-đợi-bị-hỏi">11. Hạn chế (nói chủ động,
-đừng đợi bị hỏi)</a></li>
-<li><a href="#hướng-phát-triển" id="toc-hướng-phát-triển">12. Hướng phát
-triển</a></li>
-<li><a href="#b.-so-với-nhóm-hoàng-anh-duy-cùng-dùng-countgd" id="toc-b.-so-với-nhóm-hoàng-anh-duy-cùng-dùng-countgd">12b. So với nhóm
-Hoàng Anh – Duy (cùng dùng CountGD++)</a></li>
-<li><a href="#repo-tìm-gì-ở-đâu" id="toc-repo-tìm-gì-ở-đâu">13. Repo:
-tìm gì ở đâu</a></li>
-<li><a href="#tình-trạng-6-sản-phẩm-phải-nộp-2211" id="toc-tình-trạng-6-sản-phẩm-phải-nộp-2211">14. Tình trạng 6 sản phẩm
-phải nộp (22/11)</a></li>
-<li><a href="#tài-liệu-tham-khảo-đã-kiểm-trong-bản-chi-tiết" id="toc-tài-liệu-tham-khảo-đã-kiểm-trong-bản-chi-tiết">15. Tài liệu tham
-khảo (đã kiểm trong bản chi tiết)</a></li>
-</ul>
-</nav>
 <blockquote>
 <p><strong>Cách dùng:</strong> đọc mục 0 và 1 trong 10 phút là kể được
 đồ án. Mục 2–8 là chi tiết để trả lời câu hỏi. Mục 10 là “bảng số” để
@@ -355,7 +292,16 @@ trang</td>
 <td>10. Khảo sát bổ sung FSC-147</td>
 <td>20–24/11</td>
 <td>300 ảnh một loại vật; câu hỏi: bỏ lượt 2 có hại không</td>
-<td>Self-test PASS; <strong>kết quả: chờ</strong></td>
+<td>Chạy 22/11: B0 − B2 chưa khác rõ; P+F kém hơn trên mẫu này (đếm
+thiếu ở ảnh dày)</td>
+</tr>
+<tr>
+<td>10b. Thử nghiệm sơ bộ “gán khung theo CLIP”</td>
+<td>22/11</td>
+<td>Chỉ trên dev, khai báo trước, Trí đồng ý; gán mỗi khung cho loại
+CLIP thấy giống nhất</td>
+<td>Khung dùng chung X/Y 62% → 3%, nhưng MAE có mặt 5,05 → 6,92 (bỏ nhầm
+khoảng 30% vật đúng): đánh đổi</td>
 </tr>
 <tr>
 <td>11. Báo cáo, slide, nộp</td>
@@ -505,7 +451,8 @@ lượt 2 sẽ đếm sai một cách rất tự tin.</strong></p>
 </blockquote>
 <p><strong>Chỗ lỗi tìm được khi đọc mã:</strong> ở lượt 2, điểm khung
 lấy max trên <strong>cả token chữ lẫn token mẫu</strong>:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>s</mi><mtext mathvariant="normal">lượt 2</mtext></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><mrow><mi mathvariant="normal">max</mi><mo>⁡</mo></mrow><mo minsize="120%" maxsize="120%" stretchy="true" form="prefix">(</mo><msub><mi>s</mi><mtext mathvariant="normal">chữ</mtext></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo>,</mo><mspace width="0.222em"></mspace><msub><mi>s</mi><mtext mathvariant="normal">mẫu</mtext></msub><mo stretchy="false" form="prefix">(</mo><mi>b</mi><mo stretchy="false" form="postfix">)</mo><mo minsize="120%" maxsize="120%" stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">s_{\text{lượt 2}}(b) = \max\big(s_{\text{chữ}}(b),\ s_{\text{mẫu}}(b)\big)</annotation></semantics></math></p>
+<p><span class="math display"><em>s</em><sub>lượt
+2</sub>(<em>b</em>) = max (<em>s</em><sub>chữ</sub>(<em>b</em>), <em>s</em><sub>mẫu</sub>(<em>b</em>))</span></p>
 <p>Một khung chỉ cần <strong>giống mẫu giả</strong> là có điểm cao, dù
 không giống câu chữ.</p>
 <p><strong>CLIP:</strong> model
@@ -1303,10 +1250,12 @@ B2+F chỉ mô tả;</li>
 <li>bootstrap ghép cặp theo ảnh.</li>
 </ul></li>
 <li><strong>Trạng thái:</strong> self-test dữ liệu giả PASS (20/11);
-notebook ghim <code>4cd8909…</code>; <strong>Triệu chạy thay Trí ngày
-22/11</strong>.</li>
-<li><strong>Kết quả:</strong> <strong>chờ</strong> (Triệu điền sau khi
-chạy và kiểm):</li>
+notebook ghim <code>4cd8909…</code>. <strong>Triệu chạy thay Trí ngày
+22/11</strong>, run <code>fsc147_survey_kaggle_t4_20261122_1618</code>:
+hoàn tất 300/300 câu. Assistant kiểm độc lập B/C: <strong>PASS</strong>.
+Log Kaggle xác nhận Kiểm A của notebook đạt (lệch lớn nhất 3.28e-07).
+Chi tiết: <code>reports/TRIEU_FSC147_KHAO_SAT_20261122.md</code>.</li>
+<li><strong>Kết quả</strong> (300 ảnh, mọi câu có mặt):</li>
 </ul>
 <table style="width:100%;">
 <colgroup>
@@ -1328,49 +1277,75 @@ chạy và kiểm):</li>
 <tbody>
 <tr>
 <td>B0</td>
-<td style="text-align: right;">chờ</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: right;">13,88</td>
+<td style="text-align: right;">49,00</td>
+<td style="text-align: right;">−1,54</td>
 <td></td>
 </tr>
 <tr>
 <td>B2</td>
-<td style="text-align: right;">chờ</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td></td>
+<td style="text-align: right;"><strong>13,32</strong></td>
+<td style="text-align: right;">48,62</td>
+<td style="text-align: right;">−0,23</td>
+<td>tốt nhất trên mẫu này</td>
 </tr>
 <tr>
 <td>P+F</td>
-<td style="text-align: right;">chờ</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td></td>
+<td style="text-align: right;">18,01</td>
+<td style="text-align: right;">55,21</td>
+<td style="text-align: right;">−14,68</td>
+<td>thiếu 4.904 vật (B2: 2.033)</td>
 </tr>
 <tr>
 <td>C6</td>
-<td style="text-align: right;">chờ</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
-<td></td>
+<td style="text-align: right;">25,11</td>
+<td style="text-align: right;">71,55</td>
+<td style="text-align: right;">−20,93</td>
+<td>kém nhất; 36 câu trả 0</td>
 </tr>
 <tr>
 <td>B2+F</td>
-<td style="text-align: right;">chờ</td>
-<td style="text-align: right;"></td>
-<td style="text-align: right;"></td>
+<td style="text-align: right;">17,98</td>
+<td style="text-align: right;">53,18</td>
+<td style="text-align: right;">−14,79</td>
 <td></td>
 </tr>
 <tr>
 <td><strong>B0 − B2</strong> [CI]</td>
-<td style="text-align: right;">chờ</td>
+<td style="text-align: right;">+0,55 [−3,00; +4,30]</td>
 <td style="text-align: right;"></td>
 <td style="text-align: right;"></td>
-<td>cách đọc: CI &gt; 0 → bỏ lượt 2 làm sai số tăng trên mẫu này</td>
+<td><strong>chưa thấy khác biệt rõ</strong> (CI chứa 0); cả hai nhóm ≤
+40 / &gt; 40 cũng chứa 0</td>
+</tr>
+<tr>
+<td>P+F − B2 [CI]</td>
+<td style="text-align: right;">+4,69 [+2,25; +7,50]</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td>P+F kém hơn B2 trên mẫu này</td>
+</tr>
+<tr>
+<td>P+F − B0 [CI]</td>
+<td style="text-align: right;">+4,14 [+0,56; +8,09]</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td>P+F kém hơn B0 trên mẫu này</td>
 </tr>
 </tbody>
 </table>
 <ul>
+<li><strong>Đọc kết quả:</strong>
+<ul>
+<li>Trên ảnh một loại, <strong>giữ hay bỏ lượt 2 chưa khác nhau
+rõ</strong>.</li>
+<li><strong>Cấu hình đã khóa kém hơn</strong>, chủ yếu ở ảnh &gt; 40 vật
+(MAE P+F 35,28 so với B2 25,09), vì bộ lọc F (chọn trên MUCCA 3–40 vật)
+<strong>lọc quá tay, gây đếm thiếu</strong>.</li>
+<li>Ở ảnh ≤ 40 vật, P+F ngang B2 (3,50 so với 3,44).</li>
+<li>→ Phạm vi của cải tiến: ảnh nhiều loại, ít đến vừa vật. Ảnh dày, một
+loại thì giữ CountGD++ gốc.</li>
+</ul></li>
 <li><strong>Giới hạn khi nói:</strong>
 <ul>
 <li>chỉ áp dụng cho mẫu và điều kiện này, không phải benchmark đầy
@@ -1472,6 +1447,31 @@ nhanh (thuộc lòng các số in đậm)</h1>
 <td>0.89 / khoảng 1.5 s/câu</td>
 </tr>
 <tr>
+<td>Thời gian CLIP (FSC-147, T4)</td>
+<td>khoảng 1,3 s/câu (404 s / 300 câu)</td>
+</tr>
+<tr>
+<td><strong>FSC-147 300 ảnh: B0 / B2 / P+F / C6</strong></td>
+<td>13,88 / <strong>13,32</strong> / 18,01 / 25,11</td>
+</tr>
+<tr>
+<td>FSC-147: B0 − B2 (chính)</td>
+<td>+0,55 [−3,00; +4,30], chưa khác rõ</td>
+</tr>
+<tr>
+<td><strong>FSC-147: P+F − B2</strong></td>
+<td><strong>+4,69 [+2,25; +7,50]</strong> (kém hơn; ảnh &gt; 40 vật:
+35,28 so với 25,09)</td>
+</tr>
+<tr>
+<td><strong>Dev, gán khung theo CLIP: khung dùng chung X/Y</strong></td>
+<td><strong>61,6% → 2,9%</strong></td>
+</tr>
+<tr>
+<td>Dev, gán khung theo CLIP: MAE có mặt</td>
+<td>5,05 → 6,92 (+1,88 [−0,03; +3,73]); bỏ 30% khung đúng loại</td>
+</tr>
+<tr>
 <td>Cấu hình khóa</td>
 <td>P(τ 0.20, M 5)+F, θ 0.604; freeze sha <code>64e89ef5…</code></td>
 </tr>
@@ -1489,21 +1489,39 @@ nhanh (thuộc lòng các số in đậm)</h1>
 có mặt.</li>
 <li>Nhãn: 15/120 câu test có ghi chú cần xem lại (độ nhạy không đổi kết
 luận). Phép kiểm “điểm trong khung” dễ dãi.</li>
-<li>F dùng một ngưỡng toàn cục, nên ảnh đông vật bị lọc quá tay.</li>
-<li>CLIP yếu với ô cắt nhỏ và loại gần nghĩa (dê–chó–cừu).</li>
+<li>F dùng một ngưỡng toàn cục, nên ảnh đông vật bị lọc quá tay.
+<strong>FSC-147 xác nhận:</strong> P+F kém CountGD++ gốc ở ảnh &gt; 40
+vật. Phạm vi cải tiến: ảnh nhiều loại, ít đến vừa vật.</li>
+<li>CLIP yếu với ô cắt nhỏ và loại gần nghĩa (dê–chó–cừu). <strong>Thử
+nghiệm dev xác nhận:</strong> gán khung theo CLIP bỏ nhầm khoảng 30%
+khung đúng loại.</li>
 <li>Lạc quan do chọn trên dev: thứ hạng đổi trên test.</li>
 <li>Phân tích cơ chế lượt 2 làm trên dev và tập chẩn đoán; chưa có T
 trên test; H2 chưa kiểm.</li>
-<li>Thời gian CLIP chưa đo.</li>
+<li>Thời gian CLIP chỉ đo ở khảo sát FSC-147 (khoảng 1,3 s/câu), chưa đo
+trên test MUCCA.</li>
+<li><strong>Bài X/Y chưa giải xong:</strong> sau cải tiến, sai số câu có
+mặt vẫn khoảng một nửa số vật thật (MAE 6,84 trên trung bình 12,4
+vật).</li>
 </ol>
 <h1 id="hướng-phát-triển">12. Hướng phát triển</h1>
 <ol type="1">
-<li>Kiểm C6 (lọc ngay sau lượt 1) trên một tập mới, độc lập.</li>
+<li>Kiểm C6 (lọc ngay sau lượt 1) trên một tập mới, độc lập; cần kèm
+ngưỡng theo mật độ (C6 kém nhất trên FSC-147 ảnh dày).</li>
 <li><strong>So sánh tương phản giữa các loại:</strong> chấm mỗi khung
 bằng CLIP với <em>mọi</em> tên loại trong ảnh, rồi gán khung cho loại
 giống nhất. Đây là cùng một mô hình, cùng một thang điểm. Cách này khác
-hướng “giành khung bằng điểm CountGD++” mà nhóm khác thử thất bại.</li>
-<li>Ngưỡng thích ứng theo mật độ vật.</li>
+hướng “giành khung bằng điểm CountGD++” mà nhóm khác thử thất bại.
+<ul>
+<li><strong>Đã thử sơ bộ trên dev (22/11):</strong> khung dùng chung X/Y
+62% → 3%, nhưng MAE có mặt 5,05 → 6,92, vì CLIP bỏ nhầm khoảng 30% vật
+đúng. Chi tiết:
+<code>reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md</code>.</li>
+<li><strong>Bước tiếp:</strong> chỉ phân xử những khung bị X và Y tranh
+nhau; dùng bộ kiểm mạnh hơn.</li>
+</ul></li>
+<li>Ngưỡng thích ứng theo mật độ vật (khảo sát FSC-147 cho thấy
+cần).</li>
 <li>Kiểm H2: so điểm token chữ của cùng khung ở lượt 1 và lượt 2.</li>
 <li>Dùng negative prompt “không đếm X” có sẵn trong CountGD++.</li>
 </ol>
@@ -1596,11 +1614,34 @@ cùng chế độ. Đây là bình thường.</li>
 </tr>
 <tr>
 <td>Khảo sát FSC-147</td>
-<td><code>experiments/fsc147_survey/</code></td>
+<td><code>experiments/fsc147_survey/</code>,
+<code>reports/TRIEU_FSC147_KHAO_SAT_20261122.md</code></td>
+</tr>
+<tr>
+<td>Thử nghiệm gán khung theo CLIP (dev)</td>
+<td><code>experiments/xy_clip_assign/</code>,
+<code>reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md</code></td>
+</tr>
+<tr>
+<td>Điểm yếu + hướng giải quyết</td>
+<td><code>reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md</code></td>
+</tr>
+<tr>
+<td>Related Work (nháp)</td>
+<td><code>reports/RELATED_WORK_TRIEU_20261122.md</code></td>
 </tr>
 <tr>
 <td>So sánh nhóm khác</td>
 <td><code>workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md</code></td>
+</tr>
+<tr>
+<td>Báo cáo cuối + slide (LaTeX)</td>
+<td><code>final/report/main.tex</code>,
+<code>final/slides/main.tex</code>, <code>final/refs.bib</code></td>
+</tr>
+<tr>
+<td>Phân công Trí – Triệu</td>
+<td><code>reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md</code></td>
 </tr>
 <tr>
 <td>Trạng thái + nhật ký</td>
@@ -1612,8 +1653,8 @@ cùng chế độ. Đây là bình thường.</li>
 </tr>
 </tbody>
 </table>
-<h1 id="tình-trạng-6-sản-phẩm-phải-nộp-2211">14. Tình trạng 6 sản phẩm
-phải nộp (22/11)</h1>
+<h1 id="tình-trạng-6-sản-phẩm-phải-nộp-2311">14. Tình trạng 6 sản phẩm
+phải nộp (23/11)</h1>
 <table>
 <colgroup>
 <col style="width: 33%" />
@@ -1631,8 +1672,10 @@ phải nộp (22/11)</h1>
 <tr>
 <td>H1</td>
 <td>Báo cáo cuối</td>
-<td>Có khung 22 trang; <strong>thiếu Related Work</strong> (Triệu, hôm
-nay); cần chuyển sang bản nộp</td>
+<td><strong>Nháp LaTeX đầy đủ 23/11:</strong>
+<code>final/report/main.pdf</code> (21 trang, gộp Related Work, FSC-147,
+thử nghiệm dev). Còn: điền tên/MSSV/giảng viên, hai bạn rà theo phân
+công, chốt khai báo AI</td>
 </tr>
 <tr>
 <td>H2</td>
@@ -1642,8 +1685,10 @@ nay); cần chuyển sang bản nộp</td>
 <tr>
 <td>H3</td>
 <td>Slide + demo</td>
-<td>Có kế hoạch (<a href="KE_HOACH_SLIDE_THUYET_TRINH.md">KE_HOACH_SLIDE_THUYET_TRINH.md</a>)
-và 8 hình; <strong>chưa có file slide</strong></td>
+<td><strong>Slide Beamer 23/11:</strong>
+<code>final/slides/main.pdf</code> (bản 2: 30 slide nội dung + 4 dự
+phòng), kịch bản nói <code>final/slides/notes.pdf</code>; demo tĩnh bằng
+4 hình ví dụ. Phân công nói: <a href="PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md">PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md</a></td>
 </tr>
 <tr>
 <td>H4</td>
@@ -1663,7 +1708,12 @@ và 8 hình; <strong>chưa có file slide</strong></td>
 <tr>
 <td>H7</td>
 <td>Khảo sát FSC-147</td>
-<td>Self-test PASS; Triệu chạy 22/11; đóng 24/11</td>
+<td>✅ Chạy 22/11, kiểm độc lập PASS (mục 9)</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Thử nghiệm sơ bộ hướng 1 (dev)</td>
+<td>✅ Chạy 22/11; đánh đổi (mục 12)</td>
 </tr>
 </tbody>
 </table>

@@ -1,5 +1,28 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 23/11/2026 — bàn giao slide v2 lên GitHub:** Trí báo đã làm xong slide v2. Bộ hiện tại: `final/slides/main.tex`, `main.pdf`, `notes.pdf`; phân công ở `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md`. Đã đồng bộ checkout chính với remote trước khi đưa tài liệu từ worktree Claude sang. **Báo cáo chi tiết (gồm `final/report/`) CHƯA đồng bộ theo slide v2.** Việc tiếp theo: sửa báo cáo theo slide v2, rà số liệu/trích dẫn/hình, điền thông tin bìa và chốt phần trình bày với Triệu. Phiên này chỉ đồng bộ Git và tài liệu, không chạy thực nghiệm hoặc duyệt chất lượng slide thay người dùng. Các ghi chú kiểm tra 20–22/11 bên dưới là lịch sử tại thời điểm đó.
+
+**Rà khảo sát 22/11:** remote c2928ca đã có run Triệu 20261122_1618 (300 ảnh); số MAE/CI trong ảnh khớp result.json. Xem WORKLOG mới: cần sửa phạm vi số đếm thiếu, cách diễn giải nguyên nhân/thời gian, bổ sung version Kaggle và xác nhận Triệu. Chưa tái chạy evaluator; chưa merge checkout local.
+
+
+**Đối chiếu remote 21/11:** main trên GitHub đã merge khảo sát tại ecb1905 (PR #1); nhánh khảo sát 5988c22, notebook ghim 4cd8909. Self-test PASS theo báo cáo Claude; phiên kiểm này không tái chạy. Tiếp: Trí duyệt + Triệu kiểm A trước khi Trí chạy Kaggle. Chưa pull/merge checkout local.
+
+
+**Rà worktree Claude 20/11:** đã xác nhận bộ khảo sát tại .claude/worktrees/kind-chaplygin-249b83 (09201fa), hash mẫu/freeze khớp. Chưa chạy self-test hay model. Xem WORKLOG mới nhất: chuẩn bị kiểm scorer, push commit ghim, Triệu kiểm trước khi Trí chạy; báo cáo viết song song.
+
+
+**Kiểm notebook 20/11:** chưa thấy FSC-147 survey trong checkout này; notebook FSCD-147 hiện có là benchmark cũ. Viết báo cáo ngay; trước khảo sát bổ sung cần xác nhận file ở checkout nào và đối chiếu ảnh/split FSC/FSCD để tránh chạy trùng. Xem WORKLOG 20/11. Chưa chạy thực nghiệm.
+
+**Cập nhật 23/11 — đã có nháp báo cáo cuối + slide bằng LaTeX, và bảng phân công:**
+- **Slide bản 2 (23/11, sau):** 30 slide nội dung, 5 phần, khoảng 24 phút; Trí khoảng 12 phút (S1–S9, S14–S16, S19–S20, S29–S31), Triệu khoảng 12 phút (S10–S13, S17–S18, S21–S28). Chi tiết và cách rút còn 20 / 15 phút: [reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md](reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md) (đề xuất, chờ Trí + Triệu chốt).
+- **Báo cáo:** `final/report/main.pdf` (21 trang). **Slide:** `final/slides/main.pdf` (bản 2: 30 + 4 dự phòng); kịch bản nói `final/slides/notes.pdf`. Biên dịch: `latexmk -xelatex main.tex` trong từng thư mục.
+- **Việc kế tiếp:**
+  1. Hai bạn chốt phân công. **Thời lượng đã chốt: 20–25 phút** (Trí, 23/11), giữ bản 2.
+  2. Điền các `[TODO]` đỏ (tên, MSSV, giảng viên, trường, ngày).
+  3. Mỗi người rà phần mình theo bảng phân công; Triệu kiểm trích dẫn PseCo/DAVE/VA-Count.
+  4. Chốt khai báo AI + bảng đóng góp; biên dịch lại; tập 2 lần (29–30/11); nộp 02/12.
+- Không còn thí nghiệm nào phải chạy.
+
 **Cập nhật 22/11 (khuya) — thử nghiệm sơ bộ hướng 1 ĐÃ CHẠY (dev, Triệu báo Trí đồng ý):**
 - Kết quả: [reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md](reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md); run `results/countgdpp/xy_clip_assign_dev_20261122_1755/`.
 - Gán khung theo CLIP **tách X/Y gần như hoàn toàn**: khung dùng chung 61,6% → 2,9%, FPR 0.
