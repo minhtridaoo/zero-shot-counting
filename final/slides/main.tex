@@ -57,9 +57,10 @@
 
 \title{Đếm đúng class trong ảnh nhiều class:\\chẩn đoán và giảm lỗi ``đếm nhầm class'' của CountGD++}
 \subtitle{Diagnosing and reducing class confusion of CountGD++ in multi-class images}
-\author{Đào Xuân Minh Trí \quad \todo{MSSV}\qquad \todo{họ tên} Triệu \quad \todo{MSSV}}
-\institute{\todo{Trường / Khoa} \quad·\quad Môn CS331 \todo{tên môn} \quad·\quad GVHD: \todo{tên giảng viên}}
-\date{\todo{ngày báo cáo}}
+\author{Đào Xuân Minh Trí -- 24521826 \qquad Trần Đăng Khắc Triệu -- 24521857}
+\institute{Trường Đại học Công nghệ Thông tin -- ĐHQG-HCM \quad·\quad Khoa Khoa học Máy tính\\[1mm]
+Môn: Thị giác máy tính nâng cao (CS331) \quad·\quad GVHD: TS. Mai Tiến Dũng}
+\date{}
 
 \begin{document}
 
@@ -156,21 +157,22 @@ Nhóm chạy lại & \textbf{8.34} & \textbf{24.64}\\
 
 \begin{frame}{Related work và vị trí của đồ án}
 \source{Huang và cs., CVPR 2024; Pelhan và cs., CVPR 2024; Zhu và cs., ECCV 2024}
-\small
-\begin{tabularx}{\textwidth}{@{}l X l l@{}}
+\footnotesize
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X c l@{}}
 \toprule
 Công trình & Ý chính & Huấn luyện? & Liên hệ\\
 \midrule
-CountGD / CountGD++ & Đếm theo text prompt, dựa trên Grounding DINO; pseudo-exemplar hai lượt & có & mô hình gốc\\
+CountGD / CountGD++ & Đếm theo text prompt trên nền Grounding DINO; pseudo-exemplar hai lượt & có & mô hình gốc\\
 PseCo & SAM đề xuất vùng, classifier CLIP được distill & có & \\
-VA-Count & Tìm exemplar tốt, contrastive learning để loại exemplar xấu & có & gần bước \textbf{P}\\
-DAVE & Detect rồi verify; bản dùng text prompt dùng CLIP loại cả \emph{cụm} box & có & gần bước \textbf{F}\\
+VA-Count & Tìm exemplar tốt, contrastive learning loại exemplar xấu & có & gần bước \textbf{P}\\
+DAVE & Detect rồi verify; bản text prompt dùng CLIP loại cả \emph{cụm} box & có & gần bước \textbf{F}\\
 PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & không & cách đánh giá\\
 \midrule
 \textbf{Đồ án} & Chẩn đoán lỗi trên ảnh nhiều class; CLIP kiểm \textbf{từng box}; giao thức khóa trước & \textbf{không} & \\
 \bottomrule
 \end{tabularx}
-\takeaway{Đồ án không huấn luyện mô hình mới, cũng không chỉ đánh giá: nhóm sửa ở bước suy luận của một mô hình có sẵn.}
+\takeaway{Không huấn luyện mô hình mới, cũng không chỉ đánh giá: nhóm sửa ở bước suy luận của mô hình có sẵn.}
 \note{[0:45] Các phương pháp tự tạo exemplar như PseCo, VA-Count, DAVE đều phải huấn luyện thêm. Gần nhất với bước lọc F là bản dùng text prompt của DAVE, nhưng DAVE loại theo cụm box và có huấn luyện; F kiểm từng box và không huấn luyện. PrACo và MUCCA chỉ đánh giá. Đồ án nằm giữa: chẩn đoán và sửa ở bước suy luận.}
 \end{frame}
 
@@ -279,8 +281,8 @@ PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & 
 \end{frame}
 
 \begin{frame}{Chẩn đoán: ba vấn đề và hướng xử lý}
-\small
-\renewcommand{\arraystretch}{1.25}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.20\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.21\textwidth} >{\raggedright\arraybackslash}p{0.22\textwidth}@{}}
 \toprule
 Vấn đề & Bằng chứng & Nguyên nhân (giả thuyết) & Hướng xử lý\\

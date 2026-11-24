@@ -20,6 +20,18 @@ Triệu góp ý: câu chữ trên slide chưa tự nhiên (ví dụ "mô hình �
   Slide Cảm ơn (standout) không đánh số. Mọi slide sau slide 2 tăng 1 số so với bản 23/11.
 - **Hình pipeline cho slide** tách thành `final/shared/figures/pipeline_slides.tex` (thuật ngữ mới). `pipeline.tex` giữ nguyên cho báo cáo, vì báo cáo vẫn dùng chữ tiếng Việt.
 
+**Sửa sau khi Triệu biên dịch thử trên Overleaf (đủ 35 trang):**
+- Slide 6 (related work) tràn chữ: giảm cỡ chữ bảng, canh trái cột "Ý chính", rút gọn câu. Slide 11 (chẩn đoán) thu gọn tương tự để phòng tràn.
+- **Điền thông tin bìa** (slide và báo cáo LaTeX), theo thông tin Triệu cung cấp:
+  - Đào Xuân Minh Trí – 24521826; Trần Đăng Khắc Triệu – 24521857;
+  - GVHD: TS. Mai Tiến Dũng;
+  - Trường Đại học Công nghệ Thông tin – ĐHQG-HCM, Khoa Khoa học Máy tính;
+  - môn Thị giác máy tính nâng cao (CS331).
+
+  Ngày báo cáo để trống trên slide.
+- Báo cáo còn 2 `[TODO]`: xác nhận bảng đóng góp, chốt câu khai báo AI (cả hai cùng chốt).
+- Lỗi PDF dừng ở slide 16: do project Overleaf thiếu file mới `shared/pipeline_slides.tex`. Triệu đã thêm file, biên dịch được.
+
 **Chưa làm / cần người:**
 - **Trí xem lại phần mình** (Triệu yêu cầu sửa, Trí chưa duyệt câu chữ).
 - **Trí biên dịch PDF.** Máy Triệu không có LaTeX; assistant chỉ kiểm cân ngoặc và `\begin`/`\end`, không phát hiện lỗi.
