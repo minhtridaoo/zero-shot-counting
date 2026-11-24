@@ -41,6 +41,12 @@ Assistant đã dựng **bản nháp đầy đủ**. Việc của hai bạn là: 
 
 # 3. Slide và lời nói (bản 2, 23/11: 30 slide nội dung, 5 phần, khoảng 24 phút)
 
+> **Cập nhật 24/11:**
+> - Slide đã thêm **slide 3 "Phân công công việc"** (bảng ai làm gì, lấy từ mục 1 file này) và bỏ nhãn "Trình bày" ở chân trang. Từ slide 3 trở đi, **số slide trong bảng dưới tăng thêm 1**.
+> - Ai nói slide nào không đưa lên slide. Theo số mới: Trí 4–10, 15–17, 20–21, 30–31; Triệu 11–14, 18–19, 22–29.
+> - Thuật ngữ trên slide đổi sang tiếng Anh: box, pseudo-exemplar, query, class, GT…
+> - Mục 6 bên dưới còn dùng số slide của bản 1.
+
 Bản 2 làm lại theo yêu cầu Trí: bố cục 5 phần (giống cách nhóm Hoàng Anh – Duy chia, nhưng nội dung và giao diện của nhóm mình), có mục lục, trang chia phần, định nghĩa hình thức, mỗi vấn đề có ảnh bằng chứng thật, tiêu đề slide nói kết luận, chân slide ghi "Trình bày: …" và nguồn số liệu.
 
 | # | Phần | Slide | Người nói | Thời gian |

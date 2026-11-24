@@ -81,7 +81,7 @@ subtitle: "Dàn slide, ai nói gì, kịch bản, câu hỏi phản biện, hàn
 
 **S12 (Triệu).** "Chia theo loại cặp: với cặp dễ nhầm như bát–đĩa hay các loại quả, cải thiện rõ, khoảng 3 vật mỗi câu. Với cặp khác hẳn như người–xe, chưa thấy khác biệt chắc chắn, và chỉ có 13 ảnh. Nhóm nói thẳng điều này: phương pháp chưa giải quyết xong mọi dạng X/Y."
 
-**S13.** "Ba ví dụ. Blueberries: B2 đếm 65, P+F đếm 8, đáp án 7. Dogs: đàn dê bị đếm là chó ở mọi cách, vì CLIP cũng không phân biệt được dê và chó ở ô ảnh nhỏ. People: F bỏ cả người thật, còn 13 trên 31."
+**S13.** "Ba ví dụ. Blueberries: B2 đếm 65, P+F đếm 8, đáp án 7. Dogs: đàn cừu (cùng vài con dê) bị đếm là chó ở mọi cách, vì CLIP cũng không phân biệt được dê và chó ở ô ảnh nhỏ. People: F bỏ cả người thật, còn 13 trên 31."
 
 **S14 (Triệu).** "Một bài học: trên dev, cách đơn giản C6 chỉ xếp thứ 7, nhưng trên test lại tốt nhất. Chênh lệch nằm trong khoảng nhiễu, nên nhóm không đổi kết quả chính sau khi đã xem test. Nhóm ghi C6 là giả thuyết cho lần kiểm sau." "Nhóm cũng kiểm thêm 300 ảnh FSC-147, mỗi ảnh một loại. Ở đó giữ hay bỏ lượt 2 chưa khác nhau rõ. Còn cấu hình của nhóm thì kém hơn, vì bộ lọc chọn trên ảnh 3–40 vật đã lọc quá tay ở ảnh dày. Nên nhóm ghi rõ: cải tiến dành cho ảnh nhiều loại, ít đến vừa vật."
 

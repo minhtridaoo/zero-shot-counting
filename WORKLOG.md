@@ -1,5 +1,63 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 24/11/2026 (sau) — viết lại câu chữ cả bộ slide, thuật ngữ tiếng Anh, bỏ nhãn "Trình bày" (Triệu + assistant)
+
+Triệu góp ý: câu chữ trên slide chưa tự nhiên (ví dụ "mô hình đều trả về các ô tô"); thuật ngữ chuyên ngành không cần dịch sát nghĩa; bỏ nhãn "Trình bày: …" ở chân slide, thay bằng một slide phân công. Triệu duyệt nội dung 12 slide phần mình và bảng thuật ngữ (`HANDOFF/TRIEU_SLIDE_NOI_DUNG_DE_DUYET_20261124.md`, chỉ để trên máy Triệu), rồi yêu cầu sửa luôn phần của Trí theo cùng cách.
+
+**Đã sửa `final/slides/main.tex`:**
+- **Thuật ngữ** (cả bộ slide và lời nói):
+  - khung → box; mẫu giả → pseudo-exemplar; câu hỏi → query (present / absent query); câu chữ → prompt;
+  - điểm theo chữ / mẫu → text / exemplar score; loại → class; đáp án → GT; ngưỡng → threshold;
+  - bộ lọc → filter; review mù → blind review; hậu kiểm → post-hoc; khai báo trước → pre-registered.
+  - Giữ tiếng Việt: lượt 1/2, đếm thừa/thiếu, "chọn trước, xem sau".
+- **Câu chữ:** viết lại tự nhiên hơn ở mọi slide, **số liệu không đổi**.
+- **Bỏ nhãn "Trình bày"** ở chân trang (bỏ macro `\speaker`), giữ dòng nguồn và số trang.
+- **Thêm slide 3 "Phân công công việc"** sau mục lục: bảng ai làm gì theo 7 hạng mục (môi trường, pilot/v1, chẩn đoán, hướng v2, dữ liệu, thực nghiệm, viết/trình bày).
+  - Triệu duyệt bảng, bỏ ý "so sánh với nhóm khác" và bỏ dòng về trợ lý AI trên slide (khai báo AI vẫn để trong báo cáo, mục đóng góp, chờ hai bạn chốt).
+  - Ai nói slide nào thì hai bạn tự chia, **không đưa lên slide**. Tham khảo: Trí 4–10, 15–17, 20–21, 30–31; Triệu 11–14, 18–19, 22–29.
+  - Cần Trí xác nhận phần đóng góp của Trí trong bảng.
+
+  Slide Cảm ơn (standout) không đánh số. Mọi slide sau slide 2 tăng 1 số so với bản 23/11.
+- **Hình pipeline cho slide** tách thành `final/shared/figures/pipeline_slides.tex` (thuật ngữ mới). `pipeline.tex` giữ nguyên cho báo cáo, vì báo cáo vẫn dùng chữ tiếng Việt.
+
+**Chưa làm / cần người:**
+- **Trí xem lại phần mình** (Triệu yêu cầu sửa, Trí chưa duyệt câu chữ).
+- **Trí biên dịch PDF.** Máy Triệu không có LaTeX; assistant chỉ kiểm cân ngoặc và `\begin`/`\end`, không phát hiện lỗi.
+- Báo cáo LaTeX và các tài liệu `.md` vẫn dùng thuật ngữ tiếng Việt. Nếu muốn đồng bộ thì cần quyết định riêng.
+- Bảng số slide trong `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` theo bản cũ: đã thêm ghi chú đổi số.
+- Số 0.077 ở slide VĐ3 vẫn chờ Trí xác nhận nguồn.
+- Zip Overleaf đã đóng gói lại ở `C:\Users\diosodumb\Downloads\CS331_overleaf\`.
+
+## 24/11/2026 — Triệu rà và sửa phần slide của mình (S10–S13, S17–S18, S21–S28) (Triệu + assistant)
+
+Đối chiếu từng số trên 12 slide phần Triệu với nguồn trong repo. **Không chạy model**; chỉ đọc dự đoán và nhãn đã lưu.
+
+**Đã kiểm, khớp nguồn:**
+- mcac_88 (21/22/24, đáp án 6/22/0; 21/21 khung trùng);
+- N4 (1 đúng / 10 bao nhiều vật / 10 sai loại);
+- pilot;
+- T (8,55; 8,80; 21%; +2,27);
+- bảng dữ liệu, chú thích 6 ảnh MUCCA (cặp X/Y đúng theo manifest);
+- phân rã thừa/thiếu, bảng khung, theo loại cặp, ví dụ;
+- FSC-147, thử nghiệm gán khung, bảng dev → test.
+
+**Đã sửa:**
+1. **"Đàn dê" → "đàn cừu".** Nhãn MUCCA của mcac_171: 80 cừu, 7 dê, 4 chó. Khung "dogs" phần lớn nằm trên cừu (B0 73/92, B2 81/101, P+F 62/72, C6 54/66 khung chứa điểm cừu; chỉ 4–7 khung trên dê).
+   - Đã sửa: slide ví dụ thất bại (chữ + lời nói), slide hạn chế ("cừu/dê–chó"), chú thích hình trong `final/report/main.tex`, cẩm nang, kế hoạch slide.
+   - Các báo cáo cũ (`PHAN_TICH_HAU_KIEM_TEST_20261111.md`, bản tóm tắt gửi thầy 11/11) giữ nguyên như lịch sử.
+2. **VĐ2 (N4):** thêm chú thích "9/21 mẫu thuộc câu vắng mặt (không thể đúng loại); riêng câu có mặt: 1/12", theo `RA_SOAT_TRIEU_N4_20261029.md`.
+3. **Giao thức:** bước cuối "Tính lại độc lập bằng script riêng" sửa thành "Kiểm mã băm, tính lại từ đầu ra thô".
+   - Lý do: theo `KET_QUA_TEST_CUOI_20261111.md`, ngày 11/11 assistant tính lại bằng hàm của chính `apply_freeze_v2.py`.
+   - Báo cáo LaTeX (mục đóng góp và chương 6) và bản chi tiết `.md` ghi đúng hai bước: 11/11 dùng hàm của script chấm; 22/11 script kiểm viết riêng (`--selftest-w8`) tính lại số đếm 5 cách trên test và khớp.
+4. **Phân rã F:** tiêu đề "F đổi đếm thừa thành đếm thiếu" sửa thành "F giảm mạnh đếm thừa, nhưng tăng đếm thiếu" (thừa −337, thiếu +220).
+5. **Lời nói S27:** "C6 đứng thứ 7 trên dev" sửa thành "thứ 7 trong 15 họ cấu hình".
+
+**Cần Trí xác nhận:** ví dụ ở VĐ3 (S13) "khung ô tô có điểm chữ 0,077, điểm mẫu 0,970" (u08_1, p4_unseen_v1).
+- 0,970 khớp `stage2_scores` khung đầu của u08_1 trong `offline_v2_cpu_20261110/text_replay_final/predictions.jsonl`.
+- **0,077 chưa tìm thấy nguồn trong repo**; số này xuất hiện từ commit `ba68803`. Nếu không có nguồn thì nên bỏ số, chỉ giữ ý.
+
+**Chưa làm:** biên dịch PDF (máy Triệu không có LaTeX). Zip Overleaf đã đóng gói lại ở `C:\Users\diosodumb\Downloads\CS331_overleaf\`.
+
 ## 23/11/2026 (tối) — sửa 3 lỗi diễn giải khảo sát FSC-147 theo rà soát của Trí (Triệu + assistant)
 
 Triệu pull `ba68803` (slide v2, báo cáo LaTeX). Theo ghi chú rà ngày 22/11 của Trí, sửa ba lỗi diễn giải. Các lỗi này nằm trong bản nháp của assistant và đã lan sang báo cáo LaTeX và slide. **Không đổi số liệu, không chạy gì.**

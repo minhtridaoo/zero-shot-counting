@@ -316,7 +316,7 @@ Màu khung: xanh = đúng loại; đỏ = loại khác; xám = không trúng v�
 |---|---|---|
 | ![](figures/fig_example_t05_1_mcac_25.png) | Thành công | "blueberries", GT 7: B0 36, B2 65, **P+F 8**, C6 9. B2 thêm 50 khung xám là từng hạt của quả mâm xôi |
 | ![](figures/fig_example_t01_2_mcac_12.png) | Lỗi X/Y còn lại | "bowls", GT 3: chồng đĩa bị đếm là bát ở mọi cách (P+F 17, C6 20) |
-| ![](figures/fig_example_t33_1_mcac_171.png) | Thất bại | "dogs", GT 4: đàn dê bị đếm là chó (66–101) ở mọi cách; CLIP không tách được dê với chó ở ô nhỏ |
+| ![](figures/fig_example_t33_1_mcac_171.png) | Thất bại | "dogs", GT 4: ảnh có 80 cừu, 7 dê, 4 chó; đàn cừu (cùng vài con dê) bị đếm là chó (66–101) ở mọi cách; CLIP không tách được dê với chó ở ô nhỏ |
 | ![](figures/fig_example_t40_1_mcac_224.png) | Lọc quá tay | "people", GT 31: không có khung sai loại, nhưng F bỏ cả người thật (P+F 13, C6 3) |
 
 ## 8.11 Thứ hạng C6 và bài học chọn mô hình

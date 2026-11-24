@@ -105,7 +105,7 @@ Các mô hình đếm đối tượng theo câu chữ nhận tên một loại v
 \begin{enumerate}
 \item Một chẩn đoán định lượng lỗi đếm nhầm loại của \cgdpp{} trên ảnh nhiều loại: đo tỉ lệ khung dùng chung giữa hai câu hỏi X và Y, đo khung trúng đúng loại theo điểm nhãn, và đo mức đóng góp của cách chấm $\max$ ở lượt 2 bằng biến thể T (khoảng 1/5 tác hại trên dev).
 \item Hai bước cải tiến không cần huấn luyện (P và F), kèm các đối chứng tách bạch để xác định bước nào thật sự có ích.
-\item Một giao thức đánh giá chặt: dữ liệu rút theo quy tắc cố định và được người kiểm; luật chọn cấu hình chốt trước; cấu hình khóa bằng mã băm; test chạy một lần; kết quả được tính lại độc lập bằng một script viết riêng.
+\item Một giao thức đánh giá chặt: dữ liệu rút theo quy tắc cố định và được người kiểm; luật chọn cấu hình chốt trước; cấu hình khóa bằng mã băm; test chạy một lần; kết quả được kiểm mã băm và tính lại từ đầu ra thô, khớp tuyệt đối.
 \item Báo cáo đầy đủ các kết quả âm: lượt 2 gây hại, P không đóng góp thêm, thứ hạng trên dev đảo trên test, cặp vật khác hẳn chưa cải thiện, và cấu hình kém hơn trên ảnh một loại đông vật.
 \end{enumerate}
 
@@ -297,7 +297,7 @@ test v2 & 40 / 120 (chấm 119) & Đo kết quả cuối, chạy một lần\\
 \item \textbf{Luật chọn D9}, chốt trước khi chạy dev: chọn cấu hình có MAE cả tập nhỏ nhất trên dev, với điều kiện MAE câu có mặt không lớn hơn của \Bzero{} và $\FPRabs$ không lớn hơn của \Bzero. Luật này ngăn việc ``đổi'' cải thiện ở câu vắng mặt bằng cách làm hỏng câu có mặt. Nếu không cấu hình nào đạt, nhóm báo kết quả âm.
 \item Trên dev thử lưới $\tau\in\{0.18,\dots,0.28\}$, $M\in\{5,10\}$, cùng T, S, F và \Csix. Ngưỡng S và F được chọn lại riêng cho từng nguồn ngay trên dev.
 \item Khóa cấu hình vào \path{freeze_v2_20261111.json} (kể cả min/max và ngưỡng), cùng 4 đối chứng báo kèm khai báo trước: \Bzero, \Btwo, \Csix, \BtwoF.
-\item Chạy test một lần trên Kaggle T4 (Triệu chạy). Chấm bằng một script duy nhất đọc file khóa; kết quả được tính lại độc lập từ đầu ra thô bằng một script viết riêng và khớp tuyệt đối.
+\item Chạy test một lần trên Kaggle T4 (Triệu chạy). Chấm bằng một script duy nhất đọc file khóa. Trợ lý AI kiểm mã băm của các file đầu ra và tính lại số đếm, MAE, CI từ đầu ra thô bằng các hàm của chính script chấm; kết quả khớp tuyệt đối. Sau đó (22/11), một script kiểm viết riêng, không dùng code chấm của repo (\path{evaluation/check_fsc147_survey_independent.py}, chế độ \texttt{-{}-selftest-w8}), tính lại số đếm của cả năm cách trên test và cũng khớp.
 \item Kết quả xấu cũng không chạy lại. Đối chứng báo kèm được thảo luận nhưng không được đổi thành phương pháp chính sau khi xem test.
 \end{enumerate}
 Với ít dữ liệu và nhiều tham số ($\tau$, $M$, các ngưỡng), rất dễ vô tình chọn cấu hình khớp với ngẫu nhiên của tập đang nhìn. Khóa trước là cách giữ cho con số test là một ước lượng không bị thiên lệch bởi việc chọn.
@@ -487,7 +487,7 @@ Trong các hình dưới, khung xanh trúng đúng loại, khung đỏ chỉ tr�
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{fig_example_t33_1_mcac_171.png}
-\caption{Thất bại: ``dogs'' (đáp án 4). Đàn dê bị đếm là chó (66--101) ở mọi cách; CLIP không tách được dê với chó ở các ô ảnh nhỏ.}
+\caption{Thất bại: ``dogs'' (đáp án 4). Ảnh có 80 cừu, 7 dê và 4 chó; đàn cừu (cùng vài con dê) bị đếm là chó (66--101) ở mọi cách; CLIP không tách được cừu, dê với chó ở các ô ảnh nhỏ.}
 \label{fig:ex-dogs}
 \end{figure}
 \begin{figure}[H]

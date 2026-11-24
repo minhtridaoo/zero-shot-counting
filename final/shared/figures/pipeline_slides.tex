@@ -1,0 +1,30 @@
+% Pipeline cho slide (thuật ngữ tiếng Anh theo bảng thuật ngữ 24/11): B0, B2, P, F, C6.
+% Bản cho báo cáo vẫn là pipeline.tex. Cần tikz libraries positioning, arrows.meta, calc; pifont.
+\begin{tikzpicture}[
+  font=\sffamily\footnotesize,
+  node distance=6mm and 8mm,
+  blk/.style={draw=black!70, rounded corners=2pt, align=center, minimum height=13mm, inner sep=3pt, line width=0.5pt},
+  arr/.style={-{Stealth[length=2mm]}, line width=0.6pt, black!75},
+  lab/.style={font=\sffamily\scriptsize, align=center}
+]
+\node[blk, fill=boxgray, text width=19mm] (in) {Ảnh + prompt\\(``bowls'')};
+\node[blk, fill=boxblue, text width=24mm, right=of in] (s1) {\textbf{CountGD++ lượt 1}\\(chỉ text)};
+\node[blk, fill=boxorange, text width=24mm, right=of s1] (ex) {Chọn pseudo-exemplar:\\top-3 box lượt 1};
+\node[blk, fill=boxblue, text width=26mm, right=of ex] (s2) {\textbf{CountGD++ lượt 2}\\(text + pseudo-exemplar)};
+\node[blk, fill=boxgreen, text width=28mm, right=of s2] (f) {\textbf{Filter F}\\$0.5\,\tilde a + 0.5\,\tilde c \ge \theta$};
+\node[blk, fill=boxgray, text width=11mm, right=7mm of f] (out) {\textbf{Số đếm}};
+\node[blk, fill=boxgray, text width=24mm, above=8mm of s1] (b0) {\textbf{B0}: số box\\có điểm $> 0.23$};
+\node[blk, fill=boxyellow, text width=26mm, below=9mm of ex] (p) {\textbf{P}: CLIP kiểm pseudo-exemplar\\($\cos \ge \tau$, xét $M$ box)};
+\draw[arr] (in) -- (s1);
+\draw[arr] (s1) -- (ex);
+\draw[arr] (ex) -- (s2);
+\draw[arr] (s2) -- (f);
+\draw[arr] (f) -- (out);
+\draw[arr] (s1) -- (b0);
+\draw[arr] (ex) -- (p);
+\draw[arr] (p.east) -| ([xshift=-8mm]s2.south);
+\draw[arr, dashed, good, line width=0.8pt] (b0.east) to[out=0, in=110]
+  node[lab, above, pos=0.5, text=good] {\textbf{C6} = B0 + F (bỏ lượt 2)} (f.north);
+\node[lab, text=bad, anchor=north, text width=25mm] at ($(s2.south)+(5mm,-2mm)$) {\ding{55}\ điểm lượt 2 = $\max(\text{text}, \text{exemplar})$\\$\Rightarrow$ exemplar sai class kéo theo box sai class};
+\node[lab, text=good, anchor=north, text width=25mm] at ($(f.south)+(4mm,-2mm)$) {\ding{51}\ CLIP chấm từng box\\theo đúng prompt được hỏi};
+\end{tikzpicture}

@@ -286,7 +286,7 @@ Sau đó hai file dữ liệu được đặt trạng thái `LOCKED` kèm mã b�
 1. **Luật chọn D9, chốt trước khi chạy dev:** chọn cấu hình có MAE cả tập nhỏ nhất trên dev, **với điều kiện** MAE câu có mặt ≤ của B0 *và* FPR_absent ≤ của B0. Nghĩa là không được "đổi" cải thiện ở câu vắng mặt bằng cách làm hỏng câu có mặt. Không cấu hình nào đạt thì báo kết quả âm.
 2. Trên dev thử lưới τ ∈ {0.18, …, 0.28}, M ∈ {5, 10}, cùng T, S, F, C6. Ngưỡng S/F được chọn lại riêng cho từng nguồn, ngay trên dev.
 3. **Khóa cấu hình** vào `freeze_v2_20261111.json`, gồm cả min/max và ngưỡng. Cùng file khai báo trước 4 đối chứng *báo kèm*: B0, B2, C6, B2+F.
-4. **Test chạy một lần** trên Kaggle T4 (Triệu). Chấm bằng một script duy nhất đọc file khóa. Trợ lý AI tính lại từ đầu ra thô bằng script riêng và khớp tuyệt đối.
+4. **Test chạy một lần** trên Kaggle T4 (Triệu). Chấm bằng một script duy nhất đọc file khóa. Trợ lý AI kiểm mã băm và tính lại từ đầu ra thô bằng các hàm của chính script chấm; khớp tuyệt đối. Ngày 22/11, một script kiểm viết riêng (`evaluation/check_fsc147_survey_independent.py --selftest-w8`) tính lại số đếm của cả năm cách trên test và cũng khớp.
 5. Kết quả xấu cũng **không chạy lại**. Đối chứng báo kèm được phép thảo luận, nhưng **không được đổi thành phương pháp chính** sau khi xem test.
 
 > Vì sao chặt như vậy? Với ít dữ liệu và nhiều tham số (τ, M, ngưỡng), rất dễ "vô tình" chọn cấu hình hợp với ngẫu nhiên của tập đang nhìn. Khóa trước là cách duy nhất để con số test là ước lượng không thiên lệch.

@@ -1,5 +1,16 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Cập nhật 24/11 (sau) — slide đã viết lại câu chữ và đổi thuật ngữ sang tiếng Anh (box, pseudo-exemplar, query, class, GT…):**
+- Bỏ nhãn "Trình bày" ở chân trang; thêm **slide 3 "Phân công công việc"** (ai làm gì trong đồ án; Trí cần xác nhận phần của mình). Số các slide sau tăng 1.
+- **Trí xem lại phần mình và biên dịch PDF.**
+- Báo cáo vẫn dùng chữ tiếng Việt.
+- Chi tiết trong WORKLOG.
+
+**Cập nhật 24/11 — Triệu rà xong phần slide của mình:**
+- Sửa 5 chỗ: "đàn dê" thành **đàn cừu** (mcac_171 có 80 cừu); chú thích N4 9/21 mẫu thuộc câu vắng mặt; bước "tính lại" ghi đúng cách làm; tiêu đề phân rã F; lời nói về thứ hạng C6.
+- **Hỏi Trí:** nguồn của số 0,077 ở slide VĐ3.
+- Trí biên dịch lại PDF. Chi tiết trong WORKLOG.
+
 **Cập nhật 23/11 (tối) — Triệu sửa 3 lỗi diễn giải FSC-147 theo rà soát của Trí:** số đếm thiếu nhóm > 40 là 4.416 / 1.910; ≤ 40 vật chỉ "gần nhau"; nguyên nhân chỉ là "có thể"; 404 s là tổng bước chấm CLIP cho 3 nguồn. Đã sửa trong `final/report/main.tex`, `final/slides/main.tex` và các file `.md` (xem WORKLOG). **Cần Trí biên dịch lại PDF** (máy Triệu không có LaTeX). Trích dẫn PseCo/DAVE/VA-Count trong `refs.bib` đã đối chiếu, khớp.
 
 **Cập nhật 23/11/2026 — bàn giao slide v2 lên GitHub:** Trí báo đã làm xong slide v2. Bộ hiện tại: `final/slides/main.tex`, `main.pdf`, `notes.pdf`; phân công ở `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md`. Đã đồng bộ checkout chính với remote trước khi đưa tài liệu từ worktree Claude sang. **Báo cáo chi tiết (gồm `final/report/`) CHƯA đồng bộ theo slide v2.** Việc tiếp theo: sửa báo cáo theo slide v2, rà số liệu/trích dẫn/hình, điền thông tin bìa và chốt phần trình bày với Triệu. Phiên này chỉ đồng bộ Git và tài liệu, không chạy thực nghiệm hoặc duyệt chất lượng slide thay người dùng. Các ghi chú kiểm tra 20–22/11 bên dưới là lịch sử tại thời điểm đó.
