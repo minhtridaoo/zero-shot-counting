@@ -39,3 +39,13 @@ data_external/
 quá khứ/snapshots/2026-1[01]-*.zip
 !quá khứ/snapshots/2026-10-20_*.zip
 quá khứ/snapshots/2026-11-11_bang_dev_ansi_truoc_chuyen_ma/
+
+# Demo Gradio (25/11)
+.venv-demo/
+demo/demo_server.log*
+demo/demo_server.pid
+final/slides/_tools/build*_log.txt
+.venv-live/
+demo/live/logs/
+demo/live/logs_check/
+demo/live/test_shots/

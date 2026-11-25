@@ -1,5 +1,107 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 25/11/2026 — xuất bản slide và demo
+
+Sao lưu trước đồng bộ; nhận 3 commit remote đến 974048f, đưa slide/nguồn/PDF/kịch bản, demo và hướng dẫn từ worktree Claude về main. Dùng sơ đồ pipeline_slides.tex của slide mới; giữ bản local trước đó trong snapshot. Không chạy model/evaluator/self-test; kết quả CPU là ghi nhận phiên trước, GPU vẫn chờ Trí. Báo cáo chi tiết chưa xác nhận khớp slide mới. Không đưa môi trường, log, cấu hình Claude hoặc snapshot lên Git.
+
+## 25/11/2026 (khuya) — demo suy luận thật trên ảnh mới (assistant; kiểm trên CPU, bản GPU chờ Trí mở Kaggle)
+
+Trí đổi hướng: demo phải nhận ảnh mới (Ctrl+V / upload), chạy model thật cho B0, B2, P+F, C6. Bản xem lại kết quả đã lưu chỉ còn là dự phòng.
+
+**Kiến trúc chọn:**
+- Model chạy trên **Kaggle T4**, giao diện Gradio mở qua link https gradio.live có mật khẩu. Notebook: `demo/live/kaggle_live_demo.ipynb`.
+- Ô môi trường chép nguyên văn từ notebook test 11/11; code demo nhúng kèm sha256; clone repo ở commit `974048f`.
+- Laptop không dùng làm demo chính: torch chỉ có bản CPU, không có nvcc để build CUDA ops, GPU chỉ 4 GB.
+- CPU chỉ dùng để kiểm chức năng: `.venv-live`, cùng phiên bản torch/transformers/numpy/pillow với Kaggle.
+
+**Code mới trong `demo/live/` (không sửa file gốc):**
+- `live_engine.py`:
+  - nạp model một lần như `run_b2_verified_pseudo.py` (kiểm hash checkpoint/code/freeze, seed 42, khôi phục RNG trước lượt 2);
+  - lượt 1 dùng chung cho cả bốn cách; P+F dùng lại lượt 2 của B2 khi trùng bộ exemplar;
+  - F dùng bounds/θ riêng: P+F 0.604, C6 0.427;
+  - mỗi request ghi log JSONL.
+- `app_live.py`: giao diện như mô tả trong README.
+- `check_against_test.py`, `ui_test_paste.py`, `build_kaggle_notebook.py`, `README.md`.
+
+**Đã kiểm (CPU):**
+- `check_against_test.py`: t01_1 plates, t01_2 bowls, t05_1 blueberries cho số đếm B0/B2/P+F/C6 **trùng hết** `result.json` (32/36/16/19; 33/36/17/20; 36/65/8/9). Chỉ kiểm wrapper, không phải chạy lại test.
+- `ui_test_paste.py` bằng Edge với Ctrl+V thật, trên 2 ảnh Wikimedia Commons ngoài MUCCA: **11/11 bước PASS**.
+  - Các bước: dán, trạng thái đang chạy, chạy thật, đủ 4 cách × 2 tên vật, bảng X/Y, đổi tên vật thì xóa kết quả, dán ảnh 2 thay ảnh 1, chạy lại có request mới, báo lỗi tên vật có dấu chấm, nút Xóa, upload.
+  - Log `demo/live/logs/requests.jsonl` có 4 request `inference: true`, ghi đủ thiết bị, checkpoint, freeze, cấu hình.
+- Lỗi sửa khi thử:
+  - sự kiện thay đổi của ô chữ chen vào sau nút Chạy (chuyển sang `input`);
+  - thêm cảnh báo khi chạm trần 900 box (ảnh chợ Bangkok: B0/B2 = 900).
+- Thời gian CPU: 44 s cho ảnh cừu/chó (2 tên vật), 105–209 s cho ảnh rất đông vật.
+
+**Slide:** trang 31 đổi thành "Demo: chạy model thật trên ảnh mới" (ảnh chụp lần kiểm CPU). Biên dịch lại `main.pdf` và `notes.pdf`.
+
+**Chưa làm / chờ Trí:**
+- Mở phiên Kaggle, chạy notebook, báo ô 6 `CHECK: PASS` và link ô 7.
+- Sau đó assistant chạy `ui_test_paste.py` trên link đó.
+- Chưa đo thời gian GPU; chưa quay video.
+
+Ảnh demo không đưa vào kết quả nghiên cứu. Chưa commit/push.
+
+## 25/11/2026 (tối) — sắp lại slide theo phiếu chấm, dựng demo Gradio xem lại (assistant; không chạy model)
+
+Trí đồng ý: sửa slide theo phiếu chấm trước, rồi dựng demo tầng A; được cài thư viện vào môi trường riêng và chạy app ở local.
+
+**Kiểm đầu vào:**
+- Phiếu chấm gốc `Downloads/PhieudanhgiaMonhoc.pdf` có 7 mục; thứ tự trình bày phải đúng 1 → 7.
+- Bản `main.tex` ở checkout gốc chỉ khác `974048f` đúng 1 dòng: `pipeline.tex`, do checkout gốc thiếu `pipeline_slides.tex`. Không có nội dung nhóm sửa bị mất.
+- Đã sao lưu vào `quá khứ/snapshots/2026-11-25_slide_local_truoc_sua_phieu_cham/` (main.tex local, bản 974048f, build log, ghi chú chưa commit của checkout gốc). Sửa trong worktree.
+
+**Slide (`final/slides/main.tex` → `main.pdf` 46 trang, `notes.pdf`):**
+- Thứ tự mới:
+  - Phân công chuyển xuống trước Cảm ơn;
+  - mục 2 thành Định nghĩa → RQ → Minh họa;
+  - đổi tên mục 2, 3, 5 cho khớp phiếu.
+- Slide mới:
+  - Điểm khác biệt (trang 20): đối chiếu tóm tắt arXiv của PseCo, VA-Count, DAVE; ghi chưa so trực tiếp;
+  - Tổng hợp dữ liệu (23): FSCD-147 và FSC-147 cùng nguồn ảnh;
+  - Độ đo (24);
+  - Demo (31): ảnh chụp thật.
+- Giao thức bỏ phần chỉ số. Chú thích `mcac_171` sửa thành "chó–dê (+80 cừu)", kiểm theo nhãn gốc: chó 4, dê 7, cừu 80; cặp query là dogs–goats.
+- Chuyển xuống dự phòng: kết quả dev, theo loại cặp, hai slide ví dụ.
+- Sửa câu chữ:
+  - B2+F − P+F "gần như bằng nhau" thành "CI chứa 0, không thấy P đóng góp thêm";
+  - phạm vi FSC-147 và kết luận ghi "mới kiểm chứng trên ảnh nhiều class, ít đến vừa vật".
+- Sửa hình thức:
+  - trang chia mục, dự phòng và Cảm ơn trước đây không có số trang (theme metropolis); nay mọi trang có x/46;
+  - dòng nguồn của slide trước không còn hiện ở trang chia mục;
+  - sửa tràn chữ ở trang 13, 20, 22, 27, 34;
+  - 2 trang dự phòng còn tràn nhẹ.
+- Ghi người nói vào mọi `\note`. Tổng 25:00: Trí 13:50, Triệu 11:10.
+- Script sửa: `final/slides/_tools/`.
+
+**Demo (`demo/`, `.venv-demo` Python 3.13, gradio 5.50):**
+- Tầng A xem lại trên CPU, chạy ở `127.0.0.1`, có 3 tab.
+- Tự kiểm khi khởi động: hash freeze/bundle/manifest khớp `result.json`; 120 query, loại `t37_1`; số đếm 120/120 của B0/B2/P+F/C6 khớp; MAE 7.71 / 9.61 / 5.82 / 4.63; RMSE, MAE present, FPR khớp; shared box 64,4% / 70,9% / 59,3% / 24,1% khớp posthoc. **PASS.**
+- Mỗi cấu hình dùng ngưỡng khóa riêng: P+F 0.604, C6 0.427. Thanh trượt chỉ minh họa trên ảnh đang chọn, có nút khôi phục, không tính MAE toàn test.
+- Đã thử trong trình duyệt: nút ví dụ, đổi ảnh/query, tab X/Y (`mcac_12` khớp `xy_overlap_per_image.csv`), thanh trượt (0.45 → 20 box), khôi phục, đổi C6.
+- Lỗi đã sửa khi thử:
+  - nút ví dụ bị đặt lại về query đầu;
+  - chữ trong ảnh bị nhãn Gradio che;
+  - console Windows không in được tiếng Việt;
+  - script dừng tắt nhầm app ở cổng khác.
+- Đang chạy nền: http://127.0.0.1:7860.
+- Ảnh chụp bằng Playwright + Edge: `final/shared/figures/demo_tab{1,2,3}.png`.
+
+**Tài liệu:** `reports/DOI_CHIEU_PHIEU_CHAM_SLIDE_20261125.md` (tiêu chí → trang → còn thiếu); `demo/README.md` (lệnh mở/dừng, kịch bản 90 giây); cập nhật mục 3 của `PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md`.
+
+Chưa commit/push. Chưa chạy model, evaluator hay thực nghiệm mới.
+
+## 25/11/2026 — rà slide theo phiếu chấm, plan demo Gradio (assistant; chỉ đọc + tài liệu, không chạy gì)
+
+- Pull `974048f` (fast-forward). Ghi chú 23/11 chưa commit của phiên trước đã cũ, bỏ (bản vá giữ ở `/tmp`).
+- Đối chiếu `final/slides/main.tex` với phiếu chấm 1 → 7 (Trí lưu ý phải đúng thứ tự):
+  - Slide Phân công nằm trước mục 1; slide RQ (2.1) đứng sau Minh họa (2.2).
+  - Mục 3 thiếu slide "điểm khác biệt" (30 điểm).
+  - Dataset chỉ có 1 slide; độ đo gộp vào slide Giao thức.
+  - Chưa có demo. Đã có số trang.
+- Kiểm điều kiện demo: GPU 4 GB, không có checkpoint local, chưa cài gradio. Có `bundle.json` test (boxes/scores/clip) + freeze v2 + 200 ảnh MUCCA ở checkout gốc → demo xem lại chạy CPU được.
+- Viết `reports/KE_HOACH_DEMO_GRADIO_VA_RA_SLIDE_20261125.md`. Chờ Trí duyệt và cho cài gradio.
+
 ## 24/11/2026 (sau) — viết lại câu chữ cả bộ slide, thuật ngữ tiếng Anh, bỏ nhãn "Trình bày" (Triệu + assistant)
 
 Triệu góp ý: câu chữ trên slide chưa tự nhiên (ví dụ "mô hình đều trả về các ô tô"); thuật ngữ chuyên ngành không cần dịch sát nghĩa; bỏ nhãn "Trình bày: …" ở chân slide, thay bằng một slide phân công. Triệu duyệt nội dung 12 slide phần mình và bảng thuật ngữ (`HANDOFF/TRIEU_SLIDE_NOI_DUNG_DE_DUYET_20261124.md`, chỉ để trên máy Triệu), rồi yêu cầu sửa luôn phần của Trí theo cùng cách.
@@ -1976,3 +2078,16 @@ Tạo TRIEU_CROSSCHECK_2026-10-16.md, handoff ngày16, cập nhật index/ngày 
 - Manual q05_2: final_boxes=14, target_boxes=5, distinct_target_objects=4, extra_target_boxes=1, wrong_class_boxes=9
 - Ket luan: So lieu khop bang tham chieu.
 - Trang thai: Cho Trieu kiem tra cheo code/schema va q05_2.
+
+
+<!-- Ghi chú local trước đồng bộ 25/11 -->
+
+## 25/11/2026 — rà slide local và kế hoạch Gradio để bàn giao Claude
+
+Chỉ đọc main.tex local và kế hoạch trong worktree kind-chaplygin-249b83. Slide/PDF có sửa chưa commit, log build ghi 42 trang; chưa rà hình thức toàn PDF hoặc đối chiếu phiếu chấm gốc. Xác nhận thứ tự phân công, câu hỏi nghiên cứu và chú thích chó–dê còn như góp ý. Đề nghị Claude làm demo replay trước trong venv riêng; dùng freeze riêng từng cấu hình, giữ 119 query hợp lệ và uncertain; không hiển thị MAE toàn test theo slider để tránh chọn lại trên test. Cho người dùng bản hướng dẫn triển khai, chưa tự cài/chạy demo hay sửa slide. Tiếp: Claude dựng app CPU từ output lưu, kiểm khớp chỉ số rồi mở localhost cho Trí thử.
+
+
+## 25/11/2026 — sửa đường dẫn biên dịch slide trên VS Code
+
+Log XeLaTeX báo thiếu shared/macros.tex. Đã sửa đúng ba đường dẫn trong final/slides/main.tex: macros, graphicspath và pipeline; giữ nguyên nội dung người dùng sửa. Chạy latexmk -xelatex thành công, main.pdf có 42 trang. Chưa rà toàn bộ bố cục, không chạy thực nghiệm; chưa commit/push.
+

@@ -1,5 +1,34 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Đồng bộ Git 25/11:** Đưa bộ slide và demo mới từ worktree Claude về main. Demo GPU Kaggle chờ Trí thử; CPU PASS dưới đây là ghi nhận của phiên trước, không chạy lại trong phiên xuất bản. Báo cáo chi tiết chưa xác nhận đồng bộ theo slide mới. Tiếp: thử notebook Kaggle, hoàn thiện báo cáo.
+
+**Cập nhật 25/11 (khuya) — demo chính là SUY LUẬN THẬT trên ảnh mới; đã kiểm trên CPU, bản GPU chờ Trí:**
+- Code và hướng dẫn: [demo/live/README.md](demo/live/README.md). Notebook Kaggle: `demo/live/kaggle_live_demo.ipynb`.
+- **Việc của Trí:**
+  1. Import notebook vào Kaggle; bật GPU T4 + Internet; Run All.
+  2. Gửi assistant dòng `CHECK:` của ô 6 và link + mật khẩu ở ô 7.
+- Assistant sẽ chạy bài kiểm giao diện trên link đó.
+- Kiểm chức năng trên CPU (http://127.0.0.1:7870): wrapper khớp `result.json`; giao diện 11/11 PASS.
+- Demo xem lại (`demo/app_replay.py`, cổng 7860) chỉ là dự phòng.
+- Chưa commit/push.
+
+**Cập nhật 25/11 (tối) — slide đã sắp theo phiếu chấm và có demo; CHỜ TRÍ THỬ, chưa commit:**
+- **Slide:** `final/slides/main.pdf` (46 trang, đúng thứ tự phiếu 1 → 7, mọi trang có số), `notes.pdf` (kịch bản nói có ghi người nói). Bảng đối chiếu: [reports/DOI_CHIEU_PHIEU_CHAM_SLIDE_20261125.md](reports/DOI_CHIEU_PHIEU_CHAM_SLIDE_20261125.md).
+- **Demo:** http://127.0.0.1:7860 (đang chạy nền). Mở/dừng và kịch bản 90 giây: [demo/README.md](demo/README.md). Tự kiểm khớp `result.json`: PASS.
+- Sửa ở **worktree** `kind-chaplygin-249b83`. Checkout gốc chưa có thay đổi này. Bản local trước khi sửa đã sao lưu trong `quá khứ/snapshots/2026-11-25_slide_local_truoc_sua_phieu_cham/`.
+- **Chờ:**
+  - Trí thử demo và xem slide;
+  - Trí và Triệu chốt phân công mới (mục 3 của `PHAN_CONG_...md`);
+  - Triệu đọc trang 20 (bảng khác biệt);
+  - quay video demo dự phòng;
+  - sau đó mới commit/push.
+
+**Cập nhật 25/11 — rà slide theo phiếu chấm + plan demo Gradio:** xem [reports/KE_HOACH_DEMO_GRADIO_VA_RA_SLIDE_20261125.md](reports/KE_HOACH_DEMO_GRADIO_VA_RA_SLIDE_20261125.md).
+- Thứ tự trình bày phải đúng phiếu 1 → 7.
+- Cần sửa slide: chuyển Phân công xuống cuối; RQ trước Minh họa; thêm slide "điểm khác biệt" (mục 3), tách dataset thành 2 slide, slide độ đo riêng, slide Demo; đổi tên mục 2 và mục 5 cho khớp phiếu.
+- Demo tầng A (xem lại output test, chạy CPU) là bắt buộc; tầng B (Kaggle chạy thật) là tùy chọn.
+- **Chờ Trí:** duyệt plan + cho cài `gradio`. Chưa sửa slide, chưa viết code demo.
+
 **Cập nhật 24/11 (sau) — slide đã viết lại câu chữ và đổi thuật ngữ sang tiếng Anh (box, pseudo-exemplar, query, class, GT…):**
 - Bỏ nhãn "Trình bày" ở chân trang; thêm **slide 3 "Phân công công việc"** (ai làm gì trong đồ án; Trí cần xác nhận phần của mình). Số các slide sau tăng 1.
 - **Trí xem lại phần mình và biên dịch PDF.**
@@ -228,3 +257,12 @@ Hậu kiểm dev: `evaluation/dev_posthoc_T_C6.py` → `results/countgdpp/p1_dev
 ## Câu mở phiên mới
 
 > Tiếp tục CS331 tại D:\MINHTRIHOCCODE\HOCKI5\CS331. Đọc AGENTS.md, BAT_DAU_SESSION_MOI.md và mục mới nhất của WORKLOG.md; kiểm Git (remote zero-shot-counting) rồi làm tiếp việc đầu tiên chưa xong.
+
+
+<!-- Ghi chú local trước đồng bộ 25/11 -->
+
+**25/11 — rà plan demo:** nội dung slide local còn các điểm thứ tự/chú thích đã nêu; có thay đổi chưa commit cần giữ. Ưu tiên Claude dựng demo replay CPU, venv riêng, freeze đúng từng cách, tách slider minh họa khỏi kết quả test chính thức. Chưa triển khai demo trong phiên này.
+
+
+**25/11 — sửa build slide:** sửa ba đường dẫn tài nguyên trong `final/slides/main.tex`; XeLaTeX đã sinh `main.pdf` 42 trang. Chưa rà toàn bộ bố cục.
+

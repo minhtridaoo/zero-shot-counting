@@ -41,6 +41,31 @@ Assistant đã dựng **bản nháp đầy đủ**. Việc của hai bạn là: 
 
 # 3. Slide và lời nói (bản 2, 23/11: 30 slide nội dung, 5 phần, khoảng 24 phút)
 
+> **Cập nhật 25/11 — sắp lại theo phiếu chấm (thứ tự 1 → 7). Bảng này thay cho bảng bản 2 bên dưới.**
+> Số trang là số in trên slide (x/46). Người nói đã ghi ở đầu mỗi `\note`. Tổng 25:00: Trí 13:50, Triệu 11:10. Đây vẫn là **đề xuất**, hai bạn chốt.
+>
+> | Mục phiếu | Trang | Slide | Người nói | Thời gian |
+> |---|---|---|---|---|
+> | — | 1–2 | Bìa, Nội dung | Trí | 0:35 |
+> | 1 Lý do | 3–6 | (chia mục), Bối cảnh, Khoảng trống, Related work | Trí | 2:10 |
+> | 2.1 Bài toán | 7–9 | (chia mục), Định nghĩa, Câu hỏi nghiên cứu | Trí | 1:30 |
+> | 2.2 Minh họa | 10 | mcac\_12 plates/bowls/spoons | Trí | 0:50 |
+> | 3 Phương pháp | 11–12 | (chia mục), Baseline | Trí | 1:00 |
+> | | 13–16 | Chẩn đoán, VĐ1, VĐ2, VĐ3 | **Triệu** | 3:30 |
+> | | 17–20 | Cải tiến P, F, Tổng thể, **Điểm khác biệt (mới)** | Trí | 3:15 |
+> | 4.1–4.2 | 21–25 | (chia mục), Dữ liệu MUCCA, **Tổng hợp dữ liệu (mới)**, **Độ đo (mới)**, Giao thức | **Triệu** | 3:10 |
+> | 4.3 | 26 | Kết quả test | Trí | 1:10 |
+> | | 27–28 | Phân rã, F và shared box | **Triệu** | 1:45 |
+> | 4.4 | 29–30 | FSC-147, các hướng thử thêm | **Triệu** | 1:55 |
+> | | 31 | **Demo (mới)**: slide + mở app | Trí | 1:30 |
+> | 5 Kết luận | 32–33 | (chia mục), Những điều chưa trả lời được | **Triệu** | 0:50 |
+> | | 34–35 | Kết luận, Hướng phát triển | Trí | 1:30 |
+> | — | 36 | Phân công công việc (chuyển từ đầu xuống cuối) | Trí | 0:20 |
+> | 7 Hỏi đáp | 37 | Cảm ơn, mời câu hỏi | cả hai | — |
+> | dự phòng | 38–46 | Kết quả đầy đủ, v1, chi phí, thứ hạng dev, kết quả dev, ví dụ thất bại, ví dụ thành công/lỗi X/Y, theo loại cặp | người phụ trách phần đó | — |
+>
+> Đổi người nói 8 lần, nhiều hơn mức 4 lần của bản 1. Muốn ít lần đổi hơn thì Trí có thể nói luôn trang 27–28 (phần phân tích kết quả); khi đó Trí khoảng 15:35, Triệu khoảng 9:25.
+
 > **Cập nhật 24/11:**
 > - Slide đã thêm **slide 3 "Phân công công việc"** (bảng ai làm gì, lấy từ mục 1 file này) và bỏ nhãn "Trình bày" ở chân trang. Từ slide 3 trở đi, **số slide trong bảng dưới tăng thêm 1**.
 > - Ai nói slide nào không đưa lên slide. Theo số mới: Trí 4–10, 15–17, 20–21, 30–31; Triệu 11–14, 18–19, 22–29.

@@ -38,15 +38,21 @@
 \setbeamertemplate{itemize items}{\textcolor{accent}{\small$\blacktriangleright$}}
 \setlength{\leftmargini}{1.2em}
 
-% Source line + page number in the footline (phân công công việc: slide 3)
+% Source line + page number in the footline
+% [phieu-cham-20261125] [phieu-cham-20261125-b] thứ tự theo phiếu chấm: 1 lý do · 2 bài toán · 3 phương pháp · 4 thực nghiệm (4.4 demo) · 5 kết luận
 \gdef\currentsource{}
 \newcommand{\source}[1]{\gdef\currentsource{#1}}
 \AtBeginEnvironment{frame}{\gdef\currentsource{}}
+\newcommand{\csfootline}{%
 \setbeamertemplate{footline}{%
   \begin{beamercolorbox}[wd=\paperwidth,ht=4.2mm,dp=1.8mm,leftskip=3mm,rightskip=3mm]{footline}%
     {\tiny\color{softgray}\currentsource}%
     \hfill{\tiny\color{softgray}\insertframenumber/\inserttotalframenumber}%
-  \end{beamercolorbox}}
+  \end{beamercolorbox}}}
+\csfootline
+% Trang chia mục cũng có số trang (metropolis mặc định để trang này không đánh số)
+\newcommand{\cssectionframe}{\gdef\currentsource{}\frame[c]{\sectionpage}}
+\AtBeginSection[\cssectionframe]{\cssectionframe}
 
 \tikzset{
   sb/.style={draw=black!55,rounded corners=2pt,fill=#1,align=center,minimum height=10mm,inner sep=3pt,font=\sffamily\scriptsize},
@@ -67,32 +73,13 @@ Môn: Thị giác máy tính nâng cao (CS331) \quad·\quad GVHD: TS. Mai Tiến
 % ================================================================ Title
 \begin{frame}
 \titlepage
-\note{[0:20] Chào thầy và các bạn. Nhóm em gồm Trí và Triệu. Đề tài của nhóm: kiểm tra xem CountGD++, một mô hình đếm theo text prompt, có đếm đúng class được hỏi khi trong ảnh có nhiều class hay không, và tìm cách giảm lỗi đếm nhầm.}
+\note{[0:20] (Trí) Chào thầy và các bạn. Nhóm em gồm Trí và Triệu. Đề tài của nhóm: kiểm tra xem CountGD++, một mô hình đếm theo text prompt, có đếm đúng class được hỏi khi trong ảnh có nhiều class hay không, và tìm cách giảm lỗi đếm nhầm.}
 \end{frame}
 
 \begin{frame}{Nội dung}
 \setbeamertemplate{section in toc}[sections numbered]
 \tableofcontents
-\note{[0:15] Bài trình bày gồm năm phần: lý do chọn đề tài, bài toán, phương pháp, thực nghiệm, và cuối cùng là giới hạn, kết luận.}
-\end{frame}
-
-\begin{frame}{Phân công công việc}
-\scriptsize\centering
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{0.17\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
-\toprule
-\normalfont\bfseries Hạng mục & \textbf{Trí} & \textbf{Triệu}\\
-\midrule
-Môi trường, baseline & Dựng CountGD++ trên Kaggle T4, chạy lại benchmark FSCD-147 (MAE 8.34) & Kiểm chéo evaluator, tính tay, self-test\\
-Pilot, cải tiến v1 & Chạy pilot 5 ảnh, xem từng query bằng mắt; làm bộ lọc v1 & Tự kiểm lại kết quả v1\\
-Chẩn đoán & Phân tích điểm theo token; quyết định thêm phép thử T trước khi khóa cấu hình & \textbf{Blind review 117 box (N4)}; phát hiện cơ chế max khi rà soát N4\\
-Hướng cải tiến v2 & Chốt các quyết định D1--D10, chọn hướng P + T & \textbf{Đề xuất nhánh P}; chuẩn bị runner P, chạy pilot P trên T4\\
-Dữ liệu & Kiểm 20 ảnh dev & Rút dev/test bằng script; \textbf{kiểm 40 ảnh test}; khóa dữ liệu\\
-Thực nghiệm & Chọn và \textbf{khóa cấu hình} (freeze v2) & \textbf{Chạy dev, chạy test một lần}, chạy khảo sát FSC-147\\
-Viết, trình bày & Bản báo cáo chi tiết, bản gửi thầy, báo cáo LaTeX, slide & Related Work, điểm yếu và hướng thử thêm, rà sửa slide\\
-\bottomrule
-\end{tabularx}
-\note{[0:20] Đây là phân công công việc trong đồ án. Trí dựng môi trường, chạy pilot, làm cải tiến v1, chốt các quyết định và khóa cấu hình. Triệu làm blind review, đề xuất nhánh P, rút và kiểm dữ liệu test, chạy dev, test và khảo sát FSC-147.}
+\note{[0:15] (Trí) Bài trình bày gồm năm phần, theo đúng thứ tự: lý do thực hiện đề tài, phát biểu bài toán, phương pháp giải quyết, thực nghiệm, và cuối cùng là nhận xét, kết luận.}
 \end{frame}
 
 % ================================================================ 1
@@ -124,7 +111,7 @@ Nhóm chạy lại & \textbf{8.34} & \textbf{24.64}\\
 \end{column}
 \end{columns}
 \takeaway{Câu hỏi: chỉ với tên class, mô hình có đếm \emph{đúng class được hỏi} không?}
-\note{[0:50] Đếm vật có nhiều ứng dụng. Hướng hiện đại cho phép chỉ định class cần đếm ngay lúc dùng, kể cả chỉ bằng tên class. Nhóm chọn CountGD++, công bố ở CVPR 2026. Trước tiên nhóm chạy lại benchmark của bài báo, được MAE 8.34 so với 8.39, nên môi trường chạy đúng.}
+\note{[0:50] (Trí) Đếm vật có nhiều ứng dụng. Hướng hiện đại cho phép chỉ định class cần đếm ngay lúc dùng, kể cả chỉ bằng tên class. Nhóm chọn CountGD++, công bố ở CVPR 2026. Trước tiên nhóm chạy lại benchmark của bài báo, được MAE 8.34 so với 8.39, nên môi trường chạy đúng.}
 \end{frame}
 
 \begin{frame}{Khoảng trống: benchmark quen thuộc không kiểm tra việc đếm đúng class}
@@ -152,7 +139,7 @@ Nhóm chạy lại & \textbf{8.34} & \textbf{24.64}\\
 \begin{block}{Bài toán X/Y (theo câu hỏi của giảng viên)}
 \small Cùng một ảnh có X và Y: hỏi X thì đếm X; đổi sang Y thì đếm Y và \textbf{không đếm lại X}; hỏi Z không có trong ảnh thì phải trả \textbf{0}.
 \end{block}
-\note{[0:50] Benchmark chuẩn FSC-147 gần như ảnh nào cũng chỉ có một class, nên không kiểm được việc đếm đúng class. PrACo đã chỉ ra mô hình vẫn đếm ra số khi hỏi class không có trong ảnh. MUCCA là bộ ảnh thật năm 2026, có nhãn cho nhiều class trong cùng ảnh, nên kiểm được đúng bài X/Y.}
+\note{[0:50] (Trí) Benchmark chuẩn FSC-147 gần như ảnh nào cũng chỉ có một class, nên không kiểm được việc đếm đúng class. PrACo đã chỉ ra mô hình vẫn đếm ra số khi hỏi class không có trong ảnh. MUCCA là bộ ảnh thật năm 2026, có nhãn cho nhiều class trong cùng ảnh, nên kiểm được đúng bài X/Y.}
 \end{frame}
 
 \begin{frame}{Related work và vị trí của đồ án}
@@ -172,12 +159,12 @@ PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & 
 \textbf{Đồ án} & Chẩn đoán lỗi trên ảnh nhiều class; CLIP kiểm \textbf{từng box}; giao thức khóa trước & \textbf{không} & \\
 \bottomrule
 \end{tabularx}
-\takeaway{Không huấn luyện mô hình mới, cũng không chỉ đánh giá: nhóm sửa ở bước suy luận của mô hình có sẵn.}
-\note{[0:45] Các phương pháp tự tạo exemplar như PseCo, VA-Count, DAVE đều phải huấn luyện thêm. Gần nhất với bước lọc F là bản dùng text prompt của DAVE, nhưng DAVE loại theo cụm box và có huấn luyện; F kiểm từng box và không huấn luyện. PrACo và MUCCA chỉ đánh giá. Đồ án nằm giữa: chẩn đoán và sửa ở bước suy luận.}
+\takeaway{Không huấn luyện mô hình mới, cũng không chỉ đánh giá: nhóm sửa ở bước suy luận của mô hình có sẵn (so sánh chi tiết ở cuối phần Phương pháp).}
+\note{[0:30] (Trí) Các phương pháp tự tạo exemplar như PseCo, VA-Count, DAVE đều phải huấn luyện thêm; PrACo và MUCCA chỉ đánh giá. Đồ án nằm giữa: chẩn đoán và sửa ở bước suy luận của một mô hình có sẵn. Điểm khác biệt cụ thể em sẽ so ở cuối phần phương pháp.}
 \end{frame}
 
 % ================================================================ 2
-\section{Mô tả bài toán}
+\section{Phát biểu bài toán}
 
 \begin{frame}{Định nghĩa: input, output và ba yêu cầu}
 \begin{columns}[T]
@@ -200,22 +187,7 @@ PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & 
 \end{block}
 \end{column}
 \end{columns}
-\note{[0:50] Input là ảnh và tên class, không có exemplar. Output là số đếm và các box. Mỗi ảnh có hai present query X, Y và một absent query Z, được chọn khó, cùng nhóm nghĩa. Ba yêu cầu: đếm đúng khi class có mặt, trả 0 khi vắng mặt, và đổi query thì tập box cũng phải đổi.}
-\end{frame}
-
-\begin{frame}{Minh họa: ba query khác nhau, gần như cùng một tập box}
-\source{Ảnh MUCCA mcac\_12 (test). Box của CountGD++ hai lượt (\Btwo), lấy từ dự đoán đã lưu}
-\centering
-\begin{tabular}{@{}c@{\hspace{2mm}}c@{\hspace{2mm}}c@{}}
-\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_1.png} &
-\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_2.png} &
-\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_3.png}\\
-\small X = ``plates'': đếm \alert{36} (GT 16) &
-\small Y = ``bowls'': đếm \alert{36} (GT 3) &
-\small Z = ``spoons'': đếm \alert{34} (GT 0)
-\end{tabular}
-\takeaway{36/36 box của query ``plates'' cũng xuất hiện ở query ``bowls'' (IoU $\ge 0.5$): đổi query, mô hình gần như không đổi box.}
-\note{[0:50] Đây là ví dụ thật trên tập test. Ảnh có đĩa, bát, cốc và ly. Hỏi plates, GT là 16; hỏi bowls, GT là 3; hỏi spoons, không có trong ảnh, GT là 0. CountGD++ trả 36, 36 và 34, và cả 36 box của query plates đều xuất hiện lại ở query bowls. Đây chính là lỗi X/Y.}
+\note{[0:50] (Trí) Input là ảnh và tên class, không có exemplar. Output là số đếm và các box. Mỗi ảnh có hai present query X, Y và một absent query Z, được chọn khó, cùng nhóm nghĩa. Ba yêu cầu: đếm đúng khi class có mặt, trả 0 khi vắng mặt, và đổi query thì tập box cũng phải đổi.}
 \end{frame}
 
 \begin{frame}{Câu hỏi nghiên cứu và đóng góp}
@@ -244,11 +216,26 @@ PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & 
 \item Giao thức ``chọn trước, xem sau'': dữ liệu khóa, luật chọn viết trước, test chạy một lần
 \item Báo cáo cả kết quả âm và phạm vi áp dụng
 \end{enumerate}
-\note{[0:40] Ba câu hỏi: mô hình sai ở đâu, có sửa được mà không huấn luyện lại không, và mức sửa có còn giữ trên ảnh chưa từng dùng không. Bốn đóng góp như trên slide. Chuyển: em mời thầy xem CountGD++ đếm như thế nào.}
+\note{[0:40] (Trí) Ba câu hỏi: mô hình sai ở đâu, có sửa được mà không huấn luyện lại không, và mức sửa có còn giữ trên ảnh chưa từng dùng không. Bốn đóng góp như trên slide. Chuyển: một ví dụ thật cho thấy lỗi này.}
+\end{frame}
+
+\begin{frame}{Minh họa: ba query khác nhau, gần như cùng một tập box}
+\source{Ảnh MUCCA mcac\_12 (test). Box của CountGD++ hai lượt (\Btwo), lấy từ dự đoán đã lưu}
+\centering
+\begin{tabular}{@{}c@{\hspace{2mm}}c@{\hspace{2mm}}c@{}}
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_1.png} &
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_2.png} &
+\includegraphics[width=0.31\textwidth]{xy_mcac12_B2_t01_3.png}\\
+\small X = ``plates'': đếm \alert{36} (GT 16) &
+\small Y = ``bowls'': đếm \alert{36} (GT 3) &
+\small Z = ``spoons'': đếm \alert{34} (GT 0)
+\end{tabular}
+\takeaway{36/36 box của query ``plates'' cũng xuất hiện ở query ``bowls'' (IoU $\ge 0.5$): đổi query, mô hình gần như không đổi box.}
+\note{[0:50] (Trí) Đây là ví dụ thật trên tập test. Ảnh có đĩa, bát, cốc và ly. Hỏi plates, GT là 16; hỏi bowls, GT là 3; hỏi spoons, không có trong ảnh, GT là 0. CountGD++ trả 36, 36 và 34, và cả 36 box của query plates đều xuất hiện lại ở query bowls. Đây chính là lỗi X/Y. Chuyển: em mời thầy xem CountGD++ đếm như thế nào, và nhóm sửa ở đâu.}
 \end{frame}
 
 % ================================================================ 3
-\section{Phương pháp}
+\section{Phương pháp giải quyết}
 
 \begin{frame}{Baseline CountGD++: một lượt (\Bzero) và hai lượt (\Btwo)}
 \source{Amini-Naieni \& Zisserman, CVPR 2026; mã \texttt{CountGDPlusPlus/process\_folder.py}}
@@ -277,7 +264,7 @@ PrACo, MUCCA & Đo mức bám prompt (class vắng mặt, vật gây nhiễu) & 
 {\scriptsize Dùng checkpoint công khai, không huấn luyện lại. Lượt 1 không có box nào thì \Btwo{} trả kết quả của \Bzero.}
 \end{column}
 \end{columns}
-\note{[1:00] Ở lượt 1, mô hình đọc text prompt và chấm điểm 900 box; box nào trên 0.23 thì được đếm. Đó là B0. Lượt 2 lấy 3 box chắc nhất làm pseudo-exemplar rồi chạy lại; đó là chế độ hai lượt B2. Điểm của một box là max qua các token, và ở lượt 2 có thêm cả exemplar token. Chuyển: phần chẩn đoán, bạn Triệu trình bày.}
+\note{[1:00] (Trí) Ở lượt 1, mô hình đọc text prompt và chấm điểm 900 box; box nào trên 0.23 thì được đếm. Đó là B0. Lượt 2 lấy 3 box chắc nhất làm pseudo-exemplar rồi chạy lại; đó là chế độ hai lượt B2. Điểm của một box là max qua các token, và ở lượt 2 có thêm cả exemplar token. Chuyển: phần chẩn đoán, bạn Triệu trình bày.}
 \end{frame}
 
 \begin{frame}{Chẩn đoán: ba vấn đề và hướng xử lý}
@@ -289,11 +276,11 @@ Vấn đề & Bằng chứng & Nguyên nhân (giả thuyết) & Hướng xử l�
 \midrule
 \textbf{VĐ1.} Đổi query, box gần như không đổi & Test: 64\% box là shared box giữa query X và Y. Ảnh mcac\_88: cả 21 box ``people'' trùng box ``cars'' & Mô hình bám vào vật nổi bật trong ảnh hơn là bám vào prompt & \textbf{Filter F}: CLIP kiểm từng box theo đúng prompt\\
 \textbf{VĐ2.} Pseudo-exemplar hay chọn nhầm class & Blind review: chỉ 1/12 pseudo-exemplar đúng class (present query) & Lấy 3 box điểm cao nhất, không kiểm class & \textbf{P}: CLIP kiểm pseudo-exemplar trước lượt 2\\
-\textbf{VĐ3.} Lượt 2 làm lỗi nặng thêm & \Btwo{} kém \Bzero{} ở cả pilot, p4 và test & Điểm lượt 2 $=\max(\text{text score},\text{exemplar score})$ & \textbf{T}: chỉ chấm bằng text score (để kiểm giả thuyết)\\
+\textbf{VĐ3.} Lượt 2 làm lỗi nặng thêm & \Btwo{} kém \Bzero{} ở cả pilot, p4 và test & Điểm lượt 2 là $\max$ của text score và exemplar score &\textbf{T}: chỉ chấm bằng text score (để kiểm giả thuyết)\\
 \bottomrule
 \end{tabularx}
 \takeaway{Mỗi vấn đề có số đo cụ thể; mỗi hướng xử lý được thử riêng để biết hướng nào thật sự có ích.}
-\note{[0:45] Từ pilot, blind review và tập test, nhóm tách ra ba vấn đề. Một: đổi query mà box gần như không đổi. Hai: pseudo-exemplar hay chọn nhầm class. Ba: lượt 2 làm lỗi nặng thêm vì cách chấm max. Mỗi vấn đề có một hướng xử lý, và nhóm thử riêng từng hướng.}
+\note{[0:45] (Triệu) Từ pilot, blind review và tập test, nhóm tách ra ba vấn đề. Một: đổi query mà box gần như không đổi. Hai: pseudo-exemplar hay chọn nhầm class. Ba: lượt 2 làm lỗi nặng thêm vì cách chấm max. Mỗi vấn đề có một hướng xử lý, và nhóm thử riêng từng hướng.}
 \end{frame}
 
 \begin{frame}{VĐ1: đổi query, mô hình vẫn khoanh những vật cũ}
@@ -320,7 +307,7 @@ Vấn đề & Bằng chứng & Nguyên nhân (giả thuyết) & Hướng xử l�
 \end{itemize}
 \end{column}
 \end{columns}
-\note{[0:55] Ở ảnh này, hỏi people, cars hay bicycles thì mô hình đều khoanh gần như cùng những chiếc ô tô: cả 21 box của query people trùng với box của query cars. Trên tập test, đổi query thì 64 phần trăm box vẫn giữ nguyên, và khoảng một phần ba box nằm trên vật class khác. Khi hỏi class không có trong ảnh, box đếm nhầm gần như luôn nằm trên một vật có thật khác, không phải trên nền.}
+\note{[0:55] (Triệu) Ở ảnh này, hỏi people, cars hay bicycles thì mô hình đều khoanh gần như cùng những chiếc ô tô: cả 21 box của query people trùng với box của query cars. Trên tập test, đổi query thì 64 phần trăm box vẫn giữ nguyên, và khoảng một phần ba box nằm trên vật class khác. Khi hỏi class không có trong ảnh, box đếm nhầm gần như luôn nằm trên một vật có thật khác, không phải trên nền.}
 \end{frame}
 
 \begin{frame}{VĐ2: pseudo-exemplar thường rơi vào vật khác class}
@@ -353,7 +340,7 @@ Sai class & 10\\
 \end{block}
 \end{column}
 \end{columns}
-\note{[0:50] Em blind review 117 box. Trong 21 pseudo-exemplar, chỉ 1 cái đúng class; 10 cái là một box chứa nhiều vật, 10 cái sai class. Cần lưu ý 9 trong 21 pseudo-exemplar thuộc absent query, vốn không thể đúng; chỉ tính present query thì 1 trên 12. Đây là các query lỗi được chọn để phân tích, không phải tỉ lệ chung của mô hình. Ở pilot cũng vậy: chỉ 23 trên 42 pseudo-exemplar đúng class, và có query blackberries GT 21 mà B2 đếm ra 79.}
+\note{[0:50] (Triệu) Em blind review 117 box. Trong 21 pseudo-exemplar, chỉ 1 cái đúng class; 10 cái là một box chứa nhiều vật, 10 cái sai class. Cần lưu ý 9 trong 21 pseudo-exemplar thuộc absent query, vốn không thể đúng; chỉ tính present query thì 1 trên 12. Đây là các query lỗi được chọn để phân tích, không phải tỉ lệ chung của mô hình. Ở pilot cũng vậy: chỉ 23 trên 42 pseudo-exemplar đúng class, và có query blackberries GT 21 mà B2 đếm ra 79.}
 \end{frame}
 
 \begin{frame}{VĐ3: lượt 2 chấm điểm bằng $\max$, và phép thử \Tv}
@@ -385,7 +372,7 @@ p4\_unseen\_v1 & 6.77 & 8.80 & 13.00\\
 \end{alertblock}
 \end{column}
 \end{columns}
-\note{[1:00] Đọc mã thì thấy ở lượt 2, điểm của box là max giữa text score và exemplar score. Ví dụ đã lưu: một box ô tô có text score chỉ 0.077 nhưng exemplar score 0.97, nên vẫn được giữ khi hỏi people. Nhóm thử biến thể T bỏ phép max: T chỉ gỡ được khoảng một phần năm tác hại, và vẫn kém B0. Vậy max chỉ là một phần nguyên nhân; phần còn lại nhóm đặt giả thuyết H2, chưa kiểm. Chuyển: từ chẩn đoán này, Trí trình bày cách sửa.}
+\note{[1:00] (Triệu) Đọc mã thì thấy ở lượt 2, điểm của box là max giữa text score và exemplar score. Ví dụ đã lưu: một box ô tô có text score chỉ 0.077 nhưng exemplar score 0.97, nên vẫn được giữ khi hỏi people. Nhóm thử biến thể T bỏ phép max: T chỉ gỡ được khoảng một phần năm tác hại, và vẫn kém B0. Vậy max chỉ là một phần nguyên nhân; phần còn lại nhóm đặt giả thuyết H2, chưa kiểm. Chuyển: từ chẩn đoán này, Trí trình bày cách sửa.}
 \end{frame}
 
 \begin{frame}{Cải tiến P: CLIP kiểm pseudo-exemplar trước lượt 2}
@@ -408,7 +395,7 @@ p4\_unseen\_v1 & 6.77 & 8.80 & 13.00\\
 \textbf{Tham số chọn trên dev:} $\tau\in\{0.18,\dots,0.28\}$, $M\in\{5,10\}$ $\Rightarrow$ khóa $\tau=0.20$, $M=5$.
 \end{column}
 \end{columns}
-\note{[0:50] Cải tiến P nhắm vào vấn đề 2. Trước lượt 2, xét 5 box điểm cao nhất, dùng CLIP so crop của từng box với câu a photo of tên class, chỉ giữ những box đủ giống, rồi mới chọn pseudo-exemplar. Nếu không còn box nào thì trả kết quả một lượt.}
+\note{[0:50] (Trí) Cải tiến P nhắm vào vấn đề 2. Trước lượt 2, xét 5 box điểm cao nhất, dùng CLIP so crop của từng box với câu a photo of tên class, chỉ giữ những box đủ giống, rồi mới chọn pseudo-exemplar. Nếu không còn box nào thì trả kết quả một lượt.}
 \end{frame}
 
 \begin{frame}{Cải tiến F: lọc box bằng điểm kết hợp CountGD++ và CLIP}
@@ -436,7 +423,7 @@ Với box $b$: điểm CountGD++ $a_b$, cosine CLIP $c_b$
 {\small F bỏ được box không chứa vật, nhưng có thể bỏ nhầm vật đúng và giữ vật sai khi CLIP cũng nhầm.}
 \end{column}
 \end{columns}
-\note{[0:55] Cải tiến F nhắm vào vấn đề 1. Mỗi box có điểm CountGD++ và điểm CLIP; đưa cả hai về khoảng 0 đến 1, lấy mỗi bên một nửa, và giữ box vượt threshold 0.604. Ví dụ thật: box không chứa vật bị bỏ, nhưng có một quả việt quất bị bỏ nhầm và một quả khác loại bị giữ nhầm.}
+\note{[0:55] (Trí) Cải tiến F nhắm vào vấn đề 1. Mỗi box có điểm CountGD++ và điểm CLIP; đưa cả hai về khoảng 0 đến 1, lấy mỗi bên một nửa, và giữ box vượt threshold 0.604. Ví dụ thật: box không chứa vật bị bỏ, nhưng có một quả việt quất bị bỏ nhầm và một quả khác loại bị giữ nhầm.}
 \end{frame}
 
 \begin{frame}{Tổng thể: các biến thể được so sánh}
@@ -454,13 +441,36 @@ Ký hiệu & Mô tả & Vai trò & Trạng thái\\
 \Tv, \Sv & chỉ chấm bằng text score / lọc bằng threshold điểm & phép thử, lọc đơn giản & chỉ trên dev\\
 \bottomrule
 \end{tabular}
-\note{[0:40] Đây là toàn bộ các biến thể. Cấu hình chính là P cộng F, khóa trước khi chạy test. B2 cộng F dùng để tách riêng đóng góp của P; C6 là lọc ngay sau lượt 1, bỏ lượt 2, là đối chứng bắt buộc. Chuyển: phần dữ liệu và giao thức, Triệu trình bày.}
+\note{[0:40] (Trí) Đây là toàn bộ các biến thể. Cấu hình chính là P cộng F, khóa trước khi chạy test. B2 cộng F dùng để tách riêng đóng góp của P; C6 là lọc ngay sau lượt 1, bỏ lượt 2, là đối chứng bắt buộc.}
+\end{frame}
+
+\begin{frame}{Điểm khác biệt so với các phương pháp khác}
+\source{Huang và cs., CVPR 2024 (PseCo); Zhu và cs., ECCV 2024 (VA-Count); Pelhan và cs., CVPR 2024 (DAVE, mục 3.2--3.4); đối chiếu tóm tắt arXiv 25/11}
+\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.13\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{0.10\textwidth} >{\raggedright\arraybackslash}p{0.17\textwidth}@{}}
+\toprule
+\normalfont\bfseries Cách & \textbf{Lấy exemplar / vật ứng viên} & \textbf{Loại vật sai bằng gì} & \textbf{Huấn luyện thêm?} & \textbf{Dạng}\\
+\midrule
+CountGD++ gốc & Tự lấy top-3 box làm pseudo-exemplar & Không kiểm class của exemplar; giữ box theo threshold điểm & -- & mô hình gốc (checkpoint công khai)\\
+PseCo & SAM đề xuất mask cho mọi vật & Classifier dựa trên CLIP phân loại từng đề xuất & có (distill) & framework riêng\\
+VA-Count & Mô-đun vision-language tìm exemplar tiềm năng & Mô-đun học tương phản tách exemplar tốt / kém & có & framework riêng\\
+DAVE & Detect với độ phủ cao & Phân cụm đặc trưng; bản text dùng CLIP loại theo \emph{cụm} box & có & framework riêng\\
+\midrule
+\textbf{Đồ án} & \textbf{P}: CLIP kiểm top-$M$ box trước khi lấy pseudo-exemplar & \textbf{F}: CLIP + điểm CountGD++ quyết định cho \textbf{từng box}, threshold khóa trên dev & \textbf{không} & gắn vào bước suy luận của CountGD++\\
+\bottomrule
+\end{tabularx}
+\vspace{1mm}
+{\scriptsize\textbf{Khác ở cách làm:} không huấn luyện, không đổi mô hình; kiểm từng box thay vì từng cụm; đo thêm shared box X/Y và absent query trên ảnh nhiều class.\par}
+\vspace{0.5mm}
+{\scriptsize\textcolor{bad}{\textbf{Chưa so trực tiếp:}} nhóm chưa chạy PseCo, VA-Count, DAVE trên cùng dữ liệu, nên \textbf{không khẳng định tốt hơn}; mốc so sánh số là CountGD++ \Bzero, \Btwo.\par}
+\note{[0:50] (Trí) Đây là điểm khác biệt so với các phương pháp gần nhất. CountGD++ gốc tự lấy ba box điểm cao nhất làm pseudo-exemplar và không kiểm class. PseCo, VA-Count và DAVE đều có bước tìm hoặc kiểm vật ứng viên, nhưng đều phải huấn luyện thêm và là framework riêng; DAVE bản text loại theo từng cụm box. Cách của nhóm không huấn luyện gì, gắn thẳng vào bước suy luận của CountGD++, và F quyết định cho từng box. Nhóm chưa chạy ba phương pháp kia trên cùng dữ liệu, nên không nói là tốt hơn; mốc so sánh số là CountGD++ một lượt và hai lượt. Chuyển: phần thực nghiệm, Triệu trình bày dữ liệu và độ đo.}
 \end{frame}
 
 % ================================================================ 4
 \section{Thực nghiệm}
 
-\begin{frame}{Dữ liệu: MUCCA, chia thành bốn tập không trùng nhau}
+\begin{frame}{Dữ liệu chính: MUCCA, chia thành bốn tập không trùng ảnh}
 \source{MUCCA 1.0, Zenodo 19231375, CC-BY-4.0; script rút mẫu \texttt{select\_dev\_test\_v2.py}, seed 331}
 \begin{columns}[T]
 \begin{column}{0.46\textwidth}
@@ -470,7 +480,7 @@ Ký hiệu & Mô tả & Vai trò & Trạng thái\\
 \includegraphics[width=0.32\linewidth]{mucca_mcac_12.png} &
 \includegraphics[width=0.32\linewidth]{mucca_mcac_25.png} &
 \includegraphics[width=0.32\linewidth]{mucca_mcac_171.png}\\[-0.5mm]
-\tiny đĩa--bát & \tiny việt quất--lý chua & \tiny chó--dê\\
+\tiny đĩa--bát & \tiny việt quất--lý chua & \tiny chó--dê (+80 cừu)\\
 \includegraphics[width=0.32\linewidth]{mucca_mcac_224.png} &
 \includegraphics[width=0.32\linewidth]{mucca_mcac_88.png} &
 \includegraphics[width=0.32\linewidth]{mucca_mcac_84.png}\\[-0.5mm]
@@ -478,30 +488,86 @@ Ký hiệu & Mô tả & Vai trò & Trạng thái\\
 \end{tabular}
 \end{column}
 \begin{column}{0.52\textwidth}
-\small
+{\scriptsize\textbf{MUCCA 1.0:} 200 ảnh thật, 45 class, mỗi ảnh 2--7 class (trung vị 2), 12.265 điểm nhãn; mỗi vật một điểm, có class.}\\[1.5mm]
+\footnotesize
 \begin{tabular}{@{}lll@{}}
 \toprule
 Tập & Ảnh / query & Dùng để\\
 \midrule
 Pilot & 5 / 15 & tìm lỗi, làm bản v1\\
-p4\_unseen\_v1 & 10 / 30 & kiểm bản v1, blind review N4\\
+p4\_unseen\_v1 & 10 / 30 & kiểm v1, blind review N4\\
 \textbf{dev v2} & 20 / 60 & chọn cấu hình\\
-\textbf{test v2} & 40 / 119 & đo một lần duy nhất\\
+\textbf{test v2} & 40 / 119$^{*}$ & đo một lần duy nhất\\
 \bottomrule
 \end{tabular}\\[2mm]
 \begin{itemize}\scriptsize
-\item Rút mẫu bằng script theo luật cố định, chỉ đọc nhãn; mỗi class có 3--40 vật
-\item Lấy hết các cặp khác hẳn nhau (khác nhóm lớn, vd người--xe); phần còn lại là cặp dễ nhầm (cùng nhóm, vd đĩa--bát)
-\item Test: 13 ảnh cặp khác hẳn + 27 ảnh cặp dễ nhầm
+\item Rút bằng script theo luật cố định, chỉ đọc nhãn; mỗi class 3--40 vật
+\item Test: 13 ảnh cặp khác hẳn (vd người--xe, lấy hết) + 27 ảnh cặp dễ nhầm (vd đĩa--bát)
 \item Người kiểm từng ảnh (Trí kiểm dev, Triệu kiểm test), sau đó khóa bằng SHA-256
+\item $^{*}$120 query, 1 query nhãn \texttt{uncertain} (t37\_1) bị loại trước khi chạy test
 \end{itemize}
 \end{column}
 \end{columns}
-\note{[0:55] Dữ liệu là MUCCA, 200 ảnh thật, mỗi ảnh nhiều class. Nhóm chia thành bốn tập không trùng nhau. Dev và test được rút bằng script, chỉ đọc nhãn. Cặp khác hẳn nhau như người và xe rất hiếm, chỉ 19 ảnh đủ điều kiện, nên lấy hết; phần còn lại là cặp dễ nhầm như đĩa và bát. Em kiểm từng ảnh test, Trí kiểm dev, rồi khóa bằng hash.}
+\note{[0:55] (Triệu) Dữ liệu chính là MUCCA, 200 ảnh thật, 45 class, mỗi ảnh từ 2 đến 7 class. Nhóm chia thành bốn tập không trùng nhau. Dev và test được rút bằng script, chỉ đọc nhãn. Cặp khác hẳn nhau như người và xe rất hiếm, chỉ 19 ảnh đủ điều kiện, nên lấy hết; phần còn lại là cặp dễ nhầm như đĩa và bát. Em kiểm từng ảnh test, Trí kiểm dev, rồi khóa bằng hash.}
 \end{frame}
 
-\begin{frame}{Giao thức ``chọn trước, xem sau'' và cách đo}
-\source{Efron, 1979 (bootstrap); luật D9 trong \texttt{reports/KE\_HOACH\_TIEP\_THEO\_20261105.md}}
+\begin{frame}{Tổng hợp các bộ dữ liệu và lần đánh giá}
+\source{\texttt{BENCHMARK\_FSCD147.md}; \texttt{KHAI\_BAO\_TRUOC\_FSC147\_20261120.md}; \texttt{dev\_test\_v2/selection\_meta.json}}
+\scriptsize\centering
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}l l r >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Lần đánh giá & Nguồn ảnh & Ảnh / query & Mục đích & Điều kiện\\
+\midrule
+Kiểm môi trường & FSCD-147 test & 1.190 / 1.190 & Tái lập số của bài báo (8.34 so với 8.39) & Cấu hình t+p+s của bài báo (có crop, exemplar GPT-5)\\
+Pilot, p4\_unseen\_v1 & MUCCA & 5 / 15; 10 / 30 & Tìm lỗi, kiểm bản v1, blind review N4 & Chỉ text prompt\\
+\textbf{dev v2} & MUCCA & 20 / 60 & Chọn cấu hình theo luật D9 & Chỉ text prompt\\
+\textbf{test v2} & MUCCA & 40 / 119 & Kết quả chính, chạy một lần & Chỉ text prompt, cấu hình đã khóa\\
+Khảo sát phạm vi & FSC-147 test & 300 / 300 & Ảnh một class: giữ hay bỏ lượt 2? & Rút ngẫu nhiên, seed 331; không crop, không exemplar GPT-5\\
+\bottomrule
+\end{tabularx}
+\vspace{2mm}
+\begin{alertblock}{FSCD-147 và FSC-147 không phải hai bộ dữ liệu độc lập}
+\small FSCD-147 là FSC-147 có thêm box: cùng ảnh, cùng split test. 300 ảnh khảo sát là tập con của 1.190 ảnh dùng để kiểm môi trường; khác nhau ở điều kiện chạy, nên hai con số không so trực tiếp với nhau.
+\end{alertblock}
+\note{[0:40] (Triệu) Bảng này tổng hợp mọi lần đánh giá. Benchmark FSCD-147 chỉ để kiểm môi trường. Bốn tập MUCCA là phần chính. Khảo sát FSC-147 dùng 300 ảnh rút ngẫu nhiên. Lưu ý: FSCD-147 là FSC-147 có thêm box, nên benchmark và khảo sát dùng chung nguồn ảnh, không phải hai bộ độc lập; chỉ khác điều kiện chạy.}
+\end{frame}
+
+\begin{frame}{Độ đo: sai số đếm, absent query và việc đổi box theo query}
+\source{Tính trên 119 query test hợp lệ (79 present, 40 absent); bootstrap: Efron, 1979}
+\begin{columns}[T]
+\begin{column}{0.60\textwidth}
+\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X l@{}}
+\toprule
+Độ đo & Cách tính & Đo yêu cầu\\
+\midrule
+\textbf{MAE} (chính) & $\frac{1}{|Q|}\sum_q|\hat n_q-n_q|$: trung bình sai bao nhiêu vật mỗi query & Y1, Y2\\
+RMSE & $\sqrt{\frac{1}{|Q|}\sum_q(\hat n_q-n_q)^2}$: phạt nặng query sai nhiều & Y1, Y2\\
+MAE present & MAE chỉ trên 79 present query & Y1\\
+$\FPRabs$ & Tỉ lệ trong 40 absent query mà mô hình vẫn đếm ra $\hat n>0$ & Y2\\
+Shared box X/Y & Tỉ lệ box của X và của Y có box trùng (IoU $\ge 0.5$) ở query kia, gộp trên các ảnh & Y3\\
+\bottomrule
+\end{tabularx}
+\end{column}
+\begin{column}{0.36\textwidth}
+\begin{block}{Ví dụ}
+\scriptsize Query ``bowls'' (GT 3), \Btwo{} đếm 36 $\Rightarrow$ sai 33 vật ở query này.\\
+Query ``spoons'' vắng mặt mà đếm 34 $\Rightarrow$ tính là một lần đếm nhầm absent.
+\end{block}
+\begin{block}{CI 95\% bootstrap theo ảnh}
+\scriptsize Lấy mẫu lại \textbf{ảnh} 5000 lần, tính chênh lệch MAE giữa hai cách.\\
+CI không chứa 0 $\Rightarrow$ chênh lệch đáng tin.\\
+CI chứa 0 $\Rightarrow$ \textbf{chưa đủ bằng chứng}, không có nghĩa là hai cách bằng nhau.
+\end{block}
+\end{column}
+\end{columns}
+\note{[0:50] (Triệu) Chỉ số chính là MAE: trung bình mỗi query sai bao nhiêu vật. RMSE phạt nặng query sai nhiều. MAE present chỉ tính trên query có mặt. FPR absent là tỉ lệ query vắng mặt mà mô hình vẫn đếm ra số. Shared box X/Y đo yêu cầu thứ ba: đổi query thì box có đổi không. Khoảng tin cậy lấy mẫu lại theo ảnh, vì ba query trên cùng ảnh không độc lập. CI không chứa 0 thì chênh lệch đáng tin; CI chứa 0 chỉ là chưa đủ bằng chứng, không có nghĩa hai cách bằng nhau.}
+\end{frame}
+
+\begin{frame}{Giao thức ``chọn trước, xem sau''}
+\source{Luật D9 trong \texttt{reports/KE\_HOACH\_TIEP\_THEO\_20261105.md}}
 \begin{center}
 \begin{tikzpicture}[node distance=3mm]
 \node[sb=boxgray,text width=20mm] (d) {Dữ liệu được\\người kiểm, khóa};
@@ -513,53 +579,18 @@ p4\_unseen\_v1 & 10 / 30 & kiểm bản v1, blind review N4\\
 \end{tikzpicture}
 \end{center}
 \begin{columns}[T]
-\begin{column}{0.50\textwidth}
-\begin{block}{Chỉ số}
-\small
-$\MAE=\frac{1}{|Q|}\sum_q|\hat n_q-n_q|$ (chỉ số chính)\\[1mm]
-$\FPRabs$: tỉ lệ absent query mà mô hình vẫn đếm ra hơn 0\\[1mm]
-Shared box X/Y: tỉ lệ box của query này có box trùng (IoU $\ge 0.5$) ở query kia
+\begin{column}{0.48\textwidth}
+\begin{block}{Luật chọn D9 (viết trước khi chạy dev)}
+\small Chọn cấu hình có MAE dev nhỏ nhất, \emph{với điều kiện} không kém \Bzero{} ở present query và ở absent query.
 \end{block}
 \end{column}
-\begin{column}{0.46\textwidth}
-\begin{block}{Luật D9 và CI}
-\small
-D9: chọn cấu hình có MAE dev nhỏ nhất, \emph{với điều kiện} không kém \Bzero{} ở present query và ở absent query.\\[1mm]
-CI 95\%: bootstrap \textbf{theo ảnh} (5000 lần), vì ba query trên cùng một ảnh không độc lập với nhau.
+\begin{column}{0.48\textwidth}
+\begin{block}{Test chạy một lần}
+\small Dev: D9 chọn \PF{} ($\tau$ 0.20, $M$ 5), MAE dev 3.53 (lạc quan, vì threshold chọn trên dev). Cấu hình khóa vào file freeze (có hash), chạy test một lần trên Kaggle T4; sau đó kiểm hash và tính lại số đếm từ output thô.
 \end{block}
 \end{column}
 \end{columns}
-\note{[1:00] Vì dữ liệu ít mà tham số nhiều, nhóm làm theo kiểu chọn trước, xem sau. Luật chọn D9 được viết trước khi chạy dev: lấy MAE nhỏ nhất, nhưng không được kém B0 ở present query hay absent query. Chọn xong thì khóa lại, rồi em chạy test đúng một lần trên Kaggle. Sau đó trợ lý AI kiểm hash của các file output và tính lại số đếm, MAE từ output thô; kết quả khớp hoàn toàn. CI lấy mẫu lại theo ảnh, vì ba query trên cùng một ảnh không độc lập. Chuyển: phần kết quả, Trí trình bày.}
-\end{frame}
-
-\begin{frame}{Kết quả dev: luật D9 chọn P($\tau$ 0.20, $M$ 5) + F}
-\source{Dev v2: 20 ảnh, 60 query; khoảng 90 cấu hình}
-\begin{columns}[T]
-\begin{column}{0.52\textwidth}
-\centering\small
-\begin{tabular}{@{}lrrr@{}}
-\toprule
-Cách & MAE $\downarrow$ & MAE present $\downarrow$ & $\FPRabs$ $\downarrow$\\
-\midrule
-\Bzero & 6.28 & 8.25 & 0.20\\
-\Btwo & 9.15 & 12.00 & 0.20\\
-\textbf{P(0.20, 5)+F} & \textbf{3.53} & 5.05 & \textbf{0.05}\\
-\BtwoF & 3.73 & 5.15 & 0.20\\
-P+T+F & 3.78 & -- & --\\
-\Csix & 4.02 & 5.80 & 0.05\\
-\bottomrule
-\end{tabular}
-\end{column}
-\begin{column}{0.44\textwidth}
-\begin{itemize}\small
-\item Cấu hình thắng theo D9 được khóa vào file freeze (có hash)
-\item Các cấu hình đứng đầu rất sát nhau: 7 họ đầu chỉ cách nhau 0.49 MAE
-\item Threshold được chọn ngay trên dev $\Rightarrow$ số dev \alert{lạc quan}
-\end{itemize}
-\end{column}
-\end{columns}
-\takeaway{Dev chỉ dùng để chọn; số để báo cáo là số test.}
-\note{[0:40] Trên dev, theo luật D9, cấu hình được chọn là P với tau 0.20, M bằng 5, cộng F, MAE 3.53. Các cách đứng đầu rất sát nhau, và threshold được chọn ngay trên dev, nên số này lạc quan. Số để báo cáo là số test.}
+\note{[0:45] (Triệu) Vì dữ liệu ít mà tham số nhiều, nhóm làm theo kiểu chọn trước, xem sau. Luật chọn D9 được viết trước khi chạy dev: lấy MAE nhỏ nhất, nhưng không được kém B0 ở present query hay absent query. Chọn xong thì khóa lại, rồi em chạy test đúng một lần trên Kaggle. Trên dev, D9 chọn P với tau 0.20, M bằng 5, cộng F; vì threshold chọn ngay trên dev nên số dev lạc quan, số để báo cáo là số test. Sau đó trợ lý AI kiểm hash và tính lại số đếm, MAE từ output thô; kết quả khớp hoàn toàn. Chuyển: phần kết quả, Trí trình bày.}
 \end{frame}
 
 \begin{frame}{Kết quả test: giảm 24\% sai số so với CountGD++ một lượt}
@@ -588,7 +619,7 @@ Cách & MAE & $\FPRabs$ & $\Delta$ so với \Bzero{} [CI 95\%]\\
 \end{itemize}
 \end{column}
 \end{columns}
-\note{[1:10] Trên 40 ảnh test chưa từng dùng, CountGD++ một lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi query. Cấu hình đã khóa còn 5.82, giảm 24 phần trăm, CI không chứa 0. Lượt 2 gốc còn tệ hơn một lượt, 9.61, và chênh lệch này cũng đáng tin. Hai dòng dưới là đối chứng khai báo trước; nhóm không đổi chúng thành kết quả chính sau khi xem test. Chuyển: vì sao có mức giảm này, Triệu phân tích.}
+\note{[1:10] (Trí) Trên 40 ảnh test chưa từng dùng, CountGD++ một lượt có MAE 7.71, tức trung bình sai gần 8 vật mỗi query. Cấu hình đã khóa còn 5.82, giảm 24 phần trăm, CI không chứa 0. Lượt 2 gốc còn tệ hơn một lượt, 9.61, và chênh lệch này cũng đáng tin. Hai dòng dưới là đối chứng khai báo trước; nhóm không đổi chúng thành kết quả chính sau khi xem test. Chuyển: vì sao có mức giảm này, Triệu phân tích.}
 \end{frame}
 
 \begin{frame}{Phân rã: cải thiện đến từ filter F, không đến từ P}
@@ -600,16 +631,16 @@ Cách & MAE & $\FPRabs$ & $\Delta$ so với \Bzero{} [CI 95\%]\\
 \begin{itemize}
 \item Ở \bignum{108/120} query, P chọn đúng bộ pseudo-exemplar như \Btwo
 \item Threshold $\tau=0.20$ khá thấp, nên ba box đầu thường đều lọt qua
-\item \BtwoF{} so với \PF: $-0.13$ [$-0.41$, $+0.18$], gần như bằng nhau
+\item \BtwoF{} so với \PF: $-0.13$ [$-0.41$, $+0.18$]: CI chứa 0, không thấy P đóng góp thêm
 \end{itemize}
 \end{block}
 \end{column}
 \begin{column}{0.48\textwidth}
 \begin{block}{F giảm mạnh đếm thừa, nhưng tăng đếm thiếu}
-\centering\small
+\centering\footnotesize
 \begin{tabular}{@{}lrr@{}}
 \toprule
-79 present query & Tổng đếm thừa & Tổng đếm thiếu\\
+79 present query & Tổng thừa & Tổng thiếu\\
 \midrule
 \Bzero & $+580$ & $-77$\\
 \Btwo & $+751$ & $-58$\\
@@ -621,7 +652,7 @@ Cách & MAE & $\FPRabs$ & $\Delta$ so với \Bzero{} [CI 95\%]\\
 \end{column}
 \end{columns}
 \takeaway{Thành phần có tác dụng là F. P đi đúng hướng nhưng threshold quá dễ, nên hầu như không đổi được exemplar.}
-\note{[0:55] Phân tích post-hoc trên test cho thấy P gần như luôn chọn lại đúng bộ pseudo-exemplar cũ, 108 trên 120 query, nên B2 cộng F gần bằng P cộng F. Vậy phần có tác dụng là filter F. F giảm mạnh đếm thừa, từ 580 xuống 243, nhưng đếm thiếu tăng từ 77 lên 297, vì filter bỏ cả một số vật đúng.}
+\note{[0:55] (Triệu) Phân tích post-hoc trên test cho thấy P gần như luôn chọn lại đúng bộ pseudo-exemplar cũ, 108 trên 120 query, và B2 cộng F so với P cộng F có CI chứa 0, tức không thấy P đóng góp thêm. Phần có tác dụng là filter F. F giảm mạnh đếm thừa, từ 580 xuống 243, nhưng đếm thiếu tăng từ 77 lên 297, vì filter bỏ cả một số vật đúng.}
 \end{frame}
 
 \begin{frame}{F bỏ được box không chứa vật, nhưng chưa tách hẳn X với Y}
@@ -651,53 +682,7 @@ Cách & Box giữ & Đúng class $\uparrow$ & Class khác $\downarrow$ & Không 
 \end{itemize}
 \end{column}
 \end{columns}
-\note{[0:50] Xét từng box theo điểm nhãn: áp sau lượt 2, F chủ yếu bỏ các box không chứa vật, từ 8.8 xuống 1 phần trăm, nhưng vẫn khoảng một phần ba số box nằm trên vật class khác, và 59 phần trăm vẫn là shared box. Lọc ngay sau lượt 1, tức C6, tách tốt hơn nhiều.}
-\end{frame}
-
-\begin{frame}{Theo loại cặp: cải thiện rõ ở cặp dễ nhầm, chưa rõ ở cặp khác hẳn}
-\source{Phân tích post-hoc; nhóm cặp khác hẳn chỉ có 13 ảnh}
-\begin{columns}[c]
-\begin{column}{0.50\textwidth}
-\includegraphics[width=\linewidth]{fig_strata_errors.png}
-\end{column}
-\begin{column}{0.48\textwidth}
-\centering\scriptsize
-\begin{tabular}{@{}lll@{}}
-\toprule
-$\Delta$ MAE so với \Bzero & Khác hẳn (13) & Dễ nhầm (27)\\
-\midrule
-\Btwo & $+2.46$ [$+0.38$, $+4.74$] & $+1.63$ [$+0.39$, $+2.86$]\\
-\PF & $+0.51$ [$-0.72$, $+1.82$] & $\mathbf{-3.05}$ [$-5.43$, $-0.96$]\\
-\Csix & $+1.13$ [$-0.87$, $+3.51$] & $\mathbf{-5.13}$ [$-10.16$, $-1.60$]\\
-\bottomrule
-\end{tabular}\\[2mm]
-\begin{itemize}\scriptsize
-\item \textbf{Cặp dễ nhầm} (quả với quả, bát với đĩa): \Bzero{} đếm thừa nhiều, nên filter phát huy tác dụng
-\item \textbf{Cặp khác hẳn} (người với xe): \Bzero{} vốn đã khá tốt (MAE 4.59); filter lại có xu hướng làm đếm thiếu
-\end{itemize}
-\end{column}
-\end{columns}
-\takeaway{Phương pháp chưa giải quyết được mọi dạng X/Y.}
-\note{[0:50] Chia theo loại cặp: với cặp dễ nhầm, P cộng F giảm khoảng 3 vật mỗi query, CI không chứa 0. Với cặp khác hẳn, đúng dạng người và xe mà thầy nêu, chưa thấy khác biệt chắc chắn, và nhóm này chỉ có 13 ảnh. Nhóm nói thẳng: phương pháp chưa giải quyết được mọi dạng X/Y.}
-\end{frame}
-
-\begin{frame}{Ví dụ: một trường hợp thành công và một lỗi X/Y còn sót}
-\source{Xanh: box trúng đúng class · đỏ: chỉ trúng class khác · xám: không trúng điểm nhãn nào}
-\centering
-\includegraphics[width=0.80\textwidth]{fig_example_t05_1_mcac_25.png}\\[-0.5mm]
-{\scriptsize\textcolor{good}{\textbf{Thành công}} ``blueberries'' (GT 7): \Bzero{} 36 · \Btwo{} 65 · \PF{} \textbf{8} · \Csix{} 9}\\[1mm]
-\includegraphics[width=0.80\textwidth]{fig_example_t01_2_mcac_12.png}\\[-0.5mm]
-{\scriptsize\textcolor{bad}{\textbf{Lỗi còn sót}} ``bowls'' (GT 3): chồng đĩa vẫn bị đếm là bát ở mọi cách (\PF{} 17, \Csix{} 20)}
-\note{[0:45] Ví dụ thành công: blueberries, B2 đếm 65 vì khoanh cả từng hạt của quả mâm xôi đen, còn P cộng F đếm 8, GT là 7. Ví dụ lỗi còn sót: bowls, chồng đĩa vẫn bị đếm là bát ở mọi cách.}
-\end{frame}
-
-\begin{frame}{Ví dụ thất bại: CLIP nhầm các class gần giống nhau, và lọc quá tay}
-\centering
-\includegraphics[width=0.80\textwidth]{fig_example_t33_1_mcac_171.png}\\[-0.5mm]
-{\scriptsize\textcolor{bad}{\textbf{Nhầm class}} ``dogs'' (GT 4): đàn cừu (cùng vài con dê) bị đếm là chó ở mọi cách (66--101). Trên ô cắt nhỏ, CLIP không phân biệt được cừu, dê với chó.}\\[1mm]
-\includegraphics[width=0.54\textwidth]{fig_example_t40_1_mcac_224.png}\\[-0.5mm]
-{\scriptsize\textcolor{bad}{\textbf{Lọc quá tay}} ``people'' (GT 31): không có box nào sai class, nhưng F bỏ cả người thật (\PF{} còn 13, \Csix{} còn 3)}
-\note{[0:45] Hai kiểu thất bại. Dogs: ảnh có 80 con cừu, 7 con dê và 4 con chó; đàn cừu bị đếm là chó ở mọi cách, vì trên ô cắt nhỏ CLIP cũng không phân biệt được cừu, dê với chó. People: không có box nào sai class, nhưng filter bỏ cả người thật, chỉ còn 13 trên 31.}
+\note{[0:50] (Triệu) Xét từng box theo điểm nhãn: áp sau lượt 2, F chủ yếu bỏ các box không chứa vật, từ 8.8 xuống 1 phần trăm, nhưng vẫn khoảng một phần ba số box nằm trên vật class khác, và 59 phần trăm vẫn là shared box. Lọc ngay sau lượt 1, tức C6, tách tốt hơn nhiều.}
 \end{frame}
 
 \begin{frame}{Kiểm thêm trên 300 ảnh FSC-147 (mỗi ảnh một class)}
@@ -727,8 +712,8 @@ Cách & MAE $\downarrow$ & Bias & $\le$40 vật & $>$40 vật\\
 \end{itemize}
 \end{column}
 \end{columns}
-\takeaway{Cải tiến phù hợp với ảnh nhiều class, số vật ít đến vừa. Với ảnh một class, nhiều vật, nên giữ CountGD++ gốc.}
-\note{[0:55] Em chạy thêm một khảo sát pre-registered trên 300 ảnh FSC-147, mỗi ảnh một class. Giữ hay bỏ lượt 2 chưa khác nhau rõ, nên kết luận lượt 2 gây hại chỉ đúng cho ảnh nhiều class. Cấu hình của nhóm kém hơn, chủ yếu ở ảnh trên 40 vật, và lỗi là đếm thiếu. Một giải thích có thể là threshold của F được chọn trên ảnh ít vật nên lọc quá tay, nhưng khảo sát chưa tách được ảnh hưởng của density với khác biệt giữa hai bộ dữ liệu. Ở ảnh tối đa 40 vật thì hai cách gần nhau.}
+\takeaway{Cải thiện mới được kiểm trên ảnh nhiều class, ít đến vừa vật (MUCCA). Trên ảnh một class, nhiều vật (FSC-147), cấu hình của nhóm kém CountGD++ gốc.}
+\note{[0:55] (Triệu) Em chạy thêm một khảo sát pre-registered trên 300 ảnh FSC-147, mỗi ảnh một class. Giữ hay bỏ lượt 2 chưa khác nhau rõ, nên kết luận lượt 2 gây hại chỉ đúng cho ảnh nhiều class. Cấu hình của nhóm kém hơn, chủ yếu ở ảnh trên 40 vật, và lỗi là đếm thiếu. Một giải thích có thể là threshold của F được chọn trên ảnh ít vật nên lọc quá tay, nhưng khảo sát chưa tách được ảnh hưởng của density với khác biệt giữa hai bộ dữ liệu. Ở ảnh tối đa 40 vật thì chênh lệch nhỏ.}
 \end{frame}
 
 \begin{frame}{Các hướng đã thử thêm (chỉ trên dev)}
@@ -766,11 +751,36 @@ Cách & Dev & Test & Thay đổi\\
 \end{alertblock}
 \end{column}
 \end{columns}
-\note{[1:00] Nhóm thử thêm một hướng nhắm thẳng vào bài X/Y: gán mỗi box cho class mà CLIP thấy giống nhất. Shared box giảm từ 62 xuống 3 phần trăm, nhưng CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30 phần trăm vật đúng, nên số đếm chưa tốt hơn. Bài học thứ hai: trên dev, C6 chỉ đứng thứ 7 trong 15 họ cấu hình, nhưng lại tốt nhất trên test; chênh lệch nằm trong sai số, nên nhóm không đổi kết quả chính sau khi đã xem test.}
+\note{[1:00] (Triệu) Nhóm thử thêm một hướng nhắm thẳng vào bài X/Y: gán mỗi box cho class mà CLIP thấy giống nhất. Shared box giảm từ 62 xuống 3 phần trăm, nhưng CLIP trên ô cắt nhỏ bỏ nhầm khoảng 30 phần trăm vật đúng, nên số đếm chưa tốt hơn. Bài học thứ hai: trên dev, C6 chỉ đứng thứ 7 trong 15 họ cấu hình, nhưng lại tốt nhất trên test; chênh lệch nằm trong sai số, nên nhóm không đổi kết quả chính sau khi đã xem test. Chuyển: Trí cho thầy xem demo.}
+\end{frame}
+
+\begin{frame}{Demo: chạy model thật trên ảnh mới}
+\source{Gradio + CountGD++ trên GPU Kaggle T4; ảnh chụp: lần kiểm trên CPU, ảnh Wikimedia Commons}
+\begin{columns}[T]
+\begin{column}{0.42\textwidth}
+\centering
+\includegraphics[width=\linewidth]{demo_live_cpu_sheep.png}\\[-0.5mm]
+{\tiny ``sheep, dogs'': \Btwo{} dùng chung 10/10 box cho hai tên vật}
+\end{column}
+\begin{column}{0.55\textwidth}
+\begin{block}{Cách dùng}
+\scriptsize Ctrl+V dán ảnh (hoặc kéo thả) $\to$ nhập tên vật, vd ``bowls, plates'' $\to$ \textbf{Chạy}. Model chạy trên chính ảnh đó; mỗi tên vật hiện box và số đếm của \Bzero, \Btwo, \PF, \Csix{} cạnh nhau, kèm bảng box dùng chung X/Y và thời gian.
+\end{block}
+\begin{itemize}\scriptsize
+\item \textbf{Cấu hình đã khóa}: cùng checkpoint, cùng môi trường lần test; P($\tau$ 0.20, $M$ 5); F với threshold riêng (\PF{} 0.604, \Csix{} 0.427)
+\item Lượt 1 chạy \textbf{một lần} và dùng chung cho cả bốn cách
+\item Đã kiểm: trên 3 query test, số đếm của cả bốn cách trùng kết quả chính thức
+\item Ảnh mới không có GT $\Rightarrow$ không tính MAE; ảnh demo không vào bảng kết quả nghiên cứu
+\item Khác tài liệu tham khảo: đồ án đo thêm lỗi X/Y trên ảnh nhiều class
+\item \textit{Dự phòng} khi mất mạng/GPU: app xem lại kết quả test đã lưu
+\end{itemize}
+\end{column}
+\end{columns}
+\note{[1:30] (Trí) Đây là demo chạy model thật. Em dán một ảnh mới bằng Ctrl+V, nhập hai tên vật, ví dụ bowls và plates, rồi bấm Chạy. Model CountGD++ chạy trên GPU với đúng cấu hình đã khóa, và trả kết quả của bốn cách cạnh nhau cho từng tên vật. Bảng box dùng chung cho thấy mô hình có khoanh cùng những vật cho cả hai tên hay không. Ảnh mới không có GT nên app không tính MAE. Nếu thầy muốn, em có thể nhập GT để xem sai số của riêng ví dụ đó. Nếu mất mạng, nhóm dùng app xem lại kết quả test đã lưu. Chuyển: phần nhận xét và kết luận, Triệu trình bày.}
 \end{frame}
 
 % ================================================================ 5
-\section{Giới hạn và kết luận}
+\section{Nhận xét và kết luận}
 
 \begin{frame}{Những điều kết quả này chưa trả lời được}
 \begin{columns}[T]
@@ -794,12 +804,13 @@ Cách & Dev & Test & Thay đổi\\
 \end{column}
 \end{columns}
 \takeaway{Nhóm không gọi đây là SOTA: cải thiện có phạm vi, có điều kiện, và kèm xu hướng đếm thiếu.}
-\note{[0:50] Nhóm tự nêu những điều kết quả chưa trả lời được. Về phương pháp: bài X/Y chưa giải quyết xong, threshold dùng chung cho mọi ảnh, CLIP yếu với các class gần giống nhau, giả thuyết H2 chưa kiểm. Về đánh giá: mẫu nhỏ, chỉ một bộ dữ liệu, một số nhãn cần xem lại. Chuyển: Trí tóm tắt kết luận.}
+\note{[0:50] (Triệu) Nhóm tự nêu những điều kết quả chưa trả lời được. Về phương pháp: bài X/Y chưa giải quyết xong, threshold dùng chung cho mọi ảnh, CLIP yếu với các class gần giống nhau, giả thuyết H2 chưa kiểm. Về đánh giá: mẫu nhỏ, chỉ một bộ dữ liệu, một số nhãn cần xem lại. Chuyển: Trí tóm tắt kết luận.}
 \end{frame}
 
 \begin{frame}{Kết luận: vấn đề, cải tiến và kết quả}
-\small
-\begin{tabularx}{\textwidth}{@{}l l X@{}}
+\footnotesize
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.25\textwidth} >{\raggedright\arraybackslash}p{0.24\textwidth} >{\raggedright\arraybackslash}X@{}}
 \toprule
 Vấn đề (RQ1) & Cải tiến (RQ2) & Kết quả (RQ3, test khóa trước)\\
 \midrule
@@ -807,11 +818,11 @@ VĐ1. Đổi query, box gần như không đổi & \textbf{F}: CLIP kiểm từn
 VĐ2. Pseudo-exemplar sai class & \textbf{P}: CLIP kiểm pseudo-exemplar & \textcolor{bad}{\ding{55}} hầu như không đổi exemplar (108/120 query giống \Btwo)\\
 VĐ3. Lượt 2 làm lỗi nặng thêm & \textbf{T}: bỏ phép $\max$ (phép thử) & một phần: gỡ 21\% tác hại trên dev; \Btwo{} kém \Bzero{} trên test\\
 \midrule
-Phạm vi & FSC-147, 300 ảnh & \textcolor{bad}{\ding{55}} kém CountGD++ gốc ở ảnh dày ($+4.69$) $\Rightarrow$ dùng cho ảnh nhiều class, ít đến vừa vật\\
+Phạm vi & FSC-147, 300 ảnh & \textcolor{bad}{\ding{55}} kém CountGD++ gốc ở ảnh dày ($+4.69$) $\Rightarrow$ mới kiểm chứng cho ảnh nhiều class, ít đến vừa vật\\
 \bottomrule
 \end{tabularx}
 \takeaway{Sửa ở bước suy luận giảm được lỗi đếm nhầm class, nhưng bài X/Y mới giảm được một phần, chưa giải quyết xong.}
-\note{[1:00] Tóm lại: CountGD++ đếm lẫn class trên ảnh nhiều class, và lượt 2 làm lỗi nặng thêm. Filter F dùng CLIP, không cần huấn luyện, giảm 24 phần trăm sai số trên tập test khóa trước. P gần như không đóng góp; phép max chỉ giải thích một phần. Cải tiến dành cho ảnh nhiều class, số vật ít đến vừa.}
+\note{[1:00] (Trí) Tóm lại: CountGD++ đếm lẫn class trên ảnh nhiều class, và lượt 2 làm lỗi nặng thêm. Filter F dùng CLIP, không cần huấn luyện, giảm 24 phần trăm sai số trên tập test khóa trước. P gần như không đóng góp; phép max chỉ giải thích một phần. Cải thiện mới được kiểm chứng trên ảnh nhiều class, số vật ít đến vừa.}
 \end{frame}
 
 \begin{frame}{Hướng phát triển}
@@ -824,18 +835,41 @@ Phạm vi & FSC-147, 300 ảnh & \textcolor{bad}{\ding{55}} kém CountGD++ gốc
 \end{enumerate}
 \vspace{2mm}
 {\small Mọi hướng trên đều cần một tập kiểm mới, vì tập test hiện tại đã dùng một lần.}
-\note{[0:30] Các hướng tiếp theo: chỉ phân xử những box bị tranh chấp, threshold theo density, kiểm C6 và giả thuyết H2 trên dữ liệu mới.}
+\note{[0:30] (Trí) Các hướng tiếp theo: chỉ phân xử những box bị tranh chấp, threshold theo density, kiểm C6 và giả thuyết H2 trên dữ liệu mới.}
 \end{frame}
 
-\begin{frame}[standout]
-Cảm ơn thầy và các bạn đã lắng nghe!\\[4mm]
+\begin{frame}{Phân công công việc}
+\scriptsize\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{@{}>{\bfseries\raggedright\arraybackslash}p{0.17\textwidth} >{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+\toprule
+\normalfont\bfseries Hạng mục & \textbf{Trí} & \textbf{Triệu}\\
+\midrule
+Môi trường, baseline & Dựng CountGD++ trên Kaggle T4, chạy lại benchmark FSCD-147 (MAE 8.34) & Kiểm chéo evaluator, tính tay, self-test\\
+Pilot, cải tiến v1 & Chạy pilot 5 ảnh, xem từng query bằng mắt; làm bộ lọc v1 & Tự kiểm lại kết quả v1\\
+Chẩn đoán & Phân tích điểm theo token; quyết định thêm phép thử T trước khi khóa cấu hình & \textbf{Blind review 117 box (N4)}; phát hiện cơ chế max khi rà soát N4\\
+Hướng cải tiến v2 & Chốt các quyết định D1--D10, chọn hướng P + T & \textbf{Đề xuất nhánh P}; chuẩn bị runner P, chạy pilot P trên T4\\
+Dữ liệu & Kiểm 20 ảnh dev & Rút dev/test bằng script; \textbf{kiểm 40 ảnh test}; khóa dữ liệu\\
+Thực nghiệm & Chọn và \textbf{khóa cấu hình} (freeze v2) & \textbf{Chạy dev, chạy test một lần}, chạy khảo sát FSC-147\\
+Viết, trình bày & Bản báo cáo chi tiết, bản gửi thầy, báo cáo LaTeX, slide & Related Work, điểm yếu và hướng thử thêm, rà sửa slide\\
+\bottomrule
+\end{tabularx}
+\note{[0:20] (Trí) Trước khi nhận câu hỏi, đây là phân công công việc trong đồ án. Trí dựng môi trường, chạy pilot, làm cải tiến v1, chốt các quyết định và khóa cấu hình. Triệu làm blind review, đề xuất nhánh P, rút và kiểm dữ liệu test, chạy dev, test và khảo sát FSC-147.}
+\end{frame}
+
+% Không dùng [standout]: metropolis để frame standout không tăng số trang (trùng số với slide trước)
+\begin{frame}[c]
+\centering
+{\Large\bfseries\color{accent!80!black} Cảm ơn thầy và các bạn đã lắng nghe!}\\[3mm]
+{\large Mời thầy và các bạn đặt câu hỏi}\\[6mm]
 {\normalsize Mã nguồn, dữ liệu khóa và kết quả:}\\
 {\small\url{https://github.com/minhtridaoo/zero-shot-counting}}
-\note{Em cảm ơn thầy và các bạn. Nhóm sẵn sàng nhận câu hỏi. Nếu thầy muốn xem thêm, nhóm có slide dự phòng và demo tĩnh bằng các hình ví dụ.}
+\note{Em cảm ơn thầy và các bạn. Nhóm sẵn sàng nhận câu hỏi. Nếu thầy muốn xem thêm, nhóm có slide dự phòng và có thể mở lại demo.}
 \end{frame}
 
 % ================================================================ Backup
 \appendix
+\csfootline % metropolis tắt số trang sau \appendix; bật lại
 \section*{Slide dự phòng}
 
 \begin{frame}{Dự phòng · Kết quả test đầy đủ}
@@ -915,6 +949,82 @@ Hạng & Họ (thành viên tốt nhất) & MAE dev\\
 \bottomrule
 \end{tabular}\\[2mm]
 \raggedright\small 7 họ đầu cách nhau 0.49 MAE, trong khi một CI điển hình rộng khoảng 2: 60 query dev không đủ để phân biệt các cách đứng đầu.
+\end{frame}
+
+\begin{frame}{Dự phòng · Kết quả dev: luật D9 chọn P($\tau$ 0.20, $M$ 5) + F}
+\source{Dev v2: 20 ảnh, 60 query; khoảng 90 cấu hình}
+\begin{columns}[T]
+\begin{column}{0.52\textwidth}
+\centering\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Cách & MAE $\downarrow$ & MAE present $\downarrow$ & $\FPRabs$ $\downarrow$\\
+\midrule
+\Bzero & 6.28 & 8.25 & 0.20\\
+\Btwo & 9.15 & 12.00 & 0.20\\
+\textbf{P(0.20, 5)+F} & \textbf{3.53} & 5.05 & \textbf{0.05}\\
+\BtwoF & 3.73 & 5.15 & 0.20\\
+P+T+F & 3.78 & -- & --\\
+\Csix & 4.02 & 5.80 & 0.05\\
+\bottomrule
+\end{tabular}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{itemize}\small
+\item Cấu hình thắng theo D9 được khóa vào file freeze (có hash)
+\item Các cấu hình đứng đầu rất sát nhau: 7 họ đầu chỉ cách nhau 0.49 MAE
+\item Threshold được chọn ngay trên dev $\Rightarrow$ số dev \alert{lạc quan}
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Dev chỉ dùng để chọn; số để báo cáo là số test.}
+\note{[dự phòng] Trên dev, theo luật D9, cấu hình được chọn là P với tau 0.20, M bằng 5, cộng F, MAE 3.53. Các cách đứng đầu rất sát nhau, và threshold được chọn ngay trên dev, nên số này lạc quan. Số để báo cáo là số test.}
+\end{frame}
+
+\begin{frame}{Dự phòng · Ví dụ thất bại: CLIP nhầm các class gần giống nhau, và lọc quá tay}
+\centering
+\includegraphics[width=0.80\textwidth]{fig_example_t33_1_mcac_171.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Nhầm class}} ``dogs'' (GT 4): đàn cừu (cùng vài con dê) bị đếm là chó ở mọi cách (66--101). Trên ô cắt nhỏ, CLIP không phân biệt được cừu, dê với chó.}\\[1mm]
+\includegraphics[width=0.54\textwidth]{fig_example_t40_1_mcac_224.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Lọc quá tay}} ``people'' (GT 31): không có box nào sai class, nhưng F bỏ cả người thật (\PF{} còn 13, \Csix{} còn 3)}
+\note{[dự phòng; demo cho xem trực tiếp ví dụ dogs] Hai kiểu thất bại. Dogs: ảnh có 80 con cừu, 7 con dê và 4 con chó; đàn cừu bị đếm là chó ở mọi cách, vì trên ô cắt nhỏ CLIP cũng không phân biệt được cừu, dê với chó. People: không có box nào sai class, nhưng filter bỏ cả người thật, chỉ còn 13 trên 31.}
+\end{frame}
+
+\begin{frame}{Dự phòng · Ví dụ: một trường hợp thành công và một lỗi X/Y còn sót}
+\source{Xanh: box trúng đúng class · đỏ: chỉ trúng class khác · xám: không trúng điểm nhãn nào}
+\centering
+\includegraphics[width=0.80\textwidth]{fig_example_t05_1_mcac_25.png}\\[-0.5mm]
+{\scriptsize\textcolor{good}{\textbf{Thành công}} ``blueberries'' (GT 7): \Bzero{} 36 · \Btwo{} 65 · \PF{} \textbf{8} · \Csix{} 9}\\[1mm]
+\includegraphics[width=0.80\textwidth]{fig_example_t01_2_mcac_12.png}\\[-0.5mm]
+{\scriptsize\textcolor{bad}{\textbf{Lỗi còn sót}} ``bowls'' (GT 3): chồng đĩa vẫn bị đếm là bát ở mọi cách (\PF{} 17, \Csix{} 20)}
+\note{[dự phòng; demo cho xem trực tiếp hai ví dụ này] Ví dụ thành công: blueberries, B2 đếm 65 vì khoanh cả từng hạt của quả mâm xôi đen, còn P cộng F đếm 8, GT là 7. Ví dụ lỗi còn sót: bowls, chồng đĩa vẫn bị đếm là bát ở mọi cách.}
+\end{frame}
+
+\begin{frame}{Dự phòng · Theo loại cặp: cải thiện rõ ở cặp dễ nhầm, chưa rõ ở cặp khác hẳn}
+\source{Phân tích post-hoc; nhóm cặp khác hẳn chỉ có 13 ảnh}
+\begin{columns}[c]
+\begin{column}{0.50\textwidth}
+\includegraphics[width=\linewidth]{fig_strata_errors.png}
+\end{column}
+\begin{column}{0.48\textwidth}
+\centering\scriptsize
+\begin{tabular}{@{}lll@{}}
+\toprule
+$\Delta$ MAE so với \Bzero & Khác hẳn (13) & Dễ nhầm (27)\\
+\midrule
+\Btwo & $+2.46$ [$+0.38$, $+4.74$] & $+1.63$ [$+0.39$, $+2.86$]\\
+\PF & $+0.51$ [$-0.72$, $+1.82$] & $\mathbf{-3.05}$ [$-5.43$, $-0.96$]\\
+\Csix & $+1.13$ [$-0.87$, $+3.51$] & $\mathbf{-5.13}$ [$-10.16$, $-1.60$]\\
+\bottomrule
+\end{tabular}\\[2mm]
+\begin{itemize}\scriptsize
+\item \textbf{Cặp dễ nhầm} (quả với quả, bát với đĩa): \Bzero{} đếm thừa nhiều, nên filter phát huy tác dụng
+\item \textbf{Cặp khác hẳn} (người với xe): \Bzero{} vốn đã khá tốt (MAE 4.59); filter lại có xu hướng làm đếm thiếu
+\end{itemize}
+\end{column}
+\end{columns}
+\takeaway{Phương pháp chưa giải quyết được mọi dạng X/Y.}
+\note{[dự phòng] Chia theo loại cặp: với cặp dễ nhầm, P cộng F giảm khoảng 3 vật mỗi query, CI không chứa 0. Với cặp khác hẳn, đúng dạng người và xe mà thầy nêu, chưa thấy khác biệt chắc chắn, và nhóm này chỉ có 13 ảnh. Nhóm nói thẳng: phương pháp chưa giải quyết được mọi dạng X/Y.}
 \end{frame}
 
 \end{document}
