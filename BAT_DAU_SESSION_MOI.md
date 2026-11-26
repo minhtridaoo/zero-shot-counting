@@ -1,5 +1,10 @@
 # Bắt đầu phiên mới — trạng thái CS331
 
+**Recheck 25/11:** Chưa thấy sửa nội dung theo prompt. Repo chỉ đổi 3 dòng sang đường dẫn web, nhưng thư mục phụ thuộc tương ứng không có trong final/slides; main.pdf đang thiếu. Mirror vẫn bản cũ. Xem mục recheck đầu WORKLOG. Không tự sửa slide trong phiên kiểm.
+
+
+**Rà slide theo phiếu chấm 25/11 (Codex):** Trí yêu cầu bỏ slide phân công; làm rõ B0/B2, P+F/C6, dataset, độ đo và bảng kết quả. Đã đối chiếu nguồn và soạn prompt cho Claude, chưa sửa slide. Bản mirror đang cũ hơn bản repo; chưa xác minh lưu bền trên web. Mục 6 là tiêu chí chất lượng toàn bộ slide; mục 7 là hỏi đáp. Xem mục rà nội dung trong WORKLOG.
+
 **Đồng bộ Git 25/11:** Đưa bộ slide và demo mới từ worktree Claude về main. Demo GPU Kaggle chờ Trí thử; CPU PASS dưới đây là ghi nhận của phiên trước, không chạy lại trong phiên xuất bản. Báo cáo chi tiết chưa xác nhận đồng bộ theo slide mới. Tiếp: thử notebook Kaggle, hoàn thiện báo cáo.
 
 **Cập nhật 25/11 (khuya) — demo chính là SUY LUẬN THẬT trên ảnh mới; đã kiểm trên CPU, bản GPU chờ Trí:**

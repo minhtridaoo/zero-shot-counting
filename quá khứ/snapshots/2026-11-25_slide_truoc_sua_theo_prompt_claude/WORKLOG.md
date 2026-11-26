@@ -1,0 +1,2105 @@
+# WORKLOG CS331 — nhật ký chung
+
+## 25/11/2026 — recheck sau prompt sửa slide (Codex)
+
+Đã đọc lại main.tex ở repo, worktree Claude và mirror. Repo chỉ khác worktree 3 dòng đường dẫn; chưa thấy sửa nội dung theo prompt: còn Phân công, chưa tách C6/P+F riêng, độ đo và kết quả vẫn dày. Mirror vẫn bản cũ 54.866 byte. Repo đã đổi sang đường dẫn kiểu web nhưng final/slides/figures, shared/macros.tex, shared/pipeline_slides.tex đều không tồn tại; main.pdf cũng không còn. Không sửa slide hoặc khôi phục PDF; không chạy thực nghiệm. Cần sửa nội dung và tách bản xuất web khỏi đường dẫn build repo; chưa xác minh máy chủ web trực tiếp.
+
+
+## 25/11/2026 — rà nội dung slide theo phiếu chấm (Codex; chỉ đọc slide)
+
+Theo yêu cầu Trí: kiểm thứ tự trình bày, baseline/P+F/C6, dataset, độ đo và kết quả; soạn prompt để Claude sửa. Không sửa slide, không chạy model/evaluator, không đẩy Overleaf. Bản mirror hiện là bản cũ (main.tex 54.866 byte); bản repo mới 65.834 byte đã có dataset tổng hợp, độ đo riêng và demo live. Lệnh gửi Mirror ở phiên trước không chứng minh lưu bền trên web. Cần xác minh bản web bằng tải lại/đọc lại trước khi kết luận đồng bộ thành công.
+
+Kết luận rà nguồn: baseline và các thành phần P/F có, nhưng C6 thiếu giải thích riêng; dữ liệu/độ đo/kết quả không hoàn toàn thiếu, còn dày và khó nói. Mục 6 của phiếu là tiêu chí chất lượng toàn bộ slide, không phải chương nội dung. Theo Trí: bỏ slide phân công. P+F vẫn là cấu hình chính đã khóa; C6 là đối chứng khai báo trước, không đổi vai trò sau test. Chưa kiểm bố cục PDF trong phiên này. Tiếp: Claude sửa theo prompt, render kiểm từng slide, giữ nguyên số liệu/giao thức, xác minh bản web thực sự lưu.
+
+
+## 25/11/2026 — xuất bản slide và demo
+
+Sao lưu trước đồng bộ; nhận 3 commit remote đến 974048f, đưa slide/nguồn/PDF/kịch bản, demo và hướng dẫn từ worktree Claude về main. Dùng sơ đồ pipeline_slides.tex của slide mới; giữ bản local trước đó trong snapshot. Không chạy model/evaluator/self-test; kết quả CPU là ghi nhận phiên trước, GPU vẫn chờ Trí. Báo cáo chi tiết chưa xác nhận khớp slide mới. Không đưa môi trường, log, cấu hình Claude hoặc snapshot lên Git.
+
+## 25/11/2026 (khuya) — demo suy luận thật trên ảnh mới (assistant; kiểm trên CPU, bản GPU chờ Trí mở Kaggle)
+
+Trí đổi hướng: demo phải nhận ảnh mới (Ctrl+V / upload), chạy model thật cho B0, B2, P+F, C6. Bản xem lại kết quả đã lưu chỉ còn là dự phòng.
+
+**Kiến trúc chọn:**
+- Model chạy trên **Kaggle T4**, giao diện Gradio mở qua link https gradio.live có mật khẩu. Notebook: `demo/live/kaggle_live_demo.ipynb`.
+- Ô môi trường chép nguyên văn từ notebook test 11/11; code demo nhúng kèm sha256; clone repo ở commit `974048f`.
+- Laptop không dùng làm demo chính: torch chỉ có bản CPU, không có nvcc để build CUDA ops, GPU chỉ 4 GB.
+- CPU chỉ dùng để kiểm chức năng: `.venv-live`, cùng phiên bản torch/transformers/numpy/pillow với Kaggle.
+
+**Code mới trong `demo/live/` (không sửa file gốc):**
+- `live_engine.py`:
+  - nạp model một lần như `run_b2_verified_pseudo.py` (kiểm hash checkpoint/code/freeze, seed 42, khôi phục RNG trước lượt 2);
+  - lượt 1 dùng chung cho cả bốn cách; P+F dùng lại lượt 2 của B2 khi trùng bộ exemplar;
+  - F dùng bounds/θ riêng: P+F 0.604, C6 0.427;
+  - mỗi request ghi log JSONL.
+- `app_live.py`: giao diện như mô tả trong README.
+- `check_against_test.py`, `ui_test_paste.py`, `build_kaggle_notebook.py`, `README.md`.
+
+**Đã kiểm (CPU):**
+- `check_against_test.py`: t01_1 plates, t01_2 bowls, t05_1 blueberries cho số đếm B0/B2/P+F/C6 **trùng hết** `result.json` (32/36/16/19; 33/36/17/20; 36/65/8/9). Chỉ kiểm wrapper, không phải chạy lại test.
+- `ui_test_paste.py` bằng Edge với Ctrl+V thật, trên 2 ảnh Wikimedia Commons ngoài MUCCA: **11/11 bước PASS**.
+  - Các bước: dán, trạng thái đang chạy, chạy thật, đủ 4 cách × 2 tên vật, bảng X/Y, đổi tên vật thì xóa kết quả, dán ảnh 2 thay ảnh 1, chạy lại có request mới, báo lỗi tên vật có dấu chấm, nút Xóa, upload.
+  - Log `demo/live/logs/requests.jsonl` có 4 request `inference: true`, ghi đủ thiết bị, checkpoint, freeze, cấu hình.
+- Lỗi sửa khi thử:
+  - sự kiện thay đổi của ô chữ chen vào sau nút Chạy (chuyển sang `input`);
+  - thêm cảnh báo khi chạm trần 900 box (ảnh chợ Bangkok: B0/B2 = 900).
+- Thời gian CPU: 44 s cho ảnh cừu/chó (2 tên vật), 105–209 s cho ảnh rất đông vật.
+
+**Slide:** trang 31 đổi thành "Demo: chạy model thật trên ảnh mới" (ảnh chụp lần kiểm CPU). Biên dịch lại `main.pdf` và `notes.pdf`.
+
+**Chưa làm / chờ Trí:**
+- Mở phiên Kaggle, chạy notebook, báo ô 6 `CHECK: PASS` và link ô 7.
+- Sau đó assistant chạy `ui_test_paste.py` trên link đó.
+- Chưa đo thời gian GPU; chưa quay video.
+
+Ảnh demo không đưa vào kết quả nghiên cứu. Chưa commit/push.
+
+## 25/11/2026 (tối) — sắp lại slide theo phiếu chấm, dựng demo Gradio xem lại (assistant; không chạy model)
+
+Trí đồng ý: sửa slide theo phiếu chấm trước, rồi dựng demo tầng A; được cài thư viện vào môi trường riêng và chạy app ở local.
+
+**Kiểm đầu vào:**
+- Phiếu chấm gốc `Downloads/PhieudanhgiaMonhoc.pdf` có 7 mục; thứ tự trình bày phải đúng 1 → 7.
+- Bản `main.tex` ở checkout gốc chỉ khác `974048f` đúng 1 dòng: `pipeline.tex`, do checkout gốc thiếu `pipeline_slides.tex`. Không có nội dung nhóm sửa bị mất.
+- Đã sao lưu vào `quá khứ/snapshots/2026-11-25_slide_local_truoc_sua_phieu_cham/` (main.tex local, bản 974048f, build log, ghi chú chưa commit của checkout gốc). Sửa trong worktree.
+
+**Slide (`final/slides/main.tex` → `main.pdf` 46 trang, `notes.pdf`):**
+- Thứ tự mới:
+  - Phân công chuyển xuống trước Cảm ơn;
+  - mục 2 thành Định nghĩa → RQ → Minh họa;
+  - đổi tên mục 2, 3, 5 cho khớp phiếu.
+- Slide mới:
+  - Điểm khác biệt (trang 20): đối chiếu tóm tắt arXiv của PseCo, VA-Count, DAVE; ghi chưa so trực tiếp;
+  - Tổng hợp dữ liệu (23): FSCD-147 và FSC-147 cùng nguồn ảnh;
+  - Độ đo (24);
+  - Demo (31): ảnh chụp thật.
+- Giao thức bỏ phần chỉ số. Chú thích `mcac_171` sửa thành "chó–dê (+80 cừu)", kiểm theo nhãn gốc: chó 4, dê 7, cừu 80; cặp query là dogs–goats.
+- Chuyển xuống dự phòng: kết quả dev, theo loại cặp, hai slide ví dụ.
+- Sửa câu chữ:
+  - B2+F − P+F "gần như bằng nhau" thành "CI chứa 0, không thấy P đóng góp thêm";
+  - phạm vi FSC-147 và kết luận ghi "mới kiểm chứng trên ảnh nhiều class, ít đến vừa vật".
+- Sửa hình thức:
+  - trang chia mục, dự phòng và Cảm ơn trước đây không có số trang (theme metropolis); nay mọi trang có x/46;
+  - dòng nguồn của slide trước không còn hiện ở trang chia mục;
+  - sửa tràn chữ ở trang 13, 20, 22, 27, 34;
+  - 2 trang dự phòng còn tràn nhẹ.
+- Ghi người nói vào mọi `\note`. Tổng 25:00: Trí 13:50, Triệu 11:10.
+- Script sửa: `final/slides/_tools/`.
+
+**Demo (`demo/`, `.venv-demo` Python 3.13, gradio 5.50):**
+- Tầng A xem lại trên CPU, chạy ở `127.0.0.1`, có 3 tab.
+- Tự kiểm khi khởi động: hash freeze/bundle/manifest khớp `result.json`; 120 query, loại `t37_1`; số đếm 120/120 của B0/B2/P+F/C6 khớp; MAE 7.71 / 9.61 / 5.82 / 4.63; RMSE, MAE present, FPR khớp; shared box 64,4% / 70,9% / 59,3% / 24,1% khớp posthoc. **PASS.**
+- Mỗi cấu hình dùng ngưỡng khóa riêng: P+F 0.604, C6 0.427. Thanh trượt chỉ minh họa trên ảnh đang chọn, có nút khôi phục, không tính MAE toàn test.
+- Đã thử trong trình duyệt: nút ví dụ, đổi ảnh/query, tab X/Y (`mcac_12` khớp `xy_overlap_per_image.csv`), thanh trượt (0.45 → 20 box), khôi phục, đổi C6.
+- Lỗi đã sửa khi thử:
+  - nút ví dụ bị đặt lại về query đầu;
+  - chữ trong ảnh bị nhãn Gradio che;
+  - console Windows không in được tiếng Việt;
+  - script dừng tắt nhầm app ở cổng khác.
+- Đang chạy nền: http://127.0.0.1:7860.
+- Ảnh chụp bằng Playwright + Edge: `final/shared/figures/demo_tab{1,2,3}.png`.
+
+**Tài liệu:** `reports/DOI_CHIEU_PHIEU_CHAM_SLIDE_20261125.md` (tiêu chí → trang → còn thiếu); `demo/README.md` (lệnh mở/dừng, kịch bản 90 giây); cập nhật mục 3 của `PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md`.
+
+Chưa commit/push. Chưa chạy model, evaluator hay thực nghiệm mới.
+
+## 25/11/2026 — rà slide theo phiếu chấm, plan demo Gradio (assistant; chỉ đọc + tài liệu, không chạy gì)
+
+- Pull `974048f` (fast-forward). Ghi chú 23/11 chưa commit của phiên trước đã cũ, bỏ (bản vá giữ ở `/tmp`).
+- Đối chiếu `final/slides/main.tex` với phiếu chấm 1 → 7 (Trí lưu ý phải đúng thứ tự):
+  - Slide Phân công nằm trước mục 1; slide RQ (2.1) đứng sau Minh họa (2.2).
+  - Mục 3 thiếu slide "điểm khác biệt" (30 điểm).
+  - Dataset chỉ có 1 slide; độ đo gộp vào slide Giao thức.
+  - Chưa có demo. Đã có số trang.
+- Kiểm điều kiện demo: GPU 4 GB, không có checkpoint local, chưa cài gradio. Có `bundle.json` test (boxes/scores/clip) + freeze v2 + 200 ảnh MUCCA ở checkout gốc → demo xem lại chạy CPU được.
+- Viết `reports/KE_HOACH_DEMO_GRADIO_VA_RA_SLIDE_20261125.md`. Chờ Trí duyệt và cho cài gradio.
+
+## 24/11/2026 (sau) — viết lại câu chữ cả bộ slide, thuật ngữ tiếng Anh, bỏ nhãn "Trình bày" (Triệu + assistant)
+
+Triệu góp ý: câu chữ trên slide chưa tự nhiên (ví dụ "mô hình đều trả về các ô tô"); thuật ngữ chuyên ngành không cần dịch sát nghĩa; bỏ nhãn "Trình bày: …" ở chân slide, thay bằng một slide phân công. Triệu duyệt nội dung 12 slide phần mình và bảng thuật ngữ (`HANDOFF/TRIEU_SLIDE_NOI_DUNG_DE_DUYET_20261124.md`, chỉ để trên máy Triệu), rồi yêu cầu sửa luôn phần của Trí theo cùng cách.
+
+**Đã sửa `final/slides/main.tex`:**
+- **Thuật ngữ** (cả bộ slide và lời nói):
+  - khung → box; mẫu giả → pseudo-exemplar; câu hỏi → query (present / absent query); câu chữ → prompt;
+  - điểm theo chữ / mẫu → text / exemplar score; loại → class; đáp án → GT; ngưỡng → threshold;
+  - bộ lọc → filter; review mù → blind review; hậu kiểm → post-hoc; khai báo trước → pre-registered.
+  - Giữ tiếng Việt: lượt 1/2, đếm thừa/thiếu, "chọn trước, xem sau".
+- **Câu chữ:** viết lại tự nhiên hơn ở mọi slide, **số liệu không đổi**.
+- **Bỏ nhãn "Trình bày"** ở chân trang (bỏ macro `\speaker`), giữ dòng nguồn và số trang.
+- **Thêm slide 3 "Phân công công việc"** sau mục lục: bảng ai làm gì theo 7 hạng mục (môi trường, pilot/v1, chẩn đoán, hướng v2, dữ liệu, thực nghiệm, viết/trình bày).
+  - Triệu duyệt bảng, bỏ ý "so sánh với nhóm khác" và bỏ dòng về trợ lý AI trên slide (khai báo AI vẫn để trong báo cáo, mục đóng góp, chờ hai bạn chốt).
+  - Ai nói slide nào thì hai bạn tự chia, **không đưa lên slide**. Tham khảo: Trí 4–10, 15–17, 20–21, 30–31; Triệu 11–14, 18–19, 22–29.
+  - Cần Trí xác nhận phần đóng góp của Trí trong bảng.
+
+  Slide Cảm ơn (standout) không đánh số. Mọi slide sau slide 2 tăng 1 số so với bản 23/11.
+- **Hình pipeline cho slide** tách thành `final/shared/figures/pipeline_slides.tex` (thuật ngữ mới). `pipeline.tex` giữ nguyên cho báo cáo, vì báo cáo vẫn dùng chữ tiếng Việt.
+
+**Sửa sau khi Triệu biên dịch thử trên Overleaf (đủ 35 trang):**
+- Slide 6 (related work) tràn chữ: giảm cỡ chữ bảng, canh trái cột "Ý chính", rút gọn câu. Slide 11 (chẩn đoán) thu gọn tương tự để phòng tràn.
+- **Điền thông tin bìa** (slide và báo cáo LaTeX), theo thông tin Triệu cung cấp:
+  - Đào Xuân Minh Trí – 24521826; Trần Đăng Khắc Triệu – 24521857;
+  - GVHD: TS. Mai Tiến Dũng;
+  - Trường Đại học Công nghệ Thông tin – ĐHQG-HCM, Khoa Khoa học Máy tính;
+  - môn Thị giác máy tính nâng cao (CS331).
+
+  Ngày báo cáo để trống trên slide.
+- Báo cáo còn 2 `[TODO]`: xác nhận bảng đóng góp, chốt câu khai báo AI (cả hai cùng chốt).
+- Lỗi PDF dừng ở slide 16: do project Overleaf thiếu file mới `shared/pipeline_slides.tex`. Triệu đã thêm file, biên dịch được.
+
+**Chưa làm / cần người:**
+- **Trí xem lại phần mình** (Triệu yêu cầu sửa, Trí chưa duyệt câu chữ).
+- **Trí biên dịch PDF.** Máy Triệu không có LaTeX; assistant chỉ kiểm cân ngoặc và `\begin`/`\end`, không phát hiện lỗi.
+- Báo cáo LaTeX và các tài liệu `.md` vẫn dùng thuật ngữ tiếng Việt. Nếu muốn đồng bộ thì cần quyết định riêng.
+- Bảng số slide trong `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` theo bản cũ: đã thêm ghi chú đổi số.
+- Số 0.077 ở slide VĐ3 vẫn chờ Trí xác nhận nguồn.
+- Zip Overleaf đã đóng gói lại ở `C:\Users\diosodumb\Downloads\CS331_overleaf\`.
+
+## 24/11/2026 — Triệu rà và sửa phần slide của mình (S10–S13, S17–S18, S21–S28) (Triệu + assistant)
+
+Đối chiếu từng số trên 12 slide phần Triệu với nguồn trong repo. **Không chạy model**; chỉ đọc dự đoán và nhãn đã lưu.
+
+**Đã kiểm, khớp nguồn:**
+- mcac_88 (21/22/24, đáp án 6/22/0; 21/21 khung trùng);
+- N4 (1 đúng / 10 bao nhiều vật / 10 sai loại);
+- pilot;
+- T (8,55; 8,80; 21%; +2,27);
+- bảng dữ liệu, chú thích 6 ảnh MUCCA (cặp X/Y đúng theo manifest);
+- phân rã thừa/thiếu, bảng khung, theo loại cặp, ví dụ;
+- FSC-147, thử nghiệm gán khung, bảng dev → test.
+
+**Đã sửa:**
+1. **"Đàn dê" → "đàn cừu".** Nhãn MUCCA của mcac_171: 80 cừu, 7 dê, 4 chó. Khung "dogs" phần lớn nằm trên cừu (B0 73/92, B2 81/101, P+F 62/72, C6 54/66 khung chứa điểm cừu; chỉ 4–7 khung trên dê).
+   - Đã sửa: slide ví dụ thất bại (chữ + lời nói), slide hạn chế ("cừu/dê–chó"), chú thích hình trong `final/report/main.tex`, cẩm nang, kế hoạch slide.
+   - Các báo cáo cũ (`PHAN_TICH_HAU_KIEM_TEST_20261111.md`, bản tóm tắt gửi thầy 11/11) giữ nguyên như lịch sử.
+2. **VĐ2 (N4):** thêm chú thích "9/21 mẫu thuộc câu vắng mặt (không thể đúng loại); riêng câu có mặt: 1/12", theo `RA_SOAT_TRIEU_N4_20261029.md`.
+3. **Giao thức:** bước cuối "Tính lại độc lập bằng script riêng" sửa thành "Kiểm mã băm, tính lại từ đầu ra thô".
+   - Lý do: theo `KET_QUA_TEST_CUOI_20261111.md`, ngày 11/11 assistant tính lại bằng hàm của chính `apply_freeze_v2.py`.
+   - Báo cáo LaTeX (mục đóng góp và chương 6) và bản chi tiết `.md` ghi đúng hai bước: 11/11 dùng hàm của script chấm; 22/11 script kiểm viết riêng (`--selftest-w8`) tính lại số đếm 5 cách trên test và khớp.
+4. **Phân rã F:** tiêu đề "F đổi đếm thừa thành đếm thiếu" sửa thành "F giảm mạnh đếm thừa, nhưng tăng đếm thiếu" (thừa −337, thiếu +220).
+5. **Lời nói S27:** "C6 đứng thứ 7 trên dev" sửa thành "thứ 7 trong 15 họ cấu hình".
+
+**Cần Trí xác nhận:** ví dụ ở VĐ3 (S13) "khung ô tô có điểm chữ 0,077, điểm mẫu 0,970" (u08_1, p4_unseen_v1).
+- 0,970 khớp `stage2_scores` khung đầu của u08_1 trong `offline_v2_cpu_20261110/text_replay_final/predictions.jsonl`.
+- **0,077 chưa tìm thấy nguồn trong repo**; số này xuất hiện từ commit `ba68803`. Nếu không có nguồn thì nên bỏ số, chỉ giữ ý.
+
+**Chưa làm:** biên dịch PDF (máy Triệu không có LaTeX). Zip Overleaf đã đóng gói lại ở `C:\Users\diosodumb\Downloads\CS331_overleaf\`.
+
+## 23/11/2026 (tối) — sửa 3 lỗi diễn giải khảo sát FSC-147 theo rà soát của Trí (Triệu + assistant)
+
+Triệu pull `ba68803` (slide v2, báo cáo LaTeX). Theo ghi chú rà ngày 22/11 của Trí, sửa ba lỗi diễn giải. Các lỗi này nằm trong bản nháp của assistant và đã lan sang báo cáo LaTeX và slide. **Không đổi số liệu, không chạy gì.**
+
+1. **Số đếm thiếu:** 4.904 / 2.033 là số **toàn mẫu**; câu nói về nhóm > 40 vật nay dùng **4.416 / 1.910** (lấy từ `result.json`, `summary.gt40`).
+2. **"Ngang":** ở ảnh ≤ 40 vật, 3,50 và 3,44 chỉ là "gần nhau", không có kiểm định tương đương.
+3. **Nguyên nhân và thời gian:**
+   - "Vì F chọn trên ảnh 3–40 vật" sửa thành "**có thể** do…; chưa tách được mật độ vật với khác biệt giữa hai bộ dữ liệu".
+   - `controls_clip_seconds` 404,1 s là **tổng bước chấm CLIP cho 3 nguồn** (B0, B2, P), không phải "1,3 s/câu" của một cấu hình.
+
+**File đã sửa:**
+- `final/report/main.tex`: mục chi phí (thời gian CLIP) và đoạn đọc kết quả FSC-147.
+- `final/slides/main.tex`: slide FSC-147 (hai gạch đầu dòng mới + lời nói), slide hạn chế, slide dự phòng chi phí.
+- `reports/TRIEU_FSC147_KHAO_SAT_20261122.md` (ghi chú sửa ngay trong file).
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md` (tóm tắt, 7.6, 7.7, 7.8, hạn chế 4 và 8).
+- `reports/CAM_NANG_DO_AN_CS331.md` (mục 9, bảng số tra nhanh, hạn chế 4 và 8).
+- `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` (câu hỏi 10 và 14).
+- `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md`.
+
+Các mục WORKLOG/BAT_DAU cũ giữ nguyên như lịch sử.
+
+**Chưa làm:**
+- **Biên dịch lại PDF** báo cáo và slide: máy Triệu không có LaTeX, cần Trí chạy `latexmk -xelatex main.tex`.
+- Xuất lại `.docx`/`.html`.
+
+**Kiểm trích dẫn (việc của Triệu theo phân công):** PseCo, DAVE, VA-Count trong `final/refs.bib` khớp tác giả, năm, hội nghị và số arXiv với trang arXiv / README tác giả mà assistant đọc ngày 22/11.
+
+## 23/11/2026 — đưa slide v2 và tài liệu đi kèm về nhánh chính để xuất bản
+
+Theo yêu cầu Trí: tìm thấy bộ slide v2 chưa commit tại `.claude/worktrees/latex-presentation-split-c554f5`. Sao lưu thay đổi trước đồng bộ, fast-forward 16 commit đến `bf0797c`, giữ ghi chú kiểm tra local 20–22/11, sao chép đúng các tài liệu thay đổi và nguồn/hình/PDF trong `final/`; bỏ qua tệp biên dịch tạm theo `.gitignore`. Giữ nguyên worktree nguồn. Trí xác nhận slide v2 đã xong; **báo cáo chi tiết chưa sửa theo slide v2**, bản báo cáo đi kèm chỉ là bản hiện có. Không chạy model/evaluator/self-test, không sửa dữ liệu khóa hoặc ký duyệt thay người dùng. Tiếp theo: cập nhật báo cáo theo slide v2 và rà bản nộp trước 02/12.
+
+## 22/11/2026 — rà kết quả khảo sát Triệu từ remote (chỉ đọc)
+
+Fetch origin/main c2928ca, đọc result.json, timing và báo cáo TRIEU_FSC147. Số MAE/CI trong ảnh khớp artifact; chưa chạy lại evaluator/kiểm bootstrap. Phát hiện cần sửa diễn giải: thiếu 4.904/2.033 là toàn mẫu, nhóm >40 là 4.416/1.910; MAE 3,50/3,44 chỉ gần nhau, không chứng minh tương đương; nguyên nhân do mật độ/miền chưa được tách riêng. controls_clip_seconds=404,1 là thời gian p1_controls cho các nguồn trong khảo sát, không phải latency CLIP riêng một cấu hình. Báo cáo còn thiếu version Kaggle và cột xác nhận Triệu. Không chạy model, không pull/merge/push. Tiếp: sửa lời báo cáo, bổ sung dấu vết người chạy, giữ cấu hình/mẫu và kết quả.
+
+
+## 21/11/2026 — đối chiếu bàn giao khảo sát với remote
+
+Chỉ đọc code/tài liệu và fetch main, không chạy self-test hoặc model, không merge/push. Remote nhánh khảo sát khớp 5988c22; notebook ghim 4cd89092c5160dc0dc79455adba42ff096a44664. Code self-test có kiểm lý do từ chối; PASS và kiểm đáp án sai được Claude ghi trong WORKLOG, phiên này không tái chạy. Phát hiện thông tin 'chưa merge' đã cũ: remote main = ecb1905, merge PR #1, đã chứa khảo sát. Tiếp: Claude cập nhật trạng thái Git và câu 'trước 21/11' thành 'trong 21/11, trước khi chạy'; Trí duyệt, Triệu kiểm A; sau đó Trí Kaggle. Không đánh dấu duyệt thay người dùng.
+
+
+## 20/11/2026 — rà worktree khảo sát Claude (chỉ đọc)
+
+Đã tìm đúng .claude/worktrees/kind-chaplygin-249b83, HEAD 09201fa. Đọc khai báo, notebook, scorer, self-test và hướng dẫn Triệu. Hash 3 file mẫu và freeze khớp khai báo; scorer/mẫu tại cfc1ddb không khác HEAD. Thiết kế một khảo sát 300 ảnh, Trí chạy/Triệu kiểm đã thống nhất. Chưa chạy self-test/model/evaluator, chưa kiểm remote. Cần self-test trước GPU; nên tăng kiểm từ chối query trùng và crop/synthetic sai trong scorer. Commit ghim chỉ cần được push trên nhánh có thể fetch; merge main không phải điều kiện chạy. Lỗi khung suy biến là nhánh lỗi trong code, chưa chứng minh xảy ra trên mẫu. Tiếp: duyệt → self-test → push/kiểm commit → Triệu kiểm A → Trí Kaggle → kiểm kết quả → báo cáo; báo cáo viết song song.
+
+
+## 20/11/2026 — kiểm notebook FSC/FSCD theo yêu cầu Trí
+
+Chỉ đọc repo, không chạy evaluator/self-test/inference. Checkout HEAD 3ac3a60: chưa có experiments/fsc147_survey; có notebook benchmark FSCD-147 cũ (text + synthetic + pseudo + crop), không phải notebook khảo sát năm cấu hình. BENCHMARK_FSCD147.md đã ghi kết quả 1.190 ảnh. Đề xuất Triệu dùng lẫn tên FSC/FSCD và cùng bộ test 1.190 ảnh: cần đối chiếu ID/split trước khi chia thành hai lượt chạy để tránh trùng. Báo cáo có thể viết ngay; khảo sát là bổ sung tùy chọn. Chưa kiểm trạng thái GitHub trực tiếp. Tiếp: Claude xác nhận checkout chứa file mới, mục tiêu riêng từng người, notebook và commit tương ứng.
+
+
+## 23/11/2026 (sau) — slide bản 2: 30 slide, 5 phần, học thuật hơn (assistant, theo yêu cầu Trí)
+
+Trí gửi slide của nhóm Hoàng Anh – Duy (44 slide) để tham khảo cách trình bày và chia việc; yêu cầu làm lại slide theo dàn mới, nội dung kỹ hơn, bố cục rõ, học thuật hơn. Báo cáo để sau.
+
+**Không chạy mô hình.** Chỉ đọc dự đoán đã lưu và vẽ hình.
+
+**Đã làm:**
+- `final/slides/main.tex` viết lại: bìa, mục lục, 5 phần (lý do, bài toán, phương pháp, thực nghiệm, giới hạn và kết luận), 30 slide nội dung + 4 dự phòng. Thêm: định nghĩa hình thức Y1–Y3, slide công trình liên quan, bảng "3 vấn đề → hướng xử lý", mỗi vấn đề một slide bằng chứng, thuật toán P, slide dữ liệu có ảnh mẫu, slide giao thức + chỉ số, bảng kết luận vấn đề → cải tiến → kết quả, slide "những điều kết quả chưa nói được". Chân slide ghi "Trình bày" và nguồn số liệu. Kịch bản nói có thời gian từng slide (`notes.pdf`).
+- Hình mới `final/shared/figures/make_slide_figures.py` (đọc `predictions_B2.jsonl` test 11/11 và `p4_unseen_v1_b2_20261027/predictions.jsonl`, ảnh MUCCA trong `data_external/` của checkout chính):
+  - mcac_12, B2: plates 36 / bowls 36 / spoons 34 (đáp án 16 / 3 / 0); 36/36 khung plates trùng khung bowls (IoU ≥ 0,5).
+  - mcac_88, B2: people 21 / cars 22 / bicycles 24; 21/21 khung trùng (IoU ≥ 0,8), **khớp số N4**.
+  - 6 ảnh MUCCA mẫu cho slide dữ liệu.
+  - Bỏ `make_crops.py` và `crop_mcac12_B0.png` của bản 1 (không dùng nữa).
+- Biên dịch sạch; đã xem mọi slide, sửa bảng "3 vấn đề" và slide VĐ1 bị vỡ bố cục.
+- `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` mục 3 và 5 cập nhật: Trí khoảng 12 phút, Triệu khoảng 12 phút; cách rút còn 20 hoặc 15 phút.
+
+**Trí chốt thời lượng 20–25 phút** → giữ bản 2 (khoảng 24 phút). **Còn mở:** các `[TODO]` ở bìa; Triệu đồng ý phần nói; báo cáo LaTeX chưa đồng bộ với các hình/slide mới (để sau theo lời Trí).
+
+## 23/11/2026 — phân công Trí–Triệu; báo cáo cuối và slide bằng LaTeX (assistant, theo yêu cầu Trí)
+
+Trí yêu cầu: chia việc trình bày / phụ trách giữa Trí và Triệu, cập nhật lại tài liệu, rồi viết báo cáo chi tiết và slide bằng LaTeX.
+
+**Không chạy thực nghiệm nào.** Chỉ đọc file kết quả, soạn tài liệu, biên dịch LaTeX. Số test đối chiếu lại với `results/countgdpp/p1_test_kaggle_t4_20261111_1430_eval/result.json` (khớp).
+
+**Đã làm:**
+- `reports/PHAN_CONG_TRI_TRIEU_BAO_CAO_SLIDE.md` (**đề xuất**, chưa chốt): đóng góp từng người theo WORKLOG; ai rà chương nào của báo cáo; 16 slide chia Trí khoảng 8:10 (S1–S5, S8–S10, S16), Triệu khoảng 7:10 (S6–S7, S11–S15); ai trả lời câu hỏi nào; lịch đến 02/12.
+- `final/report/main.tex` → `main.pdf` (21 trang, XeLaTeX + biber): gộp bản chi tiết, Related Work (W7), khảo sát FSC-147, thử nghiệm gán khung; bảng đóng góp; nháp khai báo AI; phụ lục nguồn số liệu. `final/refs.bib` lấy từ danh mục đã kiểm.
+- `final/slides/main.tex` → `main.pdf` (Beamer metropolis 16:9, 16 slide + 5 dự phòng, nhãn "Người nói" ở chân slide); `notes.pdf` là kịch bản nói.
+- `final/shared/`: macros chung, hình pipeline TikZ, `make_crops.py` cắt một ô từ `reports/figures/fig_example_t01_2_mcac_12.png` cho slide 2 (ảnh phái sinh).
+- Biên dịch sạch (không lỗi, không tham chiếu thiếu); đã xem mọi trang báo cáo và mọi slide, sửa chỗ tràn.
+- Sửa câu "người thứ hai tính lại" trong bản chi tiết và kế hoạch slide thành "tính lại độc lập bằng script riêng (trợ lý AI)", vì thực tế là assistant tính lại.
+- Cập nhật: README (thêm `final/`), cẩm nang mục 13–14, kế hoạch slide (ghi chú phân công mới, Q1/Q2 xong). Xuất lại `CAM_NANG_DO_AN_CS331.html`, `KE_HOACH_SLIDE_THUYET_TRINH.html`, `BAO_CAO_CHI_TIET_DO_AN_20261112.docx` bằng pandoc. `BAO_CAO_CHI_TIET_GUI_THAY.pdf` cũ không xuất lại (bản LaTeX thay thế).
+
+**Còn mở (chờ người):**
+- Trí và Triệu chốt bảng phân công; Triệu đồng ý phần nói của mình.
+- Điền `[TODO]`: tên đầy đủ + MSSV Triệu, MSSV Trí, giảng viên, trường/khoa, ngày báo cáo.
+- Chốt câu khai báo AI và bảng đóng góp (cả hai cùng xác nhận).
+- Thời lượng thầy cho (đang giả định 15 phút).
+- Triệu kiểm lại trích dẫn PseCo, DAVE, VA-Count trong `final/refs.bib`.
+
+## 22/11/2026 (tối) — chuẩn bị thử nghiệm sơ bộ hướng 1 (gán khung theo CLIP giữa các loại), CHƯA chạy (assistant)
+
+Triệu yêu cầu tiến hành hướng 1 trong `reports/TRIEU_DIEM_YEU_VA_HUONG_GIAI_QUYET_20261122.md`.
+
+**Đã làm (chỉ soạn tài liệu và code, đọc file):**
+- Khai báo trước: `experiments/xy_clip_assign/KHAI_BAO_TRUOC_XY_CLIP_20261122.md`.
+  - Chỉ trên dev; bước A không có tham số (giữ khung khi CLIP thấy giống loại được hỏi nhất).
+  - Hai tập loại: A_Q (các câu trên cùng ảnh) và A_V (45 lớp MUCCA).
+  - So sánh chính P+F+A_Q − P+F, trên tỉ lệ khung dùng chung X/Y và MAE câu có mặt.
+  - Cách đọc và giới hạn đặt trước.
+- Script: `experiments/xy_clip_assign/xy_clip_assign_dev.py`.
+  - Tự dừng nếu hash sai, nếu không tái lập được MAE dev của cấu hình gốc, hoặc nếu cosine CLIP tính lại lệch bundle ≥ 1e-3.
+  - Không đọc tập test.
+- `--check-only` (chỉ đọc file, không tải CLIP) **đạt**: hash dev manifest, bundle `m5_offline_T` (trùng provenance của freeze), freeze, annotations, class_mapping đều khớp; tái lập MAE dev P+F 3,5333, B0 6,2833, C6 4,0167.
+
+**Chạy (sau khi Triệu báo Trí đồng ý):**
+- Hai lần dừng vì lỗi kỹ thuật, **chưa tính số nào**:
+  - `torch` 2.2 không nạp được `.bin`, chuyển sang nạp `model.safetensors` (hash được kiểm; `.bin` ở revision ghim trùng hash của lần chạy trên Kaggle);
+  - TensorFlow hỏng, tắt bằng `USE_TF=0`.
+
+  Cả hai đã ghi vào khai báo §8 trước khi có kết quả.
+- Lần chạy đạt: `results/countgdpp/xy_clip_assign_dev_20261122_1755/`. Tái lập CLIP lệch lớn nhất 1,37e-06.
+- **Kết quả (dev):**
+  - **Chính P+F+A_Q − P+F:** khung dùng chung X/Y −0,587 [−0,735; −0,404] (61,6% → 2,9%); MAE câu có mặt +1,88 [−0,03; +3,73] → **đánh đổi**.
+  - B0+A_Q − B0: cả hai giảm (có dấu hiệu giúp trên dev), nhưng B0+A_Q vẫn kém P+F.
+  - Bước A bỏ nhầm khoảng 30% khung đúng loại, vì CLIP trên ô cắt nhỏ, loại gần nghĩa.
+  - Báo cáo: `reports/XY_CLIP_ASSIGN_DEV_KET_QUA_20261122.md`.
+  - Không chạy test, không chỉnh lại gì.
+
+**Cập nhật số liệu vào báo cáo và slide (Triệu yêu cầu):**
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md`:
+  - Tóm tắt (2 ý bổ sung);
+  - 7.6 (lưu ý C6 trên FSC-147);
+  - 7.7 (thời gian CLIP);
+  - **mục mới 7.8** (khảo sát FSC-147) và **7.9** (thử nghiệm dev);
+  - hạn chế 2, 4, 5, 8;
+  - kết luận (thêm "Phạm vi áp dụng");
+  - hướng phát triển 1–3;
+  - phụ lục A.
+
+  **Bản `.docx` / `.pdf` chưa xuất lại** (máy Triệu không có pandoc). Chưa sửa câu "người thứ hai" (chờ Trí, xem ý họp tối).
+- `reports/CAM_NANG_DO_AN_CS331.md`: bảng diễn tiến (10b), bảng số tra nhanh, hạn chế 4/5/8/9, hướng phát triển, tình trạng sản phẩm, bảng tìm file.
+- `reports/KE_HOACH_SLIDE_THUYET_TRINH.md`: S15 (thêm bảng thử nghiệm dev, 1:00), kịch bản S15 và S16 (phạm vi áp dụng), câu hỏi 13 và 14, **câu hỏi mới 19 (DAVE) và 20 (tin được thử nghiệm dev không)**.
+
+  Tổng thời lượng tăng khoảng 15 giây; nếu cần thì rút S14.
+
+## 22/11/2026 (chiều) — Triệu chạy thay Trí: kiểm A, Kaggle khảo sát FSC-147, Related Work nháp (Triệu + assistant)
+
+Triệu chạy thay Trí theo lời dặn 22/11. Kiểm B/C do Triệu tự làm, chờ assistant kiểm độc lập.
+
+**Git:** Triệu pull `main` = `b7b9015` (fast-forward, không xung đột).
+
+**Đã làm:**
+- **Kiểm A** (thiết kế + mẫu 300 ảnh). Assistant gom bằng chứng vào `reports/TRIEU_FSC147_KHAO_SAT_20261122.md`, mọi mục đều thấy đạt:
+  - 300 dòng, không trùng, đều `present`, `inputs.jsonl` không có GT;
+  - 3 sha256 khớp khai báo;
+  - lấy lại mẫu trong thư mục tạm ra đúng hash;
+  - script chấm đúng thiết kế (Δ, bootstrap ghép cặp, F từ freeze);
+  - commit ghim `4cd8909` giống `main` ở mọi file liên quan.
+
+  **Cột "Triệu" do Triệu tự điền**; assistant không đánh dấu thay.
+- **Kaggle:** **chưa chạy** (tính đến lúc ghi). Triệu sẽ tự import notebook và chạy một lần; version / giờ ghi vào báo cáo khảo sát.
+- **Related Work (W7) nháp:** `reports/RELATED_WORK_TRIEU_20261122.md`, do assistant soạn.
+  - Đọc abstract arXiv của PseCo, DAVE, VA-Count, PrACo; thêm mục 3.2–3.4 của DAVE, mục 3.2–3.3 của PrACo, README GitHub của VA-Count. Không trích số.
+  - 3 chỗ ⚠ đã kiểm xong:
+    - VA-Count là ECCV 2024 (theo README của tác giả; chưa đối chiếu kỷ yếu);
+    - PrACo gồm negative-label test + mosaic test;
+    - **bản theo câu chữ của DAVE dùng CLIP loại cụm khung**, gần bước F nhất; bản nháp đã ghi 3 điểm khác.
+- **Bộ kiểm độc lập B/C:** `evaluation/check_fsc147_survey_independent.py`.
+  - Không import code repo; tự cài lại bộ đếm F, chỉ số, Δ và bootstrap.
+  - Thử trên run test MUCCA 11/11 (`--selftest-w8`): số đếm cả 5 cách khớp, **PASS**.
+  - Chỉ đọc file, không chạy model.
+
+- **Kaggle (cập nhật sau):** Triệu chạy một lần, run `fsc147_survey_kaggle_t4_20261122_1618`, hoàn tất 300/300.
+  - Assistant giải nén `for_repo_20261122_1618.zip`, kiểm sha256 **917/917** file trong ZIP theo `FILES_*.json`, tất cả khớp. 900 `.jpg` + 594 `.npz` có trong danh sách nhưng không nằm trong ZIP, đúng D10.
+  - Đã chép vào `results/countgdpp/fsc147_survey_kaggle_t4_20261122_1618{,_controls,_controls_clip,_eval,_offline,_kaggle_meta}/`.
+- **Kiểm độc lập B/C** (`evaluation/check_fsc147_survey_independent.py`): **PASS mọi mục chạy được.**
+  - Cấu hình, 300 ảnh, predictions đều đúng.
+  - Số đếm của 5 cách tự tính = `per_query.csv`.
+  - Chỉ số của 3 nhóm, Δ và CI của 4 cặp, Δ chính theo nhóm: đều khớp `result.json`.
+  - **B1–B3 xác nhận bằng log Kaggle** (`notebook258d8120dd.log`, lưu thành `..._kaggle_meta/kaggle_log_20261122_1618.txt`):
+    - commit ghim `4cd8909…`;
+    - mẫu và freeze khớp;
+    - **KIEM A: 663 khung, lệch lớn nhất 3.28e-07** (< 1e-3);
+    - checkpoint đúng bản audit 14/10;
+    - 0 dòng lỗi; khoảng 26 phút.
+- **Kết quả khảo sát (300 ảnh FSC-147, chỉ câu có mặt):**
+  - MAE: B0 13,88, B2 13,32, P+F 18,01, B2+F 17,98, C6 25,11.
+  - **Chính B0 − B2: +0,55 [−3,00; +4,30], chưa thấy khác biệt rõ** (cả nhóm ≤ 40 và > 40 đều có CI chứa 0).
+  - Phụ: P+F − B2 +4,69 [+2,25; +7,50]; P+F − B0 +4,14 [+0,56; +8,09]. **P+F kém hơn trên mẫu này**, chủ yếu ở ảnh > 40 vật (35,28 so với B2 25,09), do bộ lọc gây đếm thiếu (thiếu 4.904 so với 2.033). Ảnh ≤ 40 vật thì ngang (3,50 so với 3,44).
+  - C6 kém nhất.
+  - Thời gian: runner 571,5 s / 300 câu; điểm CLIP 404,1 s. Từ nay có số đo thời gian CLIP (trước đây là hạn chế 7).
+- **Đã điền số** vào:
+  - `reports/TRIEU_FSC147_KHAO_SAT_20261122.md` (kèm bản nháp nhận xét của assistant);
+  - `reports/CAM_NANG_DO_AN_CS331.md` mục 9 và bảng tiến độ;
+  - `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` S14, kịch bản S14, câu hỏi 10.
+
+  **Chưa cập nhật** hai bản `.html` của cẩm nang và kế hoạch slide.
+
+**Tiếp:**
+- Triệu: ghi tên version Kaggle; điền cột "Triệu"; commit + push.
+- Họp tối với Trí: thống nhất cách đưa kết quả FSC-147 vào báo cáo (phạm vi áp dụng: ảnh nhiều loại, ít đến vừa vật) và sửa câu "C6 cần kiểm tiếp".
+
+## 22/11/2026 — lời dặn của Trí: Triệu chạy thay, chốt đồ án; cẩm nang + kế hoạch slide (assistant; không chạy gì)
+
+**Trí dặn (ghi lại để Triệu cập nhật tiếp):**
+- Hôm nay Trí không có thời gian. Đã báo trước Triệu: **Triệu chạy task của Trí thay Trí**, làm hết những gì có thể trong ngày, chốt đồ án.
+- Tối nay Trí + Triệu họp: chuẩn bị gì, hành trang gì, trình bày gì với thầy.
+- Cần một **cẩm nang** chứa toàn bộ đồ án (md/html), rồi **kế hoạch slide và cách trình bày**: thầy và các bạn dễ hiểu, nhóm trơn tru, tự tin, không có gì không biết.
+- Việc hữu ích chưa được giao thì **hỏi Trí trước**.
+
+**Đã làm:**
+- Đồng bộ nhánh với `main` (`5941167`, merge PR #2).
+- Viết `HANDOFF/TRIEU_NGAY_22_11_CHOT_DO_AN.md`: thứ tự việc, chạy Kaggle thay Trí, đưa kết quả vào repo, Related Work, cuối ngày.
+- Viết `reports/CAM_NANG_DO_AN_CS331.md` + `.html` (tự chứa hình): 0–15 mục, mọi số lấy từ báo cáo đã kiểm, chỗ chưa có ghi "chờ".
+- Viết `reports/KE_HOACH_SLIDE_THUYET_TRINH.md` + `.html`: 16 slide + dự phòng, kịch bản, 18 câu hỏi, hành trang, lịch, chương trình họp, 6 việc chờ Trí quyết.
+- Cập nhật BAT_DAU (khối 22/11), giao việc (W10), README.
+
+**Ghi chú trung thực:**
+- Duyệt thiết kế khảo sát: assistant chỉ ghi lại lời Trí (20/11 "Ổn về thiết kế và phân công rồi"; 21/11 "Phần chuẩn bị ổn rồi"; 22/11 giao Triệu chạy). Assistant không ký thay.
+- Triệu vừa kiểm A vừa chạy, nên kiểm B/C cần assistant kiểm độc lập sau.
+- Lý do chọn CLIP ViT-B/32 chưa có trong tài liệu; để Trí xác nhận (câu hỏi 5 của kế hoạch slide).
+- Trích dẫn PseCo/DAVE/VA-Count chưa kiểm.
+
+**Tiếp (Triệu):** theo file HANDOFF ngày 22/11; cuối ngày thêm mục WORKLOG mới trên cùng.
+
+## 21/11/2026 — chốt bàn giao khảo sát FSC-147 (assistant; chỉ tài liệu, không chạy gì)
+
+Trí yêu cầu chốt bàn giao, không mở rộng thử nghiệm.
+
+**Git:**
+- Fetch: `main` = `ecb1905`, merge PR #1, gộp nhánh `5988c22` và `3ac3a60` (so sánh nhóm khác của Triệu).
+- Commit ghim `4cd89092c5160dc0dc79455adba42ff096a44664` đã nằm trong `main`. **Giữ nguyên commit ghim; không chạy lại self-test.**
+- Các mục cũ ghi "chưa gộp `main`" là đúng tại thời điểm viết; trạng thái hiện tại sửa trong BAT_DAU, khai báo, hướng dẫn kiểm, giao việc, roadmap.
+
+**Bàn giao:**
+- Hạn phần A của Triệu đổi thành **trong ngày 21/11, trước khi Trí chạy**.
+- Thêm `HUONG_DAN_CHAY_KAGGLE_TRI.md`:
+  - tải notebook từ `main`, Ô 1 phải ghim `4cd8909…` (bản notebook bên trong `4cd8909` còn ghim SHA cũ);
+  - gắn checkpoint/ảnh, chọn GPU T4 x2 + Internet;
+  - Save & Run All (Commit), tải zip + log;
+  - bảng các trường hợp phải dừng và gửi log.
+
+**Checkout local** `D:\MINHTRIHOCCODE\HOCKI5\CS331`: có ghi chú chưa commit trong BAT_DAU/WORKLOG (phiên kiểm 20–21/11). Assistant không sửa; cần snapshot trước khi pull.
+
+**Trạng thái:** self-test PASS; khảo sát thật chưa chạy; chờ Trí duyệt chính thức và Triệu kiểm phần A. Báo cáo viết song song.
+
+## 20/11/2026 (khuya) — self-test PASS, ghim notebook, push nhánh (assistant; chưa chạy model hay khảo sát thật)
+
+Trí cho phép chạy self-test dữ liệu giả, hoàn thiện bàn giao và push nhánh để Triệu xem tiến độ.
+
+**Self-test** `python experiments/fsc147_survey/selftest_score_fsc147.py`:
+- Lần 1: **PASS**.
+- Làm chặt self-test: mỗi ca từ chối phải báo **đúng lý do**, không chỉ "có báo lỗi". Chạy lại: **PASS**.
+- Kiểm độ nhạy: cố ý đưa 2 đáp án sai (MAE của B2, Δ B0 − B2) thì self-test báo **FAIL** đúng 2 chỗ.
+- Các ca đã kiểm:
+  - số đếm sau lọc F (bounds/ngưỡng freeze v2);
+  - MAE, RMSE, Bias, thừa/thiếu, số câu = 0 của B0, B2, P+F, C6, B2+F;
+  - Δ của 4 cặp khai báo; Δ nhóm ≤ 40 / > 40; CI [10, 10] khi Δ hằng; số dòng `per_query.csv`;
+  - từ chối: thư mục đã có, crop=True, synthetic=True, query trùng, manifest sai hash.
+- **Không có lỗi phải sửa trong script chấm**; chỉ sửa file self-test để kiểm chặt hơn. Không sửa file khóa, freeze hay mẫu; không đổi đáp án.
+
+**Ghim và push:**
+- Notebook ghim `4cd89092c5160dc0dc79455adba42ff096a44664` (commit chứa script chấm đã kiểm và self-test bản cuối).
+- Push nhánh `claude/kind-chaplygin-249b83`, không force, chưa gộp `main`. Đã kiểm trên remote. [Nhánh trên GitHub](https://github.com/minhtridaoo/zero-shot-counting/tree/claude/kind-chaplygin-249b83).
+
+**Trạng thái:**
+- Khảo sát thật **chưa chạy**, chưa có kết quả FSC-147 mới.
+- Triệu chưa kiểm mục nào.
+- Duyệt chính thức trước khi chạy là việc của Trí.
+
+**Tiếp:** Trí duyệt + Triệu kiểm phần A (21/11) → Trí chạy Kaggle (22–23/11) → assistant tổng hợp, Triệu kiểm B/C → đóng 24/11. Báo cáo viết song song.
+
+## 20/11/2026 (tối) — Trí đồng ý thiết kế; chỉnh nhẹ script chấm (assistant; chưa chạy model, evaluator hay self-test)
+
+**Trí đồng ý** thiết kế và phân công (một khảo sát 300 ảnh; Trí chạy GPU, Triệu kiểm; không còn hai notebook riêng). Trí đã tự đọc file thật trong worktree; hash mẫu và freeze khớp khai báo. **Chưa sẵn sàng chạy hoàn toàn** vì self-test chưa thực thi.
+
+**Chỉnh theo góp ý:**
+- `score_fsc147_present_only.py` giờ **từ chối** thay vì chỉ ghi lại: `query_id`/`image_id` trùng (manifest hoặc trong một nguồn của bundle), và `run_config` có `crop`, `synthetic`, `uses_ground_truth` khác false.
+- `selftest_score_fsc147.py` thêm 3 ca từ chối (crop=True, synthetic=True, query trùng), tổng 5 ca. Chỉ kiểm cú pháp, **chưa chạy**.
+- Khai báo và notebook: push nhánh chứa commit đã ghim là đủ, không bắt buộc gộp `main`; sửa code sau self-test thì ghim lại commit mới.
+- Lỗi khung suy biến ghi rõ là **rủi ro đọc từ code, chưa xảy ra** trên 300 ảnh.
+
+**Ghi luồng** khảo sát và luồng hoàn thành đồ án vào `BAT_DAU_SESSION_MOI.md` và khai báo (mục 10b).
+
+**Ghim:** notebook `d5339c2e56dd60bee3be9a478a03e5b19922eea5`.
+
+**Tiếp:** Trí cho phép → assistant chạy `python experiments/fsc147_survey/selftest_score_fsc147.py` → đạt thì push nhánh; lỗi thì sửa, kiểm lại, ghim lại.
+
+## 20/11/2026 (rà soát) — thống nhất kế hoạch khảo sát FSC-147 (assistant; chưa chạy model, evaluator hay self-test)
+
+Theo yêu cầu Trí, rà soát và chỉnh lại cho thống nhất. **Mục này thay phần phân công ở hai mục 20/11 bên dưới.**
+
+**Phạm vi và phân công:**
+- Một khảo sát duy nhất trên 300 ảnh. Trí chạy, Triệu kiểm, báo cáo viết song song.
+- Không tách FSC-147 / FSCD-147, không chạy lại benchmark 8,34. Đóng 24/11.
+
+**Kiểm dữ liệu (chỉ đọc):**
+- Nhãn `countgd_test_fscd147.json` có trong repo từ commit đầu, hash khớp benchmark. Ảnh lấy từ link FSCD-147 trong README CountGD++ (`FSC147_384_V2`).
+- Đếm bằng điểm `area == 4`. Tên lớp lấy từ `categories`.
+- Cách gọi thống nhất: "FSC-147 test".
+- Mẫu ở `experiments/fsc147_survey/sample_300/` (worktree `.claude/worktrees/kind-chaplygin-249b83`). Tính lại seed 331 ra đúng 300 id đã lưu; GT, tên file, tên lớp khớp; 3 hash khớp bản trong commit e73ad37. Giữ nguyên mẫu.
+
+**Kiểm code:** B0 và B2 chỉ khác ở việc có lượt 2: cùng lượt 1, trạng thái ngẫu nhiên được trả lại, mẫu lấy từ lượt 1; không có khung > 0.23 thì B2 = B0. Phát hiện `select_pseudo` báo lỗi khi gặp khung mẫu suy biến, nên ghi vào quy tắc lỗi: lỗi lặp lại ở một ảnh thì không bỏ ảnh, ghi khảo sát chưa hoàn tất.
+
+**Sửa:**
+- `score_fsc147_present_only.py`: bootstrap ghép cặp lấy lại theo id ảnh; câu đọc "chưa thấy khác biệt rõ"; thêm `--sample-dir` cho self-test.
+- Mới `selftest_score_fsc147.py`: 4 ảnh giả, đáp án tính tay. **Chưa chạy, chờ Trí cho phép.**
+- Viết lại bản khai báo, thêm mục 9 "thay đổi so với đề xuất của Triệu".
+- Notebook: hướng dẫn gắn dữ liệu/checkpoint, Save Version, tải zip; dừng nếu thiếu ảnh.
+- Mới `HUONG_DAN_KIEM_TRIEU.md`.
+- Cập nhật W9 trong giao việc Triệu, roadmap H7, README, BAT_DAU.
+
+**Trạng thái:** notebook ghim `cfc1ddb8f0afd3bc2fa4aaabb503efeef1ef8e6f` (commit bản rà soát; đã kiểm 3 hash mẫu, freeze v2 và script chấm mới trong commit này). **Chưa push**, nên notebook chưa sẵn sàng chạy.
+
+## 20/11/2026 (sau) — chia phần FSC-147 / FSCD-147, ghim commit notebook (assistant, chưa chạy model)
+
+**Trí chốt phân công:** FSC-147 là phần Trí chạy; FSCD-147 là phần của Triệu. Sửa lại mục 20/11 bên dưới: chỗ ghi "Triệu chạy notebook" nay là **Trí chạy**.
+
+**Ranh giới:** FSC-147 test và FSCD-147 test là cùng 1.190 ảnh. Triệu không chạy lại cặp B0/B2/P+F trên các ảnh này. Phần FSCD-147 (W9 trong `HANDOFF/GIAO_VIEC_TRIEU_20261106.md`) chờ Triệu xác nhận là tổng hợp kết quả đã có hay chạy mới; chạy mới cần Trí duyệt.
+
+**Ghim commit:** notebook `experiments/fsc147_survey/kaggle_fsc147_survey.ipynb` checkout `e73ad371b397e3361678d78a211bc492955f7ce1` và dừng nếu HEAD khác commit này.
+- Lỗi phát hiện trước khi ghim: `sample_300/inputs.jsonl` ghi trên Windows có CRLF, Git đổi sang LF khi commit. Như vậy bản trên Kaggle sẽ lệch hash và notebook dừng ở Ô 2.
+- Đã sửa: thêm `/experiments/fsc147_survey/sample_300/** -text` vào `.gitattributes`. Kiểm lại: hash blob trong commit đã ghim khớp `sample_meta.json` (`c1cfb321…`, `30ea7987…`).
+
+**Cập nhật:** pipeline [11a]/[11b] và bảng việc trong `BAT_DAU_SESSION_MOI.md`; H7 và lịch 20–24/11 trong roadmap; W9 trong giao việc Triệu; README.
+
+**Trạng thái Git:** 2 commit cục bộ trên nhánh `claude/kind-chaplygin-249b83` (worktree `.claude/worktrees/kind-chaplygin-249b83`), **chưa push**. Checkout chính `main` vẫn ở 406ba54 nên chưa thấy `experiments/fsc147_survey/`.
+
+**Tiếp:** Trí duyệt → push nhánh → gộp vào `main` (merge/fast-forward, không squash để giữ SHA) → Trí chạy notebook 22–23/11 → đóng 24/11.
+
+## 20/11/2026 — chuẩn bị khảo sát bổ sung FSC-147 (assistant, CPU, chưa chạy model)
+
+Trí giao: thiết kế khảo sát "bỏ lượt 2 có làm giảm chất lượng đếm trên ảnh một loại không", 300 ảnh, chuẩn bị đủ trước khi xin chạy.
+
+**Kiểm dữ liệu:**
+- Nhãn FSCD-147 test có trong repo, sha256 khớp lần kiểm 20/10.
+- 1.190 ảnh, mỗi ảnh 1 lớp và 3 khung mẫu; GT từ 8 đến 3.701.
+- Lần benchmark 15/10 chạy cấu hình đầy đủ (cắt ảnh + mẫu GPT-5), không có cặp B0/B2, nên không dùng lại được; phải chạy mới.
+
+**Đã làm** (`experiments/fsc147_survey/`):
+- `make_fsc147_sample.py`, đã chạy một lần: ra `sample_300/` (300 ảnh, seed 331, 27 lớp, 163 ảnh ≤ 40 / 137 ảnh > 40, GT từ 8 đến 621).
+- `score_fsc147_present_only.py`: chỉ import `counts_for` từ `apply_freeze_v2.py`, không sửa file đã khóa. Mới qua kiểm cú pháp, chưa chạy thử.
+- `kaggle_fsc147_survey.ipynb`: Ô 3 và Ô 5 chép nguyên từ W8. Các ô code đã qua kiểm cú pháp.
+- `KHAI_BAO_TRUOC_FSC147_20261120.md`.
+
+**Thiết kế:**
+- Một run chung `--tau-pseudo 0.20 --m 5 --replay-b2`, `crop=False`, `synthetic=False`.
+- Cặp chính B0 − B2 (chỉ khác lượt 2). Cặp phụ P+F − B2 và P+F − B0.
+- C6 − B2+F chỉ báo kèm, vì freeze đặt ngưỡng F riêng cho từng nguồn.
+- Bootstrap theo ảnh, 5.000 lần, seed 331. Báo theo nhóm GT ≤ 40 / > 40.
+
+**Chưa làm / tiếp:**
+- Trí duyệt thiết kế và lệnh chạy.
+- Commit + push (notebook lấy code từ `main`).
+- Triệu xác nhận chưa chạy riêng, rồi chạy 22–23/11. Đóng 24/11.
+- Thời gian chạy trên FSC-147 chưa đo.
+
+## 19/11/2026 — rà bản so sánh nhóm khác của Triệu (assistant, chỉ đọc)
+
+Đọc `workspace Trí and Triệu/Triệu/so sánh/TRIEU_SO_SANH_NHOM_KHAC_DE_XUAT_20261119.md`. Kiểm trong repo các ý kỹ thuật, đều đúng: runner ghi `crop=False`, `synthetic=False`; `apply_freeze_v2.py` chia cho `len(absn)` nên sẽ lỗi khi không có câu vắng mặt; FSCD-147 8.34/24.64 khớp `BENCHMARK_FSCD147.md`; có `CountGDPlusPlus/app.py`. Chưa kiểm số 16.55 → 10.29 trong Bảng 1 bài báo.
+
+Đề xuất của assistant cho Trí: ưu tiên báo cáo cuối, rồi demo (bản tĩnh trước), sau đó mới làm A. A nên làm bản thu nhỏ, khai báo trước, hạn 24/11; quá hạn thì chỉ ghi vào phần hạn chế. Chờ Trí quyết A. Không chạy gì.
+
+## 18/11/2026 — cập nhật tiến độ (assistant, chỉ đọc + sửa tài liệu)
+
+Theo yêu cầu Trí "cập nhật tiến độ". Fetch remote zero-shot-counting: main vẫn ở 406ba54 (15/11), không có commit mới. Không chạy model, evaluator hay thí nghiệm.
+
+**Tình trạng 6 sản phẩm (H1–H6):**
+- H1 báo cáo cuối: có bản chi tiết 22 trang làm khung; chưa có bản cuối; Related Work (Triệu, W7, hạn 20/11) chưa có trong repo.
+- H2 bảng test: xong 11/11.
+- H3 slide + demo: chưa bắt đầu; có sẵn 6 hình.
+- H4 repo tái lập: phần lớn đã có.
+- H5 pilot: đóng 11/11. H6 luật kết luận: đã chốt, kết quả dương.
+
+**Lịch:** thực nghiệm xong sớm khoảng 12 ngày so với kế hoạch 10/11. Còn 14 ngày, chỉ còn viết.
+
+**Đã sửa:** đầu `BAT_DAU_SESSION_MOI.md` (tiến độ + 4 việc tiếp theo), bước [11]; bảng H1–H3 và dòng đầu `roadmap/KE_HOACH_HOAN_THANH_20261110.md`.
+
+**Tiếp:** Trí xác nhận đã gửi thầy chưa; Triệu nộp Related Work; bắt đầu chuyển bản chi tiết thành báo cáo cuối.
+
+## 15/11/2026 — đồng bộ báo cáo và hậu kiểm lên GitHub
+
+Theo yêu cầu Trí, kiểm đúng remote zero-shot-counting/main; fetch xác nhận không có commit lệch. Rà 28 file (10,52 MiB): báo cáo Markdown/Word/PDF, hình, script và kết quả hậu kiểm. Kiểm cú pháp Python/JSON, tính toàn vẹn DOCX và mẫu token/dấu xung đột đạt. Không chạy evaluator, kiểm thử thực nghiệm hoặc model; không sửa dữ liệu khóa/freeze/dự đoán gốc. Stage đúng danh sách đã rà, commit và push bình thường; xác nhận kết quả bằng HEAD so với ls-remote sau push.
+
+Bước tiếp: Trí đọc lại báo cáo, đặc biệt mục 4.1 và 7.6, trước khi gửi thầy; không tự gửi thay. Giả thuyết H2 vẫn là việc tùy chọn cần cho phép chạy riêng.
+
+
+## 15/11/2026 — sửa báo cáo theo góp ý của bạn đọc (assistant, CPU)
+
+**Góp ý nhận được:**
+- (1) cách chấm max chỉ giải thích khoảng 1/5 tác hại, cần đo bằng T;
+- (2) T trên dev 8.55 nằm giữa B0 6.28 và B2 9.15, đặt giả thuyết mẫu giả làm lệch cách hiểu câu chữ;
+- (3) −24% có CI; −39% so với B2 chỉ báo mô tả;
+- (4) viết rõ thứ hạng C6 và lý do.
+
+**Kiểm trước khi sửa** (`evaluation/dev_posthoc_T_C6.py`, chỉ đọc selection.json của dev + result.json của test):
+- (1) đúng trên dev: 21% [5%, 60%].
+  - Nhưng trên p4_unseen_v1 là 67%, nên ghi "một phần, không ổn định".
+  - T so với B0 dev +2.27 [+0.52, +4.12]; B2 − T +0.60 [+0.12, +1.23].
+- (3) đồng ý: B2 có trong danh sách báo kèm, nhưng phép so sánh cặp P+F với B2 không có trong kế hoạch kiểm định.
+- (4) "thứ 7" đúng khi gom theo họ (7/15), còn theo cấu hình riêng lẻ là 25/90.
+  - C6 − P+F trên dev +0.48 [−0.62, +1.63].
+  - Dev → test: P+F +2.29, B2+F +1.96, B0 +1.42, C6 +0.61, khớp giải thích lạc quan do chọn.
+
+**Đã sửa:**
+- `reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md`: Tóm tắt, 1.4, 4.1 (H1/H2 + bảng T), 7.1, 6.6 (RQ3), 7.6 viết lại, 8, 9, phụ lục (+ docx/pdf 22 trang).
+- `reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md`: dòng chẩn đoán, ý 1, ý 7 (+ docx/pdf 5 trang).
+- Thêm dòng làm rõ trong `KET_QUA_TEST_CUOI` và `PHAN_TICH_HAU_KIEM`.
+- Xóa file tạm `_capnhat_1211.docx`.
+- Không sửa báo cáo của Triệu (TRIEU_W8 ghi "thứ 7", khớp cách gom theo họ).
+
+**Tiếp:**
+- Trí đọc lại mục 4.1 và 7.6 rồi gửi thầy.
+- Giả thuyết H2 có thể kiểm sau (so điểm token chữ lượt 1 với lượt 2 trên raw dev). Đây là việc tùy chọn, cần Trí đồng ý vì cần raw .npz trên Kaggle.
+- Chưa commit/push.
+
+## 12/11/2026 — bản trình bày chi tiết đồ án + hậu kiểm theo loại cặp (assistant, CPU)
+
+**Trí yêu cầu:** bản demo còn sơ sài; cần trình bày cặn kẽ, học thuật, dễ hiểu.
+
+**Đã làm:**
+- [reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md](reports/BAO_CAO_CHI_TIET_DO_AN_20261112.md) (+ docx/pdf, 19 trang). Nội dung:
+  - tóm tắt, thuật ngữ, RQ1–RQ3, đóng góp;
+  - nền CountGD++/CLIP;
+  - định nghĩa Y1–Y3 + công thức MAE/RMSE/FPR + lý do bootstrap theo ảnh;
+  - cơ chế max(chữ, mẫu), các biến thể, công thức F + ví dụ số thật;
+  - dữ liệu + giao thức;
+  - kết quả 6 giai đoạn; phân tích; hạn chế; hướng phát triển; tài liệu tham khảo đã kiểm (arXiv: CountGD 2407.04619, CountGD++ 2512.23351, PrACo 2409.15953, MUCCA/PrACo++ 2605.02752).
+- Hậu kiểm mới (không chạy model, không chọn lại):
+  - `evaluation/test_stratified_posthoc.py` → `..._posthoc_20261111/stratified.json`:
+    - cặp khác hẳn 13 ảnh: P+F so với B0 +0.51 [−0.72, +1.82];
+    - cặp dễ nhầm 27 ảnh: −3.05 [−5.43, −0.96];
+    - C6 dễ nhầm −5.13; câu có mặt B0 thừa 580 / thiếu 77, P+F 243 / 297.
+  - `evaluation/test_pseudo_exemplar_check.py` → `pseudo_exemplars.json`: P = B2 ở 108/120 câu; mẫu trúng đúng loại 82% (B2) so với 85% (P).
+  - Hình mới: `fig_strata_errors.png`, `fig_protocol.png`.
+- Sửa: bản hậu kiểm 11/11 ghi nhầm "dâu tây trong mcac_25 không có nhãn". Ảnh có nhãn đủ 5 loại quả; khung xám là mảnh vật.
+- Bản tóm tắt gửi thầy thêm ý 6 (theo loại cặp + P = B2) và trỏ sang bản chi tiết. `.docx` gốc đang mở trong Word nên bản mới là `_capnhat_1211.docx`.
+
+**Tiếp:**
+- Trí đọc bản chi tiết (ưu tiên mục 7.4: cặp khác hẳn chưa cải thiện, cần chuẩn bị trả lời thầy).
+- Đóng Word rồi thay docx tóm tắt.
+- Gửi thầy 14/11. Chưa commit/push.
+
+## 11/11/2026 (khuya) — gói hậu kiểm test + bản tiến độ gửi thầy (assistant, CPU)
+
+**Trí yêu cầu:** "triển khai làm hết những gì có thể rồi báo cáo lại". Mọi phép tính chỉ đọc output test đã lưu: không chạy model, không chấm lại, không chọn lại ngưỡng. F dùng bounds/ngưỡng đã khóa.
+
+**Đã làm:**
+- `evaluation/test_xy_overlap_analysis.py` → `results/countgdpp/p1_test_kaggle_t4_20261111_1430_posthoc_20261111/`.
+  - Khung dùng chung X/Y (IoU ≥ 0.5): B0 64% [51, 75], B2 71%, P+F 59%, B2+F 59%, C6 24% [11, 37].
+  - Điểm GT MUCCA, tỉ lệ khung chỉ trúng loại khác: B0 34.6%, B2 34.6%, P+F 32.7%, C6 21.3%.
+  - F bỏ gần hết khung rác nền (không trúng: 5–9% → khoảng 1%).
+  - Khung ở query vắng mặt nằm trên vật khác có nhãn 92–100% (C6 chỉ 39 khung, B0 260).
+  - Thời gian T4: B0 0.89 s/query; B2 1.52 s; P 1.50 s + CLIP (runner không ghi thời gian CLIP).
+- `evaluation/make_report_figures.py` → `reports/figures/`:
+  - `fig_pipeline.png`, `fig_results_test.png`;
+  - 4 ví dụ: t05_1 blueberries, t01_2 bowls, t33_1 dogs, t40_1 people.
+- Báo cáo: [reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md](reports/PHAN_TICH_HAU_KIEM_TEST_20261111.md); bản gửi thầy [reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md](reports/BAO_CAO_TIEN_DO_GUI_THAY_20261111.md) (+ docx/pdf qua pandoc + Word).
+
+**Phát hiện mới cho phần thảo luận:**
+- F sau lượt 2 cắt khung rác, nhưng **chưa tách được X/Y**.
+- C6 (lọc ngay sau lượt 1) là cách duy nhất làm câu trả lời thật sự phụ thuộc truy vấn.
+- Lỗi còn lại: nhầm loại cùng nhóm (dê → chó, đĩa → bát), lọc quá tay ở ảnh đông người.
+- Hạn chế phép đo điểm: MUCCA không gán nhãn mọi vật, nên tỉ lệ nhầm loại là cận dưới.
+
+**Tiếp:**
+- Trí đọc bản gửi thầy, điền tên đầy đủ của Triệu, gửi (14/11).
+- 15–25/11 viết báo cáo đầy đủ (Triệu: Related Work).
+- Chưa commit: chờ Trí bảo push.
+
+## 11/11/2026 (đêm, sau) — pull W8 (test một lần), kiểm độc lập kết quả cuối
+
+**Git:** pull --ff-only c311b2c → f24e89d (13ac51f notebook test, f24e89d kết quả W8). Không xung đột.
+
+**Kiểm (CPU, chỉ đọc + tính lại):**
+- `result.json`: freeze sha khớp, manifest = bản khóa; `run_config` complete, T4, input = test khóa, tau 0.20, M 5, không dùng GT.
+- Tính lại từ `_offline/bundle.json` bằng hàm của `apply_freeze_v2.py`: số đếm, metric, bootstrap của 5 cách **khớp tuyệt đối**.
+- Không có lần chấm test nào khác; notebook không chạy evaluate_research.
+
+**Kết quả** ([reports/KET_QUA_TEST_CUOI_20261111.md](reports/KET_QUA_TEST_CUOI_20261111.md)):
+- B0 7.71; B2 9.61 (+1.90 [+0.81, +3.03]).
+- **Chính P+F 5.82 (−1.88 [−3.66, −0.44])**.
+- C6 4.63 (−3.08 [−6.62, −0.51]); B2+F 5.70 (−2.01 [−3.94, −0.40]).
+- So sánh cặp: C6 so với chính −1.19 [−3.32, +0.24]; B2+F so với chính −0.13 [−0.41, +0.18].
+
+**Kết luận:** có cải tiến được kiểm chứng; lượt 2 gây hại; bộ lọc F là thành phần hiệu quả; P không đóng góp thêm; thứ hạng dev đảo trên test (hạn chế).
+
+**Tiếp:** bước [11], viết báo cáo + slide + demo.
+
+## 11/11/2026 (chiều) — Triệu: W8 chạy TEST một lần; kết quả
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã chạy:** `kaggle_p1_test.ipynb`, Save Version, Kaggle T4, run `p1_test_kaggle_t4_20261111_1430`, commit `13ac51f`. Một lần, không lỗi. Hash test khớp bản khóa, freeze v2 khớp, Kiểm A đạt, t37_1 bị loại (uncertain).
+
+**Kết quả** (119 query; [báo cáo](reports/TRIEU_W8_TEST_20261111.md)):
+
+| Cách | MAE | FPR_absent | So với B0 [CI 95%] |
+|---|---:|---:|---|
+| B0 | 7.71 | 0.25 | — |
+| B2 | 9.61 | 0.25 | +1.90 [+0.81, +3.03] |
+| **Chính P(0.20, M5)+F** | **5.82** | 0.225 | **−1.88 [−3.66, −0.44]** |
+| C6 = B0+F (báo kèm) | 4.63 | 0.10 | −3.08 [−6.62, −0.51] |
+| B2+F (báo kèm) | 5.70 | 0.25 | −2.01 [−3.94, −0.40] |
+
+- Độ nhạy GT theo D11: MAE đổi dưới 0.06.
+- **Đọc kết quả:**
+  - Kết quả chính dương và có ý nghĩa.
+  - B2 kém B0 có ý nghĩa, xác nhận chẩn đoán.
+  - Cải thiện đến từ bộ lọc; P không thêm (B2+F ≈ P+F), và C6 đơn giản nhất lại tốt nhất.
+  - Theo freeze, kết quả chính vẫn là P+F; C6/B2+F chỉ báo kèm.
+
+**Assistant kiểm:** 375 file zip khớp `FILES_*.json`; run `complete`, input/manifest = bản khóa; tính lại từ bundle khớp tuyệt đối cả 5 cách. Đã chép file D10 vào `results/countgdpp/p1_test_kaggle_t4_20261111_1430*`; raw để trên Kaggle.
+
+**Bước tiếp:** Triệu commit + push; Trí điền phần kết quả test vào báo cáo; Triệu làm W7 (Related Work).
+
+## 11/11/2026 (đêm, sau) — Triệu: notebook Kaggle cho W8 (test một lần)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Thêm:** `experiments/countgdpp/kaggle_p1_test.ipynb`, dựng từ `kaggle_p1_dev.ipynb`.
+- Ô môi trường và Kiểm A chép nguyên từ W6, để test chạy cùng môi trường với dev.
+- Ô 2 dừng nếu `test/inputs.jsonl` hoặc `test/manifest.csv` khác hash đã khóa, hoặc freeze v2 khác sha256 `64e89ef5…`. Tham số tau 0.20, M = 5, `--replay-b2` lấy thẳng từ freeze.
+- Ô 4 kiểm hash 40 ảnh test.
+- Ô 6 chạy runner **một lần**; Ô 1 chặn nếu phiên đã có `w8_out/p1_test_*`.
+- Ô 7 chạy `p1_controls.py` → `bundle_offline_v2.py` → `apply_freeze_v2.py`; không có `evaluate_research.py`, không chọn lại ngưỡng.
+- Ô 8 gói `for_repo_<stamp>.zip` (json/jsonl/csv/txt) và `FILES_<stamp>.json`.
+
+**Đã kiểm (CPU, không chạy test):**
+- Cú pháp từng ô.
+- Mô phỏng các phép kiểm của Ô 2 trên máy: hash test khớp, freeze sha khớp, tau 0.20 / M 5 / replay_b2.
+- `apply_freeze_v2.py --verify-dev` PASS: 5/5 cách khớp dev selection.
+- **Chưa chạy trên Kaggle.**
+
+**Bước tiếp:** Triệu commit + push, chạy notebook bằng Save Version (GPU T4, Internet, gắn dataset checkpoint), tải `for_repo_*.zip`.
+
+## 11/11/2026 (đêm) — Trí khóa cấu hình; freeze v2 + công cụ áp lên test
+
+**Quyết định của Trí (chat):** "đồng ý khóa cấu hình đó, viết freeze v2 rồi push luôn". Cấu hình: P(tau 0.20, M = 5)+F, kèm báo cáo B0 / B2 / C6 / B2+F để tham khảo.
+
+**Đã làm:**
+- `results/countgdpp/freeze_v2_20261111.json` (sha256 64e89ef53eab306fdbb33cfc39797749ff17cc8635f46ae381d96e45c4f6736d). Chứa:
+  - tham số lấy đúng từ `..._m5_dev_selection_T/selection.json` (bounds CountGD [0.2306, 0.9821], CLIP [0.1228, 0.3354], ngưỡng F 0.60418);
+  - các cách báo kèm cùng tham số dev;
+  - thiết lập runner (tau_pseudo 0.20, M 5, CLIP revision 3d74acf…);
+  - provenance (hash run_config, selection, bundle, manifest dev, selection_meta, 5 file code);
+  - hạn chế.
+- `experiments/countgdpp/apply_freeze_v2.py`: chỉ áp, không chọn lại ngưỡng; kiểm dữ liệu LOCKED và hash manifest khớp bản khóa; loại uncertain; bootstrap theo ảnh so với B0; không ghi đè.
+- **Kiểm:**
+  - `--verify-dev` cho số đếm khớp hệt dev selection ở 5/5 cách (PASS).
+  - Chạy thử toàn bộ đường đi trên dev vào thư mục tạm rồi xóa. Số dev chỉ để kiểm công cụ: P+F so với B0 −2.75, CI [−4.85, −0.80]; số này lạc quan vì ngưỡng chọn trên dev.
+- Thêm mục **W8 (chạy test một lần)** vào GIAO_VIEC_TRIEU_20261106.md; cập nhật BAT_DAU (bước [9] ✅, [10] đang làm), HANDOFF_TRIEU.
+
+**Git:** commit + push theo yêu cầu.
+
+## 11/11/2026 (khuya, sau) — pull T / P+T của Triệu, kiểm lại D9
+
+**Git:** fetch thấy 060a93a (Triệu D9 không có T) và 06e8235 (T, P+T từ raw Kaggle, D9 chạy lại). File D9 của Triệu trùng đường dẫn với file chưa commit của assistant.
+- So nội dung: d9, summary, parameters **trùng hệt**; chỉ khác `tool_sha256` / `bundle_sha256` (khác kiểu xuống dòng giữa hai máy). Hai bên tính độc lập ra cùng kết quả.
+- Lưu bản assistant → `quá khứ/snapshots/2026-11-11_d9_assistant_truoc_pull_06e8235.zip`, xóa bản local, stash tài liệu → pull --ff-only → pop.
+- Xung đột WORKLOG: giữ cả hai. Xóa stash tạm.
+
+**Kiểm độc lập T:**
+- Chạy lại `select_offline_v2.py` trên `..._{m10,m5}_offline_T/bundle.json` vào thư mục tạm (đã xóa): d9, summary, parameters khớp `..._dev_selection_T/selection.json` của Triệu.
+- 7/7 run T (M = 5) có `original_replay_verified = True`.
+
+**Kết quả (M = 5):** T 8.55, P+T 8.25 (đều tốt hơn B2 9.15 nhưng kém B0 6.28); T+F 3.95; P+T+F 3.78; **P+F 3.53**. **D9 không đổi:** M = 5 tau0.200+F `CANDIDATE`; M = 10 hòa tau0.180+F / tau0.200+F.
+
+**Chờ:** Trí khóa cấu hình → assistant viết freeze v2 → Triệu chạy test một lần trên Kaggle T4.
+
+## 11/11/2026 (tối) — tính T và P+T trên dev từ raw Kaggle, chạy lại D9
+
+*Mục này do assistant soạn theo yêu cầu của Triệu. Chỉ chạy CPU, không gọi model/CLIP.*
+
+**Raw:** Triệu tải `w6_out` về `Downloads/W6-Countgdpp/`. Đủ 2.922/2.922 file, sha256 khớp `FILES_20261111_1203.json`. Raw không vào repo (D10).
+
+**Đã chạy:**
+- `offline_text_v2.py` cho B2 và 6 tau, ở M = 10 và M = 5 → `results/countgdpp/p1_dev_kaggle_t4_20261111_1203_{m10,m5}_T/`.
+- `bundle_offline_v2.py` với 7 `--text-source` → `*_offline_T/`.
+- `select_offline_v2.py` → `*_dev_selection_T/`.
+
+**Kết quả** ([báo cáo mục 3b](reports/TRIEU_W6_DEV_D9_20261111.md)):
+- T: MAE 8.55; P+T tau0.200_T: 8.25 (M = 5). Cả hai tốt hơn B2 (9.15) và P, nhưng chưa bằng B0 (6.28).
+- Với bộ lọc F: P+T+F 3.78, kém P+F 3.53.
+- **D9 không đổi:** M = 5 `CANDIDATE` tau0.200+F; M = 10 hòa tau0.180+F và tau0.200+F.
+
+**Bước tiếp:** Trí chọn và khóa cấu hình (16/11); test chạy trên Kaggle T4.
+
+## 11/11/2026 (chiều, sau) — chọn lại ngưỡng S/F + D9 trên dev (chưa có T)
+
+*Mục này do assistant soạn; Triệu cho phép chạy ("Ừ, chạy đi"). Chỉ chạy CPU trên file trong repo, không gọi model/CLIP.*
+
+**Lệnh:** `bundle_offline_v2.py --controls results/countgdpp/p1_dev_kaggle_t4_20261111_1203_{m10,m5}_controls` → `*_offline/bundle.json`; `select_offline_v2.py --bundle … --manifest experiments/countgdpp/dev_test_v2/dev/manifest.csv --selection-meta experiments/countgdpp/dev_test_v2/selection_meta.json` → `*_dev_selection/selection.json`.
+
+**Kết quả** ([báo cáo](reports/TRIEU_W6_DEV_D9_20261111.md)):
+- B0: MAE 6.283, có mặt 8.250, FPR_absent 0.20.
+- M = 10: `TIE_REQUIRES_DECISION`, tau0.180+F và tau0.200+F cùng MAE 3.617.
+- M = 5: `CANDIDATE` tau0.200+F, MAE 3.533, có mặt 5.050, FPR 0.05.
+- So sánh: C6 (B0+F) 4.017; B2+F 3.733. P chưa lọc kém B0 ở mọi tau.
+- Phần lớn mức cải thiện đến từ bộ lọc cuối chọn lại ngưỡng. Đây là số khớp trên chính dev.
+
+**Chưa làm:** biến thể T và P+T (cần raw `.npz` trong Output của Kaggle). Trí quyết có tính T trước khi khóa cấu hình không (16/11).
+
+## 11/11/2026 (khuya) — pull W5 + W6 của Triệu, chấm dev v2 theo D9
+
+**Git:** fetch thấy 6928d12 (W5 khóa + notebook Kaggle) và 6121ebf (W6 output). Local còn 6 file chưa push (bản sửa t37_1 + tài liệu).
+- Snapshot `quá khứ/snapshots/2026-11-11_truoc_pull_6121ebf.zip` → stash → pull --ff-only → stash pop.
+- Xung đột 3 file:
+  - `test/manifest.csv`: **lấy bản Triệu**, vì đây là bản đã khóa (hash df3f739b… ghi trong selection_meta). t37_1 cùng nội dung uncertain theo D12.
+  - `BAT_DAU`: lấy bản Triệu, rồi cập nhật lại.
+  - `WORKLOG`: giữ cả hai.
+- Xóa stash tạm.
+- **Kiểm khóa:** 5 file (dev/test inputs + manifest, absent_candidates) khớp đúng hash trong `selection_meta` (LOCKED 2026-11-11T11:54:55, Triệu).
+
+**W6:** 3 run (m10, m10_rep, m5) + controls (điểm CLIP cho B0/B2/6 tau) + kaggle_meta; Kiểm A, Kiểm C 60/60 theo log của Triệu (Triệu đã kiểm sha256 1.010 file).
+
+**Chấm D9 (CPU, file đã lưu):** `bundle_offline_v2.py` + `select_offline_v2.py --manifest dev/manifest.csv --selection-meta …` cho m10 và m5. Output: `..._m10_offline/`, `..._m10_dev_selection/`, `..._m5_offline/`, `..._m5_dev_selection/`.
+- m5 cho `CANDIDATE` = tau0.200+F; m10 cho `TIE` tau0.180+F / tau0.200+F.
+- Bảng ([reports/DEV_V2_D9_KET_QUA_20261111.md](reports/DEV_V2_D9_KET_QUA_20261111.md)): B0 6.28 / 8.25 / 0.20; **P(0.20, M = 5)+F 3.53 / 5.05 / 0.05**; P(M = 10)+F ≈ 3.62; B2+F 3.73; C6 4.02; B0+S 4.10.
+- Ngưỡng chọn trên dev nên số lạc quan; các cách đứng đầu sát nhau.
+- Chưa có T/P+T (raw `.npz` trên Kaggle).
+
+**Chờ:** Trí khóa cấu hình (§3 báo cáo) → assistant viết freeze v2 → Triệu chạy test một lần.
+
+## 11/11/2026 (chiều) — Triệu: W6 chạy dev trên Kaggle T4 xong, đưa output vào repo
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã chạy:** Triệu chạy `experiments/countgdpp/kaggle_p1_dev.ipynb` bằng Save Version (checkpoint lấy từ Kaggle Dataset riêng tư của Triệu, sha256 khớp audit 14/10). Stamp `20261111_1203`, commit `6928d12`, Tesla T4, chạy hết 16 phút, không lỗi.
+
+**Kiểm trong notebook (theo log):**
+- Dev `LOCKED`; hash `dev/inputs.jsonl`, `dev/manifest.csv` và 20 ảnh khớp bản khóa.
+- Kiểm A đạt: 663 khung, lệch lớn nhất 3.28e-07.
+- Kiểm C đạt: 60/60 ở cả 7 cách (B2, tau 0.18–0.28), chạy lại M = 10 khớp tuyệt đối.
+
+**Đưa vào repo** (`results/countgdpp/p1_dev_kaggle_t4_20261111_1203_*`, theo D10, không `.npz`/ảnh):
+- run `_m10`, `_m10_rep`, `_m5` (`run_config.json`, predictions 7 cách, `candidates.jsonl`);
+- `_m10_controls*` và `_m5_controls*` (nguồn, điểm CLIP, chấm nhanh);
+- `_kaggle_meta` (`kiem_c_*.json`, `packages.txt`, `FILES_*.json` có sha256 của toàn bộ 2.922 file output, kể cả 473 raw `.npz`).
+
+Raw nằm trong Output của notebook trên Kaggle; Triệu chia sẻ cho Trí.
+
+**Assistant đã kiểm độc lập** (giải nén ra thư mục tạm ngoài repo):
+- 1.010 file trong zip khớp sha256 trong `FILES_*.json`; file chép vào repo giống từng byte.
+- Ba run đều `complete`, T4, `uses_ground_truth=false`, `input_sha256` = hash `dev/inputs.jsonl` đã khóa, mỗi cách đủ 60 query.
+- Tính lại Kiểm C trên máy: khớp. Lượt 1 và B2 của M = 10 và M = 5 giống hệt, đúng thiết kế.
+- `manifest_sha256` của phần chấm = hash `dev/manifest.csv` đã khóa. Không file nào nhắc tới `dev_test_v2/test`.
+
+**Chấm nhanh M = 10** (ngưỡng S/F cũ 21/10, **chỉ xem nhanh, chưa phải D9**):
+- B0: MAE cả tập 6.28, có mặt 8.25, FPR_absent 0.20.
+- B2: 9.15 / 12.00 / 0.20.
+- tau0.22: 8.18 / 11.07 / 0.20.
+- tau0.22+F: 4.65 / 6.85 / 0.05.
+- B0+F (C6): 6.63 / 9.95 / 0.00.
+
+**Trạng thái:** W6 xong, chờ commit. **Bước tiếp:** chọn lại ngưỡng S/F riêng từng nguồn + luật D9 (`select_offline_v2.py`); biến thể T và P+T cần raw `.npz` trên Kaggle (`offline_text_v2.py`); Trí đọc bảng dev và khóa cấu hình (16/11).
+
+## 11/11/2026 (tối) — Triệu: W5 khóa dev_test_v2; W6 chuyển sang Kaggle T4
+
+*Mục này do assistant soạn theo yêu cầu của Triệu ("tiến hành W5 và W6 thôi"; "chạy kaggle đi, kaggle có tính năng save version còn colab phải treo máy nữa").*
+
+**W5, đã khóa:** `experiments/countgdpp/dev_test_v2/selection_meta.json` → `status=LOCKED`, `locked_at=2026-11-11T11:54:55+07:00` (khóa lại sau khi áp quyết định t37_1 của Trí), `locked_by` = Triệu (assistant ghi).
+- Thêm các trường `review_protocol` (HUONG_DAN_KIEM_V2 + D11), `human_review` (dev: Trí; test: Triệu), `usage_history` (chưa có output model nào trên dev_test_v2 khi khóa), `post_selection_changes` (t37_3 pencils → cups; t37_1 present → `uncertain`, theo quyết định của Trí, Triệu chuyển lời: lỗi gán nhầm loại, loại khỏi mọi chỉ số, giữ gt_count=3 để lưu vết).
+- Trí cũng đã khóa ở máy Trí nhưng chưa push. Triệu chọn tự khóa và push luôn, nên **khi Trí push sẽ xung đột ở `selection_meta.json` và `test/manifest.csv`: giữ bản này** (đã có quyết định t37_1 của Trí), hoặc đối chiếu hai bản rồi chọn một.
+- `locked_file_sha256`:
+  - `dev/inputs.jsonl` e0b420fc7585…, `dev/manifest.csv` 52d3f667bcd1… (khớp hash Trí ghi);
+  - `test/inputs.jsonl` 5fdf61206651…, `test/manifest.csv` df3f739bcd4b…;
+  - `absent_candidates.csv` 375744ce255d…, `human_review_test_20261111.json` bf3c3eeb26c1….
+- sha256 của `selection_meta.json` sau khi khóa: 64b161eeb3fa….
+- Trước khi khóa đã kiểm: 20 + 40 ảnh đều đã kiểm; so với bản rút 05/11 chỉ đổi lớp t37_3 và trạng thái t37_1; không script nào trong repo chạy model trên dev_test_v2.
+
+**W6, notebook mới:** `experiments/countgdpp/kaggle_p1_dev.ipynb`, chạy tự động để dùng Save Version của Kaggle.
+- Lấy code từ GitHub `main`; dừng nếu dev chưa `LOCKED` hoặc hash `dev/inputs.jsonl`, `dev/manifest.csv`, ảnh dev khác bản đã khóa.
+- Môi trường giống Colab đã qua Kiểm A/C (torch 2.5.1+cu121, transformers 4.44.2, numpy 2.2.6, pillow 10.4.0), build CUDA ops cho sm 7.5.
+- Chạy: Kiểm A → P1 trên dev (6 tau 0.18–0.28, M = 10, `--replay-b2`) → `p1_controls.py` + chấm nhanh (ngưỡng cũ, chỉ để xem) → Kiểm C (chạy lại M = 10, so tuyệt đối) → M = 5 → gói `for_repo_<stamp>.zip` (chỉ file D10 cho phép) + raw đầy đủ trong Output.
+- Không đọc thư mục test.
+- Assistant đã kiểm cú pháp từng ô; **chưa chạy trên Kaggle**.
+
+**Lưu ý cho Trí (D1):** nền tảng đổi từ Colab T4 sang Kaggle T4, cùng loại GPU nhưng khác driver và môi trường. Vẫn chỉ so các cách trong cùng một lần chạy. **Test (23–24/11) phải chạy trên cùng nền tảng Kaggle T4** để ngưỡng chọn trên dev dùng được. Raw `.npz` nằm trong Output của Kaggle thay vì Drive; Triệu chia sẻ notebook cho Trí.
+
+**Bước tiếp:** Triệu commit + push (Kaggle lấy code từ GitHub), nhập notebook vào Kaggle, bật GPU T4 + Internet, rồi Save & Run All. Xong thì tải `for_repo_<stamp>.zip` để assistant kiểm và chép vào `results/countgdpp/`.
+
+## 11/11/2026 (tối) — pull W3 + W4 của Triệu, kiểm test, quyết định D12
+
+**Git:** fetch thấy `2685dc5` (Triệu W4); `pull --ff-only`, không xung đột (máy sạch sau khi Trí push d86d159).
+
+**W3:** PILOT_SUMMARY §7 ghi Triệu đồng ý 11/11; Trí đã đồng ý 05/11. **Pilot đóng.**
+
+**W4, kiểm độc lập (chỉ đọc):**
+- 3 file test UTF-8 LF; 40 ảnh / 120 query; inputs = manifest.
+- GT present = số điểm MUCCA; absent 0 điểm; verified_by: 67 visual_checked, 13 needs_review, 40 absent_checked; 40/40 absent_ok (Triệu, 2026-11-11).
+- t37_3 pencils → cups: mcac_204 chỉ có nhãn pens/rulers, cups là ứng viên kế tiếp đầu tiên.
+- Ngoài cột người kiểm, chỉ đổi 3 ô của t37_3.
+- Dev giữ nguyên hash (e0b420fc… / 52d3f667…).
+
+**D12 (Trí chọn):** t37_1 → `presence_status=uncertain`, gt_count 3 giữ để truy vết, note ghi lý do. Đây là lỗi gán nhầm loại của MUCCA (bút chì gỗ bị gán pens). Chỉ đổi 1 dòng; `test/manifest.csv` sha256 b99970c3ceba3728a50fcdcad0d66df01ebd00a0170e7db9a67b780ec87cff1c. evaluate_research và select_offline_v2 đều loại uncertain.
+
+**Còn:** W5 Triệu khóa cả hai tập; W6 Triệu chạy dev. Trí push bản có t37_1 trước khi Triệu khóa.
+
+## 11/11/2026 (tối) — Triệu: W4 kiểm xong 40 ảnh test (D11)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Người thực hiện:** Triệu kiểm bằng `render_gt_review_v2.py --split test` (ảnh ngoài repo) và báo lỗi trong chat. Quy ước của Triệu: ảnh không nhắc tới là đúng; xác nhận cuối "xác nhận tất cả đều đã chuẩn". Assistant đối chiếu từng câu báo với tọa độ điểm MUCCA và ảnh phóng to, rồi điền theo D11, cùng định dạng dev của Trí. Đã pull d86d159 trước khi điền.
+
+**Kết quả:** t01–t40 đã kiểm. 67 query `visual_checked`, 13 `needs_review` (GT giữ MUCCA, số Triệu đếm trong `uncertainty_note`), 40 `absent_checked`. Đổi t37_3 (mcac_204) từ `pencils` sang `cups`: ảnh có 3 bút chì, cups là ứng viên kế tiếp đầu tiên, Triệu xác nhận không có cốc. Key holders: vòng kim loại trơn/dây xâu chìa không tính, theo cách MUCCA gán nhãn ở mcac_162–164.
+
+**Báo cáo + bảng độ nhạy:** [reports/TRIEU_W4_KIEM_TEST_20261111.md](reports/TRIEU_W4_KIEM_TEST_20261111.md). Nguyên văn các câu báo: `experiments/countgdpp/dev_test_v2/human_review_test_20261111.json` (kèm hash trước/sau).
+
+**Kiểm (chỉ đọc):** chỉ dòng test và cột người kiểm thay đổi (cộng 5 ô của lần đổi t37_3); dòng dev không đổi; cups không có nhãn trong ảnh; inputs khớp manifest; UTF-8, LF, không BOM.
+
+**Cần Trí quyết** (báo cáo mục 3): t37_1 (`pens`, GT 3) thực ra là 3 bút chì: giữ GT 3, loại khỏi chấm, hay thay ảnh. Phải chốt trước khi chạy test.
+
+**Trạng thái:** test đã kiểm, chưa khóa. **Bước tiếp:** Triệu commit + push; W5 khóa dev + test; W6 chạy dev trên T4 (được làm ngay).
+
+## 11/11/2026 — gộp Git sau lỗi push fetch first
+
+Local có commit cc5510b; remote có 89bd2bc và c572c04. Đã tạo nhánh dự phòng codex/backup-before-sync-20261111-cc5510b và ZIP quá khứ/2026-11-11_truoc_merge_cc5510b.zip trước khi merge. Gộp hai xung đột tài liệu ở WORKLOG và BAT_DAU: giữ toàn bộ mục lịch sử hai bên, giữ dev đã kiểm xong của Trí và W3/pilot đã đóng của Triệu. Không chạy thực nghiệm, không sửa dữ liệu/GT/freeze/code đã hash. Tiếp: push merge bình thường, không force; Triệu tiếp W4/W5 và W6 theo lịch đã ghi.
+
+
+## 11/11/2026 (chiều) — kiểm bảng dev của Trí, chuyển mã, chốt nội dung dev, quyết định D11
+
+**Yêu cầu của Trí:** đã xong manifest + absent dev; kiểm giúp và xem còn giúp được gì.
+
+**Kiểm (chỉ đọc):**
+- Cả hai CSV bị Excel lưu sang ANSI (cp1252), thêm một cột trống ở cuối manifest, và đổi ngày thành `11-Nov`.
+- Nội dung đúng: 20/20 absent_ok (mcac_99 giữ `key holders`, nhất quán 3 file); 60/60 query có verified_by (30 visual_checked, 20 absent_checked, 10 needs_review).
+- GT = số điểm MUCCA; prompt manifest = inputs.
+
+**Quyết định của Trí (D11):** giữ GT MUCCA cho 10 query lệch; số người đếm ghi trong note; báo cáo bảng độ nhạy.
+
+**Đã sửa:**
+- Sao lưu bản Excel gốc → `quá khứ/snapshots/2026-11-11_bang_dev_ansi_truoc_chuyen_ma/`.
+- Chuyển 2 file sang UTF-8 LF (giống git), bỏ cột trống, ngày → `2026-11-11`, thêm câu quyết định D11 vào 10 note needs_review.
+- Diff với git: chỉ cột người kiểm thay đổi.
+- Kiểm nhất quán dev: ĐẠT (20 ảnh / 60 query, GT = điểm MUCCA, absent 0 điểm, prompt/class khớp, 20 hash ảnh khớp selection_meta).
+
+**Hash chốt nội dung dev:** `dev/inputs.jsonl` e0b420fc7585a2bc06d33070a8d99a73a17fb7ba10324a7c5289c289a3bf7cfd; `dev/manifest.csv` 52d3f667bcd1b8bd8a7537504e9d8b45d5df50faac98a62b3b051cb5abaf6854. `selection_meta` vẫn DRAFT; LOCKED sau khi test xong.
+
+**Hệ quả:** Triệu chạy W6 ngay (dev không chứa GT trong inputs, không đụng test), song song với W4.
+
+**Đồng bộ:** BAT_DAU, GIAO_VIEC_TRIEU_20261106, HANDOFF_TRIEU, KE_HOACH_TIEP_THEO (D11).
+
+## 11/11/2026 — chẩn đoán T và C6 trên p4_unseen_v1 (song song khi Trí kiểm bảng dev)
+
+**Yêu cầu của Trí:** trong lúc Trí làm bảng absent/manifest dev, làm song song các việc chạy được (ví dụ nhánh T), rồi báo lại vị trí, việc còn lại và đồ án đã cải tiến thật chưa. Trí cho phép chạy.
+
+**Đã chạy** (CPU trên file đã lưu + một lần chấm CLIP; không chạy CountGD++, không đụng dev/test v2 hay file Trí đang sửa):
+1. `evaluation/p4_unseen_T_diagnostic.py` (mới), dùng output T đã replay ngày 10/11. Output: `results/countgdpp/p4_unseen_v1_T_diagnostic_20261111/`.
+2. Đóng gói khung B0 (= lượt 1 của run 27/10) thành `results/countgdpp/p4_unseen_v1_B0_as_pred_20261111/`, rồi `p4_clip_score.py` (WSL Ubuntu, CLIP đã khóa) → `p4_unseen_v1_B0_clip_20261111/` (30 query, 458 khung).
+3. `evaluation/p4_unseen_loio_diagnostic.py` (mới): chọn lại ngưỡng S/F riêng từng nguồn, kiểm chéo giữ 1 ảnh. Output: `p4_unseen_v1_loio_diagnostic_20261111/`.
+
+**Kết quả** ([reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md](reports/ASSISTANT_CHAN_DOAN_T_C6_20261111.md); **chẩn đoán, tập đã xem**):
+- T so với B2: −4.20 (CI [−7.30, −1.63]). T so với B0: +2.03 (chưa bằng).
+- B0+S: MAE 3.70 / có mặt 4.85 / FPR 0.2. B0+F: 3.73 / 5.10 / 0.1. Cả hai thắng B0 (6.77 / 5.70 / 0.3) theo D9.
+- Ngưỡng B0+S 0.34 ở 9/10 lượt.
+- Mọi biến thể đi qua lượt 2 đều thua B0 ở query có mặt.
+
+**Kết luận sơ bộ:** cải tiến khả thi nhất là hiệu chỉnh 1 lượt (C6). C6 đã có trong D8/D2, nên kế hoạch W6 không đổi. P chưa đo được (raw P1 ở Drive).
+
+**Đồng bộ:** BAT_DAU (khối chẩn đoán + dòng assistant), KE_HOACH_HOAN_THANH 1b, HANDOFF_TRIEU. Không commit/push.
+
+## 11/11/2026 — ảnh hỗ trợ kiểm GT dev
+
+Tạo 40 ảnh hiển thị điểm MUCCA đánh số và index.html trong experiments/countgdpp/dev_test_v2/dev/gt_review_images để Trí kiểm 20 ảnh/40 query present. Nhãn nguồn là points, không có GT bbox; không chạy model/evaluator, không sửa CSV/GT hay xác nhận thay người. Đã xem ảnh mẫu và tăng kích thước/giãn nhãn để đọc được vật xếp chồng. Tiếp: Trí mở index, đối chiếu ảnh gốc rồi điền verified_by/uncertainty_note.
+
+## 11/11/2026 — hướng dẫn Trí điền manifest dev
+
+Trí báo đã điền absent. Đọc CSV thấy dev có 19 absent_ok và mcac_99/key holders=visible; checked_by/date còn trống. Chưa coi absent đã sẵn sàng khóa: cần lớp thay cho mcac_99 được người xác nhận, đồng bộ input/manifest, bổ sung người/ngày kiểm. Manifest dev vẫn nhãn nguồn chờ kiểm. Hướng dẫn chỉ điền verified_by/uncertainty_note cho GT present; giữ gt_count khi bất đồng để xử lý sau. Không sửa nhãn, không chạy evaluator/model. Bước tiếp: Trí kiểm plates/cups ở mcac_9 và điền từng dòng present; hoàn thiện absent còn thiếu.
+
+## 10/11/2026 — assistant: công cụ T / S / F / D9 và kiểm CPU
+
+**Ủy quyền:** Trí yêu cầu làm phần assistant và trả lời "Cho phép chạy kiểm thử CPU" trong chat.
+
+**Đã làm:** thêm `offline_text_v2.py`, `bundle_offline_v2.py`, `select_offline_v2.py`, `evaluation/check_offline_v2.py`; không sửa script cũ. Hướng dẫn tại `experiments/countgdpp/OFFLINE_V2_HUONG_DAN.md`.
+
+**Đã chạy thực tế:** 10 kiểm CPU đạt (evaluator pilot + fixture uncertain/absent, token T/fallback, fit ngưỡng, D9, CLIP rank/hash, chặn draft/test); T replay 30/30 query raw `p4_unseen_v1_b2_20261027`, gồm 8 fallback, khớp tọa độ/điểm nguồn. Fit chẩn đoán 7 nguồn/21 cách pilot P1; không có absent nên D9 không được đánh giá đầy đủ. Không chạy model/CLIP hoặc test v2.
+
+**Bằng chứng:** `results/countgdpp/offline_v2_cpu_20261110/checks.txt`, `check_provenance.json`, `text_replay_final/`, `pilot_diagnostic/`. Lần fit đầu bị chặn vì manifest gốc có 30 query nhưng pilot run chỉ 15; đã dùng bản con riêng đúng 15 query, giữ nguyên manifest gốc.
+
+**Giới hạn và bước tiếp:** raw P1 không có local nên chưa kiểm P+T thật toàn luồng; bundle hiện một run/một M, chưa ghép nhiều M; D9 đồng hạng được báo rõ, không tự chọn thêm luật. Dev mới vẫn chưa kiểm/khóa/chạy; chưa thể kiểm W6 hay chọn cấu hình v2. Xem `reports/ASSISTANT_OFFLINE_V2_20261110.md`. Chưa commit/push thay đổi phiên này.
+
+**Cập nhật 05/11/2026.** Ghi mỗi buổi tại đây; xem trạng thái tổng thể ở [ROADMAP](<quá khứ/2026-11-10_don_dep/roadmap/ROADMAP.md>). [Trang bắt đầu](README.md) · [Handoff](<quá khứ/2026-11-10_don_dep/HANDOFF/HANDOFF.md>).
+
+**Điểm tiếp tục (05/11 chiều, Triệu):** W1 xong: đã rút tập dev/test v2 **một lần** ở `experiments/countgdpp/dev_test_v2/` (dev 20 ảnh/60 query, test 40 ảnh/120 query, `DRAFT_NOT_LOCKED`); assistant kiểm đạt (mục 05/11 chiều bên dưới), chờ Triệu commit. Tiếp: Trí kiểm absent/GT 20 ảnh dev (07–08/11); Triệu làm W3 rồi W4 kiểm 40 ảnh test (hạn 08/11); W5 khóa sau khi cả hai tập đã kiểm.
+
+**Điểm tiếp tục (05/11, nhận bài nộp):** đã pull 71264bd; V4/V6 và P1/code/báo cáo đã nhận. Trí đọc báo cáo T4 mục 4/6 và đề xuất dữ liệu v2 mục 4; nhận output gốc trên Drive để đối chiếu rồi nghiệm thu, không giao lại V4/V6 từ đầu. V7 chưa được xác nhận trong lượt này.
+
+**Điểm tiếp tục (05/11, Triệu):** Kết quả P1 pilot trên T4 (2 lần chạy + 3 thư mục bảng đối chứng) đã có trong repo ở `results/countgdpp/p1_pilot_colab_20261103_*` (không có `.npz`/ảnh theo D10), chờ Triệu commit. Vẫn chờ Trí trả lời 2 báo cáo (đầu `HANDOFF/HANDOFF.md`).
+
+**Điểm tiếp tục (04/11 khuya, Triệu):** Đã soạn quy tắc rút tập dev/test v2 + script `experiments/countgdpp/select_dev_test_v2.py`, đề xuất ở `reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md`. **Chưa rút ảnh thật.** Chờ Trí duyệt quy tắc và 5 câu ở mục 4 (cỡ 20+40 hay 30+50, khoảng điểm, cách lấy cặp dễ nhầm, thêm vắng mặt dễ, seed); sau đó Triệu rút, hai người kiểm nhãn rồi khóa.
+
+**Điểm tiếp tục (04/11 tối, Triệu):** Ô 12 đã chạy trên Colab T4 cho run `p1_pilot_colab_20261103_1519` (output `_controls_clip`, `_controls`, `_controls_eval` trên Drive của Triệu). Công cụ chạy đủ; số pilot chỉ để kiểm code. Đã kiểm: tau 0.20 cùng số đếm với B2 nhưng CLIP đổi mẫu ở q01_2 và q03_3 (đính chính câu 03/11). Điểm mở: bộ lọc khóa trên điểm B2 loại gần hết khung B0, nên C6 = B0+F bị thiệt, cần Trí chọn cách làm C6 (báo cáo 03/11, mục 6).
+
+**Điểm tiếp tục (04/11, Triệu):** Đã viết công cụ bảng đối chứng (Trí §3.5): `experiments/countgdpp/p1_controls.py` + `evaluation/evaluate_research.py` + Ô 12 của notebook. Đã kiểm trên số liệu A2000 đã lưu; **chưa chạy CLIP trên Colab**. Tiếp: Triệu push, chạy Ô 1–5 + Ô 12 trên T4, gửi phần in ra. Vẫn chờ Trí trả lời báo cáo 03/11 (tiêu chí T4, tập dev).
+
+**Điểm tiếp tục (03/11 tối, Triệu):** Pilot P1 đã chạy trên Colab T4 (2 lần, run `p1_pilot_colab_20261103_1519` và `_1528`, lưu ở Drive của Triệu). Kiểm A đạt; Kiểm C đạt (T4 tự khớp tuyệt đối 6 cách × 15/15); Kiểm B lệch A2000 do đổi GPU (lượt 1 lệch tối đa 1 khung). Notebook + hướng dẫn + báo cáo gửi Trí [reports/TRIEU_P1_COLAB_T4_20261103.md](reports/TRIEU_P1_COLAB_T4_20261103.md) đã sửa trong máy, chờ Triệu push. Chờ Trí (mục 4 của báo cáo): đồng ý T4 làm máy chuẩn và tiêu chí tái hiện mới; khóa tập dev 30 ảnh.
+
+**Điểm tiếp tục (03/11, Triệu):** V6 đã push (cb4fe58). Triệu nhận nhánh P (Trí đề xuất chia: Triệu P, Trí R). Đã chuẩn bị runner P1 + notebook Colab A100, **chưa chạy model**. Tiếp: Triệu push, chạy notebook trên Colab (kiểm tái hiện B0/B2 trên pilot trước), gửi kết quả; tập dev 30 ảnh chờ nhóm khóa.
+
+**Điểm tiếp tục (02/11 tối, Triệu):** V4 đã push (fecbc42). V6 xong 58/58 (mục V6 trong báo cáo tự kiểm), chờ commit. Tiếp theo V7 duyệt chung với Trí (03/11); Trí ghép nhãn tầng B với `_KEY_`.
+
+**Điểm tiếp tục (02/11, Triệu):** V4 xong (mục V4 trong báo cáo tự kiểm), chờ commit. Tiếp theo V6 (N4 tầng B), rồi V7 với Trí.
+
+**Điểm tiếp tục (30/10):** V1–V3 đã push (be4da26, 415af3b). V5 xong (mục V5 trong báo cáo tự kiểm), đề xuất nhánh P đã gửi Trí, bàn ở buổi 03/11. Tiếp theo V4 rồi V6.
+
+**Điểm tiếp tục (29/10, tối):** V1 + V2 đã push (be4da26), chờ Trí ghép bảng tra. V3 q05_3 xong 103/103 khung, chờ commit; tiếp theo V5 rồi V4.
+
+**Điểm tiếp tục (27/10):** đã push e877541 lên origin/main và kiểm HEAD khớp remote ngày 27/10. P4.6 count đã xong; N4 tầng A giao Triệu. Trí gửi đường dẫn giao việc, nghiệm thu phần kiểm chéo đã đạt và chốt quy tắc dữ liệu mới; chưa có quyết định chọn P/R.
+
+## Cách dùng nhật ký
+
+Mỗi buổi thêm một mục mới ngay trên mục ngày gần nhất. Không xóa kết luận cũ; ghi mục đính chính có ngày nếu cần. Khi hoàn thành một mốc, cập nhật dòng trạng thái trong ROADMAP và bước tiếp trong HANDOFF; không chép toàn bộ nhật ký sang đó.
+
+```text
+## YYYY-MM-DD — tên việc
+Người thực hiện:
+Việc/lệnh đã thực sự chạy:
+Input/cấu hình hoặc run ID:
+Output/bằng chứng (đường dẫn):
+Kiểm tra và kết quả:
+Lỗi/điểm chưa rõ:
+Trạng thái: Chưa làm / Đang làm / Chờ kiểm / Đã xác nhận
+Bước tiếp theo + người làm:
+```
+
+## 11/11/2026 — Triệu: W4 chuẩn bị công cụ kiểm (ảnh chấm GT + hướng dẫn v2)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Đã thêm:**
+- `experiments/countgdpp/render_gt_review_v2.py`: vẽ điểm GT MUCCA của hai lớp có mặt cho một tập (dev hoặc test), kèm `index.html` (lớp vắng mặt đề xuất, lớp dự phòng, ảnh chấm GT, ảnh gốc) và `SOURCE_MANIFEST.json`. Chỉ chạy CPU, chỉ đọc nhãn/ảnh, kiểm hash so với `selection_meta.json`, **chỉ ghi ra ngoài repo** (ảnh không commit, theo D10). Thay cho bước vẽ `gt_review_images` của v1, vốn không có script trong repo.
+- `experiments/countgdpp/dev_test_v2/HUONG_DAN_KIEM_V2.md`: cách kiểm absent/GT cho v2 (absent nhìn thấy thì đổi lớp dự phòng, không ghi `uncertain`; GT nghi ngờ ghi `uncertainty_note` và giữ số MUCCA), cách ghi kết quả, điều kiện khóa.
+
+**Đã kiểm script:** assistant chạy `--split dev` ra thư mục tạm ngoài repo: 20 ảnh + `index.html`; số điểm vẽ khớp `gt_count` (script tự kiểm); vị trí điểm và số thứ tự đúng ở 2 ảnh đã xem (d01 mcac_9, d15 mcac_190), số không bị cắt ở mép ảnh; `--out` nằm trong repo bị từ chối. Assistant chỉ xem 2 ảnh để kiểm cách vẽ, không nhận xét nhãn dev (đó là việc của Trí).
+
+**Trạng thái:** công cụ sẵn sàng; tập vẫn DRAFT, 0/60 ảnh đã kiểm. **Bước tiếp:** Triệu chạy script `--split test` và kiểm 40 ảnh (hạn 12/11); Trí chạy `--split dev` và kiểm 20 ảnh.
+
+## 11/11/2026 — Triệu: W3 ghi duyệt pilot, pilot đóng
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Người thực hiện:** Triệu xác nhận trong chat; assistant chép nguyên văn vào file và cập nhật các dòng trạng thái.
+
+**Git:** Triệu đổi remote sang `https://github.com/minhtridaoo/zero-shot-counting.git` và `pull --ff-only` e7fb20c → 8d12689 (bản dọn workspace của Trí). Không xung đột.
+
+**Xác nhận của Triệu** (11/11/2026, trong chat, sau khi assistant đề nghị đọc `reports/PILOT_SUMMARY.md` mục 3, 4, 6 và kết luận 27/10 của Triệu ở mục 7), nguyên văn: “đã đọc đủ, đồng ý”.
+
+**Đã sửa:**
+- `reports/PILOT_SUMMARY.md` mục 7: dòng "Nhóm duyệt nội dung pilot" ghi xác nhận trên; dòng "Quyết định pilot" đổi thành **ĐÃ ĐÓNG 11/11**, giữ ghi chú 27/10. Thêm dòng cập nhật 11/11 ở đầu file và sửa "Trạng thái báo cáo" ở mục 1; dòng cập nhật 27/10 giữ làm lịch sử.
+- `BAT_DAU_SESSION_MOI.md`: bỏ W3 khỏi việc của Triệu.
+- `roadmap/KE_HOACH_HOAN_THANH_20261110.md`: H5 ghi đã đóng.
+
+**Phạm vi:** đóng pilot 5 ảnh/15 query (B0/B2, review định tính, kết quả P4 mục 6 trong phạm vi đã ghi). Không gồm 47 nhãn q03 của P4 (theo dõi riêng, vẫn chưa) và dữ liệu dev/test v2.
+
+**Trạng thái:** Đã xác nhận (Trí 05/11 + Triệu 11/11). **Bước tiếp:** Triệu commit + push; Triệu làm W4 kiểm 40 ảnh test và W5 khóa (hạn 12/11); Trí kiểm 20 ảnh dev.
+
+## 10/11/2026 — giải thích việc Trí kiểm absent/GT 20 ảnh dev
+
+Chỉ đọc hướng dẫn, Git và dữ liệu nháp để trả lời câu hỏi; không chạy evaluator/model hoặc sửa nhãn. Đã kiểm absent_candidates.csv: 20 dòng split=dev đều human_check=PENDING. Ví dụ mcac_9 có nhãn nguồn plates=12, cups=4, forks absent=0; đây là nhãn cần người đối chiếu, chưa được xác nhận. Giải thích tách kiểm vật vắng mặt với kiểm GT hai lớp có mặt; PENDING là thiếu xác nhận được lưu, không chứng minh người dùng chưa xem ảnh.
+
+Bước tiếp: Trí mở ảnh gốc mcac_9, kiểm hai số đếm và forks; ghi nhận người/ngày/kết luận vào absent_candidates.csv và dev/manifest.csv. Nếu đổi absent phải đồng bộ prompt/input/manifest trước khóa. Chưa đánh dấu ảnh nào hoàn tất, không thay lịch và quyết định D1–D10.
+
+## 10/11/2026 (tối) — dọn workspace
+
+**Yêu cầu của Trí:** chắt lọc file cần thiết, bỏ phần không còn dùng, làm gọn kết quả và tài liệu.
+
+**Nguyên tắc:**
+- Không xóa bằng chứng: tài liệu cũ chuyển vào `quá khứ/2026-11-10_don_dep/` bằng `git mv`.
+- Không sửa file `.py` (hash có trong audit), dữ liệu đã khóa, freeze, prediction hay nhãn.
+- Không di chuyển thư mục `results/` (code và audit trỏ vào đường dẫn).
+- Snapshot trước khi dọn: `quá khứ/snapshots/2026-11-10_truoc_don_dep.zip`.
+
+**Đã làm:**
+- Chuyển 24 mục vào lưu trữ:
+  - 9 kế hoạch/checklist cũ trong `roadmap/`;
+  - 7 giấy tờ kiểm chéo trong `reports/`;
+  - 3 file cũ trong `HANDOFF/` + handoff 22/10;
+  - `CLIP-Count/`.
+- Chuyển 3 file benchmark sang `experiments/benchmark_fscd147/`.
+- Xóa: 2 zip bản sao trong `results/` (trước đó khôi phục `m4_first5_b0/jobs/004_q02_1/console.log` chỉ có trong zip), 2 zip gói giao Triệu, 2 file `.bak`, `__pycache__`, snapshot local 58,5 MB đã có trong git.
+- Gom snapshot vào `quá khứ/snapshots/` và thêm vào .gitignore.
+- Tự sửa 215 + 5 link tài liệu; còn 0 link gãy trong tài liệu đang dùng.
+- Viết lại cho gọn `README.md` (bản đồ thư mục + danh sách report theo câu chuyện), `BAT_DAU_SESSION_MOI.md` (một trang trạng thái), `AGENTS.md` (thứ tự đọc mới). Bản cũ lưu trong kho.
+- Thêm `results/README.md` (kết quả dùng cho báo cáo và kết quả lịch sử) và `quá khứ/2026-11-10_don_dep/README.md` (đã chuyển gì, vì sao).
+
+**Chưa làm:** commit/push. Sau khi push, Triệu cần `git pull` trước khi sửa tiếp. Các file Triệu đang dùng (`HANDOFF/GIAO_VIEC_TRIEU_20261106.md`, `HANDOFF_TRIEU.md`, `WORKLOG.md`, `dev_test_v2/`) giữ nguyên chỗ.
+
+## 10/11/2026 — đổi remote sang zero-shot-counting, pull, kiểm W2, sửa evaluator, kế hoạch hoàn thành
+
+**Yêu cầu của Trí:** cập nhật từ GitHub (repo đã đổi tên), plan việc tiếp, cho biết đang ở đâu và còn gì thì mới hoàn thành.
+
+**Git:**
+- `git remote set-url origin https://github.com/minhtridaoo/zero-shot-counting.git`.
+- `pull --ff-only` 38e6946 → e7fb20c, gồm ef96f58 (W2 output P1) và e7fb20c (W1 rút dev 20 + test 40, DRAFT). Không xung đột.
+
+**Kiểm (chỉ đọc file):**
+- W2: Kiểm C trùng tuyệt đối giữa hai run T4; MAE theo tau (B0 19.47, B2 20.40, tau 0.20–0.28 = 20.40 / 22.87 / 22.33 / 22.80 / 22.73) và no_pseudo (1/2/4/7/9) khớp báo cáo; lượt 1 lệch A2000 đúng ở 5 query đã báo.
+- W1: `selection_meta` DRAFT, 20 + 40 ảnh, 60 + 120 query; `absent_candidates.csv` 0/60 đã kiểm.
+- W3 (Triệu ghi duyệt pilot) chưa có.
+
+**Sửa code:** `evaluation/evaluate_research.py` nhận `presence_status = uncertain`, loại khỏi mọi chỉ số, ghi tên vào `uncertain_excluded` (giống evaluate_pilot). Đã `ast.parse`; **chưa chạy thử**, chờ Trí cho phép.
+
+**Kế hoạch:** [roadmap/KE_HOACH_HOAN_THANH_20261110.md](roadmap/KE_HOACH_HOAN_THANH_20261110.md): vị trí bước [7], định nghĩa hoàn thành H1–H6, lịch mới (khóa 12/11 → dev 13–15/11 → khóa cấu hình 16/11 → viết từ 16/11 → test 23–24/11 → nộp 02/12), phương án nếu trễ, khoảng 11 giờ tập trung của Trí.
+
+**Chưa làm:** commit/push; công cụ T / chọn lại ngưỡng / D9 (chờ phép chạy thử CPU).
+
+## 05/11/2026 (chiều) — Triệu: W1 rút tập dev/test v2 (DRAFT, chưa khóa)
+
+*Mục này do assistant soạn theo yêu cầu của Triệu.*
+
+**Người thực hiện:** Triệu chạy lệnh trên máy (Python `ai_new` 3.10, MUCCA 1.0 ở `C:/Users/diosodumb/Downloads/MUCCA_1.0`); assistant kiểm thư mục output (chỉ đọc).
+
+**Lệnh đã chạy** (trong `C:\Users\diosodumb\Documents\CS331`, đúng [GIAO_VIEC_TRIEU_20261106.md](HANDOFF/GIAO_VIEC_TRIEU_20261106.md) §2, chỉ thêm `--mucca` vì repo không có `data_external/`):
+1. `select_dev_test_v2.py --stats --mucca C:/Users/diosodumb/Downloads/MUCCA_1.0`: còn 185 ảnh chưa dùng (đã loại 15 ảnh pilot + `p4_unseen_v1`); với 3–40 điểm có 19 ảnh khác hẳn, 90 ảnh dễ nhầm. Khớp báo cáo 04/11.
+2. `select_dev_test_v2.py --n-dev 20 --n-test 40 --mucca C:/Users/diosodumb/Downloads/MUCCA_1.0 --out experiments/countgdpp/dev_test_v2`. **Rút một lần, không rút lại.**
+
+**Output:** `experiments/countgdpp/dev_test_v2/`: `dev/inputs.jsonl`, `dev/manifest.csv`, `test/inputs.jsonl`, `test/manifest.csv`, `absent_candidates.csv`, `selection_meta.json` (status `DRAFT_NOT_LOCKED`, seed 331).
+
+| tập | ảnh | query | khác hẳn + dễ nhầm | absent loại khó | GT có mặt: trung vị / max / tổng điểm |
+|---|---:|---:|---|---:|---|
+| dev | 20 | 60 | 6 + 14 | 15/20 | 10 / 34 / 516 |
+| test | 40 | 120 | 13 + 27 | 29/40 | 9 / 38 / 981 |
+
+**Assistant đã kiểm** (script tạm ngoài repo, chỉ đọc; tất cả đạt):
+- Đúng 6 file, chỉ xuống dòng LF. Tham số trong `selection_meta.json` đúng D3–D7: seed 331, 20 + 40, 3–40 điểm, không `--easy-absent`. `rule_script_sha256` bằng hash script trên đĩa và bản đã commit.
+- 60 ảnh không lặp, dev và test không trùng nhau, không dùng 5 ảnh pilot và 10 ảnh `p4_unseen_v1` (LOCKED). Lấy đủ 19 ảnh khác hẳn. `image_sha256` khớp ảnh MUCCA trên máy.
+- `inputs.jsonl` không có GT và khớp từng dòng với `manifest.csv`; header manifest đúng `FIELDS` của evaluator.
+- Mỗi ảnh có 2 query có mặt (GT = số điểm MUCCA, trong 3–40) và 1 query vắng mặt (`gt_count` 0). Lớp vắng mặt và 5 lớp dự phòng đều không có nhãn trong ảnh.
+- `absent_candidates.csv`: 60 dòng khớp manifest, tất cả `PENDING`, chưa ai ký.
+
+**Chưa làm:** chưa kiểm bằng mắt (đó là W4 của Triệu và phần kiểm dev của Trí). Không rút lần hai để thử tính tất định (đã thử ở bản rút thử 04/11).
+
+**Thêm:** dòng `/experiments/countgdpp/dev_test_v2/** -text` trong `.gitattributes` (giống `p4_unseen_v1/**`), để Git không đổi xuống dòng khi checkout trên Windows. Nhờ vậy hash khi khóa ở W5 và `manifest_sha256` của evaluator giống nhau giữa Windows và Colab. Khi điền `absent_candidates.csv` thì sửa bằng VS Code (giữ LF), không dùng Excel.
+
+**Trạng thái:** Chờ kiểm (DRAFT, chưa khóa). **Bước tiếp:** Triệu commit + push; Trí kiểm absent/GT 20 ảnh dev (07–08/11); Triệu làm W3, rồi W4 kiểm 40 ảnh test (hạn 08/11); W5 khóa sau khi cả hai tập đã kiểm.
+
+## 05/11/2026 — Triệu: đưa kết quả P1 pilot từ Drive vào repo
+
+**Người thực hiện:** Triệu tải 5 thư mục từ `MyDrive/CS331_colab/` (file `Downloads/cs331_colab.zip`, 23,3 MB, 433 mục); assistant giải nén vào thư mục tạm, kiểm rồi chép vào `results/countgdpp/`.
+
+**Đã chép:** `p1_pilot_colab_20261103_1519/` và `p1_pilot_colab_20261103_1528/` **chỉ file nhỏ** (`run_config.json`, 6 `predictions_*.jsonl`, `candidates.jsonl`; bỏ raw `.npz` và ảnh theo D10 của Trí, bản đủ ở Drive), `p1_pilot_colab_20261103_1519_controls/` (5 file), `_controls_clip/` (107 file), `_controls_eval/` (3 file). File trong repo giống từng byte với file trong zip.
+
+**Đã kiểm:** cả 2 lần chạy có status complete, 15 query, đủ raw và ảnh; `run_config.json` của `_controls` ghi đúng hash run_config và 6 file predictions của 1519, đúng hash run_config của `_clip`; `_controls_clip` có 105 file điểm; `_controls_eval` ghi đúng hash file đếm và file khung giữ. Lần 1528 so với 1519: predictions và candidates giống hệt trừ `run_id`, `overlay_path`, `stage1_ms`, `stage2_ms`; 46 file raw `.npz` và 105 ảnh giống từng byte (kiểm trên bản tải về; raw và ảnh của cả hai lần chạy chỉ để trên Drive). Chạy lại `evaluate_research.py` trên CPU từ `_controls` đã tải: `metrics.json` và `per_query.csv` giống bản Colab (chỉ khác kiểu xuống dòng của `metrics.json` khi ghi trên Windows).
+
+**Trạng thái:** Đã chép, chờ commit. **Bước tiếp:** Triệu commit + push; vẫn chờ Trí trả lời báo cáo 03/11 (mục 4, 6) và đề xuất dữ liệu v2 (mục 4).
+## 05/11/2026 (khuya, sau) — kiểm lại các phần Triệu trước khi duyệt
+
+**Yêu cầu của Trí:** double-check các phần Trí đã đồng ý duyệt.
+
+**Đã kiểm** ([reports/KIEM_LAI_TRUOC_DUYET_20261105.md](<quá khứ/2026-11-10_don_dep/reports/KIEM_LAI_TRUOC_DUYET_20261105.md>)):
+- Đọc toàn bộ code P1 (`run_b2_verified_pseudo.py`, `pseudo_clip_verifier.py`): đúng thiết kế, không đọc GT.
+- `p1_controls.py`: dùng ngưỡng đã khóa; D2 chưa có.
+- `select_dev_test_v2.py --stats` trên MUCCA local ra 185/19/90, khớp báo cáo.
+- V4 tính tay khớp (19.50/18.14, 20.79, 21.07).
+- V6 xem crop u06_2: nhãn đúng.
+
+**Kết luận:** duyệt được, giữ nguyên quyết định 05/11.
+
+**Lưu ý:**
+- `evaluate_research.py` dừng khi gặp GT `uncertain`; đã dặn Triệu ở W4, assistant sửa trước 09/11.
+- Nhãn tầng A chưa nhất quán giữa wrong_class và multi_object; không đổi kết luận 1/12.
+- Output pilot P1 ở Drive, chờ W2.
+
+**Git:** commit + push để Triệu thấy lưu ý W4 trước khi làm.
+
+## 05/11/2026 (khuya) — Trí chốt D1–D10, giao việc đợt 2 cho Triệu
+
+**Yêu cầu của Trí:** hôm nay chưa làm được, nên plan việc cho Triệu; việc gì Triệu cần Trí duyệt thì "oki luôn" để Triệu làm tiếp. Từ 06/11 Trí làm tiếp.
+
+**Ghi nhận theo ủy quyền đó:**
+- D1–D10 chốt đúng như khuyến nghị (KE_HOACH_TIEP_THEO §3).
+- Trí nghiệm thu V3–V6 và đồng ý duyệt pilot (PILOT_SUMMARY §7). Phần xác nhận của Triệu còn chờ (W3).
+
+**Đã tạo:** [HANDOFF/GIAO_VIEC_TRIEU_20261106.md](HANDOFF/GIAO_VIEC_TRIEU_20261106.md):
+- W1 rút dữ liệu bằng lệnh mặc định (`--n-dev 20 --n-test 40`; mặc định trùng D3–D7);
+- W2 đưa output P1 vào repo; W3 ghi duyệt pilot;
+- W4 kiểm test 40; W5 khóa; W6 chạy dev trên T4 (lưới tau 0.18–0.28, M = 10, tùy chọn M = 5; T và chọn lại ngưỡng tính ngoại tuyến từ raw);
+- W7 Related Work.
+- Phân việc: Trí kiểm dev 20; assistant viết công cụ ngoại tuyến trước 09/11.
+
+**Git:** commit + push các file tiến độ để Triệu đọc được (theo yêu cầu để Triệu làm tiếp).
+
+## 05/11/2026 (tối) — kiểm nội dung bài nộp Triệu 02–04/11 và lập kế hoạch từ 06/11
+
+**Yêu cầu của Trí:** check bài Triệu vừa push và lên kế hoạch tối ưu từng bước; Trí bắt đầu làm từ 06/11.
+
+**Đã kiểm (chỉ đọc file, không chạy model):**
+- V4: hai ca thử cho số khớp V5.
+- V6: 58/58 dòng, tọa độ không đổi.
+- Ghép tầng B với `_KEY_`: Fusion giữ 26/26 và 14/14 khung đúng, lọc điểm giữ 13/14 và 9/9; mẫu tự chọn đúng 6/6; E3 11/11 là vật thật.
+- P1: có code; runner lưu `stage2_*_raw.npz`, nên biến thể T tính ngoại tuyến được.
+- Pilot T4: Kiểm A + C đạt, Kiểm B lệch nhẹ do khác GPU.
+- Đề xuất dữ liệu v2: script hợp lệ, chưa rút thật.
+- Output P1 nằm trên Drive, chưa vào repo.
+
+**Kết luận:** bộ lọc cuối chỉ giúp khi model đã đúng, và vẫn xóa nhầm vật đúng. Mẫu tự chọn sai đúng ở ca model nhầm. Đề xuất thử P không kèm lọc, T, P+T; C6 với ngưỡng chọn lại riêng từng nguồn; luật chọn cuối D9 chốt trước khi xem dev.
+
+**Output:** [reports/KE_HOACH_TIEP_THEO_20261105.md](reports/KE_HOACH_TIEP_THEO_20261105.md): bảng kiểm, 10 quyết định D1–D10 có khuyến nghị, lịch 06/11–02/12 chia việc 3 bên, phương án dự phòng.
+
+**Đồng bộ:** BAT_DAU, README, HANDOFF, HANDOFF_TRIEU, GIAO_VIEC (V4/V6 ✅), CHECKLIST, VI_TRI_PIPELINE. Không commit/push.
+
+**Bước tiếp theo:** 06/11 Trí chốt D1–D10 + duyệt V7 với Triệu.
+
+## 05/11/2026 — pull phần việc mới của Triệu
+
+**Yêu cầu:** Trí nhờ pull vì Triệu báo mới xong task. Trước pull, nhánh main sạch tại `3b7df25`; fetch thấy 9 commit mới. Chạy `git pull --ff-only origin main` thành công tới `71264bd04d6f56a318229f7ffc1de4286faac876`, 19 file; không xung đột, không cần stash hoặc ghép thay đổi local. `git ls-remote --heads origin main` khớp HEAD.
+
+**Đã nhận:** V4 (báo cáo 2 ca evaluator); V6 (6 CSV tầng B, báo cáo 58/58); app gán nhãn mở rộng; runner kiểm mẫu CLIP/P1 + notebook Colab; công cụ đối chứng + evaluator nghiên cứu; báo cáo chạy T4; đề xuất/script rút dev/test v2. Xem `reports/TRIEU_TU_KIEM_PHAN2_20261027.md` mục V4/V6, `reports/TRIEU_P1_COLAB_T4_20261103.md`, `reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md`.
+
+**Kiểm lượt này:** đọc thay đổi và báo cáo đã lưu; ba SHA256 input/manifest/absent của tập LOCKED đều khớp `selection_meta.json`; freeze giống trước pull. Không chạy code mới, evaluator, self-test, inference hoặc training; không kiểm độc lập lại 58 nhãn.
+
+**Giới hạn nghiệm thu:** báo cáo P1 cho biết các run `p1_pilot_colab_20261103_1519`, `_1528` và output bảng đối chứng đang ở Drive của Triệu, chưa vào repo. V4 lưu output ngoài repo. Vì vậy lượt này xác nhận đã nhận bài nộp, chưa xác nhận độc lập số liệu chạy, nguyên nhân lệch GPU/TF32 hay hiệu quả P1. Chưa có quyết định thay Trí về T4, C6, dữ liệu v2 hoặc duyệt chung V7. Theo báo cáo, chưa rút bộ dev/test thật.
+
+**Bước tiếp + người làm:** Trí xem báo cáo T4 mục 4/6 và đề xuất dữ liệu v2 mục 4; nhận output gốc từ Triệu để đối chiếu, nghiệm thu phần nộp và thống nhất nhãn N4 còn vướng. Sau khi chốt quy tắc mới rút/kiểm/khóa dữ liệu. Không cần làm lại V4/V6 từ đầu chỉ vì hướng dẫn 02/11 còn ghi chờ.
+
+**Tài liệu:** đồng bộ README, HANDOFF, ROADMAP, checklist/resume và BAT_DAU_SESSION_MOI; giữ toàn bộ mục WORKLOG cũ. Cập nhật tiến độ local chưa commit/push; lượt này chỉ có yêu cầu pull.
+
+## 04/11/2026 — Triệu: soạn quy tắc và script rút tập dev/test v2 (chưa rút)
+
+**Người thực hiện:** assistant viết theo yêu cầu của Triệu ("làm hướng 2"), dựa trên §4 của `roadmap/KE_HOACH_CAI_TIEN_20261027.md` và §5.1 kế hoạch Trí. File mới: `experiments/countgdpp/select_dev_test_v2.py`, `reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md`. Không sửa `p4_select_unseen.py` hay `p4_unseen_v1/`.
+
+**Quy tắc nháp:** pool = MUCCA trừ 5 ảnh pilot và 10 ảnh p4_unseen_v1; mỗi ảnh 1 cặp có mặt (3–40 điểm mỗi lớp); lấy hết ảnh có cặp khác siêu nhóm, phần còn lại lấy cặp cùng siêu nhóm, xoay vòng qua siêu nhóm; chia dev/test theo ảnh, đúng tỉ lệ theo loại cặp rồi theo siêu nhóm; 1 truy vấn vắng mặt (ưu tiên cùng siêu nhóm với Y), tùy chọn thêm 1 vắng mặt dễ. Script chỉ đọc nhãn MUCCA; kiểm md5 zip và sha256 `annotations.json`/`class_mapping.json`.
+
+**Đã kiểm (CPU):** `--stats` trên bản MUCCA ở `Downloads`: 185 ảnh chưa dùng, 19 ảnh có cặp khác hẳn (13 người–xe), 90 ảnh chỉ có cặp dễ nhầm (3–40 điểm); khớp con số 19 trong kế hoạch thực thi. Rút thử trong bản sao tạm ngoài repo với seed chỉ để kiểm (987654), cỡ 20+40, 30+50 và 20+40 có `--easy-absent`: đạt mọi bài kiểm (cỡ, không trùng, không dùng ảnh đã loại, đủ 19 ảnh khác hẳn, 2 có mặt + 1/2 vắng mặt mỗi ảnh, GT = số điểm, lớp vắng mặt không có nhãn, inputs không chứa GT, tỉ lệ dev mỗi nhóm lệch < 1 ảnh, chạy lại ra file giống hệt, không ghi đè). Kết quả rút thử đã xóa và không ghi danh sách ảnh.
+
+**Trạng thái:** Chờ Trí duyệt. **Bước tiếp:** Triệu push, nhắn Trí đọc báo cáo; sau khi duyệt Triệu rút bằng seed thật, Trí + Triệu kiểm vắng mặt/GT, khóa trước khi chạy model.
+
+## 04/11/2026 — Triệu: chạy Ô 12 (bảng đối chứng) trên Colab T4, pilot
+
+**Người thực hiện:** Triệu chạy Ô 1–5 và Ô 12 của notebook (commit 0c77c39) trên Colab T4; assistant đọc kết quả. Nguồn: run `p1_pilot_colab_20261103_1519`. Output trên Drive của Triệu: `p1_pilot_colab_20261103_1519_controls_clip/`, `_controls/`, `_controls_eval/` (chưa vào repo).
+
+**Kết quả kỹ thuật:** CLIP chấm đủ 7 nguồn × 15 query = 3.322 khung; evaluator chạy xong. B0 19.47 và B2 20.40 khớp Ô 10 của run gốc.
+
+**Số pilot (15 query có mặt, 5 ảnh; ngưỡng S/F được khớp trên chính 5 ảnh này nên F/S-only lạc quan):** MAE B0 19.47, B0+S 10.00, B0+F (C6) 8.73, B2 20.40, B2+S (S-only) 4.87, B2+F (F) 4.60; P / P+F theo tau 0.20–0.28: 20.40/4.53, 22.87/4.80, 22.33/4.87, 22.80/4.93, 22.73/6.60. P+F so với F: −0.07, +0.20, +0.27, +0.33, +2.00 (chỉ tau 0.28 có khoảng tin cậy không chứa 0, theo hướng kém hơn). F so với C6: −4.13, khoảng tin cậy 95% [−7.93, −1.73]. Trên pilot chưa thấy kiểm mẫu bằng CLIP thêm được gì so với F; pilot không đủ để kết luận.
+
+**Điểm mở 1 (đã kiểm, đính chính):** tau 0.20 có cùng số đếm với B2 ở 15/15 query nhưng CLIP đã đổi mẫu ở 2 query (ô kiểm của Triệu đọc `predictions_B2`, `predictions_tau0.200`, `candidates.jsonl` của run 1519). q01_2: mẫu B2 = đề xuất 25, 42, 17 (cosine 0.199, 0.202, 0.199) → P lấy 42, 11, 28. q03_3: bỏ đề xuất 6 (0.195), thay bằng 3. Số đếm trùng là tình cờ; khung/điểm cuối khác nên B2+S khác tau0.200+S. **Đính chính:** câu assistant nói ngày 03/11 "ở tau 0.20, CLIP giữ lại cả 3 mẫu ở mọi query, nên P y hệt B2" là sai; dòng "tau 0.20 = 20.40 (trùng B2 cả 15 query)" ở mục 03/11 chỉ đúng về số đếm. Báo cáo 03/11 đã ghi đính chính.
+
+**Điểm mở 2 (cần Trí quyết):** bộ lọc khóa 21/10 được khớp trên điểm lượt 2. Điểm lượt 1 thấp hơn hẳn (pilot A2000: trung vị 0.434 so với 0.672; điểm ≥ 0.907 chỉ 2% so với 27%), nên B0+F đếm 0 ở 11/15 query. C6 làm theo đúng chữ "cùng cách lọc" vì vậy bị thiệt và chưa trả lời được câu "có cần lượt 2 không". Hai cách: giữ luật khóa (đúng chữ kế hoạch) hoặc chọn lại ngưỡng cho từng nguồn trên dev mới theo cùng quy tắc chọn. Ghi vào báo cáo `reports/TRIEU_P1_COLAB_T4_20261103.md` mục 6 và hướng dẫn Colab.
+
+**Trạng thái:** Công cụ đã chạy được; số pilot không dùng để kết luận. **Bước tiếp:** Triệu push tài liệu; Trí trả lời mục 4 và mục 6 của báo cáo.
+
+## 04/11/2026 — Triệu: công cụ bảng đối chứng cho nhánh P (chưa chạy trên Colab)
+
+**Người thực hiện:** assistant viết code theo yêu cầu của Triệu ("làm hướng 1"). File mới: `experiments/countgdpp/p1_controls.py`, `evaluation/evaluate_research.py` (tên theo kế hoạch Trí §3.4). Notebook `colab_p1_verified_pseudo.ipynb` thêm Ô 12; `COLAB_P1_HUONG_DAN.md` thêm mục "Bảng đối chứng". Không sửa `p4_clip_score.py`, `p4_apply_freeze.py`, file freeze hay runner cũ.
+
+**Làm gì:** từ một lần chạy P1, lấy nguồn khung B0 (lượt 1), B2 và từng tau; CLIP chấm mọi khung bằng `p4_clip_score.py`; áp bộ lọc đã khóa 21/10 → mỗi nguồn X có X, X+S, X+F. Tên theo Trí §3.5: F = B2+F, S-only = B2+S, C6 = B0+F, P+F = tau+F. Evaluator tính MAE/RMSE chung, MAE có mặt, MeanAbsentCount, FPR_absent (§5.2), so cặp kèm bootstrap theo ảnh (5000, seed 331), tùy chọn xấp xỉ điểm-trong-khung MUCCA. Với khung B0/P, điểm CountGD++ của khung thay cho điểm B2 trong luật đã khóa (không khớp lại).
+
+**Đã kiểm (CPU, bản sao tạm ngoài repo, dùng số liệu A2000 đã lưu):** pilot: B2+S/B2+F khớp `p4_freeze_audit_20261021.json` ở 15/15 query (MAE 4.33/4.40), B0 19.40, B2 22.00. p4_unseen_v1: B0/B2/B2+S/B2+F khớp `p4_unseen_v1_eval_20261027/metrics.json` ở mọi chỉ số (có mặt, vắng mặt, chung, xấp xỉ điểm-trong-khung) và 2 khoảng tin cậy. `--check-inputs` của `p4_clip_score.py` nhận file nguồn (45 query, 1404 khung). Ô 12 chạy thử với CLIP giả lập đúng luồng chép file từ/về Drive. Trong các bài kiểm này CLIP của khung B0 là số giả, nên B0+F/B0+S ở đó không có ý nghĩa.
+
+**Chưa có:** chạy CLIP thật trên Colab; bảng đối chứng của lần chạy T4. Trên pilot, ngưỡng S/F được khớp trên chính 5 ảnh này nên F và S-only trông tốt hơn thực tế: chỉ để kiểm code, không kết luận.
+
+**Trạng thái:** Đã viết, chờ chạy. **Bước tiếp:** Triệu push, mở notebook từ GitHub, chạy Ô 1–5 rồi Ô 12 (T4, vài phút), gửi phần in ra.
+
+## 03/11/2026 — Triệu: chạy pilot P1 trên Colab T4, kiểm tái hiện
+
+**Người thực hiện:** Triệu chạy `experiments/countgdpp/colab_p1_verified_pseudo.ipynb` trên Colab T4 (code commit 9606a59); assistant hướng dẫn sửa lỗi cài đặt và đọc kết quả. Lệnh: `run_b2_verified_pseudo.py --inputs experiments/countgdpp/m4_inputs/first5_inputs.jsonl --tau-pseudo 0.20 0.22 0.24 0.26 0.28 --m 10 --replay-b2 --b0-reference results/countgdpp/m4_first5_b0/predictions.jsonl --b2-reference (b2_two_images_20261015 + b2_remaining3_20261015) --reference-mode report`.
+
+**Run ID:** `p1_pilot_colab_20261103_1519` (lần 1) và `p1_pilot_colab_20261103_1528` (lần 2, cùng lệnh). Output ở Google Drive của Triệu `MyDrive/CS331_colab/<run_id>/`, **chưa đưa vào repo**.
+
+**Sửa notebook (trong máy, chưa push):** tìm file build CUDA ops không phân biệt hoa/thường (setuptools mới viết tên chữ thường); đặt `MPLBACKEND=Agg`; Ô 7 tải trọng số BERT bằng `download_bert.py`; thêm Ô 11 (Kiểm C); GPU mặc định của notebook đổi sang T4. Cập nhật `COLAB_P1_HUONG_DAN.md` (mục kết quả 03/11). Báo cáo gửi Trí: `reports/TRIEU_P1_COLAB_T4_20261103.md` (Claude soạn theo yêu cầu Triệu).
+
+**Kiểm tra và kết quả:**
+- Môi trường: Python 3.10.22, torch 2.5.1+cu121, transformers 4.44.2, numpy 2.2.6, pillow 10.4.0, Tesla T4.
+- Kiểm A đạt: 663 khung p4_unseen_v1, CLIP lệch lớn nhất 3.28e-07.
+- Kiểm B không khớp tuyệt đối với A2000: lượt 1 khớp 1/15, B2 khớp 1/15 (chỉ q01_3, 0 khung). Lượt 1: 10/15 cùng số khung, 5 query lệch đúng 1 khung (q01_2, q02_1, q04_1, q04_2, q05_2); query cùng số khung lệch điểm tối đa 0.023. A2000 tự khớp 15/15 (B2 15/10 có `stage1_matches_B0: true`), nên lệch do đổi GPU. Nguyên nhân cụ thể chưa kiểm (giả thuyết: TF32 của cuDNN trên A2000 Ampere).
+- Kiểm C đạt: lần 2 khớp lần 1 tuyệt đối ở 6 cách (B2, tau 0.20–0.28) × 15/15 (lượt 1, id mẫu, khung và điểm cuối).
+- Mẫu B2 T4 trùng A2000 ở 14/15 query. q04_3 khác 1 mẫu (đề xuất 3 thay vì 4) và B2 đổi 84 → 61 (GT 39); q02_2 cùng 3 mẫu nhưng B2 30 so với 31. MAE B2 pilot: T4 20.40, A2000 22.00; chênh lệch hoàn toàn do 2 query này.
+- Số pilot (chỉ dò lỗi, không dùng chọn tau): MAE present B0 19.47 (assistant tính từ bảng số đếm), B2 20.40, tau 0.20 = 20.40 (trùng B2 cả 15 query), tau 0.22/0.24/0.26/0.28 = 22.87/22.33/22.80/22.73; số query không còn mẫu 1/2/4/7/9 (B2 là 1).
+
+**Lỗi/điểm chưa rõ:** nhóm chưa chốt tiêu chí tái hiện khi đổi GPU. Đề xuất (chờ Trí): Colab T4 làm máy chuẩn; tiêu chí = Kiểm A + Kiểm C 15/15; Kiểm B chỉ ghi mức lệch so với A2000; không trộn số T4 với số A2000 trong một bảng.
+
+**Trạng thái:** Đã chạy; Kiểm A, Kiểm C đạt; chờ nhóm chốt tiêu chí. **Bước tiếp:** Triệu push notebook + hướng dẫn + báo cáo, nhắn Trí đọc báo cáo trong repo; nhóm khóa tập dev 30 ảnh rồi chạy P1 trên dev để chọn `tau_pseudo`/`M`.
+
+## 03/11/2026 — Triệu: chuẩn bị nhánh P1 trên Colab (chưa chạy)
+
+**Người thực hiện:** assistant viết code theo yêu cầu của Triệu ("tiến hành P, làm trên Colab"), theo kế hoạch Trí §3.2–3.4. File mới: `experiments/countgdpp/pseudo_clip_verifier.py`, `run_b2_verified_pseudo.py`, `colab_p1_verified_pseudo.ipynb`, `COLAB_P1_HUONG_DAN.md`. Không sửa runner B2/B0 cũ, không đổi freeze.
+
+**Đã kiểm (CPU, không chạy model):** chọn ứng viên trùng `select_pseudo` và trùng mẫu B2 đã lưu ở 45/45 query (pilot 15 + p4_unseen_v1 30, đọc `stage1_raw.npz`); `--check-inputs` qua bước kiểm input (dừng ở checkpoint vì máy Triệu chưa có file .pth); ô tóm tắt notebook chạy đúng trên dữ liệu giả lập. MUCCA zip của Triệu có md5 `b182e445…` khớp Zenodo.
+
+**Chưa có:** kết quả GPU. Trên Colab, notebook kiểm trước: (A) CLIP chấm lại 663 khung p4_unseen_v1 so với điểm đã lưu; (B) lượt 1 khớp B0 và B2 chạy lại khớp B2 đã lưu trên 15 query pilot. Chỉ dùng số P1 khi (B) đạt. Pilot chỉ để dò lỗi; `tau_pseudo`/`M` chính thức chọn trên dev 30 ảnh sau khi khóa.
+
+**Trạng thái:** Chưa chạy. **Bước tiếp:** Triệu commit + push, chạy notebook, gửi phần in ra của Ô 8 và Ô 10.
+
+## 02/11/2026 — Triệu: V6 N4 tầng B
+
+**Người thực hiện:** Triệu tự gán 58/58 dòng (khung chính u06_2 27 + u07_2 14, review mù; mẫu pseudo 3 + 3; ứng viên E3 4 + 7) trong `results/countgdpp/p4_n4_review_package_20261027/B_*` và `bo_sung_F0/B_*`, bằng app [evaluation/box_label_app.py](evaluation/box_label_app.py) `--set n4b`. Assistant mở rộng app cho gói N4 tầng B (6 sheet, 7 nhãn, id dùng chung trong query, chồng lấn giữa các sheet; ảnh nền là `*_overview.jpg` vì máy Triệu không có ảnh gốc MUCCA), kiểm trên bản sao CSV trước khi dùng, kiểm id nhất quán sau khi gán. Không mở `_KEY_`, không chạy model.
+
+**Kết quả:** Mẫu pseudo 6/6 đúng loại (tầng A: 1/12 ở query có mặt). E3 11/11 là vật thật. Trước lọc B2 tìm được 30/30 dù, 21/22 xe; lọc điểm còn 14 / 9, Fusion 26 / 14. u06_2 chỉ 1 khung sai loại (phao) và vẫn được ít nhất một bộ lọc giữ. Kết luận: ở ca đang tốt, bộ lọc cuối gây hại (E3), mẫu tự chọn không. Chi tiết: [mục V6](reports/TRIEU_TU_KIEM_PHAN2_20261027.md).
+
+**Trạng thái:** V6 Chờ kiểm (Trí ghép với `_KEY_`). **Bước tiếp:** Triệu commit + push; V7 duyệt chung 03/11.
+
+## 02/11/2026 — Triệu: V4 hai ca thử evaluator
+
+**Người thực hiện:** Triệu tạo 2 bản sao `manifest.csv` ngoài repo (`C:\Users\diosodumb\Documents\CS331_nhap`), mỗi bản sửa một dòng, tự chạy `evaluation/evaluate_pilot.py --manifest <bản sao> --out <thư mục nháp>` và tự viết kết luận. Assistant kiểm `diff` bản sao, đối chiếu kết quả với code. File gốc, predictions và kết quả trong repo không đổi.
+
+**Kết quả:** Ca A (q05_3 `uncertain`): chạy, loại q05_3 (`uncertain_excluded`, 14 query), MAE 19.5 / 18.14 khớp Excel V5. Ca B (q01_1 `absent`, GT 0): chạy, `FPR_absent 1.0`, `MeanAbsentCount 25`, `MAE_present` không gồm q01_1. Hạn chế ghi thêm: `unchanged` chỉ là sai số bằng nhau; ở tập mới 3/13 query unchanged là cả hai cùng sai. Chi tiết: [mục V4](reports/TRIEU_TU_KIEM_PHAN2_20261027.md).
+
+**Trạng thái:** V4 Chờ kiểm (Trí). **Bước tiếp:** Triệu commit + push; làm V6 (N4 tầng B); V7 duyệt chung.
+
+## 02/11/2026 — push 13 file đánh giá và tiến độ theo yêu cầu Trí
+
+Đã kiểm đúng repo CS331, đúng 13 file Markdown; rà dấu xung đột, mẫu thông tin đăng nhập và git diff --check. Stage rõ danh sách, commit `22a10e2c8b48d9124d4e3cce94dec3b68f6c4a85`, chạy `git push origin main` thành công. `git ls-remote --heads origin main` trùng HEAD sau push. Ba báo cáo N4/rà soát/V3–V5 và 10 tài liệu tiến độ đã có trên GitHub; Triệu có thể pull để đọc.
+
+Đồng bộ ghi chú hiện hành và bảng resume để bỏ trạng thái chưa push. Bản ghi này là commit tài liệu tiếp nối. Không sửa nhãn, code hoặc cấu hình; không chạy thí nghiệm và không gửi tin thay Trí. Bước tiếp vẫn là V4/V6, thống nhất nhãn N4 còn vướng và V7 duyệt chung; đề xuất P/T và hạn dời chưa tự trở thành quyết định.
+
+## 02/11/2026 — đồng bộ tiến độ sau pull theo yêu cầu Trí
+
+**Đã làm:** kiểm git status/log và hai commit: HEAD hiện 71009c8, có 415af3b. Không còn unmerged paths hoặc marker xung đột trong WORKLOG. Snapshot trước pull 2026-11-02_truoc_pull_71009c8.zip hiện có. Lượt này không pull lại, không apply stash; ghi nhận việc hợp nhất trước đó theo WORKLOG và thông tin Trí cung cấp.
+
+**Nguồn:** bài nộp V3/V5 trong reports/TRIEU_TU_KIEM_PHAN2_20261027.md, đề xuất TRIEU_DE_XUAT_NHANH_P_20261029.md và đánh giá DANH_GIA_TRIEU_V3_V5_20261102.md đã có. Đây là đồng bộ trạng thái, không phải chạy lại kiểm định hay phân xử nhãn độc lập.
+
+**Đã đồng bộ:** README, BAT_DAU, handoff chung/riêng, giao việc, roadmap, checklist/resume, vị trí pipeline và kế hoạch cải tiến. Ghi V3/V5 đã nộp, không tiếp tục giao lại như việc còn trắng. V4/V6 còn chờ; 04/11 là hạn dời đề xuất, không ký cam kết thay Triệu. P/T và lựa chọn dữ liệu vẫn chờ Trí/nhóm quyết. App q05 đã được nộp, chưa chạy app hoặc coi là đã sửa N4 trong lượt này.
+
+**Bảo toàn:** giữ các mục lịch sử của cả hai bên và thay đổi local trước lượt này. Snapshot tài liệu trước sửa: quá khứ/snapshots/2026-11-02_truoc_dong_bo_tien_do_*.zip. Không sửa CSV/code/GT/prediction/freeze, không chạy evaluator/model, không commit/push.
+
+**Bước tiếp:** Triệu bàn giao V4/V6 và thống nhất các ca N4 còn vướng; Trí cùng Triệu dự kiến duyệt V7 ngày 03/11, quyết phương án và thời hạn. Chỉ thực thi thí nghiệm sau khi được cho phép.
+
+## 02/11/2026 — pull 71009c8, kiểm V3/V5 của Triệu
+
+**Yêu cầu của Trí:** check GitHub, Triệu báo xong việc.
+
+**Git:**
+- Local có 10 file docs ngày 29/10 chưa push và 2 báo cáo untracked (N4_KET_QUA, RA_SOAT).
+- Snapshot `quá khứ/snapshots/2026-11-02_truoc_pull_71009c8.zip` → stash → `pull --ff-only` (be4da26 → 71009c8: 415af3b V3 + app, 71009c8 V5 + đề xuất) → stash pop.
+- Xung đột duy nhất ở WORKLOG, giữ cả hai phía (mục Triệu lên trên).
+- Xóa stash tạm; stash a34cf35 giữ nguyên. Không commit/push.
+
+**Kiểm** ([reports/DANH_GIA_TRIEU_V3_V5_20261102.md](<quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_V3_V5_20261102.md>)):
+- V3: 103/103 nhãn, rank/tọa độ trùng gói gốc. B0 = 3 target + 18 sai loại; B2 = 2 target + 58 part + 19 sai loại.
+- V5: số khớp khi tính lại (2/15/13; bỏ u10_2 thì 6.45 / 11.28).
+- V4 và V6 **chưa có** (V6 0/58 dòng; hạn 02/11).
+- App `evaluation/box_label_app.py` không đọc `_KEY_`, có hiện khung chồng.
+
+**Đính chính:** báo cáo N4_KET_QUA của assistant có diễn giải quá mức ("bỏ qua prompt", "bỏ R"); đã thêm dòng trỏ tới RA_SOAT §5. Gợi ý biến thể T (chấm lượt 2 chỉ bằng token chữ), dựa trên cơ chế điểm mẫu ảnh lấn át điểm chữ ở RA_SOAT §3.
+
+**Bước tiếp theo:** buổi 03/11 (V7, chọn biến thể, chốt dữ liệu); Triệu làm V4 + V6 trước 04/11.
+
+## 29–30/10/2026 — Triệu: V5 phân tích B2 so với B0
+
+**Người thực hiện:** Triệu tự tính bằng Excel ([reports/audits/TRIEU_TINH_TAY.xlsx](reports/audits/TRIEU_TINH_TAY.xlsx), sheet `TRIEU_TINH_TAY` và `tap_moi` mới) trên kết quả đã lưu, đối chiếu với nhãn V2 + V3 của mình, tự viết kết luận. Không chạy model/evaluator. Assistant đưa công thức, kiểm số, góp ý câu chữ.
+
+**Kết quả:** Pilot 15 query: 6/4/5, MAE B0 19.4 / B2 22.0, bỏ q05_3 thì 19.5 / 18.14. Tập mới 30 query: **2 improved / 15 worsened / 13 unchanged**, MAE 6.77 / 13.00, bỏ u10_2 vẫn 6.45 / 11.28. Mẫu tự chọn ở 7 query review: 1/21 đúng loại, cả 7 query worsened (query được chọn để soi lỗi). q05_3: B2 thêm 58 khung, đúng bằng 58 khung `part`. Hai cơ chế: mẫu sai loại, và mẫu đúng loại nhưng chia vật thành mảnh. Chi tiết: [mục V5](reports/TRIEU_TU_KIEM_PHAN2_20261027.md). Đề xuất: [reports/TRIEU_DE_XUAT_NHANH_P_20261029.md](reports/TRIEU_DE_XUAT_NHANH_P_20261029.md) (đã gửi Trí).
+
+**Trạng thái:** V5 Chờ kiểm (Trí); chọn P/R ở buổi 03/11. **Bước tiếp:** Triệu commit + push; làm V4 (2 ca thử evaluator), rồi V6.
+
+## 29/10/2026 — Triệu: V3 gán nhãn khung q05_3
+
+**Người thực hiện:** Triệu tự gán 103/103 khung (3 mẫu pseudo + 21 B0 + 79 B2 final) trong `results/countgdpp/q05_error_analysis_package_20261027/*_labels_BLANK.csv`, từng khung một bằng app mới [evaluation/box_label_app.py](evaluation/box_label_app.py) (chỉ hiển thị và ghi cột nhãn; không gợi ý nhãn, không chạy model). Assistant hướng dẫn quy ước, kiểm nhất quán, tính bảng; điền ngày còn trống cho 3 dòng pseudo.
+
+**Kết quả:** B0 21 = 3 target + 18 wrong_class. B2 79 = 2 target + 58 part + 19 wrong_class. B0 có target cho cả 3 quả; **B2 không có khung target cho quả b1** (chỉ 23 part), dù b1 là mẫu pseudo P1. Chi tiết: [mục V3](reports/TRIEU_TU_KIEM_PHAN2_20261027.md).
+
+**Trạng thái:** V3 Chờ kiểm (Trí). **Bước tiếp:** Triệu commit + push; làm V5 (phân tích B2/B0, dùng V2 + V3), rồi V4.
+
+## 29/10/2026 — xem kỹ chất lượng nhãn N4 theo phản hồi của Trí
+
+**Yêu cầu:** Trí thấy N4 chưa ổn, hỏi đánh giá chất lượng. Assistant đọc nhãn và dựng ảnh đối chiếu với biên bbox thật từ tọa độ/ảnh gốc, không chạy model hay sửa CSV.
+
+**Bằng chứng:** cùng u07_1 people, final #5 / pseudo P1 chồng IoU 0,8900 nhưng nhãn wrong_class / multi_object; final #13 / pseudo P3 chồng 0,9029 cũng đổi nhãn như vậy. Cả bốn actual_class=cars. Đây là hai cặp cần giải thích/phân xử, không tự kết luận khác nhãn là sai khi bbox vẫn có khác biệt. Chi tiết bổ sung §7 của [báo cáo rà](reports/RA_SOAT_TRIEU_N4_20261029.md).
+
+**Trạng thái:** V1–V2 đủ bài nộp, kiểm cấu trúc đạt; chất lượng phân rã lỗi còn chờ thống nhất, chưa phải bộ nhãn cuối đã nghiệm thu. Nhận diện chó/xe sai loại vẫn có giá trị. **Tiếp:** đối chiếu hai cặp và các nhãn multi_object/part/uncertain bằng biên thật; chuẩn hóa tiêu chí trước khi sửa nhãn. Triệu tiếp V3–V7 theo lịch. Không đổi quyết định nhóm, freeze hoặc model.
+
+## 29/10/2026 — rà lại bài nộp Triệu, phân biệt lỗi model, công cụ và diễn giải
+
+**Yêu cầu của Trí:** kiểm việc giao lần trước đã đủ chưa và N4 lỗi do Triệu hay tính năng. **Người rà:** assistant. Chỉ đọc artifact/code/ảnh và đối chiếu, không evaluator/self-test/inference/train.
+
+**Đã kiểm:** HEAD và remote main cùng `be4da26`; 17 CSV N4 A có 117 dòng, ID/prompt/tọa độ khớp gói e877541 và prediction. Ba JSON evaluator run Triệu trùng nội dung run 20/10; stdout self-test cũ có PASS. V3 103 dòng trắng, V6 58 dòng trắng; chưa có bằng chứng mới cho V4/V5 hoặc duyệt chung V7. V1–V2 đã nộp đủ, không đồng nghĩa mọi nhãn đã được phân xử độc lập.
+
+**Chẩn đoán chỉ đọc raw đã lưu:** u08_1 rank 1 (ô tô) có điểm chữ 0,0770, mẫu ảnh 0,9700, final 0,9700; rank 9 (người) 0,4448 / 0,1564 / 0,4448. Code lọc final lấy max gồm cả token mẫu ảnh, nên lọc điểm có thể giữ xe và loại người. Prompt vẫn có trong input_ids; khung sai có trước review của Triệu. Không suy rộng thành nguyên nhân duy nhất hay can thiệp đã được thử.
+
+**Lưu ý chất lượng:** crop nới 15% mỗi phía nhưng không vẽ biên bbox thật; label_type gộp loại lỗi và hình dạng; object_id u01_1 chưa nhất quán xuyên pseudo/E3. Không sửa nhãn người. Nhận định trước “E1 chiếm ưu thế, bỏ R” của assistant mạnh hơn bằng chứng; quyết định P/R vẫn chờ, cần tầng B/đối chứng trên dev được cho phép.
+
+**Output:** [reports/RA_SOAT_TRIEU_N4_20261029.md](reports/RA_SOAT_TRIEU_N4_20261029.md). Snapshot tài liệu trước sửa ở `quá khứ/snapshots/2026-10-29_truoc_ra_soat_N4_*.zip`. Đồng bộ ghi chú ưu tiên README/HANDOFF/ROADMAP và bảng resume; giữ bản tổng hợp trước làm lịch sử. Không thay code, CSV, GT, predictions hoặc freeze; không commit/push/gửi tin.
+
+**Bước tiếp:** Trí đọc bản rà và quyết nghiệm thu phạm vi đã đủ; rà ca mơ hồ theo bbox thật. Triệu tiếp V3/V5/V4 hạn 01/11, V6 hạn 02/11; V7 hai người duyệt 03/11. Chưa đánh dấu chọn nhánh hay chạy tập mới v2.
+
+## 29/10/2026 — pull be4da26, kiểm N4 tầng A của Triệu, ghép bảng tra, đề xuất nhánh
+
+**Yêu cầu của Trí:** Triệu báo đã xong; pull về và kiểm.
+
+**Git:** máy sạch. HEAD 26e9907 (Trí đã push e877541 + 26e9907). Fetch thấy `be4da26` (Triệu, 29/10 00:26): 17 CSV N4 tầng A + WORKLOG. `pull --ff-only` không xung đột. Không commit/push.
+
+**Kiểm nhãn** (chỉ đọc file):
+- 117/117 dòng có nhãn hợp lệ, đủ actual_class/reviewer/date.
+- So với gói gốc e877541: ID/rank khớp; tọa độ trùng về giá trị (Excel chỉ bỏ `.0`).
+- Trí và Triệu đồng ý 9/9 ở u01_1.
+- Đúng hạn 30/10. Chưa có V3–V7.
+
+**Ghép với `_KEY_mo_sau_khi_review/rank_kept_by.json`** ([reports/N4_KET_QUA_TANG_A_20261029.md](reports/N4_KET_QUA_TANG_A_20261029.md)):
+- Khung giữ trong 7 query lỗi: lọc điểm 0/78 đúng, Fusion 0/14 đúng.
+- Mẫu tự chọn đúng loại 1/21 (10 bao nhiều vật, 10 sai loại).
+- E3: 13 người thật + 3 một phần / 18.
+- So khung giữa các prompt trên cùng ảnh: mcac_88 "people" và "cars" trùng 21/21 khung; mcac_84 "motorbikes" và "bicycles" trùng 73/80.
+
+**Đề xuất:** nhánh P (P1 + điều kiện một vật) làm nhánh chính, C6 bắt buộc, bỏ R (R cứu theo điểm CountGD++, mà điểm này đang ưu tiên loại sai). Rủi ro: lượt 2 có thể bị ảnh chi phối, nên phải thử nhanh trên dev. Chỉ báo tự động lạc quan hơn nhãn người (E1 3/21 so với 1/21).
+
+**Đồng bộ:** BAT_DAU, README, HANDOFF, HANDOFF_TRIEU, GIAO_VIEC (V1/V2 ✅), CHECKLIST, VI_TRI_PIPELINE (bước [5] tầng A xong, đang ở [6]), KE_HOACH_CAI_TIEN.
+
+**Bước tiếp theo:**
+- Trí quyết nhánh và chốt quy tắc dữ liệu.
+- Assistant viết bản v2 của p4_select_unseen để rút dev 20 + test 40.
+- Triệu làm V3–V6.
+
+## 28–29/10/2026 — Triệu: N4 tầng A (V1 + V2)
+
+**Người thực hiện:** Triệu tự gán nhãn từng khung; assistant chỉ hướng dẫn, đối chiếu với ảnh crop và chuẩn hóa cột `date` (không đổi nhãn). Review mù: không mở `_KEY_mo_sau_khi_review/` và file `A_u01_1_people_labels_TRI_20261027.csv`.
+
+**V1, gói chính** (`results/countgdpp/p4_n4_review_package_20261027/A_*_labels_*.csv`, 7 query, 78 khung): wrong_class 71, multi_object 6, uncertain 1, **target 0**. Mô hình vẽ gần như cùng các khung cho "people" và "sheep" (mcac_123), "people" và "bicycles" (mcac_88), tức là gần như bỏ qua prompt.
+
+**V2, bổ sung** (`.../bo_sung_F0/A_*_{pseudo,e3}_labels_BLANK.csv`):
+- 21 mẫu tự chọn (E1): **1/21 đúng loại** (u01_1 P2, một người); còn lại wrong_class 10, multi_object 10. Riêng 4 query people: 1/12. u07_1 P2 và u07_3 P2 gần như cùng một khung (taxi) dù prompt khác nhau.
+- 18 ứng viên E3 (khung bị lọc xóa): target 13, part 3, uncertain 2. u01_1: 4/9 người thật bị xóa (GT 10); u02_1: 2/2 (mẹ bế con + người đi bộ; GT 3 nếu tính em bé); **u08_1: 7/7, bằng GT 7**, trong khi khung giữ lại toàn ô tô. u01_1 E3 #18 trùng người với mẫu pseudo P2: mô hình lấy người này làm mẫu ở lượt 1 rồi lọc mất ở lượt 2.
+
+**Kiểm tra:** assistant đọc lại mọi CSV, đối chiếu crop; Triệu đã sửa theo góp ý (thiếu reviewer/actual_class, thống nhất multi_object chỉ khi không có vật chính). Cột `date` bị Excel đổi (`########`, `10/28/2026`, năm nhảy 2027/2028) đã chuẩn hóa về `2026-10-28`/`2026-10-29` cho dòng reviewer=Trieu, các cột khác giữ nguyên byte nội dung.
+
+**Điểm chưa rõ:** u02_1 E3 #16 note cũ vẫn ghi "không biết xác định target", nhãn đã chốt là target p2. Chưa ghép với bảng tra/khóa, chưa tính E1–E4 chính thức; chọn P hay R vẫn là quyết định của nhóm.
+
+**Trạng thái:** V1 + V2 Chờ kiểm (Trí). **Bước tiếp:** Triệu commit + push, báo Trí; Trí/assistant ghép bảng tra và tính E1–E4. Triệu làm tiếp V3 (q05_3).
+
+## 27/10/2026 — đồng bộ Git theo yêu cầu Trí
+
+**Đã thực hiện:** fetch origin, xác nhận main không lệch remote; rà 448 file và commit `e8775412f84f0927a6fe692f1f106bf53aacd369`, rồi `git push origin main` thành công. `git ls-remote --heads origin main` trả đúng cùng commit với HEAD local.
+
+**Nội dung đã lên GitHub:** code runner/chấm P4, dữ liệu truy vấn đã khóa, kết quả dev và p4_unseen_v1, ảnh/gói N4 và q05, gói giao việc cho Triệu, báo cáo, roadmap/handoff. Dung lượng file trước nén khoảng 68,5 MiB; không file nào vượt 100 MB.
+
+**Kiểm trước push:** phân tích cú pháp Python và JSON/JSONL đạt; kiểm ZIP CRC đạt; không tìm thấy dấu xung đột hoặc token truy cập theo mẫu đã quét. Các artifact và script được stage giữ nguyên byte. Ba hash dữ liệu LOCKED khớp selection_meta. Git whitespace chỉ còn CRLF cần bảo toàn và dấu xuống dòng Markdown có chủ ý trong tài liệu nguồn; không sửa dữ liệu đã khóa để làm đẹp kiểm định dạng.
+
+**Giữ tại máy:** checkpoint, data_external và 7 ZIP snapshot trong `quá khứ/`. Đã thêm quy tắc bỏ qua snapshot, giữ nguyên các file. `.gitattributes` bảo toàn byte của dữ liệu/đầu ra đã khóa và adapter có hash khi clone trên Windows; không đổi freeze, GT hay dự đoán.
+
+**Phạm vi:** chỉ đồng bộ Git và tài liệu, không chạy evaluator/self-test/inference/train, không gửi tin cho Triệu, không ký nghiệm thu thay nhóm. Gói đã có trên GitHub không có nghĩa Triệu đã nhận hoặc hoàn thành.
+
+**Bước tiếp:** Trí gửi đường dẫn `HANDOFF/GIAO_VIEC_TRIEU_20261028.md`, đọc và nghiệm thu phần đạt của bản tự kiểm, chốt quy tắc dữ liệu v2. Triệu làm N4 tầng A V1–V2; sau đó mới chọn P/R. Bản cập nhật nhật ký/handoff này là commit tài liệu tiếp nối e877541.
+
+## 27/10/2026 (khuya, cuối ngày) — giao N4 cho Triệu, lập việc cho Triệu, chốt vị trí pipeline
+
+**Yêu cầu của Trí:** hôm nay không làm tiếp được, nên giao N4 cho Triệu, lập kế hoạch việc cho Triệu (gợi ý cả việc của Trí mà Triệu làm thay được), cập nhật tiến độ, nói rõ đang ở đâu trong pipeline.
+
+**Trạng thái N4 lúc giao:**
+- Trí đã chấm **u01_1, 9/9 khung**: 7 `wrong_class` dog, 2 `multi_object` dog. Hỏi "people" thì mọi khung bộ lọc giữ đều là chó. Chưa ghi reviewer/date.
+- Lưu nguyên bản của Trí: `A_u01_1_people_labels_TRI_20261027.csv`, sha256 `40c800d9…`, trùng hash file gốc. Đã xóa file gốc cùng tên BLANK để không lộ nhãn khi review mù.
+- Tạo `A_u01_1_people_labels_TRIEU_BLANK.csv`, để 9 khung này thành phép đo đồng ý giữa 2 người.
+- 8 query còn lại và toàn bộ `bo_sung_F0/` chưa chấm.
+
+**Đã tạo:**
+- [HANDOFF/GIAO_VIEC_TRIEU_20261028.md](<quá khứ/2026-11-10_don_dep/HANDOFF/GIAO_VIEC_TRIEU_20261028.md>):
+  - V1–V2: N4 tầng A, hạn 30/10, đường găng;
+  - V3: q05_3; V4: 2 ca thử; V5: phân tích B2/B0 (hạn 01/11);
+  - V6: N4 tầng B (02/11); V7: duyệt chung (03/11);
+  - gợi ý V8–V10 làm thay Trí: kiểm absent/GT test 40 ảnh, Related Work, review test cuối;
+  - 47 nhãn q03 đề xuất tạm hoãn;
+  - quy tắc dự phòng: 31/10 chưa có N4 thì chọn nhánh bằng chỉ báo tự động.
+- `HANDOFF/TRIEU_GIAO_VIEC_20261028.zip`: 79 file, 11,2 MB, sha256 `027042df…`, CRC đạt. **Không** có `_KEY_` và bản chấm của Trí. Thay ZIP V2 cũ chưa gửi.
+- [roadmap/VI_TRI_PIPELINE_20261028.md](<quá khứ/2026-11-10_don_dep/roadmap/VI_TRI_PIPELINE_20261028.md>): sơ đồ 11 bước; hiện ở bước [5] N4; lịch việc của Trí theo tuần (khoảng 14–15 giờ tập trung đến 02/12), rủi ro và cách xử lý, lệnh commit/push.
+  - Toàn bộ file cần commit khoảng 120 MB; bỏ snapshot `quá khứ/*.zip` (59,5 MB) thì còn khoảng 60 MB.
+
+**Chưa làm:** không commit/push (Trí tự làm 28/10), không gửi tin cho Triệu, không chạy model.
+
+**Bước tiếp theo (28/10, Trí, 45 phút):** push → gửi Triệu file giao việc → nghiệm thu bản tự kiểm → chốt quy tắc dữ liệu.
+
+## 27/10/2026 (khuya) — pull commit Triệu 36eaf96, hợp nhất và đánh giá bản tự kiểm
+
+**Yêu cầu của Trí:** pull Git về và xem Triệu làm ổn chưa, trong lúc Trí làm N4.
+
+**Git:**
+- Fetch thấy 1 commit mới `36eaf96` "Triệu tự kiểm chéo Phần 2 (8/8)", gồm 13 file. 5 file trùng với thay đổi local chưa commit: HANDOFF_TRIEU, WORKLOG, PILOT_SUMMARY, PHAN_2_DANH_GIA, ROADMAP.
+- Snapshot trước pull: `quá khứ/snapshots/2026-10-27_truoc_pull_36eaf96.zip` (448 file kèm manifest hash).
+- `git stash` (f81ac9a) → `pull --ff-only` (HEAD d6db189 → 36eaf96) → `stash pop` → ghép tay 5 file xung đột, giữ cả hai phía (dòng trạng thái cũ thay bằng bản gộp).
+- Kiểm bằng script: không mất dòng nào Triệu thêm; các dòng local "mất" đều là dòng trạng thái được cố ý cập nhật.
+- Xóa stash tạm f81ac9a; stash cũ a34cf35 vẫn giữ. Không stage, không commit/push.
+- Lưu ý: sau stash pop, một số file trong working tree chuyển sang CRLF (autocrlf của Git), nội dung không đổi.
+
+**Kiểm bằng chứng của Triệu (chỉ đọc):**
+- `pilot_eval_20261027_trieu` có metrics/per_query/manual_check giống hệt run 20/10.
+- `TRIEU_TINH_TAY.xlsx` có công thức thật, 3 sheet.
+- stdout self-test có PASS.
+- Số độ nhạy q05_3 đúng: 273/14 và 254/14.
+
+**Đánh giá** ([reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md](<quá khứ/2026-11-10_don_dep/reports/DANH_GIA_TRIEU_TU_KIEM_20261027.md>)):
+- Đạt: nhận xét 1 (tự chạy, 5 ca hỏng) và q05_2 (tự gán nhãn mù, khớp 14/14). Mức độc lập: "tự kiểm có hướng dẫn", Triệu có ghi rõ.
+- Còn thiếu: q05_3 gán nhãn từng khung; 2 ca uncertain / absent > 0; bảng chênh lệch từng query, liên hệ mẫu tự chọn và đề xuất cải thiện. Khi Triệu làm, gói V2 và gói q05 chưa được push.
+- Lưu ý: tập mới p4_unseen_v1 xác nhận B2 kém B0 (CI [+2.0, +12.3]), nên kết luận "tùy trường hợp" chỉ đúng cho pilot.
+
+**Trạng thái:** Trí chưa nghiệm thu; chưa duyệt chung pilot.
+
+**Bước tiếp theo:**
+- Trí đọc đánh giá và quyết định nghiệm thu.
+- Push các file local để Triệu có gói q05 + kế hoạch V2, rồi Triệu làm phần còn thiếu.
+- Trí tiếp tục N4.
+
+## 27/10/2026 — Triệu tự kiểm chéo Phần 2, xong 8/8
+
+Người thực hiện: Triệu (tự chạy lệnh, tự tính, tự xem ảnh, tự gán nhãn); assistant hướng dẫn và chấm câu trả lời, không làm hộ.
+Việc/lệnh đã thực sự chạy: `evaluate_pilot.py --self-test` trên Windows (conda ai_new); tính lại MAE/RMSE bằng Excel; đọc predictions q05_3 bằng PowerShell và xem pseudo/final; tự gán nhãn 14 box q05_2 trước khi mở nhãn cũ; 5 ca dữ liệu hỏng trên bản sao ngoài repo; chạy evaluator thật ra `pilot_eval_20261027_trieu`.
+Input/cấu hình hoặc run ID: commit d6db189; m4_first5_b0, b2_two_images_20261015, b2_remaining3_20261015; manifest/first5_inputs mặc định của evaluator.
+Output/bằng chứng: [tiến độ chi tiết](reports/TRIEU_TU_KIEM_PHAN2_20261027.md), [stdout self-test](reports/audits/TRIEU_SELFTEST_stdout.txt), [bảng tính + nhãn q05_2](reports/audits/TRIEU_TINH_TAY.xlsx), [run evaluator của Triệu](results/countgdpp/pilot_eval_20261027_trieu).
+Kiểm tra và kết quả: self-test PASS; MAE 19.4/22, RMSE 24.316/30.091, 6/4/5 khớp; q05_3 B0=21, B2 lượt 1=21, cuối=79, tăng ở lượt 2; q05_2 loại quả khớp 14/14, 5/4/1/9 khớp manual_check; 5/5 ca hỏng được xử lý đúng (4 dừng, 1 lỗi hợp lệ được loại và báo coverage); metrics/per_query/manual_check của run mới giống hệt run 20/10.
+Lỗi/điểm chưa rõ: bỏ riêng q05_3 thì MAE đảo chiều (B0 19.5, B2 18.14), kết luận B0/B2 trên 15 câu rất mong manh. Box 12/13 q05_2: nhãn cũ partial, Triệu tron (khác định nghĩa, không đổi số đếm). Vai trò box mẫu raspberry trong lỗi q05_3 mới là giả thuyết.
+Trạng thái: Đã xác nhận. Kết luận nguyên văn của Triệu ghi ở PILOT_SUMMARY mục 7: đồng ý dùng số liệu Phần 2, nhưng không ghi B2 kém hơn B0 như kết luận tổng quát; đã thêm lưu ý độ nhạy q05_3 vào mục 3. Bản 24/10 giữ làm lịch sử.
+Bước tiếp theo + người làm: Trí và Triệu cùng duyệt toàn bộ PILOT_SUMMARY, ghi quyết định đóng pilot và bốn mục 6C trước P4.
+
+## 27/10/2026 (tối) — đọc đề xuất cải tiến, bổ sung N4 cho F0, lập kế hoạch thực thi
+
+**Nguồn:** Trí chưa ưng kết quả P4.6 và đưa hai tài liệu trong `hướng cái tiển/`: đánh giá tiềm năng paper, và kế hoạch fix pipeline (nhánh P / R, F0 = N4 bắt buộc). Trí hỏi có cần làm N4 trước không.
+
+**Trả lời:** có. N4 là F0, dùng để chọn P hay R.
+
+**Đã làm (chỉ đọc dữ liệu đã lưu, không chạy model):**
+1. Đo chỉ báo tự động E1–E4 trên 30 query p4_unseen_v1:
+   - E1: 21/65 mẫu sai loại; sai số tăng +11.7 khi có mẫu sai, so với +5.8 khi mẫu đều đúng.
+   - E2: có, ví dụ chairs 15 → 49 và motorbikes 33 → 80 dù mẫu đều đúng.
+   - E3: 152 khung chứa điểm mục tiêu bị Fusion loại.
+   - E4: 12/289 điểm không có khung nào.
+2. Viết `evaluation/p4_n4_make_supplement.py`, tạo `results/countgdpp/p4_n4_review_package_20261027/bo_sung_F0/`: 27 mẫu tự chọn + 29 ứng viên E3 cho 9 query N4. Phần này không mù. Gói chính giữ nguyên.
+3. Đếm ảnh MUCCA còn dùng được: 185 ảnh chưa dùng.
+   - Cặp khác siêu nhóm: chỉ 19 ảnh (3–40 điểm), 26 ảnh (3–60), 34 ảnh (2–80).
+   - Mọi cặp: 109 ảnh (3–40 điểm).
+   - Vậy đề xuất 30 dev + 50 test buộc phải thêm cặp dễ nhầm.
+4. Viết [roadmap/KE_HOACH_CAI_TIEN_20261027.md](<quá khứ/2026-11-10_don_dep/roadmap/KE_HOACH_CAI_TIEN_20261027.md>): đối chiếu đề xuất với code thật, gồm
+   - runner hiện hành là run_b2_frozen;
+   - evaluator mở rộng từ p4_unseen_score;
+   - CLIP và CountGD++ ở hai WSL khác nhau nên nhánh P chạy 3 bước;
+   - thêm đối chứng C6 = B0 + bộ lọc;
+   - đề xuất dev 20 + test 40;
+   - lịch W0–W5.
+
+**Chưa làm:** chưa viết code nhánh P/R, chưa rút dữ liệu mới, chưa chạy thí nghiệm.
+
+**Bước tiếp theo:**
+- Trí làm N4 tầng A rồi báo lại; assistant ghép bảng tra, tính E1–E4 bằng nhãn người và đề xuất P hoặc R.
+- Trí chốt quy tắc dữ liệu (§4 kế hoạch).
+- Triệu làm T0–T4.
+
+## 27/10/2026 — chuẩn bị N4 chọn lọc và viết tóm tắt dự án
+
+**Người quyết định:** Trí. Trí chọn làm N4 nhưng chỉ kiểm chọn lọc, và yêu cầu một file md tóm tắt toàn bộ dự án trước khi làm báo cáo thật. Commit/push Trí tự làm.
+
+**N4:** viết `evaluation/p4_n4_make_review_package.py` và tạo gói `results/countgdpp/p4_n4_review_package_20261027/`.
+- Quy tắc chọn ca chốt trước khi xem từng khung: đây là phân tích lỗi có chủ đích, không phải mẫu ngẫu nhiên.
+- Tầng A: u01_1, u02_1, u07_1, u08_1 (people) và u01_3, u07_3, u10_3 (vắng mặt bị báo > 0), tổng 78 khung.
+- Tầng B: u06_2, u07_2, tổng 41 khung.
+- Khung xét = hợp các khung được ít nhất một bộ lọc giữ.
+- Mỗi query có ảnh tổng quan + ảnh cắt từng khung + CSV trắng. Bảng tra khung–cách lọc để riêng trong `_KEY_mo_sau_khi_review/` để review mù.
+- Assistant không gán nhãn.
+
+**Tóm tắt dự án:** [reports/TOM_TAT_DU_AN_20261027.md](reports/TOM_TAT_DU_AN_20261027.md). Gồm bài toán X/Y, CountGD++ B0/B2, pilot, cách lọc + freeze, tập mới, kết quả, cải thiện và đánh đổi, việc còn lại. Không có số liệu mới; mọi số lấy từ các báo cáo đã có.
+
+**Bước tiếp theo:**
+- Trí review N4 tầng A rồi báo lại; assistant ghép bảng tra và tính kết quả.
+- Bắt đầu báo cáo P5.
+- Triệu làm T0–T4.
+
+## 27/10/2026 — P4.6c–d: chạy 3 cách trên tập mới đã khóa và chấm số đếm
+
+**Người yêu cầu:** Trí ("chạy đủ cả 3 cách đi rồi báo cáo"). **Người chạy:** assistant. Máy local RTX A2000 4 GB; B2 khoảng 10 phút, không cần Kaggle.
+
+**Lệnh** (log ở `reports/audits/p4_unseen_v1_run_20261027/`):
+1. `run_b2_frozen.py --inputs experiments/countgdpp/p4_unseen_v1/inputs.jsonl --run-id p4_unseen_v1_b2_20261027`: 30/30 ok.
+2. `p4_clip_score.py … --run-id p4_unseen_v1_clip_20261027`: 663 khung.
+3. `p4_apply_freeze.py --scores results/countgdpp/p4_unseen_v1_clip_20261027 --run-id p4_unseen_v1_freeze_20261027`: freeze không đổi.
+4. `evaluation/p4_unseen_score.py --run-id p4_unseen_v1_eval_20261027`: script mới. Trước khi chấm, script kiểm hash bản đã khóa và trạng thái LOCKED. GT chỉ được đọc ở bước này.
+
+**Kết quả** ([báo cáo](reports/P4_6_UNSEEN_RESULTS_20261027.md)). MAE trên 20 query có mặt / count TB trên 10 query vắng mặt / MAE cả 30:
+
+| Cách | MAE có mặt | Count TB vắng mặt | MAE cả 30 |
+|---|---:|---:|---:|
+| B0 | 5.70 | 8.9 | 6.77 |
+| B2 gốc | 12.95 | 13.1 | 13.00 |
+| Lọc điểm | 8.75 | 4.3 | 7.27 |
+| Fusion | 7.80 | 1.0 | 5.53 |
+
+Bootstrap theo ảnh:
+- Fusion so với lọc điểm: Δ = −1.73, CI [−3.2, −0.3] → Fusion tốt hơn, ngược với CV trên dev.
+- B2 gốc so với B0: +6.23, CI [+2.0, +12.3] → B2 kém B0.
+- Hai bộ lọc so với B2 gốc: CI chạm 0, chưa chắc.
+
+Chỉ số tự động điểm-trong-khung:
+- Fusion có 31 khung chỉ chứa vật loại khác, lọc điểm có 92, B2 gốc 238.
+- Đổi lại, các bộ lọc chỉ phủ 44–50% điểm mục tiêu.
+- 3/10 query vắng mặt gần nghĩa (sheep, bicycles ×2) bị báo > 0 ở mọi cách.
+
+**Trạng thái:** P4.6c xong; P4.6d phần count + chỉ số tự động xong. Review khung bằng người theo §4 chưa làm. Không chỉnh gì theo kết quả này.
+
+**Bước tiếp theo:**
+- Trí quyết định có review khung bằng người không (N4: số khung giữ của Fusion là 157, lọc điểm là 204).
+- Bắt đầu báo cáo P5 với kết luận đánh đổi.
+- Triệu vẫn làm T0–T4.
+
+## 27/10/2026 17:08 — đổi 2 absent và KHÓA p4_unseen_v1 (P4.6a xong)
+
+**Người quyết định:** Trí (chọn qua câu hỏi trực tiếp). **Người thực hiện:** assistant.
+
+**Kiểm trước khi khóa:** assistant xem ảnh gốc mcac_88 và mcac_84.
+- mcac_88 có 2 xe van Mercedes, 1 minibus và 1 van nhỏ, nên "trucks" còn tranh cãi.
+- mcac_84 có xe bán tải thùng hở, nên "trucks" có khả năng có mặt.
+
+Trí chọn đổi cả hai sang ứng viên kế tiếp `bicycles` (class 24, cùng siêu nhóm xe; assistant không thấy xe đạp trong cả hai ảnh). Lúc này chưa có output model nào.
+
+**Đã sửa:** u07_3 và u10_3 trong `inputs.jsonl` (chỉ prompt), `manifest.csv` (class_id/target_class/prompt/verified_by/uncertainty_note), `absent_candidates.csv` (ghi lớp cũ và lý do). Bản trước khi sửa ở `experiments/countgdpp/p4_unseen_v1/draft_before_absent_swap_20261027/`. Định dạng file giữ nguyên; diff chỉ đúng 2 dòng mỗi file.
+
+**Kiểm nhất quán §5.2:** PASS. 30 ID duy nhất / 10 ảnh, 20 present + 10 absent, prompt và class khớp giữa inputs/manifest/class_mapping, GT = số điểm MUCCA, absent = 0 điểm, hash 10 ảnh khớp.
+
+**Khóa:** Trí đồng ý quy ước chấm §4 (HUONG_DAN_KIEM_DU_LIEU.md, bản 27/10). `selection_meta.json` đổi sang `status=LOCKED`, `locked_at=2026-10-27T17:07:55+07:00`, kèm `review_protocol`, `usage_history` và `post_selection_changes`.
+
+sha256 các file đã khóa:
+- inputs.jsonl `53e91e8151eee327cb058d70e522d4081e89ec02e64b074fce53e57cd69bc28b`
+- manifest.csv `9161d8f44fb498e61633acdb025e2f1932e15d1300b7db669cfd7150c55daa38`
+- absent_candidates.csv `2d1f5b415ee0a10515e5a320338347377b1f0673c0ed52d3e3bf1c1b1acb285f`
+- selection_meta.json `69e63f94cdebdff434a4a60ae35734a7fa4776901a8247166abe8a8af4b46abe`
+
+**Giới hạn:** chỉ một người kiểm (Trí); GT là điểm MUCCA. Không khẳng định model chưa thấy ảnh khi pretraining.
+
+**Bước tiếp theo:** P4.6c chạy B2 (không có `--b0-reference`), CLIP và apply_freeze trên `p4_unseen_v1/inputs.jsonl`. Cần Trí cho phép trước khi chạy. Sau đó P4.6d chấm bằng manifest.
+
+## 27/10/2026 — ghi xác nhận kiểm nhãn C2 của Trí
+
+**Nguồn xác nhận:** Trí trực tiếp nhắn: “tôi kiểm thì thấy oki hết á bạn diền giúp tôi vs tôi thấy data của mucca làm chính xác hết á”. Assistant ghi theo xác nhận này cho bộ 10 ảnh đang kiểm; không suy rộng sang toàn MUCCA, không ghi assistant/Triệu đã kiểm độc lập.
+
+**Đã ghi:** absent_candidates.csv đủ 10 dòng absent_ok, checked_by=Trí, date=2026-10-27; manifest.csv đủ 30 dòng verified_by/uncertainty_note (20 present, 10 absent). Evidence ở [human_review_20261027.json](experiments/countgdpp/p4_unseen_v1/human_review_20261027.json), gồm nguyên văn tin nhắn và hash trước/sau.
+
+**Giữ nguyên:** gt_count/class_id/target_class/prompt/ID và mọi cột ngoài metadata review; inputs.jsonl, selection_meta.json, annotation nguồn, freeze và artifact kiểm dev. Sao lưu trước sửa tại `quá khứ/snapshots/2026-10-27_truoc_ghi_xac_nhan_GT.zip`. Không chạy evaluator/self-test/model trong lượt này.
+
+**Tiến độ:** phần kiểm nhãn C2 đã ghi nhận hoàn thành theo người kiểm Trí. P4.6b đã đạt ở phiên song song, đã đọc SUMMARY/run_config hiện có; không chạy lại. Dữ liệu vẫn DRAFT_NOT_LOCKED vì chưa có xác nhận riêng quy tắc chấm/lịch sử sử dụng. Nhãn được xác nhận không đồng nghĩa pilot đã được hai người duyệt.
+
+**Bước tiếp:** chốt quy tắc chấm và lịch sử sử dụng rồi khóa, sau đó mới P4.6c (người dùng tự chạy hoặc cho phép). Đồng bộ README, handoff, checklist, roadmap, P4_TIEP_THEO và hướng dẫn; giữ nguyên các mục lịch sử.
+
+## 27/10/2026 (tối, tiếp) — P4.6b: kiểm dev bước (2)–(4) ĐẠT
+
+**Người chạy:** assistant, theo yêu cầu trực tiếp của Trí. Trong lúc đó Trí tự kiểm absent/GT của `p4_unseen_v1`. Ghi chèn trên mục T1–T4 V2 của phiên song song; nội dung mục đó giữ nguyên.
+
+**Đã chạy:**
+- (2) B2 trên WSL `Ubuntu-22.04` (venv countgdpp, torch 2.5.1+cu121, GPU RTX A2000): 15/15 replay khớp B0. So với hai run B2 15/10: count trùng, Δbox = Δscore = 0, pseudo trùng.
+- (3) CLIP trên WSL `Ubuntu` (venv cs331-p4-clip, torch 2.9.1+cu128, transformers 4.57.1, revision 3d74acf…): 481 khung.
+- (4) `p4_apply_freeze.py` với `--check-audit` và `--reference-scores`: cả hai PASS. Δclip = 0, 0 khung đổi quyết định giữ/bỏ.
+
+Lệnh, log, hash và giới hạn ở [SUMMARY](reports/audits/devcheck_20261027/SUMMARY.md). Output: `results/countgdpp/p4_b2_devcheck_20261027/`, `p4_clip_devcheck_20261027/`, `p4_freeze_e2e_devcheck_20261027/`.
+
+**Kết luận:** runner mới tái lập đúng pipeline dev trên cùng máy và môi trường, nên **P4.6b xong**. Đây là kiểm triển khai, không phải kết quả hiệu quả hay holdout.
+
+**Bước tiếp theo:**
+- Trí khóa `p4_unseen_v1`.
+- P4.6c chạy ba lệnh trên `p4_unseen_v1/inputs.jsonl`: B2 không có `--b0-reference`, CLIP, rồi apply_freeze không có `--check-audit`.
+- Sau đó P4.6d chấm bằng manifest.
+- Việc của Triệu theo kế hoạch V2 (T0–T4) không đổi.
+
+## 27/10/2026 — hướng dẫn Trí tự kiểm C2 và chuẩn bị ảnh điểm GT
+
+**Người thực hiện:** assistant, theo yêu cầu hướng dẫn cách kiểm absent/GT/quy ước/khóa. Chỉ chuẩn bị tài liệu và hiển thị annotation nguồn; không evaluator, inference hoặc xác nhận người dùng.
+
+**Việc thực sự đã làm:** đọc schema hiện tại, vẽ bằng Python/Pillow 10 ảnh GT (mỗi ảnh hai lớp, đánh số điểm nguồn), viết [HUONG_DAN_KIEM_DU_LIEU](experiments/countgdpp/p4_unseen_v1/HUONG_DAN_KIEM_DU_LIEU.md). Output ở `experiments/countgdpp/p4_unseen_v1/gt_review_images/`; SOURCE_MANIFEST ghi hash nguồn/output. Số chấm vẽ khớp annotation và gt_count, tọa độ trong ảnh; đây là kiểm sao chép nguồn, không xác nhận nhãn đúng bằng mắt. Đã xem thử ảnh mcac_121 để kiểm việc hiển thị.
+
+**Làm rõ hướng dẫn:** absent thay thế phải được người xem xác nhận và đồng bộ cả class_id/target_class/prompt; giữ lịch sử lớp cũ. Sửa câu point-in-box thành chỉ là hỗ trợ ghép; đề xuất kiểm loại/cả vật/ghép một-một/trùng/uncertain, chưa được Trí chốt. Runner hiện không tự đọc status LOCKED, nên điều kiện khóa là bước cần người kiểm xác nhận và kiểm dev phải đạt trước chạy ảnh mới.
+
+**Bảo toàn:** không sửa inputs/manifest/absent_candidates/selection_meta, ảnh/annotation nguồn hoặc freeze. Không đánh dấu review/khóa hộ; vẫn DRAFT_NOT_LOCKED. Snapshot trước sửa 5 tài liệu và hash 17 file cần giữ: `quá khứ/snapshots/2026-10-27_truoc_huong_dan_C2.zip`. Đồng bộ README bộ ảnh, checklist, handoff, roadmap; bản ZIP T1–T4 cũ vẫn là snapshot bàn giao cũ, không thay nó bằng bản khác lặng lẽ.
+
+**Điểm tiếp tục:** Trí mở hướng dẫn, tự kiểm mcac_123 và mcac_121 (2 absent + 4 present); điền đúng nhận xét/người/ngày. Còn bất đồng thì giữ PENDING/needs_review và DRAFT; sau hai ảnh tiếp tám ảnh còn lại. Chưa chạy ảnh mới. Lượt này thấy thư mục `p4_b2_devcheck_20261027/` mới xuất hiện nhưng không audit run đang/đã chạy; không kết luận C3(2) đạt chỉ vì có thư mục.
+
+## 27/10/2026 — rà giao việc T1–T4 V2 và chuẩn bị gói bàn giao
+
+**Người thực hiện:** assistant theo yêu cầu Trí kiểm chứng góp ý và cập nhật phân công. Đây là rà tài liệu/code/artifact và chuẩn bị bàn giao, không phải Triệu đã thực hiện T1–T4.
+
+**Đã kiểm thực tế:**
+- Fetch origin, HEAD = origin/main = `d6db18931c07671763137962f7db54bd1fc3be70`; chưa có các file mới trên main: checklist, gói q05, p4_unseen_v1 và kết quả Fusion. Giữ nguyên thay đổi local, không commit/push, không apply stash.
+- Đọc evaluator: CLI luôn gọi manual_check(q05_2). Sửa hướng dẫn T1 dùng bản đủ 15 query và giữ nguyên q05_2; mỗi ca thay q01_1 từ bản sạch. Không thêm cờ bỏ qua manual, không sửa evaluator. Bổ sung tạo thư mục trước redirect, exit code, phân biệt lỗi bị từ chối đúng dự kiến với lỗi thiếu đầu vào.
+- Đối chiếu JSON CV: confidence=4.6, CLIP-only=6.8, Fusion=5.8. Đối chiếu trace: B0/B2 tổng lỗi 291/330 (+39); q05_3 lỗi 18/76 (+58); 14 query khác 273/254 (−19). Đây là đọc và tính lại từ số đã lưu, không chạy evaluator hoặc inference mới.
+
+**Cập nhật giao việc:** giữ T1–T4, thêm T0 giao nhận. Hạn đề xuất T1 30/10, T2 01/11, T3 02/11, T4 03/11; chưa xác nhận Triệu nhận hoặc đồng ý lịch. T2 có nhãn chính loại trừ nhau, object_id, uncertain, tổng 21/79 và đối chiếu 14 khung q05_2; T3 tách quan sát/giả thuyết, không yêu cầu thêm ablation. 47 nhãn q03 là việc P4 riêng. Mục tiêu P4 là kiểm chứng hiệu quả, không mặc định cải tiến phải thắng.
+
+**Output bàn giao:** TRIEU_T1_T4_20261027_v2.zip (ZIP đã xóa 10/11 khi dọn workspace, còn trong lịch sử git), 45 file tính cả manifest, 2,168,079 byte. Bao gồm code/input/prediction/manual cần thiết, ảnh gốc pilot, overlay q05, CSV trắng, kết quả tham chiếu, hai báo cáo CV và hướng dẫn. Kiểm CRC ZIP và toàn bộ SHA-256 nội bộ đạt. Không có checkpoint hoặc dữ liệu test DRAFT của Trí, vì T1–T4 không cần.
+- SHA-256 ZIP: `a7cd8bc9c4342d795b07661fe31b1f46b9270b5f0d066ce1c70161c753cd33bc`.
+- Trạng thái **PREPARED_LOCAL_NOT_DELIVERED**. T0 chưa hoàn tất; không có xác nhận nhận hàng, log chạy mới hay chữ ký duyệt mới.
+
+**Đồng bộ:** kế hoạch V2, README, BAT_DAU_SESSION_MOI, ba handoff, ROADMAP, CHECKLIST_3_GIO, hai pipeline, hướng dẫn Phần 2/3, evaluation/README và PILOT_SUMMARY; nối nhật ký này, không sửa các mục lịch sử. Snapshot trước sửa: [2026-10-27_truoc_sua_giao_viec_T1_T4.zip](<quá khứ/snapshots/2026-10-27_truoc_sua_giao_viec_T1_T4.zip>), 15 tài liệu và manifest hash bảo vệ 55 file code/dữ liệu/kết quả.
+
+**Không thực hiện trong lượt này:** evaluator/self-test/model/train, sửa dự đoán/GT/nhãn, đổi freeze, gửi tin cho Triệu hoặc ký duyệt. PASS dev (1) là kết quả lượt trước, không phải lần chạy mới này.
+
+**Bước tiếp theo:** Trí chia sẻ ZIP; Triệu kiểm nhận T0 rồi tự chạy T1. Trí song song xác nhận absent/GT và khóa dữ liệu khi đủ điều kiện, sau đó tự chạy hoặc cho phép assistant chạy kiểm dev GPU (2)–(4). Chưa mở đánh giá ảnh mới trước khi dữ liệu khóa và kiểm dev đạt. Điểm dừng/lệnh/output còn lại nằm trong bảng §3 của checklist.
+
+## 27/10/2026 (tối) — C1 của Trí, kiểm freeze trên dev, chọn dữ liệu B, lập kế hoạch sửa kiểm chéo
+
+**Người quyết định:** Trí. Trí cho phép chạy kiểm freeze trên dev, chọn phương án dữ liệu B, và gửi nhận xét về bản kiểm chéo. **Người thực hiện kỹ thuật:** assistant.
+
+**C1 (Trí):** đã đọc bản kiểm chéo 24/10, **chưa duyệt**. Bốn nhận xét được ghi nguyên văn ở [kế hoạch sửa](<quá khứ/2026-11-10_don_dep/reports/KE_HOACH_SUA_KIEM_CHEO_20261027.md>) §1 và PILOT_SUMMARY §7:
+1. tự chạy evaluator và các ca lỗi;
+2. phân tích q05_2/q05_3;
+3. giải thích B2 kém B0 kèm đề xuất cải thiện;
+4. hoàn thiện báo cáo rồi duyệt chung.
+
+Assistant lập kế hoạch T1–T4 cho Triệu, hạn đề xuất 30/10–02/11. Assistant chỉ chuẩn bị tài liệu, không làm thay.
+
+**Kiểm dev bước (1), đã chạy:** `python experiments/countgdpp/p4_apply_freeze.py --scores results/countgdpp/p4_clip_all15_20261020 --run-id p4_freeze_devcheck_20261027 --check-audit results/countgdpp/p4_freeze_audit_20261021.json`.
+- Kết quả: `CHECK audit: PASS`, cả 15 query khớp audit 21/10 về B2_threshold và Fusion.
+- Output: `results/countgdpp/p4_freeze_devcheck_20261027/`.
+- Đây chỉ là kiểm triển khai trên điểm đã lưu, không phải kết quả mới.
+
+**Dữ liệu B:**
+- Tải MUCCA 1.0 từ Zenodo 19231375 (CC-BY-4.0, Ciampi et al.) về `data_external/mucca_zenodo_19231375/`. md5 zip `b182e445445dad017493ffb35803f816` khớp Zenodo; sha256 `da33e64e…`. Đã thêm `data_external/` vào .gitignore.
+- Gói 10 ảnh của Triệu trùng từng byte với bản chính thức, cả ảnh lẫn annotation.
+- Viết `experiments/countgdpp/p4_select_unseen.py`, quy tắc chỉ dùng annotation.
+- Bản rút r1 bị loại **trước khi chạy model**, vì 10/10 cặp đều là people + xe/chó. Lưu ở `p4_unseen_v1/draft_r1_rejected/`.
+- Bản rút r2: 5 tầng × 2 ảnh, seed 331, absent ưu tiên cùng siêu nhóm với Y. Kết quả: `mcac_123, 121, 109, 110, 63, 61, 88, 72, 227, 84`, tổng 30 query (20 present + 10 absent). Có contact sheet và README.
+- Trạng thái **DRAFT**: Trí cần xác nhận absent (chú ý `trucks` ở mcac_88/84) và GT rồi mới khóa.
+
+**Chuẩn bị cho Triệu:** gói nhãn trắng `results/countgdpp/q05_error_analysis_package_20261027/`, gồm overlay đánh số + CSV trắng cho 79 khung B2, 21 khung B0 và 3 pseudo của q05_3. Khung được vẽ lại từ prediction đã lưu, không chạy model.
+
+**Đồng bộ:** PILOT_SUMMARY §7, checklist (C1, C2 nguồn/phạm vi, kiểm dev (1), bảng §3), P4_TIEP_THEO, ROADMAP, HANDOFF, HANDOFF_TRIEU, BAT_DAU_SESSION_MOI. Chưa commit/push.
+
+**Bước tiếp theo:**
+- Trí: điền `absent_candidates.csv` và kiểm GT, khóa `p4_unseen_v1`; chạy kiểm dev (2)–(4) trong WSL GPU.
+- Triệu: T1–T4.
+- Sau khi tập đã khóa và kiểm dev đạt: P4.6c chạy `run_b2_frozen.py` trên `p4_unseen_v1/inputs.jsonl`.
+
+## 27/10/2026 — session mới: kiểm kê dữ liệu C2 (DRAFT) và viết code adapter C3
+
+**Người thực hiện:** assistant, theo yêu cầu của Trí là tiếp tục từ BAT_DAU_SESSION_MOI.md. Trí chưa báo đã làm C1, nên C1 vẫn để trống. Không ký hoặc duyệt thay ai.
+
+**Git:** `fetch origin`: không có commit mới, HEAD vẫn d6db189 = origin/main. Các thay đổi local trước đó còn nguyên. Không commit/push, không đụng stash.
+
+**C2 (DRAFT):** đọc annotation gói MUCCA; grep toàn CS331 (trừ CountGDPlusPlus/) và hai ZIP kết quả. 5 ảnh mcac_44/58/81/171/176 chưa có trong run, review hay score nào. Chúng chỉ có trong inputs/manifest (split=dev), contact sheet và bộ query. Đếm điểm theo lớp, 4/5 ảnh có lớp ≥ 53 vật. Chưa có query absent. GT là điểm, không phải box. Đã ghi bảng và hai phương án A (5 ảnh/15 query) / B (thêm ảnh MUCCA gốc) ở [P4_TIEP_THEO §2A](<quá khứ/2026-11-10_don_dep/roadmap/P4_TIEP_THEO.md>). Chưa đếm tay, chưa chọn, chưa khóa.
+
+**C3 (code, chưa chạy):** thêm `experiments/countgdpp/run_b2_frozen.py`, `p4_clip_score.py`, `p4_apply_freeze.py`.
+- B2: bỏ B0 cố định; `--b0-reference` dùng để kiểm replay trên dev; τ = .23 cố định.
+- CLIP: tham số hoá đường dẫn; pin revision 3d74acf… cho cả model và processor; ghi hash file cache.
+- Freeze: kiểm SHA256 `3c4634e7…`; đếm ba cách; có `--check-audit` và `--reference-scores` (báo khung đổi quyết định giữ/bỏ).
+
+`run_b2_pilot.py`/`run_b0_batch.py` không đổi (git diff rỗng).
+
+**Đã chạy:** chỉ `ast.parse` ba file (đạt) và sha256 freeze (khớp audit). Không chạy evaluator, model, CLIP, self-test hay apply_freeze, vì quy tắc là hỏi Trí trước.
+
+**Đồng bộ:** checklist (C3 code-prep đã đánh dấu kèm "chưa kiểm chạy"; bảng §3 có 4 lệnh kiểm dev), P4_TIEP_THEO §2/§2A/§3, HANDOFF, BAT_DAU_SESSION_MOI.
+
+**Bước tiếp theo:**
+1. Trí làm C1.
+2. Trí chọn phương án dữ liệu A hoặc B.
+3. Cho phép chạy (hoặc Trí tự chạy) kiểm dev bước (1): apply_freeze trên điểm đã lưu, CPU. Sau đó bước (2)–(4) trong WSL GPU.
+
+Chưa có runner đạt kiểm và chưa khóa tập mới.
+
+## 27/10/2026 — tạo file bàn giao ở thư mục gốc để chuyển session
+
+**Theo yêu cầu Trí:** đã tạo [BAT_DAU_SESSION_MOI.md](BAT_DAU_SESSION_MOI.md), tổng hợp mục tiêu/CountGD++, trạng thái P4.5c, phần Triệu đã làm và 47 nhãn còn thiếu, phương án xử lý kiểm chưa đạt, lịch 3 giờ, deadline 02/12, mốc nội bộ và câu mở session mới. Thêm liên kết trong README/HANDOFF/ROADMAP/checklist.
+
+**Phạm vi:** chỉ tạo/cập nhật tài liệu; không chạy evaluator/model hoặc thay số liệu. File ghi rõ bản tổng hợp tại 27/10, ưu tiên checklist/WORKLOG nếu có cập nhật sau. Chưa có bằng chứng C1–C4 hoàn thành; việc đầu tiên vẫn C1. Các file mới đang local, chưa commit/push.
+
+## 27/10/2026 — xác nhận hạn báo cáo 02/12 và phương án kiểm chéo còn thiếu
+
+**Người dùng xác nhận:** final báo cáo đề tài ngày 02/12; theo năm dự án là **02/12/2026**, còn 36 ngày từ 27/10. Người dùng hỏi giả định phần kiểm chéo Triệu chưa đạt, chưa cung cấp bằng chứng lỗi mới.
+
+**Làm rõ:** phần kiểm số liệu được ủy quyền đã có và Triệu chấp nhận; không phải Triệu tự audit độc lập. Nhóm duyệt pilot và 47 nhãn P4 vẫn riêng. Chưa có lý do kết luận phần Triệu gửi sai hoặc bắt chạy lại toàn bộ. Nếu rubric đòi người thứ hai tự kiểm, cần bổ sung đúng bước đó; hiện chưa có rubric chứng minh yêu cầu này.
+
+**Kế hoạch cập nhật:** giữ C1–C4 cho buổi 3 giờ. Mốc đề xuất 01/11 xử lý phần kiểm còn thiếu, 08/11 runner/dữ liệu sẵn, 15/11 có đánh giá bộ mới, 22/11 bản thảo, 29/11 báo cáo/demo hoàn thiện, 30/11–01/12 dự phòng. Checklist §5A thêm tiêu chí nhận nhãn và cách xử lý thiếu xác nhận, sai phép chấm thật hoặc nhãn không nhất quán. Các mốc này là đề xuất, không ghi Triệu đã nhận hoặc nhóm đã duyệt.
+
+**Thực hiện:** đọc lại xác nhận Triệu, cập nhật CHECKLIST_3_GIO/ROADMAP/HANDOFF/README và nhật ký. Snapshot trước sửa: quá khứ/snapshots/2026-10-27_truoc_chot_deadline.zip. Không chạy evaluator/model, không sửa kết quả hoặc nhãn; chưa có tiến độ C1–C4 mới. Việc tiếp của Trí vẫn C1 rồi chuẩn bị dữ liệu/runner song song phần kiểm nhãn.
+
+## 27/10/2026 — pull phần Triệu, hợp nhất P4 local và chuẩn bị buổi 3 giờ
+
+**Yêu cầu của Trí:** kéo phần Triệu vừa push; xác định việc tiếp, checklist/ước lượng thời gian; chỉ có 3 giờ hôm nay; lưu đủ trạng thái để session mới tiếp tục không cần lịch sử chat.
+
+**Git đã thực hiện:** fetch rồi pull --ff-only origin main, HEAD từ 31278dd70377578accda4d126a95b14d33bcdef0 lên d6db18931c07671763137962f7db54bd1fc3be70 (27 file trong commit mới). Trước pull có 13 file tracked đang sửa và 20 file untracked: đã lưu [ZIP trước pull](<quá khứ/snapshots/2026-10-27_truoc_pull.zip>) + patch/manifest, stash phần tracked ở a34cf35f5b5ce959b7f8469fe7c14afec242d263. Hợp nhất 8 xung đột tài liệu giữa P4 ngày 22 và phần Triệu ngày 21/24; giữ hai bên. Không commit/push thay người dùng; stash giữ để phục hồi, không apply lại.
+
+**Phần Triệu đã nhận:** bản kiểm kỹ thuật được ủy quyền, trace 15 query, audit và xác nhận Triệu đã đọc/hiểu/chấp nhận ngày 24/10; q02_1 chi tiết gồm 3 JSON và 9 ảnh. [Bản tiếp nhận](<quá khứ/2026-11-10_don_dep/reports/SYNC_TRIEU_20261027.md>). Không ghi Triệu đã tự audit code. Duyệt chung pilot còn chờ; commit không có 3 CSV độc lập cho 47 nhãn q03.
+
+**Kiểm từ file thật:** 7/7 hash nguồn khớp byte thô tại checkout Trí; audit 24/10 của checkout khác giữ ghi chú 3 byte/4 EOL. Trace đủ 15 dòng khớp ID/GT/B0/B2/sai số, MAE 19.4/22.0 và RMSE 24.315975544210986/30.090973175799196. q02_1 JSON giữ human_adjudication_complete=false, không nâng thành đã phân xử mọi nhóm. Lượt này không chạy evaluator/self-test/model/train hoặc tạo thí nghiệm mới.
+
+**Điểm cần chuẩn bị:** run_b2_pilot.py đọc B0 tham chiếu cố định từ m4_first5_b0 và từ chối ID mới; CLIP scorer cũng gắn 15 query cũ. Cần adapter trước khi mở tập mới. Quét prediction JSONL cấp run không thấy mcac_44/58/81/171/176, nhưng toàn gói đang là dev và chưa đủ nguồn/lịch sử để nhận là holdout.
+
+**Kế hoạch, chưa thực thi:** C1 đọc/ghi nhận pilot 15 phút; C2 dữ liệu 55; C3 adapter 75; kiểm dev nếu sẵn sàng 20; C4 bàn giao 15. Dành 15 phút cuối cho file/lệnh/lỗi/ô tiếp theo. Hết giờ thì ghi checkpoint thật, không mặc định tất cả đã hoàn thành. Ước lượng tổng còn 15–24 giờ tập trung cho vòng kiểm nhỏ + báo cáo/demo, gồm 3 giờ hôm nay; có điều kiện dữ liệu/môi trường, chưa biết deadline chính thức, không tính chờ GPU/đồng đội.
+
+**Đồng bộ:** README, ROADMAP V4.8, HANDOFF chung/cá nhân, hướng dẫn Phần 2–3/P4, hai pipeline, PILOT_SUMMARY, evaluation README và chỉ mục archive. Tạo [CHECKLIST_3_GIO](<quá khứ/2026-11-10_don_dep/roadmap/CHECKLIST_3_GIO.md>) có bảng điểm dừng và câu mở session mới; thêm AGENTS.md chỉ dẫn session mới đọc file hiện hành, bảo toàn kết quả và tuân thủ yêu cầu hỏi trước khi chạy thực nghiệm. Giữ các mục WORKLOG cũ của cả Trí/Triệu, ngày lịch sử không đổi.
+
+**Kiểm sau hợp nhất:** HEAD khớp origin/main ở d6db189, không còn unmerged hoặc file staged; git diff --check đạt. 55 artifact P4 giữ nguyên hash; 19 file mới nhận từ commit Triệu không bị sửa; 19/20 file untracked cũ giữ nguyên (chỉ cập nhật hướng dẫn P4_TIEP_THEO). Các mục lịch sử 21/24 từ remote, 22 local và toàn bộ mục 20/10 trở về trước được giữ nguyên nội dung. 17 tài liệu/194 liên kết local đã kiểm, không có link hỏng hoặc conflict marker.
+
+**Trạng thái tiếp tục:** C0 đồng bộ đã xong; C1–C4 của Trí chưa được báo làm. Việc đầu tiên là C1; nếu chờ duyệt nhóm, chuẩn bị C2/C3 song song. 47 nhãn P4, dữ liệu mới, runner đạt kiểm và đánh giá holdout đều chưa hoàn tất.
+
+## 24/10/2026 — Triệu xác nhận đã đọc và chấp nhận bản kiểm được ủy quyền
+
+**Người xác nhận:** Triệu, trực tiếp trong cuộc trò chuyện ngày 24/10/2026.
+
+> Tôi đã đọc và hiểu bản kiểm ngày 24/10, đồng ý dùng kết quả kiểm kỹ thuật do assistant thực hiện.
+
+**Phạm vi được xác nhận:** đọc/hiểu và đồng ý dùng [bản kiểm kỹ thuật ngày 24/10](<quá khứ/2026-11-10_don_dep/reports/TRIEU_KET_QUA_KIEM_CHEO_20261024.md>). Người thực hiện đối chiếu kỹ thuật vẫn là assistant; không nâng thành Triệu đã tự audit code hoặc dữ liệu nguồn. [Bản ghi xác nhận](reports/audits/TRIEU_ACCEPTANCE_20261024.json).
+
+**Đã cập nhật:** PILOT_SUMMARY mục 1/3/7, ROADMAP, HANDOFF chung/cá nhân và phần tiếp tục của bản kiểm. Giữ nguyên bản audit kỹ thuật trước xác nhận và nhật ký cũ như lịch sử.
+
+**Trạng thái:** Triệu đã chấp nhận kết quả kiểm được ủy quyền. Nhóm chưa duyệt toàn báo cáo, chưa quyết định đóng pilot hoặc chọn phương pháp P4.
+
+**Bước tiếp theo:** Triệu cùng Trí duyệt PILOT_SUMMARY; Trí đồng bộ log/cấu hình với artifact P4 đã có. Lượt này chỉ cập nhật tài liệu, không chạy evaluator/model, không gửi tin nhắn, commit hoặc push GitHub.
+
+## 24/10/2026 — làm hộ phần kiểm chéo kỹ thuật khi Triệu ưu tiên deadline paper
+
+**Người thực hiện:** assistant theo yêu cầu trực tiếp của Triệu. Không ghi Triệu đã tự đọc/xác nhận hoặc nhóm đã duyệt.
+
+**Việc thực sự chạy:** PowerShell đối chiếu các file pilot đã lưu, tính độc lập sai số 15 query, so kết quả evaluator và nhãn q05_2; đọc logic xử lý error/null/uncertain/absent. Không import/chạy evaluator/self-test/model/CLIP/train, không tạo run inference hoặc metric nghiên cứu mới.
+
+**Nguồn:** checkout commit `31278dd`; 7 hash checkout nguồn không đổi so với 21/10. Hash đối chiếu run: 3 byte thô khớp, 4 khác CRLF/LF nhưng nội dung khớp.
+
+**Kết quả:** 15/15 ID và per_query khớp, paired=15, error=uncertain=absent=0. MAE B0=291/15=19.4, B2=330/15=22; RMSE=sqrt(8869/15) và sqrt(13582/15), exact=1 mỗi nhánh; tốt/kém/giữ=6/4/5. q05_2 khớp 14 box/5 target box/4 vật/1 dư/9 sai loại. Bốn ca minh họa và nhánh null đã kiểm; không gọi đọc code nhánh giả định là test động.
+
+**Bằng chứng:** [báo cáo đọc nhanh](<quá khứ/2026-11-10_don_dep/reports/TRIEU_KET_QUA_KIEM_CHEO_20261024.md>), [audit JSON](reports/audits/TRIEU_EVALUATOR_20261024.json), [trace đủ 15 dòng](reports/audits/PER_QUERY_TRACE_20261024.csv).
+
+**Trạng thái:** phần kỹ thuật được ủy quyền đã hoàn thành bởi assistant; xác nhận cá nhân Triệu/duyệt nhóm vẫn chưa có. Triệu có thể ưu tiên deadline paper, khi quay lại đọc bản kết quả thay vì tự tạo lại toàn bộ audit. Trí có thể chuẩn bị/đồng bộ log P4 song song; chưa xác nhận P4 hiệu quả. Chưa commit/push hoặc gửi tin nhắn cho Trí.
+
+## 22/10/2026 — kiểm handoff P4, đồng bộ tiến độ và chốt việc Trí làm tiếp
+
+**Nguồn:** Trí gửi [HANDOFF_CS331_PILOT_TO_P4_2026-10-22.md](<quá khứ/2026-11-10_don_dep/workspace/HANDOFF_CS331_PILOT_TO_P4_2026-10-22.md>), cho biết đã hoàn thành pilot summary và Triệu chưa kiểm chéo được. Handoff tổng hợp lịch sử ngày 20–21/10; ngày 22/10 là ngày tiếp nhận/audit, không đổi ngày chạy.
+
+**Đã kiểm tại workspace:** có CLIP score 15 query/481 khung, CV theo ảnh gốc, diagnostic, Fusion, ZIP nhãn và freeze/audit. Hash 16 nguồn freeze, 17 nguồn CV, 2 prediction CLIP, input và freeze đều khớp. ID/rank/box/điểm B2/crop khớp nguồn. Kiểm các ngưỡng đã lưu và phép tính đủ 15 query; fold không trùng ảnh và min/max Fusion chỉ từ training fold. ZIP không lỗi, 3 bảng nhãn trắng 13/18/16 dòng. [Báo cáo audit](reports/P4_AUDIT_20261022.md).
+
+**Phạm vi thực hiện của assistant:** đọc file/code, kiểm hash và số học từ điểm đã lưu; không chạy script evaluator hiện hữu, self-test, model, train hoặc tìm lại ngưỡng tối ưu. Không xem/đánh lại nhãn thị giác để thay kiểm độc lập của Triệu. Một lệnh audit ban đầu dừng vì tên khóa `train_queries` khác schema thực tế `training_queries`; đã sửa phép đọc và kiểm hoàn tất, không thay artifact thực nghiệm.
+
+**Kết quả P4 dev CV:** B2 gốc MAE 22.0, RMSE 30.090973; lọc điểm B2 MAE 4.6, RMSE 6.618157; CLIP-only MAE 6.8, RMSE 8.846845; Fusion 50/50 MAE 5.8, RMSE 7.793159. Fusion chưa tốt hơn đối chứng về count. Review 4 query theo nhãn hiện tại: B2 lọc điểm giữ 12/22 vật đúng, Fusion 16/22; q03 vẫn là nhãn assistant sơ bộ. Kiểm được phép tính, chưa xác nhận đúng/sai từng nhãn độc lập.
+
+**Freeze:** B2 threshold 0.9067394733428955; Fusion threshold 0.6551826746408328, min/max cố định từ dev. Dev-fit MAE 4.333333/4.4 khác CV, không phải kết quả test. CLIP run_config có revision 3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268. Chưa có bằng chứng đã pin đầy đủ/check hash trọng số trong runner ảnh mới hoặc tái lập ảnh → score; freeze audit chỉ kiểm từ score lưu.
+
+**Đánh giá phần Trí:** phần chạy/chấm/nội dung tổng kết pilot đã đủ để chờ duyệt; không yêu cầu P4.6 để đóng PILOT_SUMMARY. P4 đã thực nghiệm đến P4.5c, vượt trạng thái tài liệu cũ “chưa chạy CLIP”. CountGD++ vẫn là model đếm; CLIP phụ trợ không phải CLIP-Count. Pilot còn Triệu kiểm evaluator và nhóm duyệt; P4 còn kiểm 47 nhãn và kiểm trên ảnh mới. Chưa ký hoặc nhận thay việc của Triệu.
+
+**Kế hoạch tiếp theo:** giữ đối chứng lọc điểm B2 và ứng viên Fusion, dừng tuning 5 ảnh cũ. Trí làm P4.6a kiểm kê nguồn/GT/lịch sử/split ảnh mới, đề xuất 10 ảnh/30 query khi đủ dữ liệu; rồi P4.6b chuẩn bị runner đọc freeze không GT. Triệu khi có thể kiểm evaluator và 3 bảng nhãn độc lập. P4.6c–d chạy/chấm tập mới chưa làm. Hướng dẫn và checklist tại [P4_TIEP_THEO](<quá khứ/2026-11-10_don_dep/roadmap/P4_TIEP_THEO.md>); không đổi model hoặc train thêm trong kế hoạch này.
+
+**Đồng bộ tài liệu:** README, ROADMAP V4.7, handoff chung/cá nhân, hướng dẫn Phần 2–3, hai pipeline, PILOT_SUMMARY, báo cáo P4 và evaluation README. Tạo audit và hướng dẫn P4 tiếp theo; giữ nguyên các mục WORKLOG cũ. [Snapshot trước sửa](<quá khứ/snapshots/2026-10-22_truoc_dong_bo_P4.zip>) gồm 14 tài liệu, handoff đầu vào và manifest bảo toàn 55 artifact. Không di chuyển dữ liệu/code/checkpoint/results.
+
+**Kiểm sau cập nhật:** 16 tài liệu đã kiểm, 180 liên kết local hợp lệ; ZIP snapshot không lỗi; cả 55 artifact được theo dõi giữ nguyên hash; toàn bộ mục WORKLOG trước ngày 22/10 được bảo toàn. Không đổi handoff đầu vào, code thí nghiệm, điểm số hoặc dự đoán gốc.
+
+**Trạng thái:** artifact P4 nhất quán; pilot chờ kiểm chéo/duyệt, nhãn P4 chờ kiểm, dữ liệu mới/runner/đánh giá độc lập chưa thực hiện. Lượt này không chạy thêm thực nghiệm; assistant vẫn hỏi trước nếu chạy evaluator/model/thực nghiệm thay.
+
+## 21/10/2026 — hỗ trợ Triệu kiểm chéo evaluator theo worklog
+
+**Người thực hiện phần đối chiếu:** assistant theo yêu cầu Triệu đọc repo và làm theo worklog. Nguồn repo tại commit `31278dd`; đây không phải chữ ký xác nhận người kiểm của Triệu hoặc duyệt của nhóm.
+
+**Đã kiểm:** đọc `indexed` → `validate_prediction` → `evaluate` → `manual_check`; đối chiếu 15 cặp image_id/query_id giữa input, manifest, B0/B2, per_query và metric đã lưu. Manifest có 30 dòng, input chọn 15, B2 ghép 6+9. Kết quả khớp: B0 MAE 19.4/RMSE 24.315975544210986; B2 22.0/30.090973175799196; exact 1 mỗi bên; thay đổi 6 tốt hơn/4 kém hơn/5 giữ nguyên; absent 0 và metric absent null. q05_2 đủ 14 index/tọa độ, gồm 5 box mục tiêu trên 4 vật + 9 sai loại, 1 box dư do trùng. Bốn file kết quả `_r2` giống run chính.
+
+**Hash trên checkout Windows:** 3/7 nguồn khớp byte thô, 4/7 khớp sau đối chiếu CRLF→LF, không còn khác biệt nội dung chưa giải thích. Không ghi là 7/7 khớp byte thô của checkout này; giữ hash cả hai dạng trong [audit JSON](reports/audits/TRIEU_EVALUATOR_20261021.json). Không sửa nguồn để ép hash.
+
+**Artifact bổ sung:** đã đưa bản chi tiết q02_1, ba JSON và chín ảnh bằng chứng từ kết quả ngày 19/10 của cuộc trò chuyện Triệu vào `workspace Trí and Triệu/Triệu/`. Hash bản sao khớp nguồn. Giữ mức chắc chắn vừa cho các nhóm mép đĩa sát nhau; không nâng thành nhãn bbox được Triệu xác nhận toàn bộ. Không thay review gốc hoặc raw prediction.
+
+**Điểm tài liệu mới:** repo có `p4_clip_all15_20261020/run_config.json` và score, `p4_count_cv_20261020/report.json`, cùng review hai case P4. Vì vậy các câu “chưa chạy/chưa có CLIP” ở mục ngày 20/10 là trạng thái tài liệu lúc đó, không đại diện đầy đủ artifact đang có. Lượt này chỉ đọc metadata, chưa audit kết quả P4, không tự xác nhận nhóm đã duyệt.
+
+**Phạm vi thực thi:** chỉ đọc/đối chiếu số học các file đã lưu và chuẩn bị tài liệu. Không import/chạy evaluator, không chạy self-test/inference/CLIP/train; PASS self-test vẫn theo Minhtri báo trước đó. Không tạo run metric nghiên cứu mới.
+
+**Trạng thái:** phần hỗ trợ kiểm chéo đã có [hướng dẫn và bằng chứng](<quá khứ/2026-11-10_don_dep/reports/TRIEU_EVALUATOR_CROSSCHECK_20261021.md>); Triệu cần tự đọc và ghi kết luận ở PILOT_SUMMARY §7. Nhóm duyệt/đóng pilot/P4 còn để riêng. Chưa commit/push các thay đổi của lượt này.
+
+**Bước tiếp theo:** Triệu đọc bốn điểm code và bốn ca minh họa trong bản hỗ trợ, xác nhận hiểu error/null/uncertain/absent và q05_2; sau đó điền tên/ngày/kết luận. Trí đồng bộ log P4 với artifact đã có; cả nhóm duyệt báo cáo. Không yêu cầu review lại 15 ảnh hoặc chạy model để làm bước này.
+
+## 20/10/2026 — xác nhận Phần 2 đã chạy, Phần 3 chờ duyệt, chuẩn bị P4
+
+**Nguồn mới:** Minhtri gửi `C:/Users/ADMIN/Downloads/HANDOFF_CS331_P2_P3_2026-10-20.md`. Bản gốc đã lưu nguyên trạng trong [ZIP snapshot](<quá khứ/snapshots/2026-10-20_truoc_xac_nhan_P2_P3.zip>), thư mục `incoming/`. Handoff là ghi nhận cuộc trao đổi khác; trạng thái hiện tại được kiểm lại trên file workspace.
+
+**Người chạy:** Minhtri. Lệnh thực tế theo handoff: `python3 evaluation/evaluate_pilot.py --self-test` (người chạy báo PASS, không có stdout riêng), sau đó `python3 evaluation/evaluate_pilot.py --out results/countgdpp/pilot_eval_20261020`. Dùng Python 3 hệ thống trong Ubuntu vì lệnh python/activate trong distro đang mở không có; evaluator chỉ dùng thư viện chuẩn, không cần khôi phục/cài lại môi trường model để làm phần này.
+
+**Bằng chứng kiểm trực tiếp:** cả `pilot_eval_20261020` và `pilot_eval_20261020_r2` có đủ 5 file. Bốn file kết quả ở hai run giống hệt, metadata cùng 7 hash nguồn, chỉ command khác output. Assistant đọc code và đối chiếu độc lập 15 dòng với input/manifest/prediction gốc, kiểm MAE/RMSE/exact/error_change và q05_2; không import/chạy lại evaluator hay inference. Run đầu là nguồn chính, _r2 là lịch sử chấm lại cùng dự đoán, không tính thành mẫu độc lập.
+
+**Kết quả:** 15 query/5 ảnh, B0/B2 đều 15 hợp lệ, 0 error/uncertain, paired=15. B0 MAE=19.4, RMSE=24.315975544210986; B2 MAE=22.0, RMSE=30.090973175799196; exact=1 mỗi bên; cải thiện/kém đi/giữ nguyên=6/4/5. Absent=0 và metric absent=null. Manual q05_2: 14 khung, 5 khung mục tiêu, 4 vật mục tiêu phân biệt, 1 dư, 9 sai loại. Khớp nguồn lịch sử, không phải kết quả inference mới.
+
+**Phần 3:** PILOT_SUMMARY đã có thông tin run và mục 6 CLIP, mới hơn trạng thái chưa xác nhận mục 6 trong handoff gửi kèm. Giữ trạng thái CHỜ KIỂM CHÉO VÀ DUYỆT; bổ sung phạm vi audit, nguồn xác nhận self-test và phiếu xác nhận nhóm tại mục 7. Không tự ghi Triệu đã kiểm evaluator hoặc nhóm đã đồng ý CLIP.
+
+**Rà kế hoạch P4:** kiểm tài liệu gốc CLIP (Radford et al., ICML 2021); phù hợp làm cơ sở ảnh–văn bản, chưa chứng minh hiệu quả lọc crop B2 trên CS331. Đề xuất bản tối thiểu chỉ crop+query, không chọn negative labels bằng GT test. Giữ B2 và đối chứng confidence; đo giữ vật đúng/loại khung sai cùng MAE. Chốt checkpoint/crop/prompt/ngưỡng trên dev, nhãn và phân công trước thực thi; không coi ứng viên là đóng góp mới đã chứng minh.
+
+**Đồng bộ:** README, ROADMAP V4.6, HANDOFF chung/cá nhân, hướng dẫn Phần 2–3 và hai pipeline. Bản trước sửa và handoff gửi vào được lưu ZIP có manifest; code, dữ liệu và output run giữ nguyên. Các trạng thái “chưa chạy” trong mục nhật ký phía dưới là lịch sử trước khi nhận handoff mới này.
+
+**Kiểm sau cập nhật:** 14 tài liệu Markdown hiện hành, 149 liên kết local hợp lệ; 18 artifact nguồn/output/code/review giữ nguyên hash; handoff gửi vào và các mục WORKLOG trước đó được bảo toàn. Không chạy thêm self-test, evaluator hoặc model.
+
+**Việc tiếp theo:** Triệu kiểm evaluator theo Phần 2 mục 3 rồi ghi tên/ngày/kết luận ở PILOT_SUMMARY §7; Trí đọc và chuẩn bị bốn lựa chọn P4 §6C; cả nhóm duyệt báo cáo và quyết định đóng pilot để chuẩn bị P4. Chưa thực thi CLIP, E3, train hoặc holdout. Assistant vẫn hỏi trước nếu chạy evaluator/model/thực nghiệm thay người dùng.
+
+## 20/10/2026 — kiểm benchmark đã chạy và làm rõ workspace
+
+**Trí cung cấp:** gói `workspace Trí and Triệu/Trí/countgdpp_paper_results`. Run `full_20261015T080230Z` ghi ngày 15/10 trong log; ngày 20/10 là ngày tiếp nhận/kiểm tại workspace, không đổi ngày chạy gốc.
+
+**Assistant đã làm:** đọc log/config/artifact, đối chiếu 1.190 tên ảnh duy nhất với annotation, kiểm GT đếm theo point labels và tính kiểm tra số học từ log. MAE **8.336974789915967**, RMSE **24.63762579961829** khớp metrics.json và tổng cuối log. Không thiếu/thừa/trùng ảnh. Cấu hình có text + synthetic + 3 pseudo + adaptive crop; ngưỡng .23. [Báo cáo đầy đủ](reports/BENCHMARK_FSCD147.md).
+
+**Đối chiếu review mới:** file gốc Triệu hiện ghi “ĐÃ CHỐT v1 — 19/10”, đủ 15/15 query. Guitar và q04_2 đã giải quyết, không còn là đầu việc phải review lại. Handoff cũ 14/15 được sửa theo bản nguồn hiện hành. q04_2 final = 24 blueberry + 7 blackberry + 1 red currant = 32. Review q02_1 dẫn tới Q02_1_DETAILED_REVIEW.md nhưng artifact này chưa có local; giữ giới hạn nếu dùng chi tiết ghép box. SHA256 bản review đọc ngày 20/10: `ab5c4980daae03766f0b43477a4dac72d46de7e605b149a8f0244bad912dfe69`.
+
+**Giới hạn đã ghi:** chỉ xác nhận count metrics, chưa xác nhận AP/AP50. Root run_config còn trạng thái lúc chuẩn bị; trạng thái hoàn tất ở run_config trong full_*. Info báo working tree chưa commit, gói chưa lưu diff; không tuyên bố tái lập chính xác mọi file/môi trường. Không gọi chênh lệch nhỏ với paper là phương pháp cải tiến.
+
+**Tài liệu đã tổ chức:** README thành trang bắt đầu (giải thích pilot/benchmark, bốn chặng, bản đồ thư mục); ROADMAP V4.5 là bảng tiến độ; HANDOFF/owner handoffs/pipelines đồng bộ. Hướng dẫn phần 2–3 và bản nháp pilot nói rõ phạm vi. “Quá khứ” có index giải thích; 14 tài liệu trước sửa được lưu ZIP có hash, không chuyển code/data/checkpoint. Lịch sử cũ trong WORKLOG giữ bên dưới và thu gọn khi xem Markdown.
+
+**Chưa thực hiện:** self-test/evaluator pilot mới, inference mới, train, cải tiến hoặc holdout. Không có output pilot_eval trong kết quả local khi kiểm. Việc đọc/tính kiểm tra artifact benchmark đã được yêu cầu; chưa tự chạy script phần 2 thay người dùng.
+
+**Kiểm tài liệu sau sửa:** 14 file Markdown hiện hành, 141 liên kết local hợp lệ; 30 artifact được kiểm hash giữ nguyên; 6 code cell notebook không đổi; lịch sử WORKLOG giữ nguyên. Liên kết tới file chi tiết q02_1 còn thiếu nằm trong review nguồn đã được ghi rõ, không tự tạo bằng chứng thay thế.
+
+**Trạng thái:** benchmark chạy đủ và count metrics đã xác nhận; phần 2 đã chuẩn bị; phần 3 còn nháp.
+
+**Bước tiếp theo:** Trí chạy `python evaluation/evaluate_pilot.py --self-test`; PASS mới chạy `python evaluation/evaluate_pilot.py --out results/countgdpp/pilot_eval_20261020`. Triệu kiểm code/ID/evaluator; review định tính đã chốt 15/15. Cả hai điền báo cáo phần 3. Theo yêu cầu ngày 19/10, assistant muốn chạy evaluator/thực nghiệm thay phải hỏi trước.
+
+## 19/10/2026 — sắp xếp tài liệu và chuẩn bị phần 2–3
+
+Theo yêu cầu người dùng, tạo README ở gốc, work log chính này, roadmap hiện hành, hướng dẫn phần 2/phần 3, evaluator Python có chú thích và bản nháp tổng kết. Đưa 40 tài liệu/bản trước chỉnh sửa vào “quá khứ/2026-10-19”, lưu manifest nguồn/đích/SHA256; giữ các artifact model/data tại chỗ. Các liên kết local được cập nhật theo vị trí mới.
+
+Evaluator mới chỉ được kiểm cú pháp; **chưa chạy self-test hoặc đánh giá dữ liệu**, không tạo metric mới. Bản tổng kết dùng số liệu đã có đến 16/10, không tự ghi phần 2–3 hoàn thành. Người dùng tự chạy 2B/2C rồi điền phần 3; assistant muốn thực thi đánh giá/thực nghiệm thay phải hỏi trước theo yêu cầu ngày 19/10. Chuẩn bị code/tài liệu không phải chạy thí nghiệm.
+
+Bước ngay tiếp: mở roadmap/PHAN_2_DANH_GIA.md, đọc luồng code, chạy --self-test; khi PASS mới đánh giá thật. Đừng sửa raw predictions để khớp số mong đợi. Nhánh Kaggle vẫn được giữ riêng.
+
+<details>
+<summary>Lịch sử trước 19/10 — bấm mở khi cần tra, không dùng làm trạng thái hiện tại</summary>
+
+## Lịch sử trước khi tổ chức lại ngày 19/10
+
+Các mục dưới đây giữ nội dung lịch sử; trạng thái cũ không thay thế bảng hiện hành ở đầu file. Liên kết đã được chỉnh theo cấu trúc thư mục mới.
+
+# CS331 — Nhật ký công việc
+
+**Cập nhật: 15/10/2026 (Asia/Bangkok).**
+[Handoff hiện hành](<quá khứ/2026-11-10_don_dep/HANDOFF/HANDOFF.md>) · [Pipeline phân công](<quá khứ/2026-11-10_don_dep/roadmap/PIPELINE_PHAN_CONG.md>) · [Pipeline thực nghiệm](<quá khứ/2026-11-10_don_dep/roadmap/PIPELINE_COUNTGDPP.md>)
+
+## Quy tắc lưu tiến độ
+
+Theo yêu cầu của người dùng: sau mỗi mốc có bằng chứng, nối thêm mục vào nhật ký này và đồng bộ handoff, pipeline, bước tiếp theo. Giữ lịch sử; không đổi kế hoạch thành kết quả đã thực hiện. Phân biệt log người dùng gửi, file kiểm tra trực tiếp và giả thuyết. Không tự ghi Triệu đã hoàn thành hoặc đã được gửi file. Quy tắc áp dụng khi làm việc trong cuộc trò chuyện; không phải tác vụ theo dõi nền.
+
+## Các mốc đến ngày 13/10/2026
+
+Các mốc dưới đây được tổng hợp từ cuộc trò chuyện và kiểm tra workspace; không có giờ thực hiện đầy đủ nên không gán giờ giả.
+
+| Mốc | Đã thực hiện và bằng chứng | Phần còn lại |
+|---|---|---|
+| Chốt phạm vi | CountGD++ là baseline; cùng ảnh hỏi X/Y và lớp vắng mặt; bạn làm model, Triệu làm dữ liệu/evaluator | Chưa chọn can thiệp hoặc train |
+| M0 — môi trường | Clone commit 8489f836d75eb407ae778c56cff1f72cc6f8baae; WSL Ubuntu-22.04, Python 3.10.12, torch 2.5.1+cu121, torchvision 0.20.1+cu121, GCC 11, nvcc 12.1.105 | Lỗi cài torch ban đầu đã vượt qua khi dùng đúng môi trường WSL |
+| M1 — thư viện | transformers 4.44.2; GPU True; MultiScaleDeformableAttention và detectron2._C import được sau import torch; inference thật đã chạy | Chưa lưu/đối chiếu log đầy đủ của bộ test CUDA ops; import và inference không thay thế mọi test |
+| M2 — trọng số | BERT local có config/tokenizer/model.safetensors; CountGD++ checkpoint 1,250,122,586 byte; script nạp và chạy ra output | Chưa ghi SHA256 vào metadata; chưa kiểm missing/unexpected keys của strict=False |
+| M3 — một ảnh | Đã chuẩn bị utensils.jpg và ba prompt spoon/fork/cat; đã có một kết quả thật spoon | Còn fork/cat, chuẩn hóa schema v1 và metadata trước bàn giao |
+
+Snapshot môi trường: [environment_countgdpp.txt](environment_countgdpp.txt).
+
+## Run đầu tiên — spoon, 13/10/2026
+
+- Người dùng thực thi process_folder.py và gửi log hoàn tất; đã kiểm tra file đầu ra trực tiếp.
+- Ảnh: [utensils.jpg](experiments/countgdpp/smoke_inputs/images/utensils.jpg), lấy từ ảnh demo trong checkout upstream. Đây là smoke test kỹ thuật, không phải pilot/holdout độc lập.
+- Prompt: [spoon.json](experiments/countgdpp/smoke_inputs/spoon.json); positive text spoon, exemplar boxes rỗng, negative rỗng; ảnh exemplar trỏ chính ảnh đầu vào.
+- Cấu hình: B0 một lượt qua script gốc; conf_thresh=0.23; có lưu overlay. Chưa chạy B2.
+- [Kết quả gốc](results/countgdpp/smoke_spoon/results.json): count=19, 19 boxes, 19 scores.
+- [Overlay](results/countgdpp/smoke_spoon/utensils.jpg): quan sát thấy lấy cả nĩa và khung trùng trên một muỗng.
+- Đếm thủ công ảnh: 7 muỗng, 7 nĩa, 0 mèo. Đây là nhãn kiểm bằng mắt, chưa phải manifest đã được hai người kiểm chéo.
+- Log TRAIN/FutureWarning không làm dừng run và không tự chứng minh cần fine-tune.
+- RTX A2000 Laptop 4 GB chạy được cấu hình smoke này. Chưa đo peak VRAM/thời gian; không suy rộng sang toàn bộ B2/benchmark.
+- Chưa xác định nguyên nhân lỗi: cần giữ cấu hình, chạy hai prompt còn lại, kiểm prompt, tải trọng số và logic lọc trước khi kết luận lỗi mô hình.
+
+## Hướng dẫn tại mốc spoon — đã thực hiện ở cập nhật bên dưới
+
+Chạy trong Ubuntu WSL, lần lượt từng lệnh; nếu crash thì lưu log, không ghi count=0.
+
+~~~bash
+source /root/.venvs/countgdpp/bin/activate
+cd /mnt/d/MINHTRIHOCCODE/HOCKI5/CS331/CountGDPlusPlus
+python process_folder.py --input_folder ../experiments/countgdpp/smoke_inputs/images --prompts ../experiments/countgdpp/smoke_inputs/fork.json --output_folder ../results/countgdpp/smoke_fork --conf_thresh 0.23 --vis_output
+python process_folder.py --input_folder ../experiments/countgdpp/smoke_inputs/images --prompts ../experiments/countgdpp/smoke_inputs/cat.json --output_folder ../results/countgdpp/smoke_cat --conf_thresh 0.23 --vis_output
+~~~
+
+Giữ ảnh, checkpoint, ngưỡng và tiền xử lý; chỉ đổi prompt và thư mục kết quả. Mục tiêu tham chiếu thủ công: fork=7, cat=0. Không đoán dự đoán trước khi chạy.
+
+Sau hai run: so cả count và vị trí; kiểm đường tải checkpoint/prompt/lọc; chuyển kết quả gốc sang predictions.jsonl + run_config.json theo schema v1. Thời gian/VRAM của run cũ chưa đo phải để null kèm lý do; muốn có số đo thì chạy lại với bộ đo được ghi rõ. Chưa chuyển sang pilot hoặc chỉnh ngưỡng chỉ vì script đã chạy xong.
+
+Triệu tiếp tục T1–T4 trên CPU: 5 ảnh/15 query, manifest tách GT, evaluator và fixture giả. Chưa xác nhận nhánh này đã có sản phẩm. Bạn chưa xong toàn bộ phần việc; mốc gần nhất là hoàn thành bộ bàn giao M3 rồi ghép G1.
+
+
+## Cập nhật sau fork/cat — 13/10/2026, trạng thái mới nhất
+
+Người dùng báo chạy xong; đã đọc trực tiếp ba results.json và xem overlay fork/cat. Không dùng số liệu từ demo tương tác mô phỏng.
+
+| Query | GT thủ công | Dự đoán | Quan sát |
+|---|---:|---:|---|
+| spoon | 7 | 19 | Lần kiểm trước thấy khung nhầm nĩa và khung trùng |
+| fork | 7 | 14 | Overlay khoanh cả 7 nĩa và 7 muỗng |
+| cat | 0 | 0 | Không có khung, đúng trên ảnh này |
+
+Đã kiểm: mỗi JSON đúng một ảnh, count bằng số boxes/scores; giá trị hữu hạn, tọa độ có thứ tự, score trong [0,1]; prompt đúng spoon/fork/cat, exemplar boxes và negative rỗng; có đủ overlay. [Báo cáo kiểm chứng và hash output/prompt](results/countgdpp/smoke_verification_2026-10-13.json).
+
+Kết luận đúng mức: hoàn thành inference smoke 3/3 query. Mô hình không trả cùng kết quả cho mọi query; truy vấn cat đúng nhưng fork vẫn lấy nhầm muỗng. Một ảnh chưa đủ kết luận đã giải quyết lớp vắng mặt hoặc xác định nguyên nhân lỗi X/Y; muỗng/nĩa cũng là hai loại đồ dùng có hình dạng tương tự nên cần pilot có hai loại khác hẳn nhau theo yêu cầu thầy.
+
+**Bước tiếp theo:** giữ nguyên các output; audit missing/unexpected keys khi nạp checkpoint và logic lọc điểm; chuẩn hóa predictions.jsonl/run_config.json để ghép evaluator. Hash checkpoint, thời gian và peak VRAM chưa hoàn tất; không bịa số cho run cũ. Chưa đổi ngưỡng, train hoặc mở B2. M3/P0 và G1 chưa đóng chỉ vì đã có đủ ba JSON. Triệu tiếp tục T1–T4; chưa xác nhận tiến độ của Triệu.
+
+
+## 14/10/2026 — tiếp nhận dữ liệu Triệu, chuẩn bị M4
+
+- Người dùng chỉ đường dẫn workspace Trí and Triệu/Triệu/MUCCA_10_queries/MUCCA_10_queries. Đã kiểm trực tiếp 10 ảnh và 30 query/GT, IDs duy nhất, mapping khớp, số điểm theo class bằng toàn bộ GT, không có tọa độ điểm ngoài ảnh. Đã xem ảnh tổng quan; chưa đếm tay mọi ảnh.
+- Tất cả query có đối tượng (GT>0); chưa có absent query. Không tính FPR_absent hoặc tuyên bố đủ protocol X/Y/absent. Cần thêm absent đã xác minh và nguồn dữ liệu; giữ nhóm gần nhau/khác hẳn nhau để phân tích riêng.
+- Đã xuất input schema v1 không GT và manifest evaluator riêng trong experiments/countgdpp/m4_inputs/. Chọn batch 5 ảnh đầu theo thứ tự nguồn trước khi xem dự đoán; ảnh đầu mcac_100. Đây là dev nội bộ, không phải holdout.
+- Audit checkpoint: 1108 state keys của app; missing=0, nạp shape thành công, 38 unexpected chỉ thuộc feature_map_encoder. Lần audit thô dừng để review; đối chiếu groundingdino.py dòng 110/325 và groundingdino_app.py cho thấy khối dư không dùng trong đường app, nên ghi quyết định tương thích B0 đã pin. Không sửa code upstream và không quy lỗi đếm cho checkpoint. Hash local b89395d79711c9b9f13f3ef80cd2e528386fb1d70453f99443be4eccab33592f.
+- Tạo run_b0_batch.py gọi script gốc từng query, ngưỡng 0.23, xuất predictions.jsonl/run_config/overlay/log; đo elapsed toàn tiến trình, peak VRAM chưa đo. Kiểm input hợp lệ; từ chối trùng ID, GT leakage và count không khớp boxes.
+- Chạy thật adapter_check_cat_20261014 trên ảnh utensils cũ: thành công, count=0 giống gốc. Đây là kiểm adapter, không phải MUCCA. Chưa chuẩn hóa đủ cả ba output cũ hoặc xác nhận ghép evaluator/G1.
+- Đã tạo handoff mới ngày 14/10 và hướng dẫn M4. **Chưa chạy 30 query MUCCA.** Người dùng chạy tiếp ảnh đầu 3 query, kiểm output rồi mở 5 ảnh sau khi nối evaluator. Không train, chỉnh ngưỡng hoặc mở B2.
+
+
+## 14/10/2026 — M4 ảnh đầu đã hoàn tất
+
+Người dùng chạy m4_first_image_b0 và gửi log 3/3 ok. Đã kiểm trực tiếp run_config status=complete, failed_queries=0; ba dòng dự đoán có IDs khớp manifest, count/boxes/scores khớp và đủ overlay. Guitars 25/GT25, amplifiers 44/GT11, chairs 0/GT1. Đã xem cả ba overlay: truy vấn amplifiers vẫn khoanh nhiều guitar; chairs bỏ sót ghế/stool phía dưới trái theo nhãn nguồn. Đúng số guitar chưa đồng nghĩa đã chấm vị trí chính xác tuyệt đối.
+
+Đã lưu REVIEW.md và initial_review.json cùng run, gồm hash manifest/predictions để truy vết. Không sửa output gốc. Đây là review độc lập ba dòng, chưa xác nhận Triệu có evaluator hoặc hoàn tất G1. Tiếp theo thu thập 5 ảnh/15 query ở ngưỡng 0.23, cho phép chạy dữ liệu song song với hoàn thiện evaluator; chưa dùng để chốt hướng cải tiến hay chỉnh ngưỡng. Ảnh đầu nằm trong batch 5, không tính lặp là mẫu độc lập. Đồng bộ handoff/pipeline/hướng dẫn.
+
+
+## 14/10/2026 — hoàn tất và kiểm batch M4 5 ảnh / 15 query
+
+Người dùng chạy m4_first5_b0 và gửi 15 count. Đã kiểm trực tiếp run_config complete, 15/15 dự đoán hợp lệ, IDs đúng, count/boxes/scores và tọa độ/score hữu hạn; đủ overlay. Ghép với manifest: GT lần lượt 25,11,1; 15,3,2; 6,6,6; 6,24,39; 2,4,3. Dự đoán 25,44,0; 28,31,23; 17,18,17; 60,43,84; 20,11,21.
+
+Review sơ bộ: 1 đúng count, 13 thừa, 1 thiếu; MAE=19.4, RMSE≈24.316, coverage=1.0; presence recall=14/15 không chứng minh chọn đúng loại. Không có absent nên các chỉ số absent=null. Không gộp ảnh chạy lặp với run đầu như mẫu độc lập. Chưa phải đánh giá toàn benchmark hoặc xác nhận evaluator của Triệu.
+
+Đã xem cả 15 overlay: ampli lấy guitar; bowls/cups lấy nhiều đĩa; pens/rulers/pencils đều khoanh gần hết ba nhóm; hai ảnh trái cây lấy cả loại khác. Lưu REVIEW.md, review_per_query.csv, review_metrics.json (kèm hash GT/predictions), hai bảng ảnh và stationery_query_comparison.jpg trong run. Giữ nguyên predictions/config gốc.
+
+Thay bước chạy thêm ảnh ngay bằng chẩn đoán có mục tiêu trên mcac_200 và mcac_100: kiểm điểm từng token và lọc gốc, đặc biệt token tên vật so với token đặc biệt/dấu chấm. Đây là giả thuyết điều tra, chưa chứng minh nguyên nhân và chưa sửa baseline. Triệu kiểm nhãn/khung và nối evaluator, bổ sung absent. Chưa B2/train hoặc chốt cải tiến. Đã đồng bộ handoff/pipeline.
+
+
+## 15/10/2026 — chẩn đoán điểm token rulers, giữ nguyên B0
+
+Người dùng yêu cầu next move sau baseline → lỗi → nguyên nhân → cải tiến → kiểm chứng. Đã tạo diagnose_tokens.py, chỉ nạp import/định nghĩa hàm của process_folder.py đã pin và thêm observer trả nguyên kết quả lọc. Script kiểm hash model/checkpoint, không đọc GT vào model, lưu raw sigmoid scores/boxes/input_ids, token CSV, ảnh proposal IDs và so lại count/boxes/scores với baseline.
+
+Kiểm ca giả phân biệt điểm từ nội dung, dấu chấm, rejected bởi negative-side và dưới ngưỡng đạt. Chạy GPU token_diagnostic_rulers_20261015/q03_2: count=18, counterfactual chỉ token nội dung=18, khớp count/boxes (atol 0.001 pixel)/scores (1e-5) với B0. Cả 18 top-positive token là rulers. Không có khung nào bị loại chỉ nhờ bỏ CLS/dấu chấm. Điều này bác bỏ giả thuyết dấu chấm là nguyên nhân cho query này, chưa khái quát các query khác.
+
+Đã xem proposal_ids và gán nhãn hậu kiểm: thước IDs 0,1,2,3,4,13; bút mực 5,6,7,8,11,44; bút chì 9,10,12,14,15,16. Điểm rulers: thước 0.4252–0.4906, bút mực 0.4232–0.4445, bút chì 0.3540–0.3776. Cần Triệu kiểm chéo; không dùng nhãn này làm model input. Không có một ngưỡng trên điểm này vừa giữ đủ 6 thước vừa bỏ hết bút trong ca này; chưa chọn ngưỡng hoặc kết luận ngưỡng vô ích trên dataset.
+
+Predict có capture, chưa warm-up: 1736.6 ms; peak PyTorch allocated 1461.12 MiB gồm model, không phải tổng device VRAM. Không so với thời gian subprocess batch cũ hoặc ghi hồi tố cho run cũ.
+
+Đã lưu REVIEW.md và manual_box_review.csv cùng run, tạo handoff 15/10 và đồng bộ tài liệu. Bốn query pens/pencils/guitars/amplifiers chưa chạy chẩn đoán; người dùng chạy tiếp theo lệnh trong review. Chưa B2/train/chỉnh lọc hoặc chọn module cải tiến.
+
+
+## 15/10/2026 — hoàn tất bốn query chẩn đoán bổ sung
+
+Người dùng chạy token_diagnostic_more_20261015, cung cấp log pens=17, pencils=17, guitars=25, amplifiers=44; replay_matches=True. Đã kiểm run_config complete và summary. Đã đọc raw_scores.npz của cả bốn query và rulers ở run trước, tự tính lại masks theo max positive/remaining và max token tên vật. Cả 5 query/2 ảnh có tập proposal giữ nguyên, tổng 121 retained proposals; không chỉ count bằng nhau. Pencils tách pencil + ##s; top token của 17 khung là pencil. Các query còn lại top token đúng tên vật. Không có khung được giữ chỉ vì CLS/dấu chấm ở các ca này.
+
+Kết luận giới hạn: cách tổng hợp điểm token đặc biệt không giải thích lỗi đã kiểm; chưa thử caption không có dấu chấm và chưa biết nguyên nhân learned score gán cao cho lớp khác. Autocast FutureWarning không làm hỏng run. Không sửa baseline/env hoặc chạy lại chỉ vì cảnh báo.
+
+Lưu REVIEW.md và combined_review.json trong run bổ sung. Bước tiếp theo chuyển sang chuẩn bị đối chứng B0/B2 trên cùng mcac_200/mcac_100 (ba query mỗi ảnh), trước tiên kiểm code/chính sách chọn pseudo-exemplar. Chưa triển khai/chạy B2, chưa coi là phương pháp cải tiến mới/full paper và chưa train. Nhãn/evaluator/absent/holdout phía Triệu còn cần kiểm. Đã đồng bộ handoff/pipeline.
+
+
+## 15/10/2026 — bắt đầu M5, chuẩn bị B2 và kiểm kỹ thuật
+
+Người dùng yêu cầu bước tiếp và vị trí pipeline. M4 có baseline 5 ảnh/15 query và chẩn đoán token; chuyển M5 đối chứng pseudo-exemplar. Đọc test_shanghai_tech.py:get_pseudo_exemplars: max token target, score>threshold, sort top tối đa 3, clamp xyxy. Đọc app/transforms xác nhận exemplar nhận pixel theo ảnh resize; adapter chọn trong ảnh gốc rồi transform lại. Không chỉnh code upstream.
+
+Tạo run_b2_pilot.py, check_b2_selection.py, b2_two_images.jsonl (6 query không GT) và b2_smoke_inputs.jsonl (spoon/fork/cat). B2 chọn toàn bộ proposals lượt đầu bằng tau_sample .23, top3, không NMS; giữ final filter app và tau_final .23. Không synthetic/crop/negative labels. Nhánh không mẫu trả B0 và stage2=null theo protocol adapter, khác upstream luôn gọi lượt hai. Config ghi rõ khác biệt, raw NPZ lưu đủ 900 proposals mỗi lượt, ảnh pseudo xanh và stage1/final đỏ; errors null và dừng, không ghi đè run.
+
+Kiểm chọn mẫu với hàm gốc trên ca giả, clipping, scaling, strict threshold và empty đạt. GPU smoke b2_smoke_20261015: spoon B0=19/pseudo3/B2=19; fork 14/3/18; cat 0/0/0 no_pseudo=True, không forward2. Cả ba stage1 khớp B0 count/boxes/scores; kiểm JSON/schema/tọa độ/overlay đạt. Đã xem bảng ảnh: spoon chọn 3 mẫu nĩa; fork mẫu nĩa nhưng final vẫn có muỗng. Đây là kiểm kỹ thuật và quan sát, chưa khẳng định nguyên nhân hay hiệu quả nghiên cứu.
+
+Đã viết README_B2 và đồng bộ handoff/pipeline. Người dùng chạy tiếp b2_two_images_20261015 trên mcac_100/mcac_200. Chưa chạy B2 MUCCA, chưa mở M6/ngưỡng/cải tiến/train. Tài nguyên ghi predict+capture, khác elapsed toàn subprocess cũ; không đánh dấu evaluator/G1/holdout hoàn tất.
+
+
+## 15/10/2026 — M5 B2 hai ảnh/sáu query đã chạy và review
+
+Người dùng gửi đủ sáu log b2_two_images_20261015. Đã kiểm file config complete, IDs/GT, count/boxes/scores, khung mẫu trong ảnh, stage1_matches_B0=True cả sáu. Kết quả B0→B2: guitars25→25, amplifiers44→38, chairs0→0, pens17→13, rulers18→18, pencils17→16. Chairs không mẫu nên fallback, không forward2; năm query còn lại tự chọn 3 mẫu và chạy lượt hai.
+
+Đã xem bảng ghép stage1/pseudo/final trên cả hai ảnh. Nhận xét bằng mắt: mẫu guitar đúng; mẫu amplifiers đều guitar; pens trộn pen/pencil; mẫu rulers đúng thước nhưng final vẫn đếm cả18; mẫu pencils đều pen. Cần Triệu kiểm chéo, không dùng nhận xét làm đầu vào. Chưa thể quy mọi lỗi cho chọn sai mẫu hoặc tuyên bố nhân quả.
+
+Đối chiếu GT cùng sáu query: MAE B0=11.3333, B2=9.5; 3 ca giảm sai số, 3 không đổi; exact count vẫn 1/6. Không so B2 9.5 với MAE19.4 của15 query khác tập. Lưu REVIEW.md, review_per_query.csv, review_metrics.json/hash và hai bảng ảnh trong run; output model giữ nguyên.
+
+Bước tiếp theo M6: khảo sát ngưỡng cuối trên raw lượt2 đã lưu, giữ mẫu/tau_sample cố định, ghi riêng fallback; đổi mẫu phải chạy lại lượt2. Chưa thực hiện sweep, chưa train/chốt phương pháp mới hoặc B2 cả5 ảnh. Còn evaluator/absent/holdout. Đã đồng bộ handoff/pipeline.
+
+
+## 15/10/2026 — M6/E1 quét ngưỡng lọc cuối, không chạy lại mô hình
+
+Người dùng yêu cầu tiếp M6. Đã đọc protocol và giữ lưới định trước {.10,.23,.35,.50}; tau_sample=.23/mẫu cố định. Tạo sweep_final_threshold.py và thực thi CPU vào m6_e1_final_20261015. Áp dụng nguyên mask positive max>tau_final và positive max>remaining max cho stage1 B0, stage2 B2; fallback chairs refilter stage1. Không train/forward hoặc thay mẫu. Manifest chỉ dùng để chấm sau lọc, không chọn ngưỡng từng query.
+
+Đã kiểm đủ6IDs/GT và raw hữu hạn, tái lập count/boxes/scores ở.23 cho cảB0/B2, monotonic tập khung qua4ngưỡng, hoàn tất48tổ hợp. B0 MAE lần lượt16.833/11.333/7.833/5.0; B2 14.167/9.5/8.0/6.0. Exactcount vẫn1/6 từ.23 trở lên. B0 .50 có4query trả0, gồm3lớp mới bị bỏ hoàn toàn (amplifiers/rulers/pencils) và chairs đã0; không chốt .50 chỉ vìMAE thấp. Đã xem ảnh sweeps pens/rulers/amplifiers: nhầm loại vẫn có ở cấu hình giữ khung, hoặc mất toàn bộ vật đúng khi lọc cao.
+
+Lưu per_query.csv, summary.csv/json, predictions.jsonl mỗi ngưỡng kèm proposal IDs, sáu ảnh sweep, run_config có hash nguồn/GT/adapter và REVIEW.md. Baseline gốc và B2 nguồn không sửa. Chưa có absent/holdout, chưa xác nhận evaluator củaTriệu. M6/E1 đã xong trên2ảnh; bước tiếp E2 thaytau_sample giữtau_final=.23, chưa chạy. Đã đồng bộ handoff/pipeline.
+
+## 15/10/2026 — đóng E2 pilot và ghi nhận review bằng mắt của Trí
+
+Người dùng tự thêm --tau-sample vào runner và chạy m6_e2_sample010_20261015, m6_e2_sample050_20261015. Đã đọc config/predictions của hai run và B2 nguồn .23: đủ 6 query/run, execution_status=ok, stage1_matches_B0=True; final=.23, max_pseudo=3. .10 giữ nguyên pseudo_boxes/final_boxes so với .23, không chỉ count. .50 giữ mẫu/final của guitar và pens; ampli/thước/bút chì không mẫu nên stage2=false/null và trả B0. Ghế không mẫu ở mọi mức. Counts .50: 25,44,0,13,18,17. Mức .35 bỏ qua sau khi kiểm điểm top-3 đều >.35 ở 5 query có mẫu; đây là suy luận từ selection, chưa chạy inference .35. Đóng E2 pilot không đồng nghĩa đã chạy đầy đủ bốn mức hoặc hoàn tất benchmark/M6 tổng thể.
+
+Trí gửi review cả 6 query của run .23: guitar mẫu 3/3 và final đúng theo mắt; ampli mẫu 0/3 (đều guitar), final vẫn lẫn nhiều loại; ghế không mẫu/khung (GT có 1); pens mẫu 1/3, hai mẫu là pencils, final theo người dùng có 1 ruler và cả pens/pencils; rulers mẫu 3/3 nhưng final vẫn lẫn tất cả; pencils mẫu 0/3 (đều pens), final gần hết các vật. Lưu USER_VISUAL_REVIEW.md riêng trong run B2 nguồn, giữ nguyên nhận xét với nguồn là người dùng; chưa có xác nhận của Triệu hoặc phân loại từng khung. “Khoanh all” không diễn giải thành khung stage1/final giống hệt vì count ampli 44→38, pencils 17→16. Nhận xét này không phải nhãn model input.
+
+Kết luận: cả lỗi chọn mẫu lẫn lỗi final khi mẫu đúng đều xuất hiện; không quy toàn bộ lỗi cho pseudo hoặc tuyên bố nhân quả. Lưu REVIEW.md E2 trong run .50; đồng bộ handoff/roadmap/README. Không chạy thêm model hoặc sửa thuật toán trong lần cập nhật này. Chưa mở E3/train/module mới.
+
+Bước tiếp theo: Triệu kiểm chéo và hoàn thiện evaluator/absent; Trí chuẩn bị mở B2 cấu hình .23 trên 3 ảnh còn lại của bộ dev 5 ảnh đã có B0, chưa chạy. Đây là dev đã xem B0, không phải holdout. Mục đích kiểm tra lỗi có lặp ở ảnh khác trước khi chọn một can thiệp. Người dùng tự thực hiện thí nghiệm; assistant chỉ đường và kiểm kết quả. Không gửi tin nhắn cho Triệu bằng công cụ.
+
+
+## 15/10/2026 — B2 mở rộng đủ 5 ảnh / 15 query
+
+Người dùng tạo b2_remaining3_inputs.jsonl và tự chạy b2_remaining3_20261015 ở tau_sample=tau_final=.23. Đã kiểm config complete, 9 query đúng IDs và đều ok; 3 mẫu/query, có lượt hai, stage1 khớp B0 count/boxes (<=.001 pixel)/scores (<=1e-5). Ghép hai run được đúng 15 IDs/5 ảnh trong first5; kiểm count bằng số khung/score, tọa độ hợp lệ và giá trị hữu hạn. Cấu hình suy luận/selection/checkpoint khớp; adapter hash khác sau khi thêm CLI tau_sample, không gọi script byte-identical. Không chạy thêm model.
+
+Counts B0→B2 mới: plates 28→31, bowls 31→31, cups 23→26, strawberries 60→59, blueberries 43→32, red currants 84→84, cherries 20→15, raspberries 11→14, blackberries 21→79. Trên cùng 15 query, GT từ manifest gói Triệu: MAE 19.4→22.0; RMSE 24.315976→30.090973; exact count 1/15 cả hai. Sai số giảm 6, tăng 4, giữ nguyên 5. Đây là metric đếm trên dev nhỏ, không chứng minh chọn đúng loại hoặc kết luận chất lượng paper. Không bỏ ca blackberries khỏi tổng hợp.
+
+Assistant xem pseudo/final q05_3: mẫu nhìn là 2 blackberry và 1 raspberry đỏ; final có nhiều khung nhỏ theo phần tròn trên blackberry, nhiều lớp khác và khung chồng nhau. Ghi là quan sát sơ bộ, cần Trí/Triệu kiểm chéo; chưa phân loại từng proposal hoặc chứng minh mẫu sai gây tăng count. Không coi mọi khung thừa đều là trùng hay đều đếm phần vật.
+
+Lưu REVIEW.md và combined_first5_metrics.json (bảng 15 query, metric và hash nguồn) trong run mới; đồng bộ handoff/pipeline/README. Trí review tiếp 9 query mới, ưu tiên q05_3 rồi so cùng ảnh q05_1/q05_2. Triệu kiểm chéo nhãn và evaluator; chưa xác nhận evaluator/absent/holdout đầy đủ. E1/E2 chỉ trên 2 ảnh, không tự mở rộng trạng thái thành 5 ảnh. Chưa E3/train/chốt module; người dùng tiếp tục tự làm thí nghiệm.
+
+
+## 15/10/2026 — Trí hoàn tất review bằng mắt 15 query
+
+Người dùng báo mẫu đúng ở 9 query mới: plates 0/3, bowls 1/3, cups 2/3, strawberries 2/3, blueberries 2/3, red currants 0/3, cherries 1/3, raspberries 3/3, blackberries 2/3. Người dùng xác nhận q02_3 ghi bowl là gõ nhầm, vẫn khoanh được cups; giữ phần khoanh sai/thừa nhiều. Cherry có 2 quả phù hợp GT gói Triệu. Final blackberries đếm múi thành bbox và khoanh cả các loại quả khác. Lưu USER_VISUAL_REVIEW.md trong run remaining3, không sửa predictions/GT.
+
+Ghép nhận xét cũ: 20/42 mẫu đúng theo người dùng trên 14 query có mẫu; 3 query đúng 3/3 (guitar/thước/raspberries), 4 query sai 0/3, 7 query pha trộn; chairs không có mẫu. Guitar final đúng theo mắt, hai ca thước/raspberries mẫu đúng nhưng final vẫn sai/thừa. Đây là review định tính của Trí, chưa là chấm từng bbox hoặc kiểm chéo của Triệu; không khẳng định mẫu sai là nguyên nhân duy nhất. “Final như stage1” không hiểu là cùng tập khung, vì cherries 20→15 và raspberries 11→14. Metric count toàn tập giữ nguyên MAE 19.4→22.0.
+
+Kết thúc vòng nhận xét chung 5 ảnh, chuyển sang phân loại từng khung. Việc kế tiếp: Trí và Triệu gán nhãn 14 bbox q05_2 raspberries theo loại thật, cả vật/phần vật, ID vật để phát hiện trùng và vật thật bị bỏ sót. Nhãn chỉ để đánh giá, không cung cấp GT cho model. Giữ trọng tâm giảm đếm nhầm loại theo X/Y; phần quả là nhóm lỗi cần đo, chưa mở thành mục tiêu thứ hai. Chưa chọn giải pháp, chạy inference mới, E3, train hoặc thay NMS. E1/E2 vẫn chỉ 2 ảnh. Đã cập nhật handoff/pipeline/README và liên kết review.
+
+
+## Chuẩn bị benchmark Kaggle — 15/10/2026
+
+Người dùng xác nhận ảnh 1.190 ảnh/MAE 10.20 thuộc nhóm khác và yêu cầu hỗ trợ chạy đánh giá giống paper. Đã tạo roadmap/COUNTGDPP_FSCD147_KAGGLE.ipynb và KAGGLE_PAPER_EVAL.md; cấu hình text+synthetic+pseudo+crop theo README, pin commit hiện có; số tham chiếu paper v2 8.39/27.03. Đã kiểm cú pháp 6 code cell và đọc code upstream. Chưa chạy trên Kaggle, chưa tải assets tại Kaggle, chưa có kết quả benchmark mới. Script phụ test_fscd147.py không có trong checkout; notebook kiểm MAE/RMSE từ engine chính và log từng ảnh, không nhận đã tái lập AP/AP50. Tiếp theo: người dùng import notebook và chạy cell kiểm môi trường; giữ nguyên nhánh pilot, không so trực tiếp metric khác tập.
+
+
+## 16/10/2026 — nhận kiểm chéo của Triệu, giải thích đủ q05_2
+
+Đọc workspace Trí and Triệu/Triệu/TRIEU_VISUAL_REVIEW.md, hash SHA256 08767b8b77cdd42aeecb7bfa2c573f6b8be94ee959bde382678ed8c07fa8fd0f. Có 14/15 query (thiếu q01_1), GT/B0/final của tất cả 14 khớp bảng kết quả. Giữ nguyên file nguồn và các review gốc của Trí, không xem mọi diễn giải trong nguồn là đã tự kiểm độc lập.
+
+Assistant mở q02_1 pseudo và q05_2 stage1/final, đối chiếu tọa độ prediction. Plates: cả 3 mẫu là đĩa, phù hợp Triệu thay vì Trí cũ 0/3; ảnh nhỏ/che khuất, chưa chấm độ bao trọn chuẩn. Tổng hợp hiệu chỉnh 23/42 mẫu đúng (20/42 theo Trí trước đó), chưa gọi toàn bộ được hai người kiểm chéo vì guitar chưa có Triệu. Ba ca plates/rulers/raspberries mẫu đúng 3/3 nhưng final còn sai/thừa.
+
+q05_2 final: 5 khung raspberry 1/2/3/7/11, 9 khung sai loại (blackberry10/14; blueberry9/12/13; strawberry5/6; cherry4/8). 7 và11 cùng quả,11 chỉ bao phần quả. Tổng14 =4 quả mục tiêu+1khung trùng+9khung sai loại. Khung12/13 là phần blueberry; nhãn lỗi phần vật và sai loại có thể cùng tồn tại. Đã lưu manual_crosscheck_20261016.json gồm 14final/11stage1, overlay1-based và index0-based, tọa độ/hash; không dùng nhãn làm model input. Đây là visual audit, không tuyên bố metric định vị benchmark.
+
+Stage1 q05_2 được assistant giải thích thêm: 2 strawberry ở số6/7, không phải1; 4raspberry+2strawberry+2cherry+3blueberry=11. File nguồn Triệu giữ nguyên; ghi riêng bổ sung. q04_2 còn cần đối sánh32khung với mô tả “toàn bộ” các quả; không suy ra số/loại bỏ sót từ chênh lệch35vs32.
+
+Tạo TRIEU_CROSSCHECK_2026-10-16.md, handoff ngày16, cập nhật index/ngày và pipeline/README; giữ snapshot15 và ưu tiên benchmark Kaggle từ phiên khác. Không chạy thêm model/train, không chọn module. Tiếp theo Triệu bổ sung guitar/q04_2; dùng nhãn q05_2 kiểm evaluator, không yêu cầu làm lại từ đầu. Kaggle notebook mới chuẩn bị; chưa xác nhận run/metric mới và không so trực tiếp với MAE pilot. Không gửi tin nhắn cho Triệu bằng công cụ.
+
+</details>
+
+## 20/10/2026 — Phần 2: Đánh giá pilot
+
+- Self-test: PASS (python3).
+- Evaluator: evaluation/evaluate_pilot.py
+- Output: results/countgdpp/pilot_eval_20261020/
+- Số ảnh: 5
+- Số query: 15
+- B0: MAE=19.4, RMSE=24.315975544210986, exact_count=1
+- B2: MAE=22.0, RMSE=30.090973175799196, exact_count=1
+- Coverage: B0=15/15, B2=15/15
+- Errors=0, uncertain=0
+- Improved=6, worsened=4, unchanged=5
+- Absent queries=0 (absent metrics=null)
+- Manual q05_2: final_boxes=14, target_boxes=5, distinct_target_objects=4, extra_target_boxes=1, wrong_class_boxes=9
+- Ket luan: So lieu khop bang tham chieu.
+- Trang thai: Cho Trieu kiem tra cheo code/schema va q05_2.
+
+
+<!-- Ghi chú local trước đồng bộ 25/11 -->
+
+## 25/11/2026 — rà slide local và kế hoạch Gradio để bàn giao Claude
+
+Chỉ đọc main.tex local và kế hoạch trong worktree kind-chaplygin-249b83. Slide/PDF có sửa chưa commit, log build ghi 42 trang; chưa rà hình thức toàn PDF hoặc đối chiếu phiếu chấm gốc. Xác nhận thứ tự phân công, câu hỏi nghiên cứu và chú thích chó–dê còn như góp ý. Đề nghị Claude làm demo replay trước trong venv riêng; dùng freeze riêng từng cấu hình, giữ 119 query hợp lệ và uncertain; không hiển thị MAE toàn test theo slider để tránh chọn lại trên test. Cho người dùng bản hướng dẫn triển khai, chưa tự cài/chạy demo hay sửa slide. Tiếp: Claude dựng app CPU từ output lưu, kiểm khớp chỉ số rồi mở localhost cho Trí thử.
+
+
+## 25/11/2026 — sửa đường dẫn biên dịch slide trên VS Code
+
+Log XeLaTeX báo thiếu shared/macros.tex. Đã sửa đúng ba đường dẫn trong final/slides/main.tex: macros, graphicspath và pipeline; giữ nguyên nội dung người dùng sửa. Chạy latexmk -xelatex thành công, main.pdf có 42 trang. Chưa rà toàn bộ bố cục, không chạy thực nghiệm; chưa commit/push.
+

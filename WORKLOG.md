@@ -1,5 +1,17 @@
 # WORKLOG CS331 — nhật ký chung
 
+## 25/11/2026 — recheck sau prompt sửa slide (Codex)
+
+Đã đọc lại main.tex ở repo, worktree Claude và mirror. Repo chỉ khác worktree 3 dòng đường dẫn; chưa thấy sửa nội dung theo prompt: còn Phân công, chưa tách C6/P+F riêng, độ đo và kết quả vẫn dày. Mirror vẫn bản cũ 54.866 byte. Repo đã đổi sang đường dẫn kiểu web nhưng final/slides/figures, shared/macros.tex, shared/pipeline_slides.tex đều không tồn tại; main.pdf cũng không còn. Không sửa slide hoặc khôi phục PDF; không chạy thực nghiệm. Cần sửa nội dung và tách bản xuất web khỏi đường dẫn build repo; chưa xác minh máy chủ web trực tiếp.
+
+
+## 25/11/2026 — rà nội dung slide theo phiếu chấm (Codex; chỉ đọc slide)
+
+Theo yêu cầu Trí: kiểm thứ tự trình bày, baseline/P+F/C6, dataset, độ đo và kết quả; soạn prompt để Claude sửa. Không sửa slide, không chạy model/evaluator, không đẩy Overleaf. Bản mirror hiện là bản cũ (main.tex 54.866 byte); bản repo mới 65.834 byte đã có dataset tổng hợp, độ đo riêng và demo live. Lệnh gửi Mirror ở phiên trước không chứng minh lưu bền trên web. Cần xác minh bản web bằng tải lại/đọc lại trước khi kết luận đồng bộ thành công.
+
+Kết luận rà nguồn: baseline và các thành phần P/F có, nhưng C6 thiếu giải thích riêng; dữ liệu/độ đo/kết quả không hoàn toàn thiếu, còn dày và khó nói. Mục 6 của phiếu là tiêu chí chất lượng toàn bộ slide, không phải chương nội dung. Theo Trí: bỏ slide phân công. P+F vẫn là cấu hình chính đã khóa; C6 là đối chứng khai báo trước, không đổi vai trò sau test. Chưa kiểm bố cục PDF trong phiên này. Tiếp: Claude sửa theo prompt, render kiểm từng slide, giữ nguyên số liệu/giao thức, xác minh bản web thực sự lưu.
+
+
 ## 25/11/2026 — xuất bản slide và demo
 
 Sao lưu trước đồng bộ; nhận 3 commit remote đến 974048f, đưa slide/nguồn/PDF/kịch bản, demo và hướng dẫn từ worktree Claude về main. Dùng sơ đồ pipeline_slides.tex của slide mới; giữ bản local trước đó trong snapshot. Không chạy model/evaluator/self-test; kết quả CPU là ghi nhận phiên trước, GPU vẫn chờ Trí. Báo cáo chi tiết chưa xác nhận khớp slide mới. Không đưa môi trường, log, cấu hình Claude hoặc snapshot lên Git.
