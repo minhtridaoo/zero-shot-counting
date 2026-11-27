@@ -39,7 +39,7 @@
 5. [N4_KET_QUA_TANG_A_20261029.md](reports/N4_KET_QUA_TANG_A_20261029.md) + [RA_SOAT_TRIEU_N4_20261029.md](reports/RA_SOAT_TRIEU_N4_20261029.md): review khung bằng người, cơ chế lỗi (điểm mẫu ảnh lấn át điểm chữ).
 6. [TRIEU_DE_XUAT_NHANH_P_20261029.md](reports/TRIEU_DE_XUAT_NHANH_P_20261029.md), [TRIEU_P1_COLAB_T4_20261103.md](reports/TRIEU_P1_COLAB_T4_20261103.md), [TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md](reports/TRIEU_DE_XUAT_QUY_TAC_DU_LIEU_V2_20261104.md): nhánh P và dữ liệu v2.
 7. [KE_HOACH_TIEP_THEO_20261105.md](reports/KE_HOACH_TIEP_THEO_20261105.md): **10 quyết định D1–D10 đã chốt** (máy chuẩn, dữ liệu, biến thể, luật chọn D9).
-8. [TOM_TAT_DU_AN_20261027.md](reports/TOM_TAT_DU_AN_20261027.md): tóm tắt dự án cho demo (bản 27/10).
+8. [TOM_TAT_DU_AN_20261027.md](reports/TOM_TAT_DU_AN_20261027.md): tóm tắt dự án cho demo (bản 27/10). -> Hạn 2/12 báo cáo đồ án.
 
 ## Môi trường chạy
 
